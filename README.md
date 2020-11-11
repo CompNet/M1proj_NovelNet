@@ -1,2 +1,1 @@
-# NovelNet
-Graphs extracted from novels
+# ProjectM1

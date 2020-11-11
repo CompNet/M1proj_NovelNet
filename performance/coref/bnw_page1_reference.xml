@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+	<entity name="the Director">
+			<mention>
+			<sent>6</sent>
+			<startIndex>6</startIndex>
+			<endIndex>8</endIndex>
+			<text>the Director</text>
+		</mention>
+
+		<mention>
+			<sent>7</sent>
+			<startIndex>12</startIndex>
+			<endIndex>18</endIndex>
+			<text>the Director of Hatcheries and Conditioning</text>
+		</mention>
+
+		<mention>
+			<sent>8</sent>
+			<startIndex>21</startIndex>
+			<endIndex>24</endIndex>
+			<text>the Director 's</text>
+		</mention>
+
+		<mention>
+			<sent>9</sent>
+			<startIndex>11</startIndex>
+			<endIndex>14</endIndex>
+			<text>the great man</text>
+		</mention>
+
+		<mention>
+			<sent>12</sent>
+			<startIndex>0</startIndex>
+			<endIndex>7</endIndex>
+			<text>The D. H. C. for Central London</text>
+		</mention>
+
+		<mention>
+			<sent>12</sent>
+			<startIndex>14</startIndex>
+			<endIndex>15</endIndex>
+			<text>his</text>
+		</mention>
+
+		<mention>
+			<sent>13</sent>
+			<startIndex>10</startIndex>
+			<endIndex>11</endIndex>
+			<text>he</text>
+		</mention>
+
+		<mention>
+			<sent>17</sent>
+			<startIndex>4</startIndex>
+			<endIndex>5</endIndex>
+			<text>he</text>
+		</mention>
+
+		<mention>
+			<sent>23</sent>
+			<startIndex>7</startIndex>
+			<endIndex>9</endIndex>
+			<text>the Director</text>
+		</mention>
+
+		<mention>
+			<sent>24</sent>
+			<startIndex>0</startIndex>
+			<endIndex>1</endIndex>
+			<text>He</text>
+		</mention>
+
+		<mention>
+			<sent>24</sent>
+			<startIndex>15</startIndex>
+			<endIndex>16</endIndex>
+			<text>he</text>
+		</mention>
+
+		<mention>
+			<sent>24</sent>
+			<startIndex>21</startIndex>
+			<endIndex>22</endIndex>
+			<text>his</text>
+		</mention>
+	</entity>
+	<entity name ="the workers">
+		<mention>
+			<sent>3</sent>
+			<startIndex>3</startIndex>
+			<endIndex>5</endIndex>
+			<text>the workers</text>
+		</mention>
+		<mention>
+			<sent>3</sent>
+			<startIndex>8</startIndex>
+			<endIndex>9</endIndex>
+			<text>their</text>
+		</mention>
+		<mention>
+			<sent>7</sent>
+			<startIndex>2</startIndex>
+			<endIndex>3</endIndex>
+			<text>their</text>
+		</mention>
+		<mention>
+			<sent>7</sent>
+			<startIndex>5</startIndex>
+			<endIndex>8</endIndex>
+			<text>three hundred Fertilizers</text>
+		</mention>
+		</entity>
+		<entity name ="the students">
+		<mention>
+			<sent>8</sent>
+			<startIndex>0</startIndex>
+			<endIndex>6</endIndex>
+			<text>A troop of newly arrived students</text>
+		</mention>
+		<mention>
+			<sent>9</sent>
+			<startIndex>2</startIndex>
+			<endIndex>3</endIndex>
+			<text>them</text>
+		</mention>
+		<mention>
+			<sent>13</sent>
+			<startIndex>4</startIndex>
+			<endIndex>5</endIndex>
+			<text>you</text>
+		</mention>
+		<mention>
+			<sent>13</sent>
+			<startIndex>14</startIndex>
+			<endIndex>15</endIndex>
+			<text>them</text>
+		</mention>
+		<mention>
+			<sent>14</sent>
+			<startIndex>8</startIndex>
+			<endIndex>9</endIndex>
+			<text>they</text>
+		</mention>
+		<mention>
+			<sent>14</sent>
+			<startIndex>13</startIndex>
+			<endIndex>14</endIndex>
+			<text>they</text>
+		</mention>
+		<mention>
+			<sent>14</sent>
+			<startIndex>17</startIndex>
+			<endIndex>18</endIndex>
+			<text>their</text>
+		</mention>
+		<mention>
+			<sent>14</sent>
+			<startIndex>26</startIndex>
+			<endIndex>27</endIndex>
+			<text>they</text>
+		</mention>
+		<mention>
+			<sent>17</sent>
+			<startIndex>10</startIndex>
+			<endIndex>11</endIndex>
+			<text>them</text>
+		</mention>
+		<mention>
+			<sent>17</sent>
+			<startIndex>18</startIndex>
+			<endIndex>19</endIndex>
+			<text>you</text>
+		</mention>
+		<mention>
+			<sent>18</sent>
+			<startIndex>0</startIndex>
+			<endIndex>1</endIndex>
+			<text>You</text>
+		</mention>
+		<mention>
+			<sent>22</sent>
+			<startIndex>0</startIndex>
+			<endIndex>2</endIndex>
+			<text>The boys</text>
+		</mention>
+	</entity>
+</document>
