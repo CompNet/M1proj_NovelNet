@@ -58,17 +58,17 @@ public class Menu {
 			
 			if (!"***".equals(str))
 			{
-			
+				boolean graphe = false;
 				List<String> list = new ArrayList<String>(Arrays.asList(str.split(",")));
 				
 				if (list.contains("tokenize"))
 					annotatorList[0]= "tokenize";
 				
 				if (list.contains("ssplit"))
-					{
-						annotatorList[0]= "tokenize";
-						annotatorList[1]= "ssplit";
-					}
+				{
+					annotatorList[0]= "tokenize";
+					annotatorList[1]= "ssplit";
+				}
 				
 				if (list.contains("pos"))
 				{
@@ -119,6 +119,7 @@ public class Menu {
 					annotatorList[5]= "parse";
 					annotatorList[6]= "depparse";
 					annotatorList[7]= "coref";
+					graphe = true;
 				}
 				
 				if (list.contains("relation"))
@@ -143,6 +144,7 @@ public class Menu {
 					annotatorList[6]= "depparse";
 					annotatorList[7]= "coref";
 					annotatorList[9]= "quote";
+					graphe = true;
 				}
 				
 				System.out.println("saisir chemin du fichier à traiter:");
@@ -150,8 +152,7 @@ public class Menu {
 				String prop="";
 				for (int i=0; i<10; i++)
 				{
-					if (!annotatorList[i].equals(""))
-						prop+=annotatorList[i]+",";
+					if (!annotatorList[i].equals("")) prop+=annotatorList[i]+",";
 				}
 				prop = prop.substring(0, prop.length()-1);
 				
@@ -177,16 +178,18 @@ public class Menu {
 			    pipeline.prettyPrint(annotation, out );
 			   // pipeline.prettyPrint(annotation, xmlOut);
 				sc.close();
+				if (graphe){
+					Graph graph = new Graph();
+					graph.setName("graphTestSEQ2");
+					Windowing w = new Windowing(document,graph,true,"SENTENCE","SEQUENTIAL",10);
+					w.MainWork();
+					//w.testCorefByToken();
+					Mention m = new Mention(document,graph,true,true);
+					m.MainWork();
+					
+					graph.graphMLPrinter();
+				}
 				
-				Graph graph = new Graph();
-				graph.setName("graphTestSEQ2");
-				Windowing w = new Windowing(document,graph,true,"SENTENCE","SEQUENTIAL",10);
-				w.MainWork();
-				//w.testCorefByToken();
-				Mention m = new Mention(document,graph,true,true);
-				m.MainWork();
-				
-				graph.graphMLPrinter();
 				
 				//w.test2();
 			}else // option de génération automatique
