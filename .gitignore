@@ -2,3 +2,10 @@
 +/.classpath
 /.classpath
 /Archive.zip
+graphTestSEQ2.graphml
+output.txt
+.vscode/launch.json
+.vscode/settings.json
+resultats/bnw_page1.txt_output.txt
+output.txt
+resultats/*
