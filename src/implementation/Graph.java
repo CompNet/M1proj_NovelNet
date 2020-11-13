@@ -125,7 +125,7 @@ public class Graph {
 		buffer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		buffer.newLine();
 		buffer.write("<graphml>");
-		buffer.newLine();
+		//buffer.newLine();
 		//buffer.write("<graph edgedefault=\"undirected\">");
 		buffer.newLine();
 		buffer.write("<key id=\"keyNode\" for=\"node\" attr.name=\"characterName\" attr.type=\"string\">");
@@ -140,13 +140,9 @@ public class Graph {
 			break;
 		}
 		
-		if (this.oriented)
-		{
-			buffer.write("<graph id=\""+this.name+"\" edgedefault=\"directed\">");
-		}else
-		{
-			buffer.write("<graph id=\""+this.name+"\" edgedefault=\"undirected\">");
-		}
+		if (this.oriented) buffer.write("<graph id=\""+this.name+"\" edgedefault=\"directed\">");
+		else buffer.write("<graph id=\""+this.name+"\" edgedefault=\"undirected\">");
+		
 		buffer.newLine();
 		
 		for (Node node : this.nodeMap.values())

@@ -166,33 +166,85 @@ public class Menu {
 				CoreDocument document = new CoreDocument(content);
 				pipeline.annotate(document);
 				 // OUTPUT
-			    PrintWriter out = new PrintWriter("output.txt");
-				///PrintWriter xmlOut = new PrintWriter("outpuc.xml");
-				 // create annotation object for output
-			    Annotation annotation = new Annotation(content);
-			
-			    // annotate the annotation
-			    pipeline.annotate(annotation);
-			    
-			    // print result on a file
-			    pipeline.prettyPrint(annotation, out );
-			   // pipeline.prettyPrint(annotation, xmlOut);
-				sc.close();
-				if (graphe){
-					Graph graph = new Graph();
-					graph.setName("graphTestSEQ2");
-					Windowing w = new Windowing(document,graph,true,"SENTENCE","SEQUENTIAL",10);
+			    if (!graphe ){
+					PrintWriter out = new PrintWriter("output.txt");
+				
+					///PrintWriter xmlOut = new PrintWriter("outpuc.xml");
+					// create annotation object for output
+					Annotation annotation = new Annotation(content);
+				
+					// annotate the annotation
+					pipeline.annotate(annotation);
+					
+					// print result on a file
+					pipeline.prettyPrint(annotation, out );
+				}
+				else{					
+					// OUTPUT
+				    PrintWriter out = new PrintWriter("resultats/"+path.substring(7)+"_output.txt");
+				    Annotation annotation = new Annotation(content);
+				    // annotate the annotation
+				    pipeline.annotate(annotation);
+				 	// print result on a file
+					pipeline.prettyPrint(annotation, out );
+					
+				    Graph graph = new Graph();
+					graph.setName("graph_sliding_1s_"+path.substring(7));
+					Windowing w = new Windowing(document,graph,true,"SENTENCE","SLIDING",1);
 					w.MainWork();
-					//w.testCorefByToken();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_sliding_2s_"+path.substring(7));
+					w = new Windowing(document,graph,true,"SENTENCE","SLIDING",2);
+					w.MainWork();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_sequential_1s_"+path.substring(7));
+					w = new Windowing(document,graph,true,"SENTENCE","SEQUENTIAL",1);
+					w.MainWork();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_sequential_2s_"+path.substring(7));
+					w = new Windowing(document,graph,true,"SENTENCE","SEQUENTIAL",2);
+					w.MainWork();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_sliding_1s_"+path.substring(7));
+					w = new Windowing(document,graph,true,"WORD","SLIDING",10);
+					w.MainWork();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_sliding_2s_"+path.substring(7));
+					w = new Windowing(document,graph,true,"WORD","SLIDING",50);
+					w.MainWork();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_sequential_1s_"+path.substring(7));
+					w = new Windowing(document,graph,true,"WORD","SEQUENTIAL",10);
+					w.MainWork();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_sequential_2s_"+path.substring(7));
+					w = new Windowing(document,graph,true,"WORD","SEQUENTIAL",50);
+					w.MainWork();
+					graph.graphMLPrinter("resultats");
+					
+					graph = new Graph();
+					graph.setName("graph_mention_"+path.substring(7));
 					Mention m = new Mention(document,graph,true,true);
 					m.MainWork();
-					
-					graph.graphMLPrinter();
+					graph.graphMLPrinter("resultats");
 				}
+				sc.close();
 				
-				
-				//w.test2();
-			}else // option de génération automatique
+			}else // option de génération automatique à partir du corpus.
 			{
 				System.out.println("Start Auto gen . . .");
 				
@@ -204,7 +256,7 @@ public class Menu {
 				fileList.add("corpus/bnw_page1.txt");
 				fileList.add("corpus/bnw_page112.txt");
 				fileList.add("corpus/Coraline.txt");
-				//fileList.add("corpus/Coraline2.txt");
+				fileList.add("corpus/Coraline2.txt");
 				fileList.add("corpus/dadoes_page18.txt");
 				fileList.add("corpus/dadoes_page213.txt");
 				fileList.add("corpus/dadoes_page82.txt");

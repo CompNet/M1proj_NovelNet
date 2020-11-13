@@ -20,44 +20,44 @@ import edu.stanford.nlp.pipeline.CoreSentence;
  */
 public class Windowing implements RelationshipExtractionMethod {
 	
-	 CoreDocument document;
-	 boolean ponderation;
-	 int windowSize;
-	 Graph graph;
-	 /*
-	  *  characters
-	  *  word
-	  *  sentence
-	  */
-	 String optionSize;
-	 /*
-	  * SEQUENTIAL
-	  * SLIDING
-	  */
-	 String type;
+	CoreDocument document;
+	boolean ponderation;
+	int windowSize;
+	Graph graph;
+	/*
+	*  characters
+	*  word
+	*  sentence
+	*/
+	String optionSize;
+	/*
+	* SEQUENTIAL
+	* SLIDING
+	*/
+	String type;
 	 
-	 public Windowing()
-	 {
+	public Windowing()
+	{
 		 
-	 }
-	 /**
-	  * 
-	  * @param document
-	  * @param graph
-	  * @param ponderation
-	  * @param optionSize
-	  * @param type
-	  * @param windowSize
-	  */
-	 public Windowing(CoreDocument document,Graph graph, boolean ponderation, String optionSize,String type, int windowSize)
-	 {
-		 this.document = document;
-		 this.ponderation = ponderation;
-		 this.windowSize = windowSize;
-		 this.optionSize = optionSize;
-		 this.type = type;
-		 this.graph = graph;
-	 }
+	}
+	/**
+	* 
+	* @param document
+	* @param graph
+	* @param ponderation
+	* @param optionSize
+	* @param type
+	* @param windowSize
+	*/
+	public Windowing(CoreDocument document,Graph graph, boolean ponderation, String optionSize,String type, int windowSize)
+	{
+		this.document = document;
+		this.ponderation = ponderation;
+		this.windowSize = windowSize;
+		this.optionSize = optionSize;
+		this.type = type;
+		this.graph = graph;
+	}
 
 	/* (non-Javadoc)
 	 * @see implementation.RelationshipExtractionMethod#MainWork()
@@ -66,16 +66,14 @@ public class Windowing implements RelationshipExtractionMethod {
 	public void MainWork() {
 		System.out.println("MAIN WORK");
 
-		if ("SENTENCE".equals(optionSize))
-		{
+		if ("SENTENCE".equals(optionSize)){
 			System.out.println("SENTENCE !");
 			corefSent();
 		}
-		if ("WORD".equals(optionSize))
-			{
+		if ("WORD".equals(optionSize)){
 			System.out.println("WORD ! ");
-				corefWord();
-			}
+			corefWord();
+		}
 		
 		
 		System.out.println("GRAPH :");
@@ -90,8 +88,7 @@ public class Windowing implements RelationshipExtractionMethod {
 	 * 
 	 * @author Schmidt Gaëtan
 	 */
-	private void corefSent()
-	{
+	private void corefSent(){
 		List<CoreSentence> sentences = document.sentences();
 		Map<String,Node> charMap = new HashMap<String, Node>();		
 		List<Edge> linkList = new ArrayList<Edge>();
@@ -103,13 +100,12 @@ public class Windowing implements RelationshipExtractionMethod {
 			for (int j=i; j<i+this.windowSize; j++)
 			{
 				// débordement de fenetre à la fin.
-				if (j>=sentences.size())
-					continue;
+				if (j>=sentences.size()) continue;
 				
 				// Pour tous les token de la phrase
 				for (CoreLabel token : sentences.get(j).tokens())
 				{
-					// Si s'est une personne
+					// Si c'est une personne
 					if (token.ner().equals("PERSON"))
 					{
 						CorefChain corefEntity = impUtils.corefByToken(document.corefChains(),token);
@@ -121,7 +117,7 @@ public class Windowing implements RelationshipExtractionMethod {
 							charMap.put(n.id, n);
 						}else // sinon,
 						{
-							// on récupère une mention valide de la chaine (prévien de certaines erreurs possible de coref
+							// on récupère une mention valide de la chaine (prévient de certaines erreurs possible de coref)
 							CorefMention mentionV = impUtils.valideRepresentativeMention(corefEntity,document);
 							
 							// on vérifie s'il éxiste pour augmenter le poid de l'objet éxistant
@@ -140,8 +136,8 @@ public class Windowing implements RelationshipExtractionMethod {
 							
 						}
 						
-					}else if (token.ner().equals("O"))// si ce n'est pas une entité nommé
-					{
+					}
+					else if (token.ner().equals("O")){	// si ce n'est pas une entité nommé
 						CorefChain corefEntity = impUtils.corefByToken(document.corefChains(),token);
 						// si il a une coréférence
 						if (corefEntity!=null)
@@ -165,18 +161,17 @@ public class Windowing implements RelationshipExtractionMethod {
 				}
 			}
 			//System.out.println("Phrase: "+i);
-		//	System.out.println(sentences.get(i).text());
-		//	System.out.println("--------------");
+			//	System.out.println(sentences.get(i).text());
+			//	System.out.println("--------------");
 			
-	//		System.out.println(charMap.toString());
+			//		System.out.println(charMap.toString());
 			
-			// une fois les noeuds de la fenêtre ajouté, on crée les arcs entres eux.
+			// une fois les noeuds de la fenêtre ajoutés, on crée les arcs entres eux.
 			for (Node nodeL : charMap.values())
 			{
 				for (Node nodeR : charMap.values())
 				{
-					if (nodeL.equals(nodeR))
-						continue;
+					if (nodeL.equals(nodeR)) continue;
 					Edge edge = new Edge(nodeL.id,nodeL,nodeR,false,nodeL.weight+nodeR.weight);
 					if (!linkList.contains(edge)&&!containInverseLink(linkList,edge))
 					{
@@ -191,11 +186,11 @@ public class Windowing implements RelationshipExtractionMethod {
 			
 			// on ajoute les arcs.
 			for (Edge e : linkList)
-				{
-					//System.out.println("EDGE:");
-					this.graph.addEdgeWithPonderation(e);
-					//System.out.println(this.graph.edgeMap.toString());
-				}
+			{
+				//System.out.println("EDGE:");
+				this.graph.addEdgeWithPonderation(e);
+				//System.out.println(this.graph.edgeMap.toString());
+			}
 			
 			//System.out.println("EDGE:");
 			//System.out.println(linkList.toString());
@@ -204,16 +199,11 @@ public class Windowing implements RelationshipExtractionMethod {
 			charMap.clear();
 			linkList.clear();
 		
-	//	System.out.println("COREFCHAINS:");
-	//	System.out.println((document.corefChains().toString()));
+			//	System.out.println("COREFCHAINS:");
+			//	System.out.println((document.corefChains().toString()));
 		
-			if ("SEQUENTIAL".equals(this.optionSize))
-			{
-				i+=this.windowSize;
-			}else
-			{
-				i++;
-			}
+			if ("SEQUENTIAL".equals(this.optionSize)) i+=this.windowSize;
+			else i++;
 		}while (i<sentences.size());
 		//System.out.println("--------------------------------*********//////////////");
 		//System.out.println(this.graph.edgeMap.toString());
