@@ -15,28 +15,31 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
 
 /**
- * @author Schmidt Gaëtan
+ * @author Quay Baptiste, Lemaire Tewis
  *
  */
-public class Windowing implements RelationshipExtractionMethod {
+public class WindowingCooccurence implements RelationshipExtractionMethod {
 	
 	CoreDocument document;
 	boolean ponderation;
 	int windowSize;
+	int coveringSize;
 	Graph graph;
+
 	/*
 	*  characters
 	*  word
 	*  sentence
 	*/
 	String optionSize;
+
 	/*
 	* SEQUENTIAL
 	* SLIDING
 	*/
 	String type;
 	 
-	public Windowing()
+	public WindowingCooccurence()
 	{
 		 
 	}
@@ -48,32 +51,32 @@ public class Windowing implements RelationshipExtractionMethod {
 	* @param optionSize
 	* @param type
 	* @param windowSize
+	* @param coveringSize
 	*/
-	public Windowing(CoreDocument document,Graph graph, boolean ponderation, String optionSize,String type, int windowSize)
+	public WindowingCooccurence(CoreDocument document,Graph graph, boolean ponderation, String optionSize, String type, int windowSize, int coveringSize)
 	{
 		this.document = document;
 		this.ponderation = ponderation;
 		this.windowSize = windowSize;
+		this.coveringSize = coveringSize;
 		this.optionSize = optionSize;
 		this.type = type;
 		this.graph = graph;
 	}
 
-	/* (non-Javadoc)
-	 * @see implementation.RelationshipExtractionMethod#MainWork()
-	 */
 	@Override
-	public void MainWork() {
+	public void mainWork() {
+		System.out.println(" ");
 		System.out.println("MAIN WORK");
 
 		if ("SENTENCE".equals(optionSize)){
 			System.out.println("SENTENCE !");
 			corefSent();
-		}
-		if ("WORD".equals(optionSize)){
-			System.out.println("WORD ! ");
-			corefWord();
-		}
+		}/*
+		if ("PARAGRAPH".equals(optionSize)){
+			System.out.println("PARAGRAPH ! ");
+			corefParagraph();
+		}*/
 		
 		
 		System.out.println("GRAPH :");
@@ -86,7 +89,7 @@ public class Windowing implements RelationshipExtractionMethod {
 	/**
 	 * fenetrage (echelle: phrase) avec ponderation selon option.
 	 * 
-	 * @author Schmidt Gaëtan
+	 * @author Quay Baptiste, Lemaire Tewis
 	 */
 	private void corefSent(){
 		List<CoreSentence> sentences = document.sentences();

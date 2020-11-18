@@ -8,5 +8,5 @@ package implementation;
  *
  */
 public interface RelationshipExtractionMethod {
-	public void MainWork();
+	public void mainWork();
 }

@@ -125,8 +125,6 @@ public class Graph {
 		buffer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		buffer.newLine();
 		buffer.write("<graphml>");
-		//buffer.newLine();
-		//buffer.write("<graph edgedefault=\"undirected\">");
 		buffer.newLine();
 		buffer.write("<key id=\"keyNode\" for=\"node\" attr.name=\"characterName\" attr.type=\"string\">");
 		buffer.newLine();
@@ -179,24 +177,16 @@ public class Graph {
 	public String toString()
 	{
 		String ret="Graph name: "+this.name+"\n";
-		//*
+
 		for (Node node : this.nodeMap.values())
 		{
 			ret+="Node ID = "+node.id+" Name = "+node.name+"\n";
 		}
 		
-		
 		for (Edge edge : this.edgeMap.values())
 		{
 			ret+="Edge ID = "+edge.id+" Ponderation = "+edge.ponderation+" NodeLeft = "+edge.nodeLeft.name+" NodeRight = "+edge.nodeRight.name+"\n";
-		}
-		//*/
-		
-		//ret+=this.nodeMap.toString()+"\n";
-		//ret+=this.edgeMap.toString()+"\n";
-		
-		
-		
+		}	
 		
 		return ret;
 	}

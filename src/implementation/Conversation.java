@@ -13,7 +13,7 @@ public class Conversation implements RelationshipExtractionMethod {
 	 * @see implementation.RelationshipExtractionMethod#MainWork()
 	 */
 	@Override
-	public void MainWork() {
+	public void mainWork() {
 		// TODO Auto-generated method stub
 
 	}
