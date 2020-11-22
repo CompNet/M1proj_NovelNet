@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -42,12 +41,11 @@ public class Menu {
 
 			annotatorList[0]= "tokenize";
 			annotatorList[1]= "ssplit";
-			/*annotatorList[2]= "pos";
+			annotatorList[2]= "pos";
 			annotatorList[3]= "lemma";
 			annotatorList[4]= "ner";
 			annotatorList[5]= "parse";
-			annotatorList[6]= "depparse";
-			annotatorList[7]= "coref";*/
+			annotatorList[7]= "coref";
 			
 			
 			System.out.println("saisir chemin du fichier à traiter:");
