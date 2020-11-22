@@ -43,9 +43,9 @@ public class Menu {
 			annotatorList[1]= "ssplit";
 			annotatorList[2]= "pos";
 			annotatorList[3]= "lemma";
-			annotatorList[4]= "ner";
-			annotatorList[5]= "parse";
-			annotatorList[7]= "coref";
+			//annotatorList[4]= "ner";
+			/*annotatorList[5]= "parse";
+			annotatorList[7]= "coref";*/
 			
 			
 			System.out.println("saisir chemin du fichier à traiter:");
@@ -61,7 +61,7 @@ public class Menu {
 			
 			Properties props = new Properties();
 			props.setProperty("annotators",prop);
-			props.setProperty("ssplit.newlineIsSentenceBreak", "always");
+			props.put("ssplit.newlineIsSentenceBreak", "always");
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			FileInputStream is = new FileInputStream(path);
 			String content = IOUtils.toString(is, "UTF-8");
@@ -112,6 +112,7 @@ public class Menu {
 	
 			sc.close();
 		}
+
 
 	}
 
