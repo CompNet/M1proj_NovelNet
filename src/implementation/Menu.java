@@ -4,8 +4,10 @@
 package implementation;
 
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -63,7 +65,7 @@ public class Menu {
 			props.setProperty("annotators",prop);
 			props.setProperty("ssplit.newlineIsSentenceBreak", "always");
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-			FileInputStream is = new FileInputStream(path);     
+			FileInputStream is = new FileInputStream(path);
 			String content = IOUtils.toString(is, "UTF-8");
 			
 			CoreDocument document = new CoreDocument(content);
@@ -80,7 +82,10 @@ public class Menu {
 			CreateBook bookCreator = new CreateBook();
 			bookCreator.createBook(document);
 			Book book = bookCreator.getBook();
-			book.display();
+
+			FileWriter fileWriter = new FileWriter("resultats/"+path.substring(7)+"_bookClass.txt");
+			book.printToFile(fileWriter);
+			fileWriter.close();
 
 			/*
 			Graph graph = new Graph();

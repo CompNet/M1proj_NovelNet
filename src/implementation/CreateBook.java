@@ -2,7 +2,6 @@ package implementation;
 
 import java.util.List;
 
-import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
 
@@ -20,29 +19,45 @@ public class CreateBook {
 
     void createBook(CoreDocument document){
         List<CoreSentence> sentences = document.sentences();
-        CoreLabel last = null;
-        CoreLabel first = null;
+        int previousLineSkip;
+        int nextLineSkip;
+        boolean titleDetection = true;
+
         this.book = new Book();
         Chapter currentChapter = new Chapter();
+        book.addChapter(currentChapter);
+
         Paragraph currentParagraph = new Paragraph();
         
-		for (CoreSentence sentence : sentences)
+        currentChapter.addTitle(sentences.get(0));
+
+        for (int i = 1; i < sentences.size()-1; i++)
 		{
-            List <CoreLabel> mots = sentence.tokens();
-			if(last != null){
-                first = mots.get(0);
-                if (first.beginPosition() - last.endPosition() >= 4){
-                    currentParagraph = new Paragraph();
-                    if (first.beginPosition() - last.endPosition() > 4){
-                        currentChapter = new Chapter();
-                        book.addChapter(currentChapter);
-                    }
-                    currentChapter.addParagraph(currentParagraph);
-                } 
-                currentParagraph.addSentence(sentence);
+            previousLineSkip = sentences.get(i).tokens().get(0).beginPosition() - sentences.get(i-1).tokens().get(sentences.get(i-1).tokens().size()-1).endPosition();
+            nextLineSkip = sentences.get(i+1).tokens().get(0).beginPosition() - sentences.get(i).tokens().get(sentences.get(i).tokens().size()-1).endPosition();
+            if (previousLineSkip > 4 && nextLineSkip > 4){
+                if(titleDetection){
+                    currentChapter.addTitle(sentences.get(i));
+                }
+                else {
+                    currentChapter = new Chapter();
+                    book.addChapter(currentChapter);
+                    titleDetection = true;
+                    currentChapter.addTitle(sentences.get(i));
+                }                
             }
-            last = mots.get(mots.size()-1);
-	    }
-		
+            else if(previousLineSkip >= 4 && nextLineSkip <= 4){
+                if (titleDetection) titleDetection = false;
+                currentParagraph = new Paragraph();
+                currentChapter.addParagraph(currentParagraph);
+                currentParagraph.addSentence(sentences.get(i));
+            }
+            else{
+                currentParagraph.addSentence(sentences.get(i));
+            }
+
+        }
+        currentParagraph.addSentence(sentences.get(sentences.size()-1));
     }
+
 }

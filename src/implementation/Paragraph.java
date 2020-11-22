@@ -1,5 +1,7 @@
 package implementation;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import edu.stanford.nlp.pipeline.CoreSentence;
@@ -20,10 +22,15 @@ public class Paragraph {
     }
 
     void display(){
-        System.out.println("new paragraph");
         for (CoreSentence sentence : this.sentences){
             System.out.println(sentence.text());
         }
         
+    }
+
+    void printToFile(FileWriter fileWriter) throws IOException {
+        for (CoreSentence sentence : this.sentences){
+            fileWriter.write(sentence.text()+ " ");
+        }
     }
 }
