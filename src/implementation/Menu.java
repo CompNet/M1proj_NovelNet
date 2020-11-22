@@ -30,6 +30,7 @@ public class Menu {
 	public static void main(String[] args) throws IOException {
 		if (args.length == 0)
 		{
+			
 			String[] annotatorList = new  String[10];
 			for (int i=0;i<10;i++)
 			{
@@ -76,29 +77,33 @@ public class Menu {
 			// print result on a file
 			pipeline.prettyPrint(annotation, out );
 
+			CreateBook bookCreator = new CreateBook();
+			bookCreator.createBook(document);
+			Book book = bookCreator.getBook();
+			book.display();
 
 			/*
 			Graph graph = new Graph();
 			graph.setName("graph_sliding_1s_"+path.substring(7));
-			WindowingCooccurence w = new WindowingCooccurence(document,graph,true,"SENTENCE","SLIDING",1, 0);
+			WindowingCooccurence w = new WindowingCooccurence(document,graph,true,"SENTENCE", false,1, 0);
 			w.mainWork();
 			graph.graphMLPrinter("resultats");
 				
 			graph = new Graph();
 			graph.setName("graph_sliding_2s_"+path.substring(7));
-			w = new WindowingCooccurence(document,graph,true,"SENTENCE","SLIDING",2, 1);
+			w = new WindowingCooccurence(document,graph,true,"SENTENCE", false,2, 1);
 			w.mainWork();
 			graph.graphMLPrinter("resultats");
 			
 			graph = new Graph();
 			graph.setName("graph_sequential_1s_"+path.substring(7));
-			w = new WindowingCooccurence(document,graph,true,"SENTENCE","SEQUENTIAL",1,0);
+			w = new WindowingCooccurence(document,graph,true,"SENTENCE", true,1,0);
 			w.mainWork();
 			graph.graphMLPrinter("resultats");
 				
 			graph = new Graph();
 			graph.setName("graph_sequential_2s_"+path.substring(7));
-			w = new WindowingCooccurence(document,graph,true,"SENTENCE","SEQUENTIAL",2,1);
+			w = new WindowingCooccurence(document,graph,true,"SENTENCE", true,2,1);
 			w.mainWork();
 			graph.graphMLPrinter("resultats");*/
 	
