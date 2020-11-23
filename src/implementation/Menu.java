@@ -32,40 +32,23 @@ public class Menu {
 		if (args.length == 0)
 		{
 			
-			String[] annotatorList = new  String[10];
-			for (int i=0;i<10;i++)
-			{
-				annotatorList[i] = "";
-			}
 			Scanner sc = new Scanner(System.in);
-
-			annotatorList[0]= "tokenize";
-			annotatorList[1]= "ssplit";
-			annotatorList[2]= "pos";
-			annotatorList[3]= "lemma";
-			//annotatorList[4]= "ner";
-			/*annotatorList[5]= "parse";
-			annotatorList[7]= "coref";*/
-			
-			
 			System.out.println("saisir chemin du fichier à traiter:");
 			String path = sc.nextLine();
-			String prop="";
-			for (int i=0; i<10; i++)
-			{
-				if (!annotatorList[i].equals("")) prop+=annotatorList[i]+",";
-			}
-			prop = prop.substring(0, prop.length()-1);
-			
-			System.out.println("les annotateurs séléctionés sont: "+prop);
-			
-			Properties props = new Properties();
-			props.setProperty("annotators",prop);
-			props.put("ssplit.newlineIsSentenceBreak", "always");
-			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
 			FileInputStream is = new FileInputStream(path);
 			String content = IOUtils.toString(is, "UTF-8");
 			
+			String prop="tokenize,ssplit,pos,lemma,ner,parse,depparse,coref";
+			//String prop="tokenize,ssplit,pos,lemma";
+			System.out.println("les annotateurs séléctionés sont: "+prop);
+
+			Properties props = new Properties();
+			props.setProperty("annotators",prop);
+			/*props.put("tokenizer.keepeol", "true");
+			props.put("ssplit.newlineIsSentenceBreak", "always");*/
+
+			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
 			pipeline.annotate(document);
 						
