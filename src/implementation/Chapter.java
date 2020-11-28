@@ -35,7 +35,7 @@ public class Chapter {
     void display(int i){
         System.out.println("Chapter " + i + " : ");
         for (CoreSentence sentence : this.titles){
-            System.out.print(sentence.text() + ", ");
+            System.out.print(sentence.text());
         }
         System.out.println(" ");
         int cpt = 1;
@@ -51,7 +51,7 @@ public class Chapter {
     void printToFile(FileWriter fileWriter, int i) throws IOException {
         fileWriter.write("Chapter " + i + " : ");
         for (CoreSentence sentence : this.titles){
-            fileWriter.write(sentence.text() + ", ");
+            fileWriter.write(sentence.text());
         }
         int cpt = 1;
         for (Paragraph paragraph : this.paragraphs) {

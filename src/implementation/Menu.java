@@ -38,15 +38,16 @@ public class Menu {
 
 			FileInputStream is = new FileInputStream(path);
 			String content = IOUtils.toString(is, "UTF-8");
+
+			TextNormalization adapt = new TextNormalization(content);
+			adapt.addDotEndOfLine();
+			content = adapt.getText();
 			
 			String prop="tokenize,ssplit,pos,lemma,ner,parse,depparse,coref";
-			//String prop="tokenize,ssplit,pos,lemma";
 			System.out.println("les annotateurs séléctionés sont: "+prop);
 
 			Properties props = new Properties();
 			props.setProperty("annotators",prop);
-			/*props.put("tokenizer.keepeol", "true");
-			props.put("ssplit.newlineIsSentenceBreak", "always");*/
 
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
@@ -68,7 +69,6 @@ public class Menu {
 			book.printToFile(fileWriter);
 			fileWriter.close();
 
-			/*
 			Graph graph = new Graph();
 			graph.setName("graph_sliding_1s_"+path.substring(7));
 			WindowingCooccurence w = new WindowingCooccurence(document,graph,true,"SENTENCE", false,1, 0);
@@ -91,7 +91,7 @@ public class Menu {
 			graph.setName("graph_sequential_2s_"+path.substring(7));
 			w = new WindowingCooccurence(document,graph,true,"SENTENCE", true,2,1);
 			w.mainWork();
-			graph.graphMLPrinter("resultats");*/
+			graph.graphMLPrinter("resultats");
 	
 			sc.close();
 		}
