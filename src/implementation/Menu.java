@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ import org.apache.commons.io.IOUtils;
 
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 /**
@@ -26,8 +28,7 @@ public class Menu {
 	 * @param args
 	 * @author Quay Baptiste, Lemaire Tewis
 	 * @throws IOException 
-	 */
-	
+	*/
 	public static void main(String[] args) throws IOException {
 		if (args.length == 0)
 		{
@@ -42,8 +43,9 @@ public class Menu {
 			TextNormalization adapt = new TextNormalization(content);
 			adapt.addDotEndOfLine();
 			content = adapt.getText();
-			
-			String prop="tokenize,ssplit,pos,lemma,ner,parse,depparse,coref";
+
+			String prop="tokenize,ssplit";
+			//String prop="tokenize,ssplit,pos,lemma,ner,parse,depparse,coref";
 			System.out.println("les annotateurs séléctionés sont: "+prop);
 
 			Properties props = new Properties();
@@ -54,22 +56,24 @@ public class Menu {
 			pipeline.annotate(document);
 						
 			// OUTPUT
-			PrintWriter out = new PrintWriter("resultats/"+path.substring(7)+"_output.txt");
+			
 			Annotation annotation = new Annotation(content);
 			// annotate the annotation
 			pipeline.annotate(annotation);
-			// print result on a file
+			// print result in a file
+			PrintWriter out = new PrintWriter("resultats/"+path.substring(7)+"_output.txt");
 			pipeline.prettyPrint(annotation, out );
 
 			CreateBook bookCreator = new CreateBook();
 			bookCreator.createBook(document);
 			Book book = bookCreator.getBook();
 
-			FileWriter fileWriter = new FileWriter("resultats/"+path.substring(7)+"_bookClass.txt");
+			// print book object in a file
+			FileWriter fileWriter = new FileWriter("resultats/"+path.substring(7, path.length()-4)+"_bookClass.txt");
 			book.printToFile(fileWriter);
 			fileWriter.close();
 
-			Graph graph = new Graph();
+			/*Graph graph = new Graph();
 			graph.setName("graph_sliding_1s_"+path.substring(7));
 			WindowingCooccurence w = new WindowingCooccurence(document,graph,true,"SENTENCE", false,1, 0);
 			w.mainWork();
@@ -91,8 +95,8 @@ public class Menu {
 			graph.setName("graph_sequential_2s_"+path.substring(7));
 			w = new WindowingCooccurence(document,graph,true,"SENTENCE", true,2,1);
 			w.mainWork();
-			graph.graphMLPrinter("resultats");
-	
+			graph.graphMLPrinter("resultats");*/
+
 			sc.close();
 		}
 

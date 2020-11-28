@@ -7,26 +7,43 @@ import edu.stanford.nlp.pipeline.CoreSentence;
 
 
 /**
+ * Used to Create a book object from a Stanford core nlp CoreDocument
+ * 
  * @author Quay Baptiste, Lemaire Tewis
- *
- */
+*/
 public class CreateBook {
     
-    protected Book book;
+    protected Book book;    //store the book to create
 
+    /**
+     * Constructor 
+    */
     CreateBook(){
         this.book = new Book();
     }
 
+    /**
+     * Getter
+     *
+     * @return the Book object created
+    */
     Book getBook(){
         return book;
     }
 
+    /**
+     * create the book from a CoreDocument
+     * 
+     * @param document Stanford core nlp CoreDocument representing a book
+    */
     void createBook(CoreDocument document){
-        List<CoreSentence> sentences = document.sentences();
-        int previousLineSkip;
-        int nextLineSkip;
-        boolean titleDetection = true;  //On considère que dès le début on cherche un titre.
+        List<CoreSentence> sentences = document.sentences();    //list of the sentences in the document
+        int previousLineSkip;   //used to store the difference between the last token of the previous sentence and 
+                                //the first token of the current sentence
+        int nextLineSkip;       //used to store the difference between the last token of the current sentence and 
+                                //the first token of the next sentence
+
+        boolean titleDetection = true;  //title detection is on by default at the beginning of the document
 
         this.book = new Book();
         Chapter currentChapter = new Chapter();
@@ -34,44 +51,45 @@ public class CreateBook {
 
         Paragraph currentParagraph = new Paragraph();
         
-        currentChapter.addTitle(sentences.get(0)); //On considère que la première ligne du livre sera toujours un titre
+        currentChapter.addTitle(sentences.get(0)); //the first sentence is considerated as a title
 
+        //for each sentence in the document exept the last one
         for (int i = 1; i < sentences.size()-1; i++)
 		{
-            //Différence entre le dernier token de la sentence précédente et le premier token de la sentence actuelle
+            //difference between the last token of the previous sentence and the first token of the current sentence
             previousLineSkip = sentences.get(i).tokens().get(0).beginPosition() - sentences.get(i-1).tokens().get(sentences.get(i-1).tokens().size()-1).endPosition();
 
-            //Différence entre le dernier token de la sentence actuelle et le premier token de la sentence suivante
+            //difference between the last token of the current sentence and the first token of the next sentence
             nextLineSkip = sentences.get(i+1).tokens().get(0).beginPosition() - sentences.get(i).tokens().get(sentences.get(i).tokens().size()-1).endPosition();
 
-            //Si les différences sont suppérieures à 4 la sentence fait partie du titre d'un chapitre
+            //if there is more than 2 EOL characters the sentence is a chapter title (EOL char are considered as 2 char)
             if (previousLineSkip > 4 && nextLineSkip > 4){
                 if(titleDetection){
-                    //Si la détection du titre est en cours on ajoute la sentence au titre du chapitre
+                    //if the title detection was ON we just add the sentence to the title
                     currentChapter.addTitle(sentences.get(i));
                 }
                 else {
-                    //Sinon :
-                    titleDetection = true;                      // on passe la détection à true,
-                    currentChapter = new Chapter();             // on crée un nouveau chapitre, 
-                    book.addChapter(currentChapter);            // on ajoute le chapitre au livre, 
-                    currentChapter.addTitle(sentences.get(i));  // on ajoute la sentence au titre.
+                    //else :
+                    titleDetection = true;                      // put the title detection to ON
+                    currentChapter = new Chapter();             // create a new chapter 
+                    book.addChapter(currentChapter);            // add the current chapter to the book 
+                    currentChapter.addTitle(sentences.get(i));  // add the current sentence to the title of the chapter
                 }                
             }
-            //Sinon si la différence précédente est suppérieure à 4 (signale la fin d'un titre d'un chapitre), égale à 4 (signale un changement de paragraphe).
+            //Else if the previous line was a title (more than 2 EOL char) or there is a paragraph change (exactly 2 EOL char)
             else if(previousLineSkip >= 4){
-                if (titleDetection) titleDetection = false;     //Si la détection de titre était activée on la désactive.
-                currentParagraph = new Paragraph();             //On crée un nouveau paragraphe,
-                currentChapter.addParagraph(currentParagraph);  //on ajoute le paragraph au chapitre,
-                currentParagraph.addSentence(sentences.get(i)); //on ajoute la sentence au paragraphe.
+                if (titleDetection) titleDetection = false;     //if the title detection is ON switch it OFF
+                currentParagraph = new Paragraph();             //create a new paragraph
+                currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
+                currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
             }
-            //Sinon on ajoute la sentence au paragraphe.
+            //else we add the sentence to the current paragraph
             else{
                 currentParagraph.addSentence(sentences.get(i));
             }
 
         }
-        currentParagraph.addSentence(sentences.get(sentences.size()-1)); //On considère que la dernière ligne du livre fera toujours partie du dernier paragraphe.
+        currentParagraph.addSentence(sentences.get(sentences.size()-1)); //last line is in the last paragraph
     }
 
 }

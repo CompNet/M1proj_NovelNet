@@ -14,7 +14,7 @@ import edu.stanford.nlp.pipeline.CoreSentence;
 /**
  * @author Quay Baptiste, Lemaire Tewis
  *
- */
+*/
 public class WindowingCooccurence implements RelationshipExtractionMethod {
 	
 	CoreDocument document;

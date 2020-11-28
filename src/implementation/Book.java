@@ -2,28 +2,44 @@ package implementation;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
+ * Represent a book as an object
+ * 
  * @author Quay Baptiste, Lemaire Tewis
- *
- */
+*/
 public class Book {
 
-    protected ArrayList<Chapter> chapters;
+    protected LinkedList<Chapter> chapters; //Chapters in the book
 
+    /**
+     * Constructor
+     * 
+    */
     Book() {
-        chapters = new ArrayList<Chapter>();
+        chapters = new LinkedList<>();
     }
 
+    /**
+     * add an empty chapter to the book
+    */
     void addVoidChapter() {
         chapters.add(new Chapter());
     }
 
+    /**
+     * add a chapter to the book
+     * 
+     * @param chapter chapter to add to the book
+    */
     void addChapter(Chapter chapter) {
         chapters.add(chapter);
     }
 
+    /**
+     * display the content in the console
+    */
     void display() {
         int cpt = 1;
 
@@ -34,6 +50,11 @@ public class Book {
         }
     }
 
+    /**
+     * write the content in a file
+     *  
+     * @param fileWriter object used to write in the file (it contains the file destination and name)
+    */
     void printToFile(FileWriter fileWriter) throws IOException {
         int cpt = 1;
         for (Chapter chapter : this.chapters) {
