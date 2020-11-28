@@ -38,7 +38,7 @@ public class WindowingDynamicGraph {
 		this.optionSize = optionSize;
 		this.sequential = sequential;
 		this.windowSize = windowSize;
-		if (coveringSize < windowSize) this.coveringSize = coveringSize;
+		if (coveringSize <= windowSize) this.coveringSize = coveringSize;
 		else {
 			System.out.println("covering size supperior or equal to window size. Putting the option back to Sequential");
 			sequential = true;
