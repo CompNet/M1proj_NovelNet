@@ -14,7 +14,6 @@ public class Conversation implements RelationshipExtractionMethod {
 	 */
 	@Override
 	public void mainWork() {
-		// TODO Auto-generated method stub
 
 	}
 

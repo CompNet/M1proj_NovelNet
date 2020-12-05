@@ -46,10 +46,10 @@ public class CreateBook {
         boolean titleDetection = true;  //title detection is on by default at the beginning of the document
 
         this.book = new Book();
-        Chapter currentChapter = new Chapter();
+        Chapter currentChapter = new Chapter(book);
         book.addChapter(currentChapter);
 
-        Paragraph currentParagraph = new Paragraph();
+        Paragraph currentParagraph = new Paragraph(currentChapter);
         
         currentChapter.addTitle(sentences.get(0)); //the first sentence is considerated as a title
 
@@ -71,7 +71,7 @@ public class CreateBook {
                 else {
                     //else :
                     titleDetection = true;                      // put the title detection to ON
-                    currentChapter = new Chapter();             // create a new chapter 
+                    currentChapter = new Chapter(book);             // create a new chapter 
                     book.addChapter(currentChapter);            // add the current chapter to the book 
                     currentChapter.addTitle(sentences.get(i));  // add the current sentence to the title of the chapter
                 }                
@@ -79,7 +79,7 @@ public class CreateBook {
             //Else if the previous line was a title (more than 2 EOL char) or there is a paragraph change (exactly 2 EOL char)
             else if(previousLineSkip >= 4){
                 if (titleDetection) titleDetection = false;     //if the title detection is ON switch it OFF
-                currentParagraph = new Paragraph();             //create a new paragraph
+                currentParagraph = new Paragraph(currentChapter);             //create a new paragraph
                 currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
                 currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
             }

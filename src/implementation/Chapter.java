@@ -16,12 +16,14 @@ public class Chapter {
 
     protected LinkedList<Paragraph> paragraphs; //paragraphs in the chapter
     protected LinkedList<CoreSentence> titles;  //if there is a title (and maybe a number) they should be here
+    protected Book book; //The book containing the chapter
 
     /**
      * Constructor
      * 
     */
-    Chapter(){
+    Chapter(Book book){
+        this.book = book;
         paragraphs = new LinkedList<>();
         titles = new LinkedList<>();
     }
@@ -39,7 +41,7 @@ public class Chapter {
      * add an empty paragraph to the chapter
     */
     void addVoidParagraph(){
-        paragraphs.add(new Paragraph());
+        paragraphs.add(new Paragraph(this));
     }
 
     /**

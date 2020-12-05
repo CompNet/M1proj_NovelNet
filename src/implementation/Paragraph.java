@@ -13,12 +13,14 @@ import edu.stanford.nlp.pipeline.CoreSentence;
  */
 public class Paragraph {
     protected LinkedList<CoreSentence> sentences;   //list of sentences in the paragraph
+    protected Chapter chapter; //Chapter containing the paragraph
 
     /**
      * Constructor
      * 
     */
-    Paragraph(){
+    Paragraph(Chapter chapter){
+        this.chapter = chapter;
         sentences = new LinkedList<>();
     }
 

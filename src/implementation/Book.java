@@ -25,7 +25,7 @@ public class Book {
      * add an empty chapter to the book
     */
     void addVoidChapter() {
-        chapters.add(new Chapter());
+        chapters.add(new Chapter(this));
     }
 
     /**
