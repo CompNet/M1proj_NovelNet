@@ -70,7 +70,7 @@ public class Graph {
 		return true;
 	}
 	
-	public void addEdgeWithPonderation(Edge edge)
+	public void addEdgeWithWeighting(Edge edge)
 	{
 		if (this.edgeMap.containsKey(edge.id))
 			{
