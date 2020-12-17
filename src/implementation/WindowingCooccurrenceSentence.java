@@ -3,13 +3,11 @@
  */
 package implementation;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 import edu.stanford.nlp.coref.data.CorefChain;
-import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
@@ -36,41 +34,64 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	 * 
 	 * @param content List of sentences from the text
 	 * @param graph New graph that we will fill in the function
+	 * @return 
 	 */
+	
 	@Override
-	public Tableau createGraph(CoreDocument document ,Graph graph) {
-		int distance = 0;
-		int distance1 = 0;
-		int distance2 = 0;
-		int i = 0;
+	public List<List<CoreLabel>> createWindow(CoreDocument document) {
+		List<CoreSentence> sentences = document.sentences();
+		List<CoreLabel> window = new LinkedList<>();
+		List<List<CoreLabel>> result = new LinkedList<>();
+		int cpt = 0;
+		for (int i=0; i<sentences.size(); i++){
+			List<CoreLabel> sentence = sentences.get(i).tokens();
+			for (CoreLabel token : sentence) {
+				window.add(token);
+			}
+			cpt++;
+			if (cpt == size){
+				result.add(window);
+				window = new LinkedList<>();
+				cpt = 0;
+				i -= covering;
+			}
+		}	
+		return result;
+	}
+	
+	@Override
+	public Tableau createTab(CoreDocument document) {
+		List<List<CoreLabel>> result = createWindow(document);
 		String charA = null;
 		String charB = null;
+		CorefChain tempA;
+		CorefChain tempB;
+		int distanceChar = 0;
+		int distanceMot = 0;
 		Tableau tab = new Tableau();
-		List<CoreSentence> sentences = document.sentences();
-		for (int j=0; j<sentences.size(); j++){
-			CoreSentence sentence = sentences.get(j);
-			for (CoreLabel token1 : sentence.tokens()){ // For each token
-				for (CoreLabel token2 : sentence.tokens()){ // For each token
-					if(token1.ner().equals("PERSON")){
-						if(token2.ner().equals("PERSON")){
-							charA =  token1.originalText();
-							distance1 = token1.beginPosition();
-							charB = token2.originalText(); 
-							distance2 = token2.beginPosition();
-							distance = distance1 - distance2;		
-							if (!charA.equals(charB)) {
-								if (distance < 0) continue;
-								tab.setTableau(charA, charB, distance, i);
-								distance1 = 0;
-								distance2 = 0;
-								i++;
+		Map<Integer, CorefChain> corefChains = document.corefChains(); //We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
+		for (List<CoreLabel> tokens : result){ // For each token list
+			for (CoreLabel tokenA : tokens){ // For each token
+				if(tokenA.ner().equals("PERSON")){
+					for (CoreLabel tokenB : tokens){ // For each token list
+						if(tokenB.ner().equals("PERSON")){
+							distanceChar = tokenA.beginPosition() - tokenB.beginPosition();	
+							distanceMot = tokens.indexOf(tokenA) - tokens.indexOf(tokenB);
+							if (!(tokenA.equals(tokenB)) && distanceChar > 0) {
+								tempA = ImpUtils.corefByToken(corefChains, tokenA);
+								tempB = ImpUtils.corefByToken(corefChains, tokenB);
+								if (tempA != null && tempB != null) {
+									charA = tempA.getRepresentativeMention().mentionSpan;
+									charB = tempB.getRepresentativeMention().mentionSpan;
+									if (!charA.equals(charB)) tab.addTab(charA, charB, distanceChar, distanceMot);
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-		tab.display(i);
+		tab.display();
 		return tab;
 	}
 	//corpus/Coraline2.txt

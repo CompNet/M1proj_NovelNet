@@ -76,9 +76,8 @@ public class Menu {
 			
 			Graph graph = new Graph();
 			graph.setName("graph_sliding_1s_"+path.substring(7));
-			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(true, 2, 1);
-			w.createGraph(document,graph);
-			graph.graphMLPrinter("resultats");
+			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(true, 4, 1);
+			w.createTab(document);
 				
 			/*graph = new Graph();
 			graph.setName("graph_sliding_2s_"+path.substring(7));

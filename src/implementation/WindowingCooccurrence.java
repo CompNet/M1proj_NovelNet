@@ -6,6 +6,7 @@ package implementation;
 
 import java.util.List;
 
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 
 /**
@@ -35,7 +36,7 @@ public class WindowingCooccurrence {
 		return null;
 	}
 	
-	protected Tableau createGraph(CoreDocument document,Graph graph) {
+	protected Tableau createTab(CoreDocument document) {
 		return null;
 	}
 	
@@ -54,5 +55,9 @@ public class WindowingCooccurrence {
 				return true; // Returns true if yes
 		}
 		return false; //Returns false if conditions are not met
+	}
+	
+	public List<List<CoreLabel>> createWindow(CoreDocument document) {
+		return null;
 	}
 }
