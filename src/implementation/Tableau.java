@@ -1,30 +1,34 @@
 package implementation;
 
-import java.util.Arrays;
-
-
+import java.util.LinkedList;
+import java.util.List;
 
 public class Tableau {
-	protected String characterA;
-	protected String characterB;
-	protected int distance;
-	protected int i;
-	protected Object [][] tab = new Object[1000][3];
+	protected List<String> listPersA;
+	protected List<String> listPersB;
+	protected List<Integer> listDistanceChar;
+	protected List<Integer> listDistanceMot;
+	
 	public Tableau() {
-		this.characterA = this.characterB = null;
-		this.distance = this.i = 0;
+		listPersA = new LinkedList<>();
+		listPersB = new LinkedList<>();
+		listDistanceChar = new LinkedList<>();
+		listDistanceMot = new LinkedList<>();
 	}
 	
-	public void setTableau(String characterA, String characterB, int distance, int i){
-		tab[i][0] = characterA;
-		tab[i][1] = characterB;
-		tab[i][2] = distance;
+	public void addTab(String charA, String charB, int distanceChar, int distanceMot){
+		listPersA.add(charA);
+		listPersB.add(charB);
+		listDistanceChar.add(distanceChar);
+		listDistanceMot.add(distanceMot);
 	}
 	
-	public void display(int i)
-	{
-		for(int i2 = 0; i2 < i; i2++){
-			System.out.println(Arrays.toString(tab[i2]));
-		}	                  
+	public void display(){
+		for (int i = 0; i < listPersA.size(); i++){
+			System.out.print("Personage A : "+listPersA.get(i));
+			System.out.print(" | Personage B : "+listPersB.get(i));     
+			System.out.print(" | Distance Caractères : "+listDistanceChar.get(i));     
+			System.out.println(" | Distance Mots : "+listDistanceMot.get(i));     
+		}
 	}
 }
