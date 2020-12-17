@@ -46,15 +46,6 @@ public class WindowingDynamicGraphChapter extends WindowingDynamicGraph {
 
         //for each chapter
         for(int i = 0; i<book.chapters.size(); i++){        
-            
-            //Window delimitation
-            if(cpt == size){    
-                result.add(list);   //add the temporary list to the result
-                list = new LinkedList<>();  //Override the temporary list
-                cpt = 0;    //reset counter
-                i -= covering;  //backtrack for the covering between windows
-            }
-
             c = book.chapters.get(i);   //current chapter
             //for each paragraph
             for (int j = 0; j < c.paragraphs.size(); j++){
@@ -65,6 +56,13 @@ public class WindowingDynamicGraphChapter extends WindowingDynamicGraph {
                 }
             }
             cpt++;  //increment the counter
+            //Window delimitation
+            if(cpt == size){    
+                result.add(list);   //add the temporary list to the result
+                list = new LinkedList<>();  //Override the temporary list
+                cpt = 0;    //reset counter
+                i -= covering;  //backtrack for the covering between windows
+            }
         }
         result.add(list);   //if the count is not perfect we add the rest to the result (for exemple size is 3 but there is only 2 chapters left)
         return result;
