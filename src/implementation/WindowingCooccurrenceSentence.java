@@ -60,9 +60,9 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	
 	
 	/**
-	 * Creates and returns a tab with a String Character A, a String Character B, an int Distance in characcter and an int Distance in words
+	 * Creates and returns a table with a String Character A, a String Character B, an int Distance in characters and an int Distance in words
 	 * 
-	 * @param A CoreDocument represents the text chosen by the user
+	 * @param document A CoreDocument represents the text chosen by the user
 	 * @return The full table after adding all the lines
 	 * 
 	 */

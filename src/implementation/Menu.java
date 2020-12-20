@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -15,7 +14,6 @@ import org.apache.commons.io.IOUtils;
 
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 /**

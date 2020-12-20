@@ -16,11 +16,11 @@ public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
 	/**
 	 * Constructor for the class WindowingCooccurrencesParagraph
 	 * 
-	 * @param weighting 
-	 * @param chapterLimitation
-	 * @param book
-	 * @param size Window's size
-	 * @param covering 
+	 * @param weighting Used to add weight to edges of the sociogram
+	 * @param chapterLimitation	if true the cooccurrence by paragraphs will stop on the end of a chapter
+	 * @param book used to create a border between chapters and paragraphs
+	 * @param size Window's size set by the user
+	 * @param covering Window's covering set by the user
 	 */
 	public WindowingCooccurrencesParagraph(boolean weighting, boolean chapterLimitation, Book book, int size, int covering){
 		super(weighting, size, covering);
@@ -66,7 +66,7 @@ public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
 	/**
 	 * Creates and returns a tab with a String Character A, a String Character B, an int Distance in characcter and an int Distance in words
 	 * 
-	 * @param A CoreDocument represents the text chosen by the user
+	 * @param document A CoreDocument represents the text chosen by the user
 	 * @return The full table after adding all the lines
 	 * 
 	 */
