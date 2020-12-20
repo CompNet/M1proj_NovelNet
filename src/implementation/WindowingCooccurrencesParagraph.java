@@ -1,34 +1,33 @@
-/**
- * 
- */
 package implementation;
+
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.coref.data.CorefChain;
+import edu.stanford.nlp.ling.CoreLabel;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.stanford.nlp.coref.data.CorefChain;
-import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.CoreSentence;
+public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
 
-/**
- * @author Quay Baptiste, Lemaire Tewis
- * 
- */
-public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
-	
+	boolean chapterLimitation;
+	Book book;
+
 	/**
-	 * Constructor for the class WindowingCooccurrenceSentence
+	 * Constructor for the class WindowingCooccurrencesParagraph
 	 * 
-	 * @param weighting Used to add weight to edges of the sociogram
-	 * @param size Window's size set by the user
-	 * @param covering Window's covering set by the user
+	 * @param weighting 
+	 * @param chapterLimitation
+	 * @param book
+	 * @param size Window's size
+	 * @param covering 
 	 */
-	public WindowingCooccurrenceSentence(boolean weighting , int size, int covering){
+	public WindowingCooccurrencesParagraph(boolean weighting, boolean chapterLimitation, Book book, int size, int covering){
 		super(weighting, size, covering);
+		this.chapterLimitation = chapterLimitation;
+		this.book = book;
 	}
-	
+
 	/**
 	 * Creates and returns a list of lists of tokens based on the size and covering chosen by the user
 	 * 
@@ -38,21 +37,28 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	 */
 	@Override
 	public List<List<CoreLabel>> createWindow(CoreDocument document) {
-		List<CoreSentence> sentences = document.sentences(); // List of sentences from the text
+		CreateBook cb = new CreateBook();
+		cb.createBook(document);
+		book = cb.getBook();
 		List<CoreLabel> window = new LinkedList<>(); // List of tokens
 		List<List<CoreLabel>> result = new LinkedList<>(); // List of lists of tokens
 		int cpt = 0; // We set a counter for the size
-		for (int i=0; i<sentences.size(); i++){ // For the size of the list of sentences 
-			List<CoreLabel> sentence = sentences.get(i).tokens(); // We add the sentence to the list of sentences
-			for (CoreLabel token : sentence) { // For each of tokens in the sentence
-				window.add(token); // We add a token to the list of tokens
-			}
-			cpt++; // We increment one to the counter
-			if (cpt == size){ // If counter reaches given size
-				result.add(window); // We add the list of tokens to the list of lists of tokens
-				window = new LinkedList<>(); // We reset the list of tokens
-				cpt = 0; // We reset the counter
-				i -= covering; // We apply the given covering
+		for (Chapter chapter : book.chapters){ // For each chapters 
+			if (chapterLimitation) cpt = 0; // If chapterLimitation is true we reset the counter
+			for (int i = 0 ; i < chapter.paragraphs.size(); i++){ // For the paragraphs
+				for (int j = 0 ; j < chapter.paragraphs.get(i).sentences.size(); j++){ // For the sentences in paragraphs
+					List<CoreLabel> sentence = chapter.paragraphs.get(i).sentences.get(j).tokens(); // We add the sentence to the list of sentences
+					for (CoreLabel token : sentence) { // For each of tokens in the sentence
+						window.add(token); // We add a token to the list of tokens
+					}
+				}
+				cpt++; // We increment one to the counter
+				if (cpt == size){ // If counter reaches given size
+					result.add(window); // We add the list of tokens to the list of lists of tokens
+					window = new LinkedList<>(); // We reset the list of tokens
+					cpt = 0; // We reset the counter
+					i -= covering; // We apply the given covering
+				}
 			}
 		}	
 		return result; // Returns list of lists of tokens
@@ -69,17 +75,14 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	@Override
 	public Table createTab(CoreDocument document) {
 		List<List<CoreLabel>> result = createWindow(document); // We get the list of lists of tokens
-		CreateBook cb = new CreateBook();
-		cb.createBook(document);
-		Book book = cb.getBook();
 		String charA = null; // We create a string for Character A
 		String charB = null; // We create a string for Character B
 		CorefChain tempA; // We create a CorefChain for Character A
 		CorefChain tempB; // We create a CorefChain for Character B
 		int distanceChar = 0; // We create an int for the distance between characters in characters
 		int distanceWord = 0; // We create an int for the distance between characters in words
-		Table tab = new Table(size, book); // Creates a new table
-		Map<Integer, CorefChain> corefChains = document.corefChains(); // We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
+		Table tab = new Table(size, book);
+		Map<Integer, CorefChain> corefChains = document.corefChains(); //We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
 		for (List<CoreLabel> tokens : result){ // For each token in the list
 			for (CoreLabel tokenA : tokens){ // For each token for Character A
 				if(tokenA.ner().equals("PERSON")){ // If the token is considered a person
