@@ -4,19 +4,23 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Tableau {
+	protected int size;
+	protected Book book;
 	protected List<String> listPersA;
 	protected List<String> listPersB;
 	protected List<Integer> listDistanceChar;
 	protected List<Integer> listDistanceMot;
 	
-	public Tableau() {
+	public Tableau(int size, Book book) {
+		this.size = size;
+		this.book = book;
 		listPersA = new LinkedList<>();
 		listPersB = new LinkedList<>();
 		listDistanceChar = new LinkedList<>();
 		listDistanceMot = new LinkedList<>();
 	}
 	
-	public void addTab(String charA, String charB, int distanceChar, int distanceMot){
+	public void addLign(String charA, String charB, int distanceChar, int distanceMot){
 		listPersA.add(charA);
 		listPersB.add(charB);
 		listDistanceChar.add(distanceChar);

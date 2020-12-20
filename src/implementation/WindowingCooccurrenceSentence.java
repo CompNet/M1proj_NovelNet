@@ -62,13 +62,16 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	@Override
 	public Tableau createTab(CoreDocument document) {
 		List<List<CoreLabel>> result = createWindow(document);
+		CreateBook cb = new CreateBook();
+		cb.createBook(document);
+		Book book = cb.getBook();
 		String charA = null;
 		String charB = null;
 		CorefChain tempA;
 		CorefChain tempB;
 		int distanceChar = 0;
 		int distanceMot = 0;
-		Tableau tab = new Tableau();
+		Tableau tab = new Tableau(size, book);
 		Map<Integer, CorefChain> corefChains = document.corefChains(); //We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
 		for (List<CoreLabel> tokens : result){ // For each token list
 			for (CoreLabel tokenA : tokens){ // For each token
@@ -83,7 +86,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 								if (tempA != null && tempB != null) {
 									charA = tempA.getRepresentativeMention().mentionSpan;
 									charB = tempB.getRepresentativeMention().mentionSpan;
-									if (!charA.equals(charB)) tab.addTab(charA, charB, distanceChar, distanceMot);
+									if (!charA.equals(charB)) tab.addLign(charA, charB, distanceChar, distanceMot);
 								}
 							}
 						}
