@@ -69,9 +69,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	@Override
 	public Table createTab(CoreDocument document) {
 		List<List<CoreLabel>> result = createWindow(document); // We get the list of lists of tokens
-		CreateBook cb = new CreateBook();
-		cb.createBook(document);
-		Book book = cb.getBook();
+		Book book = CreateBook.createBook(document);
 		String charA = null; // We create a string for Character A
 		String charB = null; // We create a string for Character B
 		CorefChain tempA; // We create a CorefChain for Character A
