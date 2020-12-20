@@ -64,9 +64,7 @@ public class Menu {
 			PrintWriter out = new PrintWriter("resultats/"+path.substring(7)+"_output.txt");
 			pipeline.prettyPrint(annotation, out );
 
-			CreateBook bookCreator = new CreateBook();
-			bookCreator.createBook(document);
-			Book book = bookCreator.getBook();
+			Book book = CreateBook.createBook(document);
 
 			// print book object in a file
 			FileWriter fileWriter = new FileWriter("resultats/"+path.substring(7, path.length()-4)+"_bookClass.txt");

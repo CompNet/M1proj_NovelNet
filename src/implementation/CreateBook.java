@@ -13,22 +13,18 @@ import edu.stanford.nlp.pipeline.CoreSentence;
 */
 public class CreateBook {
     
-    protected Book book;    //store the book to create
-
+    private static CreateBook instance;
     /**
      * Constructor 
     */
-    CreateBook(){
-        this.book = new Book();
+    private CreateBook(){
     }
 
-    /**
-     * Getter
-     *
-     * @return the Book object created
-    */
-    Book getBook(){
-        return book;
+    public static CreateBook getInstance(){
+        if (instance == null){
+            instance = new CreateBook();
+        }
+        return instance;
     }
 
     /**
@@ -36,7 +32,7 @@ public class CreateBook {
      * 
      * @param document Stanford core nlp CoreDocument representing a book
     */
-    void createBook(CoreDocument document){
+    public static Book createBook(CoreDocument document){
         List<CoreSentence> sentences = document.sentences();    //list of the sentences in the document
         int previousLineSkip;   //used to store the difference between the last token of the previous sentence and 
                                 //the first token of the current sentence
@@ -45,7 +41,7 @@ public class CreateBook {
 
         boolean titleDetection = true;  //title detection is on by default at the beginning of the document
 
-        this.book = new Book();
+        Book book = new Book();
         Chapter currentChapter = new Chapter(book);
         book.addChapter(currentChapter);
 
@@ -63,7 +59,7 @@ public class CreateBook {
             nextLineSkip = sentences.get(i+1).tokens().get(0).beginPosition() - sentences.get(i).tokens().get(sentences.get(i).tokens().size()-1).endPosition();
 
             //if there is more than 2 EOL characters the sentence is a chapter title (EOL char are considered as 2 char)
-            if (previousLineSkip > 4 && nextLineSkip > 4){
+            if (previousLineSkip > 2 && nextLineSkip > 2){
                 if(titleDetection){
                     //if the title detection was ON we just add the sentence to the title
                     currentChapter.addTitle(sentences.get(i));
@@ -76,8 +72,8 @@ public class CreateBook {
                     currentChapter.addTitle(sentences.get(i));  // add the current sentence to the title of the chapter
                 }                
             }
-            //Else if the previous line was a title (more than 2 EOL char) or there is a paragraph change (exactly 2 EOL char)
-            else if(previousLineSkip >= 4){
+            //Else if the previous line was a title (more than 2 EOL char) or there is a paragraph change (exactly 1 EOL char)
+            else if(previousLineSkip >= 2){
                 if (titleDetection) titleDetection = false;     //if the title detection is ON switch it OFF
                 currentParagraph = new Paragraph(currentChapter);             //create a new paragraph
                 currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
@@ -90,6 +86,7 @@ public class CreateBook {
 
         }
         currentParagraph.addSentence(sentences.get(sentences.size()-1)); //last line is in the last paragraph
+        return book;
     }
-
+    
 }
