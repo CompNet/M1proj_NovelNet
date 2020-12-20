@@ -14,8 +14,19 @@ import edu.stanford.nlp.pipeline.CoreSentence;
 public class Paragraph {
     protected LinkedList<CoreSentence> sentences;   //list of sentences in the paragraph
     protected Chapter chapter; //Chapter containing the paragraph
+    protected int paragraphNumber;
 
     /**
+     * Constructor
+     * 
+    */
+    Paragraph(Chapter chapter, int number){
+        paragraphNumber = number;
+        this.chapter = chapter;
+        sentences = new LinkedList<>();
+    }
+
+     /**
      * Constructor
      * 
     */
@@ -23,6 +34,7 @@ public class Paragraph {
         this.chapter = chapter;
         sentences = new LinkedList<>();
     }
+
 
     /**
      * add a sentence to the paragraph

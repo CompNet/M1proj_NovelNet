@@ -42,8 +42,8 @@ public class Menu {
 			adapt.addDotEndOfLine();
 			content = adapt.getText();
 
-			String prop="tokenize,ssplit";
-			//String prop="tokenize,ssplit,pos,lemma,ner,parse,depparse,coref";
+			//String prop="tokenize,ssplit";
+			String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
 			System.out.println("les annotateurs séléctionés sont: "+prop);
 
 			Properties props = new Properties();
@@ -52,45 +52,37 @@ public class Menu {
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
 			pipeline.annotate(document);
-						
-			// OUTPUT
 			
 			Annotation annotation = new Annotation(content);
 			// annotate the annotation
 			pipeline.annotate(annotation);
-			// print result in a file
-			PrintWriter out = new PrintWriter("resultats/"+path.substring(7)+"_output.txt");
-			pipeline.prettyPrint(annotation, out );
+			// print the result of the annotation in a file
+			/*PrintWriter out = new PrintWriter("res/results/"+path.substring(9, path.length()-4)+"_output.txt");
+			pipeline.prettyPrint(annotation, out );*/
 
 			Book book = CreateBook.createBook(document);
+			
+			//Create a table from Sentences
+			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(true, 5, 1);
+			CooccurrenceTableSentence table = wcs.createTab(document);
+			table.display();
+
+			//Create a table from paragraphs
+			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(true, false, book, 5, 1);
+			CooccurrenceTableParagraph table2 = wcp.createTab(document);
+			table2.display();
 
 			// print book object in a file
-			FileWriter fileWriter = new FileWriter("resultats/"+path.substring(7, path.length()-4)+"_bookClass.txt");
+			/*FileWriter fileWriter = new FileWriter("res/results/"+path.substring(9, path.length()-4)+"_bookClass.txt");
 			book.printToFile(fileWriter);
-			fileWriter.close();
-
+			fileWriter.close();*/
+			
+			//Create a graph
 			/*Graph graph = new Graph();
 			graph.setName("graph_sliding_1s_"+path.substring(7));
 			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(true, 4, 1);
-			w.createTab(document);
-				
-			/*graph = new Graph();
-			graph.setName("graph_sliding_2s_"+path.substring(7));
-			w = new WindowingCooccurrenceSentence(true, 3, 2);
-			w.createGraph(document,graph);
-			graph.graphMLPrinter("resultats");
+			w.createTab(document);*/
 			
-			graph = new Graph();
-			graph.setName("graph_sequential_1s_"+path.substring(7));
-			w = new WindowingCooccurrenceSentence(true, 1, 0);
-			w.createGraph(document,graph);
-			graph.graphMLPrinter("resultats");
-				
-			graph = new Graph();
-			graph.setName("graph_sequential_2s_"+path.substring(7));
-			w = new WindowingCooccurrenceSentence(true, 2, 0);
-			w.createGraph(document,graph);
-			graph.graphMLPrinter("resultats");*/
 	
 			sc.close();
 		}

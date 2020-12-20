@@ -41,11 +41,14 @@ public class CreateBook {
 
         boolean titleDetection = true;  //title detection is on by default at the beginning of the document
 
+        int chapterNumber = 1;
+        int paragraphNumber = 1;
+
         Book book = new Book();
-        Chapter currentChapter = new Chapter(book);
+        Chapter currentChapter = new Chapter(book, 1);
         book.addChapter(currentChapter);
 
-        Paragraph currentParagraph = new Paragraph(currentChapter);
+        Paragraph currentParagraph = new Paragraph(currentChapter, 1);
         
         currentChapter.addTitle(sentences.get(0)); //the first sentence is considerated as a title
 
@@ -59,7 +62,7 @@ public class CreateBook {
             nextLineSkip = sentences.get(i+1).tokens().get(0).beginPosition() - sentences.get(i).tokens().get(sentences.get(i).tokens().size()-1).endPosition();
 
             //if there is more than 2 EOL characters the sentence is a chapter title (EOL char are considered as 2 char)
-            if (previousLineSkip > 2 && nextLineSkip > 2){
+            if (previousLineSkip > 4 && nextLineSkip > 4){
                 if(titleDetection){
                     //if the title detection was ON we just add the sentence to the title
                     currentChapter.addTitle(sentences.get(i));
@@ -67,7 +70,8 @@ public class CreateBook {
                 else {
                     //else :
                     titleDetection = true;                      // put the title detection to ON
-                    currentChapter = new Chapter(book);             // create a new chapter 
+                    chapterNumber++;
+                    currentChapter = new Chapter(book, chapterNumber);         // create a new chapter 
                     book.addChapter(currentChapter);            // add the current chapter to the book 
                     currentChapter.addTitle(sentences.get(i));  // add the current sentence to the title of the chapter
                 }                
@@ -75,7 +79,8 @@ public class CreateBook {
             //Else if the previous line was a title (more than 2 EOL char) or there is a paragraph change (exactly 1 EOL char)
             else if(previousLineSkip >= 2){
                 if (titleDetection) titleDetection = false;     //if the title detection is ON switch it OFF
-                currentParagraph = new Paragraph(currentChapter);             //create a new paragraph
+                paragraphNumber++;
+                currentParagraph = new Paragraph(currentChapter, paragraphNumber);   //create a new paragraph
                 currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
                 currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
             }

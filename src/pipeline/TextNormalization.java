@@ -24,7 +24,7 @@ public class TextNormalization {
     public void addDotEndOfLine(){
         for(int i = 0; i < text.length()-1; i++){
             // if the current char is EOL AND we are not in the 2 first char AND the previous char IS NOT EOL OR a dot OR some type of closing quotation mark
-            if (text.charAt(i) == '\n' && i >1 && !(text.charAt(i-2) == '\n' || text.charAt(i-2) == '.' || text.charAt(i-2) == '»' || text.charAt(i-2) == '”'|| text.charAt(i-2) == '"')){
+            if (text.charAt(i) == '\n' && i >1 && !(text.charAt(i-2) == '\n' || text.charAt(i-2) == '.' || text.charAt(i-2) == '?' || text.charAt(i-2) == '!' || text.charAt(i-2) == '»' || text.charAt(i-2) == '”'|| text.charAt(i-2) == '"')){
                 text.insert(i-1,'.'); //we add a dot to the end of the previous line
             }
         }

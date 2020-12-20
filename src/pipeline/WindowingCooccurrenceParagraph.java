@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
+public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 
 	boolean chapterLimitation;
 	Book book;
@@ -22,7 +22,7 @@ public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
 	 * @param size Window's size set by the user
 	 * @param covering Window's covering set by the user
 	 */
-	public WindowingCooccurrencesParagraph(boolean weighting, boolean chapterLimitation, Book book, int size, int covering){
+	public WindowingCooccurrenceParagraph(boolean weighting, boolean chapterLimitation, Book book, int size, int covering){
 		super(weighting, size, covering);
 		this.chapterLimitation = chapterLimitation;
 		this.book = book;
@@ -71,7 +71,7 @@ public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
 	 * 
 	 */
 	@Override
-	public Table createTab(CoreDocument document) {
+	public CooccurrenceTableParagraph createTab(CoreDocument document) {
 		List<List<CoreLabel>> result = createWindow(document); // We get the list of lists of tokens
 		String charA = null; // We create a string for Character A
 		String charB = null; // We create a string for Character B
@@ -79,9 +79,14 @@ public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
 		CorefChain tempB; // We create a CorefChain for Character B
 		int distanceChar = 0; // We create an int for the distance between characters in characters
 		int distanceWord = 0; // We create an int for the distance between characters in words
-		Table tab = new Table(size, book);
+		int beginingParagraph = 0;
+		int endingParagraph = 0;
+		int cpt = 0;
+		CooccurrenceTableParagraph tab = new CooccurrenceTableParagraph(size, book);
 		Map<Integer, CorefChain> corefChains = document.corefChains(); //We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
 		for (List<CoreLabel> tokens : result){ // For each token in the list
+			beginingParagraph = cpt*size-(cpt*covering);
+			endingParagraph = (cpt+1)*size-(cpt*covering)-1;
 			for (CoreLabel tokenA : tokens){ // For each token for Character A
 				if(tokenA.ner().equals("PERSON")){ // If the token is considered a person
 					for (CoreLabel tokenB : tokens){ // For each token for Character B
@@ -94,15 +99,15 @@ public class WindowingCooccurrencesParagraph extends WindowingCooccurrence{
 								if (tempA != null && tempB != null) { // If both aren't empty
 									charA = tempA.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character A
 									charB = tempB.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character B
-									if (!charA.equals(charB)) tab.addLine(charA, charB, distanceChar, distanceWord); // If the two strings aren't equal we add a line to the Table
+									if (!charA.equals(charB)) tab.add(charA, charB, distanceChar, distanceWord, beginingParagraph, endingParagraph); // If the two strings aren't equal we add a line to the Table
 								}
 							}
 						}
 					}
 				}
 			}
+			cpt++;
 		}
-		tab.display(); // Displays finished table
 		return tab; // Returns finished table
 	}
 }

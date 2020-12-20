@@ -67,18 +67,21 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	 * 
 	 */
 	@Override
-	public Table createTab(CoreDocument document) {
+	public CooccurrenceTableSentence createTab(CoreDocument document) {
 		List<List<CoreLabel>> result = createWindow(document); // We get the list of lists of tokens
-		Book book = CreateBook.createBook(document);
 		String charA = null; // We create a string for Character A
 		String charB = null; // We create a string for Character B
 		CorefChain tempA; // We create a CorefChain for Character A
 		CorefChain tempB; // We create a CorefChain for Character B
 		int distanceChar = 0; // We create an int for the distance between characters in characters
 		int distanceWord = 0; // We create an int for the distance between characters in words
-		Table tab = new Table(size, book); // Creates a new table
+		int beginingSentence = 0;
+		int endingSentence = 0;
+		CooccurrenceTableSentence tab = new CooccurrenceTableSentence(size); // Creates a new table
 		Map<Integer, CorefChain> corefChains = document.corefChains(); // We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
 		for (List<CoreLabel> tokens : result){ // For each token in the list
+			beginingSentence = tokens.get(0).sentIndex();
+			endingSentence = tokens.get(tokens.size()-1).sentIndex();
 			for (CoreLabel tokenA : tokens){ // For each token for Character A
 				if(tokenA.ner().equals("PERSON")){ // If the token is considered a person
 					for (CoreLabel tokenB : tokens){ // For each token for Character B
@@ -91,7 +94,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 								if (tempA != null && tempB != null) { // If both aren't empty
 									charA = tempA.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character A
 									charB = tempB.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character B
-									if (!charA.equals(charB)) tab.addLine(charA, charB, distanceChar, distanceWord); // If the two strings aren't equal we add a line to the Table
+									if (!charA.equals(charB)) tab.add(charA, charB, distanceChar, distanceWord, beginingSentence, endingSentence); // If the two strings aren't equal we add a line to the Table
 								}
 							}
 						}

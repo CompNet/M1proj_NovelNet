@@ -17,6 +17,18 @@ public class Chapter {
     protected LinkedList<Paragraph> paragraphs; //paragraphs in the chapter
     protected LinkedList<CoreSentence> titles;  //if there is a title (and maybe a number) they should be here
     protected Book book; //The book containing the chapter
+    protected int chapterNumber;
+
+    /**
+     * Constructor
+     * 
+    */
+    Chapter(Book book, int number){
+        this.book = book;
+        chapterNumber = number;
+        paragraphs = new LinkedList<>();
+        titles = new LinkedList<>();
+    }
 
     /**
      * Constructor
@@ -27,6 +39,7 @@ public class Chapter {
         paragraphs = new LinkedList<>();
         titles = new LinkedList<>();
     }
+
 
     /**
      * add a title to the paragraph
@@ -59,7 +72,7 @@ public class Chapter {
     void display(int i){
         System.out.println("Chapter " + i + " : ");
         for (CoreSentence sentence : this.titles){
-            System.out.print(sentence.text());
+            System.out.print(sentence.text() + " ");
         }
         System.out.println(" ");
         int cpt = 1;
@@ -80,7 +93,7 @@ public class Chapter {
     void printToFile(FileWriter fileWriter, int i) throws IOException {
         fileWriter.write("Chapter " + i + " : ");
         for (CoreSentence sentence : this.titles){
-            fileWriter.write(sentence.text());
+            fileWriter.write(sentence.text() + " ");
         }
         int cpt = 1;
         for (Paragraph paragraph : this.paragraphs) {

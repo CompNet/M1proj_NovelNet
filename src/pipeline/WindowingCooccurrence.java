@@ -32,7 +32,7 @@ public class WindowingCooccurrence {
 		this.covering = covering;
 	}
 	
-	protected Table createTab(CoreDocument document) {
+	protected CooccurrenceTable createTab(CoreDocument document) {
 		return null;
 	}
 	
