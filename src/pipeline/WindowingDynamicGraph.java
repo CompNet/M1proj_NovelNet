@@ -1,60 +1,41 @@
 package pipeline;
 
-import java.util.LinkedList;
 import java.util.List;
 
 /**
  * @author Quay Baptiste, Lemaire Tewis
 */
-public class WindowingDynamicGraph {
+public interface WindowingDynamicGraph {
+	
+	public Book getBook();
 
-	Book book;
-	CooccurrenceTable cooccurrenceTable;
+	public void setBook(Book book);
 
-	public WindowingDynamicGraph(Book book, CooccurrenceTable cooccurrenceTable) {
-		this.book = book;
-		this.cooccurrenceTable = cooccurrenceTable;
-	}
+	public CooccurrenceTable getCooccurrenceTable();
 
-	public Book getBook() {
-		return this.book;
-	}
+	public void setCooccurrenceTable(CooccurrenceTable cooccurrenceTable);
 
-	public void setBook(Book book) {
-		this.book = book;
-	}
+	public List<CooccurrenceTable> dynamicTableSentences(int size, int covering);
+	
+	public List<CooccurrenceTable> dynamicTableParagraphs(int size, int covering);
 
-	public CooccurrenceTable getCooccurrenceTable() {
-		return this.cooccurrenceTable;
-	}
+	public List<CooccurrenceTable> dynamicTableChapters(int size, int covering);
 
-	public void setCooccurrenceTable(CooccurrenceTable cooccurrenceTable) {
-		this.cooccurrenceTable = cooccurrenceTable;
-	}
+	public static void main(String[] args) {
+		CooccurrenceTableSentence test = new CooccurrenceTableSentence();
+		test.createCustom();
+		test.display();
+		Book book = new Book();
 
-	@Override
-	public String toString() {
-		return "{" +
-			" book='" + getBook() + "'" +
-			"}";
-	}
-
-	public List<CooccurrenceTable> dynamicTableSentences(int size, int covering){
-		List<CooccurrenceTable> result = new LinkedList<>();
-		for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
+		WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, test);
+		for (CooccurrenceTable t : dgs.dynamicTableSentences(10, 2)){
+			System.out.println("nouveau tableau 10 2 ");
+			t.display();
 		}
 
-		return result;
-	};
-	
-	public List<CooccurrenceTable> dynamicTableParagraphs(int size, int covering){
-		List<CooccurrenceTable> result = new LinkedList<>();
-		return result;
-	};
-
-	public List<CooccurrenceTable> dynamicTableChapters(int size, int covering){
-		List<CooccurrenceTable> result = new LinkedList<>();
-		return result;
-	};
-
+		for (CooccurrenceTable t : dgs.dynamicTableSentences(5, 1)){
+			System.out.println("nouveau tableau 5 1");
+			t.display();
+		}
+	}
 }

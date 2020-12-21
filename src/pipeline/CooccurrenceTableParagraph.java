@@ -24,15 +24,19 @@ public class CooccurrenceTableParagraph extends CooccurrenceTable {
 		this.windowSize = windowSize;
 		this.book = book;
     }
-    
-    @Override
-    public CooccurrenceTable subTable(int begin, int end){
-		CooccurrenceTable result = new CooccurrenceTableParagraph();
-		for (int i = begin; i <= end; i++){
-			result.add(listCharA.get(i), listCharB.get(i), listDistanceChar.get(i), listDistanceWord.get(i), listBeginingWindow.get(i), listEndingWindow.get(i));
-		}
-		return result;
-    }
+	
+	public CooccurrenceTableParagraph createCustom(){
+		CooccurrenceTableParagraph ctp = new CooccurrenceTableParagraph();
+		ctp.add("charA", "charB", 10, 3, 0, 4);
+		ctp.add("charA", "charB", 15, 4, 0, 4);
+		ctp.add("charC", "charB", 12, 3, 0, 4);
+		ctp.add("charC", "charA", 20, 6, 4, 8);
+		ctp.add("charB", "charA", 10, 3, 4, 8);
+		ctp.add("charB", "charC", 15, 4, 8, 12);
+		ctp.add("charB", "charC", 20, 5, 16, 20);
+		ctp.add("charC", "charA", 20, 5, 20, 24);
+		return ctp;
+	}
     
     /**
 	 * Displays the table
