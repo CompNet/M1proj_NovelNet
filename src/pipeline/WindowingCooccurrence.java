@@ -16,18 +16,15 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 
 
 public class WindowingCooccurrence {
-	boolean weighting; 
 	int size; 
 	int covering;
 	
 	/**
 	 * 
-	 * @param weighting 
 	 * @param size Window's size
 	 * @param covering 
 	 */
-	protected WindowingCooccurrence(boolean weighting, int size, int covering){
-		this.weighting = weighting;
+	protected WindowingCooccurrence(int size, int covering){
 		this.size = size;
 		this.covering = covering;
 	}

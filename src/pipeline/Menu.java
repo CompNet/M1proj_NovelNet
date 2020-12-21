@@ -63,12 +63,12 @@ public class Menu {
 			Book book = CreateBook.createBook(document);
 			
 			//Create a table from Sentences
-			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(true, 5, 1);
+			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1);
 			CooccurrenceTableSentence table = wcs.createTab(document);
 			table.display();
 
 			//Create a table from paragraphs
-			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(true, false, book, 5, 1);
+			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(false, book, 5, 1);
 			CooccurrenceTableParagraph table2 = wcp.createTab(document);
 			table2.display();
 

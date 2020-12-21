@@ -25,8 +25,8 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	 * @param size Window's size set by the user
 	 * @param covering Window's covering set by the user
 	 */
-	public WindowingCooccurrenceSentence(boolean weighting , int size, int covering){
-		super(weighting, size, covering);
+	public WindowingCooccurrenceSentence(int size, int covering){
+		super(size, covering);
 	}
 	
 	/**

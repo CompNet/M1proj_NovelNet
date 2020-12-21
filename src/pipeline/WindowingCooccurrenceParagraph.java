@@ -16,14 +16,13 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	/**
 	 * Constructor for the class WindowingCooccurrencesParagraph
 	 * 
-	 * @param weighting Used to add weight to edges of the sociogram
 	 * @param chapterLimitation	if true the cooccurrence by paragraphs will stop on the end of a chapter
 	 * @param book used to create a border between chapters and paragraphs
 	 * @param size Window's size set by the user
 	 * @param covering Window's covering set by the user
 	 */
-	public WindowingCooccurrenceParagraph(boolean weighting, boolean chapterLimitation, Book book, int size, int covering){
-		super(weighting, size, covering);
+	public WindowingCooccurrenceParagraph(boolean chapterLimitation, Book book, int size, int covering){
+		super(size, covering);
 		this.chapterLimitation = chapterLimitation;
 		this.book = book;
 	}
