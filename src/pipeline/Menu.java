@@ -67,15 +67,21 @@ public class Menu {
 			CooccurrenceTableSentence table = wcs.createTab(document);
 			table.display();
 
+			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(5, 1)){
+				System.out.println("nouveau tableau P 5 1 ");
+				t.display();
+			}
+
 			//Create a table from paragraphs
-			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(true, false, book, 5, 1);
+			/*WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(true, false, book, 5, 1);
 			CooccurrenceTableParagraph table2 = wcp.createTab(document);
-			table2.display();
+			table2.display();*/
 
 			// print book object in a file
-			/*FileWriter fileWriter = new FileWriter("res/results/"+path.substring(9, path.length()-4)+"_bookClass.txt");
+			FileWriter fileWriter = new FileWriter("res/results/"+path.substring(9, path.length()-4)+"_bookClass.txt");
 			book.printToFile(fileWriter);
-			fileWriter.close();*/
+			fileWriter.close();
 			
 			//Create a graph
 			/*Graph graph = new Graph();

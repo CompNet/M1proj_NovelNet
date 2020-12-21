@@ -37,6 +37,38 @@ public class Book {
         chapters.add(chapter);
     }
 
+    public int getBeginIndexOfParagraph(int paragraphNumber){
+        int tmp;
+        for (Chapter chapter : this.chapters) {
+            tmp = chapter.getBeginIndexOfParagraph(paragraphNumber);
+            if (tmp != -1) return tmp;
+        }
+        return -1;
+    }
+
+    public int getEndIndexOfParagraph(int paragraphNumber){
+        int tmp;
+        for (Chapter chapter : this.chapters) {
+            tmp = chapter.getEndIndexOfParagraph(paragraphNumber);
+            if (tmp != -1) return tmp;
+        }
+        return -1;
+    }
+
+    public int getBeginIndexOfChapter(int chapterNumber){
+        for (Chapter chapter : this.chapters) {
+            if (chapter.chapterNumber == chapterNumber) return chapter.beginingSentence;
+        }
+        return -1;
+    }
+
+    public int getEndIndexOfChapter(int chapterNumber){
+        for (Chapter chapter : this.chapters) {
+            if (chapter.chapterNumber == chapterNumber) return chapter.endingSentence;
+        }
+        return -1;
+    }
+
     /**
      * display the content in the console
     */

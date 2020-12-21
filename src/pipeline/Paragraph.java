@@ -14,7 +14,9 @@ import edu.stanford.nlp.pipeline.CoreSentence;
 public class Paragraph {
     protected LinkedList<CoreSentence> sentences;   //list of sentences in the paragraph
     protected Chapter chapter; //Chapter containing the paragraph
-    protected int paragraphNumber;
+    protected int paragraphNumber;  //the number of the Paragraph in the book starting from 1;
+    protected int beginingSentence; //the index of the sentence begining the paragraph in document.sentences();
+    protected int endingSentence;   //the index of the sentence ending the paragraph in document.sentences();
 
     /**
      * Constructor

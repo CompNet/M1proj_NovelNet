@@ -17,7 +17,9 @@ public class Chapter {
     protected LinkedList<Paragraph> paragraphs; //paragraphs in the chapter
     protected LinkedList<CoreSentence> titles;  //if there is a title (and maybe a number) they should be here
     protected Book book; //The book containing the chapter
-    protected int chapterNumber;
+    protected int chapterNumber;    //the number of the chapter in the book starting from 1;
+    protected int beginingSentence; //the index of the sentence begining the chapter in document.sentences();
+    protected int endingSentence;   //the index of the sentence ending the chapter in document.sentences();
 
     /**
      * Constructor
@@ -101,6 +103,20 @@ public class Chapter {
             paragraph.printToFile(fileWriter);
             cpt++;
         }
+    }
+
+    public int getBeginIndexOfParagraph(int paragraphNumber){
+        for (Paragraph paragraph : this.paragraphs) {
+            if (paragraph.paragraphNumber == paragraphNumber) return paragraph.beginingSentence;
+        }
+        return -1;
+    }
+
+    public int getEndIndexOfParagraph(int paragraphNumber){
+        for (Paragraph paragraph : this.paragraphs) {
+            if (paragraph.paragraphNumber == paragraphNumber) return paragraph.endingSentence;
+        }
+        return -1;
     }
 
     public List<Paragraph> getParagraphs(){
