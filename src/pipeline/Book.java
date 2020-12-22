@@ -57,14 +57,14 @@ public class Book {
 
     public int getBeginIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterNumber == chapterNumber) return chapter.beginingSentence;
+            if (chapter.chapterNumber == chapterNumber) return chapter.getBeginingSentence();
         }
         return -1;
     }
 
     public int getEndIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterNumber == chapterNumber) return chapter.endingSentence;
+            if (chapter.chapterNumber == chapterNumber) return chapter.getEndingSentence();
         }
         return -1;
     }

@@ -70,13 +70,11 @@ public class CreateBook {
                 else {
                     //else :
                     currentParagraph.endingSentence = i-1;
-                    currentChapter.endingSentence = i-1;
                     titleDetection = true;                      // put the title detection to ON
                     chapterNumber++;
                     currentChapter = new Chapter(book, chapterNumber);  // create a new chapter 
                     book.addChapter(currentChapter);            // add the current chapter to the book 
                     currentChapter.addTitle(sentences.get(i));  // add the current sentence to the title of the chapter
-                    currentChapter.beginingSentence = i;
                 }                
             }
             //Else if the previous line was a title (more than 2 EOL char) or there is a paragraph change (exactly 1 EOL char)
@@ -97,7 +95,6 @@ public class CreateBook {
         }
         currentParagraph.addSentence(sentences.get(sentences.size()-1)); //last line is in the last paragraph
         currentParagraph.endingSentence = sentences.size()-1;
-        currentChapter.endingSentence = sentences.size()-1;
         return book;
     }
     

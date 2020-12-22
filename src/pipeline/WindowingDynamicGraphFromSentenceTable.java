@@ -95,9 +95,7 @@ public class WindowingDynamicGraphFromSentenceTable implements WindowingDynamicG
 		int dynamicWindowEnd = 0;
 		while(!done){
 			dynamicWindowBegin = book.getBeginIndexOfParagraph(dynamicCpt*size - dynamicCpt*covering);
-			System.out.println("wb " + dynamicWindowBegin);
 			dynamicWindowEnd = book.getEndIndexOfParagraph((dynamicCpt + 1)*size - dynamicCpt*covering -1);
-			System.out.println("we " + dynamicWindowEnd);
 			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);

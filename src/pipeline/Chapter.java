@@ -18,8 +18,6 @@ public class Chapter {
     protected LinkedList<CoreSentence> titles;  //if there is a title (and maybe a number) they should be here
     protected Book book; //The book containing the chapter
     protected int chapterNumber;    //the number of the chapter in the book starting from 1;
-    protected int beginingSentence; //the index of the sentence begining the chapter in document.sentences();
-    protected int endingSentence;   //the index of the sentence ending the chapter in document.sentences();
 
     /**
      * Constructor
@@ -122,4 +120,12 @@ public class Chapter {
     public List<Paragraph> getParagraphs(){
         return this.paragraphs;
     }
+
+	public int getBeginingSentence() {
+		return paragraphs.get(0).beginingSentence;
+	}
+
+	public int getEndingSentence() {
+		return paragraphs.get(paragraphs.size()-1).endingSentence;
+	}
 }

@@ -36,7 +36,7 @@ public class Menu {
 			String path = sc.nextLine();
 
 			FileInputStream is = new FileInputStream(path);
-			String content = IOUtils.toString(is, "UTF-8");
+			String content = IOUtils.toString(is, "StandardCharsets.UTF-8");
 
 			TextNormalization adapt = new TextNormalization(content);
 			adapt.addDotEndOfLine();
