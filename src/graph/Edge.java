@@ -1,7 +1,7 @@
 /**
  * 
  */
-package pipeline;
+package graph;
 
 import java.util.Optional;
 

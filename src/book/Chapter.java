@@ -1,4 +1,4 @@
-package pipeline;
+package book;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -66,7 +66,7 @@ public class Chapter {
         titles = new LinkedList<>();
     }
 
-    public List<Paragraph> getParagraphs(){
+    public LinkedList<Paragraph> getParagraphs(){
         return this.paragraphs;
     }
 

@@ -1,4 +1,4 @@
-package pipeline;
+package book;
 
 
 /**
@@ -14,7 +14,7 @@ public class TextNormalization {
      * 
 	 * @param text text to normalize
 	*/
-    TextNormalization(String text){
+    public TextNormalization(String text){
         this.text = new StringBuilder(text);
     }
 

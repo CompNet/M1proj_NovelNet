@@ -8,6 +8,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import book.Book;
+import book.Chapter;
+import book.CreateBook;
+
 public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 
 	boolean chapterLimitation;
@@ -40,11 +44,11 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		List<CoreLabel> window = new LinkedList<>(); // List of tokens
 		List<List<CoreLabel>> result = new LinkedList<>(); // List of lists of tokens
 		int cpt = 0; // We set a counter for the size
-		for (Chapter chapter : book.chapters){ // For each chapters 
+		for (Chapter chapter : book.getChapters()){ // For each chapters 
 			if (chapterLimitation) cpt = 0; // If chapterLimitation is true we reset the counter
-			for (int i = 0 ; i < chapter.paragraphs.size(); i++){ // For the paragraphs
-				for (int j = 0 ; j < chapter.paragraphs.get(i).sentences.size(); j++){ // For the sentences in paragraphs
-					List<CoreLabel> sentence = chapter.paragraphs.get(i).sentences.get(j).tokens(); // We add the sentence to the list of sentences
+			for (int i = 0 ; i < chapter.getParagraphs().size(); i++){ // For the paragraphs
+				for (int j = 0 ; j < chapter.getParagraphs().get(i).getSentences().size(); j++){ // For the sentences in paragraphs
+					List<CoreLabel> sentence = chapter.getParagraphs().get(i).getSentences().get(j).tokens(); // We add the sentence to the list of sentences
 					for (CoreLabel token : sentence) { // For each of tokens in the sentence
 						window.add(token); // We add a token to the list of tokens
 					}

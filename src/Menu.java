@@ -1,8 +1,3 @@
-/**
- * 
- */
-package pipeline;
-
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,9 +7,17 @@ import java.util.Scanner;
 
 import org.apache.commons.io.IOUtils;
 
+import book.Book;
+import book.CreateBook;
+import book.TextNormalization;
+
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import pipeline.CooccurrenceTable;
+import pipeline.CooccurrenceTableSentence;
+import pipeline.WindowingCooccurrenceSentence;
+import pipeline.WindowingDynamicGraphFromSentenceTable;
 
 /**
  * @author Quay Baptiste, Lemaire Tewis

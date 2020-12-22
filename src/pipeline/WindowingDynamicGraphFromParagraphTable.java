@@ -3,6 +3,8 @@ package pipeline;
 import java.util.LinkedList;
 import java.util.List;
 
+import book.Book;
+
 public class WindowingDynamicGraphFromParagraphTable implements WindowingDynamicGraph {
 
     protected Book book;
@@ -140,8 +142,8 @@ public class WindowingDynamicGraphFromParagraphTable implements WindowingDynamic
 		int dynamicWindowBegin = 0;
 		int dynamicWindowEnd = 0;
 		while(!done){
-			dynamicWindowBegin = book.chapters.get(dynamicCpt*size - dynamicCpt*covering).paragraphs.getFirst().paragraphNumber;
-			dynamicWindowEnd = book.chapters.get(dynamicCpt*size - dynamicCpt*covering).paragraphs.getLast().paragraphNumber;
+			dynamicWindowBegin = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().getFirst().getParagraphNumber();
+			dynamicWindowEnd = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().getLast().getParagraphNumber();
 			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);

@@ -1,8 +1,9 @@
-package pipeline;
+package book;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Represent a Book.
@@ -24,6 +25,27 @@ public class Book {
     Book() {
         chapters = new LinkedList<>();
     }
+
+
+    public Book(LinkedList<Chapter> chapters) {
+        this.chapters = chapters;
+    }
+
+    public List<Chapter> getChapters() {
+        return this.chapters;
+    }
+
+    public void setChapters(LinkedList<Chapter> chapters) {
+        this.chapters = chapters;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " chapters='" + getChapters() + "'" +
+            "}";
+    }
+
 
     /**
      * add an empty chapter to the book.

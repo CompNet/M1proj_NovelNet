@@ -2,6 +2,8 @@ package pipeline;
 
 import java.util.List;
 
+import book.Book;
+
 /**
  * @author Quay Baptiste, Lemaire Tewis
 */

@@ -3,6 +3,8 @@ package pipeline;
 import java.util.LinkedList;
 import java.util.List;
 
+import book.Book;
+
 public class WindowingDynamicGraphFromSentenceTable implements WindowingDynamicGraph {
     
     protected Book book;
