@@ -5,11 +5,10 @@ import java.util.List;
 
 public class WindowingDynamicGraphFromParagraphTable implements WindowingDynamicGraph {
 
-    Book book;
-	CooccurrenceTable cooccurrenceTable;
+    protected Book book;
+	protected CooccurrenceTable cooccurrenceTable;
 
-    
-    protected WindowingDynamicGraphFromParagraphTable(Book book, CooccurrenceTable cooccurrenceTable) {
+    public WindowingDynamicGraphFromParagraphTable(Book book, CooccurrenceTable cooccurrenceTable) {
 		this.book = book;
 		this.cooccurrenceTable = cooccurrenceTable;
 	}

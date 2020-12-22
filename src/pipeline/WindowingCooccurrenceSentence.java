@@ -77,7 +77,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 		int distanceWord = 0; // We create an int for the distance between characters in words
 		int beginingSentence = 0;
 		int endingSentence = 0;
-		CooccurrenceTableSentence tab = new CooccurrenceTableSentence(size); // Creates a new table
+		CooccurrenceTableSentence tab = new CooccurrenceTableSentence(); // Creates a new table
 		Map<Integer, CorefChain> corefChains = document.corefChains(); // We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
 		for (List<CoreLabel> tokens : result){ // For each token in the list
 			beginingSentence = tokens.get(0).sentIndex();

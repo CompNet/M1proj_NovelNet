@@ -9,13 +9,18 @@ import edu.stanford.nlp.pipeline.CoreSentence;
 /**
  * Used to Create a book object from a Stanford core nlp CoreDocument
  * 
- * @author Quay Baptiste, Lemaire Tewis
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
 */
 public class CreateBook {
-    
-    private static CreateBook instance;
+
     /**
-     * Constructor 
+     * Instance of the book creator. 
+    */
+    private static CreateBook instance;
+    
+    /**
+     * Class Constructor 
     */
     private CreateBook(){
     }
@@ -30,7 +35,8 @@ public class CreateBook {
     /**
      * create the book from a CoreDocument
      * 
-     * @param document Stanford core nlp CoreDocument representing a book
+     * @param document Stanford core nlp CoreDocument representing a text
+     * @return The book object created
     */
     public static Book createBook(CoreDocument document){
         List<CoreSentence> sentences = document.sentences();    //list of the sentences in the document

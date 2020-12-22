@@ -5,16 +5,20 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 /**
- * Represent a book as an object
+ * Represent a Book.
  * 
- * @author Quay Baptiste, Lemaire Tewis
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
 */
 public class Book {
 
-    protected LinkedList<Chapter> chapters; //Chapters in the book
+    /**
+     * A list of all the chapters in the book.
+    */
+    protected LinkedList<Chapter> chapters;
 
     /**
-     * Constructor
+     * Class Constructor.
      * 
     */
     Book() {
@@ -22,21 +26,27 @@ public class Book {
     }
 
     /**
-     * add an empty chapter to the book
+     * add an empty chapter to the book.
     */
     void addVoidChapter() {
         chapters.add(new Chapter(this));
     }
 
     /**
-     * add a chapter to the book
+     * add a chapter to the book.
      * 
-     * @param chapter chapter to add to the book
+     * @param chapter chapter to add to the book.
     */
     void addChapter(Chapter chapter) {
         chapters.add(chapter);
     }
 
+    /**
+     * get the index (in the coreDocument) of the sentence begining the paragraph.
+     * 
+     * @param paragraphNumber An Integer representing the paragraph number in the book.
+     * @return An Integer representing the index of the sentence begining the paragraph. -1 if the paragraph is not in the book.
+    */
     public int getBeginIndexOfParagraph(int paragraphNumber){
         int tmp;
         for (Chapter chapter : this.chapters) {
@@ -46,6 +56,12 @@ public class Book {
         return -1;
     }
 
+    /**
+     * get the index (in the coreDocument) of the sentence ending the paragraph.
+     * 
+     * @param paragraphNumber An Integer representing the paragraph number in the book.
+     * @return An Integer representing the index of the sentence ending the paragraph.  -1 if the paragraph is not in the book.
+    */
     public int getEndIndexOfParagraph(int paragraphNumber){
         int tmp;
         for (Chapter chapter : this.chapters) {
@@ -55,6 +71,12 @@ public class Book {
         return -1;
     }
 
+    /**
+     * get the index (in the coreDocument) of the sentence begining the chapter.
+     * 
+     * @param chapterNumber An Integer representing the chapter number in the book.
+     * @return An Integer representing the index of the sentence begining the chapter. -1 if the chapter is not in the book.
+    */
     public int getBeginIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
             if (chapter.chapterNumber == chapterNumber) return chapter.getBeginingSentence();
@@ -62,6 +84,12 @@ public class Book {
         return -1;
     }
 
+    /**
+     * get the index (in the coreDocument) of the sentence ending the chapter.
+     * 
+     * @param chapterNumber An Integer representing the chapter number in the book.
+     * @return An Integer representing the index of the sentence ending the chapter. -1 if the chapter is not in the book.
+    */
     public int getEndIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
             if (chapter.chapterNumber == chapterNumber) return chapter.getEndingSentence();
@@ -70,9 +98,9 @@ public class Book {
     }
 
     /**
-     * display the content in the console
+     * display the content of the book in the console
     */
-    void display() {
+    public void display() {
         int cpt = 1;
 
         for (Chapter chapter : this.chapters) {
@@ -83,11 +111,11 @@ public class Book {
     }
 
     /**
-     * write the content in a file
+     * write the content of the book in a file
      *  
      * @param fileWriter object used to write in the file (it contains the file destination and name)
     */
-    void printToFile(FileWriter fileWriter) throws IOException {
+    public void printToFile(FileWriter fileWriter) throws IOException {
         int cpt = 1;
         for (Chapter chapter : this.chapters) {
             fileWriter.write("\n");

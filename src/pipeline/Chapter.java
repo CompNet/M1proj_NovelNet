@@ -8,36 +8,104 @@ import java.util.List;
 import edu.stanford.nlp.pipeline.CoreSentence;
 
 /**
- * Chapter in a Book
+ * Represent a Chapter in a Book
  * 
- * @author Quay Baptiste, Lemaire Tewis
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
 */
 public class Chapter {
 
-    protected LinkedList<Paragraph> paragraphs; //paragraphs in the chapter
-    protected LinkedList<CoreSentence> titles;  //if there is a title (and maybe a number) they should be here
-    protected Book book; //The book containing the chapter
-    protected int chapterNumber;    //the number of the chapter in the book starting from 1;
+    /**
+     * A list of all the paragraphs in the chapter
+    */
+    protected LinkedList<Paragraph> paragraphs;
 
     /**
-     * Constructor
+     * A list of all the Sentences representing the title (and number) of the chapter
+    */
+    protected LinkedList<CoreSentence> titles;
+    /**
+     * The book containing the chapter
+    */
+    protected Book book;
+    /**
+     * An Integer representing the number of the chapter in the book starting from 1
+    */
+    protected int chapterNumber;
+
+    /**
+     * Class Constructor
      * 
     */
-    Chapter(Book book, int number){
+    public Chapter() {
+    }
+
+    /**
+     * Class Constructor specifying the book containing the chapter.
+     * 
+     * @param book The Book containing the chapter
+     * 
+    */
+    public Chapter(Book book){
+        this.book = book;
+        paragraphs = new LinkedList<>();
+        titles = new LinkedList<>();
+    }
+
+    /**
+     * Class Constructor specifying the book containing the chapter and the number of the chapter in this book.
+     * 
+     * @param book The Book containing the chapter
+     * @param number An Integer representing the number of the chapter in the book starting from 1
+     * 
+    */
+    public Chapter(Book book, int number){
         this.book = book;
         chapterNumber = number;
         paragraphs = new LinkedList<>();
         titles = new LinkedList<>();
     }
 
-    /**
-     * Constructor
-     * 
-    */
-    Chapter(Book book){
+    public List<Paragraph> getParagraphs(){
+        return this.paragraphs;
+    }
+
+    public void setParagraphs(LinkedList<Paragraph> paragraphs) {
+        this.paragraphs = paragraphs;
+    }
+
+    public List<CoreSentence> getTitles() {
+        return this.titles;
+    }
+
+    public void setTitles(LinkedList<CoreSentence> titles) {
+        this.titles = titles;
+    }
+
+    public Book getBook() {
+        return this.book;
+    }
+
+    public void setBook(Book book) {
         this.book = book;
-        paragraphs = new LinkedList<>();
-        titles = new LinkedList<>();
+    }
+
+    public int getChapterNumber() {
+        return this.chapterNumber;
+    }
+
+    public void setChapterNumber(int chapterNumber) {
+        this.chapterNumber = chapterNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " paragraphs='" + getParagraphs() + "'" +
+            ", titles='" + getTitles() + "'" +
+            ", book='" + getBook() + "'" +
+            ", chapterNumber='" + getChapterNumber() + "'" +
+            "}";
     }
 
 
@@ -103,6 +171,12 @@ public class Chapter {
         }
     }
 
+     /**
+     * get the index (in the coreDocument) of the sentence begining the paragraph
+     * 
+     * @param paragraphNumber An Integer representing the paragraph number in the book
+     * @return An Integer representing the index of the sentence begining the paragraph. -1 if the paragraph is not in the chapter.
+    */
     public int getBeginIndexOfParagraph(int paragraphNumber){
         for (Paragraph paragraph : this.paragraphs) {
             if (paragraph.paragraphNumber == paragraphNumber) return paragraph.beginingSentence;
@@ -110,6 +184,12 @@ public class Chapter {
         return -1;
     }
 
+    /**
+     * get the index (in the coreDocument) of the sentence ending the paragraph
+     * 
+     * @param paragraphNumber An Integer representing the paragraph number in the book
+     * @return An Integer representing the index of the sentence ending the paragraph. -1 if the paragraph is not in the chapter.
+    */
     public int getEndIndexOfParagraph(int paragraphNumber){
         for (Paragraph paragraph : this.paragraphs) {
             if (paragraph.paragraphNumber == paragraphNumber) return paragraph.endingSentence;
@@ -117,15 +197,21 @@ public class Chapter {
         return -1;
     }
 
-    public List<Paragraph> getParagraphs(){
-        return this.paragraphs;
-    }
-
+    /**
+     * get the index (in the coreDocument) of the sentence begining the chapter
+     * 
+     * @return An Integer representing the index of the sentence begining the chapter.
+    */
 	public int getBeginingSentence() {
-		return paragraphs.get(0).beginingSentence;
+		return paragraphs.getFirst().beginingSentence;
 	}
 
+    /**
+     * get the index (in the coreDocument) of the sentence ending the chapter
+     * 
+     * @return An Integer representing the index of the sentence ending the chapter.
+    */
 	public int getEndingSentence() {
-		return paragraphs.get(paragraphs.size()-1).endingSentence;
+		return paragraphs.getLast().endingSentence;
 	}
 }

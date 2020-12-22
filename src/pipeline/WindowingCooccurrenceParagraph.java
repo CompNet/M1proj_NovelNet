@@ -81,7 +81,7 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		int beginingParagraph = 0;
 		int endingParagraph = 0;
 		int cpt = 0;
-		CooccurrenceTableParagraph tab = new CooccurrenceTableParagraph(size, book);
+		CooccurrenceTableParagraph tab = new CooccurrenceTableParagraph();
 		Map<Integer, CorefChain> corefChains = document.corefChains(); //We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
 		for (List<CoreLabel> tokens : result){ // For each token in the list
 			beginingParagraph = cpt*size-(cpt*covering);
