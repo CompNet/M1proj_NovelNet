@@ -19,15 +19,17 @@ public class CooccurrenceTableSentence extends CooccurrenceTable {
         super();
 		this.windowSize = windowSize;
     }
-    
-    @Override
-    public CooccurrenceTable subTable(int begin, int end){
-		CooccurrenceTable result = new CooccurrenceTableSentence();
-		for (int i = begin; i <= end; i++){
-			result.add(listCharA.get(i), listCharB.get(i), listDistanceChar.get(i), listDistanceWord.get(i), listBeginingWindow.get(i), listEndingWindow.get(i));
-		}
-		return result;
-    }
+	
+	public void createCustom(){
+		add("charA", "charB", 10, 3, 0, 4);
+		add("charA", "charB", 15, 4, 0, 4);
+		add("charC", "charB", 12, 3, 0, 4);
+		add("charC", "charA", 20, 6, 4, 8);
+		add("charB", "charA", 10, 3, 4, 8);
+		add("charB", "charC", 15, 4, 8, 12);
+		add("charB", "charC", 20, 5, 16, 20);
+		add("charC", "charA", 20, 5, 20, 24);
+	}
     
     /**
 	 * Displays the table
