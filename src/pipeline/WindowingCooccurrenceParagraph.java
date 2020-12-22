@@ -12,18 +12,33 @@ import book.Book;
 import book.Chapter;
 import book.CreateBook;
 
+/**
+ * Find the co-occurrences with a window dimension set in paragraphs.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+ *
+ */
 public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 
+	/*
+	 * True if you want to stop the detection at the end of a chapter even if the end of the window is not reached. 
+	 * The detection will continue with a new window at the begining of the next chapter.
+	*/
 	boolean chapterLimitation;
+
+	/*
+	* the book you want to detect co-occurrences from.
+	*/
 	Book book;
 
 	/**
-	 * Constructor for the class WindowingCooccurrencesParagraph
+	 * Class Contructor
 	 * 
-	 * @param chapterLimitation	if true the cooccurrence by paragraphs will stop on the end of a chapter
-	 * @param book used to create a border between chapters and paragraphs
-	 * @param size Window's size set by the user
-	 * @param covering Window's covering set by the user
+	 * @param chapterLimitation	if true the cooccurrence by paragraphs will stop on the end of a chapter.
+	 * @param book the book you want to detect co-occurrences from.
+	 * @param size size of the window used to find co-occurrences in.
+	 * @param covering size of the covering between 2 windows. Set to 0 for sequential detection.
 	 */
 	public WindowingCooccurrenceParagraph(boolean chapterLimitation, Book book, int size, int covering){
 		super(size, covering);
@@ -32,10 +47,10 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	}
 
 	/**
-	 * Creates and returns a list of lists of tokens based on the size and covering chosen by the user
+	 * Creates and returns a list of lists of tokens based on the size and covering chosen by the user.
 	 * 
-	 * @param CoreDocument represents the text chosen by the user
-	 * @return The list of lists of tokens
+	 * @param CoreDocument represents the text chosen by the user.
+	 * @return The list of lists of tokens.
 	 * 
 	 */
 	@Override
@@ -67,7 +82,7 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	
 	
 	/**
-	 * Creates and returns a tab with a String Character A, a String Character B, an int Distance in characcter and an int Distance in words
+	 * Creates and returns a CooccurrenceTableParagraph.
 	 * 
 	 * @param document A CoreDocument represents the text chosen by the user
 	 * @return The full table after adding all the lines

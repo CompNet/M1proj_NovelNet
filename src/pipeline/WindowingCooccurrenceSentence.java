@@ -13,17 +13,18 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
 
 /**
+ * Find the co-occurrences with a window dimension set in sentences.
+ * 
  * @author Quay Baptiste, Lemaire Tewis
  * 
  */
 public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	
 	/**
-	 * Constructor for the class WindowingCooccurrenceSentence
+	 * Class Constructor.
 	 * 
-	 * @param weighting Used to add weight to edges of the sociogram
-	 * @param size Window's size set by the user
-	 * @param covering Window's covering set by the user
+	 * @param size size of the window used to find co-occurrences in.
+	 * @param covering size of the covering between 2 windows. Set to 0 for sequential detection.
 	 */
 	public WindowingCooccurrenceSentence(int size, int covering){
 		super(size, covering);
@@ -60,7 +61,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	
 	
 	/**
-	 * Creates and returns a table with a String Character A, a String Character B, an int Distance in characters and an int Distance in words
+	 * Creates and returns a CooccurrenceTableSentence.
 	 * 
 	 * @param document A CoreDocument represents the text chosen by the user
 	 * @return The full table after adding all the lines

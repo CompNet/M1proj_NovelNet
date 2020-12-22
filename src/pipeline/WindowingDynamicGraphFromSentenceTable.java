@@ -5,39 +5,31 @@ import java.util.List;
 
 import book.Book;
 
-public class WindowingDynamicGraphFromSentenceTable implements WindowingDynamicGraph {
-    
-    protected Book book;
-	protected CooccurrenceTable cooccurrenceTable;
+/**
+ * Create dynamic graphs from a CooccurrenceTable where the window dimension is in Sentence.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
+public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGraph {
 
-    public WindowingDynamicGraphFromSentenceTable(Book book, CooccurrenceTable cooccurrenceTable) {
-		this.book = book;
-		this.cooccurrenceTable = cooccurrenceTable;
+	/**
+	 * Class Constructor
+	 * 
+	 * @param book the Book created from the original text.
+	 * @param cooccurrenceTable the co-occurrence table you want to create the dynamic graphs from.
+	*/
+    public WindowingDynamicGraphFromSentenceTable(Book book, CooccurrenceTableSentence cooccurrenceTable) {
+		super(book, cooccurrenceTable);
     }
-    
-    public Book getBook() {
-		return this.book;
-	}
 
-	public void setBook(Book book) {
-		this.book = book;
-	}
-
-	public CooccurrenceTable getCooccurrenceTable() {
-		return this.cooccurrenceTable;
-	}
-
-	public void setCooccurrenceTable(CooccurrenceTable cooccurrenceTable) {
-		this.cooccurrenceTable = cooccurrenceTable;
-	}
-
+	/**
+	 * Create a list of CooccurrenceTable to make graphs from.
+	 * 
+	 * @param size size of the window (in sentences) used create the dynamic graphs.
+	 * @param covering size of the covering between 2 windows. Set to 0 for sequential graphs.
+	*/
 	@Override
-	public String toString() {
-		return "{" +
-			" book='" + getBook() + "'" +
-			"}";
-	}
-
 	public List<CooccurrenceTable> dynamicTableSentences(int size, int covering){
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
@@ -84,6 +76,13 @@ public class WindowingDynamicGraphFromSentenceTable implements WindowingDynamicG
 		return result;
 	}
 	
+	/**
+	 * Create a list of CooccurrenceTable to make graphs from.
+	 * 
+	 * @param size size of the window (in Paragraphs) used create the dynamic graphs.
+	 * @param covering size of the covering between 2 windows. Set to 0 for sequential graphs.
+	*/
+	@Override
 	public List<CooccurrenceTable> dynamicTableParagraphs(int size, int covering){
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
@@ -130,6 +129,13 @@ public class WindowingDynamicGraphFromSentenceTable implements WindowingDynamicG
 		return result;
 	}
 
+	/**
+	 * Create a list of CooccurrenceTable to make graphs from.
+	 * 
+	 * @param size size of the window (in Chapters) used create the dynamic graphs.
+	 * @param covering size of the covering between 2 windows. Set to 0 for sequential graphs.
+	*/
+	@Override
 	public List<CooccurrenceTable> dynamicTableChapters(int size, int covering){
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;

@@ -38,7 +38,7 @@ public abstract class CooccurrenceTable {
 	protected List<Integer> listEndingWindow;
 
 	/**
-	 * The constructor of a CooccurrenceTable
+	 * Class Constructor
 	 *
 	 */
 	protected CooccurrenceTable(){

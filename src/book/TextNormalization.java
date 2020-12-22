@@ -10,7 +10,7 @@ public class TextNormalization {
     StringBuilder text;
 
     /**
-     * Constructor
+     * Class Constructor
      * 
 	 * @param text text to normalize
 	*/
@@ -19,7 +19,7 @@ public class TextNormalization {
     }
 
     /**
-     * add a dot add a dot at the end of each line where there is no dot or some type of quotation mark
+     * add a dot at the end of each line where there is no dot or some type of quotation mark
 	*/
     public void addDotEndOfLine(){
         for(int i = 0; i < text.length()-1; i++){
