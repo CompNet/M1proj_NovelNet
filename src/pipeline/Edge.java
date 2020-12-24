@@ -3,10 +3,9 @@
  */
 package pipeline;
 
-import java.util.Optional;
 
 /**
- * @author Schmidt Gaëtan
+ * @author Quay Baptiste, Lemaire Tewis
  *
  */
 public class Edge {
@@ -14,7 +13,6 @@ public class Edge {
 	protected String id;
 	protected Node nodeLeft;
 	protected Node nodeRight;
-	protected boolean oriented;
 	protected float ponderation;
 	
 	public Edge(String id, Node nodeLeft, Node nodeRight)
@@ -22,59 +20,35 @@ public class Edge {
 		this.id = id;
 		this.nodeLeft = nodeLeft;
 		this.nodeRight = nodeRight;
-		this.oriented = false;
-		this.ponderation = 1;
+		ponderation = 1;
 	}
 	
-	public Edge(String id, Node nodeLeft, Node nodeRight, boolean oriented, float ponderation)
+	public Edge(String id, Node nodeLeft, Node nodeRight, float ponderation)
 	{
 		this.id = id;
 		this.nodeLeft = nodeLeft;
 		this.nodeRight = nodeRight;
-		this.oriented = oriented;
 		this.ponderation = ponderation;
-	}
-	
-	/**
-	 * @param canonicalSpeaker
-	 * @param node
-	 * @param nodeR
-	 * @param weight
-	 */
-	public Edge(Optional<String> id, Node nodeLeft, Node nodeRight, boolean oriented, float ponderation) {
-		if (id.isPresent())
-		{
-			this.id = id.get();
-			this.nodeLeft = nodeLeft;
-			this.nodeRight = nodeRight;
-			this.oriented = oriented;
-			this.ponderation = ponderation;
-		}
 	}
 
 	public String getId()
 	{
-		return this.id;
+		return id;
 	}
 	
 	public Node getNodeLeft()
 	{
-		return this.nodeLeft;
+		return nodeLeft;
 	}
 	
 	public Node getNodeRight()
 	{
-		return this.nodeRight;
-	}
-	
-	public boolean isOreinted()
-	{
-		return this.oriented;
+		return nodeRight;
 	}
 	
 	public float getPonderation()
 	{
-		return this.ponderation;
+		return ponderation;
 	}
 	
 	public void setPonderation(float ponderation)
@@ -94,7 +68,7 @@ public class Edge {
 	    if (!(other instanceof Edge))return false;
 	    Edge otherMyClass = (Edge)other;
 	    
-	    return this.id.equals(otherMyClass.id);
+	    return id.equals(otherMyClass.id);
 	    
 	}
 	
@@ -102,7 +76,7 @@ public class Edge {
 	public String toString()
 	{
 		String ret="";
-		ret+="{ id: "+this.id+", NodeLeft: "+this.nodeLeft.toString()+", nodeRight: "+this.nodeRight.toString()+", Ponderation: "+this.ponderation+"} ";
+		ret+="{ id: "+id+", NodeLeft: "+nodeLeft.toString()+", nodeRight: "+nodeRight.toString()+", Ponderation: "+ponderation+"} ";
 		return ret;
 	}
 
