@@ -1,6 +1,7 @@
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -39,7 +40,7 @@ public class Menu {
 			String path = sc.nextLine();
 
 			FileInputStream is = new FileInputStream(path);
-			String content = IOUtils.toString(is, "StandardCharsets.UTF-8");
+			String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 			TextNormalization adapt = new TextNormalization(content);
 			adapt.addDotEndOfLine();
@@ -63,17 +64,24 @@ public class Menu {
 			/*PrintWriter out = new PrintWriter("res/results/"+path.substring(9, path.length()-4)+"_output.txt");
 			pipeline.prettyPrint(annotation, out );*/
 
-			/*Book book = CreateBook.createBook(document);
+			Book book = CreateBook.createBook(document);
 			
 			//Create a table from Sentences
 			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1);
 			CooccurrenceTableSentence table = wcs.createTab(document);
-			table.display();
+			
+			GraphCreator c = new GraphCreator();
+			
+			//Create the global graph
+			c.createGraph(table, true, "graph_"+path.substring(11, path.length()-4)).graphMLPrinter("res/results/");
 
+			//Create a dynamic graph sequence from sentences table with Sentence window.
+			
 			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
-			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(5, 1)){
-				System.out.println("nouveau tableau P 5 1 ");
-				t.display();
+			int cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(20, 3)){
+				cpt++;
+				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_"+cpt).graphMLPrinter("res/results/");
 			}
 
 			//Create a table from paragraphs
@@ -86,11 +94,6 @@ public class Menu {
 			book.printToFile(fileWriter);
 			fileWriter.close();*/
 			
-			//Create a graph
-			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(5, 1);	
-			CooccurrenceTableSentence table3 = w.createTab(document);
-			GraphCreator c = new GraphCreator();
-			c.createGraph(table3,true,"graph_"+path.substring(13)).graphMLPrinter("res/resultats");	
 			sc.close();
 		}
 

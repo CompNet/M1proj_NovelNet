@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml>
+<key id="keyNode" for="node" attr.name="characterName" attr.type="string">
+</key><key id="keyEdge" for="edge" attr.name="weight" attr.type="float"/>
+<graph id="graph_Hp2_1" edgedefault="undirected">
+<node id="Scabbers 's">
+<data key="keyNode">Scabbers 's</data>
+</node>
+<node id="Harry">
+<data key="keyNode">Harry</data>
+</node>
+<node id="Hermione">
+<data key="keyNode">Hermione</data>
+</node>
+<node id="Professor Lupin">
+<data key="keyNode">Professor Lupin</data>
+</node>
+<node id="Peter 's">
+<data key="keyNode">Peter 's</data>
+</node>
+<node id="Remus">
+<data key="keyNode">Remus</data>
+</node>
+<node id="Peter Pettigrew">
+<data key="keyNode">Peter Pettigrew</data>
+</node>
+<edge id="Professor Lupin Remus" source="Professor Lupin" target="Remus">
+<data key="keyEdge">0.03846154</data>
+</edge>
+<edge id="Peter Pettigrew Professor Lupin" source="Peter Pettigrew" target="Professor Lupin">
+<data key="keyEdge">0.124516666</data>
+</edge>
+<edge id="Harry Professor Lupin" source="Harry" target="Professor Lupin">
+<data key="keyEdge">0.83657587</data>
+</edge>
+<edge id="Harry Peter 's" source="Harry" target="Peter 's">
+<data key="keyEdge">0.04901961</data>
+</edge>
+<edge id="Hermione Remus" source="Hermione" target="Remus">
+<data key="keyEdge">0.029411765</data>
+</edge>
+<edge id="Scabbers 's Professor Lupin" source="Scabbers 's" target="Professor Lupin">
+<data key="keyEdge">0.2703704</data>
+</edge>
+<edge id="Peter Pettigrew Harry" source="Peter Pettigrew" target="Harry">
+<data key="keyEdge">0.12662338</data>
+</edge>
+<edge id="Peter 's Professor Lupin" source="Peter 's" target="Professor Lupin">
+<data key="keyEdge">0.31040817</data>
+</edge>
+<edge id="Scabbers 's Peter 's" source="Scabbers 's" target="Peter 's">
+<data key="keyEdge">0.045454547</data>
+</edge>
+<edge id="Harry Scabbers 's" source="Harry" target="Scabbers 's">
+<data key="keyEdge">0.11781609</data>
+</edge>
+<edge id="Hermione Professor Lupin" source="Hermione" target="Professor Lupin">
+<data key="keyEdge">0.125</data>
+</edge>
+<edge id="Peter Pettigrew Peter 's" source="Peter Pettigrew" target="Peter 's">
+<data key="keyEdge">0.016129032</data>
+</edge>
+<edge id="Peter Pettigrew Scabbers 's" source="Peter Pettigrew" target="Scabbers 's">
+<data key="keyEdge">0.025</data>
+</edge>
+</graph>
+</graphml>
