@@ -60,23 +60,23 @@ public class Graph {
 	{
 		String id = findEdge(charA, charB);
 		if (id != null) {	
-			if (weighting) {
-				edgeMap.get(id).addPonderation(ponderation);
+			if (weighting){
+				edgeMap.get(id).addPonderation(1/ponderation);
 				return true;
 			}
 			else return false;
 		}
 		Edge tmpEdge;
-		if (weighting) tmpEdge = new Edge(charA.id, charA, charB, ponderation);
+		if (weighting) tmpEdge = new Edge(charA.id+ " " + charB.id, charA, charB, 1/ponderation);
 		else tmpEdge = new Edge(charA.id, charA, charB);
 		edgeMap.put(tmpEdge.id, tmpEdge);
 		return true;
 	}
 	
 	public String findEdge(Node nodeA, Node nodeB){
-		for (Edge el : edgeMap.values()) { // For each edge in the list
-			if ((el.nodeLeft == nodeA && el.nodeRight == nodeB) || (el.nodeLeft == nodeB && el.nodeRight == nodeA)){
-				return el.id;
+		for (Edge e : edgeMap.values()) { // For each edge in the list
+			if ((e.nodeLeft.getName() == nodeA.getName() && e.nodeRight.getName() == nodeB.getName()) || (e.nodeLeft.getName() == nodeB.getName() && e.nodeRight.getName() == nodeA.getName())){
+				return e.id;
 			}
 		}
 		return null;
@@ -102,11 +102,6 @@ public class Graph {
 		this.name = name;
 	}
 	
-	public void graphMLPrinter() throws IOException
-	{
-		graphMLPrinter("");
-	}
-	
 	public void graphMLPrinter(String path) throws IOException
 	{
 		
@@ -126,7 +121,7 @@ public class Graph {
 		String pathDest = name+".graphml";
 		
 		if (!"".equals(path))
-			pathDest = path+"/"+name+".graphml";
+			pathDest = path+"/"+pathDest;
 		
 		
 		FileWriter fw = new FileWriter(pathDest);

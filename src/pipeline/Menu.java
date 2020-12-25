@@ -79,7 +79,7 @@ public class Menu {
 			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(5, 1);	
 			CooccurrenceTableSentence table3 = w.createTab(document);
 			GraphCreator c = new GraphCreator();
-			c.createGraph(table3,true,"graph_"+path.substring(7)).graphMLPrinter("resultats");	
+			c.createGraph(table3,true,"graph_"+path.substring(13)).graphMLPrinter("res/resultats");	
 			sc.close();
 		}
 

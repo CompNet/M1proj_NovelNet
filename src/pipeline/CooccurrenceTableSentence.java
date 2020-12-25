@@ -3,7 +3,7 @@ package pipeline;
 public class CooccurrenceTableSentence extends CooccurrenceTable {
 
      /**
-	 * Constructor for the class WindowingCooccurrenceSentence
+	 * Constructor for the class WindowingCooccurrenceSentence.
 	 * 
 	 */
 	public CooccurrenceTableSentence() {
@@ -11,7 +11,7 @@ public class CooccurrenceTableSentence extends CooccurrenceTable {
     }
 
     /**
-	 * Constructor for the class WindowingCooccurrenceSentence
+	 * Constructor for the class WindowingCooccurrenceSentence specifying the window's size.
 	 * 
 	 * @param windowSize
 	 */
