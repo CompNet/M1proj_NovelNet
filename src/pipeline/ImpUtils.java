@@ -11,12 +11,18 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 
 /**
- * @author Schmidt Gaëtan
+ * @author Baptiste Quay
+ * @author Tewis Lemaire
  *
  */
 public class ImpUtils {
 	
-	protected static CorefChain corefByToken(Map<Integer,CorefChain> corefChains, CoreLabel token)
+	/**
+	 * @author Baptiste Quay
+	 * @author Tewis Lemaire
+	 *
+	 */
+	public static CorefChain corefByToken(Map<Integer,CorefChain> corefChains, CoreLabel token)
 	{
 		CorefChain ret = null;
 		

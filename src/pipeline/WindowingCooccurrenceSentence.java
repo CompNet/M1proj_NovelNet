@@ -80,7 +80,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 		int endingSentence = 0;
 		CooccurrenceTableSentence tab = new CooccurrenceTableSentence(); // Creates a new table
 		Map<Integer, CorefChain> corefChains = document.corefChains(); // We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
-		for (List<CoreLabel> tokens : result){ // For each token in the list
+		for (List<CoreLabel> tokens : result){ // For each sentence in the window.
 			beginingSentence = tokens.get(0).sentIndex();
 			endingSentence = tokens.get(tokens.size()-1).sentIndex();
 			for (CoreLabel tokenA : tokens){ // For each token for Character A
@@ -89,7 +89,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 						if(tokenB.ner().equals("PERSON")){ // If the token is considered a person
 							distanceChar = tokenA.beginPosition() - tokenB.beginPosition();	// We get the distance between the two tokens in characters
 							distanceWord = tokens.indexOf(tokenA) - tokens.indexOf(tokenB); // We get the distance between the two tokens in words
-							if (!(tokenA.equals(tokenB)) && distanceChar > 0) { // if the two tokens are equals or if the distance is below or equal 0
+							if ( distanceChar > 0) { // if the distance is strictly superior to 0
 								tempA = ImpUtils.corefByToken(corefChains, tokenA); // We get the corresponding corefChain for token A
 								tempB = ImpUtils.corefByToken(corefChains, tokenB); // We get the corresponding corefChain for token B
 								if (tempA != null && tempB != null) { // If both aren't empty
@@ -103,7 +103,6 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 				}
 			}
 		}
-		tab.display(); // Displays finished table
 		return tab; // Returns finished table
 	}
 }

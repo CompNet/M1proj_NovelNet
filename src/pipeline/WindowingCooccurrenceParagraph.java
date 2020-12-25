@@ -55,7 +55,7 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	 */
 	@Override
 	public List<List<CoreLabel>> createWindow(CoreDocument document) {
-		book = CreateBook.createBook(document);
+		if (book == null) book = CreateBook.createBook(document);
 		List<CoreLabel> window = new LinkedList<>(); // List of tokens
 		List<List<CoreLabel>> result = new LinkedList<>(); // List of lists of tokens
 		int cpt = 0; // We set a counter for the size
