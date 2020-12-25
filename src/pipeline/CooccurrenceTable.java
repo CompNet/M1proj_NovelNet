@@ -13,6 +13,10 @@ import java.util.List;
 public abstract class CooccurrenceTable {
 
 	/**
+	 * An Integer representing the size of the co-occurrence window.
+	 */
+	protected int windowSize;
+	/**
 	 * a List of String representing the name of Character A
 	 */
 	protected List<String> listCharA;

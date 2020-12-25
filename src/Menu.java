@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.Scanner;
@@ -14,6 +15,7 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import pipeline.CooccurrenceTable;
 import pipeline.CooccurrenceTableSentence;
+import pipeline.GraphCreator;
 import pipeline.WindowingCooccurrenceSentence;
 import pipeline.WindowingDynamicGraphFromSentenceTable;
 
@@ -80,9 +82,9 @@ public class Menu {
 			table2.display();*/
 
 			// print book object in a file
-			FileWriter fileWriter = new FileWriter("res/results/"+path.substring(9, path.length()-4)+"_bookClass.txt");
+			/*FileWriter fileWriter = new FileWriter("res/results/"+path.substring(9, path.length()-4)+"_bookClass.txt");
 			book.printToFile(fileWriter);
-			fileWriter.close();
+			fileWriter.close();*/
 			
 			//Create a graph
 			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(5, 1);	

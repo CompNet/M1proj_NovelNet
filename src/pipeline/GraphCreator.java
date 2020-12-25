@@ -2,6 +2,8 @@ package pipeline;
 
 import java.io.IOException;
 
+import graph.*;
+
 public class GraphCreator {
 
 	public GraphCreator() {
