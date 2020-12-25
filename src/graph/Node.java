@@ -3,44 +3,31 @@
  */
 package graph;
 
-import java.util.Optional;
-
 /**
- * @author Schmidt Gaëtan
+ * @author Quay Baptiste, Lemaire Tewis
  *
  */
 public class Node {
 	
 	protected String id;
 	protected String name;
-	protected float weight;
 	
 	public Node()
 	{
 		id ="";
 		name = "";
-		weight=0;
 	}
 	
-	public Node(String id, String name, float weight)
+	public Node(String name)
+	{
+		this.id = name; 
+		this.name = name;
+	}
+	
+	public Node(String id, String name)
 	{
 		this.id = id;
 		this.name = name;
-		this.weight = weight;
-	}
-	
-	/**
-	 * @param canonicalSpeaker
-	 * @param canonicalSpeaker2
-	 * @param i
-	 */
-	public Node(Optional<String> id, Optional<String> name, int weight) {
-		if (id.isPresent()&&name.isPresent())
-		{
-			this.id = id.get();
-			this.name = name.get();
-			this.weight = weight;
-		}
 	}
 
 	public String getId()
@@ -58,21 +45,6 @@ public class Node {
 		this.name = name;
 	}
 	
-	public float getWeight()
-	{
-		return this.weight;
-	}
-	
-	public void setWeight(float weight)
-	{
-		this.weight = weight;
-	}
-	
-	public void addWeight(float weight)
-	{
-		this.weight+=weight;
-	}
-	
 	@Override
 	public boolean equals(Object other){
 	    if (other == null) return false;
@@ -88,7 +60,7 @@ public class Node {
 	public String toString()
 	{
 		String ret = "";
-		ret+="{id: "+this.id+", name: "+this.name+", Weight: "+this.weight+"} ";
+		ret+="{id: "+this.id+", name: "+this.name+"} ";
 		return ret;
 		
 	}

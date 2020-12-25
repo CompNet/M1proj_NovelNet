@@ -10,8 +10,8 @@ package pipeline;
  */
 public class CooccurrenceTableSentence extends CooccurrenceTable {
 
-    /**
-	 * Class Contructor
+     /**
+	 * Constructor for the class WindowingCooccurrenceSentence.
 	 * 
 	 */
 	public CooccurrenceTableSentence() {
@@ -19,7 +19,27 @@ public class CooccurrenceTableSentence extends CooccurrenceTable {
     }
 
     /**
-	 * Displays the table with some layouts
+	 * Constructor for the class WindowingCooccurrenceSentence specifying the window's size.
+	 * 
+	 * @param windowSize
+	 */
+	public CooccurrenceTableSentence(int windowSize) {
+        super();
+		this.windowSize = windowSize;
+    }
+    
+    @Override
+    public CooccurrenceTable subTable(int begin, int end){
+		CooccurrenceTable result = new CooccurrenceTableSentence();
+		for (int i = begin; i <= end; i++){
+			result.add(listCharA.get(i), listCharB.get(i), listDistanceChar.get(i), listDistanceWord.get(i), listBeginingWindow.get(i), listEndingWindow.get(i));
+		}
+		return result;
+    }
+    
+    /**
+	 * Displays the table
+	 * 
 	 * 
 	 */
     @Override

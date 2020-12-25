@@ -10,20 +10,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Schmidt Gaëtan
+ * @author Quay Baptiste, Lemaire Tewis
  *
  */
 public class Graph {
 	
 	protected Map<String,Node> nodeMap;
 	protected Map<String, Edge> edgeMap;
-	protected boolean oriented;
 	String name;
 	
 	public Graph()
 	{
-		this.nodeMap = new HashMap<String,Node>();
-		this.edgeMap = new HashMap<String, Edge>();
+		nodeMap = new HashMap<String,Node>();
+		edgeMap = new HashMap<String, Edge>();
+	}
+	
+	public Graph(String name)
+	{
+		nodeMap = new HashMap<String,Node>();
+		edgeMap = new HashMap<String, Edge>();
+		this.name = name;
 	}
 	
 	public Graph(HashMap<String,Node> nodeMap, HashMap<String, Edge> edgeMap, String name)
@@ -40,51 +46,55 @@ public class Graph {
 	
 	public boolean addNode(Node node)
 	{
-		if (this.nodeMap.containsKey(node.id))
+		if (nodeMap.containsKey(node.id))
 			return false;
-		this.nodeMap.put(node.id, node);
+		nodeMap.put(node.id, node);
 		return true;
 	}
 	
-	public void addNodeWithWeight(Node node)
-	{
-		if (this.nodeMap.containsKey(node.id))
-		{
-			this.nodeMap.get(node.id).addWeight(node.weight);
-		}else
-		{
-			this.nodeMap.put(node.id, node);
-		}
+	public Edge getEdgeById(String id){
+		return edgeMap.get(id);
 	}
 	
-	public Edge getEdgeById(String id)
+	public boolean addEdge(Node charA, Node charB, boolean weighting, float ponderation)
 	{
-		return this.edgeMap.get(id);
-	}
-	
-	public boolean addEdge(Edge edge)
-	{
-		if (this.edgeMap.containsKey(edge.id))
-			return false;
-		this.edgeMap.put(edge.id, edge);
-		return true;
-	}
-	
-	public void addEdgeWithWeighting(Edge edge)
-	{
-		if (this.edgeMap.containsKey(edge.id))
-			{
-				this.edgeMap.get(edge.id).addPonderation(edge.ponderation);
-			}else
-			{
-				this.edgeMap.put(edge.id, edge);
+		String id = findEdge(charA, charB);
+		if (id != null) {	
+			if (weighting){
+				edgeMap.get(id).addPonderation(1/ponderation);
+				return true;
 			}
-		
+			else return false;
+		}
+		Edge tmpEdge;
+		if (weighting) tmpEdge = new Edge(charA.id+ " " + charB.id, charA, charB, 1/ponderation);
+		else tmpEdge = new Edge(charA.id, charA, charB);
+		edgeMap.put(tmpEdge.id, tmpEdge);
+		return true;
 	}
+	
+	public String findEdge(Node nodeA, Node nodeB){
+		for (Edge e : edgeMap.values()) { // For each edge in the list
+			if ((e.nodeLeft.getName() == nodeA.getName() && e.nodeRight.getName() == nodeB.getName()) || (e.nodeLeft.getName() == nodeB.getName() && e.nodeRight.getName() == nodeA.getName())){
+				return e.id;
+			}
+		}
+		return null;
+	}
+	
+	/*protected Edge returnInverseLink(Edge e)
+	{
+		for (Edge el : edgeMap.values()) // For each edge in the list
+		{
+			if (el.nodeLeft.equals(e.nodeRight) && el.nodeRight.equals(e.nodeLeft)) // Checks if the left node is equal to the right node and if the right node is equal to the left one
+				return el; // Returns true if yes
+		}
+		return null; //Returns false if conditions are not met
+	}*/
 	
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 	
 	public void setName(String name)
@@ -92,31 +102,26 @@ public class Graph {
 		this.name = name;
 	}
 	
-	public void graphMLPrinter() throws IOException
-	{
-		graphMLPrinter("");
-	}
-	
 	public void graphMLPrinter(String path) throws IOException
 	{
 		
 
-		if (this.nodeMap.isEmpty())
+		if (nodeMap.isEmpty())
 		{
 			System.out.println("Erreur nodeMapeMpty !");
 			return;
 		}
 		
-		if (this.edgeMap.isEmpty())
+		if (edgeMap.isEmpty())
 		{
 			System.out.println("Erreur edgeMapeMpty !");
 			return;
 		}
 		
-		String pathDest = this.name+".graphml";
+		String pathDest = name+".graphml";
 		
 		if (!"".equals(path))
-			pathDest = path+"/"+this.name+".graphml";
+			pathDest = path+"/"+pathDest;
 		
 		
 		FileWriter fw = new FileWriter(pathDest);
@@ -131,19 +136,12 @@ public class Graph {
 		buffer.write("</key>");
 		buffer.write("<key id=\"keyEdge\" for=\"edge\" attr.name=\"weight\" attr.type=\"float\"/>");
 		buffer.newLine();
-		
-		for (Edge etpm : this.edgeMap.values())
-		{
-			this.oriented = etpm.oriented;
-			break;
-		}
-		
-		if (this.oriented) buffer.write("<graph id=\""+this.name+"\" edgedefault=\"directed\">");
-		else buffer.write("<graph id=\""+this.name+"\" edgedefault=\"undirected\">");
+
+		buffer.write("<graph id=\""+name+"\" edgedefault=\"undirected\">");
 		
 		buffer.newLine();
 		
-		for (Node node : this.nodeMap.values())
+		for (Node node : nodeMap.values())
 		{
 			buffer.write("<node id=\""+node.id+"\">");
 			buffer.newLine();
@@ -153,7 +151,7 @@ public class Graph {
 			buffer.newLine();
 		}
 		float pond = 1;
-		for (Edge edge : this.edgeMap.values())
+		for (Edge edge : edgeMap.values())
 		{
 			if (edge.ponderation>0)
 				pond = edge.ponderation;
@@ -176,14 +174,14 @@ public class Graph {
 	
 	public String toString()
 	{
-		String ret="Graph name: "+this.name+"\n";
+		String ret="Graph name: "+name+"\n";
 
-		for (Node node : this.nodeMap.values())
+		for (Node node : nodeMap.values())
 		{
 			ret+="Node ID = "+node.id+" Name = "+node.name+"\n";
 		}
 		
-		for (Edge edge : this.edgeMap.values())
+		for (Edge edge : edgeMap.values())
 		{
 			ret+="Edge ID = "+edge.id+" Ponderation = "+edge.ponderation+" NodeLeft = "+edge.nodeLeft.name+" NodeRight = "+edge.nodeRight.name+"\n";
 		}	

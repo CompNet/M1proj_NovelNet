@@ -1,7 +1,5 @@
 import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -63,7 +61,7 @@ public class Menu {
 			/*PrintWriter out = new PrintWriter("res/results/"+path.substring(9, path.length()-4)+"_output.txt");
 			pipeline.prettyPrint(annotation, out );*/
 
-			Book book = CreateBook.createBook(document);
+			/*Book book = CreateBook.createBook(document);
 			
 			//Create a table from Sentences
 			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1);
@@ -87,12 +85,10 @@ public class Menu {
 			fileWriter.close();
 			
 			//Create a graph
-			/*Graph graph = new Graph();
-			graph.setName("graph_sliding_1s_"+path.substring(7));
-			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(true, 4, 1);
-			w.createTab(document);*/
-			
-	
+			WindowingCooccurrenceSentence w = new WindowingCooccurrenceSentence(5, 1);	
+			CooccurrenceTableSentence table3 = w.createTab(document);
+			GraphCreator c = new GraphCreator();
+			c.createGraph(table3,true,"graph_"+path.substring(13)).graphMLPrinter("res/resultats");	
 			sc.close();
 		}
 
