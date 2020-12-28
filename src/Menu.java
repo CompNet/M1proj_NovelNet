@@ -67,7 +67,7 @@ public class Menu {
 			Book book = CreateBook.createBook(document);
 			
 			//Create a table from Sentences
-			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1);
+			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1, false, book);
 			CooccurrenceTableSentence table = wcs.createTab(document);
 			
 			GraphCreator c = new GraphCreator();

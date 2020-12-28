@@ -1,6 +1,7 @@
 package pipeline;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.ling.CoreLabel;
 
@@ -10,7 +11,6 @@ import java.util.Map;
 
 import book.Book;
 import book.Chapter;
-import book.CreateBook;
 
 /**
  * Find the co-occurrences with a window dimension set in paragraphs.
@@ -21,16 +21,6 @@ import book.CreateBook;
  */
 public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 
-	/*
-	 * True if you want to stop the detection at the end of a chapter even if the end of the window is not reached. 
-	 * The detection will continue with a new window at the begining of the next chapter.
-	*/
-	boolean chapterLimitation;
-
-	/*
-	* the book you want to detect co-occurrences from.
-	*/
-	Book book;
 
 	/**
 	 * Class Contructor
@@ -40,10 +30,8 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	 * @param size size of the window used to find co-occurrences in.
 	 * @param covering size of the covering between 2 windows. Set to 0 for sequential detection.
 	 */
-	public WindowingCooccurrenceParagraph(boolean chapterLimitation, Book book, int size, int covering){
-		super(size, covering);
-		this.chapterLimitation = chapterLimitation;
-		this.book = book;
+	public WindowingCooccurrenceParagraph( int size, int covering, boolean chapterLimitation, Book book){
+		super(size, covering, chapterLimitation, book);
 	}
 
 	/**
@@ -54,17 +42,19 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	 * 
 	 */
 	@Override
-	public List<List<CoreLabel>> createWindow(CoreDocument document) {
-		if (book == null) book = CreateBook.createBook(document);
+	public List<List<CoreLabel>> createWindow() {
 		List<CoreLabel> window = new LinkedList<>(); // List of tokens
 		List<List<CoreLabel>> result = new LinkedList<>(); // List of lists of tokens
 		int cpt = 0; // We set a counter for the size
 		for (Chapter chapter : book.getChapters()){ // For each chapters 
-			if (chapterLimitation) cpt = 0; // If chapterLimitation is true we reset the counter
+			if (chapterLimitation){
+				result.add(window); // We add the list of tokens to the list of lists of tokens
+				window = new LinkedList<>(); // We reset the list of tokens
+				cpt = 0; // We reset the counter
+			}
 			for (int i = 0 ; i < chapter.getParagraphs().size(); i++){ // For the paragraphs
-				for (int j = 0 ; j < chapter.getParagraphs().get(i).getSentences().size(); j++){ // For the sentences in paragraphs
-					List<CoreLabel> sentence = chapter.getParagraphs().get(i).getSentences().get(j).tokens(); // We add the sentence to the list of sentences
-					for (CoreLabel token : sentence) { // For each of tokens in the sentence
+				for (CoreSentence s : chapter.getParagraphs().get(i).getSentences()){ // For the sentences in paragraphs
+					for (CoreLabel token : s.tokens()) { // For each of tokens in the sentence
 						window.add(token); // We add a token to the list of tokens
 					}
 				}
@@ -90,7 +80,7 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	 */
 	@Override
 	public CooccurrenceTableParagraph createTab(CoreDocument document) {
-		List<List<CoreLabel>> result = createWindow(document); // We get the list of lists of tokens
+		List<List<CoreLabel>> result = createWindow(); // We get the list of lists of tokens
 		String charA = null; // We create a string for Character A
 		String charB = null; // We create a string for Character B
 		CorefChain tempA; // We create a CorefChain for Character A
