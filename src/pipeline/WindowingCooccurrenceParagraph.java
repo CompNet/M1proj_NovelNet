@@ -64,22 +64,23 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 			beginingParagraph = c.getBeginingParagraph();
 			endingParagraph = beginingParagraph+size-1;
 			while(beginingParagraph < c.getEndingParagraph() && !done){
-				for (CoreEntityMention entity : c.getEntities()){
+				for (CoreEntityMention entity : c.getEntities()){	
 					CoreLabel tmp = entity.tokens().get(0);
-					if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= book.getParagraph(endingParagraph).getEndingSentence()){
+					if (tmp.sentIndex() >= c.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= c.getParagraph(endingParagraph).getEndingSentence()){
 						window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingParagraph,endingParagraph)));
 					}
 				}
-				if (endingParagraph < book.getEndingParagraph()-1){
+				if (endingParagraph < c.getEndingParagraph()){
 					result.add(window);
 					window = new LinkedList<>();
 					beginingParagraph = endingParagraph - covering + 1;
 					endingParagraph = beginingParagraph + size - 1;
-					if (endingParagraph > book.getEndingParagraph()-1) endingParagraph = book.getEndingParagraph()-1;
+					if (endingParagraph > c.getEndingParagraph()) endingParagraph = c.getEndingParagraph();
 				}
 				else {
 					done = true;
 					result.add(window);
+					window = new LinkedList<>();
 				}
 			}
 		}
@@ -92,21 +93,19 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		int beginingParagraph = 0;
 		int endingParagraph = beginingParagraph+size-1;
 		boolean done = false;
-		System.out.println("beginingParagraph : " + beginingParagraph + " book.getEndingParagraph() : " + (book.getEndingParagraph()-1));
-		while(beginingParagraph < book.getEndingParagraph()-1 && !done){
-			System.out.println("nice");
+		while(beginingParagraph < book.getEndingParagraph() && !done){
 			for (CoreEntityMention entity : book.getEntities()){
 				CoreLabel tmp = entity.tokens().get(0);
 				if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= book.getParagraph(endingParagraph).getEndingSentence()){
 					window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingParagraph,endingParagraph)));
 				}
 			}
-			if (endingParagraph < book.getEndingParagraph()-1){
+			if (endingParagraph <= book.getEndingParagraph()){
 				result.add(window);
 				window = new LinkedList<>();
 				beginingParagraph = endingParagraph - covering + 1;
 				endingParagraph = beginingParagraph + size - 1;
-				if (endingParagraph > book.getEndingParagraph()-1) endingParagraph = book.getEndingParagraph()-1;
+				if (endingParagraph > book.getEndingParagraph()) endingParagraph = book.getEndingParagraph();
 			}
 			else {
 				done = true;
@@ -147,10 +146,6 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 						tokenListA = characterA.getCoreEntityMention().tokens();
 						tokenListB = characterB.getCoreEntityMention().tokens();
 						
-						/*System.out.println("charA :\t" + characterA.getCoreEntityMention().text() + "\tfin :\t" +tokenListA.get(tokenListA.size()-1).endPosition() );
-						System.out.println("charB :\t" + characterB.getCoreEntityMention().text() + "\tdéb :\t" +tokenListB.get(0).beginPosition());
-						System.out.println("fin-début :\t" + (tokenListA.get(tokenListA.size()-1).endPosition() - tokenListB.get(0).beginPosition()));
-						*/
 						distanceChar = tokenListB.get(0).beginPosition() - tokenListA.get(tokenListA.size()-1).endPosition();	// We get the distance between the two tokens in characters
 						if (distanceChar < 0) {
 							distanceChar = tokenListA.get(0).beginPosition() - tokenListB.get(tokenListB.size()-1).endPosition();

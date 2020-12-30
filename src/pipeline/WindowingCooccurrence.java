@@ -126,7 +126,7 @@ public abstract class WindowingCooccurrence {
 		System.out.println(tmp);*/
 
 		//table display
-		System.out.println("--- table co-occurrence Sentence without chapter limitation ---");
+		System.out.println("\n--- table co-occurrence Sentence without chapter limitation ---\n");
 		CooccurrenceTableSentence table = wcs.createTab(document);
 		table.display();
 
@@ -136,14 +136,9 @@ public abstract class WindowingCooccurrence {
 		System.out.println(tmp2);*/
 
 		//table display
-		System.out.println("--- table co-occurrence Sentence with chapter limitation ---");
+		System.out.println("\n--- table co-occurrence Sentence with chapter limitation ---\n");
 		CooccurrenceTableSentence table2 = wcs2.createTab(document);
 		table2.display();
-	}
-
-	public static void main(String[] args) { 
-		testWindowingCooccurrenceSentence();
-		testWindowingCooccurrenceParagraphs();
 	}
 
 	private static void testWindowingCooccurrenceParagraphs(){
@@ -167,25 +162,25 @@ public abstract class WindowingCooccurrence {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(1);
+		p1.setParagraphNumber(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(2);
+		p2.setParagraphNumber(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(3);
+		p3.setParagraphNumber(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(4);
+		p4.setParagraphNumber(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
@@ -209,18 +204,24 @@ public abstract class WindowingCooccurrence {
 		System.out.println(tmp);*/
 
 		//table display
-		System.out.println("--- table co-occurrence Paragraph without chapter limitation ---");
+		System.out.println("\n--- table co-occurrence Paragraph without chapter limitation ---\n");
 		CooccurrenceTableParagraph table = wcp.createTab(document);
 		table.display();
 
 		//window to create table display
-		/*System.out.println("---");
+		System.out.println("---");
 		List<List<EntityMention>> tmp2 = wcp2.createWindow(document);
-		System.out.println(tmp2);*/
+		System.out.println(tmp2);
 
 		//table display
-		System.out.println("--- table co-occurrence Paragraph with chapter limitation ---");
+		System.out.println("\n--- table co-occurrence Paragraph with chapter limitation ---\n");
 		CooccurrenceTableParagraph table2 = wcp2.createTab(document);
 		table2.display();
+	}
+
+	
+	public static void main(String[] args) { 
+		testWindowingCooccurrenceSentence();
+		testWindowingCooccurrenceParagraphs();
 	}
 }

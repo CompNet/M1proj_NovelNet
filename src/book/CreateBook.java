@@ -47,14 +47,14 @@ public class CreateBook {
 
         boolean titleDetection = true;  //title detection is on by default at the beginning of the document
 
-        int chapterNumber = 1;
-        int paragraphNumber = 1;
+        int chapterNumber = 0;
+        int paragraphNumber = 0;
 
         Book book = new Book();
-        Chapter currentChapter = new Chapter(book, 1);
+        Chapter currentChapter = new Chapter(book, chapterNumber);
         book.addChapter(currentChapter);
 
-        Paragraph currentParagraph = new Paragraph(currentChapter, 1);
+        Paragraph currentParagraph = new Paragraph(currentChapter, paragraphNumber);
         
         currentChapter.addTitle(sentences.get(0)); //the first sentence is considerated as a title
 

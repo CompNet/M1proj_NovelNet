@@ -70,7 +70,7 @@ public class Menu {
 			GraphCreator c = new GraphCreator();
 			
 			//Create the global graph
-			c.createGraph(table, true, "graph_"+path.substring(11, path.length()-4)).graphMLPrinter("res/results/");
+			c.createGraph(table, true, "graph_"+path.substring(11, path.length()-4)).graphMLPrinter("res/results");
 
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			
@@ -78,7 +78,7 @@ public class Menu {
 			int cpt = 0;
 			for (CooccurrenceTable t : dgs.dynamicTableSentences(20, 3)){
 				cpt++;
-				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_"+cpt).graphMLPrinter("res/results/");
+				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_"+cpt).graphMLPrinter("res/results");
 			}
 
 			//Create a table from paragraphs

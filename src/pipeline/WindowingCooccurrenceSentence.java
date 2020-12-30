@@ -144,10 +144,6 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 						tokenListA = characterA.getCoreEntityMention().tokens();
 						tokenListB = characterB.getCoreEntityMention().tokens();
 						
-						/*System.out.println("charA :\t" + characterA.getCoreEntityMention().text() + "\tfin :\t" +tokenListA.get(tokenListA.size()-1).endPosition() );
-						System.out.println("charB :\t" + characterB.getCoreEntityMention().text() + "\tdéb :\t" +tokenListB.get(0).beginPosition());
-						System.out.println("fin-début :\t" + (tokenListA.get(tokenListA.size()-1).endPosition() - tokenListB.get(0).beginPosition()));
-						*/
 						distanceChar = tokenListB.get(0).beginPosition() - tokenListA.get(tokenListA.size()-1).endPosition();	// We get the distance between the two tokens in characters
 						if (distanceChar < 0) {
 							distanceChar = tokenListA.get(0).beginPosition() - tokenListB.get(tokenListB.size()-1).endPosition();

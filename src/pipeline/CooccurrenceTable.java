@@ -156,12 +156,12 @@ public abstract class CooccurrenceTable {
 	 */
 	public void display(){
 		for (int i = 0; i < listCharA.size(); i++){ // For the size of the list of character A
-			System.out.print("Character A : "+listCharA.get(i)); // Prints the list of character A
-			System.out.print(" | Character B : "+listCharB.get(i)); // Prints the list of character B   
-			System.out.print(" | Distance characters : "+listDistanceChar.get(i)); // Prints the list of distance in characters      
-			System.out.print(" | Distance words : "+listDistanceWord.get(i)); // Prints the list of distance in words 
-			System.out.print(" | index begining the window : "+listBeginingWindow.get(i)); 
-			System.out.println(" | index ending the window : "+listEndingWindow.get(i));
+			System.out.print("Char A : "+listCharA.get(i)); // Prints the list of character A
+			System.out.print("\t| Char B : "+listCharB.get(i)); // Prints the list of character B   
+			System.out.print("\t| Dist letter : "+listDistanceChar.get(i)); // Prints the list of distance in characters      
+			System.out.print("\t| Dist words : "+listDistanceWord.get(i)); // Prints the list of distance in words 
+			System.out.print(" | window begin : "+listBeginingWindow.get(i)); 
+			System.out.println(" | window end : "+listEndingWindow.get(i));
 		}
 	}
 }

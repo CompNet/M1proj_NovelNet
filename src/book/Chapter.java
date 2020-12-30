@@ -238,7 +238,7 @@ public class Chapter {
 
 	public Paragraph getParagraph(int paragraphIndex) {
 		for (Paragraph p : paragraphs){
-            if (p.paragraphNumber == paragraphIndex+1) return p;
+            if (p.paragraphNumber == paragraphIndex) return p;
         }
         return null;
 	}
