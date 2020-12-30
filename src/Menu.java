@@ -56,10 +56,7 @@ public class Menu {
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
 			pipeline.annotate(document);
-			
-			Annotation annotation = new Annotation(content);
-			// annotate the annotation
-			pipeline.annotate(annotation);
+			//Annotation annotation = document.annotation();
 			// print the result of the annotation in a file
 			/*PrintWriter out = new PrintWriter("res/results/"+path.substring(9, path.length()-4)+"_output.txt");
 			pipeline.prettyPrint(annotation, out );*/

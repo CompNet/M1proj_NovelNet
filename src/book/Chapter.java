@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.CoreSentence;
 
 /**
@@ -38,6 +39,8 @@ public class Chapter {
      * 
     */
     public Chapter() {
+        paragraphs = new LinkedList<>();
+        titles = new LinkedList<>();
     }
 
     /**
@@ -114,14 +117,14 @@ public class Chapter {
      * 
      * @param sentence title to add to the chapter
     */
-    void addTitle(CoreSentence sentence){
+    public void addTitle(CoreSentence sentence){
         titles.add(sentence);
     }
 
     /**
      * add an empty paragraph to the chapter
     */
-    void addVoidParagraph(){
+    public void addVoidParagraph(){
         paragraphs.add(new Paragraph(this));
     }
 
@@ -130,14 +133,14 @@ public class Chapter {
      * 
      * @param paragraph paragraph to add to the chapter
     */
-    void addParagraph(Paragraph paragraph){
+    public void addParagraph(Paragraph paragraph){
         paragraphs.add(paragraph);
     }
 
     /**
      * display the content in the console
     */
-    void display(int i){
+    public void display(int i){
         System.out.println("Chapter " + i + " : ");
         for (CoreSentence sentence : this.titles){
             System.out.print(sentence.text() + " ");
@@ -158,7 +161,7 @@ public class Chapter {
      *  
      * @param fileWriter object used to write in the file (it contains the file destination and name)
     */
-    void printToFile(FileWriter fileWriter, int i) throws IOException {
+    public void printToFile(FileWriter fileWriter, int i) throws IOException {
         fileWriter.write("Chapter " + i + " : ");
         for (CoreSentence sentence : this.titles){
             fileWriter.write(sentence.text() + " ");
@@ -213,5 +216,30 @@ public class Chapter {
     */
 	public int getEndingSentence() {
 		return paragraphs.getLast().endingSentence;
+    }
+    
+    public List<CoreEntityMention> getEntities(){
+        List<CoreEntityMention> result = new LinkedList<>();
+        for(Paragraph p : paragraphs){
+            for (CoreEntityMention cem : p.getEntities()){
+                result.add(cem);
+            }
+        }
+        return result;
+    }
+   
+	public int getBeginingParagraph() {
+		return paragraphs.getFirst().getParagraphNumber();
+	}
+
+	public int getEndingParagraph() {
+		return paragraphs.getLast().getParagraphNumber();
+    }
+
+	public Paragraph getParagraph(int paragraphIndex) {
+		for (Paragraph p : paragraphs){
+            if (p.paragraphNumber == paragraphIndex+1) return p;
+        }
+        return null;
 	}
 }

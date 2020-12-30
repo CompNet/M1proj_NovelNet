@@ -9,11 +9,14 @@ import java.util.Map;
 
 import book.Book;
 import book.Chapter;
-import book.Paragraph;
+
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.CoreSentence;
+import edu.stanford.nlp.pipeline.CoreEntityMention;
+import edu.stanford.nlp.util.Pair;
+import util.EntityMention;
+import util.ImpUtils;
 
 /**
  * Find the co-occurrences with a window dimension set in sentences.
@@ -41,34 +44,72 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	 * 
 	 */
 	@Override
-	public List<List<CoreLabel>> createWindow(){
-		List<CoreLabel> window = new LinkedList<>(); // List of tokens
-		List<List<CoreLabel>> result = new LinkedList<>(); // List of lists of tokens
-		CoreSentence sentence;
-		int cpt = 0; // We set a counter for the size
+	public List<List<EntityMention>> createWindow(CoreDocument document){
+		if (!book.getEntitiesPlaced()){
+			book.placeEntitites(findEntity(document));
+		}
+		if (chapterLimitation)return createWindowWithChapterLimitation();
+		else return createWindowWithoutChapterLimitation();
+	}
+
+	private List<List<EntityMention>> createWindowWithChapterLimitation(){
+		List<EntityMention> window = new LinkedList<>(); // List of tokens
+		List<List<EntityMention>> result = new LinkedList<>(); // List of lists of tokens
+		int beginingSentence;
+		int endingSentence;
+		boolean done;
 		for (Chapter c : book.getChapters()){
-			if (chapterLimitation){
-				result.add(window); // We add the list of tokens to the list of lists of tokens
-				window = new LinkedList<>(); // We reset the list of tokens
-				cpt = 0; // We reset the counter
-			}
-			for (Paragraph p : c.getParagraphs()){
-				for (int i=0; i< p.getSentences().size(); i++){
-					sentence = p.getSentences().get(i);
-					for (CoreLabel token : sentence.tokens()) { // For each of tokens in the sentence
-						window.add(token); // We add a token to the list of tokens
+			done = false;
+			beginingSentence = c.getBeginingSentence();
+			endingSentence = beginingSentence+size-1;
+			while(beginingSentence < c.getEndingSentence() && !done){
+				for (CoreEntityMention entity : c.getEntities()){
+					CoreLabel tmp = entity.tokens().get(0);
+					if (tmp.sentIndex() >= beginingSentence && tmp.sentIndex() <= endingSentence){
+						window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingSentence,endingSentence)));
 					}
-					cpt++; // We increment one to the counter
-					if (cpt == size){ // If counter reaches given size
-						result.add(window); // We add the list of tokens to the list of lists of tokens
-						window = new LinkedList<>(); // We reset the list of tokens
-						cpt = 0; // We reset the counter
-						i -= covering; // We apply the given covering
-					}
+				}
+				if (endingSentence <= c.getEndingSentence()){
+					result.add(window);
+					window = new LinkedList<>();
+					beginingSentence = endingSentence - covering + 1;
+					endingSentence = beginingSentence + size - 1;
+				}
+				else {
+					done = true;
+					result.add(window);
 				}
 			}
 		}
-		return result; // Returns list of lists of tokens
+		return result;
+	}
+
+	private List<List<EntityMention>> createWindowWithoutChapterLimitation(){
+		List<EntityMention> window = new LinkedList<>(); // List of tokens
+		List<List<EntityMention>> result = new LinkedList<>(); // List of lists of tokens
+		int beginingSentence = book.getBeginingSentence();
+		int endingSentence = beginingSentence+size-1;
+		boolean done = false;
+		while(beginingSentence < book.getEndingSentence() && !done){
+			for (CoreEntityMention entity : book.getEntities()){
+				CoreLabel tmp = entity.tokens().get(0);
+				if (tmp.sentIndex() >= beginingSentence && tmp.sentIndex() <= endingSentence){
+					window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingSentence,endingSentence)));
+				}
+			}
+			if (endingSentence <= book.getEndingSentence()){
+				result.add(window);
+				window = new LinkedList<>();
+				beginingSentence = endingSentence - covering + 1;
+				endingSentence = beginingSentence + size - 1;
+			}
+			else {
+				done = true;
+				result.add(window);
+			}
+		}
+		return result;
+		
 	}
 	
 	
@@ -81,36 +122,48 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	 */
 	@Override
 	public CooccurrenceTableSentence createTab(CoreDocument document) {
-		List<List<CoreLabel>> result = createWindow(); // We get the list of lists of tokens
+		List<List<EntityMention>> result = createWindow(document); // We get the list of lists of tokens
 		String charA = null; // We create a string for Character A
 		String charB = null; // We create a string for Character B
 		CorefChain tempA; // We create a CorefChain for Character A
 		CorefChain tempB; // We create a CorefChain for Character B
+		List<CoreLabel> tokenListA;
+		List<CoreLabel> tokenListB;
+		EntityMention characterA;
+		EntityMention characterB;
 		int distanceChar = 0; // We create an int for the distance between characters in characters
 		int distanceWord = 0; // We create an int for the distance between characters in words
-		int beginingSentence = 0;
-		int endingSentence = 0;
 		CooccurrenceTableSentence tab = new CooccurrenceTableSentence(); // Creates a new table
 		Map<Integer, CorefChain> corefChains = document.corefChains(); // We create a map of corefChains (each represents a set of mentions which corresponds to the same entity)
-		for (List<CoreLabel> tokens : result){ // For each sentence in the window.
-			beginingSentence = tokens.get(0).sentIndex();
-			endingSentence = tokens.get(tokens.size()-1).sentIndex();
-			for (CoreLabel tokenA : tokens){ // For each token for Character A
-				if(tokenA.ner().equals("PERSON")){ // If the token is considered a person
-					for (CoreLabel tokenB : tokens){ // For each token for Character B
-						if(tokenB.ner().equals("PERSON")){ // If the token is considered a person
-							distanceChar = tokenA.beginPosition() - tokenB.beginPosition();	// We get the distance between the two tokens in characters
-							distanceWord = tokens.indexOf(tokenA) - tokens.indexOf(tokenB); // We get the distance between the two tokens in words
-							if ( distanceChar > 0) { // if the distance is strictly superior to 0
-								tempA = ImpUtils.corefByToken(corefChains, tokenA); // We get the corresponding corefChain for token A
-								tempB = ImpUtils.corefByToken(corefChains, tokenB); // We get the corresponding corefChain for token B
-								if (tempA != null && tempB != null) { // If both aren't empty
-									charA = tempA.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character A
-									charB = tempB.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character B
-									if (!charA.equals(charB)) tab.add(charA, charB, distanceChar, distanceWord, beginingSentence, endingSentence); // If the two strings aren't equal we add a line to the Table
-								}
-							}
+		for (List<EntityMention> entities : result){ // For each window.
+			for (int i = 0; i < entities.size(); i++){ // For each token for Character A
+				characterA = entities.get(i);
+				for (int j = i+1; j < entities.size(); j++){ // For each token for Character B
+					characterB = entities.get(j);
+					if (!ImpUtils.sameCharacter(characterA.getCoreEntityMention(), characterB.getCoreEntityMention(), document)){ // if the distance is strictly superior to 0
+						tokenListA = characterA.getCoreEntityMention().tokens();
+						tokenListB = characterB.getCoreEntityMention().tokens();
+						
+						/*System.out.println("charA :\t" + characterA.getCoreEntityMention().text() + "\tfin :\t" +tokenListA.get(tokenListA.size()-1).endPosition() );
+						System.out.println("charB :\t" + characterB.getCoreEntityMention().text() + "\tdéb :\t" +tokenListB.get(0).beginPosition());
+						System.out.println("fin-début :\t" + (tokenListA.get(tokenListA.size()-1).endPosition() - tokenListB.get(0).beginPosition()));
+						*/
+						distanceChar = tokenListB.get(0).beginPosition() - tokenListA.get(tokenListA.size()-1).endPosition();	// We get the distance between the two tokens in characters
+						if (distanceChar < 0) {
+							distanceChar = tokenListA.get(0).beginPosition() - tokenListB.get(tokenListB.size()-1).endPosition();
+							distanceWord = document.tokens().indexOf(tokenListA.get(0)) - document.tokens().indexOf(tokenListB.get(tokenListB.size()-1)) -1; // We get the distance between the two tokens in words
 						}
+						else distanceWord = document.tokens().indexOf(tokenListB.get(0)) - document.tokens().indexOf(tokenListA.get(tokenListA.size()-1)) -1; // We get the distance between the two tokens in words
+						
+						tempA = ImpUtils.corefByEntityMention(corefChains, characterA.getCoreEntityMention()); // We get the corresponding corefChain for token A
+						tempB = ImpUtils.corefByEntityMention(corefChains, characterB.getCoreEntityMention()); // We get the corresponding corefChain for token B
+						
+						if(tempA != null) charA = tempA.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character A
+						else charA = characterA.getCoreEntityMention().text();
+						if (tempB != null) charB = tempB.getRepresentativeMention().mentionSpan; // We assign the string of the most representative mention to Character B
+						else charB = characterB.getCoreEntityMention().text();
+						
+						tab.add(charA, charB, distanceChar, distanceWord, characterA.getWindowBegining(), characterA.getWindowEnding()); // If the two strings aren't equal we add a line to the Table
 					}
 				}
 			}

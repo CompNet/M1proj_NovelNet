@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.CoreSentence;
 
 /**
@@ -19,6 +20,10 @@ public class Paragraph {
      * list of sentences in the paragraph
     */
     protected LinkedList<CoreSentence> sentences;
+    /**
+     * list of sentences in the paragraph
+    */
+    protected LinkedList<CoreEntityMention> entities;
     /**
      * Chapter containing the paragraph
     */
@@ -41,6 +46,8 @@ public class Paragraph {
      * 
     */
     public Paragraph() {
+        sentences = new LinkedList<>();
+        entities = new LinkedList<>();
     }
 
     /**
@@ -49,9 +56,10 @@ public class Paragraph {
      * @param book The Book containing the chapter
      * 
     */
-    Paragraph(Chapter chapter){
+    public Paragraph(Chapter chapter){
         this.chapter = chapter;
         sentences = new LinkedList<>();
+        entities = new LinkedList<>();
     }
 
     /**
@@ -61,18 +69,27 @@ public class Paragraph {
      * @param number An Integer representing the number of the chapter in the book starting from 1
      * 
     */
-    Paragraph(Chapter chapter, int number){
+    public Paragraph(Chapter chapter, int number){
         paragraphNumber = number;
         this.chapter = chapter;
         sentences = new LinkedList<>();
+        entities = new LinkedList<>();
     }
 
     public List<CoreSentence> getSentences() {
-        return this.sentences;
+        return sentences;
     }
 
     public void setSentences(LinkedList<CoreSentence> sentences) {
         this.sentences = sentences;
+    }
+
+    public List<CoreEntityMention> getEntities() {
+        return entities;
+    }
+
+    public void setEntities(LinkedList<CoreEntityMention> entities) {
+        this.entities = entities;
     }
 
     public Chapter getChapter() {
@@ -124,16 +141,31 @@ public class Paragraph {
      * 
      * @param sentence sentence to add to the paragraph
     */
-    void addSentence(CoreSentence sentence){
+    public void addSentence(CoreSentence sentence){
         sentences.add(sentence);
+    }
+
+    /**
+     * add an entity to the paragraph
+     * 
+     * @param entity sentence to add to the paragraph
+    */
+    public void addEntity(CoreEntityMention entity){
+        if (!entities.contains(entity)) entities.add(entity);
     }
 
     /**
      * display the content in the console
     */
-    void display(){
+    public void display(){
+        System.out.println("Sentences : ");
         for (CoreSentence sentence : this.sentences){
             System.out.println(sentence.text());
+        }
+
+        System.out.println("entities : ");
+        for (CoreEntityMention entity : entities){
+            System.out.println(entity.text());
         }
         
     }
@@ -143,9 +175,15 @@ public class Paragraph {
      *  
      * @param fileWriter object used to write in the file (it contains the file destination and name)
     */
-    void printToFile(FileWriter fileWriter) throws IOException {
+    public void printToFile(FileWriter fileWriter) throws IOException {
+        fileWriter.write("Sentences : \n");
         for (CoreSentence sentence : this.sentences){
             fileWriter.write(sentence.text()+ " ");
+        }
+
+        fileWriter.write("entities : \n");
+        for (CoreEntityMention entity : entities){
+            fileWriter.write(entity.text()+ "\n");
         }
     }
 }
