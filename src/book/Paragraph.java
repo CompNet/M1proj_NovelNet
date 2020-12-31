@@ -176,12 +176,12 @@ public class Paragraph {
      * @param fileWriter object used to write in the file (it contains the file destination and name)
     */
     public void printToFile(FileWriter fileWriter) throws IOException {
-        fileWriter.write("Sentences : \n");
+        fileWriter.write("\nSentences : \n");
         for (CoreSentence sentence : this.sentences){
             fileWriter.write(sentence.text()+ " ");
         }
 
-        fileWriter.write("entities : \n");
+        fileWriter.write("\nentities : \n");
         for (CoreEntityMention entity : entities){
             fileWriter.write(entity.text()+ "\n");
         }

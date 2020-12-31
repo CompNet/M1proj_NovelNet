@@ -14,6 +14,7 @@ import java.util.Map;
 
 import book.Book;
 import book.Chapter;
+import book.Paragraph;
 
 /**
  * Find the co-occurrences with a window dimension set in paragraphs.
@@ -66,7 +67,9 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 			while(beginingParagraph < c.getEndingParagraph() && !done){
 				for (CoreEntityMention entity : c.getEntities()){	
 					CoreLabel tmp = entity.tokens().get(0);
-					if (tmp.sentIndex() >= c.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= c.getParagraph(endingParagraph).getEndingSentence()){
+					Paragraph p = book.getParagraph(endingParagraph);
+					if (p==null) p = book.getParagraph(book.getEndingParagraph());
+					if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
 						window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingParagraph,endingParagraph)));
 					}
 				}
@@ -75,7 +78,6 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 					window = new LinkedList<>();
 					beginingParagraph = endingParagraph - covering + 1;
 					endingParagraph = beginingParagraph + size - 1;
-					if (endingParagraph > c.getEndingParagraph()) endingParagraph = c.getEndingParagraph();
 				}
 				else {
 					done = true;
@@ -96,16 +98,17 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		while(beginingParagraph < book.getEndingParagraph() && !done){
 			for (CoreEntityMention entity : book.getEntities()){
 				CoreLabel tmp = entity.tokens().get(0);
-				if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= book.getParagraph(endingParagraph).getEndingSentence()){
+				Paragraph p = book.getParagraph(endingParagraph);
+				if (p==null) p = book.getParagraph(book.getEndingParagraph());
+				if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
 					window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingParagraph,endingParagraph)));
 				}
 			}
-			if (endingParagraph <= book.getEndingParagraph()){
+			if (endingParagraph < book.getEndingParagraph()){
 				result.add(window);
 				window = new LinkedList<>();
 				beginingParagraph = endingParagraph - covering + 1;
 				endingParagraph = beginingParagraph + size - 1;
-				if (endingParagraph > book.getEndingParagraph()) endingParagraph = book.getEndingParagraph();
 			}
 			else {
 				done = true;

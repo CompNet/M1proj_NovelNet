@@ -1,0 +1,17 @@
+fonctionne:
+    windowin paragraph
+
+    windowin sentence
+
+fonctionne pas :
+
+aucune idée :
+    dynamic Graph paragraph -> sentence
+    dynamic Graph paragraph -> paragraph
+    dynamic Graph paragraph -> chapter
+    
+    dynamic Graph sentence -> sentence
+    dynamic Graph sentence -> paragraph
+    dynamic Graph sentence -> chapter
+
+    

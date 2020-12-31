@@ -38,14 +38,12 @@ public class CreateBook {
      * @param document Stanford core nlp CoreDocument representing a text
      * @return The book object created
     */
-    public static Book createBook(CoreDocument document){
+    public static Book createBook(CoreDocument document, boolean titleDetection){
         List<CoreSentence> sentences = document.sentences();    //list of the sentences in the document
         int previousLineSkip;   //used to store the difference between the last token of the previous sentence and 
                                 //the first token of the current sentence
         int nextLineSkip;       //used to store the difference between the last token of the current sentence and 
                                 //the first token of the next sentence
-
-        boolean titleDetection = true;  //title detection is on by default at the beginning of the document
 
         int chapterNumber = 0;
         int paragraphNumber = 0;
@@ -55,9 +53,12 @@ public class CreateBook {
         book.addChapter(currentChapter);
 
         Paragraph currentParagraph = new Paragraph(currentChapter, paragraphNumber);
+        currentChapter.addParagraph(currentParagraph);
+        if (titleDetection){
+            currentChapter.addTitle(sentences.get(0)); //if the first sentence is considerated as a title
+        }
+        else currentParagraph.addSentence(sentences.get(0));
         
-        currentChapter.addTitle(sentences.get(0)); //the first sentence is considerated as a title
-
         //for each sentence in the document exept the last one
         for (int i = 1; i < sentences.size()-1; i++)
 		{

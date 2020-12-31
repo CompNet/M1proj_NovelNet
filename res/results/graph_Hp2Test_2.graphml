@@ -2,7 +2,7 @@
 <graphml>
 <key id="keyNode" for="node" attr.name="characterName" attr.type="string">
 </key><key id="keyEdge" for="edge" attr.name="weight" attr.type="float"/>
-<graph id="graph_Hp2_2" edgedefault="undirected">
+<graph id="graph_Hp2Test_2" edgedefault="undirected">
 <node id="Harry">
 <data key="keyNode">Harry</data>
 </node>

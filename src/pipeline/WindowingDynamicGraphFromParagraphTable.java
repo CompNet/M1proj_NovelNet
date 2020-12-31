@@ -34,21 +34,25 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
 		boolean searchingEnd = false;
+		boolean whileEnd;
+		int i;
 		int begin = 0;
 		int cpt = 0;
 		int windowBegin = 0;
 		int windowEnd = 0;
 		int dynamicCpt = 0;
-		int dynamicWindowBegin = 0;
-		int dynamicWindowEnd = 0;
+		int dynamicGraphBegin = 0;
+		int dynamicGraphEnd = 0;
 		while(!done){
-			dynamicWindowBegin = dynamicCpt*size - dynamicCpt*covering;
-			dynamicWindowEnd = (dynamicCpt + 1)*size - dynamicCpt*covering -1;
-			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
+			i = 0;
+			whileEnd = false;
+			dynamicGraphBegin = dynamicCpt*size - dynamicCpt*covering;
+			dynamicGraphEnd = (dynamicCpt + 1)*size - dynamicCpt*covering -1;
+			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = book.getBeginIndexOfParagraph(cooccurrenceTable.listBeginingWindow.get(i));
 				windowEnd = book.getEndIndexOfParagraph(cooccurrenceTable.listEndingWindow.get(i));
-				if ((windowBegin+windowEnd)/2 >= dynamicWindowBegin){
-					if( (windowBegin+windowEnd)/2 < dynamicWindowEnd){
+				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
+					if( (windowBegin+windowEnd)/2 < dynamicGraphEnd){
 						if (searchingEnd) {
 							cpt ++;
 						}
@@ -67,41 +71,45 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 							searchingEnd = false;
 							cpt = 0;
 						}
-						break;
+						whileEnd = true;
 					}
 				}
+				i++;
 			}
 			dynamicCpt++;
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Create a list of CooccurrenceTable to make graphs from.
 	 * 
 	 * @param size size of the window (in Paragraphs) used create the dynamic graphs.
 	 * @param covering size of the covering between 2 windows. Set to 0 for sequential graphs.
 	*/
-	@Override
 	public List<CooccurrenceTable> dynamicTableParagraphs(int size, int covering){
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
 		boolean searchingEnd = false;
+		boolean whileEnd;
 		int begin = 0;
 		int cpt = 0;
+		int i;
 		int windowBegin = 0;
 		int windowEnd = 0;
 		int dynamicCpt = 0;
-		int dynamicWindowBegin = 0;
-		int dynamicWindowEnd = 0;
+		int dynamicGraphBegin = 0;
+		int dynamicGraphEnd = 0;
 		while(!done){
-			dynamicWindowBegin = dynamicCpt*size - dynamicCpt*covering;
-			dynamicWindowEnd = dynamicCpt*size - dynamicCpt*covering;
-			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
+			dynamicGraphBegin = dynamicCpt*size - dynamicCpt*covering;
+			dynamicGraphEnd = (dynamicCpt+1)*size - dynamicCpt*covering-1;
+			i = 0;
+			whileEnd = false;
+			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
-				if ((windowBegin+windowEnd)/2 >= dynamicWindowBegin){
-					if( (windowBegin+windowEnd)/2 < dynamicWindowEnd){
+				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
+					if( (windowBegin+windowEnd)/2 < dynamicGraphEnd){
 						if (searchingEnd) {
 							cpt ++;
 						}
@@ -120,9 +128,10 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 							searchingEnd = false;
 							cpt = 0;
 						}
-						break;
+						whileEnd = true;
 					}
 				}
+				i++;
 			}
 			dynamicCpt++;
 		}
@@ -140,21 +149,25 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
 		boolean searchingEnd = false;
+		boolean whileEnd;
+		int i;
 		int begin = 0;
 		int cpt = 0;
 		int windowBegin = 0;
 		int windowEnd = 0;
 		int dynamicCpt = 0;
-		int dynamicWindowBegin = 0;
-		int dynamicWindowEnd = 0;
+		int dynamicGraphBegin = 0;
+		int dynamicGraphEnd = 0;
 		while(!done){
-			dynamicWindowBegin = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().getFirst().getParagraphNumber();
-			dynamicWindowEnd = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().getLast().getParagraphNumber();
-			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
+			i=0;
+			whileEnd = false;
+			dynamicGraphBegin = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().getFirst().getParagraphNumber();
+			dynamicGraphEnd = book.getChapters().get((dynamicCpt+1)*size - dynamicCpt*covering-1).getParagraphs().getLast().getParagraphNumber();
+			while(i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
-				if ((windowBegin+windowEnd)/2 >= dynamicWindowBegin){
-					if( (windowBegin+windowEnd)/2 < dynamicWindowEnd){
+				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
+					if( (windowBegin+windowEnd)/2 < dynamicGraphEnd){
 						if (searchingEnd) {
 							cpt ++;
 						}
@@ -173,9 +186,10 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 							searchingEnd = false;
 							cpt = 0;
 						}
-						break;
+						whileEnd = true;
 					}
 				}
+				i++;
 			}
 			dynamicCpt++;
 		}

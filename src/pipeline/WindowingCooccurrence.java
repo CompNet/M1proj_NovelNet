@@ -209,9 +209,9 @@ public abstract class WindowingCooccurrence {
 		table.display();
 
 		//window to create table display
-		System.out.println("---");
+		/*System.out.println("---");
 		List<List<EntityMention>> tmp2 = wcp2.createWindow(document);
-		System.out.println(tmp2);
+		System.out.println(tmp2);*/
 
 		//table display
 		System.out.println("\n--- table co-occurrence Paragraph with chapter limitation ---\n");
