@@ -90,8 +90,8 @@ public class Menu {
 
 			//Create a table from Paragraphs
 			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(5, 1, false, book);
-			List<List<EntityMention>> tmp = wcp.createWindow(document);
-			System.out.println(tmp);
+			//List<List<EntityMention>> tmp = wcp.createWindow(document);
+			//System.out.println(tmp);
 			CooccurrenceTableParagraph tableP = wcp.createTab(document);
 
 			FileWriter fileWriter = new FileWriter("res/results/"+path.substring(11, path.length()-4)+"_bookClass.txt");
@@ -104,7 +104,7 @@ public class Menu {
 			//Create a dynamic graph sequence from Paragraphs table with Paragraphs window.
 			WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, tableP);
 			int cpt = 0;
-			for (CooccurrenceTable t : dgp.dynamicTableSentences(5,1)){
+			for (CooccurrenceTable t : dgp.dynamicTableSentences(20,3)){
 				cpt++;
 				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_"+cpt).graphMLPrinter("res/results");
 			}
