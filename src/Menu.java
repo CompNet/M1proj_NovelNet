@@ -72,7 +72,7 @@ public class Menu {
 			GraphCreator c = new GraphCreator();
 
 			//Create a table from Sentences 
-			/*WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1, false, book);
+			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(20, 3, false, book);
 			CooccurrenceTableSentence table = wcs.createTab(document);
 
 			//Create the global Sentence graph
@@ -81,15 +81,21 @@ public class Menu {
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 			int cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(20, 3)){
+			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(10, 3)){
 				cpt++;
-				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_"+cpt).graphMLPrinter("res/results");
-			}*/
+				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_Paragraphs_"+cpt).graphMLPrinter("res/results");
+			}
+
+			cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableChapters(1, 0)){
+				cpt++;
+				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_Chapters_"+cpt).graphMLPrinter("res/results");
+			}
 
 			
 
 			//Create a table from Paragraphs
-			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(5, 1, false, book);
+			/*WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(5, 1, false, book);
 			//List<List<EntityMention>> tmp = wcp.createWindow(document);
 			//System.out.println(tmp);
 			CooccurrenceTableParagraph tableP = wcp.createTab(document);
@@ -107,7 +113,7 @@ public class Menu {
 			for (CooccurrenceTable t : dgp.dynamicTableSentences(20,3)){
 				cpt++;
 				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_"+cpt).graphMLPrinter("res/results");
-			}
+			}*/
 			
 
 			// print book object in a file

@@ -161,16 +161,14 @@ public class Chapter {
      *  
      * @param fileWriter object used to write in the file (it contains the file destination and name)
     */
-    public void printToFile(FileWriter fileWriter, int i) throws IOException {
+    public void printToFile(FileWriter fileWriter) throws IOException {
         fileWriter.write("Chapter " + chapterNumber + " : ");
         for (CoreSentence sentence : this.titles){
             fileWriter.write(sentence.text() + " ");
         }
-        int cpt = 1;
         for (Paragraph paragraph : this.paragraphs) {
             fileWriter.write("\n Paragraph " + paragraph.getParagraphNumber() + " : ");
             paragraph.printToFile(fileWriter);
-            cpt++;
         }
     }
 

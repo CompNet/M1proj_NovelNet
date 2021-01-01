@@ -34,6 +34,8 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
 		boolean searchingEnd = false;
+		boolean whileEnd;
+		int i;
 		int begin = 0;
 		int cpt = 0;
 		int windowBegin = 0;
@@ -42,13 +44,15 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 		int dynamicGraphBegin = 0;
 		int dynamicGraphEnd = 0;
 		while(!done){
+			i = 0;
+			whileEnd = false;
 			dynamicGraphBegin = dynamicCpt*size - dynamicCpt*covering;
 			dynamicGraphEnd = (dynamicCpt + 1)*size - dynamicCpt*covering -1;
-			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
+			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
-					if( (windowBegin+windowEnd)/2 < dynamicGraphEnd){
+					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
 						if (searchingEnd) {
 							cpt ++;
 						}
@@ -67,9 +71,10 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 							searchingEnd = false;
 							cpt = 0;
 						}
-						break;
+						whileEnd = true;
 					}
 				}
+				i++;
 			}
 			dynamicCpt++;
 		}
@@ -87,6 +92,8 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
 		boolean searchingEnd = false;
+		boolean whileEnd;
+		int i;
 		int begin = 0;
 		int cpt = 0;
 		int windowBegin = 0;
@@ -95,13 +102,16 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 		int dynamicGraphBegin = 0;
 		int dynamicGraphEnd = 0;
 		while(!done){
+			i = 0;
+			whileEnd = false;
 			dynamicGraphBegin = book.getBeginIndexOfParagraph(dynamicCpt*size - dynamicCpt*covering);
 			dynamicGraphEnd = book.getEndIndexOfParagraph((dynamicCpt + 1)*size - dynamicCpt*covering -1);
-			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
+			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndIndexOfParagraph(book.getEndingParagraph());
+			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
-					if( (windowBegin+windowEnd)/2 < dynamicGraphEnd){
+					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
 						if (searchingEnd) {
 							cpt ++;
 						}
@@ -120,9 +130,10 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 							searchingEnd = false;
 							cpt = 0;
 						}
-						break;
+						whileEnd = true;
 					}
 				}
+				i++;
 			}
 			dynamicCpt++;
 		}
@@ -140,6 +151,8 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 		List<CooccurrenceTable> result = new LinkedList<>();
 		boolean done = false;
 		boolean searchingEnd = false;
+		boolean whileEnd;
+		int i;
 		int begin = 0;
 		int cpt = 0;
 		int windowBegin = 0;
@@ -148,13 +161,16 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 		int dynamicGraphBegin = 0;
 		int dynamicGraphEnd = 0;
 		while(!done){
+			i = 0;
+			whileEnd = false;
 			dynamicGraphBegin = book.getBeginIndexOfChapter(dynamicCpt*size - dynamicCpt*covering);
 			dynamicGraphEnd = book.getEndIndexOfChapter((dynamicCpt + 1)*size - dynamicCpt*covering -1);
-			for (int i = 0; i < cooccurrenceTable.listCharA.size(); i++){
+			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndingSentence();
+			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
-					if( (windowBegin+windowEnd)/2 < dynamicGraphEnd){
+					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
 						if (searchingEnd) {
 							cpt ++;
 						}
@@ -173,9 +189,10 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 							searchingEnd = false;
 							cpt = 0;
 						}
-						break;
+						whileEnd = true;
 					}
 				}
+				i++;
 			}
 			dynamicCpt++;
 		}

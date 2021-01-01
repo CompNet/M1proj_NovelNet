@@ -62,6 +62,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 			done = false;
 			beginingSentence = c.getBeginingSentence();
 			endingSentence = beginingSentence+size-1;
+			if (endingSentence > c.getEndingSentence()) endingSentence = c.getEndingSentence();
 			while(beginingSentence < c.getEndingSentence() && !done){
 				for (CoreEntityMention entity : c.getEntities()){
 					CoreLabel tmp = entity.tokens().get(0);
@@ -69,7 +70,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 						window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingSentence,endingSentence)));
 					}
 				}
-				if (endingSentence <= c.getEndingSentence()){
+				if (endingSentence < c.getEndingSentence()){
 					result.add(window);
 					window = new LinkedList<>();
 					beginingSentence = endingSentence - covering + 1;
@@ -97,11 +98,12 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 					window.add(new EntityMention(entity, new Pair<Integer,Integer>(beginingSentence,endingSentence)));
 				}
 			}
-			if (endingSentence <= book.getEndingSentence()){
+			if (endingSentence < book.getEndingSentence()){
 				result.add(window);
 				window = new LinkedList<>();
 				beginingSentence = endingSentence - covering + 1;
 				endingSentence = beginingSentence + size - 1;
+				if (endingSentence > book.getEndingSentence()) endingSentence = book.getEndingSentence();
 			}
 			else {
 				done = true;

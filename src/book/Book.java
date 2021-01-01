@@ -152,11 +152,9 @@ public class Book {
      * @param fileWriter object used to write in the file (it contains the file destination and name)
     */
     public void printToFile(FileWriter fileWriter) throws IOException {
-        int cpt = 1;
         for (Chapter chapter : this.chapters) {
             fileWriter.write("\n");
-            chapter.printToFile(fileWriter, cpt);
-            cpt++;
+            chapter.printToFile(fileWriter);
         }
     }
 
