@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.CoreSentence;
+import util.EntityMention;
 
 /**
  * Represent a Chapter in a Book
@@ -216,11 +216,11 @@ public class Chapter {
 		return paragraphs.getLast().endingSentence;
     }
     
-    public List<CoreEntityMention> getEntities(){
-        List<CoreEntityMention> result = new LinkedList<>();
+    public List<EntityMention> getEntities(){
+        List<EntityMention> result = new LinkedList<>();
         for(Paragraph p : paragraphs){
-            for (CoreEntityMention cem : p.getEntities()){
-                result.add(cem);
+            for (EntityMention em : p.getEntities()){
+                result.add(em);
             }
         }
         return result;

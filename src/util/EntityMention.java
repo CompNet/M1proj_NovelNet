@@ -6,11 +6,18 @@ import edu.stanford.nlp.util.Pair;
 public class EntityMention {
 
     CoreEntityMention coreEntityMention;
+    String bestName;
     Pair<Integer, Integer> window;
 
-    public EntityMention(CoreEntityMention coreEntityMention, Pair<Integer, Integer> window) {
+    public EntityMention(CoreEntityMention coreEntityMention, Pair<Integer, Integer> window, String bestName) {
         this.coreEntityMention = coreEntityMention;
         this.window = window;
+        this.bestName = bestName;
+    }
+
+    public EntityMention(CoreEntityMention coreEntityMention, String bestName) {
+        this.coreEntityMention = coreEntityMention;
+        this.bestName = bestName;
     }
 
     public CoreEntityMention getCoreEntityMention(){
@@ -19,6 +26,14 @@ public class EntityMention {
 
     public void setCoreEntityMention(CoreEntityMention coreEntityMention){
         this.coreEntityMention = coreEntityMention;
+    }
+
+    public String getBestName(){
+        return bestName;
+    }
+
+    public void setBestName(String bestName){
+        this.bestName = bestName;
     }
 
     public int getWindowBegining(){
@@ -49,6 +64,7 @@ public class EntityMention {
     public String toString() {
         return "{" +
             " coreEntityMention='" + getCoreEntityMention() + "'" +
+            ", best name='" + getBestName() + "'" +
             ", window='" + getWindow() + "'" +
             "}";
     }

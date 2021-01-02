@@ -84,7 +84,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -124,12 +124,12 @@ public abstract class WindowingDynamicGraph {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcp.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//table display
 		System.out.println("\n--- table co-occurrence Paragraph without chapter limitation ---\n");
-		CooccurrenceTableParagraph table = wcp.createTab(document);
+		CooccurrenceTableParagraph table = wcp.createTab();
 		table.display();
 
 		WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, table);
@@ -155,7 +155,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -195,12 +195,12 @@ public abstract class WindowingDynamicGraph {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcp.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//table display
 		System.out.println("\n--- table co-occurrence Paragraph without chapter limitation ---\n");
-		CooccurrenceTableParagraph table = wcp.createTab(document);
+		CooccurrenceTableParagraph table = wcp.createTab();
 		table.display();
 
 		WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, table);
@@ -226,7 +226,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(1, 0, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -266,12 +266,12 @@ public abstract class WindowingDynamicGraph {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcp.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//table display
 		System.out.println("\n--- table co-occurrence Paragraph without chapter limitation ---\n");
-		CooccurrenceTableParagraph table = wcp.createTab(document);
+		CooccurrenceTableParagraph table = wcp.createTab();
 		table.display();
 
 		WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, table);
@@ -304,7 +304,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -344,12 +344,12 @@ public abstract class WindowingDynamicGraph {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcs.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//table display
 		System.out.println("\n--- table co-occurrence Sentence without chapter limitation ---\n");
-		CooccurrenceTableSentence table = wcs.createTab(document);
+		CooccurrenceTableSentence table = wcs.createTab();
 		table.display();
 
 		WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
@@ -382,7 +382,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -422,12 +422,12 @@ public abstract class WindowingDynamicGraph {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcs.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//table display
 		System.out.println("\n--- table co-occurrence Sentence without chapter limitation ---\n");
-		CooccurrenceTableSentence table = wcs.createTab(document);
+		CooccurrenceTableSentence table = wcs.createTab();
 		table.display();
 
 		WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
@@ -460,7 +460,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -502,12 +502,12 @@ public abstract class WindowingDynamicGraph {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcs.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//table display
 		System.out.println("\n--- table co-occurrence Sentence without chapter limitation ---\n");
-		CooccurrenceTableSentence table = wcs.createTab(document);
+		CooccurrenceTableSentence table = wcs.createTab();
 		table.display();
 
 		WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);

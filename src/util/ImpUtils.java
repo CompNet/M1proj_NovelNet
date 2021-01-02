@@ -14,23 +14,8 @@ import edu.stanford.nlp.pipeline.CoreEntityMention;
  */
 public class ImpUtils {
 
-	/**
-	 * @author Baptiste Quay
-	 * @author Tewis Lemaire
-	 *
-	 */
-	public static boolean sameCharacter(CoreEntityMention emA, CoreEntityMention emB, CoreDocument document){
-		CorefChain charA = corefByEntityMention(document.corefChains(), emA);
-		CorefChain charB = corefByEntityMention(document.corefChains(), emB);
-		if (charA != null){
-			if(charB != null){
-				return charA.equals(charB);
-			}
-			return false;
-		}
-		else if (charB != null) return false;
-		else return emA.text().equals(emB.text());
-		
+	private ImpUtils(){
+
 	}
 	
 	/**
@@ -45,14 +30,20 @@ public class ImpUtils {
 		for (CorefChain corefchain : corefChains.values()){
 			for (CorefMention mention : corefchain.getMentionsInTextualOrder()){
 				if (mention.mentionSpan.equals(cem.text())){
-					//System.out.println("m.startindex : " + mention.startIndex + " cem.startindex : " +cem.tokens().get(0).index() + "m.endIndex : " + mention.endIndex + " cem.endIndex : " +cem.tokens().get(cem.tokens().size()).index());
-					if (mention.startIndex-1 <= cem.tokens().get(0).index() && cem.tokens().get(cem.tokens().size()-1).index() <= mention.endIndex){
+					if (mention.startIndex == cem.tokens().get(0).index() && cem.tokens().get(cem.tokens().size()-1).index() == mention.endIndex-1){
 						return corefchain;
 					}
 				}
 			}
 		}
 		return ret;
+	}
+
+	public static String bestName(CoreDocument document, CoreEntityMention cem){
+		Map<Integer,CorefChain> corefChains = document.corefChains();
+		CorefChain corefChain =  ImpUtils.corefByEntityMention(corefChains, cem);
+		if (corefChain == null) return cem.text();
+		return corefChain.getRepresentativeMention().mentionSpan;
 	}
 	
 	/**

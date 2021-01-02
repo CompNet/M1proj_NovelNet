@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.CoreSentence;
+import util.EntityMention;
 
 /**
  * Paragraphs in a chapter
@@ -21,9 +21,9 @@ public class Paragraph {
     */
     protected LinkedList<CoreSentence> sentences;
     /**
-     * list of sentences in the paragraph
+     * list of entities in the paragraph
     */
-    protected LinkedList<CoreEntityMention> entities;
+    protected LinkedList<EntityMention> entities;
     /**
      * Chapter containing the paragraph
     */
@@ -84,11 +84,11 @@ public class Paragraph {
         this.sentences = sentences;
     }
 
-    public List<CoreEntityMention> getEntities() {
+    public List<EntityMention> getEntities() {
         return entities;
     }
 
-    public void setEntities(LinkedList<CoreEntityMention> entities) {
+    public void setEntities(LinkedList<EntityMention> entities) {
         this.entities = entities;
     }
 
@@ -150,7 +150,7 @@ public class Paragraph {
      * 
      * @param entity sentence to add to the paragraph
     */
-    public void addEntity(CoreEntityMention entity){
+    public void addEntity(EntityMention entity){
         if (!entities.contains(entity)) entities.add(entity);
     }
 
@@ -164,8 +164,8 @@ public class Paragraph {
         }
 
         System.out.println("entities : ");
-        for (CoreEntityMention entity : entities){
-            System.out.println(entity.text());
+        for (EntityMention entity : entities){
+            System.out.println(entity.getBestName());
         }
         
     }
@@ -182,8 +182,8 @@ public class Paragraph {
         }
 
         fileWriter.write("\nentities : \n");
-        for (CoreEntityMention entity : entities){
-            fileWriter.write(entity.text()+ "\n");
+        for (EntityMention entity : entities){
+            fileWriter.write(entity.getBestName()+ "\n");
         }
     }
 }

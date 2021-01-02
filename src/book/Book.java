@@ -6,7 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
+import util.EntityMention;
+import util.ImpUtils;
 
 /**
  * Represent a Book.
@@ -21,20 +24,23 @@ public class Book {
     */
     protected LinkedList<Chapter> chapters;
     protected boolean entitiesPlaced;
+    protected CoreDocument document;
 
     /**
      * Class Constructor.
      * 
     */
-    public Book() {
+    public Book(CoreDocument document) {
         chapters = new LinkedList<>();
         entitiesPlaced = false;
+        this.document = document;
     }
 
 
-    public Book(LinkedList<Chapter> chapters) {
+    public Book(LinkedList<Chapter> chapters, CoreDocument document) {
         this.chapters = chapters;
         entitiesPlaced = false;
+        this.document = document;
     }
 
     public List<Chapter> getChapters() {
@@ -51,6 +57,14 @@ public class Book {
 
     public void setEntitiesPlaced(boolean entitiesPlaced) {
         this.entitiesPlaced = entitiesPlaced;
+    }
+
+    public CoreDocument getDocument() {
+        return document;
+    }
+
+    public void setDocument(CoreDocument document) {
+        this.document = document;
     }
 
     @Override
@@ -139,7 +153,7 @@ public class Book {
     public void display() {
         int cpt = 1;
 
-        for (Chapter chapter : this.chapters) {
+        for (Chapter chapter : chapters) {
             System.out.println(" ");
             chapter.display(cpt);
             cpt++;
@@ -158,26 +172,10 @@ public class Book {
         }
     }
 
-    public void placeEntitites(List<CoreEntityMention> entities){
-        for (CoreEntityMention entity : entities){
-            CoreLabel tmp = entity.tokens().get(0);
-			for(Chapter c : chapters){
-                if(tmp.sentIndex() >= c.getBeginingSentence() && tmp.sentIndex() <= c.getEndingSentence()){
-                    for (Paragraph p : c.getParagraphs()){
-                        if(tmp.sentIndex() >= p.getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
-                            p.addEntity(entity);
-                        }
-                    }
-                }
-            }
-        }
-        entitiesPlaced = true;
-    }
-
-    public List<CoreEntityMention> getEntities(){
-        List<CoreEntityMention> result = new LinkedList<>();
+    public List<EntityMention> getEntities(){
+        List<EntityMention> result = new LinkedList<>();
         for(Chapter c : chapters){
-            for (CoreEntityMention cem : c.getEntities()){
+            for (EntityMention cem : c.getEntities()){
                 result.add(cem);
             }
         }
@@ -200,12 +198,38 @@ public class Book {
         return chapters.getLast().getEndingParagraph();
     }
 
-
 	public Paragraph getParagraph(int paragraphIndex) {
         for (Chapter c : chapters){
             if (c.getParagraph(paragraphIndex) != null) return c.getParagraph(paragraphIndex);
         }
 		return null;
+    }
+
+    public List<EntityMention> findEntity(){
+		LinkedList<EntityMention> result = new LinkedList<>();
+		for (CoreEntityMention em : document.entityMentions()){
+			if (em.entityType().equals("PERSON") ){
+				result.add(new EntityMention(em, ImpUtils.bestName(getDocument(), em)));
+			}
+		}
+		return result;
 	}
+
+    public void placeEntitites(){
+        List<EntityMention> entities = findEntity();
+        for (EntityMention entity : entities){
+            CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
+			for(Chapter c : chapters){
+                if(tmp.sentIndex() >= c.getBeginingSentence() && tmp.sentIndex() <= c.getEndingSentence()){
+                    for (Paragraph p : c.getParagraphs()){
+                        if(tmp.sentIndex() >= p.getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
+                            p.addEntity(entity);
+                        }
+                    }
+                }
+            }
+        }
+        entitiesPlaced = true;
+    }
     
 }

@@ -9,7 +9,6 @@ import book.Chapter;
 import book.Paragraph;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import util.EntityMention;
 
@@ -53,29 +52,20 @@ public abstract class WindowingCooccurrence {
 		this.chapterLimitation = chapterLimitation;
 		this.book = book;
 	}
-
-	public List<CoreEntityMention> findEntity(CoreDocument document){
-		LinkedList<CoreEntityMention> result = new LinkedList<>();
-		for (CoreEntityMention em : document.entityMentions()){
-			if (em.entityType().equals("PERSON") ){
-				result.add(em);
-			}
-		}
-		return result;
-	}
 	
-	protected CooccurrenceTable createTab(CoreDocument document) {
+	protected CooccurrenceTable createTab() {
 		return null;
 	}
 	
-	public List<List<EntityMention>> createWindow(CoreDocument document) {
+	public List<List<EntityMention>> createWindow() {
 		return new LinkedList<>();
 	}
 
 	private static void testWindowingCooccurrenceSentence(){
 		// set up pipeline
 		Properties props = new Properties();
-    	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
+		props.setProperty("ner.applyFineGrained", "false");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
 		// make an example document
@@ -85,7 +75,7 @@ public abstract class WindowingCooccurrence {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 		WindowingCooccurrenceSentence wcs2 = new WindowingCooccurrenceSentence(2, 1, true, book);
 
@@ -117,34 +107,35 @@ public abstract class WindowingCooccurrence {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcs.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//window to create table display
 		/*System.out.println("---");
-		List<List<EntityMention>> tmp = wcs.createWindow(document);
+		List<List<EntityMention>> tmp = wcs.createWindow();
 		System.out.println(tmp);*/
 
 		//table display
 		System.out.println("\n--- table co-occurrence Sentence without chapter limitation ---\n");
-		CooccurrenceTableSentence table = wcs.createTab(document);
+		CooccurrenceTableSentence table = wcs.createTab();
 		table.display();
 
 		//window to create table display
 		/*System.out.println("---");
-		List<List<EntityMention>> tmp2 = wcs2.createWindow(document);
+		List<List<EntityMention>> tmp2 = wcs2.createWindow();
 		System.out.println(tmp2);*/
 
 		//table display
 		System.out.println("\n--- table co-occurrence Sentence with chapter limitation ---\n");
-		CooccurrenceTableSentence table2 = wcs2.createTab(document);
+		CooccurrenceTableSentence table2 = wcs2.createTab();
 		table2.display();
 	}
 
 	private static void testWindowingCooccurrenceParagraphs(){
 		// set up pipeline
 		Properties props = new Properties();
-    	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
+		props.setProperty("ner.applyFineGrained", "false");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
 		// make an example document
@@ -154,7 +145,7 @@ public abstract class WindowingCooccurrence {
 		pipeline.annotate(document);
 
 		// manual book creation
-		Book book = new Book();
+		Book book = new Book(document);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(2, 1, false, book);
 		WindowingCooccurrenceParagraph wcp2 = new WindowingCooccurrenceParagraph(2, 1, true, book);
 
@@ -195,27 +186,27 @@ public abstract class WindowingCooccurrence {
 
 		//book display
 		System.out.println("---");
-		book.placeEntitites(wcp.findEntity(document));
+		book.placeEntitites();
 		book.display();
 
 		//window to create table display
 		/*System.out.println("---");
-		List<List<EntityMention>> tmp = wcp.createWindow(document);
+		List<List<EntityMention>> tmp = wcp.createWindow();
 		System.out.println(tmp);*/
 
 		//table display
 		System.out.println("\n--- table co-occurrence Paragraph without chapter limitation ---\n");
-		CooccurrenceTableParagraph table = wcp.createTab(document);
+		CooccurrenceTableParagraph table = wcp.createTab();
 		table.display();
 
 		//window to create table display
 		/*System.out.println("---");
-		List<List<EntityMention>> tmp2 = wcp2.createWindow(document);
+		List<List<EntityMention>> tmp2 = wcp2.createWindow();
 		System.out.println(tmp2);*/
 
 		//table display
 		System.out.println("\n--- table co-occurrence Paragraph with chapter limitation ---\n");
-		CooccurrenceTableParagraph table2 = wcp2.createTab(document);
+		CooccurrenceTableParagraph table2 = wcp2.createTab();
 		table2.display();
 	}
 

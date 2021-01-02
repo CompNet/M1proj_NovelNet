@@ -58,6 +58,7 @@ public class Menu {
 
 			Properties props = new Properties();
 			props.setProperty("annotators",prop);
+			props.setProperty("ner.applyFineGrained", "false");
 
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
@@ -73,7 +74,7 @@ public class Menu {
 
 			//Create a table from Sentences 
 			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(20, 3, false, book);
-			CooccurrenceTableSentence table = wcs.createTab(document);
+			CooccurrenceTableSentence table = wcs.createTab();
 
 			//Create the global Sentence graph
 			c.createGraph(table, true, "graph_"+path.substring(11, path.length()-4)).graphMLPrinter("res/results");
