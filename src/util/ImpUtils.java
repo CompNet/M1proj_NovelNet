@@ -38,7 +38,12 @@ public class ImpUtils {
 		}
 		return ret;
 	}
-
+	
+	/**
+	 * @author Baptiste Quay
+	 * @author Tewis Lemaire
+	 *
+	 */
 	public static String bestName(CoreDocument document, CoreEntityMention cem){
 		Map<Integer,CorefChain> corefChains = document.corefChains();
 		CorefChain corefChain =  ImpUtils.corefByEntityMention(corefChains, cem);
