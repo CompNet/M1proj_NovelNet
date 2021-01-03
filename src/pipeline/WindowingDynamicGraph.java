@@ -91,25 +91,25 @@ public abstract class WindowingDynamicGraph {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
+		p1.setParagraphIndex(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
+		p2.setParagraphIndex(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
+		p3.setParagraphIndex(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
+		p4.setParagraphIndex(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
@@ -162,25 +162,25 @@ public abstract class WindowingDynamicGraph {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
+		p1.setParagraphIndex(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
+		p2.setParagraphIndex(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
+		p3.setParagraphIndex(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
+		p4.setParagraphIndex(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
@@ -233,25 +233,25 @@ public abstract class WindowingDynamicGraph {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
+		p1.setParagraphIndex(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
+		p2.setParagraphIndex(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
+		p3.setParagraphIndex(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
+		p4.setParagraphIndex(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
@@ -311,25 +311,25 @@ public abstract class WindowingDynamicGraph {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
+		p1.setParagraphIndex(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
+		p2.setParagraphIndex(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
+		p3.setParagraphIndex(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
+		p4.setParagraphIndex(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
@@ -389,25 +389,25 @@ public abstract class WindowingDynamicGraph {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
+		p1.setParagraphIndex(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
+		p2.setParagraphIndex(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
+		p3.setParagraphIndex(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
+		p4.setParagraphIndex(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
@@ -467,35 +467,35 @@ public abstract class WindowingDynamicGraph {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
+		p1.setParagraphIndex(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
+		p2.setParagraphIndex(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
+		p3.setParagraphIndex(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
+		p4.setParagraphIndex(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
 		c1.addParagraph(p2);
-		c1.setChapterNumber(0);
+		c1.setChapterIndex(0);
 
 		Chapter c2 = new Chapter();
 		c2.addParagraph(p3);
 		c2.addParagraph(p4);
-		c2.setChapterNumber(1);
+		c2.setChapterIndex(1);
 		
 		book.addChapter(c1);
 		book.addChapter(c2);

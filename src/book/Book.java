@@ -127,9 +127,9 @@ public class Book {
      * @param chapterNumber An Integer representing the chapter number in the book.
      * @return An Integer representing the index of the sentence begining the chapter. -1 if the chapter is not in the book.
     */
-    public int getBeginIndexOfChapter(int chapterNumber){
+    public int getBeginIndexOfChapter(int chapterIndex){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterNumber == chapterNumber) return chapter.getBeginingSentence();
+            if (chapter.chapterIndex == chapterIndex) return chapter.getBeginingSentence();
         }
         return -1;
     }
@@ -140,9 +140,9 @@ public class Book {
      * @param chapterNumber An Integer representing the chapter number in the book.
      * @return An Integer representing the index of the sentence ending the chapter. -1 if the chapter is not in the book.
     */
-    public int getEndIndexOfChapter(int chapterNumber){
+    public int getEndIndexOfChapter(int chapterIndex){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterNumber == chapterNumber) return chapter.getEndingSentence();
+            if (chapter.chapterIndex == chapterIndex) return chapter.getEndingSentence();
         }
         return -1;
     }
@@ -151,12 +151,9 @@ public class Book {
      * display the content of the book in the console
     */
     public void display() {
-        int cpt = 1;
-
         for (Chapter chapter : chapters) {
             System.out.println(" ");
-            chapter.display(cpt);
-            cpt++;
+            chapter.display();
         }
     }
 

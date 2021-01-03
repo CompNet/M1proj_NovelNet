@@ -1,16 +1,26 @@
 package pipeline;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
+import org.apache.commons.io.IOUtils;
+
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Properties;
 
-import book.Book;
-import book.Chapter;
-import book.Paragraph;
-
-import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import util.EntityMention;
+
+import book.Book;
+import book.CreateBook;
+import book.TextNormalization;
+
+import edu.stanford.nlp.coref.data.CorefChain;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreEntityMention;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+
 
 /**
  * A generic class for the windowing of co-occurrences.
@@ -61,157 +71,146 @@ public abstract class WindowingCooccurrence {
 		return new LinkedList<>();
 	}
 
-	private static void testWindowingCooccurrenceSentence(){
+	private static void testWindowingCooccurrenceSentence() throws IOException{
 		// set up pipeline
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		props.setProperty("ner.applyFineGrained", "false");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
-		// make an example document
-		CoreDocument document = new CoreDocument("Joe Smith is from Seattle. His friend Sara Jackson is from Washigton. She is an accountant for Bill Farmer. This is a buffering.");
+		//getting content
+		String path = "res/corpus/exempleFile.txt";
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		//normalizing content
+		TextNormalization adapt = new TextNormalization(content);
+		adapt.addDotEndOfLine();
+		content = adapt.getText();
+
+		// make the document
+		CoreDocument document = new CoreDocument(content);
 		
 		// annotate the document
 		pipeline.annotate(document);
 
-		// manual book creation
-		Book book = new Book(document);
+		// automatic book creation
+		boolean noTitle = true;
+		Book book = CreateBook.createBook(document, noTitle);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 		WindowingCooccurrenceSentence wcs2 = new WindowingCooccurrenceSentence(2, 1, true, book);
 
-		Paragraph p1 = new Paragraph();
-		p1.addSentence(document.sentences().get(0));
-		p1.setBeginingSentence(0);
-		p1.setEndingSentence(0);
-
-		Paragraph p2 = new Paragraph();
-		p2.addSentence(document.sentences().get(1));
-		p2.setBeginingSentence(1);
-		p2.setEndingSentence(1);
-
-		Paragraph p3 = new Paragraph();
-		p3.addSentence(document.sentences().get(2));
-		p3.addSentence(document.sentences().get(3));
-		p3.setBeginingSentence(2);
-		p3.setEndingSentence(3);
-
-		Chapter c1 = new Chapter();
-		c1.addParagraph(p1);
-		c1.addParagraph(p2);
-
-		Chapter c2 = new Chapter();
-		c2.addParagraph(p3);
-		
-		book.addChapter(c1);
-		book.addChapter(c2);
-
 		//book display
 		System.out.println("---");
-		book.placeEntitites();
 		book.display();
+		
+		System.out.println("\n--- entités détectées ---\n");
+		for (CoreEntityMention e : document.entityMentions()){
+			System.out.println(e);
+		}
+
+		System.out.println("\n--- chaines de coréférences ---\n");
+		for ( CorefChain c :document.corefChains().values()){
+			System.out.println(c);
+		}
 
 		//window to create table display
-		/*System.out.println("---");
+		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
 		List<List<EntityMention>> tmp = wcs.createWindow();
-		System.out.println(tmp);*/
+		for(List<EntityMention> l : tmp){
+			System.out.println(l + "\n");
+		}
 
 		//table display
-		System.out.println("\n--- table co-occurrence Sentence without chapter limitation ---\n");
+		System.out.println("\n--- table de co-occurrence en Phrases sans limite aux chapitres ---\n");
 		CooccurrenceTableSentence table = wcs.createTab();
 		table.display();
 
 		//window to create table display
-		/*System.out.println("---");
+		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
 		List<List<EntityMention>> tmp2 = wcs2.createWindow();
-		System.out.println(tmp2);*/
+		for(List<EntityMention> l : tmp2){
+			System.out.println(l + "\n");
+		}
 
 		//table display
-		System.out.println("\n--- table co-occurrence Sentence with chapter limitation ---\n");
+		System.out.println("\n--- table de co-occurrence en Phrases avec limite aux chapitres ---\n");
 		CooccurrenceTableSentence table2 = wcs2.createTab();
 		table2.display();
+
 	}
 
-	private static void testWindowingCooccurrenceParagraphs(){
+	private static void testWindowingCooccurrenceParagraphs() throws IOException{
 		// set up pipeline
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		props.setProperty("ner.applyFineGrained", "false");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
-		// make an example document
-		CoreDocument document = new CoreDocument("Joe Smith is from Seattle. His friend Sara Jackson is from Washigton. She is an accountant for Bill Farmer. This is a buffering.");
+		//getting content
+		String path = "res/corpus/exempleFile.txt";
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		//normalizing content
+		TextNormalization adapt = new TextNormalization(content);
+		adapt.addDotEndOfLine();
+		content = adapt.getText();
+
+		// make the document
+		CoreDocument document = new CoreDocument(content);
 		
 		// annotate the document
 		pipeline.annotate(document);
 
-		// manual book creation
-		Book book = new Book(document);
+		// automatic book creation
+		boolean noTitle = true;
+		Book book = CreateBook.createBook(document, noTitle);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(2, 1, false, book);
 		WindowingCooccurrenceParagraph wcp2 = new WindowingCooccurrenceParagraph(2, 1, true, book);
 
-		Paragraph p1 = new Paragraph();
-		p1.addSentence(document.sentences().get(0));
-		p1.setBeginingSentence(0);
-		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
-
-		Paragraph p2 = new Paragraph();
-		p2.addSentence(document.sentences().get(1));
-		p2.setBeginingSentence(1);
-		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
-
-		Paragraph p3 = new Paragraph();
-		p3.addSentence(document.sentences().get(2));
-		p3.setBeginingSentence(2);
-		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
-
-		Paragraph p4 = new Paragraph();
-		p4.addSentence(document.sentences().get(3));
-		p4.setBeginingSentence(3);
-		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
-
-		Chapter c1 = new Chapter();
-		c1.addParagraph(p1);
-		c1.addParagraph(p2);
-
-		Chapter c2 = new Chapter();
-		c2.addParagraph(p3);
-		c2.addParagraph(p4);
-		
-		book.addChapter(c1);
-		book.addChapter(c2);
-
 		//book display
 		System.out.println("---");
-		book.placeEntitites();
 		book.display();
+		
+		System.out.println("\n--- entités détectées ---\n");
+		for (CoreEntityMention e : document.entityMentions()){
+			System.out.println(e);
+		}
+
+		System.out.println("\n--- chaines de coréférences ---\n");
+		for ( CorefChain c :document.corefChains().values()){
+			System.out.println(c);
+		}
 
 		//window to create table display
-		/*System.out.println("---");
+		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
 		List<List<EntityMention>> tmp = wcp.createWindow();
-		System.out.println(tmp);*/
+		for(List<EntityMention> l : tmp){
+			System.out.println(l + "\n");
+		}
 
 		//table display
-		System.out.println("\n--- table co-occurrence Paragraph without chapter limitation ---\n");
+		System.out.println("\n--- table de co-occurrence en Paragraphes sans limite aux chapitres ---\n");
 		CooccurrenceTableParagraph table = wcp.createTab();
 		table.display();
 
 		//window to create table display
-		/*System.out.println("---");
+		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
 		List<List<EntityMention>> tmp2 = wcp2.createWindow();
-		System.out.println(tmp2);*/
+		for(List<EntityMention> l : tmp2){
+			System.out.println(l + "\n");
+		}
+
 
 		//table display
-		System.out.println("\n--- table co-occurrence Paragraph with chapter limitation ---\n");
+		System.out.println("\n--- table de co-occurrence en Paragraphes avec limite aux chapitres ---\n");
 		CooccurrenceTableParagraph table2 = wcp2.createTab();
 		table2.display();
 	}
 
 	
-	public static void main(String[] args) { 
+	public static void main(String[] args) throws IOException { 
 		testWindowingCooccurrenceSentence();
 		testWindowingCooccurrenceParagraphs();
 	}

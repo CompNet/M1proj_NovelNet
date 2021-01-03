@@ -60,7 +60,6 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 			endingSentence = beginingSentence+size-1;
 			if (endingSentence > c.getEndingSentence()) endingSentence = c.getEndingSentence();
 			while(beginingSentence < c.getEndingSentence() && !done){
-				System.out.println(c.getEntities());
 				for (EntityMention entity : c.getEntities()){
 					CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
 					if (tmp.sentIndex() >= beginingSentence && tmp.sentIndex() <= endingSentence){

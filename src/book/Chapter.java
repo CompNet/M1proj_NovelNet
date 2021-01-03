@@ -32,7 +32,7 @@ public class Chapter {
     /**
      * An Integer representing the number of the chapter in the book starting from 1
     */
-    protected int chapterNumber;
+    protected int chapterIndex;
 
     /**
      * Class Constructor
@@ -64,7 +64,7 @@ public class Chapter {
     */
     public Chapter(Book book, int number){
         this.book = book;
-        chapterNumber = number;
+        chapterIndex = number;
         paragraphs = new LinkedList<>();
         titles = new LinkedList<>();
     }
@@ -93,12 +93,12 @@ public class Chapter {
         this.book = book;
     }
 
-    public int getChapterNumber() {
-        return this.chapterNumber;
+    public int getChapterIndex() {
+        return this.chapterIndex;
     }
 
-    public void setChapterNumber(int chapterNumber) {
-        this.chapterNumber = chapterNumber;
+    public void setChapterIndex(int chapterIndex) {
+        this.chapterIndex = chapterIndex;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class Chapter {
             " paragraphs='" + getParagraphs() + "'" +
             ", titles='" + getTitles() + "'" +
             ", book='" + getBook() + "'" +
-            ", chapterNumber='" + getChapterNumber() + "'" +
+            ", chapterIndex='" + getChapterIndex() + "'" +
             "}";
     }
 
@@ -140,18 +140,16 @@ public class Chapter {
     /**
      * display the content in the console
     */
-    public void display(int i){
-        System.out.println("Chapter " + i + " : ");
+    public void display(){
+        System.out.println("Chapter " + (chapterIndex+1) + " : ");
         for (CoreSentence sentence : this.titles){
             System.out.print(sentence.text() + " ");
         }
         System.out.println(" ");
-        int cpt = 1;
         for (Paragraph paragraph : this.paragraphs){
             System.out.println(" ");
-            System.out.println("Paragraph " + cpt + " : ");
+            System.out.println("Paragraph " + (paragraph.getParagraphIndex()+1) + " : ");
             paragraph.display();
-            cpt++;
         }
         
     }
@@ -162,12 +160,12 @@ public class Chapter {
      * @param fileWriter object used to write in the file (it contains the file destination and name)
     */
     public void printToFile(FileWriter fileWriter) throws IOException {
-        fileWriter.write("Chapter " + chapterNumber + " : ");
+        fileWriter.write("Chapter " + chapterIndex + " : ");
         for (CoreSentence sentence : this.titles){
             fileWriter.write(sentence.text() + " ");
         }
         for (Paragraph paragraph : this.paragraphs) {
-            fileWriter.write("\n Paragraph " + paragraph.getParagraphNumber() + " : ");
+            fileWriter.write("\n Paragraph " + paragraph.getParagraphIndex() + " : ");
             paragraph.printToFile(fileWriter);
         }
     }
@@ -178,9 +176,9 @@ public class Chapter {
      * @param paragraphNumber An Integer representing the paragraph number in the book
      * @return An Integer representing the index of the sentence begining the paragraph. -1 if the paragraph is not in the chapter.
     */
-    public int getBeginIndexOfParagraph(int paragraphNumber){
+    public int getBeginIndexOfParagraph(int paragraphIndex){
         for (Paragraph paragraph : this.paragraphs) {
-            if (paragraph.paragraphNumber == paragraphNumber) return paragraph.beginingSentence;
+            if (paragraph.paragraphIndex == paragraphIndex) return paragraph.beginingSentence;
         }
         return -1;
     }
@@ -191,9 +189,9 @@ public class Chapter {
      * @param paragraphNumber An Integer representing the paragraph number in the book
      * @return An Integer representing the index of the sentence ending the paragraph. -1 if the paragraph is not in the chapter.
     */
-    public int getEndIndexOfParagraph(int paragraphNumber){
+    public int getEndIndexOfParagraph(int paragraphIndex){
         for (Paragraph paragraph : this.paragraphs) {
-            if (paragraph.paragraphNumber == paragraphNumber) return paragraph.endingSentence;
+            if (paragraph.paragraphIndex == paragraphIndex) return paragraph.endingSentence;
         }
         return -1;
     }
@@ -227,16 +225,16 @@ public class Chapter {
     }
    
 	public int getBeginingParagraph() {
-		return paragraphs.getFirst().getParagraphNumber();
+		return paragraphs.getFirst().getParagraphIndex();
 	}
 
 	public int getEndingParagraph() {
-		return paragraphs.getLast().getParagraphNumber();
+		return paragraphs.getLast().getParagraphIndex();
     }
 
 	public Paragraph getParagraph(int paragraphIndex) {
 		for (Paragraph p : paragraphs){
-            if (p.paragraphNumber == paragraphIndex) return p;
+            if (p.paragraphIndex == paragraphIndex) return p;
         }
         return null;
 	}

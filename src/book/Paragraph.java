@@ -31,7 +31,7 @@ public class Paragraph {
     /**
      * the number of the Paragraph in the book starting from 1
     */
-    protected int paragraphNumber;
+    protected int paragraphIndex;
     /**
      * the index of the sentence begining the paragraph in the CoreCocument
     */
@@ -69,8 +69,8 @@ public class Paragraph {
      * @param number An Integer representing the number of the chapter in the book starting from 1
      * 
     */
-    public Paragraph(Chapter chapter, int number){
-        paragraphNumber = number;
+    public Paragraph(Chapter chapter, int Index){
+        paragraphIndex = Index;
         this.chapter = chapter;
         sentences = new LinkedList<>();
         entities = new LinkedList<>();
@@ -100,12 +100,12 @@ public class Paragraph {
         this.chapter = chapter;
     }
 
-    public int getParagraphNumber() {
-        return this.paragraphNumber;
+    public int getParagraphIndex() {
+        return this.paragraphIndex;
     }
 
-    public void setParagraphNumber(int paragraphNumber) {
-        this.paragraphNumber = paragraphNumber;
+    public void setParagraphIndex(int paragraphIndex) {
+        this.paragraphIndex = paragraphIndex;
     }
 
     public int getBeginingSentence() {
@@ -129,7 +129,7 @@ public class Paragraph {
         return "{" +
             " sentences='" + getSentences() + "'" +
             ", chapter='" + getChapter() + "'" +
-            ", paragraphNumber='" + getParagraphNumber() + "'" +
+            ", paragraphIndex='" + getParagraphIndex() + "'" +
             ", beginingSentence='" + getBeginingSentence() + "'" +
             ", endingSentence='" + getEndingSentence() + "'" +
             "}";

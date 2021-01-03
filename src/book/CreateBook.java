@@ -28,7 +28,7 @@ public class CreateBook {
      * @param document Stanford core nlp CoreDocument representing a text
      * @return The book object created
     */
-    public static Book createBook(CoreDocument document, boolean titleDetection){
+    public static Book createBook(CoreDocument document, boolean noTitle){
         List<CoreSentence> sentences = document.sentences();    //list of the sentences in the document
         int previousLineSkip;   //used to store the difference between the last token of the previous sentence and 
                                 //the first token of the current sentence
@@ -36,19 +36,23 @@ public class CreateBook {
                                 //the first token of the next sentence
 
         int chapterNumber = 0;
-        int paragraphNumber = 0;
+        int paragraphNumber = -1;
 
         Book book = new Book(document);
         Chapter currentChapter = new Chapter(book, chapterNumber);
         book.addChapter(currentChapter);
 
         Paragraph currentParagraph = new Paragraph(currentChapter, paragraphNumber);
-        currentChapter.addParagraph(currentParagraph);
+        boolean titleDetection = !noTitle;
         if (titleDetection){
             currentChapter.addTitle(sentences.get(0)); //if the first sentence is considerated as a title
         }
-        else currentParagraph.addSentence(sentences.get(0));
-        
+        else {
+            paragraphNumber++;
+            currentParagraph = new Paragraph(currentChapter, paragraphNumber);
+            currentParagraph.addSentence(sentences.get(0));
+            currentChapter.addParagraph(currentParagraph);
+        }
         //for each sentence in the document exept the last one
         for (int i = 1; i < sentences.size()-1; i++)
 		{
@@ -58,31 +62,55 @@ public class CreateBook {
             //difference between the last token of the current sentence and the first token of the next sentence
             nextLineSkip = sentences.get(i+1).tokens().get(0).beginPosition() - sentences.get(i).tokens().get(sentences.get(i).tokens().size()-1).endPosition();
 
+            /*System.out.println("prev : " + previousLineSkip);
+            System.out.println("next : " + nextLineSkip);*/
             //if there is more than 2 EOL characters the sentence is a chapter title (EOL char are considered as 2 char)
-            if (previousLineSkip > 4 && nextLineSkip > 4){
-                if(titleDetection){
-                    //if the title detection was ON we just add the sentence to the title
-                    currentChapter.addTitle(sentences.get(i));
+            if (previousLineSkip >= 5){
+                if (nextLineSkip >= 5){
+                    if(titleDetection) {
+                        //if the title detection was ON we just add the sentence to the title
+                        currentChapter.addTitle(sentences.get(i));
+                    }
+                    else {
+                        //else :
+                        currentParagraph.endingSentence = i-1;
+                        titleDetection = true;  // put the title detection to ON
+                        chapterNumber++;
+                        currentChapter = new Chapter(book, chapterNumber);  // create a new chapter 
+                        book.addChapter(currentChapter);            // add the current chapter to the book 
+                        currentChapter.addTitle(sentences.get(i));  // add the current sentence to the title of the chapter   
+                    }
+                    
+                } 
+                else if (titleDetection){
+                    paragraphNumber++;
+                    currentParagraph = new Paragraph(currentChapter, paragraphNumber);
+                    currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
+                    currentParagraph.beginingSentence = i;
+                    currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
+                    titleDetection = false;
                 }
-                else {
-                    //else :
+                else{
                     currentParagraph.endingSentence = i-1;
-                    titleDetection = true;                      // put the title detection to ON
                     chapterNumber++;
                     currentChapter = new Chapter(book, chapterNumber);  // create a new chapter 
-                    book.addChapter(currentChapter);            // add the current chapter to the book 
-                    currentChapter.addTitle(sentences.get(i));  // add the current sentence to the title of the chapter
-                }                
+                    book.addChapter(currentChapter);            // add the current chapter to the book
+                    paragraphNumber++;
+                    currentParagraph = new Paragraph(currentChapter, paragraphNumber);
+                    currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
+                    currentParagraph.beginingSentence = i;
+                    currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
+                }  
             }
-            //Else if the previous line was a title (more than 2 EOL char) or there is a paragraph change (exactly 1 EOL char)
-            else if(previousLineSkip >= 2){
-                if (titleDetection) titleDetection = false;     //if the title detection is ON switch it OFF
-                else currentParagraph.endingSentence = i-1;
+            //Else if there is a paragraph change (exactly 1 EOL char)
+            else if(previousLineSkip == 2 || previousLineSkip == 4){
+                currentParagraph.endingSentence = i-1;
                 paragraphNumber++;
                 currentParagraph = new Paragraph(currentChapter, paragraphNumber);   //create a new paragraph
                 currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
-                currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
                 currentParagraph.beginingSentence = i;
+                currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
+                
             }
             //else we add the sentence to the current paragraph
             else{
@@ -117,25 +145,25 @@ public class CreateBook {
 		p1.addSentence(document.sentences().get(0));
 		p1.setBeginingSentence(0);
 		p1.setEndingSentence(0);
-		p1.setParagraphNumber(0);
+		p1.setParagraphIndex(0);
 
 		Paragraph p2 = new Paragraph();
 		p2.addSentence(document.sentences().get(1));
 		p2.setBeginingSentence(1);
 		p2.setEndingSentence(1);
-		p2.setParagraphNumber(1);
+		p2.setParagraphIndex(1);
 
 		Paragraph p3 = new Paragraph();
 		p3.addSentence(document.sentences().get(2));
 		p3.setBeginingSentence(2);
 		p3.setEndingSentence(2);
-		p3.setParagraphNumber(2);
+		p3.setParagraphIndex(2);
 
 		Paragraph p4 = new Paragraph();
 		p4.addSentence(document.sentences().get(3));
 		p4.setBeginingSentence(3);
 		p4.setEndingSentence(3);
-		p4.setParagraphNumber(3);
+		p4.setParagraphIndex(3);
 
 		Chapter c1 = new Chapter();
 		c1.addParagraph(p1);
