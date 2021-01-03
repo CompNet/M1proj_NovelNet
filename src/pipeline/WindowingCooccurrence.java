@@ -11,10 +11,10 @@ import java.util.LinkedList;
 import java.util.Properties;
 
 import util.EntityMention;
+import util.TextNormalization;
 
 import book.Book;
 import book.CreateBook;
-import book.TextNormalization;
 
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.pipeline.CoreDocument;
@@ -84,9 +84,7 @@ public abstract class WindowingCooccurrence {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		//normalizing content
-		TextNormalization adapt = new TextNormalization(content);
-		adapt.addDotEndOfLine();
-		content = adapt.getText();
+		content = TextNormalization.addDotEndOfLine(content);
 
 		// make the document
 		CoreDocument document = new CoreDocument(content);
@@ -153,9 +151,7 @@ public abstract class WindowingCooccurrence {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		//normalizing content
-		TextNormalization adapt = new TextNormalization(content);
-		adapt.addDotEndOfLine();
-		content = adapt.getText();
+		content = TextNormalization.addDotEndOfLine(content);
 
 		// make the document
 		CoreDocument document = new CoreDocument(content);

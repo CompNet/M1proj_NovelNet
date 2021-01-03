@@ -10,7 +10,9 @@ import org.apache.commons.io.IOUtils;
 
 import book.Book;
 import book.CreateBook;
-import book.TextNormalization;
+
+import util.TextNormalization;
+import util.EntityMention;
 
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
@@ -24,7 +26,7 @@ import pipeline.WindowingCooccurrenceParagraph;
 import pipeline.WindowingCooccurrenceSentence;
 import pipeline.WindowingDynamicGraphFromParagraphTable;
 import pipeline.WindowingDynamicGraphFromSentenceTable;
-import util.EntityMention;
+
 
 /**
  * @author Quay Baptiste, Lemaire Tewis
@@ -48,9 +50,7 @@ public class Menu {
 			FileInputStream is = new FileInputStream(path);
 			String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-			TextNormalization adapt = new TextNormalization(content);
-			adapt.addDotEndOfLine();
-			content = adapt.getText();
+			content = TextNormalization.addDotEndOfLine(content);
 
 			//String prop="tokenize,ssplit";
 			String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";

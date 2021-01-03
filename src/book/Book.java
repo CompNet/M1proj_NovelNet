@@ -92,10 +92,10 @@ public class Book {
     }
 
     /**
-     * get the index (in the coreDocument) of the sentence begining the paragraph.
+     * get the Index (in the coreDocument) of the sentence begining the paragraph.
      * 
      * @param paragraphNumber An Integer representing the paragraph number in the book.
-     * @return An Integer representing the index of the sentence begining the paragraph. -1 if the paragraph is not in the book.
+     * @return An Integer representing the Index of the sentence begining the paragraph. -1 if the paragraph is not in the book.
     */
     public int getBeginIndexOfParagraph(int paragraphNumber){
         int tmp;
@@ -107,10 +107,10 @@ public class Book {
     }
 
     /**
-     * get the index (in the coreDocument) of the sentence ending the paragraph.
+     * get the Index (in the coreDocument) of the sentence ending the paragraph.
      * 
      * @param paragraphNumber An Integer representing the paragraph number in the book.
-     * @return An Integer representing the index of the sentence ending the paragraph.  -1 if the paragraph is not in the book.
+     * @return An Integer representing the Index of the sentence ending the paragraph.  -1 if the paragraph is not in the book.
     */
     public int getEndIndexOfParagraph(int paragraphNumber){
         int tmp;
@@ -122,27 +122,27 @@ public class Book {
     }
 
     /**
-     * get the index (in the coreDocument) of the sentence begining the chapter.
+     * get the Index (in the coreDocument) of the sentence begining the chapter.
      * 
      * @param chapterNumber An Integer representing the chapter number in the book.
-     * @return An Integer representing the index of the sentence begining the chapter. -1 if the chapter is not in the book.
+     * @return An Integer representing the Index of the sentence begining the chapter. -1 if the chapter is not in the book.
     */
-    public int getBeginIndexOfChapter(int chapterIndex){
+    public int getBeginIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterIndex == chapterIndex) return chapter.getBeginingSentence();
+            if (chapter.chapterNumber == chapterNumber) return chapter.getBeginingSentence();
         }
         return -1;
     }
 
     /**
-     * get the index (in the coreDocument) of the sentence ending the chapter.
+     * get the Index (in the coreDocument) of the sentence ending the chapter.
      * 
      * @param chapterNumber An Integer representing the chapter number in the book.
-     * @return An Integer representing the index of the sentence ending the chapter. -1 if the chapter is not in the book.
+     * @return An Integer representing the Index of the sentence ending the chapter. -1 if the chapter is not in the book.
     */
-    public int getEndIndexOfChapter(int chapterIndex){
+    public int getEndIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterIndex == chapterIndex) return chapter.getEndingSentence();
+            if (chapter.chapterNumber == chapterNumber) return chapter.getEndingSentence();
         }
         return -1;
     }
@@ -195,9 +195,9 @@ public class Book {
         return chapters.getLast().getEndingParagraph();
     }
 
-	public Paragraph getParagraph(int paragraphIndex) {
+	public Paragraph getParagraph(int paragraphNumber) {
         for (Chapter c : chapters){
-            if (c.getParagraph(paragraphIndex) != null) return c.getParagraph(paragraphIndex);
+            if (c.getParagraph(paragraphNumber) != null) return c.getParagraph(paragraphNumber);
         }
 		return null;
     }
