@@ -106,7 +106,7 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 			whileEnd = false;
 			dynamicGraphBegin = book.getBeginIndexOfParagraph(dynamicCpt*size - dynamicCpt*covering);
 			dynamicGraphEnd = book.getEndIndexOfParagraph((dynamicCpt + 1)*size - dynamicCpt*covering -1);
-			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndIndexOfParagraph(book.getEndingParagraph());
+			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndIndexOfParagraph(book.getEndingParagraphNumber());
 			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
@@ -165,7 +165,7 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 			whileEnd = false;
 			dynamicGraphBegin = book.getBeginIndexOfChapter(dynamicCpt*size - dynamicCpt*covering);
 			dynamicGraphEnd = book.getEndIndexOfChapter((dynamicCpt + 1)*size - dynamicCpt*covering -1);
-			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndingSentence();
+			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndingSentenceIndex();
 			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
 				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
 				windowEnd = cooccurrenceTable.listEndingWindow.get(i);

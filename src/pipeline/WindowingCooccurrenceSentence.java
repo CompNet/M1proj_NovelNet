@@ -56,10 +56,10 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 		boolean done;
 		for (Chapter c : book.getChapters()){
 			done = false;
-			beginingSentence = c.getBeginingSentence();
+			beginingSentence = c.getBeginingSentenceIndex();
 			endingSentence = beginingSentence+size-1;
-			if (endingSentence > c.getEndingSentence()) endingSentence = c.getEndingSentence();
-			while(beginingSentence < c.getEndingSentence() && !done){
+			if (endingSentence > c.getEndingSentenceIndex()) endingSentence = c.getEndingSentenceIndex();
+			while(beginingSentence < c.getEndingSentenceIndex() && !done){
 				for (EntityMention entity : c.getEntities()){
 					CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
 					if (tmp.sentIndex() >= beginingSentence && tmp.sentIndex() <= endingSentence){
@@ -67,7 +67,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 						window.add(entity);
 					}
 				}
-				if (endingSentence < c.getEndingSentence()){
+				if (endingSentence < c.getEndingSentenceIndex()){
 					result.add(window);
 					window = new LinkedList<>();
 					beginingSentence = endingSentence - covering + 1;
@@ -86,10 +86,10 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 	private List<List<EntityMention>> createWindowWithoutChapterLimitation(){
 		List<EntityMention> window = new LinkedList<>(); // List of tokens
 		List<List<EntityMention>> result = new LinkedList<>(); // List of lists of tokens
-		int beginingSentence = book.getBeginingSentence();
+		int beginingSentence = book.getBeginingSentenceIndex();
 		int endingSentence = beginingSentence+size-1;
 		boolean done = false;
-		while(beginingSentence < book.getEndingSentence() && !done){
+		while(beginingSentence < book.getEndingSentenceIndex() && !done){
 			for (EntityMention entity : book.getEntities()){
 				CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
 				if (tmp.sentIndex() >= beginingSentence && tmp.sentIndex() <= endingSentence){
@@ -97,12 +97,12 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 					window.add(entity);
 				}
 			}
-			if (endingSentence < book.getEndingSentence()){
+			if (endingSentence < book.getEndingSentenceIndex()){
 				result.add(window);
 				window = new LinkedList<>();
 				beginingSentence = endingSentence - covering + 1;
 				endingSentence = beginingSentence + size - 1;
-				if (endingSentence > book.getEndingSentence()) endingSentence = book.getEndingSentence();
+				if (endingSentence > book.getEndingSentenceIndex()) endingSentence = book.getEndingSentenceIndex();
 			}
 			else {
 				done = true;

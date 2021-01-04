@@ -27,7 +27,7 @@ public class Book {
     protected CoreDocument document;
 
     /**
-     * Class Constructor.
+     * Class Constructor. specifying the document 
      * 
     */
     public Book(CoreDocument document) {
@@ -37,6 +37,10 @@ public class Book {
     }
 
 
+    /**
+     * Class Constructor. specifying the document and the list of chapters
+     * 
+    */
     public Book(LinkedList<Chapter> chapters, CoreDocument document) {
         this.chapters = chapters;
         entitiesPlaced = false;
@@ -129,7 +133,7 @@ public class Book {
     */
     public int getBeginIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterNumber == chapterNumber) return chapter.getBeginingSentence();
+            if (chapter.chapterNumber == chapterNumber) return chapter.getBeginingSentenceIndex();
         }
         return -1;
     }
@@ -142,7 +146,7 @@ public class Book {
     */
     public int getEndIndexOfChapter(int chapterNumber){
         for (Chapter chapter : this.chapters) {
-            if (chapter.chapterNumber == chapterNumber) return chapter.getEndingSentence();
+            if (chapter.chapterNumber == chapterNumber) return chapter.getEndingSentenceIndex();
         }
         return -1;
     }
@@ -169,6 +173,11 @@ public class Book {
         }
     }
 
+    /**
+     * get all the entities in the book
+     *  
+     * @return a list of all the entities in the book.
+    */
     public List<EntityMention> getEntities(){
         List<EntityMention> result = new LinkedList<>();
         for(Chapter c : chapters){
@@ -179,22 +188,28 @@ public class Book {
         return result;
     }
 
-    public int getBeginingSentence(){
-        return chapters.getFirst().getBeginingSentence();
+    public int getBeginingSentenceIndex(){
+        return chapters.getFirst().getBeginingSentenceIndex();
     }
 
-    public int getEndingSentence(){
-        return chapters.getLast().getEndingSentence();
+    public int getEndingSentenceIndex(){
+        return chapters.getLast().getEndingSentenceIndex();
     }
 
-    public int getBeginingParagraph(){
-        return chapters.getFirst().getBeginingParagraph();
+    public int getBeginingParagraphNumber(){
+        return chapters.getFirst().getBeginingParagraphNumber();
     }
 
-    public int getEndingParagraph(){
-        return chapters.getLast().getEndingParagraph();
+    public int getEndingParagraphNumber(){
+        return chapters.getLast().getEndingParagraphNumber();
     }
 
+    /**
+     * get a Paragraph by its number
+     *  
+     * @param paragraphNumber the paragraph number
+     * @return the Paragraph object with the according number
+    */
 	public Paragraph getParagraph(int paragraphNumber) {
         for (Chapter c : chapters){
             if (c.getParagraph(paragraphNumber) != null) return c.getParagraph(paragraphNumber);
@@ -202,7 +217,12 @@ public class Book {
 		return null;
     }
 
-    public List<EntityMention> findEntity(){
+    /**
+     * find all the entities of the document of the book with their best name.
+     *  
+     * @return a list of all the entities in the document.
+    */
+    private List<EntityMention> findEntity(){
 		LinkedList<EntityMention> result = new LinkedList<>();
 		for (CoreEntityMention em : document.entityMentions()){
 			if (em.entityType().equals("PERSON") ){
@@ -212,13 +232,20 @@ public class Book {
 		return result;
 	}
 
+    /**
+     * place the entities of the document in the book according to their position in the document.
+     *  
+    */
     public void placeEntitites(){
+        if (entitiesPlaced) return;
         List<EntityMention> entities = findEntity();
         for (EntityMention entity : entities){
             CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
 			for(Chapter c : chapters){
-                if(tmp.sentIndex() >= c.getBeginingSentence() && tmp.sentIndex() <= c.getEndingSentence()){
+                //if the index of the entity is in the chapter
+                if(tmp.sentIndex() >= c.getBeginingSentenceIndex() && tmp.sentIndex() <= c.getEndingSentenceIndex()){
                     for (Paragraph p : c.getParagraphs()){
+                        //if the index of the entity is in the chapter
                         if(tmp.sentIndex() >= p.getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
                             p.addEntity(entity);
                         }

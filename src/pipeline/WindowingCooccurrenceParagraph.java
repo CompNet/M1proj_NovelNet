@@ -58,19 +58,19 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		boolean done;
 		for (Chapter c : book.getChapters()){
 			done = false;
-			beginingParagraph = c.getBeginingParagraph();
+			beginingParagraph = c.getBeginingParagraphNumber();
 			endingParagraph = beginingParagraph+size-1;
-			while(beginingParagraph < c.getEndingParagraph() && !done){
+			while(beginingParagraph < c.getEndingParagraphNumber() && !done){
 				for (EntityMention entity : c.getEntities()){	
 					CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
 					Paragraph p = book.getParagraph(endingParagraph);
-					if (p==null) p = book.getParagraph(book.getEndingParagraph());
+					if (p==null) p = book.getParagraph(book.getEndingParagraphNumber());
 					if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
 						entity.setWindow(new Pair<Integer,Integer>(beginingParagraph,endingParagraph));
 						window.add(entity);
 					}
 				}
-				if (endingParagraph < c.getEndingParagraph()){
+				if (endingParagraph < c.getEndingParagraphNumber()){
 					result.add(window);
 					window = new LinkedList<>();
 					beginingParagraph = endingParagraph - covering + 1;
@@ -92,17 +92,17 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		int beginingParagraph = 0;
 		int endingParagraph = beginingParagraph+size-1;
 		boolean done = false;
-		while(beginingParagraph < book.getEndingParagraph() && !done){
+		while(beginingParagraph < book.getEndingParagraphNumber() && !done){
 			for (EntityMention entity : book.getEntities()){
 				CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
 				Paragraph p = book.getParagraph(endingParagraph);
-				if (p==null) p = book.getParagraph(book.getEndingParagraph());
+				if (p==null) p = book.getParagraph(book.getEndingParagraphNumber());
 				if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
 					entity.setWindow(new Pair<Integer,Integer>(beginingParagraph,endingParagraph));
 					window.add(entity);
 				}
 			}
-			if (endingParagraph < book.getEndingParagraph()){
+			if (endingParagraph < book.getEndingParagraphNumber()){
 				result.add(window);
 				window = new LinkedList<>();
 				beginingParagraph = endingParagraph - covering + 1;

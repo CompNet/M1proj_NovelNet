@@ -201,7 +201,7 @@ public class Chapter {
      * 
      * @return An Integer representing the Index of the sentence begining the chapter.
     */
-	public int getBeginingSentence() {
+	public int getBeginingSentenceIndex() {
 		return paragraphs.getFirst().beginingSentence;
 	}
 
@@ -210,10 +210,15 @@ public class Chapter {
      * 
      * @return An Integer representing the Index of the sentence ending the chapter.
     */
-	public int getEndingSentence() {
+	public int getEndingSentenceIndex() {
 		return paragraphs.getLast().endingSentence;
     }
     
+     /**
+     * get all the entities in the chapter
+     *  
+     * @return a list of all the entities in the chapter.
+    */
     public List<EntityMention> getEntities(){
         List<EntityMention> result = new LinkedList<>();
         for(Paragraph p : paragraphs){
@@ -224,14 +229,20 @@ public class Chapter {
         return result;
     }
    
-	public int getBeginingParagraph() {
+	public int getBeginingParagraphNumber() {
 		return paragraphs.getFirst().getParagraphNumber();
 	}
 
-	public int getEndingParagraph() {
+	public int getEndingParagraphNumber() {
 		return paragraphs.getLast().getParagraphNumber();
     }
 
+     /**
+     * get a Paragraph by its number
+     *  
+     * @param paragraphNumber the paragraph number
+     * @return the Paragraph object with the according number
+    */
 	public Paragraph getParagraph(int paragraphNumber) {
 		for (Paragraph p : paragraphs){
             if (p.paragraphNumber == paragraphNumber) return p;
