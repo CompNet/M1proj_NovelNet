@@ -109,6 +109,7 @@ public class CreateBook {
                     currentParagraph.beginingSentence = i;
                 }
                 currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
+                if (i == sentences.size()-1) currentParagraph.endingSentence = i;
             }
         }
         book.placeEntitites();
