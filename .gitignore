@@ -2,3 +2,5 @@
 +/.classpath
 /.classpath
 /Archive.zip
+/.vscode
+/lib/stanford-corenlp-3.9.0-models.jar
