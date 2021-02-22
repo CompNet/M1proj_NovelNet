@@ -2,6 +2,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
@@ -13,11 +14,13 @@ import book.CreateBook;
 
 import util.TextNormalization;
 import util.EntityMention;
-
+import edu.stanford.nlp.ie.util.RelationTriple;
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-
+import edu.stanford.nlp.util.CoreMap;
 import pipeline.CooccurrenceTable;
 import pipeline.CooccurrenceTableParagraph;
 import pipeline.CooccurrenceTableSentence;
@@ -34,6 +37,30 @@ import pipeline.WindowingDynamicGraphFromSentenceTable;
  */
 public class Menu {
 
+	public static void test(){
+		// Create the Stanford CoreNLP pipeline
+		Properties props = new Properties();
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,depparse,natlog,openie");
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+	
+		// Annotate an example document.
+		Annotation doc = new Annotation("Joe Smith and Sara Jackson helped Bill Farmer");
+		pipeline.annotate(doc);
+	
+		// Loop over sentences in the document
+		for (CoreMap sentence : doc.get(CoreAnnotations.SentencesAnnotation.class)) {
+		  // Get the OpenIE triples for the sentence
+		  Collection<RelationTriple> triples = sentence.get(NaturalLogicAnnotations.RelationTriplesAnnotation.class);
+		  // Print the triples
+		  for (RelationTriple triple : triples) {
+			System.out.println(triple.confidence + "\t" +
+				triple.subjectLemmaGloss() + "\t" +
+				triple.relationLemmaGloss() + "\t" +
+				triple.objectLemmaGloss());
+		  }
+		}
+	}
+
 	/**
 	 * @param args
 	 * @author Quay Baptiste, Lemaire Tewis
@@ -42,7 +69,7 @@ public class Menu {
 	public static void main(String[] args) throws IOException {
 		if (args.length == 0)
 		{
-			
+			test();
 			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
 			String path = sc.nextLine();
