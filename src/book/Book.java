@@ -8,6 +8,7 @@ import java.util.List;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
+import util.CustomCorefChain;
 import util.EntityMention;
 import util.ImpUtils;
 
@@ -25,6 +26,7 @@ public class Book {
     protected LinkedList<Chapter> chapters;
     protected boolean entitiesPlaced;
     protected CoreDocument document;
+    protected List<CustomCorefChain> corefChain;
 
     /**
      * Class Constructor. specifying the document 
@@ -45,6 +47,14 @@ public class Book {
         this.chapters = chapters;
         entitiesPlaced = false;
         this.document = document;
+    }
+
+    public List<CustomCorefChain> getCorefChain() {
+        return corefChain;
+    }
+
+    public void setCorefChain(List<CustomCorefChain> corefChain) {
+        this.corefChain = corefChain;
     }
 
     public List<Chapter> getChapters() {
@@ -226,7 +236,10 @@ public class Book {
 		LinkedList<EntityMention> result = new LinkedList<>();
 		for (CoreEntityMention em : document.entityMentions()){
 			if (em.entityType().equals("PERSON") ){
-				result.add(new EntityMention(em, ImpUtils.bestName(getDocument(), em)));
+				try {result.add(new EntityMention(em, ImpUtils.bestName(em)));}
+                catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
 			}
 		}
 		return result;

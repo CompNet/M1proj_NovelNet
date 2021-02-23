@@ -14,6 +14,7 @@ import book.CreateBook;
 
 import util.TextNormalization;
 import util.EntityMention;
+import util.ImpUtils;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
@@ -89,6 +90,7 @@ public class Menu {
 
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
+			ImpUtils.setDocument(document);
 			pipeline.annotate(document);
 			//Annotation annotation = document.annotation();
 			// print the result of the annotation in a file
