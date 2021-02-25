@@ -9,8 +9,7 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import util.CustomCorefChain;
-import util.EntityMention;
-import util.ImpUtils;
+import util.CustomEntityMention;
 
 /**
  * Represent a Book.
@@ -32,10 +31,11 @@ public class Book {
      * Class Constructor. specifying the document 
      * 
     */
-    public Book(CoreDocument document) {
+    public Book(CoreDocument document, List<CustomCorefChain> corefChainList){
         chapters = new LinkedList<>();
         entitiesPlaced = false;
         this.document = document;
+        corefChain = corefChainList;
     }
 
 
@@ -188,10 +188,10 @@ public class Book {
      *  
      * @return a list of all the entities in the book.
     */
-    public List<EntityMention> getEntities(){
-        List<EntityMention> result = new LinkedList<>();
+    public List<CustomEntityMention> getEntities(){
+        List<CustomEntityMention> result = new LinkedList<>();
         for(Chapter c : chapters){
-            for (EntityMention cem : c.getEntities()){
+            for (CustomEntityMention cem : c.getEntities()){
                 result.add(cem);
             }
         }
@@ -232,18 +232,30 @@ public class Book {
      *  
      * @return a list of all the entities in the document.
     */
-    private List<EntityMention> findEntity(){
-		LinkedList<EntityMention> result = new LinkedList<>();
-		for (CoreEntityMention em : document.entityMentions()){
+    /*private List<CustomEntityMention> findEntity(){
+		LinkedList<CustomEntityMention> result = new LinkedList<>();
+		for (CustomEntityMention em : entityMentions()){
 			if (em.entityType().equals("PERSON") ){
-				try {result.add(new EntityMention(em, ImpUtils.bestName(em)));}
+				try {
+                    result.add(new CustomEntityMention(em, em.bestName));
+                }
                 catch(Exception e){
                     System.out.println(e.getMessage());
                 }
 			}
 		}
 		return result;
-	}
+	}*/
+
+    public List<CustomEntityMention> getEntitiesFromCorefChains(){
+        LinkedList<CustomEntityMention> result = new LinkedList<>();
+		for (CustomCorefChain ccc : corefChain){
+			for (CustomEntityMention cem : ccc.getCEMList()){
+                result.add(cem);
+            }
+		}
+		return result;
+    }
 
     /**
      * place the entities of the document in the book according to their position in the document.
@@ -251,15 +263,16 @@ public class Book {
     */
     public void placeEntitites(){
         if (entitiesPlaced) return;
-        List<EntityMention> entities = findEntity();
-        for (EntityMention entity : entities){
-            CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
+        int tmp;
+        List<CustomEntityMention> entities = getEntitiesFromCorefChains();
+        for (CustomEntityMention entity : entities){
+            tmp = entity.getSentenceIndex();
 			for(Chapter c : chapters){
                 //if the index of the entity is in the chapter
-                if(tmp.sentIndex() >= c.getBeginingSentenceIndex() && tmp.sentIndex() <= c.getEndingSentenceIndex()){
+                if(tmp >= c.getBeginingSentenceIndex() && tmp <= c.getEndingSentenceIndex()){
                     for (Paragraph p : c.getParagraphs()){
                         //if the index of the entity is in the chapter
-                        if(tmp.sentIndex() >= p.getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
+                        if(tmp >= p.getBeginingSentence() && tmp <= p.getEndingSentence()){
                             p.addEntity(entity);
                         }
                     }
@@ -267,6 +280,5 @@ public class Book {
             }
         }
         entitiesPlaced = true;
-    }
-    
+    }    
 }

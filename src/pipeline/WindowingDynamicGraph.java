@@ -8,6 +8,7 @@ import book.Chapter;
 import book.Paragraph;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import util.CustomCorefChain;
 
 /**
  * Generic class for the creation of dynamic graphs.
@@ -83,8 +84,14 @@ public abstract class WindowingDynamicGraph {
 		// annotate the document
 		pipeline.annotate(document);
 
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
 		// manual book creation
-		Book book = new Book(document);
+		Book book = new Book(document, cccList);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -154,8 +161,14 @@ public abstract class WindowingDynamicGraph {
 		// annotate the document
 		pipeline.annotate(document);
 
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
 		// manual book creation
-		Book book = new Book(document);
+		Book book = new Book(document, cccList);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -225,8 +238,14 @@ public abstract class WindowingDynamicGraph {
 		// annotate the document
 		pipeline.annotate(document);
 
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
 		// manual book creation
-		Book book = new Book(document);
+		Book book = new Book(document, cccList);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(1, 0, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -303,8 +322,14 @@ public abstract class WindowingDynamicGraph {
 		// annotate the document
 		pipeline.annotate(document);
 
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
 		// manual book creation
-		Book book = new Book(document);
+		Book book = new Book(document, cccList);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -381,8 +406,14 @@ public abstract class WindowingDynamicGraph {
 		// annotate the document
 		pipeline.annotate(document);
 
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
 		// manual book creation
-		Book book = new Book(document);
+		Book book = new Book(document, cccList);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -459,8 +490,14 @@ public abstract class WindowingDynamicGraph {
 		// annotate the document
 		pipeline.annotate(document);
 
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
 		// manual book creation
-		Book book = new Book(document);
+		Book book = new Book(document, cccList);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 
 		Paragraph p1 = new Paragraph();
@@ -531,11 +568,11 @@ public abstract class WindowingDynamicGraph {
 
 	public static void main(String[] args) { 
 		testGeneratingTableForDynamicGraphsFromParagraphsToSentence();
-		testGeneratingTableForDynamicGraphsFromParagraphsToParagraphs();
+		/*testGeneratingTableForDynamicGraphsFromParagraphsToParagraphs();
 		testGeneratingTableForDynamicGraphsFromParagraphsToChapters();
 		testGeneratingTableForDynamicGraphsFromSentenceToSentence();
 		testGeneratingTableForDynamicGraphsFromSentenceToParagraphs();
-		testGeneratingTableForDynamicGraphsFromSentenceToChapters();
+		testGeneratingTableForDynamicGraphsFromSentenceToChapters();*/
 
 	}
 }

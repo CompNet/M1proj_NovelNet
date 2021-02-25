@@ -14,19 +14,19 @@ import org.christopherfrantz.dbscan.DBSCANClusterer;
 import org.christopherfrantz.dbscan.DBSCANClusteringException;
 
 import util.CustomCorefChain;
+import util.CustomEntityMention;
 import util.DistanceMetricCustomCorefChainNL;
 import util.DistanceMetricCustomCorefChainRO;
 import util.ImpUtils;
 import util.NullDocumentException;
 import edu.stanford.nlp.coref.data.CorefChain;
-import edu.stanford.nlp.ie.machinereading.structure.EntityMention;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 public class CorefChainFuser {
 
-    private CorefChainFuser() {
+    public CorefChainFuser() {
 
     }
 
@@ -35,7 +35,7 @@ public class CorefChainFuser {
             return cccList.get(0);
         CustomCorefChain result = new CustomCorefChain();
         for (CustomCorefChain ccc : cccList) {
-            for (CoreEntityMention cem : ccc.getCEMList()) {
+            for (CustomEntityMention cem : ccc.getCEMList()) {
                 result.getCEMList().add(cem);
             }
         }
@@ -44,20 +44,22 @@ public class CorefChainFuser {
         String bestName2;
         String bestNameMin = "";
 
-        int tot;
-        int min = Integer.MAX_VALUE;
+        double tot;
+        double min = Double.MAX_VALUE;
 
         RatcliffObershelp ro = new RatcliffObershelp();
 
         for (CustomCorefChain ccc1 : cccList) {
             bestName1 = ccc1.getRepresentativeName();
             tot = 0;
+            System.out.print(bestName1);
             for (CustomCorefChain ccc2 : cccList) {
                 if (!ccc1.equals(ccc2)) {
                     bestName2 = ccc2.getRepresentativeName();
                     tot += ro.distance(bestName1, bestName2);
                 }
             }
+            System.out.print(" value : " + tot +"; ");
 
             if (tot < min) {
                 bestNameMin = bestName1;
@@ -66,6 +68,7 @@ public class CorefChainFuser {
                 bestNameMin = bestName1;
             }
         }
+        System.out.println();
         result.setRepresentativeName(bestNameMin);
         return result;
     }
@@ -290,9 +293,69 @@ public class CorefChainFuser {
         
     }
 
+    public static void testClusteringOnRealData() throws IOException, NullDocumentException {
+        String path = "res/corpus/Hp2.txt";
+
+        FileInputStream is = new FileInputStream(path);
+        String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+        String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
+
+        Properties props = new Properties();
+        props.setProperty("annotators",prop);
+        props.setProperty("ner.applyFineGrained", "false");
+
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+        CoreDocument document = new CoreDocument(content);
+        ImpUtils.setDocument(document);
+        pipeline.annotate(document);
+
+        List<CustomCorefChain> cccList = new LinkedList<>();
+/*
+        System.out.println("\n----- coref chains -----\n");
+        for (CorefChain cc : document.corefChains().values()) {
+            System.out.println("\t" + cc + "\t" + cc.getRepresentativeMention().mentionSpan);
+        }
+
+        System.out.println("\n----- EntityMention -----\n");
+
+        for(CoreEntityMention cem : ImpUtils.getCoreEntityMentionsWithoutCorefChain()){
+            System.out.println(cem + " pos : " + cem.charOffsets());
+        }*/
+
+        System.out.println("\n----- CustomCorefChain -----\n");
+
+        for(CorefChain cc : document.corefChains().values()){
+            cccList.add(new CustomCorefChain(cc));
+        }
+
+        for(CoreEntityMention cem : ImpUtils.getCoreEntityMentionsWithoutCorefChain()){
+            cccList.add(new CustomCorefChain(cem));
+        }
+
+        for(CustomCorefChain ccc : cccList){
+            System.out.println(ccc);
+        }
+
+        ///////////////   Clustering          //////////////////////
+
+        CorefChainFuser ccf = new CorefChainFuser();
+     
+
+        System.out.println("\n----- Clustering RO -----\n");
+
+        List<CustomCorefChain> testRO = ccf.corefChainsClusteringRO(cccList, 2, 0.45);
+
+        for (CustomCorefChain cccResultList : testRO){
+            System.out.println(cccResultList);
+        }
+        
+    }
+
     public static void main(String[] args) throws IOException, NullDocumentException {
         //testStringDistance();
         //testCustomCorefChain();
         testClustering();
+        //testClusteringOnRealData();
     }
 }

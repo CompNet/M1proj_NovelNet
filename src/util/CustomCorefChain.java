@@ -9,7 +9,7 @@ import edu.stanford.nlp.pipeline.CoreEntityMention;
 
 public class CustomCorefChain{
 
-    List<CoreEntityMention> cEMList;
+    List<CustomEntityMention> cEMList;
     String representativeName;
 
     public CustomCorefChain(){
@@ -17,24 +17,42 @@ public class CustomCorefChain{
         representativeName = "";
     }
 
-    public CustomCorefChain(CorefChain cc) throws NullDocumentException {
+    public CustomCorefChain(CorefChain cc){
         cEMList = new LinkedList<>();
-        for (CorefMention cm : cc.getMentionsInTextualOrder()){
-            cEMList.add(ImpUtils.getCoreEntityMentionByCorefMention(cm));
+        CustomEntityMention tmp;
+        try {
+            representativeName = cc.getRepresentativeMention().mentionSpan;
+            //System.out.println("cc : " + cc);
+            for (CorefMention cm : cc.getMentionsInTextualOrder()){
+                CoreEntityMention cem = ImpUtils.getCoreEntityMentionByCorefMention(cm);
+                //System.out.println( " texte : " + cm.mentionSpan + "\t cm start : " + cm.startIndex + "\t cm end : " + cm.endIndex + "\t tokens : "+ cem.text());
+                if (cem != null) cEMList.add(new CustomEntityMention(cem, representativeName, this));
+                else {
+                    tmp = new CustomEntityMention(null, representativeName, this);
+                    tmp.setTokens(ImpUtils.getTokensbyCorefMention(cm));
+                    cEMList.add(tmp);
+                }
+                
+            }
         }
-        representativeName = cc.getRepresentativeMention().mentionSpan;
+        catch(Exception e){System.out.println(e.getMessage());}
     }
 
     public CustomCorefChain(CoreEntityMention cem){
         cEMList = new LinkedList<>();
-        cEMList.add(cem);
         representativeName = cem.text();
+        cEMList.add(new CustomEntityMention(cem, representativeName, this));
     }
 
     @Override
     public String toString() {
+        String cemNames = "";
+        for (int i = 0; i < cEMList.size(); i++){
+            cemNames += cEMList.get(i).text();
+            if (i != cEMList.size()-1) cemNames += ", ";
+        } 
         return "{" +
-            " cEMList='" + getCEMList() + "'" +
+            " cEMList='" + cemNames + "'" +
             ", representativeName='" + getRepresentativeName() + "'" +
             "}";
     }
@@ -43,11 +61,14 @@ public class CustomCorefChain{
         return representativeName;
     }
 
-    public List<CoreEntityMention> getCEMList() {
+    public List<CustomEntityMention> getCEMList() {
         return cEMList;
     }
 
 	public void setRepresentativeName(String representativeName) {
+        for (CustomEntityMention cem : cEMList){
+            cem.setBestName(representativeName);
+        }
         this.representativeName = representativeName;
 	}
     

@@ -2,8 +2,7 @@ package pipeline;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.util.Pair;
-import util.EntityMention;
-import edu.stanford.nlp.ling.CoreLabel;
+import util.CustomEntityMention;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -42,7 +41,7 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	 * 
 	 */
 	@Override
-	public List<List<EntityMention>> createWindow() {
+	public List<List<CustomEntityMention>> createWindow() {
 		if (!book.getEntitiesPlaced()){
 			book.placeEntitites();
 		}
@@ -50,23 +49,24 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		else return createWindowWithoutChapterLimitation();
 	}
 
-	private List<List<EntityMention>> createWindowWithChapterLimitation(){
-		List<EntityMention> window = new LinkedList<>(); // List of tokens
-		List<List<EntityMention>> result = new LinkedList<>(); // List of lists of tokens
+	private List<List<CustomEntityMention>> createWindowWithChapterLimitation(){
+		List<CustomEntityMention> window = new LinkedList<>(); // List of tokens
+		List<List<CustomEntityMention>> result = new LinkedList<>(); // List of lists of tokens
 		int beginingParagraph;
 		int endingParagraph;
 		boolean done;
+		int tmp;
 		for (Chapter c : book.getChapters()){
 			done = false;
 			beginingParagraph = c.getBeginingParagraphNumber();
 			endingParagraph = beginingParagraph+size-1;
 			while(beginingParagraph < c.getEndingParagraphNumber() && !done){
-				for (EntityMention entity : c.getEntities()){	
-					CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
+				for (CustomEntityMention entity : c.getEntities()){	
+					tmp = entity.getSentenceIndex();
 					Paragraph p = book.getParagraph(endingParagraph);
 					if (p==null) p = book.getParagraph(book.getEndingParagraphNumber());
-					if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
-						entity.setWindow(new Pair<Integer,Integer>(beginingParagraph,endingParagraph));
+					if (tmp >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp <= p.getEndingSentence()){
+						entity.setWindow(new Pair<>(beginingParagraph,endingParagraph));
 						window.add(entity);
 					}
 				}
@@ -86,19 +86,20 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 		return result;
 	}
 	
-	private List<List<EntityMention>> createWindowWithoutChapterLimitation(){
-		List<EntityMention> window = new LinkedList<>(); // List of tokens
-		List<List<EntityMention>> result = new LinkedList<>(); // List of lists of tokens
+	private List<List<CustomEntityMention>> createWindowWithoutChapterLimitation(){
+		List<CustomEntityMention> window = new LinkedList<>(); // List of tokens
+		List<List<CustomEntityMention>> result = new LinkedList<>(); // List of lists of tokens
 		int beginingParagraph = 0;
 		int endingParagraph = beginingParagraph+size-1;
 		boolean done = false;
+		int tmp;
 		while(beginingParagraph < book.getEndingParagraphNumber() && !done){
-			for (EntityMention entity : book.getEntities()){
-				CoreLabel tmp = entity.getCoreEntityMention().tokens().get(0);
+			for (CustomEntityMention entity : book.getEntities()){
+				tmp = entity.getSentenceIndex();
 				Paragraph p = book.getParagraph(endingParagraph);
 				if (p==null) p = book.getParagraph(book.getEndingParagraphNumber());
-				if (tmp.sentIndex() >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp.sentIndex() <= p.getEndingSentence()){
-					entity.setWindow(new Pair<Integer,Integer>(beginingParagraph,endingParagraph));
+				if (tmp >= book.getParagraph(beginingParagraph).getBeginingSentence() && tmp <= p.getEndingSentence()){
+					entity.setWindow(new Pair<>(beginingParagraph,endingParagraph));
 					window.add(entity);
 				}
 			}
@@ -125,30 +126,30 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	 */
 	@Override
 	public CooccurrenceTableParagraph createTab() {
-		List<List<EntityMention>> result = createWindow(); // We get the list of lists of tokens
-		List<CoreLabel> tokenListA;
-		List<CoreLabel> tokenListB;
-		EntityMention characterA;
-		EntityMention characterB;
+		List<List<CustomEntityMention>> result = createWindow(); // We get the list of lists of tokens
+		Pair<Integer,Integer> charOffsetA;
+		Pair<Integer,Integer> charOffsetB;
+		CustomEntityMention characterA;
+		CustomEntityMention characterB;
 		int distanceChar = 0; // We create an int for the distance between characters in characters
 		int distanceWord = 0; // We create an int for the distance between characters in words
 		CooccurrenceTableParagraph tab = new CooccurrenceTableParagraph(); // Creates a new table
 		CoreDocument document = book.getDocument();
-		for (List<EntityMention> entities : result){ // For each window.
+		for (List<CustomEntityMention> entities : result){ // For each window.
 			for (int i = 0; i < entities.size(); i++){ // For each token for Character A
 				characterA = entities.get(i);
 				for (int j = i+1; j < entities.size(); j++){ // For each token for Character B
 					characterB = entities.get(j);
 					if (!characterA.getBestName().equals(characterB.getBestName())){ // if the distance is strictly superior to 0
-						tokenListA = characterA.getCoreEntityMention().tokens();
-						tokenListB = characterB.getCoreEntityMention().tokens();
+						charOffsetA = characterA.charOffsets();
+						charOffsetB = characterB.charOffsets();
 						
-						distanceChar = tokenListB.get(0).beginPosition() - tokenListA.get(tokenListA.size()-1).endPosition();	// We get the distance between the two tokens in characters
-						if (distanceChar < 0) {
-							distanceChar = tokenListA.get(0).beginPosition() - tokenListB.get(tokenListB.size()-1).endPosition();
-							distanceWord = document.tokens().indexOf(tokenListA.get(0)) - document.tokens().indexOf(tokenListB.get(tokenListB.size()-1)) -1; // We get the distance between the two tokens in words
+						distanceChar = Math.abs(charOffsetB.first() - charOffsetA.second());	// We get the distance between the two tokens in characters
+						if (Math.abs(charOffsetA.first() - charOffsetB.second()) < distanceChar) {
+							distanceChar = Math.abs(charOffsetA.first() - charOffsetB.second());
+							distanceWord = Math.abs(document.tokens().indexOf(characterA.getBeginToken()) - document.tokens().indexOf(characterB.getEndToken()) -1); // We get the distance between the two tokens in words
 						}
-						else distanceWord = document.tokens().indexOf(tokenListB.get(0)) - document.tokens().indexOf(tokenListA.get(tokenListA.size()-1)) -1; // We get the distance between the two tokens in words
+						else distanceWord = Math.abs(document.tokens().indexOf(characterB.getBeginToken()) - document.tokens().indexOf(characterA.getEndToken()) -1); // We get the distance between the two tokens in words
 						tab.add(characterA.getBestName(), characterB.getBestName(), distanceChar, distanceWord, characterA.getWindowBegining(), characterA.getWindowEnding()); // If the two strings aren't equal we add a line to the Table
 					}
 				}

@@ -46,6 +46,7 @@ public class ImpUtils {
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		CoreEntityMention result = null;
 		for (CoreEntityMention em : document.entityMentions()){
+			//System.out.println((cm.startIndex-1) + " " + (cm.endIndex-1));
 			if (em.entityType().equals("PERSON")){
 				for (int i = cm.startIndex-1; i < cm.endIndex-1; i++){
 					if (em.tokens().get(0).beginPosition() == document.sentences().get(cm.sentNum-1).tokens().get(i).beginPosition()){
@@ -57,14 +58,28 @@ public class ImpUtils {
 		return result;
 	}
 
+	public static List<CoreLabel> getTokensbyCorefMention(CorefMention cm) throws NullDocumentException {
+		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
+		List<CoreLabel> result = new LinkedList<>();
+		for ( CoreLabel token : document.sentences().get(cm.sentNum-1).tokens()){
+			//System.out.println(cm.mentionSpan + "\t" + cm.startIndex + "\t" + cm.endIndex + "\t" + token.originalText() + "\t" + token.index());
+			if (cm.startIndex <= token.index() && token.index() < cm.endIndex){
+				result.add(token);
+			}
+		}
+		return result;
+	}
+
 	public static List<CoreEntityMention> getCoreEntityMentionsWithoutCorefChain() throws NullDocumentException{
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		List<CoreEntityMention> result = new LinkedList<>();
 		for (CoreEntityMention cem : document.entityMentions()){
-			CorefChain cc = ImpUtils.corefByEntityMention(cem);
-			if ( cc == null) {
-				result.add(cem);
-            }
+			if (cem.entityType().equals("PERSON")){
+				CorefChain cc = ImpUtils.corefByEntityMention(cem);
+				if ( cc == null) {
+					result.add(cem);
+				}
+			}
 		}
 		return result;
 	}
@@ -75,6 +90,8 @@ public class ImpUtils {
 	 * @throws NullDocumentException
 	 *
 	 */
+	/* useless for now but it might be usefull later.
+	
 	public static String bestName(CoreEntityMention cem){
 		try{
 			CorefChain corefChain =  ImpUtils.corefByEntityMention(cem);
@@ -86,8 +103,8 @@ public class ImpUtils {
 		}
 		return null;
 	}
-
-	/* useless for now but keep it until it might be usefull.
+	
+	
 	public static List<String> getNamesInCorefChain(CorefChain cc) throws NullDocumentException{
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		CoreEntityMention temp;

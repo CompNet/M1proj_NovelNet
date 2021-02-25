@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.stanford.nlp.pipeline.CoreSentence;
-import util.EntityMention;
+import util.CustomEntityMention;
 
 /**
  * Paragraphs in a chapter
@@ -23,7 +23,7 @@ public class Paragraph {
     /**
      * list of entities in the paragraph
     */
-    protected LinkedList<EntityMention> entities;
+    protected LinkedList<CustomEntityMention> entities;
     /**
      * Chapter containing the paragraph
     */
@@ -84,11 +84,11 @@ public class Paragraph {
         this.sentences = sentences;
     }
 
-    public List<EntityMention> getEntities() {
+    public List<CustomEntityMention> getEntities() {
         return entities;
     }
 
-    public void setEntities(LinkedList<EntityMention> entities) {
+    public void setEntities(LinkedList<CustomEntityMention> entities) {
         this.entities = entities;
     }
 
@@ -150,7 +150,7 @@ public class Paragraph {
      * 
      * @param entity sentence to add to the paragraph
     */
-    public void addEntity(EntityMention entity){
+    public void addEntity(CustomEntityMention entity){
         if (!entities.contains(entity)) entities.add(entity);
     }
 
@@ -164,8 +164,8 @@ public class Paragraph {
         }
 
         System.out.println("entities : ");
-        for (EntityMention entity : entities){
-            System.out.println(entity.getBestName());
+        for (CustomEntityMention entity : entities){
+            System.out.println("text : " + entity.text() + "\t best name : " + entity.getBestName());
         }
         
     }
@@ -182,7 +182,7 @@ public class Paragraph {
         }
 
         fileWriter.write("\nentities : \n");
-        for (EntityMention entity : entities){
+        for (CustomEntityMention entity : entities){
             fileWriter.write(entity.getBestName()+ "\n");
         }
     }

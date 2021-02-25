@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
+import util.CustomCorefChain;
 
 
 /**
@@ -27,7 +28,7 @@ public class CreateBook {
      * @param notATitle a boolean used to determine if the first sentence is a title
      * @return The book object created
     */
-    public static Book createBook(CoreDocument document, boolean notATitle){
+    public static Book createBook(CoreDocument document, boolean notATitle, List<CustomCorefChain> corefChainList){
         List<CoreSentence> sentences = document.sentences();    //list of the sentences in the document
         int previousLineSkip;   //used to store the difference between the last token of the previous sentence and 
                                 //the first token of the current sentence
@@ -37,7 +38,7 @@ public class CreateBook {
         int chapterNumber = 0;
         int paragraphNumber = -1;
 
-        Book book = new Book(document);
+        Book book = new Book(document, corefChainList);
         Chapter currentChapter = new Chapter(book, chapterNumber);
         book.addChapter(currentChapter);
         Paragraph currentParagraph = new Paragraph(currentChapter, paragraphNumber);

@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Properties;
 
-import util.EntityMention;
+import util.CustomCorefChain;
+import util.CustomEntityMention;
+import util.ImpUtils;
 import util.TextNormalization;
 
 import book.Book;
@@ -67,7 +69,7 @@ public abstract class WindowingCooccurrence {
 		return null;
 	}
 	
-	public List<List<EntityMention>> createWindow() {
+	public List<List<CustomEntityMention>> createWindow() {
 		return new LinkedList<>();
 	}
 
@@ -79,7 +81,7 @@ public abstract class WindowingCooccurrence {
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
 		//getting content
-		String path = "res/corpus/exempleFile.txt";
+		String path = "res/tests/clusteringTestSample.txt";
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
@@ -91,10 +93,17 @@ public abstract class WindowingCooccurrence {
 		
 		// annotate the document
 		pipeline.annotate(document);
+		ImpUtils.setDocument(document);
+
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.45);
 
 		// automatic book creation
 		boolean noTitle = true;
-		Book book = CreateBook.createBook(document, noTitle);
+		Book book = CreateBook.createBook(document, noTitle, cccList);
 		WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
 		WindowingCooccurrenceSentence wcs2 = new WindowingCooccurrenceSentence(2, 1, true, book);
 
@@ -112,10 +121,15 @@ public abstract class WindowingCooccurrence {
 			System.out.println(c);
 		}
 
+		System.out.println("\n--- chaines de coréférences custom fusionées ---\n");
+		for ( CustomCorefChain c : cccList){
+			System.out.println(c);
+		}
+
 		//window to create table display
 		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
-		List<List<EntityMention>> tmp = wcs.createWindow();
-		for(List<EntityMention> l : tmp){
+		List<List<CustomEntityMention>> tmp = wcs.createWindow();
+		for(List<CustomEntityMention> l : tmp){
 			System.out.println(l + "\n");
 		}
 
@@ -126,8 +140,8 @@ public abstract class WindowingCooccurrence {
 
 		//window to create table display
 		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
-		List<List<EntityMention>> tmp2 = wcs2.createWindow();
-		for(List<EntityMention> l : tmp2){
+		List<List<CustomEntityMention>> tmp2 = wcs2.createWindow();
+		for(List<CustomEntityMention> l : tmp2){
 			System.out.println(l + "\n");
 		}
 
@@ -146,7 +160,7 @@ public abstract class WindowingCooccurrence {
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
 		//getting content
-		String path = "res/corpus/exempleFile.txt";
+		String path = "res/tests/clusteringTestSample.txt";
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
@@ -158,10 +172,21 @@ public abstract class WindowingCooccurrence {
 		
 		// annotate the document
 		pipeline.annotate(document);
+		ImpUtils.setDocument(document);
+
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		System.out.println("\n--- chaines de coréférences custom avant fusion ---\n");
+		for ( CustomCorefChain c : cccList){
+			System.out.println(c + "\t" + c.getCEMList().size());
+		}
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.5);
 
 		// automatic book creation
 		boolean noTitle = true;
-		Book book = CreateBook.createBook(document, noTitle);
+		Book book = CreateBook.createBook(document, noTitle, cccList);
 		WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(2, 1, false, book);
 		WindowingCooccurrenceParagraph wcp2 = new WindowingCooccurrenceParagraph(2, 1, true, book);
 
@@ -179,10 +204,15 @@ public abstract class WindowingCooccurrence {
 			System.out.println(c);
 		}
 
+		System.out.println("\n--- chaines de coréférences custom fusionées ---\n");
+		for ( CustomCorefChain c : cccList){
+			System.out.println(c);
+		}
+
 		//window to create table display
 		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
-		List<List<EntityMention>> tmp = wcp.createWindow();
-		for(List<EntityMention> l : tmp){
+		List<List<CustomEntityMention>> tmp = wcp.createWindow();
+		for(List<CustomEntityMention> l : tmp){
 			System.out.println(l + "\n");
 		}
 
@@ -193,8 +223,8 @@ public abstract class WindowingCooccurrence {
 
 		//window to create table display
 		System.out.println("\n--- fenêtres de co-occurrences pour faire le tableau ---\n");
-		List<List<EntityMention>> tmp2 = wcp2.createWindow();
-		for(List<EntityMention> l : tmp2){
+		List<List<CustomEntityMention>> tmp2 = wcp2.createWindow();
+		for(List<CustomEntityMention> l : tmp2){
 			System.out.println(l + "\n");
 		}
 
