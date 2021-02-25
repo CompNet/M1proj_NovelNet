@@ -1,0 +1,3 @@
+this is a test for multiple tokens in coref mention and ner detection in those tokens.
+Professor Lupin is alive and well. He is a very good teacher. Hermione Granger is Remus's best student.
+Remus Lupin is very proud to be teaching Hermione.

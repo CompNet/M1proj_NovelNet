@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.stanford.nlp.pipeline.CoreSentence;
-import util.EntityMention;
+import util.CustomEntityMention;
 
 /**
  * Represent a Chapter in a Book
@@ -219,10 +219,10 @@ public class Chapter {
      *  
      * @return a list of all the entities in the chapter.
     */
-    public List<EntityMention> getEntities(){
-        List<EntityMention> result = new LinkedList<>();
+    public List<CustomEntityMention> getEntities(){
+        List<CustomEntityMention> result = new LinkedList<>();
         for(Paragraph p : paragraphs){
-            for (EntityMention em : p.getEntities()){
+            for (CustomEntityMention em : p.getEntities()){
                 result.add(em);
             }
         }

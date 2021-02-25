@@ -13,7 +13,9 @@ import book.Book;
 import book.CreateBook;
 
 import util.TextNormalization;
-import util.EntityMention;
+import util.CustomCorefChain;
+import util.CustomEntityMention;
+import util.ImpUtils;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
@@ -24,6 +26,8 @@ import edu.stanford.nlp.util.CoreMap;
 import pipeline.CooccurrenceTable;
 import pipeline.CooccurrenceTableParagraph;
 import pipeline.CooccurrenceTableSentence;
+import pipeline.CorefChainFuser;
+import pipeline.CustomCorefChainMaker;
 import pipeline.GraphCreator;
 import pipeline.WindowingCooccurrenceParagraph;
 import pipeline.WindowingCooccurrenceSentence;
@@ -69,7 +73,7 @@ public class Menu {
 	public static void main(String[] args) throws IOException {
 		if (args.length == 0)
 		{
-			test();
+			//test();
 			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
 			String path = sc.nextLine();
@@ -89,59 +93,78 @@ public class Menu {
 
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
+			ImpUtils.setDocument(document);
 			pipeline.annotate(document);
 			//Annotation annotation = document.annotation();
 			// print the result of the annotation in a file
 			/*PrintWriter out = new PrintWriter("res/results/"+path.substring(11, path.length()-4)+"_output.txt");
 			pipeline.prettyPrint(annotation, out );*/
 
-			Book book = CreateBook.createBook(document, false);
+			//System.out.println(document.sentences().get(1).tokens().get(0).originalText() + " " + document.sentences().get(1).tokens().get(0).ner());
+			System.out.println(document.entityMentions());
+			System.out.println(document.corefChains());
+			// CorefChain Fusion
+			List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+			CorefChainFuser corefChainFuser = new CorefChainFuser();
+			cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
+			Book book = CreateBook.createBook(document, false, cccList);
 
 			GraphCreator c = new GraphCreator();
 
 			//Create a table from Sentences 
-			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(20, 3, false, book);
+			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1, false, book);
 			CooccurrenceTableSentence table = wcs.createTab();
 
 			//Create the global Sentence graph
-			c.createGraph(table, true, "graph_"+path.substring(11, path.length()-4)).graphMLPrinter("res/results");
+			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence";
+			c.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
 			
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+
 			int cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(10, 3)){
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(10, 1)){
 				cpt++;
-				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_Paragraphs_"+cpt).graphMLPrinter("res/results");
+				c.createGraph(t, true, graphTitle+"_Sentence_"+cpt).graphMLPrinter("res/results");
+			}
+
+			cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(5, 2)){
+				cpt++;
+				c.createGraph(t, true, graphTitle+"_Paragraphs_"+cpt).graphMLPrinter("res/results");
 			}
 
 			cpt = 0;
 			for (CooccurrenceTable t : dgs.dynamicTableChapters(1, 0)){
 				cpt++;
-				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_Chapters_"+cpt).graphMLPrinter("res/results");
+				c.createGraph(t, true, graphTitle+"_Chapters_"+cpt).graphMLPrinter("res/results");
 			}
 
 			
 
 			//Create a table from Paragraphs
-			/*WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(5, 1, false, book);
+			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(5, 1, false, book);
 			//List<List<EntityMention>> tmp = wcp.createWindow(document);
 			//System.out.println(tmp);
-			CooccurrenceTableParagraph tableP = wcp.createTab(document);
+			CooccurrenceTableParagraph tableP = wcp.createTab();
 
 			FileWriter fileWriter = new FileWriter("res/results/"+path.substring(11, path.length()-4)+"_bookClass.txt");
 			book.printToFile(fileWriter);
 			fileWriter.close();
 
 			//Create the global Paragraphs graph
-			c.createGraph(tableP, true, "graph_"+path.substring(11, path.length()-4)).graphMLPrinter("res/results");
+			String graphTitle2 = "graph_"+path.substring(11, path.length()-4)+"_Paragraphs";
+			c.createGraph(tableP, true, graphTitle2).graphMLPrinter("res/results");
 				
 			//Create a dynamic graph sequence from Paragraphs table with Paragraphs window.
 			WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, tableP);
-			int cpt = 0;
+			cpt = 0;
 			for (CooccurrenceTable t : dgp.dynamicTableSentences(20,3)){
 				cpt++;
-				c.createGraph(t, true, "graph_"+path.substring(11, path.length()-4)+"_"+cpt).graphMLPrinter("res/results");
-			}*/
+				c.createGraph(t, true, graphTitle2+"_Sentence_"+cpt).graphMLPrinter("res/results");
+			}
 			
 
 			// print book object in a file
