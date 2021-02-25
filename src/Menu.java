@@ -14,7 +14,6 @@ import book.CreateBook;
 
 import util.TextNormalization;
 import util.CustomCorefChain;
-import util.CustomEntityMention;
 import util.ImpUtils;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
