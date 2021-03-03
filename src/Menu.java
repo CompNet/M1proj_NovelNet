@@ -43,7 +43,8 @@ public class Menu {
 	public static void test(){
 		// Create the Stanford CoreNLP pipeline
 		Properties props = new Properties();
-		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,depparse,natlog,openie");
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,depparse,coref,natlog,openie");
+		props.setProperty("openie.resolve_coref", "true");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 	
 		// Annotate an example document.
@@ -70,9 +71,10 @@ public class Menu {
 	 * @throws IOException 
 	*/
 	public static void main(String[] args) throws IOException {
-		if (args.length == 0)
+		test();
+		if (args.length == 1)
 		{
-			//test();
+			
 			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
 			String path = sc.nextLine();
