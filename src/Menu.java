@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -17,22 +18,27 @@ import util.CustomCorefChain;
 import util.ImpUtils;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreEntityMention;
+import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+import graph.Graph;
 import pipeline.CooccurrenceTable;
 import pipeline.CooccurrenceTableParagraph;
 import pipeline.CooccurrenceTableSentence;
 import pipeline.CorefChainFuser;
 import pipeline.CustomCorefChainMaker;
 import pipeline.GraphCreator;
+import pipeline.InteractionTable;
+import pipeline.InteractionTableCreator;
 import pipeline.WindowingCooccurrenceParagraph;
 import pipeline.WindowingCooccurrenceSentence;
 import pipeline.WindowingDynamicGraphFromParagraphTable;
 import pipeline.WindowingDynamicGraphFromSentenceTable;
-
 
 /**
  * @author Quay Baptiste, Lemaire Tewis
@@ -40,29 +46,96 @@ import pipeline.WindowingDynamicGraphFromSentenceTable;
  */
 public class Menu {
 
-	public static void test(){
-		// Create the Stanford CoreNLP pipeline
+	public static void test() throws IOException {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("saisir chemin du fichier à traiter:");
+		String path = sc.nextLine();
+
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		content = TextNormalization.addDotEndOfLine(content);
+
 		Properties props = new Properties();
-		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,depparse,coref,natlog,openie");
-		props.setProperty("openie.resolve_coref", "true");
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie");
+		props.setProperty("ner.applyFineGrained", "false");
+
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-	
-		// Annotate an example document.
-		Annotation doc = new Annotation("Joe Smith and Sara Jackson helped Bill Farmer");
-		pipeline.annotate(doc);
-	
-		// Loop over sentences in the document
-		for (CoreMap sentence : doc.get(CoreAnnotations.SentencesAnnotation.class)) {
-		  // Get the OpenIE triples for the sentence
-		  Collection<RelationTriple> triples = sentence.get(NaturalLogicAnnotations.RelationTriplesAnnotation.class);
-		  // Print the triples
-		  for (RelationTriple triple : triples) {
-			System.out.println(triple.confidence + "\t" +
-				triple.subjectLemmaGloss() + "\t" +
-				triple.relationLemmaGloss() + "\t" +
-				triple.objectLemmaGloss());
-		  }
+
+		CoreDocument document = new CoreDocument(content);
+
+		pipeline.annotate(document);
+
+		System.out.println(document.entityMentions());
+		System.out.println(document.corefChains());
+
+		Annotation annotation = document.annotation();
+
+		for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+			// Get the OpenIE triples for the sentence
+			Collection<RelationTriple> triples = sentence.get(NaturalLogicAnnotations.RelationTriplesAnnotation.class);
+			// Print the triples
+			for (RelationTriple triple : triples) {
+				System.out.println();
+				System.out.println(triple.subjectGloss() + "\t " + triple.subject);
+				System.out.println(triple.relationLemmaGloss() + "\t " + triple.relation);
+				System.out.println(triple.objectGloss() + "\t " + triple.canonicalObject);
+			}
 		}
+		sc.close();
+	}
+
+	public static void testInteractionTableCreator() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("saisir chemin du fichier à traiter:");
+		String path = sc.nextLine();
+
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		content = TextNormalization.addDotEndOfLine(content);
+
+		//String prop="tokenize,ssplit";
+		String prop="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
+		System.out.println("les annotateurs séléctionés sont: "+prop);
+
+		Properties props = new Properties();
+		props.setProperty("annotators",prop);
+		props.setProperty("ner.applyFineGrained", "false");
+		
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		ImpUtils.setDocument(document);
+		pipeline.annotate(document);
+		
+		/*for (CoreLabel cem : document.tokens()){
+			System.out.println(cem.originalText() + "\t " + cem.ner());
+		}*/
+		//System.out.println(document.corefChains());
+		// CorefChain Fusion
+		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+
+		/*for (CustomCorefChain ccc : cccList){
+			System.out.println(ccc);
+		}*/
+
+		Book book = CreateBook.createBook(document, false, cccList);
+
+		InteractionTable it = InteractionTableCreator.createTable(book);
+
+		Graph test = GraphCreator.createGraph(it, "graph_test_interaction");
+
+		it.display();
+
+		System.out.println(test);
+
+		test.graphMLPrinter("res/results");
+
+		sc.close();
 	}
 
 	/**
@@ -71,10 +144,9 @@ public class Menu {
 	 * @throws IOException 
 	*/
 	public static void main(String[] args) throws IOException {
-		test();
+		testInteractionTableCreator();
 		if (args.length == 1)
 		{
-			
 			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
 			String path = sc.nextLine();
@@ -91,7 +163,7 @@ public class Menu {
 			Properties props = new Properties();
 			props.setProperty("annotators",prop);
 			props.setProperty("ner.applyFineGrained", "false");
-
+			
 			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 			CoreDocument document = new CoreDocument(content);
 			ImpUtils.setDocument(document);
@@ -112,15 +184,13 @@ public class Menu {
 
 			Book book = CreateBook.createBook(document, false, cccList);
 
-			GraphCreator c = new GraphCreator();
-
 			//Create a table from Sentences 
 			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1, false, book);
 			CooccurrenceTableSentence table = wcs.createTab();
 
 			//Create the global Sentence graph
 			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence";
-			c.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
+			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
 			
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
@@ -128,19 +198,19 @@ public class Menu {
 			int cpt = 0;
 			for (CooccurrenceTable t : dgs.dynamicTableSentences(10, 1)){
 				cpt++;
-				c.createGraph(t, true, graphTitle+"_Sentence_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence_"+cpt).graphMLPrinter("res/results");
 			}
 
 			cpt = 0;
 			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(5, 2)){
 				cpt++;
-				c.createGraph(t, true, graphTitle+"_Paragraphs_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle+"_Paragraphs_"+cpt).graphMLPrinter("res/results");
 			}
 
 			cpt = 0;
 			for (CooccurrenceTable t : dgs.dynamicTableChapters(1, 0)){
 				cpt++;
-				c.createGraph(t, true, graphTitle+"_Chapters_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle+"_Chapters_"+cpt).graphMLPrinter("res/results");
 			}
 
 			
@@ -157,14 +227,14 @@ public class Menu {
 
 			//Create the global Paragraphs graph
 			String graphTitle2 = "graph_"+path.substring(11, path.length()-4)+"_Paragraphs";
-			c.createGraph(tableP, true, graphTitle2).graphMLPrinter("res/results");
+			GraphCreator.createGraph(tableP, true, graphTitle2).graphMLPrinter("res/results");
 				
 			//Create a dynamic graph sequence from Paragraphs table with Paragraphs window.
 			WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, tableP);
 			cpt = 0;
 			for (CooccurrenceTable t : dgp.dynamicTableSentences(20,3)){
 				cpt++;
-				c.createGraph(t, true, graphTitle2+"_Sentence_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle2+"_Sentence_"+cpt).graphMLPrinter("res/results");
 			}
 			
 

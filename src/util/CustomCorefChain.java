@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 
 public class CustomCorefChain{
@@ -19,20 +20,10 @@ public class CustomCorefChain{
 
     public CustomCorefChain(CorefChain cc){
         cEMList = new LinkedList<>();
-        CustomEntityMention tmp;
         try {
             representativeName = cc.getRepresentativeMention().mentionSpan;
-            //System.out.println("cc : " + cc);
             for (CorefMention cm : cc.getMentionsInTextualOrder()){
-                CoreEntityMention cem = ImpUtils.getCoreEntityMentionByCorefMention(cm);
-                //System.out.println( " texte : " + cm.mentionSpan + "\t cm start : " + cm.startIndex + "\t cm end : " + cm.endIndex + "\t tokens : "+ cem.text());
-                if (cem != null) cEMList.add(new CustomEntityMention(cem, representativeName, this));
-                else {
-                    tmp = new CustomEntityMention(null, representativeName, this);
-                    tmp.setTokens(ImpUtils.getTokensbyCorefMention(cm));
-                    cEMList.add(tmp);
-                }
-                
+                cEMList.add(new CustomEntityMention(ImpUtils.getTokensbyCorefMention(cm), representativeName, this));                
             }
         }
         catch(Exception e){System.out.println(e.getMessage());}
@@ -41,7 +32,8 @@ public class CustomCorefChain{
     public CustomCorefChain(CoreEntityMention cem){
         cEMList = new LinkedList<>();
         representativeName = cem.text();
-        cEMList.add(new CustomEntityMention(cem, representativeName, this));
+        cEMList.add(new CustomEntityMention(cem.tokens(), representativeName, this));
+        
     }
 
     @Override
@@ -71,5 +63,12 @@ public class CustomCorefChain{
         }
         this.representativeName = representativeName;
 	}
-    
+
+    public Boolean contains(CoreLabel token){
+        for(CustomEntityMention entity : cEMList){
+            //System.out.println("original tokens : " + tokens + "\t entity tokens : " + entity.tokens + "\tif result : " + tokens.equals(entity.tokens));
+            if (entity.tokens.contains(token)) return true;
+        }
+        return false;
+    }    
 }

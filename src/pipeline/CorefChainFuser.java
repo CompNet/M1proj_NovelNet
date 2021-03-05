@@ -52,14 +52,14 @@ public class CorefChainFuser {
         for (CustomCorefChain ccc1 : cccList) {
             bestName1 = ccc1.getRepresentativeName();
             tot = 0;
-            System.out.print(bestName1);
+            //System.out.print(bestName1);
             for (CustomCorefChain ccc2 : cccList) {
                 if (!ccc1.equals(ccc2)) {
                     bestName2 = ccc2.getRepresentativeName();
                     tot += ro.distance(bestName1, bestName2);
                 }
             }
-            System.out.print(" value : " + tot +"; ");
+            //System.out.print(" value : " + tot +"; ");
 
             if (tot < min) {
                 bestNameMin = bestName1;
@@ -68,7 +68,7 @@ public class CorefChainFuser {
                 bestNameMin = bestName1;
             }
         }
-        System.out.println();
+        //System.out.println();
         result.setRepresentativeName(bestNameMin);
         return result;
     }

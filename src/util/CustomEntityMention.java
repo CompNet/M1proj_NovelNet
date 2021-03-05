@@ -9,24 +9,19 @@ import edu.stanford.nlp.util.Pair;
 public class CustomEntityMention {
 
     CustomCorefChain corefChain;
-    CoreEntityMention coreEntityMention;
     List<CoreLabel> tokens;
     String bestName;
     Pair<Integer, Integer> window;
 
-    public CustomEntityMention(CoreEntityMention coreEntityMention, Pair<Integer, Integer> window, String bestName) {
-        this.coreEntityMention = coreEntityMention;
+    public CustomEntityMention(List<CoreLabel> tokens, Pair<Integer, Integer> window, String bestName) {
+        this.tokens = tokens;
         this.window = window;
         this.bestName = bestName;
     }
 
-    /*public CustomEntityMention(CoreEntityMention coreEntityMention, String bestName) {
-        this.coreEntityMention = coreEntityMention;
-        this.bestName = bestName;
-    }*/
 
-    public CustomEntityMention(CoreEntityMention coreEntityMention, String bestName, CustomCorefChain customCorefChain) {
-        this.coreEntityMention = coreEntityMention;
+    public CustomEntityMention(List<CoreLabel> tokens, String bestName, CustomCorefChain customCorefChain) {
+        this.tokens = tokens;
         this.bestName = bestName;
         this.corefChain = customCorefChain;
     }
@@ -37,14 +32,6 @@ public class CustomEntityMention {
 
     public void setTokens(List<CoreLabel> tokens){
         this.tokens = tokens;
-    }
-
-    public CoreEntityMention getCoreEntityMention(){
-        return coreEntityMention;
-    }
-
-    public void setCoreEntityMention(CoreEntityMention coreEntityMention){
-        this.coreEntityMention = coreEntityMention;
     }
 
     public CustomCorefChain getCorefChain(){
@@ -88,48 +75,30 @@ public class CustomEntityMention {
     }
 
     public int getSentenceIndex(){
-        if (coreEntityMention == null){
-            return tokens.get(0).sentIndex();
-        }
-        return coreEntityMention.tokens().get(0).sentIndex();
+        return tokens.get(0).sentIndex();
     }
 
     public Pair<Integer,Integer> charOffsets(){
-        if (coreEntityMention == null){
-            return new Pair<>(tokens.get(0).beginPosition(), tokens.get(tokens.size()-1).endPosition());
-        }
-        return coreEntityMention.charOffsets();
+        return new Pair<>(tokens.get(0).beginPosition(), tokens.get(tokens.size()-1).endPosition());
     }
 
     public Pair<Integer,Integer> tokenIndexs(){
-        if (coreEntityMention == null){
-            return new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
-        }
-        return new Pair<>(coreEntityMention.tokens().get(0).index(), coreEntityMention.tokens().get(tokens.size()-1).index());
+        return new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
     }
 
     public CoreLabel getBeginToken(){
-        if (coreEntityMention == null){
-            return tokens.get(0);
-        }
-        return coreEntityMention.tokens().get(0);
+        return tokens.get(0);
     }
 
     public CoreLabel getEndToken(){
-        if (coreEntityMention == null){
-            return tokens.get(tokens.size()-1);
-        }
-        return coreEntityMention.tokens().get(coreEntityMention.tokens().size()-1);
+        return tokens.get(tokens.size()-1);
     }
 
     public String text(){
         String text = "";
-        if (coreEntityMention == null){
-            for ( CoreLabel token : tokens){
-                text += token.value() + " ";
-            }
+        for ( CoreLabel token : tokens){
+            text += token.value() + " ";
         }
-        else text = coreEntityMention.text();
         return text;
     }
 

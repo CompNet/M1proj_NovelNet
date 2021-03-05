@@ -1,6 +1,3 @@
-/**
- * 
- */
 package graph;
 
 
@@ -14,6 +11,7 @@ public class Edge {
 	protected Node nodeLeft;
 	protected Node nodeRight;
 	protected float ponderation;
+	protected String type;
 	
 	public Edge(String id, Node nodeLeft, Node nodeRight)
 	{
@@ -21,6 +19,15 @@ public class Edge {
 		this.nodeLeft = nodeLeft;
 		this.nodeRight = nodeRight;
 		ponderation = 1;
+	}
+
+	public Edge(String id, Node nodeLeft, Node nodeRight, String type)
+	{
+		this.id = id;
+		this.nodeLeft = nodeLeft;
+		this.nodeRight = nodeRight;
+		ponderation = 1;
+		this.type = type;
 	}
 	
 	public Edge(String id, Node nodeLeft, Node nodeRight, float ponderation)
@@ -50,6 +57,16 @@ public class Edge {
 	{
 		return ponderation;
 	}
+
+	public String getType()
+	{
+		return type;
+	}
+	
+	public void setType(String type)
+	{
+		this.type = type;
+	}
 	
 	public void setPonderation(float ponderation)
 	{
@@ -59,6 +76,11 @@ public class Edge {
 	public void addPonderation(float ponderation)
 	{
 		this.ponderation+=ponderation;
+	}
+
+	public void addPonderation()
+	{
+		this.ponderation+=1;
 	}
 	
 	@Override
