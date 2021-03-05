@@ -7,7 +7,6 @@ import java.util.List;
 import book.Book;
 
 import edu.stanford.nlp.util.CoreMap;
-import util.CustomCorefChain;
 import util.CustomInteraction;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;

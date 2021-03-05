@@ -55,8 +55,7 @@ public class GraphCreator {
 		cts.add("A", "E", 20, 4, 16, 20);
 		cts.add("E", "C", 20, 4, 16, 20);
 
-		GraphCreator gC = new GraphCreator();
-		Graph g = gC.createGraph(cts,true,"graph_test_cooccurrence");
+		Graph g = GraphCreator.createGraph(cts,true,"graph_test_cooccurrence");
 		g.graphMLPrinter("res/results");
 		System.out.println(g.toString());
 	}

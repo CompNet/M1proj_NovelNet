@@ -1,5 +1,4 @@
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -18,12 +17,9 @@ import util.CustomCorefChain;
 import util.ImpUtils;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
-import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.CoreEntityMention;
-import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 import graph.Graph;

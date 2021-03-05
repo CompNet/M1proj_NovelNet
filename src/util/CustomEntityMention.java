@@ -3,7 +3,6 @@ package util;
 import java.util.List;
 
 import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.util.Pair;
 
 public class CustomEntityMention {
