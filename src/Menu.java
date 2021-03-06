@@ -143,17 +143,18 @@ public class Menu {
 		//testInteractionTableCreator();
 		if (args.length == 0)
 		{
-			Scanner sc = new Scanner(System.in);
+			/*Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
 			String path = sc.nextLine();
-
+*/
+			String path = "res/tests/The Double - Fyodor Dostoevsky.txt";
 			FileInputStream is = new FileInputStream(path);
 			String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 			content = TextNormalization.addDotEndOfLine(content);
 
 			//String prop="tokenize,ssplit";
-			String prop="tokenize,ssplit,pos,lemma,ner,depparse,coref";
+			String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
 			System.out.println("les annotateurs séléctionés sont: "+prop);
 
 			Properties props = new Properties();
@@ -326,7 +327,7 @@ public class Menu {
 			book.printToFile(fileWriter);
 			fileWriter.close();*/
 			
-			sc.close();
+			//sc.close();
 		}
 
 
