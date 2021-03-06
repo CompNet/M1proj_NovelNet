@@ -140,8 +140,8 @@ public class Menu {
 	 * @throws IOException 
 	*/
 	public static void main(String[] args) throws IOException {
-		testInteractionTableCreator();
-		if (args.length == 1)
+		//testInteractionTableCreator();
+		if (args.length == 0)
 		{
 			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
@@ -153,7 +153,7 @@ public class Menu {
 			content = TextNormalization.addDotEndOfLine(content);
 
 			//String prop="tokenize,ssplit";
-			String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
+			String prop="tokenize,ssplit,pos,lemma,ner,depparse,coref";
 			System.out.println("les annotateurs séléctionés sont: "+prop);
 
 			Properties props = new Properties();
@@ -170,34 +170,121 @@ public class Menu {
 			pipeline.prettyPrint(annotation, out );*/
 
 			//System.out.println(document.sentences().get(1).tokens().get(0).originalText() + " " + document.sentences().get(1).tokens().get(0).ner());
-			System.out.println(document.entityMentions());
-			System.out.println(document.corefChains());
+			/*System.out.println(document.entityMentions());
+			System.out.println(document.corefChains());*/
 			// CorefChain Fusion
+
 			List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
 
 			CorefChainFuser corefChainFuser = new CorefChainFuser();
-			cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+			cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.50);
 
 			Book book = CreateBook.createBook(document, false, cccList);
 
 			//Create a table from Sentences 
-			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(5, 1, false, book);
+			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(3, 1, false, book);
 			CooccurrenceTableSentence table = wcs.createTab();
 
 			//Create the global Sentence graph
-			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence";
+			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence31";
 			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
 			
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 			int cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(10, 1)){
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
 				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence31_"+cpt).graphMLPrinter("res/results");
 			}
 
+			//Create a table from Sentences 
+			wcs = new WindowingCooccurrenceSentence(4, 1, false, book);
+			table = wcs.createTab();
+
+			//Create the global Sentence graph
+			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence41";
+			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
+			
+			//Create a dynamic graph sequence from sentences table with Sentence window.
+			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+
 			cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+				cpt++;
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence41_"+cpt).graphMLPrinter("res/results");
+			}
+
+			//Create a table from Sentences 
+			wcs = new WindowingCooccurrenceSentence(5, 1, false, book);
+			table = wcs.createTab();
+
+			//Create the global Sentence graph
+			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence51";
+			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
+			
+			//Create a dynamic graph sequence from sentences table with Sentence window.
+			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+
+			cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+				cpt++;
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence51_"+cpt).graphMLPrinter("res/results");
+			}
+
+			//Create a table from Sentences 
+			wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
+			table = wcs.createTab();
+
+			//Create the global Sentence graph
+			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence21";
+			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
+			
+			//Create a dynamic graph sequence from sentences table with Sentence window.
+			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+
+			cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+				cpt++;
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence21_"+cpt).graphMLPrinter("res/results");
+			}
+
+			//Create a table from Sentences 
+			wcs = new WindowingCooccurrenceSentence(2, 0, false, book);
+			table = wcs.createTab();
+
+			//Create the global Sentence graph
+			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence20";
+			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
+			
+			//Create a dynamic graph sequence from sentences table with Sentence window.
+			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+
+			cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+				cpt++;
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence20_"+cpt).graphMLPrinter("res/results");
+			}
+
+			//Create a table from Sentences 
+			wcs = new WindowingCooccurrenceSentence(3, 0, false, book);
+			table = wcs.createTab();
+
+			//Create the global Sentence graph
+			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence30";
+			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
+			
+			//Create a dynamic graph sequence from sentences table with Sentence window.
+			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+
+			cpt = 0;
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+				cpt++;
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence30_"+cpt).graphMLPrinter("res/results");
+			}
+			
+
+			/*cpt = 0;
 			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(5, 2)){
 				cpt++;
 				GraphCreator.createGraph(t, true, graphTitle+"_Paragraphs_"+cpt).graphMLPrinter("res/results");
