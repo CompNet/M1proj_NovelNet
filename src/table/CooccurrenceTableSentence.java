@@ -1,4 +1,4 @@
-package pipeline;
+package table;
 
 /**
  * A class wich represent a table where all the co-occurrences are stocked.

@@ -2,6 +2,7 @@ package pipeline;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.util.Pair;
+import table.CooccurrenceTableParagraph;
 import util.CustomEntityMention;
 
 import java.util.LinkedList;

@@ -8,6 +8,9 @@ import book.Chapter;
 import book.Paragraph;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import table.CooccurrenceTable;
+import table.CooccurrenceTableParagraph;
+import table.CooccurrenceTableSentence;
 import util.CustomCorefChain;
 import util.NullDocumentException;
 

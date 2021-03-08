@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import book.Book;
+import table.CooccurrenceTable;
+import table.CooccurrenceTableParagraph;
 
 /**
  * Create dynamic graphs from a CooccurrenceTable where the window dimension is in Paragraphs.
@@ -48,9 +50,9 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 			whileEnd = false;
 			dynamicGraphBegin = dynamicCpt*size - dynamicCpt*covering;
 			dynamicGraphEnd = (dynamicCpt + 1)*size - dynamicCpt*covering -1;
-			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
-				windowBegin = book.getBeginIndexOfParagraph(cooccurrenceTable.listBeginingWindow.get(i));
-				windowEnd = book.getEndIndexOfParagraph(cooccurrenceTable.listEndingWindow.get(i));
+			while( i < cooccurrenceTable.getListCharA().size() && !whileEnd){
+				windowBegin = book.getBeginIndexOfParagraph(cooccurrenceTable.getListBeginingWindow().get(i));
+				windowEnd = book.getEndIndexOfParagraph(cooccurrenceTable.getListEndingWindow().get(i));
 				if (windowEnd==-1) windowEnd = book.getEndIndexOfParagraph(book.getEndingParagraphNumber());
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
 					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
@@ -61,7 +63,7 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 							searchingEnd = true;
 							begin = i;
 						}
-						if (i == cooccurrenceTable.listCharA.size()-1){
+						if (i == cooccurrenceTable.getListCharA().size()-1){
 							result.add(cooccurrenceTable.subTable(begin, i));
 							done = true;
 						}
@@ -107,9 +109,9 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 			dynamicGraphEnd = (dynamicCpt+1)*size - dynamicCpt*covering-1;
 			i = 0;
 			whileEnd = false;
-			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
-				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
-				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
+			while( i < cooccurrenceTable.getListCharA().size() && !whileEnd){
+				windowBegin = cooccurrenceTable.getListBeginingWindow().get(i);
+				windowEnd = cooccurrenceTable.getListEndingWindow().get(i);
 				if (windowEnd==-1) windowEnd = book.getEndIndexOfParagraph(book.getEndingParagraphNumber());
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
 					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
@@ -120,7 +122,7 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 							searchingEnd = true;
 							begin = i;
 						}
-						if (i == cooccurrenceTable.listCharA.size()-1){
+						if (i == cooccurrenceTable.getListCharA().size()-1){
 							result.add(cooccurrenceTable.subTable(begin, i));
 							done = true;
 						}
@@ -166,9 +168,9 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 			whileEnd = false;
 			dynamicGraphBegin = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().getFirst().getParagraphNumber();
 			dynamicGraphEnd = book.getChapters().get((dynamicCpt+1)*size - dynamicCpt*covering-1).getParagraphs().getLast().getParagraphNumber();
-			while(i < cooccurrenceTable.listCharA.size() && !whileEnd){
-				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
-				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
+			while(i < cooccurrenceTable.getListCharA().size() && !whileEnd){
+				windowBegin = cooccurrenceTable.getListBeginingWindow().get(i);
+				windowEnd = cooccurrenceTable.getListEndingWindow().get(i);
 				if (windowEnd==-1) windowEnd = book.getEndIndexOfParagraph(book.getEndingParagraphNumber());
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
 					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
@@ -179,7 +181,7 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 							searchingEnd = true;
 							begin = i;
 						}
-						if (i == cooccurrenceTable.listCharA.size()-1){
+						if (i == cooccurrenceTable.getListCharA().size()-1){
 							result.add(cooccurrenceTable.subTable(begin, i));
 							done = true;
 						}

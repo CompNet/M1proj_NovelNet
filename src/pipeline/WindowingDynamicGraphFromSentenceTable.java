@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import book.Book;
+import table.CooccurrenceTable;
+import table.CooccurrenceTableSentence;
 
 /**
  * Create dynamic graphs from a CooccurrenceTable where the window dimension is in Sentence.
@@ -48,9 +50,9 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 			whileEnd = false;
 			dynamicGraphBegin = dynamicCpt*size - dynamicCpt*covering;
 			dynamicGraphEnd = (dynamicCpt + 1)*size - dynamicCpt*covering -1;
-			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
-				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
-				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
+			while( i < cooccurrenceTable.getListCharA().size() && !whileEnd){
+				windowBegin = cooccurrenceTable.getListBeginingWindow().get(i);
+				windowEnd = cooccurrenceTable.getListEndingWindow().get(i);
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
 					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
 						if (searchingEnd) {
@@ -60,7 +62,7 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 							searchingEnd = true;
 							begin = i;
 						}
-						if (i == cooccurrenceTable.listCharA.size()-1){
+						if (i == cooccurrenceTable.getListCharA().size()-1){
 							result.add(cooccurrenceTable.subTable(begin, i));
 							done = true;
 						}
@@ -107,9 +109,9 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 			dynamicGraphBegin = book.getBeginIndexOfParagraph(dynamicCpt*size - dynamicCpt*covering);
 			dynamicGraphEnd = book.getEndIndexOfParagraph((dynamicCpt + 1)*size - dynamicCpt*covering -1);
 			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndIndexOfParagraph(book.getEndingParagraphNumber());
-			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
-				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
-				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
+			while( i < cooccurrenceTable.getListCharA().size() && !whileEnd){
+				windowBegin = cooccurrenceTable.getListBeginingWindow().get(i);
+				windowEnd = cooccurrenceTable.getListEndingWindow().get(i);
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
 					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
 						if (searchingEnd) {
@@ -119,7 +121,7 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 							searchingEnd = true;
 							begin = i;
 						}
-						if (i == cooccurrenceTable.listCharA.size()-1){
+						if (i == cooccurrenceTable.getListCharA().size()-1){
 							result.add(cooccurrenceTable.subTable(begin, i));
 							done = true;
 						}
@@ -166,9 +168,9 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 			dynamicGraphBegin = book.getBeginIndexOfChapter(dynamicCpt*size - dynamicCpt*covering);
 			dynamicGraphEnd = book.getEndIndexOfChapter((dynamicCpt + 1)*size - dynamicCpt*covering -1);
 			if (dynamicGraphEnd==-1) dynamicGraphEnd = book.getEndingSentenceIndex();
-			while( i < cooccurrenceTable.listCharA.size() && !whileEnd){
-				windowBegin = cooccurrenceTable.listBeginingWindow.get(i);
-				windowEnd = cooccurrenceTable.listEndingWindow.get(i);
+			while( i < cooccurrenceTable.getListCharA().size() && !whileEnd){
+				windowBegin = cooccurrenceTable.getListBeginingWindow().get(i);
+				windowEnd = cooccurrenceTable.getListEndingWindow().get(i);
 				if ((windowBegin+windowEnd)/2 >= dynamicGraphBegin){
 					if( (windowBegin+windowEnd)/2 <= dynamicGraphEnd){
 						if (searchingEnd) {
@@ -178,7 +180,7 @@ public class WindowingDynamicGraphFromSentenceTable extends WindowingDynamicGrap
 							searchingEnd = true;
 							begin = i;
 						}
-						if (i == cooccurrenceTable.listCharA.size()-1){
+						if (i == cooccurrenceTable.getListCharA().size()-1){
 							result.add(cooccurrenceTable.subTable(begin, i));
 							done = true;
 						}

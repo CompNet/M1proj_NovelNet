@@ -23,6 +23,9 @@ import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import table.CooccurrenceTable;
+import table.CooccurrenceTableParagraph;
+import table.CooccurrenceTableSentence;
 
 
 /**

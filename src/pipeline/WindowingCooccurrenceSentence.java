@@ -11,6 +11,7 @@ import book.Chapter;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.util.Pair;
+import table.CooccurrenceTableSentence;
 import util.CustomEntityMention;
 
 /**

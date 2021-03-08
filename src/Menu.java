@@ -1,7 +1,9 @@
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.nio.charset.StandardCharsets;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
@@ -16,6 +18,7 @@ import util.TextNormalization;
 import util.CustomCorefChain;
 import util.ImpUtils;
 import util.NullDocumentException;
+
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
@@ -24,15 +27,18 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+
 import graph.Graph;
-import pipeline.CooccurrenceTable;
-import pipeline.CooccurrenceTableParagraph;
-import pipeline.CooccurrenceTableSentence;
+
+import table.CooccurrenceTable;
+import table.CooccurrenceTableParagraph;
+import table.CooccurrenceTableSentence;
+import table.DirectInteractionTable;
+import table.DirectInteractionTableCreator;
+
 import pipeline.CorefChainFuser;
 import pipeline.CustomCorefChainMaker;
 import pipeline.GraphCreator;
-import pipeline.DirectInteractionTable;
-import pipeline.DirectInteractionTableCreator;
 import pipeline.WindowingCooccurrenceParagraph;
 import pipeline.WindowingCooccurrenceSentence;
 import pipeline.WindowingDynamicGraphFromParagraphTable;

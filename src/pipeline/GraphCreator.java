@@ -3,6 +3,9 @@ package pipeline;
 import java.io.IOException;
 
 import graph.*;
+import table.CooccurrenceTable;
+import table.CooccurrenceTableSentence;
+import table.DirectInteractionTable;
 
 public class GraphCreator {
 
@@ -12,12 +15,12 @@ public class GraphCreator {
 
 	public static Graph createGraph(CooccurrenceTable tab, boolean weighting) {
 		Graph graph = new Graph();
-		for (int i = 0; i < tab.listCharA.size(); i++) { // Until we reach the size of the list of sentences
-			Node nA = new Node(tab.listCharA.get(i)); // We create a new node
-			Node nB = new Node(tab.listCharB.get(i)); // We create a new node
+		for (int i = 0; i < tab.getListCharA().size(); i++) { // Until we reach the size of the list of sentences
+			Node nA = new Node(tab.getListCharA().get(i)); // We create a new node
+			Node nB = new Node(tab.getListCharB().get(i)); // We create a new node
 			graph.addNode(nA);
 			graph.addNode(nB);
-			graph.addCooccurrenceEdge(nA, nB, weighting, tab.listDistanceWord.get(i)); // We create a new edge which links the two
+			graph.addCooccurrenceEdge(nA, nB, weighting, tab.getListDistanceWord().get(i)); // We create a new edge which links the two
 																			// nodes with their weight
 		}
 		return graph;
@@ -33,12 +36,12 @@ public class GraphCreator {
 		Graph graph = new Graph();
 		graph.setOriented(true);
 		graph.setName(name);
-		for (int i = 0; i < tab.subject.size(); i++) { // Until we reach the size of the list of sentences
-			Node nA = new Node(tab.subject.get(i)); // We create a new node
-			Node nB = new Node(tab.object.get(i)); // We create a new node
+		for (int i = 0; i < tab.getSubject().size(); i++) { // Until we reach the size of the list of sentences
+			Node nA = new Node(tab.getSubject().get(i)); // We create a new node
+			Node nB = new Node(tab.getObject().get(i)); // We create a new node
 			graph.addNode(nA);
 			graph.addNode(nB);
-			graph.addInteractionEdge(nA, nB, tab.type.get(i)); // We create a new edge which links the two nodes with their weight
+			graph.addInteractionEdge(nA, nB, tab.getType().get(i)); // We create a new edge which links the two nodes with their weight
 		}
 		return graph;
 	}

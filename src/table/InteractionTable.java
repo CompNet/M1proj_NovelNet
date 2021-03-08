@@ -1,4 +1,4 @@
-package pipeline;
+package table;
 
 public class InteractionTable {
     

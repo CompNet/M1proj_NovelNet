@@ -1,4 +1,4 @@
-package pipeline;
+package table;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -123,5 +123,13 @@ public class DirectInteractionTable {
 			if (type.get(i) != null) System.out.print("\t| "+type.get(i));
 			System.out.println("\t| "+object.get(i) + "\t| "+sentenceIndex.get(i));
 		}
+    }
+
+    public List<String> getType() {
+        return this.type;
+    }
+
+    public void setType(List<String> type) {
+        this.type = type;
     }
 }

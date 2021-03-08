@@ -1,4 +1,4 @@
-package pipeline;
+package table;
 
 import java.util.LinkedList;
 import java.util.List;
