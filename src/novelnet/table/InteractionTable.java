@@ -1,4 +1,4 @@
-package table;
+package novelnet.table;
 
 public class InteractionTable {
     

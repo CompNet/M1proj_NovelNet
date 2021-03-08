@@ -1,18 +1,20 @@
-package pipeline;
+package novelnet.pipeline;
 
 import java.util.List;
 import java.util.Properties;
 
-import book.Book;
-import book.Chapter;
-import book.Paragraph;
+import novelnet.table.CooccurrenceTable;
+import novelnet.table.CooccurrenceTableParagraph;
+import novelnet.table.CooccurrenceTableSentence;
+import novelnet.util.CustomCorefChain;
+import novelnet.util.NullDocumentException;
+import novelnet.book.Book;
+import novelnet.book.Chapter;
+import novelnet.book.Paragraph;
+
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import table.CooccurrenceTable;
-import table.CooccurrenceTableParagraph;
-import table.CooccurrenceTableSentence;
-import util.CustomCorefChain;
-import util.NullDocumentException;
+
 
 /**
  * Generic class for the creation of dynamic graphs.

@@ -1,9 +1,10 @@
-package util;
+package novelnet.util;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import book.Book;
+import novelnet.book.Book;
+
 import edu.stanford.nlp.ie.util.RelationTriple;
 
 

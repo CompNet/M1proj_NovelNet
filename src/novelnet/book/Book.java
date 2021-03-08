@@ -1,4 +1,4 @@
-package book;
+package novelnet.book;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,8 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
-import util.CustomCorefChain;
-import util.CustomEntityMention;
+
+import novelnet.util.CustomCorefChain;
+import novelnet.util.CustomEntityMention;
 
 /**
  * Represent a Book.

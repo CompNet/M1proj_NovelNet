@@ -1,4 +1,4 @@
-package pipeline;
+package novelnet.pipeline;
 
 import info.debatty.java.stringsimilarity.*;
 import java.io.FileInputStream;
@@ -13,12 +13,13 @@ import org.apache.commons.io.IOUtils;
 import org.christopherfrantz.dbscan.DBSCANClusterer;
 import org.christopherfrantz.dbscan.DBSCANClusteringException;
 
-import util.CustomCorefChain;
-import util.CustomEntityMention;
-import util.DistanceMetricCustomCorefChainNL;
-import util.DistanceMetricCustomCorefChainRO;
-import util.ImpUtils;
-import util.NullDocumentException;
+import novelnet.util.CustomCorefChain;
+import novelnet.util.CustomEntityMention;
+import novelnet.util.DistanceMetricCustomCorefChainNL;
+import novelnet.util.DistanceMetricCustomCorefChainRO;
+import novelnet.util.ImpUtils;
+import novelnet.util.NullDocumentException;
+
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;

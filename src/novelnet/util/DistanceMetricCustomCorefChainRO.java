@@ -1,4 +1,4 @@
-package util;
+package novelnet.util;
 
 import org.christopherfrantz.dbscan.DBSCANClusteringException;
 import org.christopherfrantz.dbscan.DistanceMetric;

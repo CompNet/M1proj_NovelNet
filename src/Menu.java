@@ -11,13 +11,24 @@ import java.util.Scanner;
 
 import org.apache.commons.io.IOUtils;
 
-import book.Book;
-import book.CreateBook;
-
-import util.TextNormalization;
-import util.CustomCorefChain;
-import util.ImpUtils;
-import util.NullDocumentException;
+import novelnet.book.Book;
+import novelnet.book.CreateBook;
+import novelnet.util.TextNormalization;
+import novelnet.util.CustomCorefChain;
+import novelnet.util.ImpUtils;
+import novelnet.util.NullDocumentException;
+import novelnet.table.CooccurrenceTable;
+import novelnet.table.CooccurrenceTableParagraph;
+import novelnet.table.CooccurrenceTableSentence;
+import novelnet.table.DirectInteractionTable;
+import novelnet.table.DirectInteractionTableCreator;
+import novelnet.pipeline.CorefChainFuser;
+import novelnet.pipeline.CustomCorefChainMaker;
+import novelnet.pipeline.GraphCreator;
+import novelnet.pipeline.WindowingCooccurrenceParagraph;
+import novelnet.pipeline.WindowingCooccurrenceSentence;
+import novelnet.pipeline.WindowingDynamicGraphFromParagraphTable;
+import novelnet.pipeline.WindowingDynamicGraphFromSentenceTable;
 
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
@@ -30,19 +41,7 @@ import edu.stanford.nlp.util.CoreMap;
 
 import graph.Graph;
 
-import table.CooccurrenceTable;
-import table.CooccurrenceTableParagraph;
-import table.CooccurrenceTableSentence;
-import table.DirectInteractionTable;
-import table.DirectInteractionTableCreator;
 
-import pipeline.CorefChainFuser;
-import pipeline.CustomCorefChainMaker;
-import pipeline.GraphCreator;
-import pipeline.WindowingCooccurrenceParagraph;
-import pipeline.WindowingCooccurrenceSentence;
-import pipeline.WindowingDynamicGraphFromParagraphTable;
-import pipeline.WindowingDynamicGraphFromSentenceTable;
 
 /**
  * @author Quay Baptiste, Lemaire Tewis

@@ -1,4 +1,4 @@
-package util;
+package novelnet.util;
 
 public class NullDocumentException extends Exception {
     /**

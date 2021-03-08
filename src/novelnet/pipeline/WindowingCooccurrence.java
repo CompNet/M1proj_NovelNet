@@ -1,4 +1,4 @@
-package pipeline;
+package novelnet.pipeline;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,23 +10,23 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Properties;
 
-import util.CustomCorefChain;
-import util.CustomEntityMention;
-import util.ImpUtils;
-import util.NullDocumentException;
-import util.TextNormalization;
+import novelnet.util.CustomCorefChain;
+import novelnet.util.CustomEntityMention;
+import novelnet.util.ImpUtils;
+import novelnet.util.NullDocumentException;
+import novelnet.util.TextNormalization;
 
-import book.Book;
-import book.CreateBook;
+import novelnet.book.Book;
+import novelnet.book.CreateBook;
+
+import novelnet.table.CooccurrenceTable;
+import novelnet.table.CooccurrenceTableParagraph;
+import novelnet.table.CooccurrenceTableSentence;
 
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import table.CooccurrenceTable;
-import table.CooccurrenceTableParagraph;
-import table.CooccurrenceTableSentence;
-
 
 /**
  * A generic class for the windowing of co-occurrences.

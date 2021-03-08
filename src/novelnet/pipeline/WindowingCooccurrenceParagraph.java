@@ -1,16 +1,18 @@
-package pipeline;
+package novelnet.pipeline;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.util.Pair;
-import table.CooccurrenceTableParagraph;
-import util.CustomEntityMention;
+
+import novelnet.table.CooccurrenceTableParagraph;
+import novelnet.util.CustomEntityMention;
+import novelnet.book.Book;
+import novelnet.book.Chapter;
+import novelnet.book.Paragraph;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import book.Book;
-import book.Chapter;
-import book.Paragraph;
+
 
 /**
  * Find the co-occurrences with a window dimension set in paragraphs.

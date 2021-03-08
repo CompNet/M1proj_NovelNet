@@ -1,13 +1,13 @@
-package table;
+package novelnet.table;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import book.Book;
+import novelnet.util.CustomInteraction;
+import novelnet.book.Book;
 
 import edu.stanford.nlp.util.CoreMap;
-import util.CustomInteraction;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;

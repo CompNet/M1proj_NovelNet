@@ -1,10 +1,11 @@
-package book;
+package novelnet.book;
 
 import java.util.List;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
-import util.CustomCorefChain;
+
+import novelnet.util.CustomCorefChain;
 
 
 /**

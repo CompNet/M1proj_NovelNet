@@ -1,4 +1,4 @@
-package pipeline;
+package novelnet.pipeline;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -6,9 +6,10 @@ import java.util.List;
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
-import util.CustomCorefChain;
-import util.ImpUtils;
-import util.NullDocumentException;
+
+import novelnet.util.CustomCorefChain;
+import novelnet.util.ImpUtils;
+import novelnet.util.NullDocumentException;
 
 public class CustomCorefChainMaker {
     
