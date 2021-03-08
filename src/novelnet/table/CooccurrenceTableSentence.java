@@ -17,22 +17,12 @@ public class CooccurrenceTableSentence extends CooccurrenceTable {
 	public CooccurrenceTableSentence() {
         super();
     }
-
-    /**
-	 * Constructor for the class WindowingCooccurrenceSentence specifying the window's size.
-	 * 
-	 * @param windowSize
-	 */
-	public CooccurrenceTableSentence(int windowSize) {
-        super();
-		this.windowSize = windowSize;
-    }
     
     @Override
     public CooccurrenceTable subTable(int begin, int end){
 		CooccurrenceTable result = new CooccurrenceTableSentence();
 		for (int i = begin; i <= end; i++){
-			result.add(listCharA.get(i), listCharB.get(i), listDistanceChar.get(i), listDistanceWord.get(i), listBeginingWindow.get(i), listEndingWindow.get(i));
+			result.add(listCharA.get(i), listCharB.get(i), listDistanceChar.get(i), listDistanceWord.get(i), listBeginingWindow.get(i), listEndingWindow.get(i), null);
 		}
 		return result;
     }

@@ -4,9 +4,9 @@ import java.io.IOException;
 
 import graph.*;
 
-import novelnet.table.CooccurrenceTable;
 import novelnet.table.CooccurrenceTableSentence;
 import novelnet.table.DirectInteractionTable;
+import novelnet.table.InteractionTable;
 
 public class GraphCreator {
 
@@ -14,36 +14,17 @@ public class GraphCreator {
 
 	}
 
-	public static Graph createGraph(CooccurrenceTable tab, boolean weighting) {
-		Graph graph = new Graph();
+	public static Graph createGraph(InteractionTable tab, String name ,boolean oriented, boolean weighting) {
+		Graph graph = new Graph(name, oriented, weighting);
 		for (int i = 0; i < tab.getListCharA().size(); i++) { // Until we reach the size of the list of sentences
 			Node nA = new Node(tab.getListCharA().get(i)); // We create a new node
 			Node nB = new Node(tab.getListCharB().get(i)); // We create a new node
 			graph.addNode(nA);
 			graph.addNode(nB);
-			graph.addCooccurrenceEdge(nA, nB, weighting, tab.getListDistanceWord().get(i)); // We create a new edge which links the two
+			graph.addEdge(nA, nB, tab.getListDistanceWord().get(i), tab.getListType().get(i)); // We create a new edge which links the two
 																			// nodes with their weight
 		}
-		return graph;
-	}
-
-	public static Graph createGraph(CooccurrenceTable tab, boolean weighting, String name) {
-		Graph graph = createGraph(tab, weighting);
 		graph.setName(name);
-		return graph;
-	}
-
-	public static Graph createGraph(DirectInteractionTable tab, String name) {
-		Graph graph = new Graph();
-		graph.setOriented(true);
-		graph.setName(name);
-		for (int i = 0; i < tab.getSubject().size(); i++) { // Until we reach the size of the list of sentences
-			Node nA = new Node(tab.getSubject().get(i)); // We create a new node
-			Node nB = new Node(tab.getObject().get(i)); // We create a new node
-			graph.addNode(nA);
-			graph.addNode(nB);
-			graph.addInteractionEdge(nA, nB, tab.getType().get(i)); // We create a new edge which links the two nodes with their weight
-		}
 		return graph;
 	}
 
@@ -59,7 +40,7 @@ public class GraphCreator {
 		cts.add("A", "E", 20, 4, 16, 20);
 		cts.add("E", "C", 20, 4, 16, 20);
 
-		Graph g = GraphCreator.createGraph(cts,true,"graph_test_cooccurrence");
+		Graph g = GraphCreator.createGraph(cts,"graph_test_cooccurrence", false, true);
 		g.graphMLPrinter("res/results");
 		System.out.println(g.toString());
 	}
@@ -86,7 +67,7 @@ public class GraphCreator {
 		it.display();
 		itNull.display();
 
-		Graph g = GraphCreator.createGraph(itNull,"graph_test_interaction");
+		Graph g = GraphCreator.createGraph(itNull, "graph_test_interaction", true, false);
 		g.graphMLPrinter("res/results");
 		System.out.println(g.toString());
 	}

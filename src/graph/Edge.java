@@ -13,29 +13,22 @@ public class Edge {
 	protected float ponderation;
 	protected String type;
 	
-	public Edge(String id, Node nodeLeft, Node nodeRight)
-	{
-		this.id = id;
-		this.nodeLeft = nodeLeft;
-		this.nodeRight = nodeRight;
-		ponderation = 1;
-	}
-
 	public Edge(String id, Node nodeLeft, Node nodeRight, String type)
 	{
 		this.id = id;
 		this.nodeLeft = nodeLeft;
 		this.nodeRight = nodeRight;
-		ponderation = 1;
 		this.type = type;
+		ponderation = 1;
 	}
 	
-	public Edge(String id, Node nodeLeft, Node nodeRight, float ponderation)
+	public Edge(String id, Node nodeLeft, Node nodeRight, float ponderation, String type)
 	{
 		this.id = id;
 		this.nodeLeft = nodeLeft;
 		this.nodeRight = nodeRight;
 		this.ponderation = ponderation;
+		this.type = type;
 	}
 
 	public String getId()

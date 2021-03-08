@@ -147,7 +147,7 @@ public class WindowingCooccurrenceSentence extends WindowingCooccurrence  {
 							distanceWord = document.tokens().indexOf(characterA.getBeginToken()) - document.tokens().indexOf(characterB.getEndToken()) -1; // We get the distance between the two tokens in words
 						}
 						else distanceWord = document.tokens().indexOf(characterB.getBeginToken()) - document.tokens().indexOf(characterA.getEndToken()) -1; // We get the distance between the two tokens in words						
-						tab.add(characterA.getBestName(), characterB.getBestName(), distanceChar, distanceWord, characterA.getWindowBegining(), characterA.getWindowEnding()); // If the two strings aren't equal we add a line to the Table
+						tab.add(characterA.getBestName(), characterB.getBestName(), distanceChar, distanceWord, characterA.getWindowBegining(), characterA.getWindowEnding(), null); // If the two strings aren't equal we add a line to the Table
 					}
 				}
 			}

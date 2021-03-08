@@ -3,9 +3,9 @@ package novelnet.pipeline;
 import java.util.List;
 import java.util.Properties;
 
-import novelnet.table.CooccurrenceTable;
 import novelnet.table.CooccurrenceTableParagraph;
 import novelnet.table.CooccurrenceTableSentence;
+import novelnet.table.InteractionTable;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.NullDocumentException;
 import novelnet.book.Book;
@@ -31,7 +31,7 @@ public abstract class WindowingDynamicGraph {
 	/**
 	 * the co-occurrence table you want to create the dynamic graphs from.
 	*/ 
-	protected CooccurrenceTable cooccurrenceTable;
+	protected InteractionTable interactionTable;
 
 	/**
 	 * Class Constructor
@@ -39,9 +39,9 @@ public abstract class WindowingDynamicGraph {
 	 * @param book the Book created from the original text.
 	 * @param cooccurrenceTable the co-occurrence table you want to create the dynamic graphs from.
 	*/
-	protected WindowingDynamicGraph(Book book, CooccurrenceTable cooccurrenceTable) {
+	protected WindowingDynamicGraph(Book book, InteractionTable interactionTable) {
 		this.book = book;
-		this.cooccurrenceTable = cooccurrenceTable;
+		this.interactionTable = interactionTable;
     }
 	
 	public Book getBook() {
@@ -52,12 +52,12 @@ public abstract class WindowingDynamicGraph {
 		this.book = book;
 	}
 
-	public CooccurrenceTable getCooccurrenceTable() {
-		return this.cooccurrenceTable;
+	public InteractionTable getCooccurrenceTable() {
+		return this.interactionTable;
 	}
 
-	public void setCooccurrenceTable(CooccurrenceTable cooccurrenceTable) {
-		this.cooccurrenceTable = cooccurrenceTable;
+	public void setCooccurrenceTable(InteractionTable interactionTable) {
+		this.interactionTable = interactionTable;
 	}
 
 	@Override
@@ -67,15 +67,15 @@ public abstract class WindowingDynamicGraph {
 			"}";
 	}
 
-	public List<CooccurrenceTable> dynamicTableSentences(int size, int covering){
+	public List<InteractionTable> dynamicTableSentences(int size, int covering){
 		return null;
 	}
 	
-	public List<CooccurrenceTable> dynamicTableParagraphs(int size, int covering){
+	public List<InteractionTable> dynamicTableParagraphs(int size, int covering){
 		return null;
 	}
 
-	public List<CooccurrenceTable> dynamicTableChapters(int size, int covering){
+	public List<InteractionTable> dynamicTableChapters(int size, int covering){
 		return null;
 	}
 
@@ -148,7 +148,7 @@ public abstract class WindowingDynamicGraph {
 		WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, table);
 
 		int cpt =0;
-		for (CooccurrenceTable t : dgp.dynamicTableSentences(2, 1)){
+		for (InteractionTable t : dgp.dynamicTableSentences(2, 1)){
 			System.out.println("\n--- table co-occurrence from Paragraph to Sentences "+ cpt + " ---\n");
 			cpt++;
 			t.display();
@@ -225,7 +225,7 @@ public abstract class WindowingDynamicGraph {
 		WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, table);
 
 		int cpt =0;
-		for (CooccurrenceTable t : dgp.dynamicTableParagraphs(2, 1)){
+		for (InteractionTable t : dgp.dynamicTableParagraphs(2, 1)){
 			System.out.println("\n--- table co-occurrence from Paragraph to Paragraphs "+ cpt + " ---\n");
 			cpt++;
 			t.display();
@@ -302,14 +302,14 @@ public abstract class WindowingDynamicGraph {
 		WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, table);
 
 		int cpt =0;
-		for (CooccurrenceTable t : dgp.dynamicTableChapters(1, 0)){
+		for (InteractionTable t : dgp.dynamicTableChapters(1, 0)){
 			System.out.println("\n--- table co-occurrence from Paragraph to Chapters "+ cpt + " ---\n");
 			cpt++;
 			t.display();
 		}
 
 		cpt =0;
-		for (CooccurrenceTable t : dgp.dynamicTableChapters(2, 0)){
+		for (InteractionTable t : dgp.dynamicTableChapters(2, 0)){
 			System.out.println("\n--- table co-occurrence from Paragraph to Chapters "+ cpt + " ---\n");
 			cpt++;
 			t.display();
@@ -386,14 +386,14 @@ public abstract class WindowingDynamicGraph {
 		WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 		int cpt =0;
-		for (CooccurrenceTable t : dgs.dynamicTableSentences(2, 0)){
+		for (InteractionTable t : dgs.dynamicTableSentences(2, 0)){
 			System.out.println("\n--- table co-occurrence from Sentence to Sentence "+ cpt + " ---\n");
 			cpt++;
 			t.display();
 		}
 
 		cpt =0;
-		for (CooccurrenceTable t : dgs.dynamicTableSentences(3, 2)){
+		for (InteractionTable t : dgs.dynamicTableSentences(3, 2)){
 			System.out.println("\n--- table co-occurrence from Sentence to Sentence "+ cpt + " ---\n");
 			cpt++;
 			t.display();
@@ -470,14 +470,14 @@ public abstract class WindowingDynamicGraph {
 		WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 		int cpt =0;
-		for (CooccurrenceTable t : dgs.dynamicTableParagraphs(2, 0)){
+		for (InteractionTable t : dgs.dynamicTableParagraphs(2, 0)){
 			System.out.println("\n--- table co-occurrence from Sentence to Paragraphs "+ cpt + " ---\n");
 			cpt++;
 			t.display();
 		}
 
 		cpt =0;
-		for (CooccurrenceTable t : dgs.dynamicTableParagraphs(3, 2)){
+		for (InteractionTable t : dgs.dynamicTableParagraphs(3, 2)){
 			System.out.println("\n--- table co-occurrence from Sentence to Paragraphs "+ cpt + " ---\n");
 			cpt++;
 			t.display();
@@ -556,14 +556,14 @@ public abstract class WindowingDynamicGraph {
 		WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 		int cpt =0;
-		for (CooccurrenceTable t : dgs.dynamicTableChapters(2, 0)){
+		for (InteractionTable t : dgs.dynamicTableChapters(2, 0)){
 			System.out.println("\n--- table co-occurrence from Sentence to Chapters "+ cpt + " ---\n");
 			cpt++;
 			t.display();
 		}
 
 		cpt =0;
-		for (CooccurrenceTable t : dgs.dynamicTableChapters(1, 0)){
+		for (InteractionTable t : dgs.dynamicTableChapters(1, 0)){
 			System.out.println("\n--- table co-occurrence from Sentence to Chapters "+ cpt + " ---\n");
 			cpt++;
 			t.display();

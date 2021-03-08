@@ -16,6 +16,7 @@ public class Graph {
 	protected Map<String, Edge> edgeMap;
 	String name;
 	Boolean oriented;
+	boolean weighting;
 	
 	public Graph()
 	{
@@ -23,29 +24,14 @@ public class Graph {
 		edgeMap = new HashMap<String, Edge>();
 		oriented = false;
 	}
-	
-	public Graph(String name)
-	{
-		nodeMap = new HashMap<String,Node>();
-		edgeMap = new HashMap<String, Edge>();
-		this.name = name;
-		oriented = false;
-	}
 
-	public Graph(String name, Boolean oriented)
+	public Graph(String name, Boolean oriented, boolean weighting)
 	{
 		nodeMap = new HashMap<String,Node>();
 		edgeMap = new HashMap<String, Edge>();
 		this.name = name;
 		this.oriented = oriented;
-	}
-	
-	public Graph(HashMap<String,Node> nodeMap, HashMap<String, Edge> edgeMap, String name, Boolean oriented)
-	{
-		this.nodeMap = nodeMap;
-		this.edgeMap = edgeMap;
-		this.name = name;
-		this.oriented = oriented;
+		this.weighting = weighting;
 	}
 	
 	public Node getNodeById(String id)
@@ -64,34 +50,32 @@ public class Graph {
 	public Edge getEdgeById(String id){
 		return edgeMap.get(id);
 	}
-	
-	public boolean addCooccurrenceEdge(Node charA, Node charB, boolean weighting, float ponderation)
-	{
+
+	public void addEdge(Node charA, Node charB, float ponderation, String type){
 		String id = findEdge(charA, charB);
 		if (id != null) {	
 			if (weighting){
 				edgeMap.get(id).addPonderation(1/ponderation);
-				return true;
+				return;
 			}
-			else return false;
+			else return;
 		}
 		Edge tmpEdge;
-		if (weighting) tmpEdge = new Edge(charA.id+ " " + charB.id, charA, charB, 1/ponderation);
-		else tmpEdge = new Edge(charA.id, charA, charB);
-		edgeMap.put(tmpEdge.id, tmpEdge);
-		return true;
-	}
-
-	public void addInteractionEdge(Node charA, Node charB, String type){
-		String id = findEdge(charA, charB, type);		
-		if (id != null) {	
-			edgeMap.get(id).addPonderation();
+		if (weighting){
+			if (type != null ){
+				tmpEdge = new Edge(charA.name + " " + type + " " + charB.name, charA, charB, 1/ponderation, type);
+			}
+			else {
+				tmpEdge = new Edge(charA.name+ " " + charB.name, charA, charB, 1/ponderation, type);
+			}
+		} 
+		else if (type != null ) {
+			tmpEdge = new Edge(charA.name + " " + type + " " + charB.name, charA, charB, type);
 		}
 		else {
-			Edge tmpEdge;
-			tmpEdge = new Edge(charA.name + " " + type + " " + charB.name, charA, charB, type);
-			edgeMap.put(tmpEdge.id, tmpEdge);
+			tmpEdge = new Edge(charA.name + " " + charB.name, charA, charB, type);
 		}
+		edgeMap.put(tmpEdge.id, tmpEdge);
 	}
 	
 	public String findEdge(Node nodeA, Node nodeB){

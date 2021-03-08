@@ -22,6 +22,7 @@ import novelnet.table.CooccurrenceTableParagraph;
 import novelnet.table.CooccurrenceTableSentence;
 import novelnet.table.DirectInteractionTable;
 import novelnet.table.DirectInteractionTableCreator;
+import novelnet.table.InteractionTable;
 import novelnet.pipeline.CorefChainFuser;
 import novelnet.pipeline.CustomCorefChainMaker;
 import novelnet.pipeline.GraphCreator;
@@ -129,7 +130,7 @@ public class Menu {
 
 		DirectInteractionTable it = DirectInteractionTableCreator.createTable(book);
 
-		Graph test = GraphCreator.createGraph(it, "graph_test_interaction");
+		Graph test = GraphCreator.createGraph(it, "graph_test_interaction", true, false);
 
 		it.display();
 
@@ -150,11 +151,12 @@ public class Menu {
 		testInteractionTableCreator();
 		if (args.length == 1)
 		{
-			/*Scanner sc = new Scanner(System.in);
+			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
 			String path = sc.nextLine();
-*/
-			String path = "res/tests/The Double - Fyodor Dostoevsky.txt";
+			sc.close();
+
+
 			FileInputStream is = new FileInputStream(path);
 			String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
@@ -203,51 +205,16 @@ public class Menu {
 
 			//Create the global Sentence graph
 			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence101";
-			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
+			GraphCreator.createGraph(table, graphTitle, false, true).graphMLPrinter("res/results");
 			
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 			int cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 75)){
+			for (InteractionTable t : dgs.dynamicTableSentences(700, 75)){
 				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence101_"+cpt).graphMLPrinter("res/results");
-			}
-
-			//Create a table from Sentences 
-			wcs = new WindowingCooccurrenceSentence(15, 1, false, book);
-			table = wcs.createTab();
-
-			//Create the global Sentence graph
-			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence151";
-			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
-			
-			//Create a dynamic graph sequence from sentences table with Sentence window.
-			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
-
-			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 75)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence151_"+cpt).graphMLPrinter("res/results");
-			}
-
-			//Create a table from Sentences 
-			wcs = new WindowingCooccurrenceSentence(20, 2, false, book);
-			table = wcs.createTab();
-
-			//Create the global Sentence graph
-			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence202";
-			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
-			
-			//Create a dynamic graph sequence from sentences table with Sentence window.
-			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
-
-			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 75)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence202_"+cpt).graphMLPrinter("res/results");
-			}
-			
+				GraphCreator.createGraph(t, graphTitle+"_Sentence101_"+cpt, false, true).graphMLPrinter("res/results");
+			}			
 
 			/*cpt = 0;
 			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(5, 2)){
@@ -290,8 +257,6 @@ public class Menu {
 			/*FileWriter fileWriter = new FileWriter("res/results/"+path.substring(11, path.length()-4)+"_bookClass.txt");
 			book.printToFile(fileWriter);
 			fileWriter.close();*/
-			
-			//sc.close();
 		}
 
 
