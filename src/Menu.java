@@ -31,8 +31,8 @@ import pipeline.CooccurrenceTableSentence;
 import pipeline.CorefChainFuser;
 import pipeline.CustomCorefChainMaker;
 import pipeline.GraphCreator;
-import pipeline.InteractionTable;
-import pipeline.InteractionTableCreator;
+import pipeline.DirectInteractionTable;
+import pipeline.DirectInteractionTableCreator;
 import pipeline.WindowingCooccurrenceParagraph;
 import pipeline.WindowingCooccurrenceSentence;
 import pipeline.WindowingDynamicGraphFromParagraphTable;
@@ -122,7 +122,7 @@ public class Menu {
 
 		Book book = CreateBook.createBook(document, false, cccList);
 
-		InteractionTable it = InteractionTableCreator.createTable(book);
+		DirectInteractionTable it = DirectInteractionTableCreator.createTable(book);
 
 		Graph test = GraphCreator.createGraph(it, "graph_test_interaction");
 

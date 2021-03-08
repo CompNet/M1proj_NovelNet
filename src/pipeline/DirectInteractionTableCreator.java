@@ -13,8 +13,8 @@ import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 
-public class InteractionTableCreator {
-    private InteractionTableCreator() {
+public class DirectInteractionTableCreator {
+    private DirectInteractionTableCreator() {
 
 	}
 
@@ -75,8 +75,8 @@ public class InteractionTableCreator {
         return listInteraction;
     }
 
-    public static InteractionTable createTable(Book book){
-        InteractionTable it = new InteractionTable();
+    public static DirectInteractionTable createTable(Book book){
+        DirectInteractionTable it = new DirectInteractionTable();
 
         
         List<List<RelationTriple>> listSameAction = findSameAction(book);

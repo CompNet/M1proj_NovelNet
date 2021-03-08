@@ -29,7 +29,7 @@ public class GraphCreator {
 		return graph;
 	}
 
-	public static Graph createGraph(InteractionTable tab, String name) {
+	public static Graph createGraph(DirectInteractionTable tab, String name) {
 		Graph graph = new Graph();
 		graph.setOriented(true);
 		graph.setName(name);
@@ -61,7 +61,7 @@ public class GraphCreator {
 	}
 
 	public static void testInteraction() throws IOException{
-		InteractionTable it = new InteractionTable();
+		DirectInteractionTable it = new DirectInteractionTable();
 		it.add("A", "B", 0, "bad");
 		it.add("A", "C", 0, "nice");
 		it.add("C", "A", 0, "nice");
@@ -70,7 +70,7 @@ public class GraphCreator {
 		it.add("C", "A", 1, "nice");
 		it.add("C", "A", 1, "bad");
 
-		InteractionTable itNull = new InteractionTable();
+		DirectInteractionTable itNull = new DirectInteractionTable();
 		itNull.add("A", "B", 0);
 		itNull.add("A", "C", 0);
 		itNull.add("C", "A", 0);
