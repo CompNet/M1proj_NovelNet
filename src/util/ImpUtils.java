@@ -37,9 +37,9 @@ public class ImpUtils {
 
 		for (CoreLabel token : cem.tokens()){
 			corefClustId= token.get(CorefCoreAnnotations.CorefClusterIdAnnotation.class);
-			if (corefClustId != null) break;
+			if (corefClustId != null) return document.corefChains().get(corefClustId);
 		}
-		return document.corefChains().get(corefClustId);
+		return null;
 	}
 
 	public static CoreEntityMention getCoreEntityMentionByCorefMention(CorefMention cm) throws NullDocumentException {
@@ -76,7 +76,7 @@ public class ImpUtils {
 		for (CoreEntityMention cem : document.entityMentions()){
 			if (cem.entityType().equals("PERSON")){
 				CorefChain cc = ImpUtils.corefByEntityMention(cem);
-				if ( cc == null) {
+				if (cc == null) {
 					result.add(cem);
 				}
 			}

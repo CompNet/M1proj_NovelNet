@@ -15,11 +15,13 @@ import book.CreateBook;
 import util.TextNormalization;
 import util.CustomCorefChain;
 import util.ImpUtils;
+import util.NullDocumentException;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 import graph.Graph;
@@ -82,7 +84,7 @@ public class Menu {
 		sc.close();
 	}
 
-	public static void testInteractionTableCreator() throws IOException {
+	public static void testInteractionTableCreator() throws IOException, NullDocumentException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("saisir chemin du fichier à traiter:");
 		String path = sc.nextLine();
@@ -92,7 +94,6 @@ public class Menu {
 
 		content = TextNormalization.addDotEndOfLine(content);
 
-		//String prop="tokenize,ssplit";
 		String prop="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
 		System.out.println("les annotateurs séléctionés sont: "+prop);
 
@@ -138,10 +139,11 @@ public class Menu {
 	 * @param args
 	 * @author Quay Baptiste, Lemaire Tewis
 	 * @throws IOException 
+	 * @throws NullDocumentException
 	*/
-	public static void main(String[] args) throws IOException {
-		//testInteractionTableCreator();
-		if (args.length == 0)
+	public static void main(String[] args) throws IOException, NullDocumentException {
+		testInteractionTableCreator();
+		if (args.length == 1)
 		{
 			/*Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
@@ -154,7 +156,7 @@ public class Menu {
 			content = TextNormalization.addDotEndOfLine(content);
 
 			//String prop="tokenize,ssplit";
-			String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
+			String prop="tokenize,ssplit,pos,lemma,ner";
 			System.out.println("les annotateurs séléctionés sont: "+prop);
 
 			Properties props = new Properties();
@@ -171,11 +173,19 @@ public class Menu {
 			pipeline.prettyPrint(annotation, out );*/
 
 			//System.out.println(document.sentences().get(1).tokens().get(0).originalText() + " " + document.sentences().get(1).tokens().get(0).ner());
-			/*System.out.println(document.entityMentions());
-			System.out.println(document.corefChains());*/
+			/*for (CoreEntityMention cem: document.entityMentions()){
+				System.out.print(cem.text() + " : " + cem.entityType() +", ");
+			}
+			System.out.println();*/
+			
+			//System.out.println(document.corefChains());
 			// CorefChain Fusion
 
 			List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+
+			/*for (CustomCorefChain ccc : cccList){
+				System.out.println(ccc);
+			}*/
 
 			CorefChainFuser corefChainFuser = new CorefChainFuser();
 			cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.50);
@@ -183,105 +193,54 @@ public class Menu {
 			Book book = CreateBook.createBook(document, false, cccList);
 
 			//Create a table from Sentences 
-			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(3, 1, false, book);
+			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(10, 1, false, book);
 			CooccurrenceTableSentence table = wcs.createTab();
 
 			//Create the global Sentence graph
-			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence31";
+			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence101";
 			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
 			
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 			int cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 75)){
 				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence31_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence101_"+cpt).graphMLPrinter("res/results");
 			}
 
 			//Create a table from Sentences 
-			wcs = new WindowingCooccurrenceSentence(4, 1, false, book);
+			wcs = new WindowingCooccurrenceSentence(15, 1, false, book);
 			table = wcs.createTab();
 
 			//Create the global Sentence graph
-			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence41";
+			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence151";
 			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
 			
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 75)){
 				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence41_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence151_"+cpt).graphMLPrinter("res/results");
 			}
 
 			//Create a table from Sentences 
-			wcs = new WindowingCooccurrenceSentence(5, 1, false, book);
+			wcs = new WindowingCooccurrenceSentence(20, 2, false, book);
 			table = wcs.createTab();
 
 			//Create the global Sentence graph
-			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence51";
+			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence202";
 			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
 			
 			//Create a dynamic graph sequence from sentences table with Sentence window.
 			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
 
 			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
+			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 75)){
 				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence51_"+cpt).graphMLPrinter("res/results");
-			}
-
-			//Create a table from Sentences 
-			wcs = new WindowingCooccurrenceSentence(2, 1, false, book);
-			table = wcs.createTab();
-
-			//Create the global Sentence graph
-			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence21";
-			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
-			
-			//Create a dynamic graph sequence from sentences table with Sentence window.
-			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
-
-			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence21_"+cpt).graphMLPrinter("res/results");
-			}
-
-			//Create a table from Sentences 
-			wcs = new WindowingCooccurrenceSentence(2, 0, false, book);
-			table = wcs.createTab();
-
-			//Create the global Sentence graph
-			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence20";
-			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
-			
-			//Create a dynamic graph sequence from sentences table with Sentence window.
-			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
-
-			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence20_"+cpt).graphMLPrinter("res/results");
-			}
-
-			//Create a table from Sentences 
-			wcs = new WindowingCooccurrenceSentence(3, 0, false, book);
-			table = wcs.createTab();
-
-			//Create the global Sentence graph
-			graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence30";
-			GraphCreator.createGraph(table, true, graphTitle).graphMLPrinter("res/results");
-			
-			//Create a dynamic graph sequence from sentences table with Sentence window.
-			dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
-
-			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableSentences(700, 50)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Sentence30_"+cpt).graphMLPrinter("res/results");
+				GraphCreator.createGraph(t, true, graphTitle+"_Sentence202_"+cpt).graphMLPrinter("res/results");
 			}
 			
 

@@ -9,6 +9,7 @@ import book.Paragraph;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import util.CustomCorefChain;
+import util.NullDocumentException;
 
 /**
  * Generic class for the creation of dynamic graphs.
@@ -73,7 +74,7 @@ public abstract class WindowingDynamicGraph {
 		return null;
 	}
 
-	private static void testGeneratingTableForDynamicGraphsFromParagraphsToSentence(){
+	private static void testGeneratingTableForDynamicGraphsFromParagraphsToSentence() throws NullDocumentException{
 		Properties props = new Properties();
     	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -150,7 +151,7 @@ public abstract class WindowingDynamicGraph {
 
 	}
 
-	public static void testGeneratingTableForDynamicGraphsFromParagraphsToParagraphs(){
+	public static void testGeneratingTableForDynamicGraphsFromParagraphsToParagraphs() throws NullDocumentException{
 		Properties props = new Properties();
     	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -227,7 +228,7 @@ public abstract class WindowingDynamicGraph {
 
 	}
 
-	public static void testGeneratingTableForDynamicGraphsFromParagraphsToChapters(){
+	public static void testGeneratingTableForDynamicGraphsFromParagraphsToChapters() throws NullDocumentException{
 		Properties props = new Properties();
     	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -311,7 +312,7 @@ public abstract class WindowingDynamicGraph {
 
 	}
 
-	public static void testGeneratingTableForDynamicGraphsFromSentenceToSentence(){
+	public static void testGeneratingTableForDynamicGraphsFromSentenceToSentence() throws NullDocumentException{
 		Properties props = new Properties();
     	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -395,7 +396,7 @@ public abstract class WindowingDynamicGraph {
 
 	}
 
-	public static void testGeneratingTableForDynamicGraphsFromSentenceToParagraphs(){
+	public static void testGeneratingTableForDynamicGraphsFromSentenceToParagraphs() throws NullDocumentException{
 		Properties props = new Properties();
     	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -479,7 +480,7 @@ public abstract class WindowingDynamicGraph {
 
 	}
 
-	public static void testGeneratingTableForDynamicGraphsFromSentenceToChapters(){
+	public static void testGeneratingTableForDynamicGraphsFromSentenceToChapters() throws NullDocumentException{
 		Properties props = new Properties();
     	props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -566,7 +567,7 @@ public abstract class WindowingDynamicGraph {
 	}
 
 
-	public static void main(String[] args) { 
+	public static void main(String[] args) throws NullDocumentException { 
 		testGeneratingTableForDynamicGraphsFromParagraphsToSentence();
 		/*testGeneratingTableForDynamicGraphsFromParagraphsToParagraphs();
 		testGeneratingTableForDynamicGraphsFromParagraphsToChapters();

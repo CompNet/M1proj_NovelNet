@@ -8,6 +8,7 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import util.CustomCorefChain;
 import util.ImpUtils;
+import util.NullDocumentException;
 
 public class CustomCorefChainMaker {
     
@@ -15,22 +16,21 @@ public class CustomCorefChainMaker {
 
     }
 
-    public static List<CustomCorefChain> makeCustomCorefChains(CoreDocument document){
+    public static List<CustomCorefChain> makeCustomCorefChains(CoreDocument document) throws NullDocumentException{
 
         List<CustomCorefChain> cccList = new LinkedList<>();
-        try {
+        if (document.corefChains() != null){
             for(CorefChain cc : document.corefChains().values()){
                 cccList.add(new CustomCorefChain(cc));
             }
-    
-            for(CoreEntityMention cem : ImpUtils.getCoreEntityMentionsWithoutCorefChain()){
+        }
+        
+        for(CoreEntityMention cem : ImpUtils.getCoreEntityMentionsWithoutCorefChain()){
+            if (cem.text() != "he" && cem.text() != "he " && cem.text() != "him" && cem.text() != "his" && cem.text() != "him " && cem.text() != "his "){
                 cccList.add(new CustomCorefChain(cem));
             }
+            
         }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-
         return cccList;
     }
 }

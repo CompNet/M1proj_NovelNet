@@ -37,6 +37,7 @@ public class InteractionTableCreator {
 
 			for (RelationTriple triple : triples) {
                 sameAction = false;
+                System.out.println(triple.subjectGloss() + "\t" + triple.relationGloss() +"\t" + triple.objectGloss());
                 for (List<RelationTriple> list : listSameAction){
                     for (RelationTriple rt : list){
                         if (rt.relationHead() == triple.relationHead()){

@@ -13,6 +13,7 @@ import java.util.Properties;
 import util.CustomCorefChain;
 import util.CustomEntityMention;
 import util.ImpUtils;
+import util.NullDocumentException;
 import util.TextNormalization;
 
 import book.Book;
@@ -73,7 +74,7 @@ public abstract class WindowingCooccurrence {
 		return new LinkedList<>();
 	}
 
-	private static void testWindowingCooccurrenceSentence() throws IOException{
+	private static void testWindowingCooccurrenceSentence() throws IOException, NullDocumentException{
 		// set up pipeline
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
@@ -152,7 +153,7 @@ public abstract class WindowingCooccurrence {
 
 	}
 
-	private static void testWindowingCooccurrenceParagraphs() throws IOException{
+	private static void testWindowingCooccurrenceParagraphs() throws IOException, NullDocumentException{
 		// set up pipeline
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
@@ -236,7 +237,7 @@ public abstract class WindowingCooccurrence {
 	}
 
 	
-	public static void main(String[] args) throws IOException { 
+	public static void main(String[] args) throws IOException, NullDocumentException { 
 		testWindowingCooccurrenceSentence();
 		testWindowingCooccurrenceParagraphs();
 	}
