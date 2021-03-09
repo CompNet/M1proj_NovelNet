@@ -22,7 +22,7 @@ public class AnnotationTool {
         
     }
     
-    public static void decompose(String path) throws IOException{
+    public static void decompose(String path, int sentenceJump) throws IOException{
         FileInputStream is = new FileInputStream(path);
         String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
@@ -38,7 +38,7 @@ public class AnnotationTool {
         pipeline.annotate(document);
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < document.sentences().size(); i++){
-            if (i != 0 && i%2 == 0){
+            if (i != 0 && i%sentenceJump == 0){
                 System.out.println(" press enter to continue ");
                 sc.nextLine();
             }
@@ -53,8 +53,11 @@ public class AnnotationTool {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("saisir chemin du fichier à traiter:");
+        System.out.println("enter the path to the file to analyse : ");
         String path = sc.nextLine();
-		AnnotationTool.decompose(path);
+        System.out.println("enter the number of sentences to show before asking to continue : ");
+        int sentenceJump = sc.nextInt();
+        sc.nextLine();
+		AnnotationTool.decompose(path, sentenceJump);
 	}
 }
