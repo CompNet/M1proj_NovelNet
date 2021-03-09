@@ -1,30 +1,393 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <document>
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
+        <text>Madame Pomfresh</text>
+        <sentence>4</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Pomfresh</originalName>
+        <CorefChain>1</CorefChain>
     </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
+        <text>l'infirmière</text>
+        <sentence>4</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Pomfresh</originalName>
+        <CorefChain>1</CorefChain>
     </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
+        <text>elle</text>
+        <sentence>5</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Pomfresh</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>elle-même</text>
+        <sentence>5</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Pomfresh</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Percy</text>
+        <sentence>6</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Percy Weasley</originalName>
+        <CorefChain>2</CorefChain>
+    </mention>
+
+<!-- TODO : checker la phrase pour voir si les lui représente un personnage (ginny) -->  
+
+    <mention>
+        <text>Ginny Weasley</text>
+        <sentence>6</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName>Ginny Weasley</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Hagrid</text>
+        <sentence>8</sentence>
+        <start>22</start>
+        <end>22</end>
+        <originalName>Hagrid</originalName>
+        <CorefChain>4</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Olivier Dubois</text>
+        <sentence>9</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Olivier Dubois</originalName>
+        <CorefChain>5</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>9</sentence>
+        <start>29</start>
+        <end>29</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Gryffondor</text>
+        <sentence>9</sentence>
+        <start>40</start>
+        <end>40</end>
+        <originalName>Gryffondor</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Fred</text>
+        <sentence>12</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Fred</originalName>
+        <CorefChain>8</CorefChain>
+    </mention>
+
+    <mention>
+        <text>George</text>
+        <sentence>12</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>George</originalName>
+        <CorefChain>9</CorefChain>
+    </mention>
+
+     <mention>
+        <text>Serpentard</text>
+        <sentence>12</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Serpentard</originalName>
+        <CorefChain>10</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Serpentards</text>
+        <sentence>13</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Serpentard</originalName>
+        <CorefChain>10</CorefChain>
+    </mention>
+
+    <mention>
+        <text>eux</text>
+        <sentence>13</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Serpentard</originalName>
+        <CorefChain>10</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>14</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
     </mention>
     
     <mention>
+        <text>quelqu'un</text>
+        <sentence>14</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>lui</text>
+        <sentence>14</sentence>
+        <start>23</start>
+        <end>23</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick Quasi-Sans-Tête</text>
+        <sentence>15</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+<!-- TODO : checker si on prend "le fantome de la tour de gryffondor" ou seulement "le fantome" -->  
+    <mention>
+        <text>le fantôme</text>
+        <sentence>15</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Gryffondor</text>
+        <sentence>15</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Gryffondor</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Je</text>
+        <sentence>16</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>16</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick</text>
+        <sentence>17</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>17</sentence>
+        <start>15</start>
+        <end>26</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>le fantôme</text>
+        <sentence>18</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+<!-- TODO : à supprimer ?-->
+    <mention>
+        <text>lui</text>
+        <sentence>18</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>19</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>20</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>20</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>21</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Potter</text>
+        <sentence>21</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick</text>
+        <sentence>21</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>21</sentence>
+        <start>22</start>
+        <end>22</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>22</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>22</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick Quasi-Sans-Tête</text>
+        <sentence>23</sentence>
+        <start>12</start>
+        <end>13</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
         <text></text>
         <sentence></sentence>
         <start></start>
         <end></end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
     </mention>
-</document>
+
+    <mention>
+        <text></text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
+        <text></text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
+        <text></text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
+        <text></text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+
+
+
+    <mention>
+        <text></text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>

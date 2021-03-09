@@ -2,6 +2,7 @@ package novelnet.util;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import edu.stanford.nlp.coref.CorefCoreAnnotations;
 import edu.stanford.nlp.coref.data.CorefChain;
@@ -40,6 +41,24 @@ public class ImpUtils {
 			if (corefClustId != null) return document.corefChains().get(corefClustId);
 		}
 		return null;
+	}
+
+	public static Properties getFrenchProperties(){
+		Properties props = new Properties();
+
+		props.setProperty("tokenize.language","fr"); 
+		props.setProperty("mwt.mappingFile","edu/stanford/nlp/models/mwt/french/french-mwt.tsv");
+		props.setProperty("mwt.pos.model","edu/stanford/nlp/models/mwt/french/french-mwt.tagger");
+		props.setProperty("mwt.statisticalMappingFile","edu/stanford/nlp/models/mwt/french/french-mwt-statistical.tsv");
+		props.setProperty("mwt.preserveCasing","false");
+		props.setProperty("pos.model", "edu/stanford/nlp/models/pos-tagger/french-ud.tagger");
+		props.setProperty("ner.model", "edu/stanford/nlp/models/ner/french-wikiner-4class.crf.ser.gz");
+		props.setProperty("ner.applyNumericClassifiers","false");
+		props.setProperty("ner.useSUTime","false");
+		props.setProperty("parse.model", "edu/stanford/nlp/models/srparser/frenchSR.beam.ser.gz");
+		props.setProperty("depparse.model","edu/stanford/nlp/models/parser/nndep/UD_French.gz");
+
+		return props;
 	}
 
 	public static CoreEntityMention getCoreEntityMentionByCorefMention(CorefMention cm) throws NullDocumentException {

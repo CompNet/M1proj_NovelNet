@@ -30,7 +30,7 @@ public class AnnotationTool {
 
         System.out.println("decomposition for analyse.");
 
-        Properties props = new Properties();
+        Properties props = ImpUtils.getFrenchProperties();
         props.setProperty("annotators", "tokenize,ssplit");
         
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -42,8 +42,9 @@ public class AnnotationTool {
                 System.out.println(" press enter to continue ");
                 sc.nextLine();
             }
+            System.out.println("Sentence number "+(i+1));
             for (CoreLabel token : document.sentences().get(i).tokens()){
-                System.out.println("Text : " + token.originalText() + "\t | Sentence : " + (token.sentIndex()+1) + "\t | Position : " + (document.sentences().get(i).tokens().lastIndexOf(token)+1));
+                System.out.println("Text : " + token.originalText() + "\t | Position : " + (document.sentences().get(i).tokens().lastIndexOf(token)+1));
             }
             System.out.println();
         }

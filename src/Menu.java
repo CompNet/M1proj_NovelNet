@@ -153,12 +153,12 @@ public class Menu {
 
 		content = TextNormalization.addDotEndOfLine(content);
 
-		String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
+		//String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
+		String annotators="tokenize,ssplit,pos,lemma,ner";
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
 
-		Properties props = getFrenchProperties();
+		Properties props = ImpUtils.getFrenchProperties();
 		props.setProperty("annotators",annotators);
-		//props.setProperty("coref.algorithm", "neural");
 		props.setProperty("ner.applyFineGrained", "false");
 		
 
@@ -185,24 +185,6 @@ public class Menu {
 				System.out.println(triple.objectGloss() + "\t " + triple.canonicalObject);
 			}
 		}
-	}
-
-	public static Properties getFrenchProperties(){
-		Properties props = new Properties();
-
-		props.setProperty("tokenize.language","fr"); 
-		props.setProperty("mwt.mappingFile","edu/stanford/nlp/models/mwt/french/french-mwt.tsv");
-		props.setProperty("mwt.pos.model","edu/stanford/nlp/models/mwt/french/french-mwt.tagger");
-		props.setProperty("mwt.statisticalMappingFile","edu/stanford/nlp/models/mwt/french/french-mwt-statistical.tsv");
-		props.setProperty("mwt.preserveCasing","false");
-		props.setProperty("pos.model", "edu/stanford/nlp/models/pos-tagger/french-ud.tagger");
-		props.setProperty("ner.model", "edu/stanford/nlp/models/ner/french-wikiner-4class.crf.ser.gz");
-		props.setProperty("ner.applyNumericClassifiers","false");
-		props.setProperty("ner.useSUTime","false");
-		props.setProperty("parse.model", "edu/stanford/nlp/models/srparser/frenchSR.beam.ser.gz");
-		props.setProperty("depparse.model","edu/stanford/nlp/models/parser/nndep/UD_French.gz");
-
-		return props;
 	}
 
 	/**
