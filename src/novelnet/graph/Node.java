@@ -1,4 +1,4 @@
-package graph;
+package novelnet.graph;
 
 /**
  * @author Quay Baptiste, Lemaire Tewis

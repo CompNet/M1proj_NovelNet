@@ -2,7 +2,7 @@ package novelnet.pipeline;
 
 import java.io.IOException;
 
-import graph.*;
+import novelnet.graph.*;
 
 import novelnet.table.CooccurrenceTableSentence;
 import novelnet.table.DirectInteractionTable;

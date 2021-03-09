@@ -30,7 +30,7 @@ import novelnet.pipeline.WindowingCooccurrenceParagraph;
 import novelnet.pipeline.WindowingCooccurrenceSentence;
 import novelnet.pipeline.WindowingDynamicGraphFromParagraphTable;
 import novelnet.pipeline.WindowingDynamicGraphFromSentenceTable;
-
+import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
@@ -40,7 +40,7 @@ import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 
-import graph.Graph;
+import novelnet.graph.Graph;
 
 
 
@@ -91,6 +91,7 @@ public class Menu {
 	}
 
 	public static void testInteractionTableCreator() throws IOException, NullDocumentException {
+		System.out.println("c'est de la bite");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("saisir chemin du fichier à traiter:");
 		String path = sc.nextLine();
@@ -141,6 +142,69 @@ public class Menu {
 		sc.close();
 	}
 
+	public static void testOnFrenchText() throws IOException{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("saisir chemin du fichier à traiter:");
+		String path = sc.nextLine();
+		sc.close();
+
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		content = TextNormalization.addDotEndOfLine(content);
+
+		String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
+		System.out.println("les annotateurs séléctionés sont: "+annotators);
+
+		Properties props = getFrenchProperties();
+		props.setProperty("annotators",annotators);
+		//props.setProperty("coref.algorithm", "neural");
+		props.setProperty("ner.applyFineGrained", "false");
+		
+
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		ImpUtils.setDocument(document);
+		pipeline.annotate(document);
+		for (CoreEntityMention cem : document.entityMentions()){
+			System.out.println(cem);
+		}
+		for (CorefChain cc : document.corefChains().values()){
+			System.out.println(cc);
+		}
+		Annotation annotation = document.annotation();
+
+		for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+			// Get the OpenIE triples for the sentence
+			Collection<RelationTriple> triples = sentence.get(NaturalLogicAnnotations.RelationTriplesAnnotation.class);
+			// Print the triples
+			for (RelationTriple triple : triples) {
+				System.out.println();
+				System.out.println(triple.subjectGloss() + "\t " + triple.subject);
+				System.out.println(triple.relationLemmaGloss() + "\t " + triple.relation);
+				System.out.println(triple.objectGloss() + "\t " + triple.canonicalObject);
+			}
+		}
+	}
+
+	public static Properties getFrenchProperties(){
+		Properties props = new Properties();
+
+		props.setProperty("tokenize.language","fr"); 
+		props.setProperty("mwt.mappingFile","edu/stanford/nlp/models/mwt/french/french-mwt.tsv");
+		props.setProperty("mwt.pos.model","edu/stanford/nlp/models/mwt/french/french-mwt.tagger");
+		props.setProperty("mwt.statisticalMappingFile","edu/stanford/nlp/models/mwt/french/french-mwt-statistical.tsv");
+		props.setProperty("mwt.preserveCasing","false");
+		props.setProperty("pos.model", "edu/stanford/nlp/models/pos-tagger/french-ud.tagger");
+		props.setProperty("ner.model", "edu/stanford/nlp/models/ner/french-wikiner-4class.crf.ser.gz");
+		props.setProperty("ner.applyNumericClassifiers","false");
+		props.setProperty("ner.useSUTime","false");
+		props.setProperty("parse.model", "edu/stanford/nlp/models/srparser/frenchSR.beam.ser.gz");
+		props.setProperty("depparse.model","edu/stanford/nlp/models/parser/nndep/UD_French.gz");
+
+		return props;
+	}
+
 	/**
 	 * @param args
 	 * @author Quay Baptiste, Lemaire Tewis
@@ -148,7 +212,7 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		testInteractionTableCreator();
+		testOnFrenchText();
 		if (args.length == 1)
 		{
 			Scanner sc = new Scanner(System.in);

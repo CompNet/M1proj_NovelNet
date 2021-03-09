@@ -5,3 +5,4 @@
 res/results/*
 /lib/stanford-corenlp-4.2.0-models.jar
 /lib/stanford-corenlp-3.9.0-models.jar
+/lib/stanford-corenlp-4.2.0-models-french.jar

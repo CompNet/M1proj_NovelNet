@@ -1,4 +1,4 @@
-package graph;
+package novelnet.graph;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
