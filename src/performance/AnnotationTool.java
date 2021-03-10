@@ -44,7 +44,9 @@ public class AnnotationTool {
             }
             System.out.println("Sentence number "+(i+1));
             for (CoreLabel token : document.sentences().get(i).tokens()){
-                System.out.println("Text : " + token.originalText() + "\t | Position : " + (document.sentences().get(i).tokens().lastIndexOf(token)+1));
+                if (!ImpUtils.isPonctuation(token)){
+                    System.out.println("Text : " + token.originalText() + "\t | Position : " + (document.sentences().get(i).tokens().lastIndexOf(token)+1));
+                }
             }
             System.out.println();
         }

@@ -102,6 +102,13 @@ public class ImpUtils {
 		}
 		return result;
 	}
+
+
+	public static boolean isPonctuation(CoreLabel token) {
+		if(token.originalText().length() == 1) return true;
+		else if (token.originalText().equals("...")) return true;
+		return false;
+	}
 	
 	/**
 	 * @author Baptiste Quay

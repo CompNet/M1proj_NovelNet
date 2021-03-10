@@ -1,0 +1,37 @@
+    <mention>
+        <text>Nick</text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Argus Rusard</text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+  
+    <mention>
+        <text></text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+    
+    <!-- next coref chain n°24-->

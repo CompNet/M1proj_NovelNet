@@ -19,6 +19,24 @@
     </mention>
 
     <mention>
+        <text>les élèves</text>
+        <sentence>4</sentence>
+        <start>16</start>
+        <end>17</end>
+        <originalName>les élèves de Poudlard</originalName>
+        <CorefChain>19</CorefChain>
+    </mention>
+
+    <mention>
+        <text>les enseignants</text>
+        <sentence>4</sentence>
+        <start>19</start>
+        <end>20</end>
+        <originalName>les enseignants</originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
         <text>elle</text>
         <sentence>5</sentence>
         <start>7</start>
@@ -52,6 +70,24 @@
         <sentence>6</sentence>
         <start>5</start>
         <end>6</end>
+        <originalName>Ginny Weasley</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>lui</text>
+        <sentence>6</sentence>
+        <start>25</start>
+        <end>25</end>
+        <originalName>Ginny Weasley</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>lui</text>
+        <sentence>6</sentence>
+        <start>36</start>
+        <end>36</end>
         <originalName>Ginny Weasley</originalName>
         <CorefChain>3</CorefChain>
     </mention>
@@ -97,7 +133,7 @@
         <sentence>12</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Fred</originalName>
+        <originalName>Fred Weasley</originalName>
         <CorefChain>8</CorefChain>
     </mention>
 
@@ -106,7 +142,7 @@
         <sentence>12</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>George</originalName>
+        <originalName>George Weasley</originalName>
         <CorefChain>9</CorefChain>
     </mention>
 
@@ -172,7 +208,7 @@
         <originalName>Nick Quasi-Sans-Tête</originalName>
         <CorefChain>11</CorefChain>
     </mention>
-<!-- TODO : checker si on prend "le fantome de la tour de gryffondor" ou seulement "le fantome" -->  
+
     <mention>
         <text>le fantôme</text>
         <sentence>15</sentence>
@@ -235,7 +271,7 @@
         <originalName>Nick Quasi-Sans-Tête</originalName>
         <CorefChain>11</CorefChain>
     </mention>
-<!-- TODO : à supprimer ?-->
+
     <mention>
         <text>lui</text>
         <sentence>18</sentence>
@@ -336,58 +372,1398 @@
     </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
+        <text>je</text>
+        <sentence>24</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>j'</text>
+        <sentence>25</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>je</text>
+        <sentence>25</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>27</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>27</sentence>
+        <start>35</start>
+        <end>35</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>28</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>chasseurs sans tête</text>
+        <sentence>27</sentence>
+        <start>43</start>
+        <end>45</end>
+        <originalName>chasseurs sans tête</originalName>
+        <CorefChain>13</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>28</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>moi</text>
+        <sentence>29</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>m'</text>
+        <sentence>30</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick Quasi-Sans-Tête</text>
+        <sentence>31</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nous</text>
+        <sentence>31</sentence>
+        <start>21</start>
+        <end>21</end>
+        <originalName>chasseurs sans tête</originalName>
+        <CorefChain>13</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>32</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>nous</text>
+        <sentence>32</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>chasseurs sans tête</originalName>
+        <CorefChain>13</CorefChain>
+    </mention>
+
+    <mention>
+        <text>J'</text>
+        <sentence>33</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Sir Patrick Delaney-Podmore</originalName>
+        <CorefChain>14</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>33</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nous</text>
+        <sentence>34</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>chasseurs sans tête</originalName>
+        <CorefChain>13</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Sir Patrick Delaney-Podmore</text>
+        <sentence>34</sentence>
+        <start>14</start>
+        <end>16</end>
+        <originalName>Sir Patrick Delaney-Podmore</originalName>
+        <CorefChain>14</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick Quasi-Sans-Tête</text>
+        <sentence>35</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>36</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>j'</text>
+        <sentence>37</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Coupé-Court-Podmore</text>
+        <sentence>38</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Sir Patrick Delaney-Podmore</originalName>
+        <CorefChain>14</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick Quasi-Sans-Tête</text>
+        <sentence>39</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>39</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>40</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>40</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>40</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Je</text>
+        <sentence>41</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>42</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>43</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>nous</text>
+        <sentence>43</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>nous</originalName>
+        <CorefChain>20</CorefChain>
+    </mention>
+
+    <mention>
+        <text>nous</text>
+        <sentence>43</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>nous</originalName>
+        <CorefChain>20</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Serp</text>
+        <sentence>43</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Serpentard</originalName>
+        <CorefChain>10</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>43</sentence>
+        <start>28</start>
+        <end>28</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Il</text>
+        <sentence>44</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Miss Teigne</text>
+        <sentence>45</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>Miss Teigne</originalName>
+        <CorefChain>15</CorefChain>
+    </mention>
+
+    <mention>
+        <text>la chatte</text>
+        <sentence>45</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>Miss Teigne</originalName>
+        <CorefChain>15</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Argus Rusard</text>
+        <sentence>45</sentence>
+        <start>18</start>
+        <end>19</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>le concierge</text>
+        <sentence>45</sentence>
+        <start>21</start>
+        <end>22</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>les élèves de Poudlard</text>
+        <sentence>45</sentence>
+        <start>29</start>
+        <end>32</end>
+        <originalName>les élèves de Poudlard</originalName>
+        <CorefChain>19</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>46</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>46</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick</text>
+        <sentence46>46</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>47</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Il</text>
+        <sentence>48</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>les élèves</text>
+        <sentence>48</sentence>
+        <start>7</start>
+        <end>8</end>
+        <originalName>les élèves de Poudlard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Il</text>
+        <sentence>49</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>49</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>49</sentence>
+        <start>26</start>
+        <end>26</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>49</sentence>
+        <start>32</start>
+        <end>32</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Miss Teigne</text>
+        <sentence>49</sentence>
+        <start>38</start>
+        <end>39</end>
+        <originalName>Miss Teigne</originalName>
+        <CorefChain>15</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Il</text>
+        <sentence>50</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>le</text>
+        <sentence>51</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>animal</text>
+        <sentence>51</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Miss Teigne</originalName>
+        <CorefChain>15</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Argus Rusard</text>
+        <sentence>51</sentence>
+        <start>15</start>
+        <end>16</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>54</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Il</text>
+        <sentence>55</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>55</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>J'</text>
+        <sentence>57</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>moi</text>
+        <sentence>58</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Potter</text>
+        <sentence>58</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>59</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nick Quasi-Sans-Tête</text>
+        <sentence>59</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>59</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>60</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>60</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>les élèves</text>
+        <sentence>61</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>les élèves de Poudlard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>les élèves de Poudlard</text>
+        <sentence>64</sentence>
+        <start>31</start>
+        <end>34</end>
+        <originalName>les élèves de Poudlard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>64</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Fred</text>
+        <sentence>65</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Fred Weasley</originalName>
+        <CorefChain>8</CorefChain>
+    </mention>
+
+    <mention>
+        <text>George</text>
+        <sentence>65</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>George Weasley</originalName>
+        <CorefChain>9</CorefChain>
+    </mention>
+
+    <mention>
+        <text>eux</text>
+        <sentence>65</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Fred et George Weasley</originalName>
+        <CorefChain>17</CorefChain>
+    </mention>
+
+<!-- TODO : Checker si les élèves de poudlards est une mention-->
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>66</sentence>
+        <start>20</start>
+        <end>20</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>67</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Dumbledore</text>
+        <sentence>67</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Dumbledore</originalName>
+        <CorefChain>18</CorefChain>
+    </mention>
+
+    <mention>
+        <text>les élèves</text>
+        <sentence>61</sentence>
+        <start>17</start>
+        <end>18</end>
+        <originalName>les élèves de Poudlard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>68</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>68</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>69</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry Potter</text>
+        <sentence>69</sentence>
+        <start>18</start>
+        <end>19</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>70</sentence>
+        <start>20</start>
+        <end>20</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>71</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>moi</text>
+        <sentence>71</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>72</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Nous</text>
+        <sentence>73</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard et Harry Potter</originalName>
         <CorefChain></CorefChain>
     </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <CorefChain></CorefChain>
+        <text>Rusard</text>
+        <sentence>73</sentence>
+        <start>22</start>
+        <end>22</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
     </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <CorefChain></CorefChain>
+        <text>Harry</text>
+        <sentence>73</sentence>
+        <start>28</start>
+        <end>28</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
     </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <CorefChain></CorefChain>
+        <text>le concierge</text>
+        <sentence>74</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
     </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <CorefChain></CorefChain>
+        <text>Peeves</text>
+        <sentence>76</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Peeves</originalName>
+        <CorefChain>22</CorefChain>
     </mention>
 
-
-
+    <mention>
+        <text>Rusard</text>
+        <sentence>77</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
 
     <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
+        <text>je</text>
+        <sentence>78</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>79</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>79</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Miss Teigne</text>
+        <sentence>79</sentence>
+        <start>16</start>
+        <end>17</end>
+        <originalName>Miss Teigne</originalName>
+        <CorefChain>15</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Peeves</text>
+        <sentence>80</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Peeves</originalName>
+        <CorefChain>22</CorefChain>
+    </mention>
+
+    <mention>
+        <text>l'esprit frappeur</text>
+        <sentence>80</sentence>
+        <start>3</start>
+        <end>5</end>
+        <originalName>Peeves</originalName>
+        <CorefChain>22</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>81</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Peeves</text>
+        <sentence>81</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Peeves</originalName>
+        <CorefChain>22</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>81</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>lui</text>
+        <sentence>81</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Peeves</originalName>
+        <CorefChain>22</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>82</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>82</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>le concierge</text>
+        <sentence>83</sentence>
+        <start>7</start>
+        <end>8</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>83</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>sorciers débutants</text>
+        <sentence>85</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName>sorciers débutants</originalName>
+        <CorefChain>23</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>85</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>85</sentence>
+        <start>24</start>
+        <end>24</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>85</sentence>
+        <start>29</start>
+        <end>29</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>86</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>sorciers débutants</originalName>
+        <CorefChain>23</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>86</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>sorciers débutants</originalName>
+        <CorefChain>23</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>87</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>sorciers débutants</originalName>
+        <CorefChain>23</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>88</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>sorciers débutants</originalName>
+        <CorefChain>23</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>91</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>91</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>93</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>93</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>93</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>94</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>le concierge</text>
+        <sentence>94</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>95</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>95</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>96</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>98</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Miss Teigne</text>
+        <sentence>98</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Miss Teigne</originalName>
+        <CorefChain>15</CorefChain>
+    </mention>
+
+    <mention>
+        <text>ma mignonne</text>
+        <sentence>99</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Miss Teigne</originalName>
+        <CorefChain>15</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Peeves</text>
+        <sentence>99</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Peeves</originalName>
+        <CorefChain>22</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>100</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>100</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>101</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>101</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>102</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>103</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>104</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>104</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Vous</text>
+        <sentence>104</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>il</text>
+        <sentence>106</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>107</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>108</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>j'</text>
+        <sentence>109</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>109</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>moi</text>
+        <sentence>109</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>109</sentence>
+        <start>32</start>
+        <end>32</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>le</text>
+        <sentence>109</sentence>
+        <start>33</start>
+        <end>33</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>110</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>lui</text>
+        <sentence>111</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>112</sentence>
+        <start>21</start>
+        <end>21</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>vous</text>
+        <sentence>112</sentence>
+        <start>28</start>
+        <end>28</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention> 
+
+    <mention>
+        <text>j'</text>
+        <sentence>112</sentence>
+        <start>33</start>
         <end></end>
-        <originalName></originalName>
-        <CorefChain></CorefChain>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Peeves</text>
+        <sentence>112</sentence>
+        <start>38</start>
+        <end>38</end>
+        <originalName>Peeves</originalName>
+        <CorefChain>22</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>112</sentence>
+        <start>48</start>
+        <end>48</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Rusard</text>
+        <sentence>113</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Argus Rusard</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>114</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>115</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Nick Quasi-Sans-Tête</text>
+        <sentence>117</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Nick Quasi-Sans-Tête</originalName>
+        <CorefChain>11</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>118</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Harry Potter</originalName>
+        <CorefChain>6</CorefChain>
     </mention>
