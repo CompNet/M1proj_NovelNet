@@ -22,15 +22,15 @@ public class AnnotationTool {
         
     }
     
-    public static void decompose(String path, int sentenceJump) throws IOException{
+    public static void decompose(String path, String language, int sentenceJump) throws IOException{
         FileInputStream is = new FileInputStream(path);
         String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
         content = TextNormalization.addDotEndOfLine(content);
 
         System.out.println("decomposition for analyse.");
-
-        Properties props = ImpUtils.getFrenchProperties();
+        Properties props = new Properties();
+        if (language == "fr" ) props = ImpUtils.getFrenchProperties();
         props.setProperty("annotators", "tokenize,ssplit");
         
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -56,11 +56,13 @@ public class AnnotationTool {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
+        System.out.println("enter the language of the text (fr, en) : ");
+        String language = sc.nextLine();
         System.out.println("enter the path to the file to analyse : ");
         String path = sc.nextLine();
         System.out.println("enter the number of sentences to show before asking to continue : ");
         int sentenceJump = sc.nextInt();
         sc.nextLine();
-		AnnotationTool.decompose(path, sentenceJump);
+		AnnotationTool.decompose(path, language, sentenceJump);
 	}
 }
