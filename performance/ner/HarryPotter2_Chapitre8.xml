@@ -63,8 +63,6 @@
         <CorefChain>2</CorefChain>
     </mention>
 
-<!-- TODO : checker la phrase pour voir si les lui représente un personnage (ginny) -->  
-
     <mention>
         <text>Ginny Weasley</text>
         <sentence>6</sentence>
@@ -1018,8 +1016,6 @@
         <originalName>Fred et George Weasley</originalName>
         <CorefChain>17</CorefChain>
     </mention>
-
-<!-- TODO : Checker si les élèves de poudlards est une mention-->
 
     <mention>
         <text>Rusard</text>
