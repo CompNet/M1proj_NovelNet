@@ -1,10 +1,21 @@
+    
+    
     <mention>
-        <text>Pomfrey</text>
+        <text>Filch</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Pomfrey</originalName>
-        <CorefChain>1</CorefChain>
+        <originalName>Argus Filch</originalName>
+        <CorefChain>16</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Mrs. Norris</text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName>Mrs. Norris</originalName>
+        <CorefChain>15</CorefChain>
     </mention>
     
     <mention>
@@ -34,4 +45,4 @@
         <CorefChain></CorefChain>
     </mention>
 
-    <!-- next coref chain n°14-->
+    <!-- next coref chain n°17-->
