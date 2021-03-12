@@ -31,6 +31,7 @@ import novelnet.pipeline.WindowingCooccurrenceSentence;
 import novelnet.pipeline.WindowingDynamicGraphFromParagraphTable;
 import novelnet.pipeline.WindowingDynamicGraphFromSentenceTable;
 import edu.stanford.nlp.coref.data.CorefChain;
+import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
@@ -154,7 +155,7 @@ public class Menu {
 		content = TextNormalization.addDotEndOfLine(content);
 
 		//String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
-		String annotators="tokenize,ssplit,pos,lemma,ner";
+		String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref";
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
 
 		Properties props = ImpUtils.getFrenchProperties();
@@ -209,7 +210,7 @@ public class Menu {
 			content = TextNormalization.addDotEndOfLine(content);
 
 			//String prop="tokenize,ssplit";
-			String prop="tokenize,ssplit,pos,lemma,ner";
+			String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
 			System.out.println("les annotateurs séléctionés sont: "+prop);
 
 			Properties props = new Properties();
@@ -226,11 +227,19 @@ public class Menu {
 			pipeline.prettyPrint(annotation, out );*/
 
 			//System.out.println(document.sentences().get(1).tokens().get(0).originalText() + " " + document.sentences().get(1).tokens().get(0).ner());
-			/*for (CoreEntityMention cem: document.entityMentions()){
-				System.out.print(cem.text() + " : " + cem.entityType() +", ");
+			for (CoreEntityMention cem: document.entityMentions()){
+				if (cem.entityType().equals("PERSON")) System.out.println(cem.text() + " : " + cem.sentence().tokens().get(0).sentIndex());
 			}
-			System.out.println();*/
+			System.out.println();
 			
+
+			for ( CorefChain cc : document.corefChains().values()){
+				System.out.print(cc.getRepresentativeMention().mentionSpan + " : [ ");
+				for (CorefMention cm : cc.getMentionsInTextualOrder()){
+					System.out.print(cm.mentionSpan + ", " + cm.sentNum + " ; ");
+				}
+				System.out.println();
+			}
 			//System.out.println(document.corefChains());
 			// CorefChain Fusion
 
