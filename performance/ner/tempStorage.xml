@@ -1,39 +1,30 @@
-    
-    
-    <mention>
-        <text>Filch</text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName>Argus Filch</originalName>
-        <CorefChain>16</CorefChain>
-    </mention>
 
-    <mention>
-        <text>Mrs. Norris</text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName>Mrs. Norris</originalName>
-        <CorefChain>15</CorefChain>
-    </mention>
     
     <mention>
         <text>Harry</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Harry Potter</originalName>
-        <CorefChain>4</CorefChain>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
     </mention>
 
     <mention>
-        <text>Nick</text>
+        <text>Ron</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>10</CorefChain>
+        <originalName>Ron Weasley</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Hermione</text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName>Hermione</originalName>
+        <CorefChain>6</CorefChain>
     </mention>
 
     <mention>
@@ -45,4 +36,4 @@
         <CorefChain></CorefChain>
     </mention>
 
-    <!-- next coref chain n°22-->
+    <!-- next coref chain n°10-->

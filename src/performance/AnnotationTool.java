@@ -1,6 +1,5 @@
 package performance;
 
-import java.io.Console;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -64,5 +63,6 @@ public class AnnotationTool {
         int sentenceJump = sc.nextInt();
         sc.nextLine();
 		AnnotationTool.decompose(path, language, sentenceJump);
+        sc.close();
 	}
 }

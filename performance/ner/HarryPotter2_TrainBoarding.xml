@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+    <mention>
+        <text>Percy</text>
+        <sentence>1</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ginny</text>
+        <sentence>1</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Ginny</originalName>
+        <CorefChain>2</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Harry</text>
+        <sentence>1</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>They</text>
+        <sentence>2</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy and Ginny</originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
+        <text>Penelope</text>
+        <sentence>3</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Penelope</originalName>
+        <CorefChain>4</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Percy</text>
+        <sentence>4</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Percy</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>hi</text>
+        <sentence>4</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Percy</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ginny</text>
+        <sentence>5</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Ginny</originalName>
+        <CorefChain>2</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>5</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>they</text>
+        <sentence>5</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Ginny and Harry</originalName>
+        <CorefChain>5</CorefChain>
+    </mention>
+
+    <mention>
+        <text>their</text>
+        <sentence>5</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Ginny and Harry</originalName>
+        <CorefChain>5</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Percy</text>
+        <sentence>5</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Percy</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>a girl</text>
+        <sentence>5</sentence>
+        <start>21</start>
+        <end>22</end>
+        <originalName>Penelope</originalName>
+        <CorefChain>4</CorefChain>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>5</sentence>
+        <start>31</start>
+        <end>31</end>
+        <originalName>Percy</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>5</sentence>
+        <start>37</start>
+        <end>37</end>
+        <originalName>Penelope</originalName>
+        <CorefChain>4</CorefChain>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>5</sentence>
+        <start>41</start>
+        <end>41</end>
+        <originalName>Percy</originalName>
+        <CorefChain>1</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Weasleys</text>
+        <sentence>6</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
+        <text>Hermione</text>
+        <sentence>6</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>6</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ron</text>
+        <sentence>6</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Ron Weasley</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+
+    <mention>
+        <text>they</text>
+        <sentence>7</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry and Ron</originalName>
+        <CorefChain>9</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Hedwig</text>
+        <sentence>7</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
+        <text>Crookshanks</text>
+        <sentence>7</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+
+    <mention>
+        <text>Mr.</text>
+        <sentence>7</sentence>
+        <start>25</start>
+        <end>25</end>
+        <originalName>Mr. Weasley</originalName>
+        <CorefChain>10</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Mrs. Weasley</text>
+        <sentence>7</sentence>
+        <start>27</start>
+        <end>28</end>
+        <originalName>Mrs. Weasley</originalName>
+        <CorefChain>8</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Mrs. Weasley</text>
+        <sentence>8</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Mrs. Weasley</originalName>
+        <CorefChain>8</CorefChain>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>8</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Mrs. Weasley</originalName>
+        <CorefChain>8</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Hermione</text>
+        <sentence>8</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>8</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>he</text>
+        <sentence>9</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>9</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Mrs. Weasley</originalName>
+        <CorefChain>8</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>him</text>
+        <sentence>9</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>11</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ron</text>
+        <sentence>11</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Ron Weasley</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>him</text>
+        <sentence>11</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+    
+    <mention>
+        <text>they</text>
+        <sentence>12</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry and Ron</originalName>
+        <CorefChain>9</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Mr. Weasley</text>
+        <sentence>12</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Mr. Weasley</originalName>
+        <CorefChain>10</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Mrs. Weasley</text>
+        <sentence>12</sentence>
+        <start>13</start>
+        <end>14</end>
+        <originalName>Mrs. Weasley</originalName>
+        <CorefChain>8</CorefChain>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>12</sentence>
+        <start>23</start>
+        <end>23</end>
+        <originalName>Mr. Weasley and Mrs. Weasley</originalName>
+        <CorefChain></CorefChain>
+    </mention>
+    
+    <mention>
+        <text>I</text>
+        <sentence>13</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>13</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>13</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ron</text>
+        <sentence>13</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Ron Weasley</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Hermione</text>
+        <sentence>13</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ginny</text>
+        <sentence>14</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Ginny</originalName>
+        <CorefChain>2</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ron</text>
+        <sentence>14</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Ron Weasley</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ginny</text>
+        <sentence>15</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Ginny</originalName>
+        <CorefChain>2</CorefChain>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>15</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Ginny</originalName>
+        <CorefChain>2</CorefChain>
+    </mention>
+    <mention>
+        <text>Harry</text>
+        <sentence>16</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Ron</text>
+        <sentence>16</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Ron Weasley</originalName>
+        <CorefChain>7</CorefChain>
+    </mention>
+
+    <mention>
+        <text>Hermione</text>
+        <sentence>16</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>6</CorefChain>
+    </mention>
+</document>
