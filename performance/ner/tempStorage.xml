@@ -1,29 +1,29 @@
 
-    
+
     <mention>
-        <text>Harry</text>
+        <text>I</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Harry</originalName>
-        <CorefChain>3</CorefChain>
+        <originalName>Fitz</originalName>
+        <CorefChain>1</CorefChain>
     </mention>
 
     <mention>
-        <text>Ron</text>
+        <text>the old man</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Ron Weasley</originalName>
-        <CorefChain>7</CorefChain>
+        <originalName>the old man</originalName>
+        <CorefChain>2</CorefChain>
     </mention>
 
     <mention>
-        <text>Hermione</text>
+        <text></text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Hermione</originalName>
+        <originalName>the house-guard</originalName>
         <CorefChain>6</CorefChain>
     </mention>
 
@@ -32,8 +32,8 @@
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName></originalName>
-        <CorefChain></CorefChain>
+        <originalName>Chivalery</originalName>
+        <CorefChain>7</CorefChain>
     </mention>
 
-    <!-- next coref chain n°10-->
+    <!-- next coref chain n°8-->

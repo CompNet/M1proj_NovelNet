@@ -21,8 +21,8 @@ import novelnet.table.CooccurrenceTable;
 import novelnet.table.CooccurrenceTableParagraph;
 import novelnet.table.CooccurrenceTableSentence;
 import novelnet.table.DirectInteractionTable;
-import novelnet.table.DirectInteractionTableCreator;
 import novelnet.table.InteractionTable;
+import novelnet.pipeline.DirectInteractionTableCreator;
 import novelnet.pipeline.CorefChainFuser;
 import novelnet.pipeline.CustomCorefChainMaker;
 import novelnet.pipeline.GraphCreator;
@@ -92,7 +92,6 @@ public class Menu {
 	}
 
 	public static void testInteractionTableCreator() throws IOException, NullDocumentException {
-		System.out.println("c'est de la bite");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("saisir chemin du fichier à traiter:");
 		String path = sc.nextLine();
@@ -154,8 +153,8 @@ public class Menu {
 
 		content = TextNormalization.addDotEndOfLine(content);
 
-		//String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
-		String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref";
+		String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref,natlog,openie";
+		//String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref";
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
 
 		Properties props = ImpUtils.getFrenchProperties();

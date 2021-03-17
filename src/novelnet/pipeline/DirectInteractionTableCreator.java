@@ -1,4 +1,4 @@
-package novelnet.table;
+package novelnet.pipeline;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -6,6 +6,7 @@ import java.util.List;
 
 import novelnet.util.CustomInteraction;
 import novelnet.book.Book;
+import novelnet.table.*;
 
 import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.ie.util.RelationTriple;

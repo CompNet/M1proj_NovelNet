@@ -50,6 +50,7 @@ public abstract class InteractionTable {
 		listDistanceWord = new LinkedList<>();
 		listBeginingWindow = new LinkedList<>();
 		listEndingWindow = new LinkedList<>();
+		listType = new LinkedList<>();
 	}
 
 	public List<String> getListCharA() {
