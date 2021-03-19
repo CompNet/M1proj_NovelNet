@@ -6,11 +6,14 @@ import java.nio.charset.StandardCharsets;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.Scanner;
 
 import org.apache.commons.io.IOUtils;
 
+import ca.umontreal.rali.reverbfr.FrenchReverbUtils;
+import ca.umontreal.rali.reverbfr.ReverbConfiguration;
 import novelnet.book.Book;
 import novelnet.book.CreateBook;
 import novelnet.util.TextNormalization;
@@ -38,9 +41,13 @@ import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
+import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
-
+import edu.washington.cs.knowitall.extractor.ReVerbExtractor;
+import edu.washington.cs.knowitall.nlp.ChunkedSentence;
+import edu.washington.cs.knowitall.nlp.OpenNlpSentenceChunker;
+import edu.washington.cs.knowitall.nlp.extraction.ChunkedBinaryExtraction;
 import novelnet.graph.Graph;
 
 
@@ -141,8 +148,7 @@ public class Menu {
 
 		sc.close();
 	}
-
-	public static void testOnFrenchText() throws IOException{
+	public static void testOnFrenchTextWithStanford() throws IOException{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("saisir chemin du fichier à traiter:");
 		String path = sc.nextLine();
@@ -187,6 +193,56 @@ public class Menu {
 		}
 	}
 
+	public static void testOnFrenchTextReverb() throws IOException{
+		
+		ReverbConfiguration.setLocale(Locale.FRENCH);
+		OpenNlpSentenceChunker chunker = new OpenNlpSentenceChunker();
+		ReVerbExtractor reverb = new ReVerbExtractor();
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("saisir chemin du fichier à traiter:");
+		String path = sc.nextLine();
+		sc.close();
+
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		content = TextNormalization.addDotEndOfLine(content);
+
+		String annotators="tokenize,ssplit";
+		System.out.println("running Stanford's sentence splitting ");
+
+		Properties props = ImpUtils.getFrenchProperties();
+		props.setProperty("annotators",annotators);
+
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		ImpUtils.setDocument(document);
+		pipeline.annotate(document);
+
+		for (CoreSentence stanfordSentence : document.sentences()){
+            
+            // chunk sentence
+            ChunkedSentence sent = chunker.chunkSentence(stanfordSentence.toString());
+
+            // extract with reverb and iterate on results
+            for (ChunkedBinaryExtraction extr : reverb.extract(sent)) {
+                
+                System.out.println("Arg1=" + extr.getArgument1().getText().trim());
+                System.out.println("Rel=" + extr.getRelation().getText().trim());
+                System.out.println("Arg2=" + extr.getArgument2().getText().trim());
+                
+                // lemmatization and canonization (optional operations)
+                FrenchReverbUtils.addLemmas(extr.getSentence());
+                System.out.println("RelLemma=" + FrenchReverbUtils.formatLemmatizedRelation(extr));
+                System.out.println("RelCanon=" + FrenchReverbUtils.getCanonicalRelation(extr));
+                
+                System.out.println();
+            }
+
+        }
+	}
+
 	/**
 	 * @param args
 	 * @author Quay Baptiste, Lemaire Tewis
@@ -194,7 +250,7 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		testOnFrenchText();
+		testOnFrenchTextReverb();
 		if (args.length == 1)
 		{
 			Scanner sc = new Scanner(System.in);
