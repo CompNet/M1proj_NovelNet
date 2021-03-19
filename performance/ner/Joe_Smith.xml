@@ -7,6 +7,7 @@
         <end>2</end>
         <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -16,6 +17,7 @@
         <end>4</end>
         <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -25,6 +27,7 @@
         <end>1</end>
         <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -34,6 +37,7 @@
         <end>10</end>
         <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -43,6 +47,7 @@
         <end>1</end>
         <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -52,6 +57,7 @@
         <end>6</end>
         <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -61,6 +67,7 @@
         <end>9</end>
         <originalName>Jane Smith</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -68,8 +75,9 @@
         <sentence>6</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Joe Smith</originalName>
+         <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -77,8 +85,9 @@
         <sentence>6</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Joe Smith</originalName>
-        <CorefChain>1</CorefChain>
+        <originalName>Jane Smith</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -88,5 +97,6 @@
         <end>10</end>
         <originalName>Jane Smith</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 </document>
