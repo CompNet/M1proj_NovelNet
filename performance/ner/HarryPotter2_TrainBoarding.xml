@@ -7,6 +7,7 @@
         <end>1</end>
         <originalName>Percy</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -16,6 +17,7 @@
         <end>3</end>
         <originalName>Ginny</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -25,6 +27,7 @@
         <end>7</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -34,6 +37,7 @@
         <end>1</end>
         <originalName>Percy and Ginny</originalName>
         <CorefChain></CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -43,6 +47,7 @@
         <end>6</end>
         <originalName>Penelope</originalName>
         <CorefChain>4</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -52,6 +57,7 @@
         <end>2</end>
         <originalName>Percy</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -61,6 +67,7 @@
         <end>5</end>
         <originalName>Percy</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -70,6 +77,7 @@
         <end>1</end>
         <originalName>Ginny</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -79,6 +87,7 @@
         <end>3</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -88,6 +97,7 @@
         <end>8</end>
         <originalName>Ginny and Harry</originalName>
         <CorefChain>5</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -97,6 +107,7 @@
         <end>14</end>
         <originalName>Ginny and Harry</originalName>
         <CorefChain>5</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -106,6 +117,7 @@
         <end>17</end>
         <originalName>Percy</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -115,6 +127,7 @@
         <end>22</end>
         <originalName>Penelope</originalName>
         <CorefChain>4</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -124,6 +137,7 @@
         <end>31</end>
         <originalName>Percy</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -133,6 +147,7 @@
         <end>37</end>
         <originalName>Penelope</originalName>
         <CorefChain>4</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -142,6 +157,7 @@
         <end>41</end>
         <originalName>Percy</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -151,6 +167,7 @@
         <end>4</end>
         <originalName></originalName>
         <CorefChain></CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -160,6 +177,7 @@
         <end>6</end>
         <originalName>Hermione</originalName>
         <CorefChain>6</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -169,6 +187,7 @@
         <end>11</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -178,6 +197,7 @@
         <end>13</end>
         <originalName>Ron Weasley</originalName>
         <CorefChain>7</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -187,6 +207,7 @@
         <end>1</end>
         <originalName>Harry and Ron</originalName>
         <CorefChain>9</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -196,6 +217,7 @@
         <end>9</end>
         <originalName></originalName>
         <CorefChain></CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -205,6 +227,7 @@
         <end>11</end>
         <originalName></originalName>
         <CorefChain></CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -214,6 +237,7 @@
         <end>25</end>
         <originalName>Mr. Weasley</originalName>
         <CorefChain>10</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -223,6 +247,7 @@
         <end>28</end>
         <originalName>Mrs. Weasley</originalName>
         <CorefChain>8</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -232,6 +257,7 @@
         <end>2</end>
         <originalName>Mrs. Weasley</originalName>
         <CorefChain>8</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -241,6 +267,7 @@
         <end>5</end>
         <originalName>Mrs. Weasley</originalName>
         <CorefChain>8</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -250,6 +277,7 @@
         <end>9</end>
         <originalName>Hermione</originalName>
         <CorefChain>6</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -259,6 +287,7 @@
         <end>13</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -268,6 +297,7 @@
         <end>1</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -277,6 +307,7 @@
         <end>11</end>
         <originalName>Mrs. Weasley</originalName>
         <CorefChain>8</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -286,6 +317,7 @@
         <end>13</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -295,6 +327,7 @@
         <end>1</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -304,6 +337,7 @@
         <end>8</end>
         <originalName>Ron Weasley</originalName>
         <CorefChain>7</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
@@ -313,6 +347,7 @@
         <end>17</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -322,6 +357,7 @@
         <end>1</end>
         <originalName>Harry and Ron</originalName>
         <CorefChain>9</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -331,6 +367,7 @@
         <end>11</end>
         <originalName>Mr. Weasley</originalName>
         <CorefChain>10</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -340,6 +377,7 @@
         <end>14</end>
         <originalName>Mrs. Weasley</originalName>
         <CorefChain>8</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -349,6 +387,7 @@
         <end>23</end>
         <originalName>Mr. Weasley and Mrs. Weasley</originalName>
         <CorefChain></CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -358,6 +397,7 @@
         <end>2</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -367,6 +407,7 @@
         <end>7</end>
         <originalName></originalName>
         <CorefChain></CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -376,6 +417,7 @@
         <end>12</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -385,6 +427,7 @@
         <end>15</end>
         <originalName>Ron Weasley</originalName>
         <CorefChain>7</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -394,6 +437,7 @@
         <end>17</end>
         <originalName>Hermione</originalName>
         <CorefChain>6</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -403,6 +447,7 @@
         <end>2</end>
         <originalName>Ginny</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -412,6 +457,7 @@
         <end>9</end>
         <originalName>Ron Weasley</originalName>
         <CorefChain>7</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -421,6 +467,7 @@
         <end>10</end>
         <originalName>Ginny</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -430,7 +477,9 @@
         <end>14</end>
         <originalName>Ginny</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType>implicit</mentionType>
     </mention>
+
     <mention>
         <text>Harry</text>
         <sentence>16</sentence>
@@ -438,6 +487,7 @@
         <end>1</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -447,6 +497,7 @@
         <end>3</end>
         <originalName>Ron Weasley</originalName>
         <CorefChain>7</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -456,5 +507,6 @@
         <end>5</end>
         <originalName>Hermione</originalName>
         <CorefChain>6</CorefChain>
+        <mentionType>explicit</mentionType>
     </mention>
 </document>
