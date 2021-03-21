@@ -5,17 +5,39 @@
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Fitz</originalName>
+        <originalName>Percy Jackson</originalName>
         <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
     </mention>
 
     <mention>
-        <text>the old man</text>
+        <text>Mr. Brunner</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>the old man</originalName>
+        <originalName>Mr. Brunner</originalName>
         <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>Nancy</text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName>Nancy Bobofit</originalName>
+        <CorefChain>4</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>Grover</text>
+        <sentence></sentence>
+        <start></start>
+        <end></end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
     </mention>
 
     <mention>
@@ -23,17 +45,12 @@
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>the house-guard</originalName>
-        <CorefChain>6</CorefChain>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+        <mentionType></mentionType>
     </mention>
 
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName>Chivalery</originalName>
-        <CorefChain>7</CorefChain>
-    </mention>
+    explicit
+    implicit
 
-    <!-- next coref chain n°8-->
+    <!-- next coref chain n°7-->

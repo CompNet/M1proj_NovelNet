@@ -37,6 +37,7 @@ import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
@@ -214,6 +215,8 @@ public class Menu {
 
 		Properties props = ImpUtils.getFrenchProperties();
 		props.setProperty("annotators",annotators);
+		props.setProperty("tokenize.keepeol","true");
+		//props.setProperty("tokenize.options", "stokenize.splitAssimilations=true,splitHyphenated=false");
 
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 		CoreDocument document = new CoreDocument(content);
@@ -225,12 +228,21 @@ public class Menu {
             // chunk sentence
             ChunkedSentence sent = chunker.chunkSentence(stanfordSentence.toString());
 
+			System.out.println(stanfordSentence.text());
+			System.out.println(sent.toString());
+
+			for(CoreLabel token : stanfordSentence.tokens()){
+				System.out.println("st : \t " + token.originalText());
+				System.out.println("reverb : " + sent.getToken(token.index()-1));
+			}
+
             // extract with reverb and iterate on results
-            for (ChunkedBinaryExtraction extr : reverb.extract(sent)) {
+            /*for (ChunkedBinaryExtraction extr : reverb.extract(sent)) {
                 
-                System.out.println("Arg1=" + extr.getArgument1().getText().trim());
+                System.out.println("Arg1=" + extr.getArgument1().getText().trim() + ", " + extr.getArgument1().getStart() + ", " + extr.getArgument1().getTokens());
                 System.out.println("Rel=" + extr.getRelation().getText().trim());
                 System.out.println("Arg2=" + extr.getArgument2().getText().trim());
+				
                 
                 // lemmatization and canonization (optional operations)
                 FrenchReverbUtils.addLemmas(extr.getSentence());
@@ -238,7 +250,7 @@ public class Menu {
                 System.out.println("RelCanon=" + FrenchReverbUtils.getCanonicalRelation(extr));
                 
                 System.out.println();
-            }
+            }*/
 
         }
 	}

@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+
+    <mention>
+        <text>My</text>
+        <sentence>1</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Percy Jackson</text>
+        <sentence>1</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>2</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>3</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>4</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>6</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Reader</originalName>
+        <CorefChain>6</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>7</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>my</text>
+        <sentence>7</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>our six-grade class</text>
+        <sentence>7</sentence>
+        <start>26</start>
+        <end>28</end>
+        <originalName>six-grade class</originalName>
+        <CorefChain>3</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>twenty-eight mental-case kids</text>
+        <sentence>7</sentence>
+        <start>36</start>
+        <end>38</end>
+        <originalName>six-grade class</originalName>
+        <CorefChain>3</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>two teachers</text>
+        <sentence>7</sentence>
+        <start>40</start>
+        <end>41</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>8</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Mr. Brunner</text>
+        <sentence>10</sentence>
+        <start>2</start>
+        <end>3</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>our Latin teacher</text>
+        <sentence>10</sentence>
+        <start>5</start>
+        <end>7</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>10</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>Mr. Brunner</text>
+        <sentence>11</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>12</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>13</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Reader</originalName>
+        <CorefChain>6</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>13</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>13</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>us</text>
+        <sentence>13</sentence>
+        <start>18</start>
+        <end>18</end>
+        <originalName>six grade-class</originalName>
+        <CorefChain>3</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>14</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>14</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Mr. Brunner</originalName>
+        <CorefChain>2</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>me</text>
+        <sentence>14</sentence>
+        <start>24</start>
+        <end>24</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>15</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>16</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>16</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>17</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>me</text>
+        <sentence>18</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>my</text>
+        <sentence>19</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>we</text>
+        <sentence>19</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>19</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>20</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>20</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>my</text>
+        <sentence>21</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>we</text>
+        <sentence>21</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>21</sentence>
+        <start>23</start>
+        <end>23</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>our class</text>
+        <sentence>21</sentence>
+        <start>34</start>
+        <end>35</end>
+        <originalName></originalName>
+        <CorefChain></CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>22</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Reader</originalName>
+        <CorefChain>6</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>23</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>24</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>Nancy Bobofit</text>
+        <sentence>24</sentence>
+        <start>12</start>
+        <end>13</end>
+        <originalName>Nancy Bobofit</originalName>
+        <CorefChain>4</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>my</text>
+        <sentence>24</sentence>
+        <start>23</start>
+        <end>23</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>Grover</text>
+        <sentence>24</sentence>
+        <start>26</start>
+        <end>26</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>Grover</text>
+        <sentence>25</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>26</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>27</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>27</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>28</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>28</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>the only sixth grader</text>
+        <sentence>28</sentence>
+        <start>13</start>
+        <end>16</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>28</sentence>
+        <start>27</start>
+        <end>27</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>29</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>30</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>30</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>30</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>30</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>30</sentence>
+        <start>24</start>
+        <end>24</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>31</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>31</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>31</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Reader</originalName>
+        <CorefChain>6</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>32</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Reader</originalName>
+        <CorefChain>6</CorefChain>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>32</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>Nancy Bobofit</text>
+        <sentence>33</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>Nancy Bobofit</originalName>
+        <CorefChain>4</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>33</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Grover</originalName>
+        <CorefChain>5</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>33</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Nancy Bobofit</originalName>
+        <CorefChain>4</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>33</sentence>
+        <start>21</start>
+        <end>21</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>33</sentence>
+        <start>28</start>
+        <end>28</end>
+        <originalName>Nancy Bobofit</originalName>
+        <CorefChain>4</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>33</sentence>
+        <start>30</start>
+        <end>30</end>
+        <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
+        <mentionType></mentionType>
+    </mention>
+</document>
