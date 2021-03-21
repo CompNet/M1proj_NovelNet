@@ -2503,8 +2503,8 @@
     <mention>
         <text>he</text>
         <sentence>114</sentence>
-        <start></start>
-        <end></end>
+        <start>1</start>
+        <end>1</end>
         <originalName>Prince Verity</originalName>
         <CorefChain>8</CorefChain>
         <mentionType>implicit</mentionType>
