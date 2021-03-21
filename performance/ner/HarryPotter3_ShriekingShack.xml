@@ -881,9 +881,9 @@
     </mention>
 
     <mention>
-        <text>Professor Lupin</text>
+        <text>Lupin</text>
         <sentence>30</sentence>
-        <start>20</start>
+        <start>21</start>
         <end>21</end>
         <originalName>Remus Lupin</originalName>
         <CorefChain>3</CorefChain>
@@ -891,9 +891,9 @@
     </mention>
     
     <mention>
-        <text>Professor Lupin</text>
+        <text>Lupin</text>
         <sentence>31</sentence>
-        <start>3</start>
+        <start>4</start>
         <end>4</end>
         <originalName>Remus Lupin</originalName>
         <CorefChain>3</CorefChain>
@@ -971,9 +971,9 @@
     </mention>
 
     <mention>
-        <text>Professor McGonagall</text>
+        <text>McGonagall</text>
         <sentence>34</sentence>
-        <start>7</start>
+        <start>8</start>
         <end>8</end>
         <originalName>McGonagall</originalName>
         <CorefChain>11</CorefChain>
@@ -1061,9 +1061,9 @@
     </mention>
 
     <mention>
-        <text>Professor McGonagall</text>
+        <text>McGonagall</text>
         <sentence>35</sentence>
-        <start>48</start>
+        <start>49</start>
         <end>49</end>
         <originalName>McGonagall</originalName>
         <CorefChain>11</CorefChain>

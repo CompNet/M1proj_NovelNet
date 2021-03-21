@@ -23,11 +23,15 @@ public class CompareNER {
 	List<ComparableEntity> groundTruth;
 	List<ComparableEntity> entityList;
 	PrecisionRecallStats perf;
+	List<ComparableEntity> resultTableCE;
+	List<String> resultTableString;
 
 	public CompareNER(){
 		groundTruth = new LinkedList<>();
 		entityList = new LinkedList<>();
 		perf = new PrecisionRecallStats();
+		resultTableCE = new LinkedList<>();
+		resultTableString = new LinkedList<>();
 	}
 	
 	public List<ComparableEntity> getEntityList(){
@@ -59,11 +63,18 @@ public class CompareNER {
 		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
 	}
 
+	public void displayResult(){
+		for (int i = 0; i < resultTableCE.size(); i++){
+			System.out.println(resultTableCE.get(i) + "mesure : " + resultTableString.get(i));
+		}
+		System.out.println("\n" + perf);
+		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
+	}
+
 	public void compare(String pathToText, String pathToGroundTruth) throws IOException{
 		initTxt(pathToText);
 		initXml(pathToGroundTruth);
 		compare();
-		display();
 	}
 	
 	public void initTxt(String pathToText) throws IOException {
@@ -112,12 +123,18 @@ public class CompareNER {
 			found = false;
 			for (ComparableEntity ceToCompare : groundTruth){
 				if(ce.compareTo(ceToCompare)){
+					resultTableCE.add(ce);
+					resultTableString.add("TP");
 					found = true;
 					break;
 				}
 			}
 			if (found) perf.incrementTP();
-			else perf.incrementFP();
+			else {
+				perf.incrementFP();
+				resultTableCE.add(ce);
+				resultTableString.add("FP");
+			}
 		}
 		for (ComparableEntity ce : groundTruth){
 			found = false;
@@ -127,7 +144,11 @@ public class CompareNER {
 					break;
 				}
 			}
-			if(!found) perf.incrementFN();
+			if(!found) {
+				perf.incrementFN();
+				resultTableCE.add(ce);
+				resultTableString.add("FN");
+			}
 		}
 	}
 	
@@ -138,5 +159,7 @@ public class CompareNER {
 		String fileName = sc.nextLine();
 		sc.close();
 		c.compare("res/corpus/"+fileName+".txt", "performance/ner/"+fileName+".xml");
+		c.display();
+		c.displayResult();
 	}
 }
