@@ -39,64 +39,34 @@
         <CorefChain>1</CorefChain>
         <mentionType>explicit</mentionType>
     </mention>
-
-    <mention>
-        <text>He</text>
-        <sentence>5</sentence>
-        <start>1</start>
-        <end>1</end>
-        <originalName>Joe Smith</originalName>
-        <CorefChain>1</CorefChain>
-        <mentionType>implicit</mentionType>
-    </mention>
-    
-    <mention>
-        <text>his</text>
-        <sentence>5</sentence>
-        <start>6</start>
-        <end>6</end>
-        <originalName>Joe Smith</originalName>
-        <CorefChain>1</CorefChain>
-        <mentionType>implicit</mentionType>
-    </mention>
-    
-    <mention>
-        <text>Jane Smith</text>
-        <sentence>5</sentence>
-        <start>8</start>
-        <end>9</end>
-        <originalName>Jane Smith</originalName>
-        <CorefChain>2</CorefChain>
-        <mentionType>explicit</mentionType>
-    </mention>
     
     <mention>
         <text>Joe</text>
-        <sentence>6</sentence>
+        <sentence>5</sentence>
         <start>4</start>
         <end>4</end>
          <originalName>Joe Smith</originalName>
         <CorefChain>1</CorefChain>
         <mentionType>explicit</mentionType>
     </mention>
-    
+
     <mention>
         <text>Jane</text>
-        <sentence>6</sentence>
+        <sentence>5</sentence>
         <start>8</start>
         <end>8</end>
         <originalName>Jane Smith</originalName>
         <CorefChain>2</CorefChain>
         <mentionType>explicit</mentionType>
     </mention>
-    
+
     <mention>
         <text>she</text>
-        <sentence>6</sentence>
+        <sentence>5</sentence>
         <start>10</start>
         <end>10</end>
         <originalName>Jane Smith</originalName>
         <CorefChain>2</CorefChain>
         <mentionType>implicit</mentionType>
-    </mention>
+    </mention>    
 </document>

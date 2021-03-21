@@ -1082,9 +1082,9 @@
 
     <mention>
         <text>Pettigrew</text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
+        <sentence>35</sentence>
+        <start>66</start>
+        <end>66</end>
         <originalName>Peter Pettigrew</originalName>
         <CorefChain>1</CorefChain>
         <mentionType>explicit</mentionType>

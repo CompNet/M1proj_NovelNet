@@ -41,6 +41,10 @@ public class ComparableEntity{
 		return tokenNumberLast;
 	}
 
+	public boolean compareTo(ComparableEntity ce){
+		return this.sentenceNumber == ce.sentenceNumber && this.tokenNumberFirst == ce.tokenNumberFirst && this.tokenNumberLast == ce.tokenNumberLast;
+	}
+
 	public void setTag(int tokenNumberLast) {
 		this.tokenNumberLast = tokenNumberLast;
 	}

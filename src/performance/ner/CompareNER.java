@@ -20,10 +20,15 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.stats.PrecisionRecallStats;
 
 public class CompareNER {
-	List<ComparableEntity> groundTruth = new LinkedList<>();
-	List<ComparableEntity> entityList = new LinkedList<>();
-	Scanner sc = new Scanner(System.in);
-	PrecisionRecallStats perf = new PrecisionRecallStats();
+	List<ComparableEntity> groundTruth;
+	List<ComparableEntity> entityList;
+	PrecisionRecallStats perf;
+
+	public CompareNER(){
+		groundTruth = new LinkedList<>();
+		entityList = new LinkedList<>();
+		perf = new PrecisionRecallStats();
+	}
 	
 	public List<ComparableEntity> getEntityList(){
 		return this.entityList;
@@ -41,16 +46,28 @@ public class CompareNER {
 		this.groundTruth = groundTruth;
 	}
 	
-	public void display(List<ComparableEntity> listE){
-		for (int i = 0; i < listE.size(); i++){
-			System.out.println(listE.get(i).toString()); 
+	public void display(){
+		System.out.println("Ground Truth");
+		for (ComparableEntity ce : groundTruth){
+			System.out.println(ce);
 		}
+		System.out.println("\nEntity List");
+		for (ComparableEntity ce : entityList){
+			System.out.println(ce);
+		}
+		System.out.println(perf);
+		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
+	}
+
+	public void compare(String pathToText, String pathToGroundTruth) throws IOException{
+		initTxt(pathToText);
+		initXml(pathToGroundTruth);
+		compare();
+		display();
 	}
 	
-	public void initTxt() throws IOException {
-		System.out.println("Saisir chemin du fichier txt à comparer:");
-		String path = sc.nextLine();
-		FileInputStream is = new FileInputStream(path);     
+	public void initTxt(String pathToText) throws IOException {
+		FileInputStream is = new FileInputStream(pathToText);     
 		String content = IOUtils.toString(is, "UTF-8");
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
@@ -58,22 +75,19 @@ public class CompareNER {
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 		CoreDocument document = new CoreDocument(content);
 		pipeline.annotate(document);
-		int index = 0;
+		int index;
 		for (CoreEntityMention e : document.entityMentions()){
 			if (e.entityType().equals("PERSON")) {
 				index = e.tokens().size()-1;
 				entityList.add(new ComparableEntity(e.text(), e.tokens().get(0).sentIndex()+1, e.tokens().get(0).index(), e.tokens().get(index).index()));
-				index = 0;
 			}
 		}
 		entityList.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));
 	}
 	
-	public void initXml() throws IOException{
+	public void initXml(String pathToGroundTruth) throws IOException{
 		SAXBuilder builder = new SAXBuilder();
-		System.out.println("Saisir chemin du fichier XML à convertir:");
-		String path = sc.nextLine();
-		FileInputStream is = new FileInputStream(path);     
+		FileInputStream is = new FileInputStream(pathToGroundTruth);     
 	    try {
 	    	Document document = (Document) builder.build(is);
 	        Element rootNode = document.getRootElement();
@@ -90,33 +104,39 @@ public class CompareNER {
 	    } catch (JDOMException jdomex) {
 	    	System.out.println(jdomex.getMessage());
 	    }
-	    sc.close();
 	}
 	
 	public void compare() {
-		//todo
-		int i = 0;
-		int j = 0;
-		while (i < groundTruth.size() && j < entityList.size()) {
-			if (groundTruth.get(i).toString().equals(entityList.get(j).toString())) {
-				perf.incrementTP();
+		boolean found;
+		for (ComparableEntity ce : entityList){
+			found = false;
+			for (ComparableEntity ceToCompare : groundTruth){
+				if(ce.compareTo(ceToCompare)){
+					found = true;
+					break;
+				}
 			}
+			if (found) perf.incrementTP();
+			else perf.incrementFP();
 		}
-		System.out.println("VP : " + perf.getTP());
-		System.out.println("FP : " + perf.getFP());
-		System.out.println("FN : " + perf.getFN());
-		System.out.println("Precision : " + perf.getPrecision());
-		System.out.println("Rappel : " + perf.getRecall());
-		System.out.println("F-mesures : " + perf.getFMeasure());
+		for (ComparableEntity ce : groundTruth){
+			found = false;
+			for (ComparableEntity ceToCompare : entityList){
+				if(ce.compareTo(ceToCompare)){
+					found = true;
+					break;
+				}
+			}
+			if(!found) perf.incrementFN();
+		}
 	}
 	
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		CompareNER c = new CompareNER();
-		//res/corpus/reference.txt
-		c.initTxt();
-		c.display(c.getEntityList());
-		//performance/ner/reference.xml
-		c.initXml();
-		c.compare();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("le nom du fichier de corpus à traiter:");
+		String fileName = sc.nextLine();
+		sc.close();
+		c.compare("res/corpus/"+fileName+".txt", "performance/ner/"+fileName+".xml");
 	}
 }
