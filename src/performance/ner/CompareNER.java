@@ -65,7 +65,7 @@ public class CompareNER {
 
 	public void displayResult(){
 		for (int i = 0; i < resultTableCE.size(); i++){
-			System.out.println(resultTableCE.get(i) + "mesure : " + resultTableString.get(i));
+			System.out.println(resultTableCE.get(i) + "\tmesure : " + resultTableString.get(i));
 		}
 		System.out.println("\n" + perf);
 		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
