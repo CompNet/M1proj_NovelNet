@@ -86,11 +86,9 @@ public class CompareNER {
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 		CoreDocument document = new CoreDocument(content);
 		pipeline.annotate(document);
-		int index;
 		for (CoreEntityMention e : document.entityMentions()){
 			if (e.entityType().equals("PERSON")) {
-				index = e.tokens().size()-1;
-				entityList.add(new ComparableEntity(e.text(), e.tokens().get(0).sentIndex()+1, e.tokens().get(0).index(), e.tokens().get(index).index()));
+				entityList.add(new ComparableEntity(e));
 			}
 		}
 		entityList.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));

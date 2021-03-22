@@ -1,10 +1,19 @@
 package performance.ner;
 
+import edu.stanford.nlp.pipeline.CoreEntityMention;
+
 public class ComparableEntity{
 	protected String text;
 	protected int sentenceNumber;
 	protected int tokenNumberFirst;
 	protected int tokenNumberLast;
+
+	public ComparableEntity(CoreEntityMention cem){
+		this.text = cem.text();
+		this.sentenceNumber = cem.tokens().get(0).sentIndex();
+		this.tokenNumberFirst = cem.tokens().get(0).index();
+		this.tokenNumberLast = cem.tokens().get(cem.tokens().size()).index();
+	}
 	
 	public ComparableEntity(String text, int sentenceNumber, int tokenNumberFirst, int tokenNumberLast) {
 		this.text = text;
@@ -41,12 +50,12 @@ public class ComparableEntity{
 		return tokenNumberLast;
 	}
 
-	public boolean compareTo(ComparableEntity ce){
-		return this.sentenceNumber == ce.sentenceNumber && this.tokenNumberFirst == ce.tokenNumberFirst && this.tokenNumberLast == ce.tokenNumberLast;
+	public void setTokenNumberLast(int tokenNumberLast) {
+		this.tokenNumberLast = tokenNumberLast;
 	}
 
-	public void setTag(int tokenNumberLast) {
-		this.tokenNumberLast = tokenNumberLast;
+	public boolean compareTo(ComparableEntity ce){
+		return this.sentenceNumber == ce.sentenceNumber && this.tokenNumberFirst == ce.tokenNumberFirst && this.tokenNumberLast == ce.tokenNumberLast;
 	}
 
 	@Override
