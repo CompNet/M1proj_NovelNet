@@ -1,6 +1,8 @@
 package performance.ner;
 
 import edu.stanford.nlp.pipeline.CoreEntityMention;
+import performance.coref.ComparableCorefChain;
+import performance.coref.CorefChainContainer;
 
 public class ComparableEntity{
 	protected String text;
@@ -62,4 +64,21 @@ public class ComparableEntity{
 	public String toString() {
 		return "[Text = " + text + "\t | Sentence = " + sentenceNumber + "\t | Start = " + tokenNumberFirst + "\t | End = " + tokenNumberLast + "]";
 	}
+
+    public double precision(CorefChainContainer reference, ComparableCorefChain originChain) {
+		double result = 0;
+		for (ComparableCorefChain cccRef : reference.getCorefChains()){
+			if (cccRef.getEntities().contains(this)){
+				for (int i = 0; i < cccRef.getEntities().size();i++){
+					if (originChain.getEntities().contains(cccRef.getEntities().get(i))){
+						result++;
+					}
+					if (i == cccRef.getEntities().size()-1){
+						result = result/originChain.getEntities().size();
+					}
+				}
+			}
+		}
+		return result;
+    }
 }

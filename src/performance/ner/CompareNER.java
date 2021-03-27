@@ -20,14 +20,14 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.stats.PrecisionRecallStats;
 
 public class CompareNER {
-	List<ComparableEntity> groundTruth;
+	List<ComparableEntity> reference;
 	List<ComparableEntity> entityList;
 	PrecisionRecallStats perf;
 	List<ComparableEntity> resultTableCE;
 	List<String> resultTableString;
 
 	public CompareNER(){
-		groundTruth = new LinkedList<>();
+		reference = new LinkedList<>();
 		entityList = new LinkedList<>();
 		perf = new PrecisionRecallStats();
 		resultTableCE = new LinkedList<>();
@@ -42,17 +42,17 @@ public class CompareNER {
 		this.entityList = entityList;
 	}
 	
-	public List<ComparableEntity> getGroundTruth(){
-		return this.groundTruth;
+	public List<ComparableEntity> getReference(){
+		return this.reference;
 	}
 	
-	public void setGroundTruth(List<ComparableEntity> groundTruth) {
-		this.groundTruth = groundTruth;
+	public void setReference(List<ComparableEntity> reference) {
+		this.reference = reference;
 	}
 	
 	public void display(){
 		System.out.println("Ground Truth");
-		for (ComparableEntity ce : groundTruth){
+		for (ComparableEntity ce : reference){
 			System.out.println(ce);
 		}
 		System.out.println("\nEntity List");
@@ -71,9 +71,9 @@ public class CompareNER {
 		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
 	}
 
-	public void compare(String pathToText, String pathToGroundTruth) throws IOException{
+	public void compare(String pathToText, String pathToReference) throws IOException{
 		initTxt(pathToText);
-		initXml(pathToGroundTruth);
+		initXml(pathToReference);
 		compare();
 	}
 	
@@ -94,16 +94,16 @@ public class CompareNER {
 		entityList.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));
 	}
 	
-	public void initXml(String pathToGroundTruth) throws IOException{
+	public void initXml(String pathToReference) throws IOException{
 		SAXBuilder builder = new SAXBuilder();
-		FileInputStream is = new FileInputStream(pathToGroundTruth);     
+		FileInputStream is = new FileInputStream(pathToReference);     
 	    try {
 	    	Document document = (Document) builder.build(is);
 	        Element rootNode = document.getRootElement();
 	        List<Element> list = rootNode.getChildren("mention");
 	        for (int i = 0; i < list.size(); i++) {
 	        	Element node = (Element) list.get(i);
-	        	groundTruth.add(new ComparableEntity(node.getChildText("text"), 
+	        	reference.add(new ComparableEntity(node.getChildText("text"), 
 	        			Integer.parseInt(node.getChildText("sentence")), 
 	        			Integer.parseInt(node.getChildText("start")),
 	        			Integer.parseInt(node.getChildText("end"))));
@@ -119,7 +119,7 @@ public class CompareNER {
 		boolean found;
 		for (ComparableEntity ce : entityList){
 			found = false;
-			for (ComparableEntity ceToCompare : groundTruth){
+			for (ComparableEntity ceToCompare : reference){
 				if(ce.compareTo(ceToCompare)){
 					resultTableCE.add(ce);
 					resultTableString.add("TP");
@@ -134,7 +134,7 @@ public class CompareNER {
 				resultTableString.add("FP");
 			}
 		}
-		for (ComparableEntity ce : groundTruth){
+		for (ComparableEntity ce : reference){
 			found = false;
 			for (ComparableEntity ceToCompare : entityList){
 				if(ce.compareTo(ceToCompare)){

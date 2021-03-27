@@ -25,6 +25,18 @@ public class ComparableCorefChain {
         sortEntities();
     }
 
+    public ComparableCorefChain(ComparableEntity ce){
+        entities = new LinkedList<>();
+        entities.add(ce);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " entities='" + getEntities() + "'" +
+            "}";
+    }
+
     public ComparableCorefChain(CoreEntityMention stanfordEntityMention){
         entities = new LinkedList<>();
         entities.add(new ComparableEntity(stanfordEntityMention));
@@ -43,6 +55,13 @@ public class ComparableCorefChain {
         entities.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));
     }
 
-    
+    public double precision(CorefChainContainer reference){
+        double tot = 0;
+        for (ComparableEntity ce : entities){
+            tot += ce.precision(reference, this);
+        }
+
+        return tot;
+    }
     
 }
