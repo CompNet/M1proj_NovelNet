@@ -14,6 +14,7 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
@@ -86,9 +87,16 @@ public class CompareNER {
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 		CoreDocument document = new CoreDocument(content);
 		pipeline.annotate(document);
+		boolean person;
 		for (CoreEntityMention e : document.entityMentions()){
+			person = false;
 			if (e.entityType().equals("PERSON")) {
-				entityList.add(new ComparableEntity(e));
+				for(CoreLabel token : e.tokens()){
+					if (token.ner().equals("PERSON")){
+						person = true;
+					}
+				}
+				if (person) entityList.add(new ComparableEntity(e));
 			}
 		}
 		entityList.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));
@@ -103,10 +111,12 @@ public class CompareNER {
 	        List<Element> list = rootNode.getChildren("mention");
 	        for (int i = 0; i < list.size(); i++) {
 	        	Element node = (Element) list.get(i);
-	        	reference.add(new ComparableEntity(node.getChildText("text"), 
-	        			Integer.parseInt(node.getChildText("sentence")), 
+				if (node.getChildText("mentionType").equals("explicit")){
+					reference.add(new ComparableEntity(node.getChildText("text"), 
+	        			Integer.parseInt(node.getChildText("sentence"))-1, 
 	        			Integer.parseInt(node.getChildText("start")),
 	        			Integer.parseInt(node.getChildText("end"))));
+				}
 	        }
 	    } catch (IOException io) {
 	    	System.out.println(io.getMessage());

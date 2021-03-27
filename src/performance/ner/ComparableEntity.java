@@ -14,7 +14,7 @@ public class ComparableEntity{
 		this.text = cem.text();
 		this.sentenceNumber = cem.tokens().get(0).sentIndex();
 		this.tokenNumberFirst = cem.tokens().get(0).index();
-		this.tokenNumberLast = cem.tokens().get(cem.tokens().size()).index();
+		this.tokenNumberLast = cem.tokens().get(cem.tokens().size()-1).index();
 	}
 	
 	public ComparableEntity(String text, int sentenceNumber, int tokenNumberFirst, int tokenNumberLast) {

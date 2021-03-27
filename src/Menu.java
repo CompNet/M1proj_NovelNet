@@ -59,7 +59,42 @@ import novelnet.graph.Graph;
  */
 public class Menu {
 
-	public static void test() throws IOException {
+
+	public static void testNER() throws IOException{
+		String path = "res/corpus/Joe_Smith.txt";
+
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		content = TextNormalization.addDotEndOfLine(content);
+
+		Properties props = new Properties();
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
+		props.setProperty("ner.applyFineGrained", "false");
+
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+		CoreDocument document = new CoreDocument(content);
+
+		pipeline.annotate(document);
+
+		boolean person;
+
+		for (CoreEntityMention e : document.entityMentions()){
+			person = false;
+			if (e.entityType().equals("PERSON")) {
+				for(CoreLabel token : e.tokens()){
+					if (token.ner().equals("PERSON")){
+						person = true;
+					}
+				}
+				
+				if (person) System.out.println(e);
+			}
+		}
+	}
+
+	public static void testOpenIE() throws IOException {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("saisir chemin du fichier à traiter:");
@@ -262,7 +297,7 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		testOnFrenchTextReverb();
+		testNER();
 		if (args.length == 1)
 		{
 			Scanner sc = new Scanner(System.in);
