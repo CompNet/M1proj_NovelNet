@@ -1,20 +1,52 @@
 package performance.coref;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 import edu.stanford.nlp.trees.tregex.gui.DisplayMatchesPanel;
 import edu.washington.cs.knowitall.logic.Expression.Paren.R;
+import novelnet.util.NullDocumentException;
 import performance.ner.ComparableEntity;
 
 public class CompareCorefChain {
 
-    CorefChainContainer chainsToEvaluate;
+    ComparableCorefChainContainer chainsToEvaluate;
 
-    CorefChainContainer reference;
+    ComparableCorefChainContainer reference;
     
     double precision;
 
     double recall;
 
     double fMeasure;
+
+    public CompareCorefChain() {
+    }
+
+    public CompareCorefChain(String evaluationFilePath, String referenceFilePath) throws IOException, NullDocumentException{
+		if(evaluationFilePath.substring(evaluationFilePath.length()-4, evaluationFilePath.length()).equals(".txt")){
+			chainsToEvaluate = ComparableCorefChainContainer.buildFromTxt(evaluationFilePath);
+		}
+		else if (evaluationFilePath.substring(evaluationFilePath.length()-4, evaluationFilePath.length()).equals(".xml")){
+			chainsToEvaluate = ComparableCorefChainContainer.buildFromXml(evaluationFilePath);
+		}
+		else System.out.println("File type not recognized for argument 1");
+		if(referenceFilePath.substring(referenceFilePath.length()-4, referenceFilePath.length()).equals(".txt")){
+			reference = ComparableCorefChainContainer.buildFromTxt(referenceFilePath);
+		}
+		else if (referenceFilePath.substring(referenceFilePath.length()-4, referenceFilePath.length()).equals(".xml")){
+			reference = ComparableCorefChainContainer.buildFromXml(referenceFilePath);
+		}
+		else System.out.println("File type not recognized for argument 2");
+	}
+
+    public CompareCorefChain(ComparableCorefChainContainer chainsToEvaluate, ComparableCorefChainContainer reference) {
+        this.chainsToEvaluate = chainsToEvaluate;
+        this.reference = reference;
+        precision = 0;
+        recall = 0;
+        fMeasure = 0;
+    }
 
     public double getPrecision() {
         return this.precision;
@@ -40,38 +72,26 @@ public class CompareCorefChain {
         this.fMeasure = fMeasure;
     }
 
-    public CompareCorefChain() {
-    }
-
-
-    public CompareCorefChain(CorefChainContainer chainsToEvaluate, CorefChainContainer reference) {
-        this.chainsToEvaluate = chainsToEvaluate;
-        this.reference = reference;
-        precision = 0;
-        recall = 0;
-        fMeasure = 0;
-    }
-
-    public CorefChainContainer getChainsToEvaluate() {
+    public ComparableCorefChainContainer getChainsToEvaluate() {
         return this.chainsToEvaluate;
     }
 
-    public void setChainsToEvaluate(CorefChainContainer chainsToEvaluate) {
+    public void setChainsToEvaluate(ComparableCorefChainContainer chainsToEvaluate) {
         this.chainsToEvaluate = chainsToEvaluate;
     }
 
-    public CorefChainContainer getReference() {
+    public ComparableCorefChainContainer getReference() {
         return this.reference;
     }
 
-    public void setReference(CorefChainContainer reference) {
+    public void setReference(ComparableCorefChainContainer reference) {
         this.reference = reference;
     }
     
     public void precisionB3(){        
 
-        CorefChainContainer tempChainsToEvaluate = new CorefChainContainer(chainsToEvaluate);
-        CorefChainContainer tempReference = new CorefChainContainer(reference);
+        ComparableCorefChainContainer tempChainsToEvaluate = new ComparableCorefChainContainer(chainsToEvaluate);
+        ComparableCorefChainContainer tempReference = new ComparableCorefChainContainer(reference);
 
         for(ComparableCorefChain ccc : tempReference.getCorefChains()){
             for(ComparableEntity ce : ccc.getEntities()){
@@ -94,8 +114,8 @@ public class CompareCorefChain {
 
     public void recallB3(){
 
-        CorefChainContainer tempChainsToEvaluate = new CorefChainContainer(chainsToEvaluate);
-        CorefChainContainer tempReference = new CorefChainContainer(reference);
+        ComparableCorefChainContainer tempChainsToEvaluate = new ComparableCorefChainContainer(chainsToEvaluate);
+        ComparableCorefChainContainer tempReference = new ComparableCorefChainContainer(reference);
 
         for(ComparableCorefChain ccc : tempChainsToEvaluate.getCorefChains()){
             int size = ccc.getEntities().size();
@@ -123,9 +143,18 @@ public class CompareCorefChain {
         else fMeasure = 2*((precision*recall)/(precision+recall));
     }
 
+    public void compare(){
+
+    }
+
+    public static void testImport() throws IOException, NullDocumentException{
+        System.out.println("Built from xml :\n" + ComparableCorefChainContainer.buildFromXml("performance/ner/Joe_Smith.xml"));
+        System.out.println("\nBuilt from txt :\n" + ComparableCorefChainContainer.buildFromTxt("res/corpus/Joe_Smith.txt"));
+    }
+
     public void testPreTreating(){
-        chainsToEvaluate = new CorefChainContainer();
-        reference = new CorefChainContainer();
+        chainsToEvaluate = new ComparableCorefChainContainer();
+        reference = new ComparableCorefChainContainer();
 
         ComparableEntity A = new ComparableEntity("A", 0, 2, 2);
         ComparableEntity B = new ComparableEntity("B", 1, 3, 4);
@@ -163,6 +192,10 @@ public class CompareCorefChain {
 
     }
 
+    public static void testOnRealData(){
+        
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -189,10 +222,11 @@ public class CompareCorefChain {
         System.out.println("fMeasure : " + fMeasure);
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, NullDocumentException{
 
-        CompareCorefChain ccc = new CompareCorefChain();
-        ccc.testPreTreating();
+        /*CompareCorefChain ccc = new CompareCorefChain();
+        ccc.testPreTreating();*/
+        testImport();
     }
     
 }

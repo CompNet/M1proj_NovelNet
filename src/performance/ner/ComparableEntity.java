@@ -2,7 +2,7 @@ package performance.ner;
 
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import performance.coref.ComparableCorefChain;
-import performance.coref.CorefChainContainer;
+import performance.coref.ComparableCorefChainContainer;
 
 public class ComparableEntity{
 	protected String text;
@@ -12,7 +12,7 @@ public class ComparableEntity{
 
 	public ComparableEntity(CoreEntityMention cem){
 		this.text = cem.text();
-		this.sentenceNumber = cem.tokens().get(0).sentIndex();
+		this.sentenceNumber = cem.tokens().get(0).sentIndex()+1;
 		this.tokenNumberFirst = cem.tokens().get(0).index();
 		this.tokenNumberLast = cem.tokens().get(cem.tokens().size()-1).index();
 	}
@@ -65,7 +65,7 @@ public class ComparableEntity{
 		return "[Text = " + text + "\t | Sentence = " + sentenceNumber + "\t | Start = " + tokenNumberFirst + "\t | End = " + tokenNumberLast + "]";
 	}
 
-    public double precision(CorefChainContainer reference, ComparableCorefChain originChain) {
+    public double precision(ComparableCorefChainContainer reference, ComparableCorefChain originChain) {
 		double result = 0;
 		for (ComparableCorefChain cccRef : reference.getCorefChains()){
 			if (cccRef.getEntities().contains(this)){

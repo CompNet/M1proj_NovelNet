@@ -1,65 +1,66 @@
 package performance.ner;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Properties;
 import java.util.Scanner;
 
-import org.apache.commons.io.IOUtils;
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.JDOMException;
-import org.jdom2.input.SAXBuilder;
 
-import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.CoreEntityMention;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.stats.PrecisionRecallStats;
 
 public class CompareNER {
-	List<ComparableEntity> reference;
-	List<ComparableEntity> entityList;
+	ComparableEntityContainer reference;
+	ComparableEntityContainer entityList;
 	PrecisionRecallStats perf;
 	List<ComparableEntity> resultTableCE;
 	List<String> resultTableString;
 
 	public CompareNER(){
-		reference = new LinkedList<>();
-		entityList = new LinkedList<>();
+		reference = new ComparableEntityContainer();
+		entityList = new ComparableEntityContainer();
 		perf = new PrecisionRecallStats();
 		resultTableCE = new LinkedList<>();
 		resultTableString = new LinkedList<>();
 	}
+
+	public CompareNER(String evaluationFilePath, String referenceFilePath) throws IOException{
+		if(evaluationFilePath.substring(evaluationFilePath.length()-4, evaluationFilePath.length()).equals(".txt")){
+			entityList = ComparableEntityContainer.buildFromTxt(evaluationFilePath);
+		}
+		else if (evaluationFilePath.substring(evaluationFilePath.length()-4, evaluationFilePath.length()).equals(".xml")){
+			entityList = ComparableEntityContainer.buildFromXml(evaluationFilePath);
+		}
+		else System.out.println("File type not recognized for argument 1");
+		if(referenceFilePath.substring(referenceFilePath.length()-4, referenceFilePath.length()).equals(".txt")){
+			reference = ComparableEntityContainer.buildFromTxt(referenceFilePath);
+		}
+		else if (referenceFilePath.substring(referenceFilePath.length()-4, referenceFilePath.length()).equals(".xml")){
+			reference = ComparableEntityContainer.buildFromXml(referenceFilePath);
+		}
+		else System.out.println("File type not recognized for argument 2");
+	}
 	
-	public List<ComparableEntity> getEntityList(){
+	public ComparableEntityContainer getEntityList(){
 		return this.entityList;
 	}
 	
-	public void setEntityList(List<ComparableEntity> entityList) {
+	public void setEntityList(ComparableEntityContainer entityList) {
 		this.entityList = entityList;
 	}
 	
-	public List<ComparableEntity> getReference(){
+	public ComparableEntityContainer getReference(){
 		return this.reference;
 	}
 	
-	public void setReference(List<ComparableEntity> reference) {
+	public void setReference(ComparableEntityContainer reference) {
 		this.reference = reference;
 	}
 	
 	public void display(){
 		System.out.println("Ground Truth");
-		for (ComparableEntity ce : reference){
-			System.out.println(ce);
-		}
+		entityList.display();
 		System.out.println("\nEntity List");
-		for (ComparableEntity ce : entityList){
-			System.out.println(ce);
-		}
+		entityList.display();
 		System.out.println(perf);
 		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
 	}
@@ -71,65 +72,12 @@ public class CompareNER {
 		System.out.println("\n" + perf);
 		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
 	}
-
-	public void compare(String pathToText, String pathToReference) throws IOException{
-		initTxt(pathToText);
-		initXml(pathToReference);
-		compare();
-	}
-	
-	public void initTxt(String pathToText) throws IOException {
-		FileInputStream is = new FileInputStream(pathToText);     
-		String content = IOUtils.toString(is, "UTF-8");
-		Properties props = new Properties();
-		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
-		props.setProperty("ner.applyFineGrained", "false");
-		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-		CoreDocument document = new CoreDocument(content);
-		pipeline.annotate(document);
-		boolean person;
-		for (CoreEntityMention e : document.entityMentions()){
-			person = false;
-			if (e.entityType().equals("PERSON")) {
-				for(CoreLabel token : e.tokens()){
-					if (token.ner().equals("PERSON")){
-						person = true;
-					}
-				}
-				if (person) entityList.add(new ComparableEntity(e));
-			}
-		}
-		entityList.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));
-	}
-	
-	public void initXml(String pathToReference) throws IOException{
-		SAXBuilder builder = new SAXBuilder();
-		FileInputStream is = new FileInputStream(pathToReference);     
-	    try {
-	    	Document document = (Document) builder.build(is);
-	        Element rootNode = document.getRootElement();
-	        List<Element> list = rootNode.getChildren("mention");
-	        for (int i = 0; i < list.size(); i++) {
-	        	Element node = (Element) list.get(i);
-				if (node.getChildText("mentionType").equals("explicit")){
-					reference.add(new ComparableEntity(node.getChildText("text"), 
-	        			Integer.parseInt(node.getChildText("sentence"))-1, 
-	        			Integer.parseInt(node.getChildText("start")),
-	        			Integer.parseInt(node.getChildText("end"))));
-				}
-	        }
-	    } catch (IOException io) {
-	    	System.out.println(io.getMessage());
-	    } catch (JDOMException jdomex) {
-	    	System.out.println(jdomex.getMessage());
-	    }
-	}
 	
 	public void compare() {
 		boolean found;
-		for (ComparableEntity ce : entityList){
+		for (ComparableEntity ce : entityList.getEntities()){
 			found = false;
-			for (ComparableEntity ceToCompare : reference){
+			for (ComparableEntity ceToCompare : reference.getEntities()){
 				if(ce.compareTo(ceToCompare)){
 					resultTableCE.add(ce);
 					resultTableString.add("TP");
@@ -144,9 +92,9 @@ public class CompareNER {
 				resultTableString.add("FP");
 			}
 		}
-		for (ComparableEntity ce : reference){
+		for (ComparableEntity ce : reference.getEntities()){
 			found = false;
-			for (ComparableEntity ceToCompare : entityList){
+			for (ComparableEntity ceToCompare : entityList.getEntities()){
 				if(ce.compareTo(ceToCompare)){
 					found = true;
 					break;
@@ -161,12 +109,11 @@ public class CompareNER {
 	}
 	
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
-		CompareNER c = new CompareNER();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("le nom du fichier de corpus à traiter:");
 		String fileName = sc.nextLine();
 		sc.close();
-		c.compare("res/corpus/"+fileName+".txt", "performance/ner/"+fileName+".xml");
+		CompareNER c = new CompareNER("res/corpus/"+fileName+".txt", "performance/ner/"+fileName+".xml");
 		c.display();
 		c.displayResult();
 	}

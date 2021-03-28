@@ -11,35 +11,41 @@ import performance.ner.ComparableEntity;
 
 public class ComparableCorefChain {
 
-    List<ComparableEntity> entities;
+    private List<ComparableEntity> entities;
+    private int id;
 
     public ComparableCorefChain(){
         entities = new LinkedList<>();
+        id = 0;
     }
 
-    public ComparableCorefChain(CorefChain stanfordCorefChain){
+    public ComparableCorefChain(CorefChain stanfordCorefChain, int id){
         entities = new LinkedList<>();
         for(CorefMention cm : stanfordCorefChain.getMentionsInTextualOrder()){
             entities.add(new ComparableEntity(cm.mentionSpan, cm.sentNum, cm.startIndex , cm.endIndex-1));
         }
         sortEntities();
+        this.id = id;
     }
 
-    public ComparableCorefChain(ComparableEntity ce){
+    public ComparableCorefChain(ComparableEntity ce, int id){
         entities = new LinkedList<>();
         entities.add(ce);
+        this.id = id;
+    }
+
+    public ComparableCorefChain(CoreEntityMention stanfordEntityMention, int id){
+        entities = new LinkedList<>();
+        entities.add(new ComparableEntity(stanfordEntityMention));
+        this.id = id;
     }
 
     @Override
     public String toString() {
         return "{" +
-            " entities='" + getEntities() + "'" +
+            "Id = " + getId() + " ; " +
+            " entities=" + getEntities() +
             "}";
-    }
-
-    public ComparableCorefChain(CoreEntityMention stanfordEntityMention){
-        entities = new LinkedList<>();
-        entities.add(new ComparableEntity(stanfordEntityMention));
     }
 
     public List<ComparableEntity> getEntities() {
@@ -51,11 +57,19 @@ public class ComparableCorefChain {
         sortEntities();
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void sortEntities(){
         entities.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));
     }
 
-    public double precision(CorefChainContainer reference){
+    public double precision(ComparableCorefChainContainer reference){
         double tot = 0;
         for (ComparableEntity ce : entities){
             tot += ce.precision(reference, this);
