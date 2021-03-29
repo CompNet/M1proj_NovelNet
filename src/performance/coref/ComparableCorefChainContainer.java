@@ -67,10 +67,10 @@ public class ComparableCorefChainContainer {
         return result;
     }
 
-    public static ComparableCorefChainContainer buildFromXml(String pathToReference) throws IOException{
+    public static ComparableCorefChainContainer buildFromXml(String pathToXml) throws IOException{
         ComparableCorefChainContainer result = new ComparableCorefChainContainer();
 		SAXBuilder builder = new SAXBuilder();
-		FileInputStream is = new FileInputStream(pathToReference);     
+		FileInputStream is = new FileInputStream(pathToXml);     
 	    try {
 	    	Document document = (Document) builder.build(is);
 	        Element rootNode = document.getRootElement();

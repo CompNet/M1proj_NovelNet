@@ -106,7 +106,7 @@ public class ImpUtils {
 
 	public static boolean isPonctuation(CoreLabel token) {
 		if(token.originalText().length() == 1){
-			if(token.originalText().equals("I") || token.originalText().equals("a") || token.originalText().equals("à")){
+			if(token.originalText().equals("I") || token.originalText().equals("a") || token.originalText().equals("à") || token.originalText().equals("y") || token.originalText().equals("n") || token.originalText().equals("m") || token.originalText().equals("s")){
 				return false;
 			}
 			else return true;

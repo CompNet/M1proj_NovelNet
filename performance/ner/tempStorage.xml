@@ -1,22 +1,22 @@
 
 
     <mention>
-        <text>I</text>
+        <text>Ginny</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Percy Jackson</originalName>
-        <CorefChain>1</CorefChain>
+        <originalName>Ginny</originalName>
+        <CorefChain>2</CorefChain>
         <mentionType></mentionType>
     </mention>
 
     <mention>
-        <text>Mr. Brunner</text>
+        <text>Harry</text>
         <sentence></sentence>
         <start></start>
         <end></end>
-        <originalName>Mr. Brunner</originalName>
-        <CorefChain>2</CorefChain>
+        <originalName>Harry</originalName>
+        <CorefChain>3</CorefChain>
         <mentionType></mentionType>
     </mention>
 
