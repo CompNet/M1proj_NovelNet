@@ -180,9 +180,16 @@ public class ComparableCorefChainContainer {
     }
 
     public void delete(ComparableEntity ce) {
-        for (ComparableCorefChain ccc : corefChains){
+        int size = corefChains.size();
+        ComparableCorefChain ccc;
+        for (int i = 0; i < size; i++){
+            ccc = corefChains.get(i);
             if (ccc.getEntities().contains(ce)){
-                if (ccc.getEntities().size()==1) corefChains.remove(ccc);
+                if (ccc.getEntities().size()==1){
+                    corefChains.remove(ccc);
+                    i--;
+                    size--;
+                }
                 else ccc.getEntities().remove(ce);
             }
         }

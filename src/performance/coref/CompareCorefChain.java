@@ -1,10 +1,9 @@
 package performance.coref;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
-import edu.stanford.nlp.trees.tregex.gui.DisplayMatchesPanel;
-import edu.washington.cs.knowitall.logic.Expression.Paren.R;
 import novelnet.util.NullDocumentException;
 import performance.ner.ComparableEntity;
 
@@ -116,22 +115,35 @@ public class CompareCorefChain {
 
         ComparableCorefChainContainer tempChainsToEvaluate = new ComparableCorefChainContainer(chainsToEvaluate);
         ComparableCorefChainContainer tempReference = new ComparableCorefChainContainer(reference);
+        ComparableCorefChain keyChain;
+        int keySize = tempChainsToEvaluate.getCorefChains().size();
+        int chainSize;
+        ComparableEntity ce;
 
-        for(ComparableCorefChain ccc : tempChainsToEvaluate.getCorefChains()){
-            int size = ccc.getEntities().size();
-            for (int i = 0; i < size; i++){
-                if (!tempReference.contains(ccc.getEntities().get(i))){
-                    tempChainsToEvaluate.delete(ccc.getEntities().get(i));
-                    i--;
-                    size--;
+        for(int i = 0; i < keySize; i++){
+            keyChain = tempChainsToEvaluate.getCorefChains().get(i);
+            chainSize = keyChain.getEntities().size();
+            for (int j = 0; j < chainSize; j++){
+                ce = keyChain.getEntities().get(j);
+                if (!tempReference.contains(ce)){
+                    if (keyChain.getEntities().size()==1){
+                        tempChainsToEvaluate.getCorefChains().remove(keyChain);
+                        i--;
+                        keySize--;
+                    }
+                    else {
+                        keyChain.getEntities().remove(ce);
+                        j--;
+                        chainSize--;
+                    }
                 }
             }
         }
 
         for(ComparableCorefChain ccc : tempReference.getCorefChains()){
-            for (ComparableEntity ce : ccc.getEntities()){
-                if(!tempChainsToEvaluate.contains(ce)){
-                    tempChainsToEvaluate.addEntityAsNewChain(ce);
+            for (ComparableEntity cE : ccc.getEntities()){
+                if(!tempChainsToEvaluate.contains(cE)){
+                    tempChainsToEvaluate.addEntityAsNewChain(cE);
                 }
             }
         }
@@ -144,7 +156,36 @@ public class CompareCorefChain {
     }
 
     public void compare(){
+        precisionB3();
+        recallB3();
+        fMeasure();
+        displayMeasures();
+    }
 
+    @Override
+    public String toString() {
+        return "{" +
+            " chainsToEvaluate='" + getChainsToEvaluate() + "'" +
+            ", reference='" + getReference() + "'" +
+            ", precision='" + getPrecision() + "'" +
+            ", recall='" + getRecall() + "'" +
+            ", fMeasure='" + getFMeasure() + "'" +
+            "}";
+    }
+
+    public void display(){
+        System.out.println("\nChains to evaluate : ");
+        chainsToEvaluate.display();
+        System.out.println("\nreference : ");
+        reference.display();
+        displayMeasures();
+        
+    }
+
+    public void displayMeasures(){
+        System.out.println("\nprecision : " + precision);
+        System.out.println("recall : " + recall);
+        System.out.println("fMeasure : " + fMeasure);
     }
 
     public static void testImport() throws IOException, NullDocumentException{
@@ -192,41 +233,20 @@ public class CompareCorefChain {
 
     }
 
-    public static void testOnRealData(){
+    public static void testOnRealData() throws IOException, NullDocumentException{
         
-    }
+        CompareCorefChain ccc = new CompareCorefChain("res/corpus/HarryPotter3_TrainBoarding.txt", "performance/ner/HarryPotter3_TrainBoarding.xml");
+        ccc.compare();
+        ccc.display();
 
-    @Override
-    public String toString() {
-        return "{" +
-            " chainsToEvaluate='" + getChainsToEvaluate() + "'" +
-            ", reference='" + getReference() + "'" +
-            ", precision='" + getPrecision() + "'" +
-            ", recall='" + getRecall() + "'" +
-            ", fMeasure='" + getFMeasure() + "'" +
-            "}";
-    }
-
-    public void display(){
-        System.out.println("\nChains to evaluate : ");
-        chainsToEvaluate.display();
-        System.out.println("\nreference : ");
-        reference.display();
-        displayMeasures();
-        
-    }
-
-    public void displayMeasures(){
-        System.out.println("\nprecision : " + precision);
-        System.out.println("recall : " + recall);
-        System.out.println("fMeasure : " + fMeasure);
     }
 
     public static void main(String[] args) throws IOException, NullDocumentException{
 
         /*CompareCorefChain ccc = new CompareCorefChain();
         ccc.testPreTreating();*/
-        testImport();
+        //testImport();
+        testOnRealData();
     }
     
 }

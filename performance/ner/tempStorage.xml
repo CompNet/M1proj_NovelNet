@@ -1,12 +1,12 @@
-
-
+Percy : 1
+Reader : 6
     <mention>
         <text>Ginny</text>
         <sentence></sentence>
         <start></start>
         <end></end>
         <originalName>Ginny</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain></CorefChain>
         <mentionType></mentionType>
     </mention>
 
