@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+    <mention>
+        <text>Antoine Dupont</text>
+        <sentence>1</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Antoine Dupont</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Il</text>
+        <sentence>2</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Antoine Dupont</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Son</text>
+        <sentence>3</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Antoine Dupont</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Antoine</text>
+        <sentence>4</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Antoine Dupont</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>d'Antoine</text>
+        <sentence>5</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Antoine Dupont</originalName>
+        <CorefChain>3</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Emma</text>
+        <sentence>5</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Emma</originalName>
+        <CorefChain>4</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>elle</text>
+        <sentence>5</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Emma</originalName>
+        <CorefChain>4</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+</document>
