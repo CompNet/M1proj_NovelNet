@@ -235,7 +235,7 @@ public class CompareCorefChain {
 
     public static void testOnRealData() throws IOException, NullDocumentException{
         
-        CompareCorefChain ccc = new CompareCorefChain("res/corpus/HarryPotter3_TrainBoarding.txt", "performance/ner/HarryPotter3_TrainBoarding.xml");
+        CompareCorefChain ccc = new CompareCorefChain("res/corpus/TheLightningThief_chapter1.txt", "performance/ner/TheLightningThief_chapter1.xml");
         ccc.compare();
         ccc.display();
 

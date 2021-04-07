@@ -3592,6 +3592,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Percy Jackson</originalName>
+        <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -5043,6 +5044,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Percy Jackson</originalName>
+        <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
