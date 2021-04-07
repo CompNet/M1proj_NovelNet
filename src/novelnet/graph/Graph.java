@@ -34,6 +34,22 @@ public class Graph {
 		this.weighting = weighting;
 	}
 	
+	public Graph(Graph graphToEvaluate) {
+		name = graphToEvaluate.name;
+		oriented = graphToEvaluate.oriented;
+		weighting = graphToEvaluate.weighting;
+		for (Node n : nodeMap.values()){
+			addNode(n);
+		}
+		for (Edge e : edgeMap.values()){
+			addEdge(e);
+		}
+	}
+
+	private void addEdge(Edge e) {
+		edgeMap.putIfAbsent(e.id, e);
+	}
+
 	public Node getNodeById(String id)
 	{
 		return nodeMap.get(id);
@@ -214,5 +230,13 @@ public class Graph {
 		
 		return ret;
 	}
+
+	public static Graph buildFromTxt(String evaluationFilePath) {
+		return null;
+	}
+
+    public static Graph buildFromXml(String evaluationFilePath) {
+        return null;
+    }
 
 }
