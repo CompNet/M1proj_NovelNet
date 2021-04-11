@@ -1,4 +1,5183 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <document>
+    <mention>
+        <text>BRAN</text>
+        <sentence>1</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
 
+    <mention>
+        <text>They</text>
+        <sentence>2</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>a man</text>
+        <sentence>2</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>a man</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>2</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Bran</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>2</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>3</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>3</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Bran</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his lord father</text>
+        <sentence>3</sentence>
+        <start>15</start>
+        <end>17</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>3</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Bran</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his brothers</text>
+        <sentence>3</sentence>
+        <start>19</start>
+        <end>20</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the king</text>
+        <sentence>3</sentence>
+        <start>23</start>
+        <end>24</end>
+        <originalName>Robert</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>4</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Bran</originalName>
+        <CorefChain>3</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>The man</text>
+        <sentence>5</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>a man</originalName>
+        <CorefChain>3</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>6</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>4</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>6</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>a man</originalName>
+        <CorefChain>4</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>6</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>a man</originalName>
+        <CorefChain>4</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Mance Rayder</text>
+        <sentence>6</sentence>
+        <start>12</start>
+        <end>13</end>
+        <originalName>Mance Rayder</originalName>
+        <CorefChain>5</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the King-beyond-the-Wall</text>
+        <sentence>6</sentence>
+        <start>15</start>
+        <end>16</end>
+        <originalName>Mance Rayder</originalName>
+        <CorefChain>5</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>7</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>6</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>8</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>6</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Old Nan</text>
+        <sentence>8</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>Old Nan</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>8</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>9</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Old Nan</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the man</text>
+        <sentence>12</sentence>
+        <start>2</start>
+        <end>3</end>
+        <originalName>a man</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>they</text>
+        <sentence>12</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the king</text>
+        <sentence>12</sentence>
+        <start>15</start>
+        <end>16</end>
+        <originalName>Robert</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>12</sentence>
+        <start>28</start>
+        <end>28</end>
+        <originalName>Robb</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>13</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>a man</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>13</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>a man</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>13</sentence>
+        <start>32</start>
+        <end>32</end>
+        <originalName>a man</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>14</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Bran</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his lord father</text>
+        <sentence>14</sentence>
+        <start>17</start>
+        <end>19</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the man</text>
+        <sentence>14</sentence>
+        <start>21</start>
+        <end>22</end>
+        <originalName>a man</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>14</sentence>
+        <start>31</start>
+        <end>31</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>15</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>9</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>15</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Jon</originalName>
+        <CorefChain>10</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>their</text>
+        <sentence>15</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>10</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>15</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Bran</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>15</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>15</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Bran</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>15</sentence>
+        <start>31</start>
+        <end>31</end>
+        <originalName>Bran</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>their</text>
+        <sentence>17</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>18</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran's father</text>
+        <sentence>18</sentence>
+        <start>1</start>
+        <end>3</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>18</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His</text>
+        <sentence>19</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>19</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>19</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>20</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>20</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>20</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>21</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>21</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Bran</originalName>
+        <CorefChain>13</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Lord Stark of Winterfell</text>
+        <sentence>21</sentence>
+        <start>17</start>
+        <end>20</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>13</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>22</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Bran</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>23</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Bran</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his lord Father</text>
+        <sentence>23</sentence>
+        <start>2</start>
+        <end>4</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>23</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his guardsmen</text>
+        <sentence>23</sentence>
+        <start>12</start>
+        <end>13</end>
+        <originalName>Eddard's guardsmen</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>11</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the raggued man</text>
+        <sentence>23</sentence>
+        <start>15</start>
+        <end>17</end>
+        <originalName>a man</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>they</text>
+        <sentence>24</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard's guardsmen</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>11</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>24</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>a man</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Eddard Stark</text>
+        <sentence>25</sentence>
+        <start>2</start>
+        <end>3</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>25</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his ward</text>
+        <sentence>25</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>Theon</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Theon Greyjoy</text>
+        <sentence>25</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>Theon</originalName>
+        <CorefChain>16</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>27</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Robb</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His</text>
+        <sentence>30</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His father</text>
+        <sentence>30</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>30</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory Cassel</text>
+        <sentence>30</sentence>
+        <start>11</start>
+        <end>12</end>
+        <originalName>Jory</originalName>
+        <CorefChain>18</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the captain of his household guard</text>
+        <sentence>30</sentence>
+        <start>14</start>
+        <end>19</end>
+        <originalName>Jory</originalName>
+        <CorefChain>18</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>30</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>18</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>31</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>18</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robert of the House Baratheon</text>
+        <sentence>31</sentence>
+        <start>16</start>
+        <end>20</end>
+        <originalName>Robert</originalName>
+        <CorefChain>19</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the First of his Name</text>
+        <sentence>31</sentence>
+        <start>22</start>
+        <end>26</end>
+        <originalName>Robert</originalName>
+        <CorefChain>19</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>31</sentence>
+        <start>25</start>
+        <end>25</end>
+        <originalName>Robert</originalName>
+        <CorefChain>19</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>King of the Andals and the Rhoynar and the First Men</text>
+        <sentence>31</sentence>
+        <start>27</start>
+        <end>37</end>
+        <originalName>Robert</originalName>
+        <CorefChain>19</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Lord of the Seven Kingdoms</text>
+        <sentence>31</sentence>
+        <start>39</start>
+        <end>43</end>
+        <originalName>Robert</originalName>
+        <CorefChain>19</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Protector of the Realm</text>
+        <sentence>31</sentence>
+        <start>45</start>
+        <end>48</end>
+        <originalName>Robert</originalName>
+        <CorefChain>19</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Eddard</text>
+        <sentence>31</sentence>
+        <start>54</start>
+        <end>54</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Lord of Winterfell</text>
+        <sentence>31</sentence>
+        <start>60</start>
+        <end>62</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Warden of the North</text>
+        <sentence>31</sentence>
+        <start>64</start>
+        <end>67</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>31</sentence>
+        <start>69</start>
+        <end>69</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>31</sentence>
+        <start>72</start>
+        <end>72</end>
+        <originalName>a man</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>32</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>32</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>33</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>21</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran's bastard brother</text>
+        <sentence>33</sentence>
+        <start>1</start>
+        <end>4</end>
+        <originalName>Jon</originalName>
+        <CorefChain>21</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon Snow</text>
+        <sentence>33</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName>Jon</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>34</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Jon</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>36</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>36</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>37</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>37</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His</text>
+        <sentence>38</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His father</text>
+        <sentence>38</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the man</text>
+        <sentence>38</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName>a man</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>41</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>24</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>41</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>24</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>42</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Bran</originalName>
+        <CorefChain>24</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Greyjoy</text>
+        <sentence>44</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Theon</originalName>
+        <CorefChain>25</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Theon</text>
+        <sentence>45</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Theon</originalName>
+        <CorefChain>26</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>46</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Theon</originalName>
+        <CorefChain>26</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>46</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Theon</originalName>
+        <CorefChain>26</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Ass</text>
+        <sentence>47</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Theon</originalName>
+        <CorefChain>26</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>47</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Jon</originalName>
+        <CorefChain>27</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Greyjoy</text>
+        <sentence>47</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Theon</originalName>
+        <CorefChain>28</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>48</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>28</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>48</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>29</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>48</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Bran</originalName>
+        <CorefChain>30</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>48</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Bran</originalName>
+        <CorefChain>30</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his bastard brother</text>
+        <sentence>48</sentence>
+        <start>15</start>
+        <end>17</end>
+        <originalName>Jon</originalName>
+        <CorefChain>30</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>49</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>30</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>49</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Jon</originalName>
+        <CorefChain>31</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>49</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Bran</originalName>
+        <CorefChain>31</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>50</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>32</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>52</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>33</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>52</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Bran</originalName>
+        <CorefChain>33</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his brothers</text>
+        <sentence>52</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>33</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the main party</text>
+        <sentence>52</sentence>
+        <start>10</start>
+        <end>12</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>33</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>52</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Bran</originalName>
+        <CorefChain>33</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>their</text>
+        <sentence>52</sentence>
+        <start>22</start>
+        <end>22</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>33</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>The deserter</text>
+        <sentence>53</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>a man</originalName>
+        <CorefChain>33</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>53</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Robb</originalName>
+        <CorefChain>34</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>54</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>34</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>54</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Robb</originalName>
+        <CorefChain>34</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>55</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>a man</originalName>
+        <CorefChain>34</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon Snow</text>
+        <sentence>56</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>Jon</originalName>
+        <CorefChain>35</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>This one</text>
+        <sentence>58</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>a man</originalName>
+        <CorefChain>35</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>59</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>35</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>59</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>a man</originalName>
+        <CorefChain>35</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Stark</text>
+        <sentence>59</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Robb</originalName>
+        <CorefChain>36</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>60</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>37</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>61</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>37</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>61</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Robb</originalName>
+        <CorefChain>37</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>they</text>
+        <sentence>61</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>37</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>62</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>38</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>62</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Robb</originalName>
+        <CorefChain>39</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>62</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Robb</originalName>
+        <CorefChain>40</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>62</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Jon</originalName>
+        <CorefChain>40</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his half brother</text>
+        <sentence>62</sentence>
+        <start>19</start>
+        <end>21</end>
+        <originalName>Robb</originalName>
+        <CorefChain>40</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>63</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>41</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>64</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>a man</originalName>
+        <CorefChain>41</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>64</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Robb</originalName>
+        <CorefChain>41</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>65</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>a man</originalName>
+        <CorefChain>41</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>66</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Jon</originalName>
+        <CorefChain>41</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>67</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Jon</originalName>
+        <CorefChain>42</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>67</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Jon</originalName>
+        <CorefChain>42</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>68</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>43</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>they</text>
+        <sentence>68</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>43</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>68</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Robb</originalName>
+        <CorefChain>44</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>68</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Jon</originalName>
+        <CorefChain>45</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>their</text>
+        <sentence>69</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>45</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>70</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>46</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His</text>
+        <sentence>71</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>46</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>72</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>46</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the ragged man</text>
+        <sentence>72</sentence>
+        <start>4</start>
+        <end>6</end>
+        <originalName>a man</originalName>
+        <CorefChain>46</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>72</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Bran</originalName>
+        <CorefChain>46</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>73</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Robb</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>74</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>74</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Bran</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the party</text>
+        <sentence>74</sentence>
+        <start>14</start>
+        <end>15</end>
+        <originalName>Bran and Robb and Eddard and Jon</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>74</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Bran</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>74</sentence>
+        <start>17</start>
+        <end>18</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>74</sentence>
+        <start>24</start>
+        <end>24</end>
+        <originalName>Bran</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>75</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Bran</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>75</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>48</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>76</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>48</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>77</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>48</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>77</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>77</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>78</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>79</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>79</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>79</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Bran</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his lord father</text>
+        <sentence>79</sentence>
+        <start>14</start>
+        <end>16</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>79</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Bran</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>80</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>50</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the man</text>
+        <sentence>80</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>a man</originalName>
+        <CorefChain>50</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>80</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Jon</originalName>
+        <CorefChain>51</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>80</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>a man</originalName>
+        <CorefChain>51</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>81</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>51</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>82</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>51</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>82</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>51</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>83</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>85</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Bran</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>85</sentence>
+        <start>12</start>
+        <end>13</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>85</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Bran</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>86</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Bran</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>86</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>87</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>a man</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>87</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>53</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His</text>
+        <sentence>89</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>53</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His lord father</text>
+        <sentence>89</sentence>
+        <start>1</start>
+        <end>3</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>53</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Old Nan</text>
+        <sentence>90</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Old Nan</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>90</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the man</text>
+        <sentence>91</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>a man</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>94</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Bran</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>me</text>
+        <sentence>94</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the man</text>
+        <sentence>95</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>a man</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>95</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>96</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>55</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>King Robert</text>
+        <sentence>97</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Robert</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+     <mention>
+        <text>he</text>
+        <sentence>97</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Bran</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>98</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robert</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>98</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Bran</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>98</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>99</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Robert</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>102</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Bran</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>102</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Bran</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>103</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>56</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>104</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Bran</originalName>
+        <CorefChain>57</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>104</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>57</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>104</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Robb</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your</text>
+        <sentence>104</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Bran</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your</text>
+        <sentence>104</sentence>
+        <start>20</start>
+        <end>20</end>
+        <originalName>Bran</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your brother</text>
+        <sentence>104</sentence>
+        <start>20</start>
+        <end>21</end>
+        <originalName>Robb</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your</text>
+        <sentence>104</sentence>
+        <start>23</start>
+        <end>23</end>
+        <originalName>Bran</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your king</text>
+        <sentence>104</sentence>
+        <start>23</start>
+        <end>24</end>
+        <originalName>Robert</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>104</sentence>
+        <start>31</start>
+        <end>31</end>
+        <originalName>Bran</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>105</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>105</sentence>
+        <start>18</start>
+        <end>18</end>
+        <originalName>Bran</originalName>
+        <CorefChain>58</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>107</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Jon</originalName>
+        <CorefChain>59</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>107</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Eddard and Bran</originalName>
+        <CorefChain>59</CorefChain>
+        <ClusterID>14</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>108</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>59</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>108</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Eddard and Bran</originalName>
+        <CorefChain>59</CorefChain>
+        <ClusterID>14</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>109</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>59</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>109</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>60</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>109</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Bran</originalName>
+        <CorefChain>61</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>110</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Jon</originalName>
+        <CorefChain>61</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>111</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jory</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>111</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Eddard and Bran</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>14</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>my</text>
+        <sentence>112</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Jory</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>my lord</text>
+        <sentence>112</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>113</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his lord father</text>
+        <sentence>113</sentence>
+        <start>5</start>
+        <end>7</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>us</text>
+        <sentence>114</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Eddard and Jory</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>15</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>my</text>
+        <sentence>114</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>my sons</text>
+        <sentence>114</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>115</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>115</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>62</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>116</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jory</originalName>
+        <CorefChain>63</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>116</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>64</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>117</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Robb</originalName>
+        <CorefChain>65</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>117</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Jon</originalName>
+        <CorefChain>66</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>117</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Robb</originalName>
+        <CorefChain>66</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>119</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>67</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>119</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Robb</originalName>
+        <CorefChain>67</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>119</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Robb</originalName>
+        <CorefChain>67</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>120</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>67</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>120</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Robb</originalName>
+        <CorefChain>67</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory Cassel</text>
+        <sentence>122</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Jory</originalName>
+        <CorefChain>68</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Theon Greyjoy</text>
+        <sentence>122</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>Theon</originalName>
+        <CorefChain>69</CorefChain>
+        <ClusterID>12<ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Greyjoy</text>
+        <sentence>123</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Theon</originalName>
+        <CorefChain>70</CorefChain>
+        <ClusterID>12<ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>123</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Theon</originalName>
+        <CorefChain>70</CorefChain>
+        <ClusterID>12<ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>124</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>71</CorefChain>
+        <ClusterID>1<ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>124</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Bran</originalName>
+        <CorefChain>71</CorefChain>
+        <ClusterID>1<ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>126</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>71</CorefChain>
+        <ClusterID>1<ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>126</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Bran</originalName>
+        <CorefChain>71</CorefChain>
+        <ClusterID>1<ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>126</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Bran</originalName>
+        <CorefChain>71</CorefChain>
+        <ClusterID>1<ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>126</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Bran</originalName>
+        <CorefChain>71</CorefChain>
+        <ClusterID>1<ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>127</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jory</originalName>
+        <CorefChain>72</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>128</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>73</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>it</text>
+        <sentence>128</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>73</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>129</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jory</originalName>
+        <CorefChain>73</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>129</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Jory</originalName>
+        <CorefChain>73</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>129</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Jory</originalName>
+        <CorefChain>73</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>130</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>74</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>130</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Robb</originalName>
+        <CorefChain>74</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>She</text>
+        <sentence>131</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>74</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>131</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Jory</originalName>
+        <CorefChain>74</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>131</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Robb</originalName>
+        <CorefChain>74</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>She</text>
+        <sentence>132</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>74</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>132</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Jory</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>133</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>134</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>134</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Bran</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>134</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>them</text>
+        <sentence>134</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Bran Eddard</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>14</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>135</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>76</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>136</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Jon</originalName>
+        <CorefChain>77</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>136</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Jory</originalName>
+        <CorefChain>78</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Theon Greyjoy</text>
+        <sentence>136</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>Theon</originalName>
+        <CorefChain>78</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>it</text>
+        <sentence>137</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>78</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Greyjoy</text>
+        <sentence>138</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Theon</originalName>
+        <CorefChain>79</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>139</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Robb</originalName>
+        <CorefChain>80</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>139</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Theon</originalName>
+        <CorefChain>80</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Greyjoy</text>
+        <sentence>140</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Theon</originalName>
+        <CorefChain>81</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>it</text>
+        <sentence>141</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>81</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>142</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>82</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>142</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Bran</originalName>
+        <CorefChain>82</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>142</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Bran</originalName>
+        <CorefChain>82</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>142</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Bran</originalName>
+        <CorefChain>82</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his brothers</text>
+        <sentence>142</sentence>
+        <start>17</start>
+        <end>18</end>
+        <originalName>Robb and Jon</originalName>
+        <CorefChain>82</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>its</text>
+        <sentence>144</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>82</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>it</text>
+        <sentence>144</sentence>
+        <start>18</start>
+        <end>18</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>82</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>145</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>it</text>
+        <sentence>146</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>146</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Bran</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>It</text>
+        <sentence>147</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>147</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>147</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Bran</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>147</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>It</text>
+        <sentence>148</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>148</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jon</originalName>
+        <CorefChain>84</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>That</text>
+        <sentence>149</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>84</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Theon Greyjoy</text>
+        <sentence>151</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Theon</originalName>
+        <CorefChain>85</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>152</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>85</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>152</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jon</originalName>
+        <CorefChain>86</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>153</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>87</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>153</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>87</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the monster</text>
+        <sentence>153</sentence>
+        <start>7</start>
+        <end>8</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>87</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>154</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Bran</originalName>
+        <CorefChain>87</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>154</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Robb</originalName>
+        <CorefChain>88</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>155</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>88</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>The pup</text>
+        <sentence>156</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>88</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>its</text>
+        <sentence>156</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>88</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>It</text>
+        <sentence>157</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>88</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>157</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Robb</originalName>
+        <CorefChain>89</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>157</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Robb</originalName>
+        <CorefChain>89</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>it</text>
+        <sentence>157</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>89</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>157</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Robb</originalName>
+        <CorefChain>89</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>158</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>90</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>159</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Robb</originalName>
+        <CorefChain>91</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>159</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>91</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>160</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>91</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>160</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>91</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>161</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>92</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the pup</text>
+        <sentence>161</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>92</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>161</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Jon</originalName>
+        <CorefChain>93</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>161</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Bran</originalName>
+        <CorefChain>93</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His</text>
+        <sentence>162</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>93</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His half brother</text>
+        <sentence>162</sentence>
+        <start>1</start>
+        <end>3</end>
+        <originalName>Jon</originalName>
+        <CorefChain>93</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>a second pup</text>
+        <sentence>162</sentence>
+        <start>5</start>
+        <end>7</end>
+        <originalName>Bran's pup</originalName>
+        <CorefChain>93</CorefChain>
+        <ClusterID>18</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>162</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Bran</originalName>
+        <CorefChain>93</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>164</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>94</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the wolf pup</text>
+        <sentence>164</sentence>
+        <start>9</start>
+        <end>11</end>
+        <originalName>Bran's pup</originalName>
+        <CorefChain>94</CorefChain>
+        <ClusterID>18</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>164</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Bran</originalName>
+        <CorefChain>94</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>its</text>
+        <sentence>165</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran's pup</originalName>
+        <CorefChain>94</CorefChain>
+        <ClusterID>18</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>165</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Bran</originalName>
+        <CorefChain>94</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Hullen</text>
+        <sentence>166</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Hullen</originalName>
+        <CorefChain>95</CorefChain>
+        <ClusterID>19</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>167</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Hullen</originalName>
+        <CorefChain>95</CorefChain>
+        <ClusterID>19</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>168</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jory</originalName>
+        <CorefChain>96</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>169</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>96</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>This</text>
+        <sentence>170</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>96</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>170</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Jory</originalName>
+        <CorefChain>97</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>170</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>97</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>171</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>97</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Snow</text>
+        <sentence>172</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>98</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+     <mention>
+        <text>his</text>
+        <sentence>172</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Jon</originalName>
+        <CorefChain>98</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>172</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Jon</originalName>
+        <CorefChain>98</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the body</text>
+        <sentence>172</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>98</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>173</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>98</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>174</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Robb</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>174</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Jon</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>174</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Robb</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>174</sentence>
+        <start>19</start>
+        <end>20</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>176</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>176</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the beast</text>
+        <sentence>176</sentence>
+        <start>7</start>
+        <end>8</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>176</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>177</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>99</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>181</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Bran</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>181</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Bran</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>182</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>182</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>182</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>183</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>183</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>183</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>184</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>185</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>100</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jory</text>
+        <sentence>185</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jory</originalName>
+        <CorefChain>101</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>186</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jory</originalName>
+        <CorefChain>101</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the bitch</text>
+        <sentence>186</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>Direwolf</originalName>
+        <CorefChain>101</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Hullen</text>
+        <sentence>189</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Hullen</originalName>
+        <CorefChain>102</CorefChain>
+        <ClusterID>19</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Bran</text>
+        <sentence>191</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>103</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Theon Greyjoy</text>
+        <sentence>192</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>Theon</originalName>
+        <CorefChain>104</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>193</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Theon</originalName>
+        <CorefChain>104</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>193</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Theon</originalName>
+        <CorefChain>104</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the beast</text>
+        <sentence>194</sentence>
+        <start>2</start>
+        <end>3</end>
+        <originalName>Bran's pup</originalName>
+        <CorefChain>104</CorefChain>
+        <ClusterID>18</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>194</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>105</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the little thing</text>
+        <sentence>195</sentence>
+        <start>1</start>
+        <end>3</end>
+        <originalName>Bran's pup</originalName>
+        <CorefChain>105</CorefChain>
+        <ClusterID>18</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>195</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>105</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>it</text>
+        <sentence>195</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Bran's pup</originalName>
+        <CorefChain>105</CorefChain>
+        <ClusterID>18</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>197</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>106</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>It</text>
+        <sentence>198</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran's pup</originalName>
+        <CorefChain>106</CorefChain>
+        <ClusterID>18</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>mine</text>
+        <sentence>198</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>106</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your</text>
+        <sentence>199</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Theon</originalName>
+        <CorefChain>106</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Greyjoy</text>
+        <sentence>199</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Theon</originalName>
+        <CorefChain>107</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>199</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Robb</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>200</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Robb</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>father</text>
+        <sentence>200</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>200</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Robb</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>200</sentence>
+        <start>18</start>
+        <end>18</end>
+        <originalName>Robb</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>202</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>boy</text>
+        <sentence>202</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Robb</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Harwin</text>
+        <sentence>202</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Harwin</originalName>
+        <CorefChain>109</CorefChain>
+        <ClusterID>20</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Hullen</text>
+        <sentence>202</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Hullen</originalName>
+        <CorefChain>110</CorefChain>
+        <ClusterID>19</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Hullen's son</text>
+        <sentence>202</sentence>
+        <start>13</start>
+        <end>14</end>
+        <originalName>Harwin</originalName>
+        <CorefChain>110</CorefChain>
+        <ClusterID>20</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Hullen</text>
+        <sentence>203</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Hullen</originalName>
+        <CorefChain>111</CorefChain>
+        <ClusterID>19</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>204</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>112</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>204</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Bran</originalName>
+        <CorefChain>112</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his lord father</text>
+        <sentence>204</sentence>
+        <start>4</start>
+        <end>6</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>112</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Hullen</text>
+        <sentence>205</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Hullen</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>19</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>son</text>
+        <sentence>205</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>208</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>208</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Bran</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>208</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Bran</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>209</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>209</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Bran</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>209</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>113</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>210</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>114</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Ser Rodrik</text>
+        <sentence>211</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Ser Rodrik</originalName>
+        <CorefChain>115</CorefChain>
+        <ClusterID>21</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Ser Rodrik's red bitch</text>
+        <sentence>211</sentence>
+        <start>1</start>
+        <end>5</end>
+        <originalName>Ser Rodrik's bitch</originalName>
+        <CorefChain>115</CorefChain>
+        <ClusterID>22</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>211</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Robb</originalName>
+        <CorefChain>115</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>She</text>
+        <sentence>213</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Ser Rodrik's bitch</originalName>
+        <CorefChain>115</CorefChain>
+        <ClusterID>22</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>She</text>
+        <sentence>214</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Ser Rodrik's bitch</originalName>
+        <CorefChain>115</CorefChain>
+        <ClusterID>22</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Lord Stark</text>
+        <sentence>215</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>116</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>215</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Jon</originalName>
+        <CorefChain>117</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>216</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jon</originalName>
+        <CorefChain>117</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>216</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>117</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>217</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>118</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>217</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Jon</originalName>
+        <CorefChain>118</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>218</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jon</originalName>
+        <CorefChain>118</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>218</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>118</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>220</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Jon</originalName>
+        <CorefChain>119</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>221</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>119</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>221</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Jon</originalName>
+        <CorefChain>120</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your</text>
+        <sentence>223</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>120</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Your</text>
+        <sentence>224</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>120</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>my</text>
+        <sentence>224</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Jon</originalName>
+        <CorefChain>120</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>my lord</text>
+        <sentence>224</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>120</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>225</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>121</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>225</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Bran</originalName>
+        <CorefChain>121</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his father</text>
+        <sentence>225</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>121</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>226</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>121</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>226</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Jon</originalName>
+        <CorefChain>122</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>226</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Bran</originalName>
+        <CorefChain>122</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>227</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Bran</originalName>
+        <CorefChain>123</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>227</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Bran</originalName>
+        <CorefChain>123</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his brother</text>
+        <sentence>227</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>Jon</originalName>
+        <CorefChain>123</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>228</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Jon</originalName>
+        <CorefChain>124</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>himself</text>
+        <sentence>228</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Jon</originalName>
+        <CorefChain>124</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>229</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>124</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Rickon</text>
+        <sentence>229</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Rickon</originalName>
+        <CorefChain>125</CorefChain>
+        <ClusterID>23</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the baby</text>
+        <sentence>229</sentence>
+        <start>11</start>
+        <end>12</end>
+        <originalName>Rickon</originalName>
+        <CorefChain>125</CorefChain>
+        <ClusterID>23</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>the bastard</text>
+        <sentence>229</sentence>
+        <start>16</start>
+        <end>17</end>
+        <originalName>Jon</originalName>
+        <CorefChain>125</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Snow</text>
+        <sentence>229</sentence>
+        <start>22</start>
+        <end>22</end>
+        <originalName>Jon</originalName>
+        <CorefChain>126</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>their father</text>
+        <sentence>230</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>126</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>231</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>126</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>yourself</text>
+        <sentence>231</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jon</originalName>
+        <CorefChain>126</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>231</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Jon</originalName>
+        <CorefChain>127</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>232</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>127</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>233</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Jon</originalName>
+        <CorefChain>128</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>234</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Jon</originalName>
+        <CorefChain>128</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>234</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>128</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Their lord Father</text>
+        <sentence>235</sentence>
+        <start>1</start>
+        <end>3</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>128</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Jon</text>
+        <sentence>235</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Jon</originalName>
+        <CorefChain>129</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Robb</text>
+        <sentence>236</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>236</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Jon</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>237</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>237</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>myself</text>
+        <sentence>237</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Robb</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Father</text>
+        <sentence>237</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Eddard</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>237</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Robb</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>238</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Robb</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>238</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Robb's pup</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Me</text>
+        <sentence>239</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>130</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Bran</text>
+        <sentence>240</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Bran</originalName>
+        <CorefChain>131</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
 </document>
