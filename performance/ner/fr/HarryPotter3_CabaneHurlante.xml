@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+    
+    <mention>
+        <text>un rat</text>
+        <sentence>1</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>1</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Sirius Black</text>
+        <sentence>1</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>un rat</text>
+        <sentence>2</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>1</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>3</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>3</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>6</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>4</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Il</text>
+        <sentence>7</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Peter Pettigrow</text>
+        <sentence>7</sentence>
+        <start>6</start>
+        <end>7</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>8</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>5</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Croûtard</text>
+        <sentence>8</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>8</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Ron<Name>
+        <CorefChain>6</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>9</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>7</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>le rat</text>
+        <sentence>9</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>tu</text>
+        <sentence>10</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Remus</text>
+        <sentence>11</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>je</text>
+        <sentence>12</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>7</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Vous</text>
+        <sentence>12</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Remus et Sirius<Name>
+        <CorefChain>0</CorefChain>
+        <ClusterID>0</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>12</sentence>
+        <start>31</start>
+        <end>31</end>
+        <originalName>Ron<Name>
+        <CorefChain>9</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>12</sentence>
+        <start>37</start>
+        <end>37</end>
+        <originalName>Harry<Name>
+        <CorefChain>10</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Hermione</text>
+        <sentence>12</sentence>
+        <start>39</start>
+        <end>39</end>
+        <originalName>Hermione<Name>
+        <CorefChain>11</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>je</text>
+        <sentence>13</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Ron<Name>
+        <CorefChain>9</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Il</text>
+        <sentence>14</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Ron<Name>
+        <CorefChain>9</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>14</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>12</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Croûtard</text>
+        <sentence>14</sentence>
+        <start>25</start>
+        <end>25</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Vous</text>
+        <sentence>15</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Ron<Name>
+        <CorefChain>9</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>15</sentence>
+        <start>8</start>
+        <end8>8</end>
+        <originalName>Ron<Name>
+        <CorefChain>13</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>15</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>12</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Peter</text>
+        <sentence>16</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Vous</text>
+        <sentence>16</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Ron<Name>
+        <CorefChain>13</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>17</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Peter</text>
+        <sentence>17</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>14</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>17</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>14</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Croûtard</text>
+        <sentence>17</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>14</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>18</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Ron<Name>
+        <CorefChain>15</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>le rat</text>
+        <sentence>18</sentence>
+        <start>7</start>
+        <end>8</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>14</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>19</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Ron<Name>
+        <CorefChain>16</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>19</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Harry<Name>
+        <CorefChain>17</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>20</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>18</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>20</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Harry<Name>
+        <CorefChain>19</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>20</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>20</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>des témoins</text>
+        <sentence>21</sentence>
+        <start>5</start>
+        <end>6</end>
+        <originalName><Name>
+        <CorefChain>21</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Pettigrow</text>
+        <sentence>21</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>22</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>21</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Harry<Name>
+        <CorefChain>19</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>ils</text>
+        <sentence>22</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>des témoins<Name>
+        <CorefChain>21</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>ils</text>
+        <sentence>22</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>des témoins<Name>
+        <CorefChain>21</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>23</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>23</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Croûtard</text>
+        <sentence>23</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>22</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>23</sentence>
+        <start>20</start>
+        <end>20</end>
+        <originalName>Ron<Name>
+        <CorefChain>24</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Sirius</text>
+        <sentence>24</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>25</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Peter</text>
+        <sentence>24</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>26</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>24</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>27</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Moi</text>
+        <sentence>25</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>27</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>je</text>
+        <sentence>25</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>27</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>je</text>
+        <sentence>25</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>27</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Peter</text>
+        <sentence>26</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>28</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>lui</text>
+        <sentence>27</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>28</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>27</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Ron<Name>
+        <CorefChain>29</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>27</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Harry<Name>
+        <CorefChain>30</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>28</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Harry<Name>
+        <CorefChain>31</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Ron</text>
+        <sentence>28</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Ron<Name>
+        <CorefChain>32</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>ils</text>
+        <sentence>28</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Harry et Ron<Name>
+        <CorefChain>0</CorefChain>
+        <ClusterID>0</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>28</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>33</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>28</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>34</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Croûtard</text>
+        <sentence>29</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>35</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>29</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>35</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Peter Pettigrow</text>
+        <sentence>29</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>35</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>30</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Sirius Black<Name>
+        <CorefChain>36</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>31</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>37</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>31</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>37</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Hermione</text>
+        <sentence>32</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Hermione<Name>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>elle</text>
+        <sentence>32</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Hermione<Name>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>elle</text>
+        <sentence>32</sentence>
+        <start>18</start>
+        <end>18</end>
+        <originalName>Hermione<Name>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Professeur Lupin</text>
+        <sentence>32</sentence>
+        <start>23</start>
+        <end>24</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>39</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Professeur Lupin</text>
+        <sentence>33</sentence>
+        <start>2</start>
+        <end>3</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>39</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>elle</text>
+        <sentence>33</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Hermione<Name>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Pettigrow</text>
+        <sentence>33</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Peter Pettigrow<Name>
+        <CorefChain>40</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>vous</text>
+        <sentence>33</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>39</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>34</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>41</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>34</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>41</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>34</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Remus Lupin<Name>
+        <CorefChain>41</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>on</text>
+        <sentence>35</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Classe de 3eme année</originalName>
+        <CorefChain>42</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Peter Pettigrow</text>
+        <sentence>35</sentence>
+        <start>10</start>
+        <end>11</end>
+        <originalName>Peter Pettigrow</originalName>
+        <CorefChain>43</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>On</text>
+        <sentence>36</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Classe de 3eme année</originalName>
+        <CorefChain>42</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Animagi</text>
+        <sentence>35</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Animagi</originalName>
+        <CorefChain>44</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Professeur Mc Gonagall</text>
+        <sentence>36</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>Mc Gonagall</originalName>
+        <CorefChain>45</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>j'</text>
+        <sentence>37</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>mes</text>
+        <sentence>37</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>des sorcières et des mages</text>
+        <sentence>37</sentence>
+        <start>15</start>
+        <end>19</end>
+        <originalName>Animagi</originalName>
+        <CorefChain>44</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>ils</text>
+        <sentence>38</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Animagi</originalName>
+        <CorefChain>44</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>leurs</text>
+        <sentence>28</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Animagi</originalName>
+        <CorefChain>44</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>les</text>
+        <sentence>38</sentence>
+        <start>27</start>
+        <end>27</end>
+        <originalName>Animagi</originalName>
+        <CorefChain>44</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>J'ai</text>
+        <sentence>39</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>j'</text>
+        <sentence>39</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>38</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Professeur Mc Gonagall</text>
+        <sentence>39</sentence>
+        <start>11</start>
+        <end>12</end>
+        <originalName>Mc Gonagall</originalName>
+        <CorefChain>45</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Animagi</text>
+        <sentence>39</sentence>
+        <start>23</start>
+        <end>23</end>
+        <originalName>Animagi</originalName>
+        <CorefChain>46</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Pettigrow</text>
+        <sentence>39</sentence>
+        <start>30</start>
+        <end>30</end>
+        <originalName>Peter Pettigrow</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Harry</text>
+        <sentence>39</sentence>
+        <start>39</start>
+        <end>39</end>
+        <originalName>Harry</originalName>
+        <CorefChain>48</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Hermione</text>
+        <sentence>39</sentence>
+        <start>44</start>
+        <end>44</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Lupin</text>
+        <sentence>39</sentence>
+        <start>52</start>
+        <end>52</end>
+        <originalName>Remus Lupin</originalName>
+        <CorefChain>50</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Vous</text>
+        <sentence>40</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>49</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Hermione</text>
+        <sentence>40</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>Hermione</originalName>
+        <CorefChain>51</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>il</text>
+        <sentence>41</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Remus Lupin</originalName>
+        <CorefChain>50</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Animagi</text>
+        <sentence>42</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Animagi</originalName>
+        <CorefChain>52</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>tu</text>
+        <sentence>43</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Remus Lupin</originalName>
+        <CorefChain>50</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>toi</text>
+        <sentence>43</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Remus Lupin</originalName>
+        <CorefChain>50</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Remus</text>
+        <sentence>43</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Remus Lupin</originalName>
+        <CorefChain>53</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Black</text>
+        <sentence>43</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>Sirius Black</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Croûtard</text>
+        <sentence>43</sentence>
+        <start>27</start>
+        <end>27</end>
+        <originalName>Peter Pettigrow</originalName>
+        <CorefChain>47</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>j'ai</text>
+        <sentence>44</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Sirius Black</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>je</text>
+        <sentence>44</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Sirius Black</originalName>
+        <CorefChain>54</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+</document>

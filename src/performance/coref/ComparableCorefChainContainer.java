@@ -164,6 +164,14 @@ public class ComparableCorefChainContainer {
         return tot/getNumberOfEntities();
     }
 
+    public double recall(ComparableCorefChainContainer reference) {
+        double tot = 0;
+        for (ComparableCorefChain ccc : corefChains){
+            tot += ccc.precision(reference);
+        }
+        return tot/reference.getNumberOfEntities();
+    }
+
     public boolean contains(ComparableEntity ce){
         for (ComparableCorefChain ccc : corefChains){
             if (ccc.getEntities().contains(ce)) return true;

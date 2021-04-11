@@ -1,6 +1,7 @@
 package performance.coref;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -86,19 +87,58 @@ public class CompareCorefChain {
     public void setReference(ComparableCorefChainContainer reference) {
         this.reference = reference;
     }
-    
-    public void precisionB3(){        
 
+    public List<ComparableCorefChainContainer> preProcessing(ComparableCorefChainContainer chainsToEvaluate, ComparableCorefChainContainer reference){
         ComparableCorefChainContainer tempChainsToEvaluate = new ComparableCorefChainContainer(chainsToEvaluate);
         ComparableCorefChainContainer tempReference = new ComparableCorefChainContainer(reference);
+        List<ComparableCorefChainContainer> result = new LinkedList<>();
+        result.add(tempChainsToEvaluate);
+        result.add(tempReference);
 
-        for(ComparableCorefChain ccc : tempReference.getCorefChains()){
-            for(ComparableEntity ce : ccc.getEntities()){
-                if (!tempChainsToEvaluate.contains(ce)){
-                    tempChainsToEvaluate.addEntityAsNewChain(ce);
+        ComparableCorefChain resChain;
+        int resSize = tempChainsToEvaluate.getCorefChains().size();
+        int chainSize;
+        ComparableEntity ce;
+
+        //first pre processing step (removing singleton mention from the response wich are not present in the ground truth)
+        for(int i = 0; i < resSize ; i++){
+            resChain = tempChainsToEvaluate.getCorefChains().get(i);
+            chainSize = resChain.getEntities().size();
+            for (int j = 0; j < chainSize; j++){
+                ce = resChain.getEntities().get(j);
+                if (!tempReference.contains(ce)){
+                    if (resChain.getEntities().size()==1){
+                        tempChainsToEvaluate.getCorefChains().remove(resChain);
+                        i--;
+                        resSize--;
+                    }
+                    else {
+                        resChain.getEntities().remove(ce);
+                        j--;
+                        chainSize--;
+                    }
                 }
             }
         }
+        
+        //second pre processing step (adding mention present in the ground truth into the response (if they are absent))
+        for(ComparableCorefChain ccc : tempReference.getCorefChains()){
+            for(ComparableEntity cE : ccc.getEntities()){
+                if (!tempChainsToEvaluate.contains(cE)){
+                    tempChainsToEvaluate.addEntityAsNewChain(cE);
+                }
+            }
+        }
+
+        return result;
+    }
+    
+    public void precisionB3(){
+        //first two steps of pre processing
+        List<ComparableCorefChainContainer> tempChains = preProcessing(chainsToEvaluate, reference);
+
+        ComparableCorefChainContainer tempChainsToEvaluate = tempChains.get(0);
+        ComparableCorefChainContainer tempReference = tempChains.get(0);
 
         for(ComparableCorefChain ccc : tempChainsToEvaluate.getCorefChains()){
             for(ComparableEntity ce : ccc.getEntities()){
@@ -112,9 +152,12 @@ public class CompareCorefChain {
     }
 
     public void recallB3(){
+        //first two steps of pre processing
+        List<ComparableCorefChainContainer> tempChains = preProcessing(chainsToEvaluate, reference);
 
-        ComparableCorefChainContainer tempChainsToEvaluate = new ComparableCorefChainContainer(chainsToEvaluate);
-        ComparableCorefChainContainer tempReference = new ComparableCorefChainContainer(reference);
+        ComparableCorefChainContainer tempChainsToEvaluate = tempChains.get(0);
+        ComparableCorefChainContainer tempReference = tempChains.get(0);
+
         ComparableCorefChain keyChain;
         int keySize = tempChainsToEvaluate.getCorefChains().size();
         int chainSize;
@@ -140,14 +183,8 @@ public class CompareCorefChain {
             }
         }
 
-        for(ComparableCorefChain ccc : tempReference.getCorefChains()){
-            for (ComparableEntity cE : ccc.getEntities()){
-                if(!tempChainsToEvaluate.contains(cE)){
-                    tempChainsToEvaluate.addEntityAsNewChain(cE);
-                }
-            }
-        }
-        recall = tempReference.precision(tempChainsToEvaluate);
+        
+        recall = tempChainsToEvaluate.recall(tempReference);
     }
 
     public void fMeasure(){
