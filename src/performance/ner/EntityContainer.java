@@ -20,23 +20,39 @@ import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import novelnet.util.CustomEntityMention;
 
-public class ComparableEntityContainer {
+public class EntityContainer {
 
+	/**
+	 * the list of mentions in the container
+	*/
     List<CustomEntityMention> entities;
 
-
-    public ComparableEntityContainer() {
+ 	/**
+	 * Class Constructor with an empty list of mentions
+	*/
+    public EntityContainer() {
         entities = new LinkedList<>();
     }
 
-    public ComparableEntityContainer(List<CustomEntityMention> entities) {
+	/**
+	 * Creates a CorefChainContainer from a list of mentions
+	 *
+     * @param entities the list of mentions
+	*/
+    public EntityContainer(List<CustomEntityMention> entities) {
         this.entities = entities;
     }
 
-    public static ComparableEntityContainer buildFromXml(String pathToReference) throws IOException{
-        ComparableEntityContainer result = new ComparableEntityContainer();
+	/**
+	 * Build an EntityContainer from an .xml file
+	 * 
+	 * @param pathToXml path to the .xml file
+     * @return the Container
+	 */
+    public static EntityContainer buildFromXml(String pathToXml) throws IOException{
+        EntityContainer result = new EntityContainer();
 		SAXBuilder builder = new SAXBuilder();
-		FileInputStream is = new FileInputStream(pathToReference);     
+		FileInputStream is = new FileInputStream(pathToXml);     
 	    try {
 	    	Document document = (Document) builder.build(is);
 	        Element rootNode = document.getRootElement();
@@ -58,8 +74,14 @@ public class ComparableEntityContainer {
         return result;
 	}
 
-    public static ComparableEntityContainer buildFromTxt(String pathToText) throws IOException {
-        ComparableEntityContainer result = new ComparableEntityContainer();
+	/**
+	 * Build an EntityContainer from a .txt file using Stanford CoreNLP
+	 * 
+	 * @param pathToText path to the .txt file
+     * @return the Container
+	 */
+    public static EntityContainer buildFromTxt(String pathToText) throws IOException {
+        EntityContainer result = new EntityContainer();
 		FileInputStream is = new FileInputStream(pathToText);     
 		String content = IOUtils.toString(is, "UTF-8");
 		Properties props = new Properties();

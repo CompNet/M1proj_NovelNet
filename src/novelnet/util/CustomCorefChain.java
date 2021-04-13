@@ -7,7 +7,7 @@ import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
-import performance.coref.ComparableCorefChainContainer;
+import performance.coref.CorefChainContainer;
 
 public class CustomCorefChain{
 
@@ -91,7 +91,7 @@ public class CustomCorefChain{
         this.id = id;
     }   
 
-    public double precision(ComparableCorefChainContainer reference){
+    public double precision(CorefChainContainer reference){
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
             tot += ce.precision(reference, this);
@@ -100,7 +100,7 @@ public class CustomCorefChain{
         return tot;
     }
 
-    public double recall(ComparableCorefChainContainer reference) {
+    public double recall(CorefChainContainer reference) {
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
             tot += ce.recall(reference, this);

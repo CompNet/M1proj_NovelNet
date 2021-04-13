@@ -7,7 +7,7 @@ import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.util.Pair;
-import performance.coref.ComparableCorefChainContainer;
+import performance.coref.CorefChainContainer;
 
 public class CustomEntityMention {
 
@@ -140,7 +140,7 @@ public class CustomEntityMention {
 		return this.sentenceNumber == ce.sentenceNumber && this.getWindowBegining() == ce.getWindowBegining() && this.getWindowEnding() == ce.getWindowEnding();
 	}
 
-    public double precision(ComparableCorefChainContainer reference, CustomCorefChain originChain) {
+    public double precision(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
 		for (CustomCorefChain cccRef : reference.getCorefChains()){
 			if (cccRef.getCEMList().contains(this)){
@@ -157,7 +157,7 @@ public class CustomEntityMention {
 		return result;
     }
 
-    public double recall(ComparableCorefChainContainer reference, CustomCorefChain originChain) {
+    public double recall(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
 		for (CustomCorefChain cccRef : reference.getCorefChains()){
 			if (cccRef.getCEMList().contains(this)){
