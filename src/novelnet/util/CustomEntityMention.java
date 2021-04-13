@@ -3,9 +3,11 @@ package novelnet.util;
 import java.util.LinkedList;
 import java.util.List;
 
+import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.util.Pair;
+import performance.coref.ComparableCorefChainContainer;
 
 public class CustomEntityMention {
 
@@ -21,17 +23,19 @@ public class CustomEntityMention {
         this.bestName = bestName;
     }
 
-
-    public CustomEntityMention(List<CoreLabel> tokens, String bestName, CustomCorefChain customCorefChain) {
-        this.tokens = tokens;
-        this.bestName = bestName;
-        this.corefChain = customCorefChain;
-    }
-
     public CustomEntityMention(CoreEntityMention cem){
 		this.tokens = cem.tokens();
 		sentenceNumber = cem.tokens().get(0).sentIndex()+1;
         window = new Pair<>(cem.tokens().get(0).index(), cem.tokens().get(cem.tokens().size()-1).index());
+	}
+
+    public CustomEntityMention(CorefMention cm){
+        CoreLabel temp = new CoreLabel();
+        temp.setOriginalText(cm.mentionSpan);
+        tokens = new LinkedList<>();
+        tokens.add(temp);
+		sentenceNumber = cm.sentNum;
+        window = new Pair<>(cm.startIndex, cm.endIndex);
 	}
 	
 	public CustomEntityMention(String text, int sentenceNumber, int firstTokenNumber, int lastTokenNumber) {
@@ -49,14 +53,6 @@ public class CustomEntityMention {
 
 	public void setSentenceNumber(int sentenceNumber) {
 		this.sentenceNumber = sentenceNumber;
-	}
-
-    public String getText() {
-		String result = "";
-        for (CoreLabel t : tokens){
-            result += t.originalText()+" ";
-        }
-        return result;
 	}
     
     public List<CoreLabel> getTokens() {
@@ -129,8 +125,13 @@ public class CustomEntityMention {
 
     public String text(){
         String text = "";
+        boolean begin = true;
         for ( CoreLabel token : tokens){
-            text += token.value() + " ";
+            if (begin) {
+                text += token.originalText();
+                begin = false;
+            }
+            else text += " " + token.originalText();
         }
         return text;
     }
@@ -139,22 +140,39 @@ public class CustomEntityMention {
 		return this.sentenceNumber == ce.sentenceNumber && this.getWindowBegining() == ce.getWindowBegining() && this.getWindowEnding() == ce.getWindowEnding();
 	}
 
-    /*public double precision(ComparableCorefChainContainer reference, ComparableCorefChain originChain) {
+    public double precision(ComparableCorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
-		for (ComparableCorefChain cccRef : reference.getCorefChains()){
-			if (cccRef.getEntities().contains(this)){
-				for (int i = 0; i < cccRef.getEntities().size();i++){
-					if (originChain.getEntities().contains(cccRef.getEntities().get(i))){
+		for (CustomCorefChain cccRef : reference.getCorefChains()){
+			if (cccRef.getCEMList().contains(this)){
+				for (int i = 0; i < cccRef.getCEMList().size();i++){
+					if (originChain.getCEMList().contains(cccRef.getCEMList().get(i))){
 						result++;
 					}
-					if (i == cccRef.getEntities().size()-1){
-						result = result/originChain.getEntities().size();
+					if (i == cccRef.getCEMList().size()-1){
+						result = result/originChain.getCEMList().size();
 					}
 				}
 			}
 		}
 		return result;
-    }*/
+    }
+
+    public double recall(ComparableCorefChainContainer reference, CustomCorefChain originChain) {
+		double result = 0;
+		for (CustomCorefChain cccRef : reference.getCorefChains()){
+			if (cccRef.getCEMList().contains(this)){
+				for (int i = 0; i < cccRef.getCEMList().size();i++){
+					if (originChain.getCEMList().contains(cccRef.getCEMList().get(i))){
+						result++;
+					}
+					if (i == cccRef.getCEMList().size()-1){
+						result = result/cccRef.getCEMList().size();
+					}
+				}
+			}
+		}
+		return result;
+    }
 
     @Override
     public String toString() {
@@ -164,7 +182,4 @@ public class CustomEntityMention {
             ", window='" + getWindow() + "'" +
             "}";
     }
-    
-
-    
 }

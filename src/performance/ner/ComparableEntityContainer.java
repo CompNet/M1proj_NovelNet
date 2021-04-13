@@ -103,7 +103,7 @@ public class ComparableEntityContainer {
     public void display(){
         System.out.print("{ ");
         for (CustomEntityMention ce : entities){
-            System.out.print(ce.getText() + ", ");
+            System.out.print(ce.text() + ", ");
         }
         System.out.print(" }\n");
     }

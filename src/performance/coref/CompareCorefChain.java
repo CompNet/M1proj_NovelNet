@@ -5,8 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import novelnet.util.CustomCorefChain;
+import novelnet.util.CustomEntityMention;
 import novelnet.util.NullDocumentException;
-import performance.ner.ComparableEntity;
 
 public class CompareCorefChain {
 
@@ -92,43 +93,33 @@ public class CompareCorefChain {
         ComparableCorefChainContainer tempChainsToEvaluate = new ComparableCorefChainContainer(chainsToEvaluate);
         ComparableCorefChainContainer tempReference = new ComparableCorefChainContainer(reference);
         List<ComparableCorefChainContainer> result = new LinkedList<>();
-        result.add(tempChainsToEvaluate);
-        result.add(tempReference);
 
-        ComparableCorefChain resChain;
+        CustomCorefChain resChain;
         int resSize = tempChainsToEvaluate.getCorefChains().size();
-        int chainSize;
-        ComparableEntity ce;
 
         //first pre processing step (removing singleton mention from the response wich are not present in the ground truth)
         for(int i = 0; i < resSize ; i++){
             resChain = tempChainsToEvaluate.getCorefChains().get(i);
-            chainSize = resChain.getEntities().size();
-            for (int j = 0; j < chainSize; j++){
-                ce = resChain.getEntities().get(j);
-                if (!tempReference.contains(ce)){
-                    if (resChain.getEntities().size()==1){
-                        tempChainsToEvaluate.getCorefChains().remove(resChain);
-                        i--;
-                        resSize--;
-                    }
-                    else {
-                        resChain.getEntities().remove(ce);
-                        j--;
-                        chainSize--;
-                    }
+            if (resChain.getCEMList().size()==1){
+                if (!tempReference.contains(resChain.getCEMList().get(0))){
+                    tempChainsToEvaluate.getCorefChains().remove(resChain);
+                    i--;
+                    resSize--;
                 }
             }
         }
         
         //second pre processing step (adding mention present in the ground truth into the response (if they are absent))
-        for(ComparableCorefChain ccc : tempReference.getCorefChains()){
-            for(ComparableEntity cE : ccc.getEntities()){
+        for(CustomCorefChain ccc : tempReference.getCorefChains()){
+            for(CustomEntityMention cE : ccc.getCEMList()){
                 if (!tempChainsToEvaluate.contains(cE)){
                     tempChainsToEvaluate.addEntityAsNewChain(cE);
                 }
             }
         }
+
+        result.add(tempChainsToEvaluate);
+        result.add(tempReference);
 
         return result;
     }
@@ -138,15 +129,16 @@ public class CompareCorefChain {
         List<ComparableCorefChainContainer> tempChains = preProcessing(chainsToEvaluate, reference);
 
         ComparableCorefChainContainer tempChainsToEvaluate = tempChains.get(0);
-        ComparableCorefChainContainer tempReference = tempChains.get(0);
+        ComparableCorefChainContainer tempReference = tempChains.get(1);
 
-        for(ComparableCorefChain ccc : tempChainsToEvaluate.getCorefChains()){
-            for(ComparableEntity ce : ccc.getEntities()){
+        //last pre processing step for precision
+        for(CustomCorefChain ccc : tempChainsToEvaluate.getCorefChains()){
+            for(CustomEntityMention ce : ccc.getCEMList()){
                 if (!tempReference.contains(ce)){
                     tempReference.addEntityAsNewChain(ce);
                 }
             }
-        }
+        }      
 
         precision = tempChainsToEvaluate.precision(tempReference);
     }
@@ -156,33 +148,33 @@ public class CompareCorefChain {
         List<ComparableCorefChainContainer> tempChains = preProcessing(chainsToEvaluate, reference);
 
         ComparableCorefChainContainer tempChainsToEvaluate = tempChains.get(0);
-        ComparableCorefChainContainer tempReference = tempChains.get(0);
+        ComparableCorefChainContainer tempReference = tempChains.get(1);
 
-        ComparableCorefChain keyChain;
+        CustomCorefChain keyChain;
         int keySize = tempChainsToEvaluate.getCorefChains().size();
         int chainSize;
-        ComparableEntity ce;
+        CustomEntityMention ce;
 
+        //last pre processing step for recall
         for(int i = 0; i < keySize; i++){
             keyChain = tempChainsToEvaluate.getCorefChains().get(i);
-            chainSize = keyChain.getEntities().size();
+            chainSize = keyChain.getCEMList().size();
             for (int j = 0; j < chainSize; j++){
-                ce = keyChain.getEntities().get(j);
+                ce = keyChain.getCEMList().get(j);
                 if (!tempReference.contains(ce)){
-                    if (keyChain.getEntities().size()==1){
+                    if (keyChain.getCEMList().size()==1){
                         tempChainsToEvaluate.getCorefChains().remove(keyChain);
                         i--;
                         keySize--;
                     }
                     else {
-                        keyChain.getEntities().remove(ce);
+                        keyChain.getCEMList().remove(ce);
                         j--;
                         chainSize--;
                     }
                 }
             }
         }
-
         
         recall = tempChainsToEvaluate.recall(tempReference);
     }
@@ -196,7 +188,6 @@ public class CompareCorefChain {
         precisionB3();
         recallB3();
         fMeasure();
-        displayMeasures();
     }
 
     @Override
@@ -216,55 +207,49 @@ public class CompareCorefChain {
         System.out.println("\nreference : ");
         reference.display();
         displayMeasures();
-        
     }
 
     public void displayMeasures(){
-        System.out.println("\nprecision : " + precision);
-        System.out.println("recall : " + recall);
-        System.out.println("fMeasure : " + fMeasure);
-    }
-
-    public static void testImport() throws IOException, NullDocumentException{
-        System.out.println("Built from xml :\n" + ComparableCorefChainContainer.buildFromXml("performance/ner/Joe_Smith.xml"));
-        System.out.println("\nBuilt from txt :\n" + ComparableCorefChainContainer.buildFromTxt("res/corpus/Joe_Smith.txt"));
+        System.out.print("\nprecision : ");
+        System.out.format("%.3f", precision);
+        System.out.print("\nrecall : ");
+        System.out.format("%.3f", recall);
+        System.out.print("\nfMeasure : ");
+        System.out.format("%.3f", fMeasure);
+        System.out.println();
     }
 
     public void testPreTreating(){
         chainsToEvaluate = new ComparableCorefChainContainer();
         reference = new ComparableCorefChainContainer();
 
-        ComparableEntity A = new ComparableEntity("A", 0, 2, 2);
-        ComparableEntity B = new ComparableEntity("B", 1, 3, 4);
-        ComparableEntity C = new ComparableEntity("C", 2, 1, 3);
-        ComparableEntity D = new ComparableEntity("D", 4, 5, 5);
-        ComparableEntity I = new ComparableEntity("I", 6, 6, 6);
-        ComparableEntity J = new ComparableEntity("J", 7, 1, 2);
+        CustomEntityMention A = new CustomEntityMention("A", 0, 2, 2);
+        CustomEntityMention B = new CustomEntityMention("B", 1, 3, 4);
+        CustomEntityMention C = new CustomEntityMention("C", 2, 1, 3);
+        CustomEntityMention D = new CustomEntityMention("D", 4, 5, 5);
+        CustomEntityMention I = new CustomEntityMention("I", 6, 6, 6);
+        CustomEntityMention J = new CustomEntityMention("J", 7, 1, 2);
 
-        ComparableCorefChain a = new ComparableCorefChain();
-        a.getEntities().add(A);
-        a.getEntities().add(B);
-        a.getEntities().add(C);
+        CustomCorefChain a = new CustomCorefChain();
+        a.getCEMList().add(A);
+        a.getCEMList().add(B);
+        a.getCEMList().add(C);
 
-        ComparableCorefChain b = new ComparableCorefChain();
-        b.getEntities().add(A);
-        b.getEntities().add(B);
-        b.getEntities().add(D);
+        CustomCorefChain b = new CustomCorefChain();
+        b.getCEMList().add(A);
+        b.getCEMList().add(B);
+        b.getCEMList().add(D);
 
-        ComparableCorefChain c = new ComparableCorefChain();
-        c.getEntities().add(I);
-        c.getEntities().add(J);
+        CustomCorefChain c = new CustomCorefChain();
+        c.getCEMList().add(I);
+        c.getCEMList().add(J);
 
         chainsToEvaluate.getCorefChains().add(b);
         chainsToEvaluate.getCorefChains().add(c);
 
         reference.getCorefChains().add(a);
 
-        precisionB3();
-
-        recallB3();
-
-        fMeasure();
+        compare();
 
         display();
 
@@ -272,7 +257,7 @@ public class CompareCorefChain {
 
     public static void testOnRealData() throws IOException, NullDocumentException{
         
-        CompareCorefChain ccc = new CompareCorefChain("res/corpus/TheLightningThief_chapter1.txt", "performance/ner/TheLightningThief_chapter1.xml");
+        CompareCorefChain ccc = new CompareCorefChain("res/corpus/en/TheLightningThief_chapter1.txt", "performance/ner_coref_clustering/en/TheLightningThief_chapter1.xml");
         ccc.compare();
         ccc.display();
 
@@ -282,7 +267,6 @@ public class CompareCorefChain {
 
         /*CompareCorefChain ccc = new CompareCorefChain();
         ccc.testPreTreating();*/
-        //testImport();
         testOnRealData();
     }
     

@@ -7,15 +7,18 @@ import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
+import performance.coref.ComparableCorefChainContainer;
 
 public class CustomCorefChain{
 
     List<CustomEntityMention> cEMList;
     String representativeName;
+    int id;
 
     public CustomCorefChain(){
         cEMList = new LinkedList<>();
         representativeName = "";
+        id = 0;
     }
 
     public CustomCorefChain(CorefChain cc){
@@ -23,7 +26,7 @@ public class CustomCorefChain{
         try {
             representativeName = cc.getRepresentativeMention().mentionSpan;
             for (CorefMention cm : cc.getMentionsInTextualOrder()){
-                cEMList.add(new CustomEntityMention(ImpUtils.getTokensbyCorefMention(cm), representativeName, this));                
+                cEMList.add(new CustomEntityMention(cm));
             }
         }
         catch(Exception e){System.out.println(e.getMessage());}
@@ -32,8 +35,16 @@ public class CustomCorefChain{
     public CustomCorefChain(CoreEntityMention cem){
         cEMList = new LinkedList<>();
         representativeName = cem.text();
-        cEMList.add(new CustomEntityMention(cem.tokens(), representativeName, this));
+        CustomEntityMention temp = new CustomEntityMention(cem);
+        temp.setCorefChain(this);
+        cEMList.add(temp);
         
+    }
+
+    public CustomCorefChain(CustomEntityMention ce) {
+        cEMList = new LinkedList<>();
+        representativeName = ce.text();
+        cEMList.add(ce);
     }
 
     @Override
@@ -70,5 +81,31 @@ public class CustomCorefChain{
             if (entity.tokens.contains(token)) return true;
         }
         return false;
-    }    
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }   
+
+    public double precision(ComparableCorefChainContainer reference){
+        double tot = 0;
+        for (CustomEntityMention ce : cEMList){
+            tot += ce.precision(reference, this);
+        }
+
+        return tot;
+    }
+
+    public double recall(ComparableCorefChainContainer reference) {
+        double tot = 0;
+        for (CustomEntityMention ce : cEMList){
+            tot += ce.recall(reference, this);
+        }
+
+        return tot;
+    }
 }
