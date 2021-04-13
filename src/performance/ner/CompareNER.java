@@ -7,12 +7,13 @@ import java.util.Scanner;
 
 
 import edu.stanford.nlp.stats.PrecisionRecallStats;
+import novelnet.util.CustomEntityMention;
 
 public class CompareNER {
 	ComparableEntityContainer reference;
 	ComparableEntityContainer entityList;
 	PrecisionRecallStats perf;
-	List<ComparableEntity> resultTableCE;
+	List<CustomEntityMention> resultTableCE;
 	List<String> resultTableString;
 
 	public CompareNER(){
@@ -75,9 +76,9 @@ public class CompareNER {
 	
 	public void compare() {
 		boolean found;
-		for (ComparableEntity ce : entityList.getEntities()){
+		for (CustomEntityMention ce : entityList.getEntities()){
 			found = false;
-			for (ComparableEntity ceToCompare : reference.getEntities()){
+			for (CustomEntityMention ceToCompare : reference.getEntities()){
 				if(ce.compareTo(ceToCompare)){
 					resultTableCE.add(ce);
 					resultTableString.add("TP");
@@ -92,9 +93,9 @@ public class CompareNER {
 				resultTableString.add("FP");
 			}
 		}
-		for (ComparableEntity ce : reference.getEntities()){
+		for (CustomEntityMention ce : reference.getEntities()){
 			found = false;
-			for (ComparableEntity ceToCompare : entityList.getEntities()){
+			for (CustomEntityMention ceToCompare : entityList.getEntities()){
 				if(ce.compareTo(ceToCompare)){
 					found = true;
 					break;

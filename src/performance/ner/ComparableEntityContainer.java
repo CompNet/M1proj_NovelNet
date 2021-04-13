@@ -18,17 +18,18 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import novelnet.util.CustomEntityMention;
 
 public class ComparableEntityContainer {
 
-    List<ComparableEntity> entities;
+    List<CustomEntityMention> entities;
 
 
     public ComparableEntityContainer() {
         entities = new LinkedList<>();
     }
 
-    public ComparableEntityContainer(List<ComparableEntity> entities) {
+    public ComparableEntityContainer(List<CustomEntityMention> entities) {
         this.entities = entities;
     }
 
@@ -43,7 +44,7 @@ public class ComparableEntityContainer {
 	        for (int i = 0; i < list.size(); i++) {
 	        	Element node = (Element) list.get(i);
 				if (node.getChildText("mentionType").equals("explicit")){
-					result.entities.add(new ComparableEntity(node.getChildText("text"), 
+					result.entities.add(new CustomEntityMention(node.getChildText("text"), 
 	        			Integer.parseInt(node.getChildText("sentence")), 
 	        			Integer.parseInt(node.getChildText("start")),
 	        			Integer.parseInt(node.getChildText("end"))));
@@ -76,19 +77,19 @@ public class ComparableEntityContainer {
 						person = true;
 					}
 				}
-				if (person) result.entities.add(new ComparableEntity(e));
+				if (person) result.entities.add(new CustomEntityMention(e));
 			}
 		}
-		result.entities.sort(Comparator.comparing(ComparableEntity::getSentenceNumber).thenComparing(ComparableEntity::getTokenNumberFirst));
+		result.entities.sort(Comparator.comparing(CustomEntityMention::getSentenceNumber).thenComparing(CustomEntityMention::getWindowBegining));
         return result;
     }
 	
 
-    public List<ComparableEntity> getEntities() {
+    public List<CustomEntityMention> getEntities() {
         return this.entities;
     }
 
-    public void setEntities(List<ComparableEntity> entities) {
+    public void setEntities(List<CustomEntityMention> entities) {
         this.entities = entities;
     }
 
@@ -101,7 +102,7 @@ public class ComparableEntityContainer {
 
     public void display(){
         System.out.print("{ ");
-        for (ComparableEntity ce : entities){
+        for (CustomEntityMention ce : entities){
             System.out.print(ce.getText() + ", ");
         }
         System.out.print(" }\n");
