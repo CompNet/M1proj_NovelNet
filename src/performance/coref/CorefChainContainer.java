@@ -1,7 +1,10 @@
 package performance.coref;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -77,8 +80,8 @@ public class CorefChainContainer {
         return this.corefChains;
     }
 
-    public void setCorefChains(List<CustomCorefChain> corefChains) {
-        this.corefChains = corefChains;
+    public void setCorefChains(Collection<CustomCorefChain> collection) {
+        this.corefChains = new LinkedList<>(collection);
     }
 
     /**
@@ -111,6 +114,7 @@ public class CorefChainContainer {
 	 */
     public static CorefChainContainer buildFromXml(String pathToXml) throws IOException{
         CorefChainContainer result = new CorefChainContainer();
+        Map <Integer, CustomCorefChain> temp = new HashMap<>();
 		SAXBuilder builder = new SAXBuilder();  //there should be an error but it compile
 		FileInputStream is = new FileInputStream(pathToXml);     
 	    try {
@@ -122,8 +126,7 @@ public class CorefChainContainer {
 	        for (int i = 0; i < list.size(); i++) {
 	        	Element node = (Element) list.get(i);
                 
-                CustomCorefChain ccc = result.get(Integer.parseInt(node.getChildText("CorefChain")));   //trying to find the corefChain for the current mention
-
+                CustomCorefChain ccc = temp.get(Integer.parseInt(node.getChildText("CorefChain")));   //trying to find the corefChain for the current mention
                 // if there is a chain for this mention
                 if ( ccc != null){
                     // create the mention and add it to the chain
@@ -134,11 +137,15 @@ public class CorefChainContainer {
                 }
                 else{
                     //else we create the chain with the mention
-                    result.addEntityAsNewChain(new CustomEntityMention(node.getChildText("text"), 
-                        Integer.parseInt(node.getChildText("sentence")), 
-                        Integer.parseInt(node.getChildText("start")),
-                        Integer.parseInt(node.getChildText("end"))),
-                        Integer.parseInt(node.getChildText("CorefChain")) );
+                    temp.putIfAbsent(
+                        Integer.parseInt(node.getChildText("CorefChain")),
+                        new CustomCorefChain(
+                            new CustomEntityMention(node.getChildText("text"), 
+                            Integer.parseInt(node.getChildText("sentence")), 
+                            Integer.parseInt(node.getChildText("start")),
+                            Integer.parseInt(node.getChildText("end")))
+                        )
+                    );
                 }
 	        }
 	    } catch (IOException io) {
@@ -146,24 +153,9 @@ public class CorefChainContainer {
 	    } catch (JDOMException jdomex) {
 	    	System.out.println(jdomex.getMessage());
 	    }
+        result.setCorefChains(temp.values());
         return result;
 	}
-
-    /**
-	 * find the coref chain corresponding to the id
-	 * 
-	 * @param chainID id of the chain
-     * @return the corresponding chain (null if there is no corresponding chain)
-	 */
-    private CustomCorefChain get(int chainID) {
-        if (chainID == 0) return null;
-        for(CustomCorefChain ccc : corefChains){
-            if (ccc.getId()== chainID){
-                return ccc;
-            }
-        }
-        return null;
-    }
 
     /**
 	 * Count the entities in the container
@@ -217,18 +209,6 @@ public class CorefChainContainer {
             if (ccc.getCEMList().contains(ce)) return true;
         }
         return false;
-    }
-
-    /**
-	 * Add a mention as a new CorefChain in the container specifying the id of the chain
-     * 
-     * @param ce the mention to add
-     * @param id the id of the chain
-	 */
-    public void addEntityAsNewChain(CustomEntityMention ce, int id){
-        CustomCorefChain temp = new CustomCorefChain(ce);
-        temp.setId(id);
-        corefChains.add(temp);
     }
 
     /**

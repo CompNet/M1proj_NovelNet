@@ -172,8 +172,8 @@
         <start>19</start>
         <end>19</end>
         <originalName>Remus et Sirius<Name>
-        <CorefChain>0</CorefChain>
-        <ClusterID>0</ClusterID>
+        <CorefChain>56</CorefChain>
+        <ClusterID>56</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -656,8 +656,8 @@
         <start>7</start>
         <end>7</end>
         <originalName>Harry et Ron<Name>
-        <CorefChain>0</CorefChain>
-        <ClusterID>0</ClusterID>
+        <CorefChain>55</CorefChain>
+        <ClusterID>55</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     

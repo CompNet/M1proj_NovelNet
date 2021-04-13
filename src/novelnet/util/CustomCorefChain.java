@@ -13,12 +13,10 @@ public class CustomCorefChain{
 
     List<CustomEntityMention> cEMList;
     String representativeName;
-    int id;
 
     public CustomCorefChain(){
         cEMList = new LinkedList<>();
         representativeName = "";
-        id = 0;
     }
 
     public CustomCorefChain(CorefChain cc){
@@ -47,19 +45,6 @@ public class CustomCorefChain{
         cEMList.add(ce);
     }
 
-    @Override
-    public String toString() {
-        String cemNames = "";
-        for (int i = 0; i < cEMList.size(); i++){
-            cemNames += cEMList.get(i).text();
-            if (i != cEMList.size()-1) cemNames += ", ";
-        } 
-        return "{" +
-            " cEMList='" + cemNames + "'" +
-            ", representativeName='" + getRepresentativeName() + "'" +
-            "}";
-    }
-
     public String getRepresentativeName() {
         return representativeName;
     }
@@ -77,19 +62,10 @@ public class CustomCorefChain{
 
     public Boolean contains(CoreLabel token){
         for(CustomEntityMention entity : cEMList){
-            //System.out.println("original tokens : " + tokens + "\t entity tokens : " + entity.tokens + "\tif result : " + tokens.equals(entity.tokens));
             if (entity.tokens.contains(token)) return true;
         }
         return false;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }   
 
     public double precision(CorefChainContainer reference){
         double tot = 0;
@@ -107,5 +83,18 @@ public class CustomCorefChain{
         }
 
         return tot;
+    }
+    
+    @Override
+    public String toString() {
+        String cemNames = "";
+        for (int i = 0; i < cEMList.size(); i++){
+            cemNames += cEMList.get(i).text();
+            if (i != cEMList.size()-1) cemNames += ", ";
+        } 
+        return "{" +
+            " cEMList='" + cemNames + "'" +
+            ", representativeName='" + getRepresentativeName() + "'" +
+            "}";
     }
 }
