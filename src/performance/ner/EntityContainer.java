@@ -6,20 +6,17 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Comparator;
-import java.util.Properties;
 
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import org.apache.commons.io.IOUtils;
 
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import novelnet.util.CustomEntityMention;
-import novelnet.util.TextNormalization;
+import novelnet.util.ImpUtils;
 
 public class EntityContainer {
 
@@ -81,17 +78,17 @@ public class EntityContainer {
 	 * @param pathToText path to the .txt file
      * @return the Container
 	 */
-    public static EntityContainer buildFromTxt(String pathToText) throws IOException {
+    public static EntityContainer buildFromTxt(String pathToFile) throws IOException {
         EntityContainer result = new EntityContainer();
-		FileInputStream is = new FileInputStream(pathToText);     
-		String content = IOUtils.toString(is, "UTF-8");
-		content = TextNormalization.addDotEndOfLine(content);
-		Properties props = new Properties();
-		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
-		props.setProperty("ner.applyFineGrained", "false");
-		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-		CoreDocument document = new CoreDocument(content);
-		pipeline.annotate(document);
+		CoreDocument document;
+
+		if (pathToFile.contains("\\en\\") || pathToFile.contains("/en/")) document = ImpUtils.processNER(pathToFile);
+		else if (pathToFile.contains("\\fr\\") || pathToFile.contains("/fr/")) document = ImpUtils.processFrenchNER(pathToFile);
+		else {
+			System.out.println("Language non reconnu");
+			return null;
+		}
+
 		boolean person;
 		for (CoreEntityMention e : document.entityMentions()){
 			person = false;

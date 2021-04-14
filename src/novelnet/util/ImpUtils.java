@@ -1,8 +1,13 @@
 package novelnet.util;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
+
+import org.apache.commons.io.IOUtils;
 
 import edu.stanford.nlp.coref.CorefCoreAnnotations;
 import edu.stanford.nlp.coref.data.CorefChain;
@@ -10,11 +15,13 @@ import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 /**
  * @author Baptiste Quay
  * @author Tewis Lemaire
  *
+ * some generally usefull fonction
  */
 public class ImpUtils {
 
@@ -22,7 +29,6 @@ public class ImpUtils {
 
 	private ImpUtils(){
 	}
-	
 
 	public static void setDocument(CoreDocument doc){
 		document = doc;
@@ -65,7 +71,6 @@ public class ImpUtils {
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		CoreEntityMention result = null;
 		for (CoreEntityMention em : document.entityMentions()){
-			//System.out.println((cm.startIndex-1) + " " + (cm.endIndex-1));
 			if (em.entityType().equals("PERSON")){
 				for (int i = cm.startIndex-1; i < cm.endIndex-1; i++){
 					if (em.tokens().get(0).beginPosition() == document.sentences().get(cm.sentNum-1).tokens().get(i).beginPosition()){
@@ -81,7 +86,6 @@ public class ImpUtils {
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		List<CoreLabel> result = new LinkedList<>();
 		for ( CoreLabel token : document.sentences().get(cm.sentNum-1).tokens()){
-			//System.out.println(cm.mentionSpan + "\t" + cm.startIndex + "\t" + cm.endIndex + "\t" + token.originalText() + "\t" + token.index());
 			if (cm.startIndex <= token.index() && token.index() < cm.endIndex){
 				result.add(token);
 			}
@@ -111,58 +115,90 @@ public class ImpUtils {
 			}
 			else return true;
 		}
-		/*else if (token.originalText().equals("...")) return true;*/
 		return false;
 	}
-	
-	/**
-	 * @author Baptiste Quay
-	 * @author Tewis Lemaire
-	 * @throws NullDocumentException
-	 *
-	 */
-	/* useless for now but it might be usefull later.
-	
-	public static String bestName(CoreEntityMention cem){
-		try{
-			CorefChain corefChain =  ImpUtils.corefByEntityMention(cem);
-			if (corefChain == null) return cem.text();
-			return corefChain.getRepresentativeMention().mentionSpan;
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage());
-		}
-		return null;
-	}
-	
-	
-	public static List<String> getNamesInCorefChain(CorefChain cc) throws NullDocumentException{
-		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
-		CoreEntityMention temp;
-		List<String> result = new LinkedList<>();
-		for(CorefMention cm : cc.getMentionsInTextualOrder()){
-			temp = getCoreEntityMentionByCorefMention(cm);
-			if (temp!=null) result.add(temp.text());
-		}
 
-		return result;
-	}
-	
-	public static List<String> getAllRepresentativeNamesOfCorefChains(List<CorefChain> ccList){
-		List<String> result = new LinkedList<>();
-		for(CorefChain cc : ccList){
-			if (cc.getRepresentativeMention() != null){
-				try {
-					CoreEntityMention cem = getCoreEntityMentionByCorefMention(cc.getRepresentativeMention());
-					if (cem != null){
-						result.add(cem.text());
-						
-					}
-				}
-				catch (Exception e){System.out.println(e.getMessage());}	
-			}
-		}
-		return result;
-	}*/
+	public static CoreDocument processNER(String pathToFile) throws IOException{
+		//transforming the file to a String
+		FileInputStream is = new FileInputStream(pathToFile);     
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
+		//text Pre-processing
+        content = TextNormalization.addDotEndOfLine(content);
+
+        //building Stanford's pipeline
+		Properties props = new Properties();
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
+		props.setProperty("ner.applyFineGrained", "false");
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		pipeline.annotate(document);
+
+		ImpUtils.setDocument(document);
+		
+		return document;
+	}
+
+	public static CoreDocument processFrenchNER(String pathToFile) throws IOException{
+		//transforming the file to a String
+		FileInputStream is = new FileInputStream(pathToFile);     
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		//text Pre-processing
+        content = TextNormalization.addDotEndOfLine(content);
+
+        //building Stanford's pipeline
+		Properties props = ImpUtils.getFrenchProperties();
+		props.setProperty("annotators","tokenize,ssplit,pos,lemma,ner");
+		props.setProperty("ner.applyFineGrained", "false");
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		pipeline.annotate(document);
+
+		ImpUtils.setDocument(document);
+		
+		return document;
+	}
+
+	public static CoreDocument processCoref(String pathToFile) throws IOException{
+		//transforming the file to a String
+		FileInputStream is = new FileInputStream(pathToFile);     
+		String content = IOUtils.toString(is, "UTF-8");
+
+		//text Pre-processing
+        content = TextNormalization.addDotEndOfLine(content);
+
+        //building Stanford's pipeline
+		Properties props = new Properties();
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
+		props.setProperty("ner.applyFineGrained", "false");
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		pipeline.annotate(document);
+
+		ImpUtils.setDocument(document);
+		
+		return document;
+	}
+
+	public static CoreDocument processOpenIE(String pathToFile) throws IOException{
+		//transforming the file to a String
+		FileInputStream is = new FileInputStream(pathToFile);     
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		//text Pre-processing
+        content = TextNormalization.addDotEndOfLine(content);
+
+        //building Stanford's pipeline
+		Properties props = new Properties();
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie");
+		props.setProperty("ner.applyFineGrained", "false");
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		pipeline.annotate(document);
+		
+		ImpUtils.setDocument(document);
+		
+		return document;
+	}
 }

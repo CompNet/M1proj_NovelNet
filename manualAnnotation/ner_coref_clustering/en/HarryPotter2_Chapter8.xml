@@ -6,7 +6,7 @@
         <start>1</start>
         <end>2</end>
         <originalName>Pomfrey</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -17,7 +17,7 @@
         <start>4</start>
         <end>5</end>
         <originalName>Pomfrey</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -28,8 +28,8 @@
         <start>17</start>
         <end>18</end>
         <originalName></originalName>
-        <CorefChain></CorefChain>
-        <ClusterID></ClusterID>
+        <CorefChain>2</CorefChain>
+        <ClusterID>27</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -39,7 +39,7 @@
         <start>20</start>
         <end>20</end>
         <originalName>students</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>3</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -50,7 +50,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Pomfrey</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -61,7 +61,7 @@
         <start>1</start>
         <end>2</end>
         <originalName>Ginny Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>4</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -72,7 +72,7 @@
         <start>16</start>
         <end>16</end>
         <originalName>Percy</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>5</CorefChain>
         <ClusterID>26</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -83,7 +83,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Ginny Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>4</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -94,7 +94,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Ginny Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>4</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -105,8 +105,8 @@
         <start>29</start>
         <end>29</end>
         <originalName></originalName>
-        <CorefChain></CorefChain>
-        <ClusterID></ClusterID>
+        <CorefChain>6</CorefChain>
+        <ClusterID>28</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -116,8 +116,8 @@
         <start>1</start>
         <end>2</end>
         <originalName></originalName>
-        <CorefChain></CorefChain>
-        <ClusterID></ClusterID>
+        <CorefChain>7</CorefChain>
+        <ClusterID>29</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -127,7 +127,7 @@
         <start>19</start>
         <end>19</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>8</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -138,7 +138,7 @@
         <start>38</start>
         <end>38</end>
         <originalName>Gryffindor</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>9</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -149,7 +149,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Fred Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>10</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -160,7 +160,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>George Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>11</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -171,7 +171,7 @@
         <start>11</start>
         <end>12</end>
         <originalName>The Slytherin team</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>12</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -182,7 +182,7 @@
         <start>17</start>
         <end>17</end>
         <originalName>Fred and George</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>13</CorefChain>
         <ClusterID>9</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -193,7 +193,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Fred and George</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>13</CorefChain>
         <ClusterID>9</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -204,7 +204,7 @@
         <start>5</start>
         <end>6</end>
         <originalName>The Slytherin team</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>12</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -215,7 +215,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>15</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -226,7 +226,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>15</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -237,7 +237,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>16</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -248,7 +248,7 @@
         <start>18</start>
         <end>18</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>15</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -259,7 +259,7 @@
         <start>1</start>
         <end>3</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>16</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -270,7 +270,7 @@
         <start>5</start>
         <end>9</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>16</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -281,7 +281,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Gryffindor</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>17</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -292,7 +292,7 @@
         <start>21</start>
         <end>21</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>16</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -303,7 +303,7 @@
         <start>29</start>
         <end>29</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>18</CorefChain>
         <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -314,7 +314,7 @@
         <start>43</start>
         <end>43</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>19</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -325,7 +325,7 @@
         <start>47</start>
         <end>47</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>20</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -336,7 +336,7 @@
         <start>8</start>
         <end>10</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>21</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -347,7 +347,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>21</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -358,7 +358,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>21</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -369,7 +369,7 @@
         <start>26</start>
         <end>26</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>21</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -380,7 +380,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>21</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -391,7 +391,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -402,7 +402,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>21</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -413,7 +413,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -424,7 +424,7 @@
         <start>6</start>
         <end>7</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>23</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -435,7 +435,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>24</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -446,7 +446,7 @@
         <start>18</start>
         <end>18</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>24</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -457,7 +457,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>24</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -468,7 +468,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>25</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -479,7 +479,7 @@
         <start>5</start>
         <end>7</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -490,7 +490,7 @@
         <start>25</start>
         <end>25</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -501,7 +501,7 @@
         <start>32</start>
         <end>32</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -512,7 +512,7 @@
         <start>38</start>
         <end>38</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -523,7 +523,7 @@
         <start>50</start>
         <end>50</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -534,7 +534,7 @@
         <start>62</start>
         <end>62</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -545,7 +545,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>25</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -556,7 +556,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>25</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -567,7 +567,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -578,7 +578,7 @@
         <start>22</start>
         <end>22</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -589,7 +589,7 @@
         <start>40</start>
         <end>40</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>25</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -600,7 +600,7 @@
         <start>43</start>
         <end>45</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>18</CorefChain>
         <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -611,7 +611,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -622,7 +622,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -633,7 +633,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>26</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -644,7 +644,7 @@
         <start>28</start>
         <end>28</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>68</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -655,7 +655,7 @@
         <start>35</start>
         <end>35</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>68</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -666,7 +666,7 @@
         <start>4</start>
         <end>6</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>69</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -677,7 +677,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>69</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -688,7 +688,7 @@
         <start>17</start>
         <end>17</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>18</CorefChain>
         <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -699,7 +699,7 @@
         <start>21</start>
         <end>21</end>
         <originalName>huntsmen</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>76</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -710,7 +710,7 @@
         <start>29</start>
         <end>29</end>
         <originalName>huntsmen</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>76</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -721,7 +721,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>69</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -732,7 +732,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>huntsmen</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>76</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -743,7 +743,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>Sir Patrick Delaney-Podmore</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>77</CorefChain>
         <ClusterID>13</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -754,7 +754,7 @@
         <start>20</start>
         <end>20</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>18</CorefChain>
         <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -765,7 +765,7 @@
         <start>6</start>
         <end>8</end>
         <originalName>Sir Patrick Delaney-Podmore</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>77</CorefChain>
         <ClusterID>13</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -776,7 +776,7 @@
         <start>3</start>
         <end>5</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>70</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -787,7 +787,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>70</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -798,7 +798,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>27</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -809,7 +809,7 @@
         <start>21</start>
         <end>23</end>
         <originalName>Sir Patrick Delaney-Podmore</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>78</CorefChain>
         <ClusterID>13</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -820,7 +820,7 @@
         <start>1</start>
         <end>3</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>71</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -831,7 +831,7 @@
         <start>24</start>
         <end>24</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>27</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -842,7 +842,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>71</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -853,7 +853,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>28</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -864,7 +864,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>71</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -875,7 +875,7 @@
         <start>7</start>
         <end>7</end>
         <originalName>Griffindor quidditch team</originalName> <!-- not in the text-->
-        <CorefChain></CorefChain>
+        <CorefChain>80</CorefChain>
         <ClusterID>14</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -886,7 +886,7 @@
         <start>18</start>
         <end>18</end>
         <originalName>Griffindor quidditch team</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>80</CorefChain>
         <ClusterID>14</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -897,7 +897,7 @@
         <start>21</start>
         <end>21</end>
         <originalName>The Slytherin team</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>12</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -908,7 +908,7 @@
         <start>27</start>
         <end>27</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>29</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -919,7 +919,7 @@
         <start>40</start>
         <end>40</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>29</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -930,7 +930,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>29</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -941,7 +941,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>29</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -952,7 +952,7 @@
         <start>3</start>
         <end>4</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -963,7 +963,7 @@
         <start>6</start>
         <end>9</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -974,7 +974,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -985,7 +985,7 @@
         <start>14</start>
         <end>15</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>84</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -996,7 +996,7 @@
         <start>17</start>
         <end>18</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>84</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1007,7 +1007,7 @@
         <start>26</start>
         <end>26</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>84</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1018,7 +1018,7 @@
         <start>30</start>
         <end>30</end>
         <originalName>students</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>3</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1029,7 +1029,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>29</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1040,7 +1040,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>30</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1051,7 +1051,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>72</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1062,7 +1062,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>85</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1073,7 +1073,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>85</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1084,7 +1084,7 @@
         <start>17</start>
         <end>18</end>
         <originalName>students</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>3</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1095,7 +1095,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>85</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1106,7 +1106,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>85</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1117,7 +1117,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>30</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1128,7 +1128,7 @@
         <start>26</start>
         <end>26</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>31</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1139,7 +1139,7 @@
         <start>35</start>
         <end>36</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>82</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1150,7 +1150,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>85</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1161,7 +1161,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>85</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1172,7 +1172,7 @@
         <start>16</start>
         <end>17</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>82</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1183,7 +1183,7 @@
         <start>19</start>
         <end>20</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1194,7 +1194,7 @@
         <start>27</start>
         <end>27</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>32</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1205,7 +1205,7 @@
         <start>38</start>
         <end>38</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>32</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1216,7 +1216,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1227,7 +1227,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1238,7 +1238,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1249,7 +1249,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1260,7 +1260,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1271,7 +1271,7 @@
         <start>23</start>
         <end>23</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>33</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1282,7 +1282,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1293,7 +1293,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>86</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1304,7 +1304,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>33</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1315,7 +1315,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>34</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1326,7 +1326,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>35</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1337,7 +1337,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>87</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1348,7 +1348,7 @@
         <start>16</start>
         <end>16</end>
         <originalName>students</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>3</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1359,7 +1359,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>36</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1370,7 +1370,7 @@
         <start>23</start>
         <end>23</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>88</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1381,7 +1381,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Fred Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>110</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1392,7 +1392,7 @@
         <start>3</start>
         <end>4</end>
         <originalName>George Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>115</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1403,8 +1403,8 @@
         <start>10</start>
         <end>10</end>
         <originalName>Fred and George Weasley</originalName>
-        <CorefChain></CorefChain>
-        <ClusterID></ClusterID>
+        <CorefChain>116</CorefChain>
+        <ClusterID>30</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1414,7 +1414,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>89</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1425,7 +1425,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>89</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1436,8 +1436,8 @@
         <start>10</start>
         <end>10</end>
         <originalName></originalName>
-        <CorefChain></CorefChain>
-        <ClusterID></ClusterID>
+        <CorefChain>117</CorefChain>
+        <ClusterID>31</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1447,7 +1447,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>students</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>3</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1458,7 +1458,7 @@
         <start>17</start>
         <end>17</end>
         <originalName>students</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>3</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1469,7 +1469,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1480,7 +1480,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1491,7 +1491,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1502,7 +1502,7 @@
         <start>21</start>
         <end>21</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1513,7 +1513,7 @@
         <start>40</start>
         <end>40</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1524,7 +1524,7 @@
         <start>48</start>
         <end>48</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1535,7 +1535,7 @@
         <start>58</start>
         <end>58</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1546,7 +1546,7 @@
         <start>61</start>
         <end>61</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1557,7 +1557,7 @@
         <start>4</start>
         <end>5</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>37</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1568,7 +1568,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>38</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1579,7 +1579,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>38</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1590,7 +1590,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>38</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1601,7 +1601,7 @@
         <start>16</start>
         <end>16</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>91</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1612,7 +1612,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>91</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1623,7 +1623,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>91</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1634,7 +1634,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>91</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1645,7 +1645,7 @@
         <start>18</start>
         <end>18</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>92</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1656,7 +1656,7 @@
         <start>22</start>
         <end>22</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1667,7 +1667,7 @@
         <start>29</start>
         <end>29</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1678,7 +1678,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>93</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1689,7 +1689,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>93</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1700,7 +1700,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>118</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1711,7 +1711,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1722,7 +1722,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1733,7 +1733,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1744,7 +1744,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>118</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1755,7 +1755,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>118</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1766,7 +1766,7 @@
         <start>7</start>
         <end>7</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>40</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1777,7 +1777,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>95</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1788,7 +1788,7 @@
         <start>16</start>
         <end>17</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>83</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1799,7 +1799,7 @@
         <start>20</start>
         <end>20</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>96</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1810,7 +1810,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>119</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1821,7 +1821,7 @@
         <start>3</start>
         <end>5</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>119</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1832,7 +1832,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>41</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1843,7 +1843,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>120</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1854,7 +1854,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>120</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1865,7 +1865,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>121</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1876,7 +1876,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>121</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1887,7 +1887,7 @@
         <start>24</start>
         <end>24</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>97</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1898,7 +1898,7 @@
         <start>26</start>
         <end>26</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>42</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1909,7 +1909,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>42</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1920,7 +1920,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>98</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1931,7 +1931,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>43</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1942,7 +1942,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>43</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1953,7 +1953,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>99</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>    
@@ -1964,7 +1964,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>99</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1975,7 +1975,7 @@
         <start>19</start>
         <end>19</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>44</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1986,7 +1986,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>45</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1997,7 +1997,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>yourself</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>124</CorefChain>
         <ClusterID>18</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2008,7 +2008,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>yourself</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>124</CorefChain>
         <ClusterID>18</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2019,7 +2019,7 @@
         <start>1</start>
         <end>3</end>
         <originalName>Z. Nettles</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>125</CorefChain>
         <ClusterID>19</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2030,7 +2030,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Z. Nettles</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>125</CorefChain>
         <ClusterID>19</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2041,7 +2041,7 @@
         <start>2</start>
         <end>4</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>126</CorefChain>
         <ClusterID>20</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2052,7 +2052,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>126</CorefChain>
         <ClusterID>20</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2063,7 +2063,7 @@
         <start>10</start>
         <end>11</end>
         <originalName>D. J. Prod's wife</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>127</CorefChain>
         <ClusterID>21</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2074,7 +2074,7 @@
         <start>16</start>
         <end>16</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>126</CorefChain>
         <ClusterID>20</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2085,7 +2085,7 @@
         <start>29</start>
         <end>29</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>126</CorefChain>
         <ClusterID>20</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2096,7 +2096,7 @@
         <start>33</start>
         <end>33</end>
         <originalName>D. J. Prod's wife</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>127</CorefChain>
         <ClusterID>21</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2107,7 +2107,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>46</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2118,7 +2118,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>100</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2129,7 +2129,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>100</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2140,7 +2140,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>47</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2151,7 +2151,7 @@
         <start>24</start>
         <end>24</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>101</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2162,7 +2162,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>48</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2173,7 +2173,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>102</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2184,7 +2184,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>102</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2195,7 +2195,7 @@
         <start>6</start>
         <end>7</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>83</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2206,8 +2206,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Argus Filch and Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
-        <ClusterID></ClusterID>
+        <CorefChain>128</CorefChain>
+        <ClusterID>32</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2217,7 +2217,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>122</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2228,7 +2228,7 @@
         <start>10</start>
         <end>11</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>83</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -2239,7 +2239,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>102</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2250,7 +2250,7 @@
         <start>18</start>
         <end>18</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>49</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2261,7 +2261,7 @@
         <start>29</start>
         <end>29</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>50</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2272,7 +2272,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>103</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2283,7 +2283,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>51</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2294,7 +2294,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>51</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -2305,7 +2305,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>104</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>    
@@ -2316,7 +2316,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>104</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2327,7 +2327,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>51</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2338,7 +2338,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>51</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -2349,7 +2349,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>104</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2360,7 +2360,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>52</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2371,7 +2371,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>105</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2382,7 +2382,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>105</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2393,7 +2393,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>52</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2404,7 +2404,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>105</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2415,7 +2415,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>105</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2426,7 +2426,7 @@
         <start>30</start>
         <end>30</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2437,7 +2437,7 @@
         <start>38</start>
         <end>38</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>106</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2448,7 +2448,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>106</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2459,7 +2459,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>106</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2470,7 +2470,7 @@
         <start>20</start>
         <end>20</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>54</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2481,7 +2481,7 @@
         <start>28</start>
         <end>28</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>106</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2492,7 +2492,7 @@
         <start>33</start>
         <end>33</end>
         <originalName>Peeves</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>123</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2503,7 +2503,7 @@
         <start>42</start>
         <end>42</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>55</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2514,7 +2514,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>107</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2525,7 +2525,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>56</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2536,7 +2536,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2547,7 +2547,7 @@
         <start>1</start>
         <end>3</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>73</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2558,7 +2558,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>58</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2569,7 +2569,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>59</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2580,7 +2580,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>73</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2591,7 +2591,7 @@
         <start>15</start>
         <end>17</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>74</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2602,7 +2602,7 @@
         <start>20</start>
         <end>20</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>74</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2613,7 +2613,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>60</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2624,7 +2624,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>60</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2635,7 +2635,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>74</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2646,7 +2646,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>60</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2657,7 +2657,7 @@
         <start>1</start>
         <end>2</end>
         <originalName>Ron Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>129</CorefChain>
         <ClusterID>22</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2667,8 +2667,8 @@
         <sentence>117</sentence>
         <start>4</start>
         <end>5</end>
-        <originalName></originalName>
-        <CorefChain></CorefChain>
+        <originalName>Hermione</originalName>
+        <CorefChain>133</CorefChain>
         <ClusterID>23</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2679,7 +2679,7 @@
         <start>17</start>
         <end>17</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>74</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2690,7 +2690,7 @@
         <start>19</start>
         <end>19</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>60</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2701,7 +2701,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>74</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2712,7 +2712,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>61</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2723,7 +2723,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>62</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2734,7 +2734,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>62</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2745,7 +2745,7 @@
         <start>18</start>
         <end>18</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>62</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2756,7 +2756,7 @@
         <start>1</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>63</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2767,7 +2767,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>74</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2778,7 +2778,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>74</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2789,7 +2789,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>63</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2800,7 +2800,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>63</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2811,7 +2811,7 @@
         <start>19</start>
         <end>20</end>
         <originalName>Sir Patrick Delaney-Podmore</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>79</CorefChain>
         <ClusterID>13</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2822,7 +2822,7 @@
         <start>28</start>
         <end>28</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>75</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2833,7 +2833,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>64</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2844,7 +2844,7 @@
         <start>1</start>
         <end>3</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>75</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2855,7 +2855,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>64</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2866,7 +2866,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Hermione</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>134</CorefChain>
         <ClusterID>23</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2877,7 +2877,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>65</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2887,8 +2887,8 @@
         <sentence>125</sentence>
         <start>12</start>
         <end>12</end>
-        <originalName>Hermione Granger</originalName>
-        <CorefChain></CorefChain>
+        <originalName>Hermione</originalName>
+        <CorefChain>134</CorefChain>
         <ClusterID>23</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2899,7 +2899,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Ron Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>130</CorefChain>
         <ClusterID>22</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2910,7 +2910,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Hermione Granger</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>134</CorefChain>
         <ClusterID>23</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2921,7 +2921,7 @@
         <start>8</start>
         <end>9</end>
         <originalName>living people</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>140</CorefChain>
         <ClusterID>24</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2932,7 +2932,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>living people</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>140</CorefChain>
         <ClusterID>24</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2943,7 +2943,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>anyone</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>141</CorefChain>
         <ClusterID>25</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2954,7 +2954,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>anyone</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>141</CorefChain>
         <ClusterID>25</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2965,7 +2965,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Ron Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>131</CorefChain>
         <ClusterID>22</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2976,7 +2976,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Ron Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>131</CorefChain>
         <ClusterID>22</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2987,7 +2987,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Ron Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>131</CorefChain>
         <ClusterID>22</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2998,7 +2998,7 @@
         <start>24</start>
         <end>24</end>
         <originalName>Fred Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>111</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3009,7 +3009,7 @@
         <start>26</start>
         <end>27</end>
         <originalName>George Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>114</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3020,7 +3020,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Fred Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>112</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3031,7 +3031,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>66</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3042,7 +3042,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Ron Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>132</CorefChain>
         <ClusterID>22</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3052,8 +3052,8 @@
         <sentence>132</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Hermione Granger</originalName>
-        <CorefChain></CorefChain>
+        <originalName>Hermione</originalName>
+        <CorefChain>134</CorefChain>
         <ClusterID>23</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3064,7 +3064,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>108</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3075,7 +3075,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Percy</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>142</CorefChain>
         <ClusterID>26</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3086,7 +3086,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Percy</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>142</CorefChain>
         <ClusterID>26</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -3097,7 +3097,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Fred Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>113</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3108,7 +3108,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>George Weasley</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>114</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3119,7 +3119,7 @@
         <start>39</start>
         <end>39</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>109</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3130,118 +3130,8 @@
         <start>45</start>
         <end>45</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain></CorefChain>
+        <CorefChain>67</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    <mention>
-        <text></text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
-        <originalName></originalName>
-        <ClusterID></ClusterID>
-    </mention>
-
-    
+    </mention>   
 </document>

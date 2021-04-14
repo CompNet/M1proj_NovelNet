@@ -5,25 +5,21 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import org.apache.commons.io.IOUtils;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
-import novelnet.util.TextNormalization;
 
 public class CorefChainContainer {
 
@@ -83,29 +79,6 @@ public class CorefChainContainer {
 
     public void setCorefChains(Collection<CustomCorefChain> collection) {
         this.corefChains = new LinkedList<>(collection);
-    }
-
-    /**
-	 * Build a CorefChainContainer from a .txt file using Stanford CoreNLP
-	 * 
-	 * @param pathToText path to the .txt file
-     * @return the Container
-	 */
-    public static CorefChainContainer buildFromTxt(String pathToText) throws IOException, NullDocumentException {
-        //transforming the file to a String
-		FileInputStream is = new FileInputStream(pathToText);     
-		String content = IOUtils.toString(is, "UTF-8");
-        content = TextNormalization.addDotEndOfLine(content);
-
-        //building Stanford's pipeline
-		Properties props = new Properties();
-		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
-		props.setProperty("ner.applyFineGrained", "false");
-		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-		CoreDocument document = new CoreDocument(content);
-		pipeline.annotate(document);
-
-        return new CorefChainContainer(document);
     }
 
     /**

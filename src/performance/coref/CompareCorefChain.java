@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
+import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 
 public class CompareCorefChain {
@@ -44,14 +45,14 @@ public class CompareCorefChain {
 	*/
     public CompareCorefChain(String evaluationFilePath, String referenceFilePath) throws IOException, NullDocumentException{
 		if(evaluationFilePath.substring(evaluationFilePath.length()-4, evaluationFilePath.length()).equals(".txt")){
-			chainsToEvaluate = CorefChainContainer.buildFromTxt(evaluationFilePath);
+			chainsToEvaluate = new CorefChainContainer(ImpUtils.processCoref(evaluationFilePath));
 		}
 		else if (evaluationFilePath.substring(evaluationFilePath.length()-4, evaluationFilePath.length()).equals(".xml")){
 			chainsToEvaluate = CorefChainContainer.buildFromXml(evaluationFilePath);
 		}
 		else System.out.println("File type not recognized for argument 1");
 		if(referenceFilePath.substring(referenceFilePath.length()-4, referenceFilePath.length()).equals(".txt")){
-			reference = CorefChainContainer.buildFromTxt(referenceFilePath);
+			reference = new CorefChainContainer(ImpUtils.processCoref(referenceFilePath));
 		}
 		else if (referenceFilePath.substring(referenceFilePath.length()-4, referenceFilePath.length()).equals(".xml")){
 			reference = CorefChainContainer.buildFromXml(referenceFilePath);
