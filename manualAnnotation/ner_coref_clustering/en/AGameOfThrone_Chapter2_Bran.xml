@@ -17,7 +17,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Bran and Robb and Eddard and Jon</originalName>
-        <CorefChain>1</CorefChain>
+        <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -28,7 +28,7 @@
         <start>8</start>
         <end>9</end>
         <originalName>a man</originalName>
-        <CorefChain>1</CorefChain>
+        <CorefChain>3</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -39,7 +39,7 @@
         <start>16</start>
         <end>16</end>
         <originalName>Bran</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain>4</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -61,7 +61,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Bran</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain>4</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -72,7 +72,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>Bran</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain>4</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -83,7 +83,7 @@
         <start>15</start>
         <end>17</end>
         <originalName>Eddard</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain>5</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -94,7 +94,7 @@
         <start>19</start>
         <end>19</end>
         <originalName>Bran</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain>4</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -105,7 +105,7 @@
         <start>19</start>
         <end>20</end>
         <originalName>Robb and Jon</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain>6</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -116,7 +116,7 @@
         <start>23</start>
         <end>24</end>
         <originalName>Robert</originalName>
-        <CorefChain>2</CorefChain>
+        <CorefChain>7</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -127,7 +127,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Bran</originalName>
-        <CorefChain>3</CorefChain>
+        <CorefChain>8</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>

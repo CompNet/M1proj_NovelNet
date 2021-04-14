@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+    <Triplet>
+        <Subject>
+            <text></text>
+            <sentence></sentence>
+            <start></start> <!-- token n° -->
+            <end></end> <!-- token n° -->
+        </Subject>
+        <Verb>
+            <text></text>
+            <sentence></sentence>
+            <start></start>
+            <end></end>
+        </Verb>
+        <Object>
+            <text></text>
+            <sentence></sentence>
+            <start></start>
+            <end></end>
+        </Object>
+    </Triplet>
+
+    <Triplet>
+        <Subject>
+            <text></text>
+            <sentence></sentence>
+            <start></start>
+            <end></end>
+        </Subject>
+        <Subject>
+            <text></text>
+            <sentence></sentence>
+            <start></start>
+            <end></end>
+        </Subject>
+        <Verb>
+            <text></text>
+            <sentence></sentence>
+            <start></start>
+            <end></end>
+        </Verb>
+    </Triplet>
+</document>
