@@ -23,6 +23,7 @@ import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
+import novelnet.util.TextNormalization;
 
 public class CorefChainContainer {
 
@@ -94,6 +95,7 @@ public class CorefChainContainer {
         //transforming the file to a String
 		FileInputStream is = new FileInputStream(pathToText);     
 		String content = IOUtils.toString(is, "UTF-8");
+        content = TextNormalization.addDotEndOfLine(content);
 
         //building Stanford's pipeline
 		Properties props = new Properties();

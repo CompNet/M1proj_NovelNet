@@ -136,7 +136,7 @@ public class CustomEntityMention {
         return text;
     }
 
-    public boolean compareTo(CustomEntityMention ce){
+    public boolean equalTo(CustomEntityMention ce){
 		return this.sentenceNumber == ce.sentenceNumber && this.getWindowBegining() == ce.getWindowBegining() && this.getWindowEnding() == ce.getWindowEnding();
 	}
 

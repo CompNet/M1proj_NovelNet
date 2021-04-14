@@ -19,6 +19,7 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import novelnet.util.CustomEntityMention;
+import novelnet.util.TextNormalization;
 
 public class EntityContainer {
 
@@ -84,6 +85,7 @@ public class EntityContainer {
         EntityContainer result = new EntityContainer();
 		FileInputStream is = new FileInputStream(pathToText);     
 		String content = IOUtils.toString(is, "UTF-8");
+		content = TextNormalization.addDotEndOfLine(content);
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
 		props.setProperty("ner.applyFineGrained", "false");

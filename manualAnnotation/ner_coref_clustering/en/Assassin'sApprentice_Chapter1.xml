@@ -762,7 +762,8 @@
         <text>the man</text>
         <sentence>45</sentence>
         <start>6</start>
-        <end>7</end>Jason</originalName>
+        <end>7</end>
+        <originalName>Jason</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>

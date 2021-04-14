@@ -68,6 +68,9 @@ public class CompareNER {
 			reference = EntityContainer.buildFromXml(referenceFilePath);
 		}
 		else System.out.println("File type not recognized for argument 2");
+		perf = new PrecisionRecallStats();
+		resultTableCE = new LinkedList<>();
+		resultTableString = new LinkedList<>();
 	}
 	
 	public EntityContainer getEntityList(){
@@ -95,7 +98,7 @@ public class CompareNER {
 		for (CustomEntityMention ce : entityList.getEntities()){
 			found = false;
 			for (CustomEntityMention ceToCompare : reference.getEntities()){
-				if(ce.compareTo(ceToCompare)){
+				if(ce.equalTo(ceToCompare)){
 					//True Positive
 					resultTableCE.add(ce);
 					resultTableString.add("TP");
@@ -115,7 +118,7 @@ public class CompareNER {
 		for (CustomEntityMention ce : reference.getEntities()){
 			found = false;
 			for (CustomEntityMention ceToCompare : entityList.getEntities()){
-				if(ce.compareTo(ceToCompare)){
+				if(ce.equalTo(ceToCompare)){
 					//not a False negative
 					found = true;
 					break;
@@ -152,8 +155,8 @@ public class CompareNER {
 		System.out.println("le nom du fichier de corpus à traiter (avec en/ ou fr/) :");
 		String fileName = sc.nextLine();
 		sc.close();
-		CompareNER c = new CompareNER("res/corpus/"+fileName+".txt", "performance/ner_coref_clustering/"+fileName+".xml");
+		CompareNER c = new CompareNER("res/corpus/"+fileName+".txt", "manualAnnotation/ner_coref_clustering/"+fileName+".xml");
+		c.compare();
 		c.display();
-		c.displayResult();
 	}
 }
