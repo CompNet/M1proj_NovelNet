@@ -38,7 +38,7 @@
         <sentence>1</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Harry</originalName>
+        <originalName>Harry Potter</originalName>
         <CorefChain>4</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -192,7 +192,7 @@
         <sentence>6</sentence>
         <start>2</start>
         <end>4</end>
-        <originalName></originalName>
+        <originalName>the remaining Weasleys</originalName>
         <CorefChain>33</CorefChain>
         <ClusterID>33</ClusterID>
         <mentionType>explicit</mentionType>
@@ -258,7 +258,7 @@
         <sentence>7</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName></originalName>
+        <originalName>Hedwig</originalName>
         <CorefChain>35</CorefChain>
         <ClusterID>35</ClusterID>
         <mentionType>explicit</mentionType>
@@ -269,7 +269,7 @@
         <sentence>7</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName></originalName>
+        <originalName>Crookshanks</originalName>
         <CorefChain>34</CorefChain>
         <ClusterID>34</ClusterID>
         <mentionType>explicit</mentionType>

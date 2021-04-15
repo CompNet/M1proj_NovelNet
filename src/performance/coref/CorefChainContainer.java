@@ -28,6 +28,8 @@ public class CorefChainContainer {
 	*/
     List<CustomCorefChain> corefChains;
 
+    int clusterID;
+
     /**
 	 * Class Constructor with an empty list of corefChains
 	*/
@@ -79,6 +81,14 @@ public class CorefChainContainer {
 
     public void setCorefChains(Collection<CustomCorefChain> collection) {
         this.corefChains = new LinkedList<>(collection);
+    }
+
+    public int getClusterID() {
+        return this.clusterID;
+    }
+
+    public void setClusterID(int clusterID) {
+        this.clusterID = clusterID;
     }
 
     /**
@@ -216,10 +226,19 @@ public class CorefChainContainer {
         }
     }
 
+    public CustomCorefChain get(int id){
+        for (CustomCorefChain ccc : corefChains){
+            if (ccc.getId() == id) return ccc;
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
-        return "{" +
-            " corefChains='" + getCorefChains() + "'" +
+        String result = "{";
+        if (getClusterID() != 0) result +=  " clusterID='" + getClusterID() + "', ";
+        return result +
+            "corefChains='" + getCorefChains() + "'" +
             "}";
     }
     

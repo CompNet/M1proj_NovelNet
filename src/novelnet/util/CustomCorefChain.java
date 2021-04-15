@@ -13,10 +13,12 @@ public class CustomCorefChain{
 
     List<CustomEntityMention> cEMList;
     String representativeName;
+    int id;
 
     public CustomCorefChain(){
         cEMList = new LinkedList<>();
         representativeName = "";
+        id = 0;
     }
 
     public CustomCorefChain(CorefChain cc){
@@ -28,6 +30,7 @@ public class CustomCorefChain{
             }
         }
         catch(Exception e){System.out.println(e.getMessage());}
+        id = 0;
     }
 
     public CustomCorefChain(CoreEntityMention cem){
@@ -36,6 +39,7 @@ public class CustomCorefChain{
         CustomEntityMention temp = new CustomEntityMention(cem);
         temp.setCorefChain(this);
         cEMList.add(temp);
+        id = 0;
         
     }
 
@@ -43,6 +47,7 @@ public class CustomCorefChain{
         cEMList = new LinkedList<>();
         representativeName = ce.text();
         cEMList.add(ce);
+        id = 0;
     }
 
     public String getRepresentativeName() {
@@ -52,6 +57,19 @@ public class CustomCorefChain{
     public List<CustomEntityMention> getCEMList() {
         return cEMList;
     }
+
+    public void setCEMList(List<CustomEntityMention> cEMList) {
+        this.cEMList = cEMList;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
 	public void setRepresentativeName(String representativeName) {
         for (CustomEntityMention cem : cEMList){
@@ -88,13 +106,19 @@ public class CustomCorefChain{
     @Override
     public String toString() {
         String cemNames = "";
+        String result = "{";
         for (int i = 0; i < cEMList.size(); i++){
             cemNames += cEMList.get(i).text();
             if (i != cEMList.size()-1) cemNames += ", ";
-        } 
-        return "{" +
-            " cEMList='" + cemNames + "'" +
-            ", representativeName='" + getRepresentativeName() + "'" +
-            "}";
+        }
+        if (!cemNames.equals("")){
+            result+= " cEMList='" + cemNames + "', ";
+        }
+        if (!representativeName.equals("")){
+            result+= "representativeName='" + getRepresentativeName() + "', ";
+        }
+        if (getId() != 0) result += "chainID='" + getId() + "'";
+        result += "}";
+        return result;
     }
 }

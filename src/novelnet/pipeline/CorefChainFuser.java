@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
@@ -19,7 +20,7 @@ import novelnet.util.DistanceMetricCustomCorefChainNL;
 import novelnet.util.DistanceMetricCustomCorefChainRO;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
-
+import performance.coref.CorefChainContainer;
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
@@ -125,6 +126,28 @@ public class CorefChainFuser {
         }
         for (CustomCorefChain ccc : cccList){
             result.add(ccc);
+        }
+
+        return result;
+    }
+
+    public List<CorefChainContainer> corefChainsClusteringROBeforeFusion(List<CustomCorefChain> cccList, int numberMinCluster, double maxDistance) {
+        DBSCANClusterer<CustomCorefChain> clusterer = null;
+
+        List<CorefChainContainer> result = new LinkedList<>();
+        List<ArrayList<CustomCorefChain>> clusterList = null;
+
+        try {
+            clusterer = new DBSCANClusterer<>(cccList, numberMinCluster, maxDistance, new DistanceMetricCustomCorefChainRO());
+            clusterList = clusterer.performClustering();
+        } catch (DBSCANClusteringException e1) {
+            System.out.println(e1.getMessage());
+        }
+
+        for (Collection<CustomCorefChain> cluster : clusterList){
+            CorefChainContainer temp = new CorefChainContainer();
+            temp.setCorefChains(cluster);
+            result.add(temp);
         }
 
         return result;
