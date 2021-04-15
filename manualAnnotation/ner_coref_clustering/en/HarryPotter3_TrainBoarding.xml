@@ -115,7 +115,7 @@
         <sentence>5</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Ginny and Harry</originalName>
+        <originalName>they</originalName>
         <CorefChain>9</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -126,7 +126,7 @@
         <sentence>5</sentence>
         <start>14</start>
         <end>14</end>
-        <originalName>Ginny and Harry</originalName>
+        <originalName>they</originalName>
         <CorefChain>9</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -225,7 +225,7 @@
         <sentence>6</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>13</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -513,7 +513,7 @@
         <sentence>13</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -557,7 +557,7 @@
         <sentence>14</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>27</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -601,7 +601,7 @@
         <sentence>16</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>30</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>

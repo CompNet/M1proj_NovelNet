@@ -38,7 +38,7 @@
         <sentence>4</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Joe Smith</originalName>
+        <originalName>Joe</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -49,7 +49,7 @@
         <sentence>5</sentence>
         <start>4</start>
         <end>4</end>
-         <originalName>Joe Smith</originalName>
+         <originalName>Joe</originalName>
         <CorefChain>3</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -60,7 +60,7 @@
         <sentence>5</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Jane Smith</originalName>
+        <originalName>Jane</originalName>
         <CorefChain>4</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -71,7 +71,7 @@
         <sentence>5</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Jane Smith</originalName>
+        <originalName>Jane</originalName>
         <CorefChain>4</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>

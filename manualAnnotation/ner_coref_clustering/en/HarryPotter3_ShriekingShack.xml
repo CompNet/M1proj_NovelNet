@@ -60,7 +60,7 @@
         <sentence>3</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>3</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -82,7 +82,7 @@
         <sentence>5</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>4</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -104,7 +104,7 @@
         <sentence>6</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>5</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -115,7 +115,7 @@
         <sentence>6</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>5</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -126,7 +126,7 @@
         <sentence>6</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -137,7 +137,7 @@
         <sentence>6</sentence>
         <start>20</start>
         <end>20</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>7</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -148,7 +148,7 @@
         <sentence>7</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>8</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -159,7 +159,7 @@
         <sentence>7</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>8</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -170,7 +170,7 @@
         <sentence>7</sentence>
         <start>16</start>
         <end>17</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -181,7 +181,7 @@
         <sentence>8</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Harry, Ron and Hermione</originalName>
+        <originalName>them</originalName>
         <CorefChain>9</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
@@ -192,7 +192,7 @@
         <sentence>8</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>3</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -203,7 +203,7 @@
         <sentence>9</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Remus</originalName>
         <CorefChain>10</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -214,7 +214,7 @@
         <sentence>10</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>8</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -225,7 +225,7 @@
         <sentence>10</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>8</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -236,7 +236,7 @@
         <sentence>10</sentence>
         <start>14</start>
         <end>14</end>
-        <originalName>Black and Lupin</originalName>
+        <originalName>You</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -247,7 +247,7 @@
         <sentence>10</sentence>
         <start>18</start>
         <end>20</end>
-        <originalName>Black and Lupin</originalName>
+        <originalName>You</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -258,7 +258,7 @@
         <sentence>10</sentence>
         <start>24</start>
         <end>24</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -269,7 +269,7 @@
         <sentence>10</sentence>
         <start>30</start>
         <end>30</end>
-        <originalName>Harry Potter</originalName>
+        <originalName>Harry</originalName>
         <CorefChain>13</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
@@ -280,7 +280,7 @@
         <sentence>10</sentence>
         <start>32</start>
         <end>32</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>14</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -291,7 +291,7 @@
         <sentence>11</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -302,7 +302,7 @@
         <sentence>12</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -313,7 +313,7 @@
         <sentence>13</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -324,7 +324,7 @@
         <sentence>13</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -335,7 +335,7 @@
         <sentence>13</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -346,7 +346,7 @@
         <sentence>13</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -357,7 +357,7 @@
         <sentence>13</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -368,7 +368,7 @@
         <sentence>13</sentence>
         <start>22</start>
         <end>22</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>16</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -379,8 +379,8 @@
         <sentence>14</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Ron Weasley</originalName>
-        <CorefChain>14</CorefChain>
+        <originalName>Ron</originalName>
+        <CorefChain>68</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -390,7 +390,7 @@
         <sentence>14</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -401,8 +401,8 @@
         <sentence>14</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Ron Weasley</originalName>
-        <CorefChain>14</CorefChain>
+        <originalName>Ron</originalName>
+        <CorefChain>68</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -412,7 +412,7 @@
         <sentence>14</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -423,7 +423,7 @@
         <sentence>15</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Peter</originalName>
         <CorefChain>17</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -434,8 +434,8 @@
         <sentence>15</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Ron Weasley</originalName>
-        <CorefChain>14</CorefChain>
+        <originalName>Ron</originalName>
+        <CorefChain>68</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -445,7 +445,7 @@
         <sentence>16</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Peter</originalName>
         <CorefChain>17</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -456,7 +456,7 @@
         <sentence>16</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Peter</originalName>
         <CorefChain>18</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -467,7 +467,7 @@
         <sentence>16</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Peter</originalName>
         <CorefChain>18</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -478,7 +478,7 @@
         <sentence>16</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>19</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -489,7 +489,7 @@
         <sentence>17</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>20</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -500,7 +500,7 @@
         <sentence>17</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>20</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -511,7 +511,7 @@
         <sentence>17</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>21</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -522,7 +522,7 @@
         <sentence>17</sentence>
         <start>22</start>
         <end>22</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -533,7 +533,7 @@
         <sentence>17</sentence>
         <start>28</start>
         <end>28</end>
-        <originalName>Harry Potter</originalName>
+        <originalName>Harry</originalName>
         <CorefChain>23</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
@@ -544,7 +544,7 @@
         <sentence>17</sentence>
         <start>30</start>
         <end>30</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -555,7 +555,7 @@
         <sentence>17</sentence>
         <start>33</start>
         <end>33</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -566,7 +566,7 @@
         <sentence>18</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -577,7 +577,7 @@
         <sentence>18</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Harry Potter</originalName>
+        <originalName>Harry</originalName>
         <CorefChain>25</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
@@ -588,7 +588,7 @@
         <sentence>18</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>26</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -610,7 +610,7 @@
         <sentence>19</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Pettigrew</originalName>
         <CorefChain>28</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -621,7 +621,7 @@
         <sentence>19</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Harry Potter</originalName>
+        <originalName>Harry</originalName>
         <CorefChain>25</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
@@ -676,7 +676,7 @@
         <sentence>21</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>29</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -687,7 +687,7 @@
         <sentence>21</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>30</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -698,7 +698,7 @@
         <sentence>21</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>31</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -709,7 +709,7 @@
         <sentence>22</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Sirius</originalName>
         <CorefChain>32</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -720,7 +720,7 @@
         <sentence>22</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Peter</originalName>
         <CorefChain>33</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -731,7 +731,7 @@
         <sentence>22</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>34</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -742,7 +742,7 @@
         <sentence>23</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>34</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -753,7 +753,7 @@
         <sentence>23</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>34</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -764,7 +764,7 @@
         <sentence>23</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>34</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -775,7 +775,7 @@
         <sentence>24</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Peter</originalName>
         <CorefChain>35</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -786,7 +786,7 @@
         <sentence>25</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>36</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -797,7 +797,7 @@
         <sentence>25</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Peter</originalName>
         <CorefChain>35</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -808,7 +808,7 @@
         <sentence>25</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Harry Potter</originalName>
+        <originalName>Harry</originalName>
         <CorefChain>37</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
@@ -819,7 +819,7 @@
         <sentence>26</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Harry Potter</originalName>
+        <originalName>Harry</originalName>
         <CorefChain>38</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
@@ -830,7 +830,7 @@
         <sentence>26</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>39</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -841,7 +841,7 @@
         <sentence>26</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Harry and Ron</originalName>
+        <originalName>they</originalName>
         <CorefChain>40</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
@@ -852,7 +852,7 @@
         <sentence>26</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Harry and Ron</originalName>
+        <originalName>they</originalName>
         <CorefChain>40</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
@@ -863,7 +863,7 @@
         <sentence>26</sentence>
         <start>18</start>
         <end>18</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -874,7 +874,7 @@
         <sentence>26</sentence>
         <start>20</start>
         <end>20</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>42</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -885,7 +885,7 @@
         <sentence>26</sentence>
         <start>25</start>
         <end>25</end>
-        <originalName>Black and Lupin</originalName>
+        <originalName>You</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -896,7 +896,7 @@
         <sentence>27</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Black and Lupin</originalName>
+        <originalName>You</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -907,7 +907,7 @@
         <sentence>28</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>43</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -929,7 +929,7 @@
         <sentence>29</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>45</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -940,7 +940,7 @@
         <sentence>29</sentence>
         <start>12</start>
         <end>12</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>46</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -951,7 +951,7 @@
         <sentence>29</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>45</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -962,7 +962,7 @@
         <sentence>30</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>47</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -973,7 +973,7 @@
         <sentence>30</sentence>
         <start>21</start>
         <end>21</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>48</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -984,7 +984,7 @@
         <sentence>31</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>49</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -995,7 +995,7 @@
         <sentence>31</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>50</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1006,7 +1006,7 @@
         <sentence>31</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Pettigrew</originalName>
         <CorefChain>51</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1017,7 +1017,7 @@
         <sentence>31</sentence>
         <start>19</start>
         <end>19</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>52</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1028,7 +1028,7 @@
         <sentence>32</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1039,7 +1039,7 @@
         <sentence>32</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName></originalName>
+        <originalName>they</originalName>
         <CorefChain>54</CorefChain>
         <ClusterID>14</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1050,7 +1050,7 @@
         <sentence>32</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>55</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1094,7 +1094,7 @@
         <sentence>35</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>55</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1105,7 +1105,7 @@
         <sentence>35</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>55</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1116,7 +1116,7 @@
         <sentence>35</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>55</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1160,7 +1160,7 @@
         <sentence>35</sentence>
         <start>44</start>
         <end>44</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>55</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1193,7 +1193,7 @@
         <sentence>35</sentence>
         <start>66</start>
         <end>66</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Pettigrew</originalName>
         <CorefChain>60</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1204,7 +1204,7 @@
         <sentence>36</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Harry Potter</originalName>
+        <originalName>Harry</originalName>
         <CorefChain>61</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1215,7 +1215,7 @@
         <sentence>36</sentence>
         <start>12</start>
         <end>12</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>62</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1226,7 +1226,7 @@
         <sentence>36</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>62</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1237,7 +1237,7 @@
         <sentence>36</sentence>
         <start>19</start>
         <end>19</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>63</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1248,7 +1248,7 @@
         <sentence>37</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Hermione Granger</originalName>
+        <originalName>Hermione</originalName>
         <CorefChain>64</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1259,7 +1259,7 @@
         <sentence>38</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>63</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1281,7 +1281,7 @@
         <sentence>40</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Lupin</originalName>
         <CorefChain>63</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1292,7 +1292,7 @@
         <sentence>40</sentence>
         <start>17</start>
         <end>17</end>
-        <originalName>Remus Lupin</originalName>
+        <originalName>Remus</originalName>
         <CorefChain>65</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1303,7 +1303,7 @@
         <sentence>40</sentence>
         <start>22</start>
         <end>22</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>66</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1314,7 +1314,7 @@
         <sentence>40</sentence>
         <start>27</start>
         <end>27</end>
-        <originalName>Peter Pettigrew</originalName>
+        <originalName>Scabbers</originalName>
         <CorefChain>67</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1325,7 +1325,7 @@
         <sentence>41</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>66</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1336,7 +1336,7 @@
         <sentence>41</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Sirius Black</originalName>
+        <originalName>Black</originalName>
         <CorefChain>66</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
