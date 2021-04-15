@@ -60,7 +60,7 @@
         <sentence>6</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Reader</originalName>
+        <originalName>you</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -192,7 +192,7 @@
         <sentence>13</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Reader</originalName>
+        <originalName>you</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -335,7 +335,7 @@
         <sentence>19</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName></originalName>
+        <originalName>we</originalName>
         <CorefChain>90</CorefChain>
         <ClusterID>90</ClusterID>
         <mentionType>implicit</mentionType>
@@ -390,7 +390,7 @@
         <sentence>21</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName></originalName>
+        <originalName>we</originalName>
         <CorefChain>91</CorefChain>
         <ClusterID>91</ClusterID>
         <mentionType>implicit</mentionType>
@@ -423,7 +423,7 @@
         <sentence>22</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Reader</originalName>
+        <originalName>you</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -665,7 +665,7 @@
         <sentence>31</sentence>
         <start>17</start>
         <end>17</end>
-        <originalName>Reader</originalName>
+        <originalName>you</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -676,7 +676,7 @@
         <sentence>32</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Reader</originalName>
+        <originalName>you</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -863,7 +863,7 @@
         <sentence>39</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1281,7 +1281,7 @@
         <sentence>53</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Reader</originalName>
+        <originalName>you</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1314,7 +1314,7 @@
         <sentence>54</sentence>
         <start>13</start>
         <end>15</end>
-        <originalName></originalName>
+        <originalName>last math teacher</originalName>
         <CorefChain>93</CorefChain>
         <ClusterID>93</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1556,7 +1556,7 @@
         <sentence>60</sentence>
         <start>8</start>
         <end>10</end>
-        <originalName></originalName>
+        <originalName>naked guy</originalName>
         <CorefChain>94</CorefChain>
         <ClusterID>94</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1633,7 +1633,7 @@
         <sentence>64</sentence>
         <start>1</start>
         <end>2</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -1655,7 +1655,7 @@
         <sentence>64</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1666,7 +1666,7 @@
         <sentence>65</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1677,7 +1677,7 @@
         <sentence>66</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1710,7 +1710,7 @@
         <sentence>68</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1732,7 +1732,7 @@
         <sentence>69</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1743,7 +1743,7 @@
         <sentence>69</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1809,7 +1809,7 @@
         <sentence>72</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1820,7 +1820,7 @@
         <sentence>72</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1886,7 +1886,7 @@
         <sentence>76</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1897,7 +1897,7 @@
         <sentence>76</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1985,7 +1985,7 @@
         <sentence>79</sentence>
         <start>2</start>
         <end>3</end>
-        <originalName></originalName>
+        <originalName>his wife</originalName>
         <CorefChain>95</CorefChain>
         <ClusterID>95</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2095,7 +2095,7 @@
         <sentence>82</sentence>
         <start>2</start>
         <end>5</end>
-        <originalName></originalName>
+        <originalName>one of the girls</originalName>
         <CorefChain>96</CorefChain>
         <ClusterID>96</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2106,7 +2106,7 @@
         <sentence>82</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2139,7 +2139,7 @@
         <sentence>83</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2172,7 +2172,7 @@
         <sentence>85</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2194,7 +2194,7 @@
         <sentence>85</sentence>
         <start>8</start>
         <end>9</end>
-        <originalName></originalName>
+        <originalName>a friend</originalName>
         <CorefChain>97</CorefChain>
         <ClusterID>97</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2260,7 +2260,7 @@
         <sentence>87</sentence>
         <start>4</start>
         <end>5</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>37</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -2271,7 +2271,7 @@
         <sentence>87</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Mr. Brunner</originalName>
+        <originalName>Brunner</originalName>
         <CorefChain>38</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -2282,7 +2282,7 @@
         <sentence>87</sentence>
         <start>12</start>
         <end>13</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Miss Bobofit</originalName>
         <CorefChain>39</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -2304,7 +2304,7 @@
         <sentence>89</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -2315,7 +2315,7 @@
         <sentence>89</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2326,7 +2326,7 @@
         <sentence>89</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2337,7 +2337,7 @@
         <sentence>90</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>42</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -2370,7 +2370,7 @@
         <sentence>91</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>42</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2392,7 +2392,7 @@
         <sentence>93</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>37</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2414,7 +2414,7 @@
         <sentence>94</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>37</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2458,7 +2458,7 @@
         <sentence>97</sentence>
         <start>6</start>
         <end>7</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>45</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -2711,7 +2711,7 @@
         <sentence>103</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>45</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2733,7 +2733,7 @@
         <sentence>103</sentence>
         <start>13</start>
         <end>14</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -2744,7 +2744,7 @@
         <sentence>104</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2755,7 +2755,7 @@
         <sentence>105</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2777,7 +2777,7 @@
         <sentence>106</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2821,7 +2821,7 @@
         <sentence>108</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Reader</originalName>
+        <originalName>you</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2832,7 +2832,7 @@
         <sentence>109</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2865,7 +2865,7 @@
         <sentence>109</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2876,7 +2876,7 @@
         <sentence>110</sentence>
         <start>2</start>
         <end>3</end>
-        <originalName></originalName>
+        <originalName>the Titans</originalName>
         <CorefChain>98</CorefChain>
         <ClusterID>98</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2887,7 +2887,7 @@
         <sentence>112</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2898,7 +2898,7 @@
         <sentence>114</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -2942,7 +2942,7 @@
         <sentence>115</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Mr. Jackson</originalName>
         <CorefChain>53</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3074,7 +3074,7 @@
         <sentence>119</sentence>
         <start>27</start>
         <end>28</end>
-        <originalName></originalName>
+        <originalName>their mother</originalName>
         <CorefChain>99</CorefChain>
         <ClusterID>99</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3250,7 +3250,7 @@
         <sentence>123</sentence>
         <start>25</start>
         <end>26</end>
-        <originalName></originalName>
+        <originalName>this girl</originalName>
         <CorefChain>100</CorefChain>
         <ClusterID>100</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3338,7 +3338,7 @@
         <sentence>128</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName></originalName>
+        <originalName>We</originalName>
         <CorefChain>101</CorefChain>
         <ClusterID>101</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3393,7 +3393,7 @@
         <sentence>132</sentence>
         <start>9</start>
         <end>10</end>
-        <originalName></originalName>
+        <originalName>a lady</originalName>
         <CorefChain>102</CorefChain>
         <ClusterID>102</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3448,7 +3448,7 @@
         <sentence>134</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Grover and Percy</originalName>
+        <originalName>we</originalName>
         <CorefChain>65</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3459,7 +3459,7 @@
         <sentence>134</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Grover and Percy</originalName>
+        <originalName>we</originalName>
         <CorefChain>65</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3481,7 +3481,7 @@
         <sentence>134</sentence>
         <start>14</start>
         <end>14</end>
-        <originalName>Grover and Percy</originalName>
+        <originalName>we</originalName>
         <CorefChain>65</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3514,7 +3514,7 @@
         <sentence>138</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Mr. Brunner</originalName>
+        <originalName>Brunner</originalName>
         <CorefChain>67</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -3536,7 +3536,7 @@
         <sentence>139</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Mr. Brunner</originalName>
+        <originalName>Brunner</originalName>
         <CorefChain>67</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3723,7 +3723,7 @@
         <sentence>144</sentence>
         <start>15</start>
         <end>16</end>
-        <originalName>Percy's mom</originalName>
+        <originalName>my mom</originalName>
         <CorefChain>69</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3734,7 +3734,7 @@
         <sentence>144</sentence>
         <start>27</start>
         <end>27</end>
-        <originalName>Grover and Percy</originalName>
+        <originalName>we</originalName>
         <CorefChain>65</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3756,7 +3756,7 @@
         <sentence>145</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Percy's mom</originalName>
+        <originalName>my mom</originalName>
         <CorefChain>69</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3778,7 +3778,7 @@
         <sentence>147</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy's mom</originalName>
+        <originalName>my mom</originalName>
         <CorefChain>69</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3811,7 +3811,7 @@
         <sentence>147</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Percy's mom</originalName>
+        <originalName>my mom</originalName>
         <CorefChain>69</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3822,7 +3822,7 @@
         <sentence>148</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy's mom</originalName>
+        <originalName>my mom</originalName>
         <CorefChain>69</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
@@ -3899,7 +3899,7 @@
         <sentence>149</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Percy's mom</originalName>
+        <originalName>my mom</originalName>
         <CorefChain>69</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4031,7 +4031,7 @@
         <sentence>153</sentence>
         <start>17</start>
         <end>19</end>
-        <originalName></originalName>
+        <originalName>her ugly friends</originalName>
         <CorefChain>103</CorefChain>
         <ClusterID>103</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4064,7 +4064,7 @@
         <sentence>153</sentence>
         <start>29</start>
         <end>30</end>
-        <originalName></originalName>
+        <originalName>the tourists</originalName>
         <CorefChain>104</CorefChain>
         <ClusterID>104</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4141,7 +4141,7 @@
         <sentence>156</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName></originalName>
+        <originalName>somebody</originalName>
         <CorefChain>105</CorefChain>
         <ClusterID>105</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4273,7 +4273,7 @@
         <sentence>161</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>74</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -4284,7 +4284,7 @@
         <sentence>161</sentence>
         <start>19</start>
         <end>19</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>74</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4295,7 +4295,7 @@
         <sentence>161</sentence>
         <start>27</start>
         <end>27</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -4306,7 +4306,7 @@
         <sentence>161</sentence>
         <start>29</start>
         <end>29</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>74</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4328,9 +4328,9 @@
         <sentence>162</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName></originalName>
+        <originalName>us</originalName>
         <CorefChain>106</CorefChain>
-        <ClusterID>0</ClusterID>
+        <ClusterID>106</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -4361,7 +4361,7 @@
         <sentence>163</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>74</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4372,7 +4372,7 @@
         <sentence>164</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4394,7 +4394,7 @@
         <sentence>165</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4405,7 +4405,7 @@
         <sentence>165</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4427,7 +4427,7 @@
         <sentence>166</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>78</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -4438,7 +4438,7 @@
         <sentence>166</sentence>
         <start>17</start>
         <end>17</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>78</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4460,7 +4460,7 @@
         <sentence>166</sentence>
         <start>35</start>
         <end>35</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4482,7 +4482,7 @@
         <sentence>167</sentence>
         <start>12</start>
         <end>12</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4504,7 +4504,7 @@
         <sentence>168</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4515,7 +4515,7 @@
         <sentence>169</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4526,7 +4526,7 @@
         <sentence>169</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4571,7 +4571,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Grover</originalName>
-        <CorefChain>80</CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -4582,7 +4582,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Grover</originalName>
-        <CorefChain>80</CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -4592,7 +4592,7 @@
         <sentence>176</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Nancy Bobofit</originalName>
+        <originalName>Nancy</originalName>
         <CorefChain>78</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4603,7 +4603,7 @@
         <sentence>177</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4615,7 +4615,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Grover</originalName>
-        <CorefChain>80</CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -4625,7 +4625,7 @@
         <sentence>178</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4637,7 +4637,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Grover</originalName>
-        <CorefChain>80</CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -4647,7 +4647,7 @@
         <sentence>178</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4724,7 +4724,7 @@
         <sentence>181</sentence>
         <start>7</start>
         <end>8</end>
-        <originalName>Grover</originalName>
+        <originalName>Mr. Underwood</originalName>
         <CorefChain>84</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
@@ -4746,7 +4746,7 @@
         <sentence>183</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Grover</originalName>
+        <originalName>Mr. Underwood</originalName>
         <CorefChain>84</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4758,7 +4758,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Grover</originalName>
-        <CorefChain>84</CorefChain>
+        <CorefChain>107</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -4768,7 +4768,7 @@
         <sentence>184</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4780,7 +4780,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Grover</originalName>
-        <CorefChain>84</CorefChain>
+        <CorefChain>107</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -4790,7 +4790,7 @@
         <sentence>185</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4802,7 +4802,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Grover</originalName>
-        <CorefChain>84</CorefChain>
+        <CorefChain>107</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -4812,7 +4812,7 @@
         <sentence>187</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4834,7 +4834,7 @@
         <sentence>187</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4856,7 +4856,7 @@
         <sentence>190</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4878,7 +4878,7 @@
         <sentence>190</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4889,7 +4889,7 @@
         <sentence>190</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4911,7 +4911,7 @@
         <sentence>191</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4955,7 +4955,7 @@
         <sentence>192</sentence>
         <start>20</start>
         <end>20</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4977,7 +4977,7 @@
         <sentence>194</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4988,7 +4988,7 @@
         <sentence>194</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -4999,7 +4999,7 @@
         <sentence>194</sentence>
         <start>21</start>
         <end>21</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -5010,7 +5010,7 @@
         <sentence>194</sentence>
         <start>23</start>
         <end>23</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -5021,7 +5021,7 @@
         <sentence>194</sentence>
         <start>40</start>
         <end>40</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -5043,7 +5043,7 @@
         <sentence>195</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -5054,7 +5054,7 @@
         <sentence>195</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -5065,7 +5065,7 @@
         <sentence>196</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -5076,7 +5076,7 @@
         <sentence>197</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Percy Jackson</originalName>
+        <originalName>Percy</originalName>
         <CorefChain>75</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
