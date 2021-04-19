@@ -27,7 +27,7 @@ import novelnet.table.DirectInteractionTable;
 import novelnet.table.InteractionTable;
 import novelnet.pipeline.DirectInteractionTableCreator;
 import novelnet.pipeline.CorefChainFuser;
-import novelnet.pipeline.CustomCorefChainMaker;
+import novelnet.pipeline.CustomCorefChainCreator;
 import novelnet.pipeline.GraphCreator;
 import novelnet.pipeline.WindowingCooccurrenceParagraph;
 import novelnet.pipeline.WindowingCooccurrenceSentence;
@@ -161,7 +161,7 @@ public class Menu {
 		}*/
 		//System.out.println(document.corefChains());
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
@@ -345,7 +345,7 @@ public class Menu {
 			//System.out.println(document.corefChains());
 			// CorefChain Fusion
 
-			List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+			List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 			/*for (CustomCorefChain ccc : cccList){
 				System.out.println(ccc);

@@ -91,7 +91,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
@@ -168,7 +168,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
@@ -245,7 +245,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
@@ -329,7 +329,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
@@ -413,7 +413,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
@@ -497,7 +497,7 @@ public abstract class WindowingDynamicGraph {
 		pipeline.annotate(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);

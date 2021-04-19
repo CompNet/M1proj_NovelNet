@@ -53,7 +53,7 @@ public class ClusterContainer {
         CorefChainContainer tempChainContainer = new CorefChainContainer();
         CustomCorefChain tempCorefChain;
         LinkedList<CustomCorefChain> allChains = new LinkedList<>();
-		SAXBuilder builder = new SAXBuilder();  //there should be an error but it compile
+		SAXBuilder builder = new SAXBuilder();  //there may be an error but it compile
 		FileInputStream is = new FileInputStream(pathToXml);     
 	    try {
 	    	Document document = builder.build(is);
@@ -111,7 +111,7 @@ public class ClusterContainer {
         ClusterContainer result = new ClusterContainer();
         CorefChainContainer tempChainContainer = new CorefChainContainer();
         CustomCorefChain tempCorefChain;
-		SAXBuilder builder = new SAXBuilder();  //there should be an error but it compile
+		SAXBuilder builder = new SAXBuilder();  //there may be an error but it compile
 		FileInputStream is = new FileInputStream(pathToXml);     
 	    try {
 	    	Document document = builder.build(is);

@@ -100,7 +100,7 @@ public abstract class WindowingCooccurrence {
 		ImpUtils.setDocument(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.45);
@@ -179,7 +179,7 @@ public abstract class WindowingCooccurrence {
 		ImpUtils.setDocument(document);
 
 		// CorefChain Fusion
-		List<CustomCorefChain> cccList = CustomCorefChainMaker.makeCustomCorefChains(document);
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		System.out.println("\n--- chaines de coréférences custom avant fusion ---\n");

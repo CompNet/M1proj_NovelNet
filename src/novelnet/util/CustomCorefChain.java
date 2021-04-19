@@ -85,7 +85,7 @@ public class CustomCorefChain{
         return false;
     }
 
-    public double precision(CorefChainContainer reference){
+    public double corefPrecision(CorefChainContainer reference){
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
             tot += ce.precision(reference, this);
@@ -94,7 +94,7 @@ public class CustomCorefChain{
         return tot;
     }
 
-    public double recall(CorefChainContainer reference) {
+    public double corefRecall(CorefChainContainer reference) {
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
             tot += ce.recall(reference, this);

@@ -11,9 +11,9 @@ import novelnet.util.CustomCorefChain;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 
-public class CustomCorefChainMaker {
+public class CustomCorefChainCreator {
     
-    private CustomCorefChainMaker(){
+    private CustomCorefChainCreator(){
 
     }
 

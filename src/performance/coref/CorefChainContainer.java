@@ -100,7 +100,7 @@ public class CorefChainContainer {
     public static CorefChainContainer buildFromXml(String pathToXml) throws IOException{
         CorefChainContainer result = new CorefChainContainer();
         Map <Integer, CustomCorefChain> temp = new HashMap<>();
-		SAXBuilder builder = new SAXBuilder();  //there should be an error but it compile
+		SAXBuilder builder = new SAXBuilder();  //there may be an error but it compile
 		FileInputStream is = new FileInputStream(pathToXml);     
 	    try {
 	    	Document document = (Document) builder.build(is);
@@ -164,7 +164,7 @@ public class CorefChainContainer {
     public double precision(CorefChainContainer reference){
         double tot = 0;
         for (CustomCorefChain ccc : corefChains){
-            tot += ccc.precision(reference);    // total of precision of Entities in a corefChain in the container
+            tot += ccc.corefPrecision(reference);    // total of precision of Entities in a corefChain in the container
         }
         return tot/getNumberOfEntities();   //averaging
     }
@@ -178,7 +178,7 @@ public class CorefChainContainer {
     public double recall(CorefChainContainer reference) {
         double tot = 0;
         for (CustomCorefChain ccc : corefChains){
-            tot += ccc.recall(reference);   //total of recall of Entities in a corefChain in the container
+            tot += ccc.corefRecall(reference);   //total of recall of Entities in a corefChain in the container
         }
         return tot/reference.getNumberOfEntities();     //averaging
     }
