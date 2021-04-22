@@ -1,46 +1,40 @@
 package performance.clustering;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
-
-import org.jdom2.input.SAXBuilder;
-
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.JDOMException;
 
 import novelnet.pipeline.CorefChainFuser;
 import novelnet.util.CustomCorefChain;
+
 import performance.coref.CorefChainContainer;
 
-public class ClusterContainer {
-
-    List<CorefChainContainer> corefChainsContainer;
+public class ClusterContainer extends CorefChainContainer{
 
     public ClusterContainer() {
-        corefChainsContainer = new LinkedList<>();
+        super();
     }
 
-    public ClusterContainer(List<CorefChainContainer> corefChainsContainer) {
-        this.corefChainsContainer = corefChainsContainer;
-    }
-
-    public List<CorefChainContainer> getCorefChainsContainer() {
-        return this.corefChainsContainer;
-    }
-
-    public void setCorefChainsContainer(List<CorefChainContainer> corefChainsContainer) {
-        this.corefChainsContainer = corefChainsContainer;
-    }    
-
-    public CorefChainContainer get(int id){
-        for (CorefChainContainer ccc : corefChainsContainer){
-            if (ccc.getClusterID() == id) return ccc;
+    public ClusterContainer(CorefChainContainer container){
+        super();
+        for (CustomCorefChain ccc : container.getCorefChains()){
+            getCorefChains().add(ccc);
         }
-        return null;
+    }
+
+
+    public ClusterContainer(Collection<CustomCorefChain> corefChains) {
+        super();
+        getCorefChains().addAll(corefChains);
+    }
+
+    public int getLastCluster() {
+        int max = 0;
+        for (CustomCorefChain ccc : getCorefChains()){
+            if (ccc.getClusterID() > max) max = ccc.getClusterID();
+        }
+        return max;
     }
 
     /**
@@ -49,149 +43,80 @@ public class ClusterContainer {
 	 * @param pathToXml path to the .xml file
      * @return the Container
 	 */
-    public static ClusterContainer buildEvaluationFromXml(String pathToXml, Double dbScanDist) throws IOException{
-        CorefChainContainer tempChainContainer = new CorefChainContainer();
-        CustomCorefChain tempCorefChain;
-        LinkedList<CustomCorefChain> allChains = new LinkedList<>();
-		SAXBuilder builder = new SAXBuilder();  //there may be an error but it compile
-		FileInputStream is = new FileInputStream(pathToXml);     
-	    try {
-	    	Document document = builder.build(is);
-	        Element rootNode = document.getRootElement();
-	        List<Element> list = rootNode.getChildren("mention");   //getting all the mentions
+    public static ClusterContainer buildFromXML(String pathToXml) throws IOException{
+        return new ClusterContainer(CorefChainContainer.buildFromXml(pathToXml));
 
-            //for each mention (in the .xml)
-	        for (int i = 0; i < list.size(); i++) {
-	        	Element node = list.get(i);
-                tempCorefChain = tempChainContainer.get(Integer.parseInt(node.getChildText("CorefChain")));   //trying to find the corefChain for the current mention
-                // if the chain is not in the container
-                if (tempCorefChain == null){
-                    //we create the chain with the representative name and the id
-                    tempCorefChain = new CustomCorefChain();
-                    tempCorefChain.setId(Integer.parseInt(node.getChildText("CorefChain")));
-                    tempCorefChain.setRepresentativeName(node.getChildText("originalName"));
-                    tempChainContainer.getCorefChains().add(tempCorefChain);
-                    allChains.add(tempCorefChain);
-                }
-	        }
-	    } catch (IOException io) {
-	    	System.out.println(io.getMessage());
-	    } catch (JDOMException jdomex) {
-	    	System.out.println(jdomex.getMessage());
-	    }
-
-        CorefChainFuser ccf = new CorefChainFuser();
-        //execute and return the clustering (before the chain fusion form the clusterer)
-        ClusterContainer result = new ClusterContainer(ccf.corefChainsClusteringROBeforeFusion(tempChainContainer.getCorefChains(), 2, dbScanDist));
-        for (CustomCorefChain chain : allChains){
-            boolean found = false;
-            for(CorefChainContainer container : result.getCorefChainsContainer()){
-                if (container.get(chain.getId()) != null) found = true;
-            }
-            if (!found){
-                CorefChainContainer temp = new CorefChainContainer();
-                temp.getCorefChains().add(chain);
-                result.getCorefChainsContainer().add(temp);
-            }
-        }
-        //sorting corefChains
-        for (CorefChainContainer chainContainer : result.getCorefChainsContainer()){
-            chainContainer.getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
-        }
-        return result;
+        
 	}
 
-    /**
-	 * Build the ClusterContainer containing the reference from an .xml file
-	 * 
-	 * @param pathToXml path to the .xml file
-     * @return the Container
-	 */
-    public static ClusterContainer buildReferenceFromXml(String pathToXml) throws IOException{
+    public ClusterContainer clusterization(double dbScanDist){
+        CorefChainFuser ccf = new CorefChainFuser();
+        //execute and return the clustering (before the chain fusion form the clusterer)
         ClusterContainer result = new ClusterContainer();
-        CorefChainContainer tempChainContainer = new CorefChainContainer();
-        CustomCorefChain tempCorefChain;
-		SAXBuilder builder = new SAXBuilder();  //there may be an error but it compile
-		FileInputStream is = new FileInputStream(pathToXml);     
-	    try {
-	    	Document document = builder.build(is);
-	        Element rootNode = document.getRootElement();
-	        List<Element> list = rootNode.getChildren("mention");   //getting all the mentions
 
-            //for each mention (in the .xml)
-	        for (int i = 0; i < list.size(); i++) {
-	        	Element node = list.get(i);
-                tempChainContainer = result.get(Integer.parseInt(node.getChildText("ClusterID")));   //trying to find the CorefChainContainer for the current mention's cluster
-                // if there is no container for the cluster
-                if (tempChainContainer == null){
-                    //we create the chain with an id
-                    tempCorefChain = new CustomCorefChain();
-                    tempCorefChain.setId(Integer.parseInt(node.getChildText("CorefChain")));
+        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(getCorefChains(), 2, dbScanDist);
 
-                    //we create the container with the chain
-                    tempChainContainer = new CorefChainContainer();
-                    tempChainContainer.setClusterID(Integer.parseInt(node.getChildText("ClusterID")));
-                    tempChainContainer.getCorefChains().add(tempCorefChain);
-
-                    //we add the container to the result
-                    result.getCorefChainsContainer().add(tempChainContainer);
-                }
-                //if there is a container for the cluster
-                else{
-                    tempCorefChain = tempChainContainer.get(Integer.parseInt(node.getChildText("CorefChain")));     //we try to find the chain container for the current mention's chain
-                    //if there is no chain for the mention we create it and add it to the chain container
-                    if (tempCorefChain == null){
-                        //we create the chain with the representative name and the id
-                        tempCorefChain = new CustomCorefChain();
-                        tempCorefChain.setId(Integer.parseInt(node.getChildText("CorefChain")));
-                        //we add the chain to the chain container
-                        tempChainContainer.getCorefChains().add(tempCorefChain);
-                    }
-                    
-                }
-	        }
-	    } catch (IOException io) {
-	    	System.out.println(io.getMessage());
-	    } catch (JDOMException jdomex) {
-	    	System.out.println(jdomex.getMessage());
-	    }
-        
-        //sorting corefChains
-        for (CorefChainContainer chainContainer : result.getCorefChainsContainer()){
-            chainContainer.getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
+        for(int i = 0; i < temp.size(); i++){
+            for (CustomCorefChain ccc : temp.get(i).getCorefChains()){
+                ccc.setClusterID(i+1);
+            }
+            result.getCorefChains().addAll(temp.get(i).getCorefChains());
         }
-        
+
+        for (CustomCorefChain ccc : getCorefChains()){
+            if (result.get(ccc.getId())==null) {
+                CustomCorefChain tempCCC = new CustomCorefChain(ccc);
+                tempCCC.setClusterID(result.getLastCluster()+1);
+                result.getCorefChains().add(tempCCC);
+            }
+        }
+
         return result;
     }
 
-    public void display() {
-        System.out.println("Coref Chains : ");
-        for (int i = 0; i < corefChainsContainer.size(); i++){
-            System.out.println(corefChainsContainer.get(i));
+    @Override
+    public void display(){
+        for (CustomCorefChain ccc : getCorefChains()){
+            System.out.println("{ Id : " + ccc.getId() + ",\tCluster : " + ccc.getClusterID() + ",\tname : " + ccc.getRepresentativeName() + " }");
         }
     }
 
-    public static void testEvaluationImport() throws IOException{
-        ClusterContainer cc = ClusterContainer.buildEvaluationFromXml("manualAnnotation/ner_coref_clustering/en/HarryPotter3_TrainBoarding.xml", 0.5);
-        System.out.println("\nClustering with 0.5 distance :\n");
-        cc.display();
-
-        cc = ClusterContainer.buildEvaluationFromXml("manualAnnotation/ner_coref_clustering/en/HarryPotter3_TrainBoarding.xml", 0.45);
-        System.out.println("\nClustering with 0.45 distance :\n");
-        cc.display();
-
-        cc = ClusterContainer.buildEvaluationFromXml("manualAnnotation/ner_coref_clustering/en/HarryPotter3_TrainBoarding.xml", 0.4);
-        System.out.println("\nClustering with 0.4 distance :\n");
-        cc.display();
+    public void displayByCluster(){
+        getCorefChains().sort(Comparator.comparing(CustomCorefChain::getClusterID).thenComparing(Comparator.comparing(CustomCorefChain::getId)));
+        for (CustomCorefChain ccc : getCorefChains()){
+            System.out.println("{ Cluster : " + ccc.getClusterID() + ",\t Id : " + ccc.getId() + ",\tname : " + ccc.getRepresentativeName() + " }");
+        }
+        getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
     }
 
-    public static void testReferenceImport() throws IOException{
-        ClusterContainer cc = ClusterContainer.buildReferenceFromXml("manualAnnotation/ner_coref_clustering/en/HarryPotter3_TrainBoarding.xml");
+
+
+
+
+    // TESTS
+
+    public static void testImport(String path) throws IOException{
+        ClusterContainer cc = ClusterContainer.buildFromXML(path);
         cc.display();
+        System.out.println();
+        cc.displayByCluster();
+    }
+
+    private static void testClusterization(String path) throws IOException {
+        ClusterContainer cc = ClusterContainer.buildFromXML(path);
+        cc.displayByCluster();
+        System.out.println();
+
+        cc.clusterization(0.45).displayByCluster();
     }
 
     public static void main(String[] args) throws IOException {
-        testReferenceImport();
-        testEvaluationImport();
-    }
+
+        String language = "en";
+        String fileName = "HarryPotter3_ShriekingShack";
+        String path = "manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
+
+        //testImport(path);
+        testClusterization(path);
+    }   
 }

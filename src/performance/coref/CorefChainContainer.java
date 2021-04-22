@@ -1,6 +1,7 @@
 package performance.coref;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,8 +28,6 @@ public class CorefChainContainer {
 	 * the list of corefChains in the container
 	*/
     List<CustomCorefChain> corefChains;
-
-    int clusterID;
 
     /**
 	 * Class Constructor with an empty list of corefChains
@@ -83,14 +82,6 @@ public class CorefChainContainer {
         this.corefChains = new LinkedList<>(collection);
     }
 
-    public int getClusterID() {
-        return this.clusterID;
-    }
-
-    public void setClusterID(int clusterID) {
-        this.clusterID = clusterID;
-    }
-
     /**
 	 * Build a CorefChainContainer from an .xml file
 	 * 
@@ -122,15 +113,16 @@ public class CorefChainContainer {
                 }
                 else{
                     //else we create the chain with the mention
-                    temp.putIfAbsent(
-                        Integer.parseInt(node.getChildText("CorefChain")),
-                        new CustomCorefChain(
-                            new CustomEntityMention(node.getChildText("text"), 
+                    ccc = new CustomCorefChain(
+                        new CustomEntityMention(node.getChildText("text"), 
                             Integer.parseInt(node.getChildText("sentence")), 
                             Integer.parseInt(node.getChildText("start")),
                             Integer.parseInt(node.getChildText("end")))
-                        )
                     );
+                    ccc.setClusterID(Integer.parseInt(node.getChildText("ClusterID")));
+                    ccc.setId(Integer.parseInt(node.getChildText("CorefChain")));
+
+                    temp.putIfAbsent( Integer.parseInt(node.getChildText("CorefChain")), ccc);
                 }
 	        }
 	    } catch (IOException io) {
@@ -139,6 +131,8 @@ public class CorefChainContainer {
 	    	System.out.println(jdomex.getMessage());
 	    }
         result.setCorefChains(temp.values());
+
+        result.getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
         return result;
 	}
 
@@ -235,11 +229,7 @@ public class CorefChainContainer {
 
     @Override
     public String toString() {
-        String result = "{";
-        if (getClusterID() != 0) result +=  " clusterID='" + getClusterID() + "', ";
-        return result +
-            "corefChains='" + getCorefChains() + "'" +
-            "}";
+        return "{ corefChains='" + getCorefChains() + "' }";
     }
     
     public void display(){

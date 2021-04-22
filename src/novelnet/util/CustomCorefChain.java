@@ -14,11 +14,13 @@ public class CustomCorefChain{
     List<CustomEntityMention> cEMList;
     String representativeName;
     int id;
+    int clusterID;
 
     public CustomCorefChain(){
         cEMList = new LinkedList<>();
         representativeName = "";
         id = 0;
+        clusterID = 0;
     }
 
     public CustomCorefChain(CorefChain cc){
@@ -31,6 +33,7 @@ public class CustomCorefChain{
         }
         catch(Exception e){System.out.println(e.getMessage());}
         id = 0;
+        clusterID = 0;
     }
 
     public CustomCorefChain(CoreEntityMention cem){
@@ -40,7 +43,7 @@ public class CustomCorefChain{
         temp.setCorefChain(this);
         cEMList.add(temp);
         id = 0;
-        
+        clusterID = 0;
     }
 
     public CustomCorefChain(CustomEntityMention ce) {
@@ -48,6 +51,14 @@ public class CustomCorefChain{
         representativeName = ce.text();
         cEMList.add(ce);
         id = 0;
+        clusterID = 0;
+    }
+
+    public CustomCorefChain(CustomCorefChain ccc) {
+        cEMList = new LinkedList<>(ccc.getCEMList());
+        representativeName = ccc.getRepresentativeName();
+        id = ccc.getId();
+        clusterID = ccc.getClusterID();
     }
 
     public String getRepresentativeName() {
@@ -56,6 +67,14 @@ public class CustomCorefChain{
 
     public List<CustomEntityMention> getCEMList() {
         return cEMList;
+    }
+
+    public int getClusterID() {
+        return this.clusterID;
+    }
+
+    public void setClusterID(int clusterID) {
+        this.clusterID = clusterID;
     }
 
     public void setCEMList(List<CustomEntityMention> cEMList) {
@@ -112,12 +131,13 @@ public class CustomCorefChain{
             if (i != cEMList.size()-1) cemNames += ", ";
         }
         if (!cemNames.equals("")){
-            result+= " cEMList='" + cemNames + "', ";
+            result+= "cEMList='" + cemNames + "', ";
         }
         if (!representativeName.equals("")){
             result+= "representativeName='" + getRepresentativeName() + "', ";
         }
         if (getId() != 0) result += "chainID='" + getId() + "'";
+        if (getClusterID() != 0) result += "clusterID='" + getClusterID() + "'";
         result += "}";
         return result;
     }

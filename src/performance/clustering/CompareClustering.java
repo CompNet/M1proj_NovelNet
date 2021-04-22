@@ -6,32 +6,31 @@ import performance.coref.CompareCorefChain;
 public class CompareClustering {
 
     /**
-	 * the container with the clusters to evaluate
-	*/
-    ClusterContainer clustersToEvaluate;
-
-    /**
 	 * the container with the reference clusters
 	*/
     ClusterContainer reference;
 
+    /**
+	 * the container with the reference clusters
+	*/
+    ClusterContainer bestClusters;
+
     double precision;
+
+    /*
+     * dbScan distance used to find the best clusters
+    */
+    double dbScanDist;
 
     public CompareClustering() {
     }
 
-    public CompareClustering(ClusterContainer clustersToEvaluate, ClusterContainer reference) {
-        this.clustersToEvaluate = clustersToEvaluate;
+    public CompareClustering(ClusterContainer importedData, ClusterContainer reference) {
+        this.importedData = importedData;
         this.reference = reference;
-        this.precision = 0;
-    }
-
-    public ClusterContainer getClustersToEvaluate() {
-        return this.clustersToEvaluate;
-    }
-
-    public void setClustersToEvaluate(ClusterContainer clustersToEvaluate) {
-        this.clustersToEvaluate = clustersToEvaluate;
+        this.bestClusters = null;
+        this.precision = -2.0;
+        this.dbScanDist = 0.0;
     }
 
     public ClusterContainer getReference() {
@@ -48,6 +47,31 @@ public class CompareClustering {
 
     public void setPrecision(double precision) {
         this.precision = precision;
+    }
+
+    public ClusterContainer getBestClusters() {
+        return this.bestClusters;
+    }
+
+    public void setBestClusters(ClusterContainer bestClusters) {
+        this.bestClusters = bestClusters;
+    }
+
+    public double getDbScanDist() {
+        return this.dbScanDist;
+    }
+
+    public void setDbScanDist(double dbScanDist) {
+        this.dbScanDist = dbScanDist;
+    }
+
+    public static CompareClustering buildFromXML(String path){
+        CompareClustering result = new CompareClustering();
+        result.setReference(ClusterContainer.buildFromXML(path));
+    }
+
+    public double evaluate(double dbScanDist){
+
     }
 
 }
