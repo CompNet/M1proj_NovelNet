@@ -1,7 +1,11 @@
 package performance.clustering;
 
-import novelnet.util.CustomCorefChain;
-import performance.coref.CompareCorefChain;
+import java.io.IOException;
+
+import jsat.classifiers.CategoricalData;
+import jsat.classifiers.ClassificationDataSet;
+import jsat.clustering.evaluation.AdjustedRandIndex;
+import jsat.linear.Vec;
 
 public class CompareClustering {
 
@@ -11,10 +15,13 @@ public class CompareClustering {
     ClusterContainer reference;
 
     /**
-	 * the container with the reference clusters
+	 * the container with the best clusters found by the engine
 	*/
     ClusterContainer bestClusters;
 
+    /*
+     * precisiopn for the best clusters
+    */
     double precision;
 
     /*
@@ -25,8 +32,7 @@ public class CompareClustering {
     public CompareClustering() {
     }
 
-    public CompareClustering(ClusterContainer importedData, ClusterContainer reference) {
-        this.importedData = importedData;
+    public CompareClustering(ClusterContainer reference) {
         this.reference = reference;
         this.bestClusters = null;
         this.precision = -2.0;
@@ -65,13 +71,41 @@ public class CompareClustering {
         this.dbScanDist = dbScanDist;
     }
 
-    public static CompareClustering buildFromXML(String path){
+    public static CompareClustering buildFromXML(String path) throws IOException{
         CompareClustering result = new CompareClustering();
         result.setReference(ClusterContainer.buildFromXML(path));
+
+        return result;
     }
 
     public double evaluate(double dbScanDist){
 
+        
+        return 0.0;
+
+    }
+
+    public static void testJsat(){
+        //using example from http://www.otlet-institute.org/wikics/Clustering_Problems.html
+        ClassificationDataSet cds = new ClassificationDataSet(1, new CategoricalData[0], new CategoricalData(3));
+        for(int i = 0; i < 3; i++)
+            for(int j = 0; j < 3; j++)
+                cds.addDataPoint(Vec.random(1), new int[0], i);
+        int[] d = new int[9];
+        d[0] = d[1] = 0;
+        d[2] = d[3] = d[4] = d[5] = 1;
+        d[6] = d[7] = 2;
+        d[8] = 3;
+        
+        AdjustedRandIndex ari = new AdjustedRandIndex();
+        double score = ari.evaluate(d, cds);
+        //conver tot ARI
+        score = 1.0-score;
+        System.out.println("should be around 0.46 : " + score);
+    }
+
+    public static void main(String[] args) {
+        testJsat();
     }
 
 }
