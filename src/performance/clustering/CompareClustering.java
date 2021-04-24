@@ -1,6 +1,8 @@
 package performance.clustering;
 
 import java.io.IOException;
+import java.lang.ref.Reference;
+import java.util.Comparator;
 
 import jsat.classifiers.CategoricalData;
 import jsat.classifiers.ClassificationDataSet;
@@ -21,7 +23,7 @@ public class CompareClustering {
     ClusterContainer bestClusters;
 
     /*
-     * precisiopn for the best clusters
+     * precision for the best clusters
     */
     double precision;
 
@@ -74,7 +76,7 @@ public class CompareClustering {
 
     public static CompareClustering buildFromXML(String path) throws IOException{
         CompareClustering result = new CompareClustering();
-        result.setReference(ClusterContainer.buildFromXML(path));
+        result.setReference(ClusterContainer.buildClusterContainerFromXML(path));
 
         return result;
     }
@@ -83,10 +85,8 @@ public class CompareClustering {
 
         ClusterContainer clusteredData = reference.clusterization(dbScanDist);
 
-        System.out.println("reference :");
-        reference.displayByCluster();
-        System.out.println("\nclusterddata :");
-        clusteredData.displayByCluster();
+        reference.getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
+        clusteredData.getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
 
         //Creation of the dataset From clusteredData
         ClassificationDataSet cds = new ClassificationDataSet(1,
@@ -103,16 +103,42 @@ public class CompareClustering {
         int[] d = new int[reference.getCorefChains().size()];
 
         //adding the coref chains into the data set
+        int i = 0;
         for(CustomCorefChain ccc : reference.getCorefChains()){
-            cds.addDataPoint(Vec.random(1), new int[0], ccc.getClusterID());
+            d[i] = ccc.getClusterID();
+            i++;
         }
 
         AdjustedRandIndex ari = new AdjustedRandIndex();
         double score = ari.evaluate(d, cds);
         //conver score to ARI score
         score = 1.0-score;
+
+        if (score > precision){
+            precision = score;
+            this.dbScanDist = dbScanDist;
+            bestClusters = clusteredData;
+        }
         
         return score;
+    }
+
+    public void findBestCluster(double begin, double end, double increment){
+
+        for(double i = begin; i <=end; i+= increment){
+            evaluate(i);
+        }
+
+    }
+
+    public void displayResult(){
+
+        System.out.println("\nBest clusters found by the engine : ");
+        bestClusters.displayByCluster();
+
+        System.out.println("Precision : " + getPrecision());
+        System.out.println("dbscan dsit : " + getDbScanDist() + "\n");
+
     }
 
 
@@ -168,9 +194,26 @@ public class CompareClustering {
     }
 
     private static void testEvaluation(String path) throws IOException{
-        ClusterContainer container = ClusterContainer.buildFromXML(path);
+        ClusterContainer container = ClusterContainer.buildClusterContainerFromXML(path);
         CompareClustering compare = new CompareClustering(container);
         System.out.println(compare.evaluate(0.40));
+
+        System.out.println("reference :");
+        compare.getReference().displayByCluster();
+        System.out.println("\nclusterddata :");
+        compare.getBestClusters().displayByCluster();
+
+    }
+
+    private static void testBestClusters(String path) throws IOException{
+        ClusterContainer container = ClusterContainer.buildClusterContainerFromXML(path);
+        CompareClustering compare = new CompareClustering(container);
+        compare.findBestCluster(0.20, 0.60, 0.05);
+
+        System.out.println("reference :");
+        compare.getReference().displayByCluster();
+
+        compare.displayResult();
     }
 
     public static void main(String[] args) throws IOException {
@@ -178,10 +221,11 @@ public class CompareClustering {
         String fileName = "HarryPotter3_ShriekingShack";
         String path = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
 
-        testJsat();
+        //testJsat();
 
-        System.out.println("nice");
-        testEvaluation(path);
+        //testEvaluation(path);
+
+        testBestClusters(path);
     }
 
 }

@@ -3,7 +3,6 @@ package performance.coref;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
 
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
@@ -123,8 +122,8 @@ public class CompareCorefChain {
      * @return a list with the pre processed chain to evaluate at index 0 and the reference at index 1
 	*/
     public List<CorefChainContainer> preProcessing(){
-        CorefChainContainer tempChainsToEvaluate = (CorefChainContainer) chainsToEvaluate.clone();
-        CorefChainContainer tempReference = (CorefChainContainer) reference.clone();
+        CorefChainContainer tempChainsToEvaluate = chainsToEvaluate.manualClone();
+        CorefChainContainer tempReference = reference.manualClone();
         List<CorefChainContainer> result = new LinkedList<>();
 
         CustomCorefChain resChain;

@@ -24,9 +24,21 @@ public class CustomEntityMention {
     }
 
     public CustomEntityMention(CoreEntityMention cem){
-		this.tokens = cem.tokens();
+        this.tokens = new LinkedList<>();
+        for (CoreLabel token : cem.tokens()){
+            tokens.add(token);
+        }
 		sentenceNumber = cem.tokens().get(0).sentIndex()+1;
         window = new Pair<>(cem.tokens().get(0).index(), cem.tokens().get(cem.tokens().size()-1).index());
+	}
+
+    public CustomEntityMention(CustomEntityMention cem){
+        this.tokens = new LinkedList<>();
+        for (CoreLabel token : cem.getTokens()){
+            tokens.add(token);
+        }
+		sentenceNumber = cem.getTokens().get(0).sentIndex()+1;
+        window = new Pair<>(cem.getTokens().get(0).index(), cem.getTokens().get(cem.getTokens().size()-1).index());
 	}
 
     public CustomEntityMention(CorefMention cm){

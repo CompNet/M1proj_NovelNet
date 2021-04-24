@@ -22,7 +22,7 @@ import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 
-public class CorefChainContainer implements Cloneable{
+public class CorefChainContainer{
 
     /**
 	 * the list of corefChains in the container
@@ -104,7 +104,8 @@ public class CorefChainContainer implements Cloneable{
                     );
                     ccc.setClusterID(Integer.parseInt(node.getChildText("ClusterID")));
                     ccc.setId(Integer.parseInt(node.getChildText("CorefChain")));
-
+                    ccc.setRepresentativeName(node.getChildText("originalName"));
+                    
                     temp.putIfAbsent( Integer.parseInt(node.getChildText("CorefChain")), ccc);
                 }
 	        }
@@ -218,7 +219,7 @@ public class CorefChainContainer implements Cloneable{
     public void display(){
         for (CustomCorefChain ccc : corefChains){
             boolean begin = true;
-            System.out.print("{ ");
+            System.out.print("{  Id : " + ccc.getId() + ",\tCluster : " + ccc.getClusterID() + ",\tname : " + ccc.getRepresentativeName() + " Entities : [ ");
             for (CustomEntityMention ce : ccc.getCEMList()){
                 if (begin) {
                     System.out.print(ce.text());
@@ -226,23 +227,39 @@ public class CorefChainContainer implements Cloneable{
                 }
                 else System.out.print(", " + ce.text());
             }
-            System.out.print(" }\n");
+            System.out.print(" ] }\n");
         }
     }
 
-    @Override
-    public Object clone() {
-        Object o = null;
-        try {
-            // On récupère l'instance à renvoyer par l'appel de la 
-            // méthode super.clone()
-            o = super.clone();
-        } catch(CloneNotSupportedException cnse) {
-            // Ne devrait jamais arriver, car nous implémentons 
-            // l'interface Cloneable
-            cnse.printStackTrace(System.err);
+    public CorefChainContainer manualClone() {
+        CorefChainContainer o = new CorefChainContainer();
+        CustomCorefChain tempccc;
+
+        for(CustomCorefChain ccc : getCorefChains()){
+            tempccc = new CustomCorefChain();
+            tempccc.setClusterID(ccc.getClusterID());
+            tempccc.setId(ccc.getId());
+            tempccc.setRepresentativeName(ccc.getRepresentativeName());
+            o.corefChains.add(tempccc);
+            for (CustomEntityMention cem : ccc.getCEMList()){
+                tempccc.getCEMList().add(new CustomEntityMention(cem));
+            }
         }
+
         // on renvoie le clone
         return o;
+    }
+
+    private static void testImport(String path) throws IOException{
+        CorefChainContainer test = CorefChainContainer.buildFromXml(path);
+        test.display();
+    }
+
+    public static void main(String[] args) throws IOException {
+        String language = "en";
+        String fileName = "HarryPotter3_ShriekingShack";
+        String path = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
+
+        testImport(path);
     }
 }

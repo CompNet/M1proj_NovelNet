@@ -36,16 +36,17 @@ public class ClusterContainer extends CorefChainContainer {
 	 * @param pathToXml path to the .xml file
      * @return the Container
 	 */
-    public static ClusterContainer buildFromXML(String pathToXml) throws IOException{
+    public static ClusterContainer buildClusterContainerFromXML(String pathToXml) throws IOException{
         return new ClusterContainer(CorefChainContainer.buildFromXml(pathToXml));       
 	}
 
     public ClusterContainer clusterization(double dbScanDist){
         CorefChainFuser ccf = new CorefChainFuser();
         //execute and return the clustering (before the chain fusion form the clusterer)
-        ClusterContainer result = (ClusterContainer) this.clone();
+        ClusterContainer tmp = new ClusterContainer(manualClone());
+        ClusterContainer result = new ClusterContainer();
 
-        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(result.getCorefChains(), 2, dbScanDist);
+        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(tmp.getCorefChains(), 2, dbScanDist);
 
         for(int i = 0; i < temp.size(); i++){
             for (CustomCorefChain ccc : temp.get(i).getCorefChains()){
@@ -89,18 +90,23 @@ public class ClusterContainer extends CorefChainContainer {
     // TESTS
 
     private static void testImport(String path) throws IOException{
-        ClusterContainer cc = ClusterContainer.buildFromXML(path);
+        ClusterContainer cc = ClusterContainer.buildClusterContainerFromXML(path);
         cc.display();
         System.out.println();
         cc.displayByCluster();
     }
 
     private static void testClusterization(String path) throws IOException {
-        ClusterContainer cc = ClusterContainer.buildFromXML(path);
-        cc.displayByCluster();
+        ClusterContainer cc = ClusterContainer.buildClusterContainerFromXML(path);
+        System.out.println("\nref before cluster :");
+        cc.display();
         System.out.println();
 
-        cc.clusterization(0.45).displayByCluster();
+        System.out.println("\nclusterred Data :");
+        cc.clusterization(0.45).display();
+
+        System.out.println("\nref after cluster :");
+        cc.display();
     }
 
     public static void main(String[] args) throws IOException {
