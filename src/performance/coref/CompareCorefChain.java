@@ -123,8 +123,8 @@ public class CompareCorefChain {
      * @return a list with the pre processed chain to evaluate at index 0 and the reference at index 1
 	*/
     public List<CorefChainContainer> preProcessing(){
-        CorefChainContainer tempChainsToEvaluate = new CorefChainContainer(chainsToEvaluate);
-        CorefChainContainer tempReference = new CorefChainContainer(reference);
+        CorefChainContainer tempChainsToEvaluate = (CorefChainContainer) chainsToEvaluate.clone();
+        CorefChainContainer tempReference = (CorefChainContainer) reference.clone();
         List<CorefChainContainer> result = new LinkedList<>();
 
         CustomCorefChain resChain;

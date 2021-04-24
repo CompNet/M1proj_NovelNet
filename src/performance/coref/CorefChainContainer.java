@@ -22,7 +22,7 @@ import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 
-public class CorefChainContainer {
+public class CorefChainContainer implements Cloneable{
 
     /**
 	 * the list of corefChains in the container
@@ -54,23 +54,6 @@ public class CorefChainContainer {
         //create a CustomCorefChain for each CoreEntityMention without CorefChain in Stanford's CoreDocument
         for(CoreEntityMention cem : ImpUtils.getCoreEntityMentionsWithoutCorefChain()){
             corefChains.add(new CustomCorefChain(cem));
-        }
-    }
-
-    /**
-	 * Clone a CorefChainContainer
-     * 
-     * @param corefChainContainer the CorefChainContainer to clone
-	*/
-    public CorefChainContainer(CorefChainContainer corefChainContainer) {
-        CustomCorefChain tmpccc;
-        corefChains = new LinkedList<>();
-        for (CustomCorefChain ccc : corefChainContainer.getCorefChains()){
-            tmpccc = new CustomCorefChain();
-            for (CustomEntityMention ce : ccc.getCEMList()){
-                tmpccc.getCEMList().add(ce);
-            }
-            corefChains.add(tmpccc);
         }
     }
     
@@ -245,5 +228,21 @@ public class CorefChainContainer {
             }
             System.out.print(" }\n");
         }
+    }
+
+    @Override
+    public Object clone() {
+        Object o = null;
+        try {
+            // On récupère l'instance à renvoyer par l'appel de la 
+            // méthode super.clone()
+            o = super.clone();
+        } catch(CloneNotSupportedException cnse) {
+            // Ne devrait jamais arriver, car nous implémentons 
+            // l'interface Cloneable
+            cnse.printStackTrace(System.err);
+        }
+        // on renvoie le clone
+        return o;
     }
 }

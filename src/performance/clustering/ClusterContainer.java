@@ -1,7 +1,6 @@
 package performance.clustering;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
@@ -10,7 +9,7 @@ import novelnet.util.CustomCorefChain;
 
 import performance.coref.CorefChainContainer;
 
-public class ClusterContainer extends CorefChainContainer{
+public class ClusterContainer extends CorefChainContainer {
 
     public ClusterContainer() {
         super();
@@ -21,12 +20,6 @@ public class ClusterContainer extends CorefChainContainer{
         for (CustomCorefChain ccc : container.getCorefChains()){
             getCorefChains().add(ccc);
         }
-    }
-
-
-    public ClusterContainer(Collection<CustomCorefChain> corefChains) {
-        super();
-        getCorefChains().addAll(corefChains);
     }
 
     public int getLastCluster() {
@@ -44,17 +37,15 @@ public class ClusterContainer extends CorefChainContainer{
      * @return the Container
 	 */
     public static ClusterContainer buildFromXML(String pathToXml) throws IOException{
-        return new ClusterContainer(CorefChainContainer.buildFromXml(pathToXml));
-
-        
+        return new ClusterContainer(CorefChainContainer.buildFromXml(pathToXml));       
 	}
 
     public ClusterContainer clusterization(double dbScanDist){
         CorefChainFuser ccf = new CorefChainFuser();
         //execute and return the clustering (before the chain fusion form the clusterer)
-        ClusterContainer result = new ClusterContainer();
+        ClusterContainer result = (ClusterContainer) this.clone();
 
-        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(getCorefChains(), 2, dbScanDist);
+        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(result.getCorefChains(), 2, dbScanDist);
 
         for(int i = 0; i < temp.size(); i++){
             for (CustomCorefChain ccc : temp.get(i).getCorefChains()){
@@ -65,11 +56,14 @@ public class ClusterContainer extends CorefChainContainer{
 
         for (CustomCorefChain ccc : getCorefChains()){
             if (result.get(ccc.getId())==null) {
-                CustomCorefChain tempCCC = new CustomCorefChain(ccc);
+                CustomCorefChain tempCCC = (CustomCorefChain) ccc.clone();
                 tempCCC.setClusterID(result.getLastCluster()+1);
                 result.getCorefChains().add(tempCCC);
             }
         }
+
+        //sorting by corefChain id
+        result.getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
 
         return result;
     }
@@ -92,10 +86,9 @@ public class ClusterContainer extends CorefChainContainer{
 
 
 
-
     // TESTS
 
-    public static void testImport(String path) throws IOException{
+    private static void testImport(String path) throws IOException{
         ClusterContainer cc = ClusterContainer.buildFromXML(path);
         cc.display();
         System.out.println();
@@ -114,7 +107,7 @@ public class ClusterContainer extends CorefChainContainer{
 
         String language = "en";
         String fileName = "HarryPotter3_ShriekingShack";
-        String path = "manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
+        String path = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
 
         //testImport(path);
         testClusterization(path);
