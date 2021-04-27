@@ -67,7 +67,7 @@ public class GraphCreator {
 		it.display();
 		itNull.display();
 
-		Graph g = GraphCreator.createGraph(itNull, "graph_test_interaction", true, false);
+		Graph g = GraphCreator.createGraph(itNull, "graph_test_interaction", true, true);
 		g.graphMLPrinter("res/results");
 		System.out.println(g.toString());
 	}

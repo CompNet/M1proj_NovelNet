@@ -10,53 +10,37 @@ import edu.stanford.nlp.ie.util.RelationTriple;
 
 public class CustomInteraction {
 
-    protected List<RelationTriple> triples;
-    protected List<CustomCorefChain> subjects;
-    protected List<CustomCorefChain> objects;
+    protected List<CustomTriple> triples;
     protected int sentenceIndex;
     protected String type;
 
     public CustomInteraction() {
         triples = new LinkedList<>();
-        subjects = new LinkedList<>();
-        objects = new LinkedList<>();
         sentenceIndex = 0;
         type = null;
     }
 
     public CustomInteraction(List<RelationTriple> triples, Book book) {
-        this.triples = triples;
-        subjects = new LinkedList<>();
-        objects = new LinkedList<>();
+        CustomTriple tmpTriple;
+        this.triples = new LinkedList<>();
+        for (RelationTriple relationTriple : triples) {
+            tmpTriple = new CustomTriple();
+            tmpTriple.setTriple(relationTriple);
+            tmpTriple.setObject(book);
+            tmpTriple.setSubject(book);
+
+            this.triples.add(tmpTriple);
+        }
         sentenceIndex = triples.get(0).relation.get(0).sentIndex();
-        setObjects(book);
-        setSubjects(book);
         type = null;
     }
 
-
-    public List<RelationTriple> getTriples() {
+    public List<CustomTriple> getTriples() {
         return this.triples;
     }
 
-    public void setTriples(List<RelationTriple> triples) {
+    public void setTriples(List<CustomTriple> triples) {
         this.triples = triples;
-    }
-
-    public List<CustomCorefChain> getSubjects() {
-        return this.subjects;
-    }
-
-    public void setSubjects(List<CustomCorefChain> subjects) {
-        this.subjects = subjects;
-    }
-
-    public List<CustomCorefChain> getObjects() {
-        return this.objects;
-    }
-
-    public void setObjects(List<CustomCorefChain> objects) {
-        this.objects = objects;
     }
 
     public int getSentenceIndex() {
@@ -74,37 +58,36 @@ public class CustomInteraction {
     public void setType(String type) {
         this.type = type;
     }
-    
-    public void setObjects(Book book){
-        for(RelationTriple rt : triples){
-            for (CustomCorefChain ccc : book.getCorefChain()){
-                if (ccc.contains(rt.objectHead()) && !objects.contains(ccc)){
-                    objects.add(ccc);
-                }
-            }
+
+    public List<CustomCorefChain> getSubjects(){
+        List<CustomCorefChain> result = new LinkedList<>();
+        for (CustomTriple customTriple : triples) {
+            if (!result.contains(customTriple.getSubject())) result.add(customTriple.getSubject());
         }
+        return result;
     }
 
-    public void setSubjects(Book book){
-        for(RelationTriple rt : triples){
-            for (CustomCorefChain ccc : book.getCorefChain()){
-                if (ccc.contains(rt.subjectHead()) && !subjects.contains(ccc)){
-                    subjects.add(ccc);
-                }
-            }
+    public List<CustomCorefChain> getObjects(){
+        List<CustomCorefChain> result = new LinkedList<>();
+        for (CustomTriple customTriple : triples) {
+            if (!result.contains(customTriple.getObject())) result.add(customTriple.getObject());
         }
+        return result;
     }
 
     public void display(){
-        System.out.println(triples);
-        System.out.print("subjects : ");
-        for (CustomCorefChain ccc : subjects){
-            System.out.print("{" + ccc.representativeName + "}");
+        for (CustomTriple customTriple : triples) {
+            System.out.println(customTriple);
         }
-        System.out.print("\nobjects : ");
-        for (CustomCorefChain ccc : objects){
-            System.out.print("{" + ccc.representativeName + "}");
-        }
-        System.out.println();
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " triples='" + getTriples() + "'" +
+            ", sentenceIndex='" + getSentenceIndex() + "'" +
+            ", type='" + getType() + "'" +
+            "}";
+    }
+
 }

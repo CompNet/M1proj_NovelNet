@@ -86,13 +86,15 @@ public class DirectInteractionTable extends InteractionTable {
 
     @Override
     public void display(){
-        System.out.print("Subject");
-        if (getListType().get(0) != null) System.out.print("\t| Type");
-        System.out.println("\t| Object | Sentence Index");
-        for (int i = 0; i < listCharA.size(); i++){
-			System.out.print(listCharA.get(i));
-			if (getListType().get(i) != null) System.out.print("\t| "+getListType().get(i));
-			System.out.println("\t| "+listCharB.get(i) + "\t| "+listBeginingWindow.get(i));
-		}
+        if (!getListCharA().isEmpty()){
+            System.out.print("Subject");
+            if (getListType().get(0) != null) System.out.print("\t| Type");
+            System.out.println("\t| Object | Sentence Index");
+            for (int i = 0; i < listCharA.size(); i++){
+                System.out.print(listCharA.get(i));
+                if (getListType().get(i) != null) System.out.print("\t| "+getListType().get(i));
+                System.out.println("\t| "+listCharB.get(i) + "\t| "+listBeginingWindow.get(i));
+            }
+        }
     }
 }

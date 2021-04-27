@@ -174,7 +174,7 @@ public class Menu {
 
 		DirectInteractionTable it = DirectInteractionTableCreator.createTable(book);
 
-		Graph test = GraphCreator.createGraph(it, "graph_test_interaction", true, false);
+		Graph test = GraphCreator.createGraph(it, "graph_test_interaction", true, true);
 
 		it.display();
 
@@ -297,8 +297,8 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		testNER();
-		if (args.length == 0)
+		testInteractionTableCreator();
+		if (args.length == 1)
 		{
 			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");

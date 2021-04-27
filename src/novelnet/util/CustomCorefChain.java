@@ -92,7 +92,12 @@ public class CustomCorefChain implements Cloneable{
 
     public Boolean contains(CoreLabel token){
         for(CustomEntityMention entity : cEMList){
-            if (entity.tokens.contains(token)) return true;
+            if ((entity.getSentenceIndex() == token.sentIndex()) &&
+                (entity.getWindowBegining() <= token.index()) &&
+                (entity.getWindowEnding() >= token.index()))
+                {
+                    return true;
+                }
         }
         return false;
     }
