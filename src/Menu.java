@@ -61,7 +61,7 @@ public class Menu {
 
 
 	public static void testNER() throws IOException{
-		String path = "res/corpus/Joe_Smith.txt";
+		String path = "res/corpus/en/Joe_Smith.txt";
 
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
@@ -298,7 +298,7 @@ public class Menu {
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
 		testNER();
-		if (args.length == 1)
+		if (args.length == 0)
 		{
 			Scanner sc = new Scanner(System.in);
 			System.out.println("saisir chemin du fichier à traiter:");
