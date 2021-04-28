@@ -10,7 +10,7 @@ public class Edge {
 	protected String id;
 	protected Node nodeLeft;
 	protected Node nodeRight;
-	protected float ponderation;
+	protected double ponderation;
 	protected String type;
 	
 	public Edge(String id, Node nodeLeft, Node nodeRight, String type)
@@ -22,7 +22,7 @@ public class Edge {
 		ponderation = 1;
 	}
 	
-	public Edge(String id, Node nodeLeft, Node nodeRight, float ponderation, String type)
+	public Edge(String id, Node nodeLeft, Node nodeRight, double ponderation, String type)
 	{
 		this.id = id;
 		this.nodeLeft = nodeLeft;
@@ -46,7 +46,7 @@ public class Edge {
 		return nodeRight;
 	}
 	
-	public float getPonderation()
+	public double getPonderation()
 	{
 		return ponderation;
 	}
@@ -61,12 +61,12 @@ public class Edge {
 		this.type = type;
 	}
 	
-	public void setPonderation(float ponderation)
+	public void setPonderation(double ponderation)
 	{
 		this.ponderation = ponderation;
 	}
 	
-	public void addPonderation(float ponderation)
+	public void addPonderation(double ponderation)
 	{
 		this.ponderation+=ponderation;
 	}

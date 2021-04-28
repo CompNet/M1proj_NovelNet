@@ -42,7 +42,8 @@ public class CustomEntityMention {
         window = new Pair<>(cem.getTokens().get(0).index(), cem.getTokens().get(cem.getTokens().size()-1).index());
 	}
 
-    public CustomEntityMention(CorefMention cm){
+    public CustomEntityMention(CorefMention cm, String bestName){
+        this.bestName = bestName;
         CoreLabel temp = new CoreLabel();
         temp.setOriginalText(cm.mentionSpan);
         tokens = new LinkedList<>();

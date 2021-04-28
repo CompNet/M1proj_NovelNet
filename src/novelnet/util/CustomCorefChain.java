@@ -28,7 +28,7 @@ public class CustomCorefChain implements Cloneable{
         try {
             representativeName = cc.getRepresentativeMention().mentionSpan;
             for (CorefMention cm : cc.getMentionsInTextualOrder()){
-                cEMList.add(new CustomEntityMention(cm));
+                cEMList.add(new CustomEntityMention(cm, representativeName));
             }
         }
         catch(Exception e){System.out.println(e.getMessage());}

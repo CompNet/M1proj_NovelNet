@@ -115,8 +115,8 @@ public class Menu {
 
 		pipeline.annotate(document);
 
-		System.out.println(document.entityMentions());
-		System.out.println(document.corefChains());
+		/*System.out.println(document.entityMentions());
+		System.out.println(document.corefChains());*/
 
 		Annotation annotation = document.annotation();
 
@@ -126,9 +126,9 @@ public class Menu {
 			// Print the triples
 			for (RelationTriple triple : triples) {
 				System.out.println();
-				System.out.println(triple.subjectGloss() + "\t " + triple.subject);
-				System.out.println(triple.relationLemmaGloss() + "\t " + triple.relation);
-				System.out.println(triple.objectGloss() + "\t " + triple.canonicalObject);
+				System.out.println(triple.subjectGloss() + "\t " + triple.subject + "\t" + triple.canonicalSubject + "\t" + triple.subjectHead());
+				System.out.println(triple.relationLemmaGloss() + "\t " + triple.relation + "\t" + triple.relationHead());
+				System.out.println(triple.objectGloss() + "\t " + triple.canonicalObject + "\t" + triple.objectHead() + "\t");
 			}
 		}
 		sc.close();
@@ -289,7 +289,7 @@ public class Menu {
 
         }
 	}
-
+	
 	/**
 	 * @param args
 	 * @author Quay Baptiste, Lemaire Tewis
@@ -297,7 +297,7 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		testInteractionTableCreator();
+		testOpenIE();
 		if (args.length == 1)
 		{
 			Scanner sc = new Scanner(System.in);
