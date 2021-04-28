@@ -44,10 +44,13 @@ public class CustomEntityMention {
 
     public CustomEntityMention(CorefMention cm, String bestName){
         this.bestName = bestName;
-        CoreLabel temp = new CoreLabel();
-        temp.setOriginalText(cm.mentionSpan);
         tokens = new LinkedList<>();
-        tokens.add(temp);
+        try{
+            tokens.addAll(ImpUtils.getTokensbyCorefMention(cm));
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
 		sentenceNumber = cm.sentNum;
         window = new Pair<>(cm.startIndex, cm.endIndex-1);
 	}

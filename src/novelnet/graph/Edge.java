@@ -1,5 +1,6 @@
 package novelnet.graph;
 
+import novelnet.util.ImpUtils;
 
 /**
  * @author Quay Baptiste, Lemaire Tewis
@@ -63,12 +64,13 @@ public class Edge {
 	
 	public void setPonderation(double ponderation)
 	{
-		this.ponderation = ponderation;
+		this.ponderation = ImpUtils.round(ponderation, 3);
 	}
 	
 	public void addPonderation(double ponderation)
 	{
 		this.ponderation+=ponderation;
+		this.ponderation = ImpUtils.round(this.ponderation, 3);
 	}
 
 	public void addPonderation()

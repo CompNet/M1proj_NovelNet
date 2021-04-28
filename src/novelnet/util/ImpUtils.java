@@ -2,6 +2,8 @@ package novelnet.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
@@ -200,5 +202,13 @@ public class ImpUtils {
 		ImpUtils.setDocument(document);
 		
 		return document;
+	}
+
+	public static double round(double value, int places) {
+		if (places < 0) throw new IllegalArgumentException();
+	
+		BigDecimal bd = BigDecimal.valueOf(value);
+		bd = bd.setScale(places, RoundingMode.HALF_UP);
+		return bd.doubleValue();
 	}
 }
