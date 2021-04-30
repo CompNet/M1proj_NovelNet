@@ -247,14 +247,6 @@ public class Graph {
 		return ret;
 	}
 
-	public static Graph buildFromTxt(String evaluationFilePath) {
-		return null;
-	}
-
-    public static Graph buildFromXml(String evaluationFilePath) {
-        return null;
-    }
-
 	public double[] adjacencyVector(){
 		int n = nodeMap.size();
 		List<Node> nodes = new LinkedList<>(nodeMap.values());
@@ -262,6 +254,7 @@ public class Graph {
 		double[] result = new double[(int) Math.pow(n, 2)];
 		Arrays.fill(result, 0);
 		for (Edge e : edgeMap.values()) {
+			System.out.println("edge : " +e );
 			result[ (nodes.indexOf(e.getNodeLeft())*n) + nodes.indexOf(e.getNodeRight()) ] = e.getPonderation();
 		}
 

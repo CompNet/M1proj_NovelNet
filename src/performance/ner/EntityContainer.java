@@ -58,7 +58,8 @@ public class EntityContainer {
 	        for (int i = 0; i < list.size(); i++) {
 	        	Element node = (Element) list.get(i);
 				if (node.getChildText("mentionType").equals("explicit")){
-					result.entities.add(new CustomEntityMention(node.getChildText("text"), 
+					result.entities.add(new CustomEntityMention(node.getChildText("text"),
+						node.getChildText("originalName"),
 	        			Integer.parseInt(node.getChildText("sentence")), 
 	        			Integer.parseInt(node.getChildText("start")),
 	        			Integer.parseInt(node.getChildText("end"))));

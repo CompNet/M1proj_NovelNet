@@ -1,12 +1,23 @@
 package performance.clustering;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Properties;
 
+import org.apache.commons.io.IOUtils;
+
+import edu.stanford.nlp.coref.data.CorefChain;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import novelnet.pipeline.CorefChainFuser;
 import novelnet.util.CustomCorefChain;
-
+import novelnet.util.CustomEntityMention;
+import novelnet.util.ImpUtils;
+import novelnet.util.TextNormalization;
 import performance.coref.CorefChainContainer;
 
 public class ClusterContainer extends CorefChainContainer {
@@ -31,13 +42,23 @@ public class ClusterContainer extends CorefChainContainer {
     }
 
     /**
-	 * Build the ClusterContainer containing the evaluation from an .xml file
+	 * Build the ClusterContainer from an .xml file
 	 * 
 	 * @param pathToXml path to the .xml file
      * @return the Container
 	 */
     public static ClusterContainer buildClusterContainerFromXML(String pathToXml) throws IOException{
         return new ClusterContainer(CorefChainContainer.buildFromXml(pathToXml));       
+	}
+
+    /**
+	 * Build the ClusterContainer from an .xml file (used to create a Graph)
+	 * 
+	 * @param pathToXml path to the .xml file
+     * @return the Container
+	 */
+    public static ClusterContainer buildClusterContainerFromXML(String pathToXml, CoreDocument document) throws IOException{
+        return new ClusterContainer(CorefChainContainer.buildFromXml(pathToXml, document));       
 	}
 
     public ClusterContainer clusterization(double dbScanDist){
@@ -109,13 +130,44 @@ public class ClusterContainer extends CorefChainContainer {
         cc.display();
     }
 
+    private static void testImportForGraph(String pathToXml, String pathToText) throws IOException{
+        //Creating the document
+		FileInputStream is = new FileInputStream(pathToText);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		content = TextNormalization.addDotEndOfLine(content);
+
+		String prop="tokenize,ssplit";
+
+		Properties props = new Properties();
+		props.setProperty("annotators",prop);
+		
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		ImpUtils.setDocument(document);
+		pipeline.annotate(document);
+
+        ClusterContainer test = buildClusterContainerFromXML(pathToXml, document);
+
+        for (CustomCorefChain ccc : test.getCorefChains()) {
+            for (CustomEntityMention cem : ccc.getCEMList()) {
+                System.out.println(cem.getBestName() + ", " + cem.originalText() + ", " + cem.getSentenceIndex());
+                for (CoreLabel token : cem.getTokens()){
+                    System.out.println("\ttoken : " + token.originalText()+ ", " + token.sentIndex() + ", " + token.index());
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) throws IOException {
 
         String language = "en";
-        String fileName = "HarryPotter3_ShriekingShack";
+        String fileName = "Assassin'sApprentice_Chapter1";
         String path = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
+        String pathToText = "res/corpus/" + language + "/" + fileName + ".txt";
 
         //testImport(path);
-        testClusterization(path);
+        //testClusterization(path);
+        testImportForGraph(path, pathToText);
     }   
 }

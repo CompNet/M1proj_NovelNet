@@ -278,8 +278,8 @@
     <mention>
         <text>Mr.</text>
         <sentence>7</sentence>
-        <start>25</start>
-        <end>25</end>
+        <start>27</start>
+        <end>27</end>
         <originalName>Mr. Weasley</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>10</ClusterID>
@@ -289,8 +289,8 @@
     <mention>
         <text>Mrs. Weasley</text>
         <sentence>7</sentence>
-        <start>27</start>
-        <end>28</end>
+        <start>29</start>
+        <end>30</end>
         <originalName>Mrs. Weasley</originalName>
         <CorefChain>16</CorefChain>
         <ClusterID>11</ClusterID>
@@ -302,8 +302,8 @@
     <mention>
         <text>Mr. and Mrs. Weasley</text>
         <sentence>7</sentence>
-        <start>25</start>
-        <end>28</end>
+        <start>27</start>
+        <end>30</end>
         <originalName>Mr and Mrs. Weasley</originalName>
         <CorefChain>21</CorefChain>
         <ClusterID>12</ClusterID>
@@ -403,7 +403,7 @@
         <sentence>11</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Ron Weasley</originalName>
+        <originalName>Ron</originalName>
         <CorefChain>34</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>

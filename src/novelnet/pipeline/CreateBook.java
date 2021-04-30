@@ -1,10 +1,12 @@
-package novelnet.book;
+package novelnet.pipeline;
 
 import java.util.List;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
-
+import novelnet.book.Book;
+import novelnet.book.Chapter;
+import novelnet.book.Paragraph;
 import novelnet.util.CustomCorefChain;
 
 
@@ -69,7 +71,7 @@ public class CreateBook {
                 if (nextLineSkip >= 6){
                     //if we are not already in a title
                     if (!titleDetection) {
-                        currentParagraph.endingSentence = i-1;  //end the last paragraph
+                        currentParagraph.setEndingSentence(i-1);  //end the last paragraph
                         titleDetection = true;  // put the title detection to ON
                         //new Chapter creation
                         chapterNumber++;
@@ -85,7 +87,7 @@ public class CreateBook {
                         titleDetection = false;
                     }
                     else{
-                        currentParagraph.endingSentence = i-1;  //if there was no title we did not end the last paragraph so we do it.
+                        currentParagraph.setEndingSentence(i-1);  //if there was no title we did not end the last paragraph so we do it.
                         //new Chapter creation
                         chapterNumber++;
                         currentChapter = new Chapter(book, chapterNumber);  // create a new chapter 
@@ -95,7 +97,7 @@ public class CreateBook {
                     paragraphNumber++;
                     currentParagraph = new Paragraph(currentChapter, paragraphNumber);
                     currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
-                    currentParagraph.beginingSentence = i;
+                    currentParagraph.setBeginingSentence(i);
                     currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
                 }  
             }
@@ -103,15 +105,15 @@ public class CreateBook {
             else {
                 //if there is a paragraph change (exactly 1 or 2 EOL char)
                 if(previousLineSkip == 2 || previousLineSkip == 4){
-                    currentParagraph.endingSentence = i-1;  //ending the last paragraph
+                    currentParagraph.setEndingSentence(i-1);  //ending the last paragraph
                     //new Paragraph creation
                     paragraphNumber++;
                     currentParagraph = new Paragraph(currentChapter, paragraphNumber);   //create a new paragraph
                     currentChapter.addParagraph(currentParagraph);  //add the current paragraph to the chapter
-                    currentParagraph.beginingSentence = i;
+                    currentParagraph.setBeginingSentence(i);
                 }
                 currentParagraph.addSentence(sentences.get(i)); //add the current sentence to the paragraph
-                if (i == sentences.size()-1) currentParagraph.endingSentence = i;
+                if (i == sentences.size()-1) currentParagraph.setEndingSentence(i);
             }
         }
         book.placeEntitites();

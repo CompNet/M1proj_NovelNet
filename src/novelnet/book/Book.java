@@ -42,8 +42,8 @@ public class Book {
      * Class Constructor. specifying the document and the list of chapters
      * 
     */
-    public Book(LinkedList<Chapter> chapters, CoreDocument document) {
-        this.chapters = chapters;
+    public Book(List<Chapter> chapters, CoreDocument document) {
+        this.chapters = new LinkedList<>(chapters);
         entitiesPlaced = false;
         this.document = document;
     }
@@ -60,8 +60,8 @@ public class Book {
         return chapters;
     }
 
-    public void setChapters(LinkedList<Chapter> chapters) {
-        this.chapters = chapters;
+    public void setChapters(List<Chapter> chapters) {
+        this.chapters = new LinkedList<>(chapters);
     }
 
     public boolean getEntitiesPlaced() {

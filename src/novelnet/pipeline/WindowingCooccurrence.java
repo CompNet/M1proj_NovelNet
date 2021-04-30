@@ -17,8 +17,6 @@ import novelnet.util.NullDocumentException;
 import novelnet.util.TextNormalization;
 
 import novelnet.book.Book;
-import novelnet.book.CreateBook;
-
 import novelnet.table.CooccurrenceTable;
 import novelnet.table.CooccurrenceTableParagraph;
 import novelnet.table.CooccurrenceTableSentence;
@@ -67,6 +65,9 @@ public abstract class WindowingCooccurrence {
 		this.covering = covering;
 		this.chapterLimitation = chapterLimitation;
 		this.book = book;
+		if(size <= covering){
+			throw new IllegalArgumentException("size can't be inferior or equal to covering");
+		}
 	}
 	
 	protected CooccurrenceTable createTab() {

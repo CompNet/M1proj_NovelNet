@@ -16,7 +16,9 @@ import org.jdom2.JDOMException;
 
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.coref.data.CorefChain;
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
+import edu.stanford.nlp.pipeline.CoreSentence;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
@@ -77,31 +79,103 @@ public class CorefChainContainer{
 		SAXBuilder builder = new SAXBuilder();  //there may be an error but it compile
 		FileInputStream is = new FileInputStream(pathToXml);     
 	    try {
-	    	Document document = (Document) builder.build(is);
+	    	Document document = builder.build(is);
 	        Element rootNode = document.getRootElement();
 	        List<Element> list = rootNode.getChildren("mention");   //getting all the mentions
 
             //for each mention (in the .xml)
 	        for (int i = 0; i < list.size(); i++) {
-	        	Element node = (Element) list.get(i);
+	        	Element node = list.get(i);
                 
                 CustomCorefChain ccc = temp.get(Integer.parseInt(node.getChildText("CorefChain")));   //trying to find the corefChain for the current mention
                 // if there is a chain for this mention
                 if ( ccc != null){
                     // create the mention and add it to the chain
-                    ccc.getCEMList().add(new CustomEntityMention(node.getChildText("text"), 
+                    CustomEntityMention tmp = new CustomEntityMention(node.getChildText("text"),
+                        node.getChildText("originalName"), 
                         Integer.parseInt(node.getChildText("sentence")), 
                         Integer.parseInt(node.getChildText("start")),
-                        Integer.parseInt(node.getChildText("end"))));
+                        Integer.parseInt(node.getChildText("end")));
+                    ccc.getCEMList().add(tmp);
                 }
                 else{
                     //else we create the chain with the mention
                     ccc = new CustomCorefChain(
                         new CustomEntityMention(node.getChildText("text"), 
+						    node.getChildText("originalName"),
                             Integer.parseInt(node.getChildText("sentence")), 
                             Integer.parseInt(node.getChildText("start")),
                             Integer.parseInt(node.getChildText("end")))
                     );
+                    ccc.setClusterID(Integer.parseInt(node.getChildText("ClusterID")));
+                    ccc.setId(Integer.parseInt(node.getChildText("CorefChain")));
+                    ccc.setRepresentativeName(node.getChildText("originalName"));
+                    
+                    temp.putIfAbsent( Integer.parseInt(node.getChildText("CorefChain")), ccc);
+                }
+	        }
+	    } catch (IOException io) {
+	    	System.out.println(io.getMessage());
+	    } catch (JDOMException jdomex) {
+	    	System.out.println(jdomex.getMessage());
+	    }
+        result.setCorefChains(temp.values());
+
+        result.getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
+        return result;
+	}
+
+    /**
+	 * Build a CorefChainContainer from an .xml file
+	 * 
+	 * @param pathToXml path to the .xml file
+     * @return the Container
+	 */
+    public static CorefChainContainer buildFromXml(String pathToXml, CoreDocument stanfordDocument) throws IOException{
+        CorefChainContainer result = new CorefChainContainer();
+        Map <Integer, CustomCorefChain> temp = new HashMap<>();
+		SAXBuilder builder = new SAXBuilder();  //there may be an error but it compile
+		FileInputStream is = new FileInputStream(pathToXml);     
+	    try {
+	    	Document document = builder.build(is);
+	        Element rootNode = document.getRootElement();
+	        List<Element> list = rootNode.getChildren("mention");   //getting all the mentions
+
+            //for each mention (in the .xml)
+	        for (int i = 0; i < list.size(); i++) {
+	        	Element node = list.get(i);
+                CustomCorefChain ccc = temp.get(Integer.parseInt(node.getChildText("CorefChain")));   //trying to find the corefChain for the current mention
+                // if there is a chain for this mention
+                if ( ccc != null){
+                    // create the mention and add it to the chain
+                    CustomEntityMention tmp = new CustomEntityMention(node.getChildText("text"),
+                        node.getChildText("originalName"), 
+                        Integer.parseInt(node.getChildText("sentence")), 
+                        Integer.parseInt(node.getChildText("start")),
+                        Integer.parseInt(node.getChildText("end")));
+                    List<CoreLabel> tokens = new LinkedList<>();
+                    CoreSentence sentence = stanfordDocument.sentences().get(tmp.getSentenceIndex());
+                    for (int j = Integer.parseInt(node.getChildText("start"))-1; j < Integer.parseInt(node.getChildText("end")); j++) {
+                        tokens.add(sentence.tokens().get(j));
+                    }
+                    tmp.setTokens(tokens);
+                    ccc.getCEMList().add(tmp);
+                }
+                else{
+                    //else we create the chain with the mention
+                    CustomEntityMention tmp = new CustomEntityMention(node.getChildText("text"),
+                        node.getChildText("originalName"), 
+                        Integer.parseInt(node.getChildText("sentence")), 
+                        Integer.parseInt(node.getChildText("start")),
+                        Integer.parseInt(node.getChildText("end")));
+                    List<CoreLabel> tokens = new LinkedList<>();
+                    CoreSentence sentence = stanfordDocument.sentences().get(tmp.getSentenceIndex());
+                    for (int j = Integer.parseInt(node.getChildText("start"))-1; j < Integer.parseInt(node.getChildText("end")); j++) {
+                        tokens.add(sentence.tokens().get(j));
+                    }
+                    tmp.setTokens(tokens);
+
+                    ccc = new CustomCorefChain(tmp);
                     ccc.setClusterID(Integer.parseInt(node.getChildText("ClusterID")));
                     ccc.setId(Integer.parseInt(node.getChildText("CorefChain")));
                     ccc.setRepresentativeName(node.getChildText("originalName"));

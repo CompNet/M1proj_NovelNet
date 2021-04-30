@@ -113,8 +113,8 @@
     <mention>
         <text>my</text>
         <sentence>7</sentence>
-        <start>27</start>
-        <end>27</end>
+        <start>26</start>
+        <end>26</end>
         <originalName>a six-year-old</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
@@ -125,7 +125,7 @@
         <text>a six-year-old</text>
         <sentence>8</sentence>
         <start>7</start>
-        <end>8</end>
+        <end>12</end>
         <originalName>a six-year-old</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
@@ -135,8 +135,8 @@
     <mention>
         <text>him</text>
         <sentence>8</sentence>
-        <start>18</start>
-        <end>18</end>
+        <start>22</start>
+        <end>22</end>
         <originalName>a six-year-old</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
@@ -257,7 +257,7 @@
         <text>a six-year-old boy</text>
         <sentence>20</sentence>
         <start>9</start>
-        <end>11</end>
+        <end>15</end>
         <originalName>a six-year-old</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
@@ -267,8 +267,8 @@
     <mention>
         <text>the rangy old man</text>
         <sentence>20</sentence>
-        <start>23</start>
-        <end>26</end>
+        <start>27</start>
+        <end>30</end>
         <originalName>the old man</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
@@ -278,8 +278,8 @@
     <mention>
         <text>me</text>
         <sentence>20</sentence>
-        <start>30</start>
-        <end>30</end>
+        <start>34</start>
+        <end>34</end>
         <originalName>a six-year-old</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
@@ -732,6 +732,7 @@
         <start>24</start>
         <end>24</end>
         <originalName>a six-year-old</originalName>
+        <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -806,7 +807,7 @@
         <text>a man-at-arms</text>
         <sentence>46</sentence>
         <start>6</start>
-        <end>7</end>
+        <end>11</end>
         <originalName>Jason</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>6</ClusterID>
@@ -816,8 +817,8 @@
     <mention>
         <text>a warrior</text>
         <sentence>46</sentence>
-        <start>9</start>
-        <end>10</end>
+        <start>13</start>
+        <end>14</end>
         <originalName>Jason</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>6</ClusterID>
@@ -829,7 +830,7 @@
         <sentence>47</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName></originalName>
+        <originalName>Jason</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -1015,7 +1016,7 @@
         <text>the house-guard</text>
         <sentence>51</sentence>
         <start>3</start>
-        <end>4</end>
+        <end>6</end>
         <originalName>Jason</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>6</ClusterID>
@@ -1025,8 +1026,8 @@
     <mention>
         <text>him</text>
         <sentence>51</sentence>
-        <start>9</start>
-        <end>9</end>
+        <start>11</start>
+        <end>11</end>
         <originalName>the old man</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
@@ -1036,8 +1037,8 @@
     <mention>
         <text>he</text>
         <sentence>51</sentence>
-        <start>17</start>
-        <end>17</end>
+        <start>19</start>
+        <end>19</end>
         <originalName>the old man</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
@@ -1927,8 +1928,8 @@
     <mention>
         <text>his</text>
         <sentence>77</sentence>
-        <start>49</start>
-        <end>49</end>
+        <start>51</start>
+        <end>51</end>
         <originalName>Jason</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>6</ClusterID>

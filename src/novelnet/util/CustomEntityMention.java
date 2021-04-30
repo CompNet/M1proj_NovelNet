@@ -31,6 +31,7 @@ public class CustomEntityMention {
         }
 		sentenceNumber = cem.tokens().get(0).sentIndex()+1;
         window = new Pair<>(cem.tokens().get(0).index(), cem.tokens().get(cem.tokens().size()-1).index());
+        bestName = cem.text();
 	}
 
     public CustomEntityMention(CustomEntityMention cem){
@@ -40,9 +41,11 @@ public class CustomEntityMention {
         }
 		sentenceNumber = cem.getSentenceNumber();
         window = new Pair<>(cem.getTokens().get(0).index(), cem.getTokens().get(cem.getTokens().size()-1).index());
+        bestName = cem.bestName;
 	}
 
     public CustomEntityMention(CorefMention cm, String bestName){
+        System.out.println(bestName);
         this.bestName = bestName;
         tokens = new LinkedList<>();
         try{
@@ -55,7 +58,8 @@ public class CustomEntityMention {
         window = new Pair<>(cm.startIndex, cm.endIndex-1);
 	}
 	
-	public CustomEntityMention(String text, int sentenceNumber, int firstTokenNumber, int lastTokenNumber) {
+	public CustomEntityMention(String text, String bestName, int sentenceNumber, int firstTokenNumber, int lastTokenNumber) {
+        this.bestName = bestName;
 		tokens = new LinkedList<>();
         CoreLabel temp = new CoreLabel();
         temp.setOriginalText(text);
@@ -194,7 +198,7 @@ public class CustomEntityMention {
     @Override
     public String toString() {
         return "{" +
-            " coreEntityMention='" + text() + "'" +
+            " name='" + text() + "'" +
             ", best name='" + getBestName() + "'" +
             ", window='" + getWindow() + "'" +
             "}";

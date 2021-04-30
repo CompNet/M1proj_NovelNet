@@ -289,8 +289,8 @@
     <mention>
         <text>I</text>
         <sentence>11</sentence>
-        <start>2</start>
-        <end>2</end>
+        <start>1</start>
+        <end>1</end>
         <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
@@ -311,8 +311,8 @@
     <mention>
         <text>He</text>
         <sentence>13</sentence>
-        <start>1</start>
-        <end>1</end>
+        <start>2</start>
+        <end>2</end>
         <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
@@ -322,8 +322,8 @@
     <mention>
         <text>himself</text>
         <sentence>13</sentence>
-        <start>5</start>
-        <end>5</end>
+        <start>6</start>
+        <end>6</end>
         <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
@@ -333,8 +333,8 @@
     <mention>
         <text>his</text>
         <sentence>13</sentence>
-        <start>8</start>
-        <end>8</end>
+        <start>9</start>
+        <end>9</end>
         <originalName>Ron</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>4</ClusterID>
@@ -344,8 +344,8 @@
     <mention>
         <text>Lupin</text>
         <sentence>13</sentence>
-        <start>13</start>
-        <end>13</end>
+        <start>14</start>
+        <end>14</end>
         <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
@@ -355,8 +355,8 @@
     <mention>
         <text>his</text>
         <sentence>13</sentence>
-        <start>15</start>
-        <end>15</end>
+        <start>16</start>
+        <end>16</end>
         <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
@@ -366,8 +366,8 @@
     <mention>
         <text>Scabbers</text>
         <sentence>13</sentence>
-        <start>22</start>
-        <end>22</end>
+        <start>23</start>
+        <end>23</end>
         <originalName>Scabbers</originalName>
         <CorefChain>16</CorefChain>
         <ClusterID>1</ClusterID>
@@ -377,8 +377,8 @@
     <mention>
         <text>You</text>
         <sentence>14</sentence>
-        <start>2</start>
-        <end>2</end>
+        <start>1</start>
+        <end>1</end>
         <originalName>Ron</originalName>
         <CorefChain>68</CorefChain>
         <ClusterID>4</ClusterID>
@@ -388,8 +388,8 @@
     <mention>
         <text>me</text>
         <sentence>14</sentence>
-        <start>7</start>
-        <end>7</end>
+        <start>6</start>
+        <end>6</end>
         <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
@@ -399,8 +399,8 @@
     <mention>
         <text>Ron</text>
         <sentence>14</sentence>
-        <start>10</start>
-        <end>10</end>
+        <start>9</start>
+        <end>9</end>
         <originalName>Ron</originalName>
         <CorefChain>68</CorefChain>
         <ClusterID>4</ClusterID>
@@ -410,8 +410,8 @@
     <mention>
         <text>he</text>
         <sentence>14</sentence>
-        <start>13</start>
-        <end>13</end>
+        <start>12</start>
+        <end>12</end>
         <originalName>Lupin</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>3</ClusterID>
@@ -421,8 +421,8 @@
     <mention>
         <text>Peter</text>
         <sentence>15</sentence>
-        <start>8</start>
-        <end>8</end>
+        <start>7</start>
+        <end>7</end>
         <originalName>Peter</originalName>
         <CorefChain>17</CorefChain>
         <ClusterID>1</ClusterID>
@@ -432,8 +432,8 @@
     <mention>
         <text>you</text>
         <sentence>15</sentence>
-        <start>10</start>
-        <end>10</end>
+        <start>9</start>
+        <end>9</end>
         <originalName>Ron</originalName>
         <CorefChain>68</CorefChain>
         <ClusterID>4</ClusterID>
@@ -443,8 +443,8 @@
     <mention>
         <text>He</text>
         <sentence>16</sentence>
-        <start>2</start>
-        <end>2</end>
+        <start>3</start>
+        <end>3</end>
         <originalName>Peter</originalName>
         <CorefChain>17</CorefChain>
         <ClusterID>1</ClusterID>
@@ -454,8 +454,8 @@
     <mention>
         <text>Peter</text>
         <sentence>16</sentence>
-        <start>5</start>
-        <end>5</end>
+        <start>6</start>
+        <end>6</end>
         <originalName>Peter</originalName>
         <CorefChain>18</CorefChain>
         <ClusterID>1</ClusterID>
@@ -465,8 +465,8 @@
     <mention>
         <text>He</text>
         <sentence>16</sentence>
-        <start>7</start>
-        <end>7</end>
+        <start>8</start>
+        <end>8</end>
         <originalName>Peter</originalName>
         <CorefChain>18</CorefChain>
         <ClusterID>1</ClusterID>
@@ -476,8 +476,8 @@
     <mention>
         <text>Scabbers</text>
         <sentence>16</sentence>
-        <start>9</start>
-        <end>9</end>
+        <start>10</start>
+        <end>10</end>
         <originalName>Scabbers</originalName>
         <CorefChain>19</CorefChain>
         <ClusterID>1</ClusterID>
@@ -487,8 +487,8 @@
     <mention>
         <text>Ron</text>
         <sentence>17</sentence>
-        <start>1</start>
-        <end>1</end>
+        <start>2</start>
+        <end>2</end>
         <originalName>Ron</originalName>
         <CorefChain>20</CorefChain>
         <ClusterID>4</ClusterID>
@@ -498,8 +498,8 @@
     <mention>
         <text>his</text>
         <sentence>17</sentence>
-        <start>11</start>
-        <end>11</end>
+        <start>12</start>
+        <end>12</end>
         <originalName>Ron</originalName>
         <CorefChain>20</CorefChain>
         <ClusterID>4</ClusterID>
@@ -509,8 +509,8 @@
     <mention>
         <text>Scabbers</text>
         <sentence>17</sentence>
-        <start>16</start>
-        <end>16</end>
+        <start>17</start>
+        <end>17</end>
         <originalName>Scabbers</originalName>
         <CorefChain>21</CorefChain>
         <ClusterID>1</ClusterID>
@@ -520,8 +520,8 @@
     <mention>
         <text>Ron</text>
         <sentence>17</sentence>
-        <start>22</start>
-        <end>22</end>
+        <start>23</start>
+        <end>23</end>
         <originalName>Ron</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
@@ -531,8 +531,8 @@
     <mention>
         <text>Harry</text>
         <sentence>17</sentence>
-        <start>28</start>
-        <end>28</end>
+        <start>29</start>
+        <end>29</end>
         <originalName>Harry</originalName>
         <CorefChain>23</CorefChain>
         <ClusterID>7</ClusterID>
@@ -542,8 +542,8 @@
     <mention>
         <text>him</text>
         <sentence>17</sentence>
-        <start>30</start>
-        <end>30</end>
+        <start>31</start>
+        <end>31</end>
         <originalName>Ron</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
@@ -553,8 +553,8 @@
     <mention>
         <text>him</text>
         <sentence>17</sentence>
-        <start>33</start>
-        <end>33</end>
+        <start>34</start>
+        <end>34</end>
         <originalName>Ron</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>4</ClusterID>
@@ -817,8 +817,8 @@
     <mention>
         <text>Harry</text>
         <sentence>26</sentence>
-        <start>1</start>
-        <end>1</end>
+        <start>2</start>
+        <end>2</end>
         <originalName>Harry</originalName>
         <CorefChain>38</CorefChain>
         <ClusterID>7</ClusterID>
@@ -828,8 +828,8 @@
     <mention>
         <text>Ron</text>
         <sentence>26</sentence>
-        <start>5</start>
-        <end>5</end>
+        <start>6</start>
+        <end>6</end>
         <originalName>Ron</originalName>
         <CorefChain>39</CorefChain>
         <ClusterID>4</ClusterID>
@@ -839,8 +839,8 @@
     <mention>
         <text>their</text>
         <sentence>26</sentence>
-        <start>9</start>
-        <end>9</end>
+        <start>10</start>
+        <end>10</end>
         <originalName>they</originalName>
         <CorefChain>40</CorefChain>
         <ClusterID>10</ClusterID>
@@ -850,8 +850,8 @@
     <mention>
         <text>they</text>
         <sentence>26</sentence>
-        <start>13</start>
-        <end>13</end>
+        <start>14</start>
+        <end>14</end>
         <originalName>they</originalName>
         <CorefChain>40</CorefChain>
         <ClusterID>10</ClusterID>
@@ -861,8 +861,8 @@
     <mention>
         <text>Black</text>
         <sentence>26</sentence>
-        <start>18</start>
-        <end>18</end>
+        <start>19</start>
+        <end>19</end>
         <originalName>Black</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>2</ClusterID>
@@ -872,8 +872,8 @@
     <mention>
         <text>Lupin</text>
         <sentence>26</sentence>
-        <start>20</start>
-        <end>20</end>
+        <start>21</start>
+        <end>21</end>
         <originalName>Lupin</originalName>
         <CorefChain>42</CorefChain>
         <ClusterID>3</ClusterID>
@@ -883,8 +883,8 @@
     <mention>
         <text>their</text>
         <sentence>26</sentence>
-        <start>25</start>
-        <end>25</end>
+        <start>26</start>
+        <end>26</end>
         <originalName>You</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>6</ClusterID>
@@ -1202,8 +1202,8 @@
     <mention>
         <text>Harry</text>
         <sentence>36</sentence>
-        <start>1</start>
-        <end>1</end>
+        <start>2</start>
+        <end>2</end>
         <originalName>Harry</originalName>
         <CorefChain>61</CorefChain>
         <ClusterID>7</ClusterID>
@@ -1213,8 +1213,8 @@
     <mention>
         <text>Hermione</text>
         <sentence>36</sentence>
-        <start>12</start>
-        <end>12</end>
+        <start>13</start>
+        <end>13</end>
         <originalName>Hermione</originalName>
         <CorefChain>62</CorefChain>
         <ClusterID>8</ClusterID>
@@ -1224,8 +1224,8 @@
     <mention>
         <text>her</text>
         <sentence>36</sentence>
-        <start>15</start>
-        <end>15</end>
+        <start>16</start>
+        <end>16</end>
         <originalName>Hermione</originalName>
         <CorefChain>62</CorefChain>
         <ClusterID>8</ClusterID>
@@ -1235,8 +1235,8 @@
     <mention>
         <text>Lupin</text>
         <sentence>36</sentence>
-        <start>19</start>
-        <end>19</end>
+        <start>20</start>
+        <end>20</end>
         <originalName>Lupin</originalName>
         <CorefChain>63</CorefChain>
         <ClusterID>3</ClusterID>
@@ -1246,8 +1246,8 @@
     <mention>
         <text>Hermione</text>
         <sentence>37</sentence>
-        <start>5</start>
-        <end>5</end>
+        <start>4</start>
+        <end>4</end>
         <originalName>Hermione</originalName>
         <CorefChain>64</CorefChain>
         <ClusterID>8</ClusterID>
@@ -1257,8 +1257,8 @@
     <mention>
         <text>he</text>
         <sentence>38</sentence>
-        <start>1</start>
-        <end>1</end>
+        <start>2</start>
+        <end>2</end>
         <originalName>Lupin</originalName>
         <CorefChain>63</CorefChain>
         <ClusterID>3</ClusterID>
@@ -1268,8 +1268,8 @@
     <mention>
         <text>Animagi</text>
         <sentence>39</sentence>
-        <start>14</start>
-        <end>14</end>
+        <start>13</start>
+        <end>13</end>
         <originalName>Animagi</originalName>
         <CorefChain>58</CorefChain>
         <ClusterID>12</ClusterID>
@@ -1279,8 +1279,8 @@
     <mention>
         <text>you</text>
         <sentence>40</sentence>
-        <start>3</start>
-        <end>3</end>
+        <start>4</start>
+        <end>4</end>
         <originalName>Lupin</originalName>
         <CorefChain>63</CorefChain>
         <ClusterID>3</ClusterID>
@@ -1290,8 +1290,8 @@
     <mention>
         <text>Remus</text>
         <sentence>40</sentence>
-        <start>17</start>
-        <end>17</end>
+        <start>18</start>
+        <end>18</end>
         <originalName>Remus</originalName>
         <CorefChain>65</CorefChain>
         <ClusterID>3</ClusterID>
@@ -1312,8 +1312,8 @@
     <mention>
         <text>Scabbers</text>
         <sentence>40</sentence>
-        <start>27</start>
-        <end>27</end>
+        <start>28</start>
+        <end>28</end>
         <originalName>Scabbers</originalName>
         <CorefChain>67</CorefChain>
         <ClusterID>1</ClusterID>
@@ -1323,8 +1323,8 @@
     <mention>
         <text>I</text>
         <sentence>41</sentence>
-        <start>2</start>
-        <end>2</end>
+        <start>1</start>
+        <end>1</end>
         <originalName>Black</originalName>
         <CorefChain>66</CorefChain>
         <ClusterID>2</ClusterID>
@@ -1334,8 +1334,8 @@
     <mention>
         <text>I</text>
         <sentence>41</sentence>
-        <start>8</start>
-        <end>8</end>
+        <start>7</start>
+        <end>7</end>
         <originalName>Black</originalName>
         <CorefChain>66</CorefChain>
         <ClusterID>2</ClusterID>

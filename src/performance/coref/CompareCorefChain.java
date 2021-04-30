@@ -271,12 +271,12 @@ public class CompareCorefChain {
         chainsToEvaluate = new CorefChainContainer();
         reference = new CorefChainContainer();
 
-        CustomEntityMention A = new CustomEntityMention("A", 0, 2, 2);
-        CustomEntityMention B = new CustomEntityMention("B", 1, 3, 4);
-        CustomEntityMention C = new CustomEntityMention("C", 2, 1, 3);
-        CustomEntityMention D = new CustomEntityMention("D", 4, 5, 5);
-        CustomEntityMention I = new CustomEntityMention("I", 6, 6, 6);
-        CustomEntityMention J = new CustomEntityMention("J", 7, 1, 2);
+        CustomEntityMention A = new CustomEntityMention("A", "A", 0, 2, 2);
+        CustomEntityMention B = new CustomEntityMention("B", "B", 1, 3, 4);
+        CustomEntityMention C = new CustomEntityMention("C", "C", 2, 1, 3);
+        CustomEntityMention D = new CustomEntityMention("D", "D", 4, 5, 5);
+        CustomEntityMention I = new CustomEntityMention("I", "I", 6, 6, 6);
+        CustomEntityMention J = new CustomEntityMention("J", "J", 7, 1, 2);
 
         CustomCorefChain a = new CustomCorefChain();
         a.getCEMList().add(A);
