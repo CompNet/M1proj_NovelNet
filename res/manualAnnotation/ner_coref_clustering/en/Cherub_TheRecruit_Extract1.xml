@@ -1,0 +1,839 @@
+  
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+    <mention>
+        <text>James Choke</text>
+        <sentence>1</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>James Choke</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>2</sentence>
+        <start>20</start>
+        <end>20</end>
+        <originalName>James Choke</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>2</sentence>
+        <start>24</start>
+        <end>24</end>
+        <originalName>James Choke</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>3</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>James Choke</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Miss Voolt</text>
+        <sentence>3</sentence>
+        <start>12</start>
+        <end>13</end>
+        <originalName>Miss Voolt</originalName>
+        <CorefChain>2</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>4</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James Choke</originalName>
+        <CorefChain>1</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>6</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>3</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>6</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>James</originalName>
+        <CorefChain>3</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha Jennings</text>
+        <sentence>7</sentence>
+        <start>1</start>
+        <end>2</end>
+        <originalName>Samantha Jennings</originalName>
+        <CorefChain>4</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>7</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>James</originalName>
+        <CorefChain>3</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>8</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>5</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>She</text>
+        <sentence>9</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>5</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>9</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>5</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>9</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>5</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>10</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>6</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>cow</text>
+        <sentence>10</sentence>
+        <start>12</start>
+        <end>12</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>6</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>11</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>11</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>6</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>She</text>
+        <sentence>12</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>6</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>12</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>James</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>12</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>James</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his mum</text>
+        <sentence>12</sentence>
+        <start>8</start>
+        <end>9</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>13</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>James</originalName>
+        <CorefChain>8</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James mum</text>
+        <sentence>13</sentence>
+        <start>2</start>
+        <end>4</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>13</sentence>
+        <start>17</start>
+        <end>17</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>15</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>9</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>16</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>10</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James mum</text>
+        <sentence>16</sentence>
+        <start>1</start>
+        <end>3</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>She</text>
+        <sentence>17</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>17</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>her</text>
+        <sentence>18</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>20</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>21</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>21</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>James</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his mum</text>
+        <sentence>21</sentence>
+        <start>3</start>
+        <end>4</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>21</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>James</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>she</text>
+        <sentence>21</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>him</text>
+        <sentence>21</sentence>
+        <start>19</start>
+        <end>19</end>
+        <originalName>James</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>22</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>James</originalName>
+        <CorefChain>11</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>22</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>23</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>James</originalName>
+        <CorefChain>12</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James mum</text>
+        <sentence>23</sentence>
+        <start>5</start>
+        <end>7</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>25</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>13</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>25</sentence>
+        <start>5</start>
+        <end>5</end>
+        <originalName>James</originalName>
+        <CorefChain>13</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>26</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>27</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>14</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>29</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his</text>
+        <sentence>30</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>James</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>his mum</text>
+        <sentence>30</sentence>
+        <start>4</start>
+        <end>5</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>31</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>James</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>32</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>James</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>32</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>16</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>he</text>
+        <sentence>32</sentence>
+        <start>11</start>
+        <end>11</end>
+        <originalName>James</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Your</text>
+        <sentence>33</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>James</originalName>
+        <CorefChain>15</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Your mum</text>
+        <sentence>33</sentence>
+        <start>2</start>
+        <end>3</end>
+        <originalName>his mum</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>34</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>He</text>
+        <sentence>35</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>His</text>
+        <sentence>36</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>37</sentence>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>16</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+     <mention>
+        <text>Samantha</text>
+        <sentence>32</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>18</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>38</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>19</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>41</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>James</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>42</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>21</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>Mr Choke</text>
+        <sentence>45</sentence>
+        <start>2</start>
+        <end>3</end>
+        <originalName>Mr Choke</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your</text>
+        <sentence>45</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>Mr Choke</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>your</text>
+        <sentence>45</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Mr Choke</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Miss Voolt</text>
+        <sentence>45</sentence>
+        <start>17</start>
+        <end>18</end>
+        <originalName>Miss Voolt</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>You</text>
+        <sentence>46</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>21</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>46</sentence>
+        <start>8</start>
+        <end>8</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>24</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>46</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Mr Choke</originalName>
+        <CorefChain>22</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>47</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>James</originalName>
+        <CorefChain>25</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>I</text>
+        <sentence>48</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>James</originalName>
+        <CorefChain>25</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>Samantha</text>
+        <sentence>49</sentence>
+        <start>1</start>
+        <end>1</end>
+        <originalName>Samantha</originalName>
+        <CorefChain>26</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>you</text>
+        <sentence>50</sentence>
+        <start>4</start>
+        <end>4</end>
+        <originalName>James</originalName>
+        <CorefChain>25</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>James</text>
+        <sentence>50</sentence>
+        <start>7</start>
+        <end>7</end>
+        <originalName>James</originalName>
+        <CorefChain>27</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+
+    <mention>
+        <text>big fat Mommy</text>
+        <sentence>51</sentence>
+        <start>5</start>
+        <end>7</end>
+        <originalName>his mom</originalName>
+        <CorefChain>7</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+</document>
