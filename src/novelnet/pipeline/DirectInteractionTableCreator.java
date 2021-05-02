@@ -90,11 +90,11 @@ public class DirectInteractionTableCreator {
         DirectInteractionTable it = new DirectInteractionTable();
 
         List<RelationTriple> actionList = findActionsWithMultiplesCharaters(book);
-        System.out.println(actionList);
+        //System.out.println(actionList);
         List<List<RelationTriple>> sameActionList = findSameAction(actionList);
-        System.out.println(sameActionList);
+        //System.out.println(sameActionList);
         List<CustomInteraction> listInteraction = createInteractions(sameActionList, book);
-        System.out.println(listInteraction);
+        //System.out.println(listInteraction);
 
         /*for (CustomCorefChain ccc : book.getCorefChain()){
             System.out.println(ccc);
