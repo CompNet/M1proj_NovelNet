@@ -24,7 +24,7 @@ public class DirectInteractionTable extends InteractionTable {
         this.listCharB = objects;
     }
 
-    public List<Integer> getSentenceIndexs() {
+    public List<Integer> getSentenceIndex() {
         return this.listBeginingWindow;
     }
 
@@ -46,7 +46,7 @@ public class DirectInteractionTable extends InteractionTable {
 	}
 
     /**
-	 * Adds one line to the table
+	 * Adds one line to the table specifying the type of interaction
 	 * 
 	 * @param subject a String representing the name of the subject
 	 * @param object a String representing the name of the object
@@ -79,7 +79,7 @@ public class DirectInteractionTable extends InteractionTable {
         return "{" +
             " subject='" + getSubjects() + "'" +
             ", object='" + getObjects() + "'" +
-            ", weight='" + getSentenceIndexs() + "'" +
+            ", weight='" + getSentenceIndex() + "'" +
             ", type='" + getListType() + "'" +
             "}";
     }
