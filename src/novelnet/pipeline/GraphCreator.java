@@ -30,7 +30,6 @@ public class GraphCreator {
 	}
 
 	public static Graph createGraph(InteractionTable tab, String name ,boolean oriented, boolean weighting) {
-		tab.display();
 		Graph graph = new Graph(name, oriented, weighting);
 		for (int i = 0; i < tab.getListCharA().size(); i++) { // Until we reach the size of the list of sentences
 			Node nA = new Node(tab.getListCharA().get(i)); // We create a new node

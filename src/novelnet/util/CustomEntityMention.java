@@ -45,7 +45,6 @@ public class CustomEntityMention {
 	}
 
     public CustomEntityMention(CorefMention cm, String bestName){
-        System.out.println(bestName);
         this.bestName = bestName;
         tokens = new LinkedList<>();
         try{

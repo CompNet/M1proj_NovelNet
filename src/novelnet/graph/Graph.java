@@ -50,14 +50,16 @@ public class Graph {
 		this.weighting = weighting;
 	}
 	
-	public Graph(Graph graphToEvaluate) {
-		name = graphToEvaluate.name;
-		oriented = graphToEvaluate.oriented;
-		weighting = graphToEvaluate.weighting;
-		for (Node n : nodeMap.values()){
+	public Graph(Graph graph) {
+		nodeMap = new HashMap<String,Node>();
+		edgeMap = new HashMap<String, Edge>();
+		name = graph.name;
+		oriented = graph.oriented;
+		weighting = graph.weighting;
+		for (Node n : graph.nodeMap.values()){
 			addNode(n);
 		}
-		for (Edge e : edgeMap.values()){
+		for (Edge e : graph.edgeMap.values()){
 			addEdge(e);
 		}
 	}
@@ -128,15 +130,11 @@ public class Graph {
 		return null;
 	}
 	
-	/*protected Edge returnInverseLink(Edge e)
-	{
-		for (Edge el : edgeMap.values()) // For each edge in the list
-		{
-			if (el.nodeLeft.equals(e.nodeRight) && el.nodeRight.equals(e.nodeLeft)) // Checks if the left node is equal to the right node and if the right node is equal to the left one
-				return el; // Returns true if yes
+	public void addAllNodeFrom(Graph graph){
+		for (Node n : graph.nodeMap.values()) {
+			nodeMap.putIfAbsent(n.id, n);
 		}
-		return null; //Returns false if conditions are not met
-	}*/
+	}
 	
 	public String getName()
 	{

@@ -1,6 +1,8 @@
 package performance.graph;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import novelnet.graph.*;
 import novelnet.pipeline.GraphCreator;
@@ -57,10 +59,27 @@ public class CompareGraph {
         System.out.println("\ndistance : " + distance);
     }
 
+    public List<Graph> preProcessing(){
+        List<Graph> result = new LinkedList<>();
+
+        Graph tempRef = new Graph(reference);
+        Graph tempEval = new Graph(graphToEvaluate);
+        result.add(tempRef);
+        result.add(tempEval);
+
+        tempEval.addAllNodeFrom(tempRef);
+        tempRef.addAllNodeFrom(tempEval);
+
+        return result;
+    }
+
     public double euclidianDistance(){
 
+        List<Graph> tmp = preProcessing();
+
         EuclideanDistance ed = new EuclideanDistance();
-        distance = ImpUtils.round(ed.d(reference.adjacencyVector(), graphToEvaluate.adjacencyVector()), 3);
+        distance = ed.d(tmp.get(0).adjacencyVector(), tmp.get(1).adjacencyVector());
+        distance = ImpUtils.round(distance, 3); //rounding to 3 decimals
 
         return distance;
     }
@@ -105,6 +124,37 @@ public class CompareGraph {
 
     }
 
+    public static void testPreprocessing(){
+
+        Graph testRef = new Graph();
+        testRef.setName("testRef");
+        Graph testEval = new Graph();
+        testEval.setName("testEval");
+
+        CompareGraph test = new CompareGraph(testEval, testRef);
+
+        Node a = new Node("A");
+        Node b = new Node("B");
+        Node c = new Node("C");
+        Node d = new Node("D");
+        Node e = new Node("D");
+
+        testRef.addNode(a);
+        testRef.addNode(c);
+        testRef.addNode(d);
+
+        testEval.addNode(a);
+        testEval.addNode(b);
+        testEval.addNode(e);
+
+        System.out.println(testRef);
+        System.out.println(testEval);
+
+        for (Graph g : test.preProcessing()) {
+            System.out.println(g);
+        }
+    }
+
     public static void main(String[] args) throws IOException, NullDocumentException{
         double dbScanDist = 0.5;
         int sentNumber = 10;
@@ -114,6 +164,7 @@ public class CompareGraph {
         //testSmileEuclidiantDistance();
         //testImport(dbScanDist, sentNumber, covering);
         testOnRealData(languageAndFileName, dbScanDist, sentNumber, covering);
+        //testPreprocessing();
     }
     
 }
