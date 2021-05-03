@@ -209,6 +209,7 @@ public class CorefChainContainer{
 
     /**
 	 * Calculate the precision of the container compared to the ground truth (or reference) by calculating the average of coref chain precision
+     * , used by CompareCorefChain.precision().
      * 
      * @param reference
 	 * @return the precision
@@ -223,6 +224,7 @@ public class CorefChainContainer{
 
     /**
 	 * Calculate the recall of the container compared to the ground truth (or reference) by calculating the average of coref chain recall
+     * , used by CompareCorefChain.recall().
      * 
      * @param reference
 	 * @return the recall

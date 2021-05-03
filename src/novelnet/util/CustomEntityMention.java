@@ -161,6 +161,10 @@ public class CustomEntityMention {
 		return this.sentenceNumber == ce.sentenceNumber && this.getWindowBegining() == ce.getWindowBegining() && this.getWindowEnding() == ce.getWindowEnding();
 	}
 
+    /**
+     * used by CustomCorefChain.precision().
+     *  
+    */
     public double precision(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
 		for (CustomCorefChain cccRef : reference.getCorefChains()){
@@ -178,6 +182,10 @@ public class CustomEntityMention {
 		return result;
     }
 
+    /**
+     * used by CustomCorefChain.recall().
+     *  
+    */
     public double recall(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
 		for (CustomCorefChain cccRef : reference.getCorefChains()){

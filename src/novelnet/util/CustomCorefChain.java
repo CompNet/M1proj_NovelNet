@@ -102,6 +102,10 @@ public class CustomCorefChain implements Cloneable{
         return false;
     }
 
+    /**
+     * used by CorefChainContainer.precision().
+     *  
+    */
     public double corefPrecision(CorefChainContainer reference){
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
@@ -111,6 +115,10 @@ public class CustomCorefChain implements Cloneable{
         return tot;
     }
 
+    /**
+     * used by CorefChainContainer.precision().
+     *  
+    */
     public double corefRecall(CorefChainContainer reference) {
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
