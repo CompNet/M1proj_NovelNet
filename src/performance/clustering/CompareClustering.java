@@ -196,7 +196,7 @@ public class CompareClustering {
     }
 
     private static void testSmile(){
-        smile.validation.metric.AdjustedRandIndex ari = new AdjustedRandIndex();
+        AdjustedRandIndex ari = new AdjustedRandIndex();
         int[] ref = new int[9];
         int[] data = new int[9];
 
