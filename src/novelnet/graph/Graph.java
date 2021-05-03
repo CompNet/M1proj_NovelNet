@@ -112,7 +112,7 @@ public class Graph {
 	
 	public String findEdge(Node nodeA, Node nodeB){
 		for (Edge e : edgeMap.values()) { // For each edge in the list
-			if ((e.nodeLeft.getName() == nodeA.getName() && e.nodeRight.getName() == nodeB.getName()) || (e.nodeLeft.getName() == nodeB.getName() && e.nodeRight.getName() == nodeA.getName())){
+			if ((e.nodeLeft.getName() == nodeA.getName() && e.nodeRight.getName() == nodeB.getName()) || (!oriented && (e.nodeLeft.getName() == nodeB.getName() && e.nodeRight.getName() == nodeA.getName()))){
 				return e.id;
 			}
 		}
@@ -121,7 +121,7 @@ public class Graph {
 
 	public String findEdge(Node nodeA, Node nodeB, String type){
 		for (Edge e : edgeMap.values()) { // For each edge in the list
-			if (e.nodeLeft.getName() == nodeA.getName() && e.nodeRight.getName() == nodeB.getName() && e.type == type){
+			if ((e.nodeLeft.getName() == nodeA.getName() && e.nodeRight.getName() == nodeB.getName() && e.type == type) || (!oriented && (e.nodeLeft.getName() == nodeB.getName() && e.nodeRight.getName() == nodeA.getName() && e.type == type))){
 				return e.id;
 			}
 		}
