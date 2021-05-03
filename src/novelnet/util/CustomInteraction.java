@@ -90,4 +90,12 @@ public class CustomInteraction {
             "}";
     }
 
+	public int characterNumber() {
+		int count = 0;
+        for (CustomTriple customTriple : triples) {
+            count += customTriple.characterNumber();
+        }
+        return count;
+	}
+
 }

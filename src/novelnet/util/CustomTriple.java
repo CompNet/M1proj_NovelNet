@@ -14,6 +14,8 @@ public class CustomTriple {
 
 
     public CustomTriple() {
+        subject = null;
+        object = null;
     }
 
     public CustomTriple(RelationTriple triple, CustomCorefChain subject, CustomCorefChain object) {
@@ -60,6 +62,13 @@ public class CustomTriple {
                 subject = ccc;
             }
         }
+    }
+
+    public int characterNumber(){
+        int count = 0;
+        if (subject != null) count++;
+        if (object != null) count++;
+        return count;
     }
 
     @Override

@@ -1,10 +1,8 @@
 package novelnet.pipeline;
 
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomInteraction;
 import novelnet.book.Book;
 import novelnet.table.*;
@@ -20,32 +18,15 @@ public class DirectInteractionTableCreator {
 
 	}
 
-    private static List<RelationTriple> findActionsWithMultiplesCharaters(Book book) {
+    private static List<RelationTriple> findAllActions(Book book){
         Annotation annotation = book.getDocument().annotation();
-        boolean subject;
-        boolean object;
         List<RelationTriple> result = new LinkedList<>();
 
         for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
 			// Get the OpenIE triples for the sentence
-			Collection<RelationTriple> triples = sentence.get(NaturalLogicAnnotations.RelationTriplesAnnotation.class);
+			result.addAll(sentence.get(NaturalLogicAnnotations.RelationTriplesAnnotation.class));
+        }
 
-			for (RelationTriple triple : triples) {
-                System.out.println("\n" + triple.subjectGloss() + "\t" + triple.relationGloss() +"\t" + triple.objectGloss());
-                subject = false;
-                object = false;
-                for (CustomCorefChain ccc : book.getCorefChain()){
-                    if (ccc.contains(triple.subjectHead())){
-                        subject = true;
-                    }
-                    if (ccc.contains(triple.objectHead())){
-                        object = true;
-                    }
-                }
-                System.out.println("subj : " + triple.subjectHead()+ " " + subject + "\t obj : " + triple.objectHead()+ " " + object);
-                if (subject && object) result.add(triple);
-			}
-		}
         return result;
     }
 
@@ -61,12 +42,7 @@ public class DirectInteractionTableCreator {
                     alreadyAnAction = true;
                 }
             }
-            if (actionList.isEmpty()){
-                List<RelationTriple> tmp = new LinkedList<>();
-                tmp.add(triple);
-                sameActionList.add(tmp);
-            }
-            else if (!alreadyAnAction) {
+            if (!alreadyAnAction) {
                 List<RelationTriple> tmp = new LinkedList<>();
                 tmp.add(triple);
                 sameActionList.add(tmp);
@@ -86,15 +62,28 @@ public class DirectInteractionTableCreator {
         return listInteraction;
     }
 
+    private static List<CustomInteraction> findActionsWithMultiplesCharaters(List<CustomInteraction> customInteractionList) {
+        List<CustomInteraction> result = new LinkedList<>();
+
+        for (CustomInteraction customInteraction : customInteractionList) {
+            if (customInteraction.characterNumber() > 1){
+                result.add(customInteraction);
+            }
+        }
+
+        return result;
+    }
+
     public static DirectInteractionTable createTable(Book book){
         DirectInteractionTable it = new DirectInteractionTable();
 
-        List<RelationTriple> actionList = findActionsWithMultiplesCharaters(book);
+        List<RelationTriple> actionList = findAllActions(book);
         //System.out.println(actionList);
         List<List<RelationTriple>> sameActionList = findSameAction(actionList);
         //System.out.println(sameActionList);
-        List<CustomInteraction> listInteraction = createInteractions(sameActionList, book);
+        List<CustomInteraction> allInteractionList = createInteractions(sameActionList, book);
         //System.out.println(listInteraction);
+        List<CustomInteraction> finalInteractionList = findActionsWithMultiplesCharaters(allInteractionList);
 
         /*for (CustomCorefChain ccc : book.getCorefChain()){
             System.out.println(ccc);
@@ -104,7 +93,7 @@ public class DirectInteractionTableCreator {
             System.out.println(rtlist);
         }*/
 
-        for(CustomInteraction ci : listInteraction){
+        for(CustomInteraction ci : finalInteractionList){
             //ci.display();
             for (int i = 0; i < ci.getSubjects().size(); i++){
                 for (int j = 0; j < ci.getSubjects().size(); j++){
