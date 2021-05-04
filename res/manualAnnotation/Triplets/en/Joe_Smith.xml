@@ -4,8 +4,8 @@
         <Subject>
             <text></text>
             <sentence></sentence>
-            <start></start> <!-- token n° -->
-            <end></end> <!-- token n° -->
+            <start></start>
+            <end></end>
         </Subject>
         <Verb>
             <text></text>
@@ -19,26 +19,5 @@
             <start></start>
             <end></end>
         </Object>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text></text>
-            <sentence></sentence>
-            <start></start>
-            <end></end>
-        </Subject>
-        <Subject>
-            <text></text>
-            <sentence></sentence>
-            <start></start>
-            <end></end>
-        </Subject>
-        <Verb>
-            <text></text>
-            <sentence></sentence>
-            <start></start>
-            <end></end>
-        </Verb>
     </Triplet>
 </document>
