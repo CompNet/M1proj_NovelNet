@@ -17,10 +17,10 @@
 
     <Triplet>
         <Subject>
-            <text>Percy</text>
+            <text>Ginny</text>
             <sentence>1</sentence>
-            <start>1</start>
-            <end>1</end>
+            <start>3</start>
+            <end>3</end>
         </Subject>
         <Verb>
             <text>appeared</text>
@@ -32,8 +32,8 @@
 
     <Triplet>
         <Subject>
-            <text>Percy</text>
-            <sentence>1</sentence>
+            <text>They</text>
+            <sentence>2</sentence>
             <start>1</start>
             <end>1</end>
         </Subject>
@@ -47,40 +47,10 @@
 
     <Triplet>
         <Subject>
-            <text>Ginny</text>
-            <sentence>3</sentence>
-            <start>3</start>
-            <end>3</end>
-        </Subject>
-        <Verb>
-            <text>were</text>
+            <text>They</text>
             <sentence>2</sentence>
-            <start>2</start>
-            <end>2</end>
-        </Verb>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Percy</text>
-            <sentence>1</sentence>
             <start>1</start>
             <end>1</end>
-        </Subject>
-        <Verb>
-            <text>taken</text>
-            <sentence>2</sentence>
-            <start>7</start>
-            <end>7</end>
-        </Verb>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Ginny</text>
-            <sentence>3</sentence>
-            <start>3</start>
-            <end>3</end>
         </Subject>
         <Verb>
             <text>taken</text>
@@ -155,31 +125,10 @@
             <end>8</end>
         </Verb>
         <Object>
-            <text>Harry</text>
+            <text>them</text>
             <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
-        </Object>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>the remaining Weasleys</text>
-            <sentence>6</sentence>
-            <start>2</start>
-            <end>4</end>
-        </Subject>
-        <Verb>
-            <text>joined</text>
-            <sentence>6</sentence>
-            <start>8</start>
-            <end>8</end>
-        </Verb>
-        <Object>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
+            <start>9</start>
+            <end>9</end>
         </Object>
     </Triplet>
 
@@ -197,31 +146,10 @@
             <end>8</end>
         </Verb>
         <Object>
-            <text>Harry</text>
+            <text>them</text>
             <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
-        </Object>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Hermione</text>
-            <sentence>6</sentence>
-            <start>6</start>
-            <end>6</end>
-        </Subject>
-        <Verb>
-            <text>joined</text>
-            <sentence>6</sentence>
-            <start>8</start>
-            <end>8</end>
-        </Verb>
-        <Object>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
+            <start>9</start>
+            <end>9</end>
         </Object>
     </Triplet>
 
@@ -257,10 +185,10 @@
 
     <Triplet>
         <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
+            <text>They</text>
+            <sentence>7</sentence>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>loaded</text>
@@ -272,25 +200,10 @@
 
     <Triplet>
         <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
-        </Subject>
-        <Verb>
-            <text>loaded</text>
+            <text>They</text>
             <sentence>7</sentence>
-            <start>2</start>
-            <end>2</end>
-        </Verb>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>stowed</text>
@@ -308,10 +221,10 @@
 
     <Triplet>
         <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
+            <text>They</text>
+            <sentence>7</sentence>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>stowed</text>
@@ -329,52 +242,10 @@
 
     <Triplet>
         <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
-        </Subject>
-        <Verb>
-            <text>stowed</text>
+            <text>They</text>
             <sentence>7</sentence>
-            <start>8</start>
-            <end>8</end>
-        </Verb>
-        <Object>
-            <text>Crookshanks</text>
-            <sentence>7</sentence>
-            <start>11</start>
-            <end>11</end>
-        </Object>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
-        </Subject>
-        <Verb>
-            <text>stowed</text>
-            <sentence>7</sentence>
-            <start>8</start>
-            <end>8</end>
-        </Verb>
-        <Object>
-            <text>Hedwig</text>
-            <sentence>7</sentence>
-            <start>9</start>
-            <end>9</end>
-        </Object>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>went</text>
@@ -386,25 +257,10 @@
 
     <Triplet>
         <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
-        </Subject>
-        <Verb>
-            <text>went</text>
+            <text>They</text>
             <sentence>7</sentence>
-            <start>18</start>
-            <end>18</end>
-        </Verb>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>say</text>
@@ -422,10 +278,10 @@
 
     <Triplet>
         <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
+            <text>They</text>
+            <sentence>7</sentence>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>say</text>
@@ -441,48 +297,29 @@
         </Object>
     </Triplet>
 
-    <Triplet>
-        <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
-        </Subject>
-        <Verb>
-            <text>say</text>
-            <sentence>7</sentence>
-            <start>22</start>
-            <end>22</end>
-        </Verb>
-        <Object>
-            <text>Mrs Weasley</text>
-            <sentence>7</sentence>
-            <start>29</start>
-            <end>30</end>
-        </Object>
-    </Triplet>
 
-    <Triplet>
-        <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
-        </Subject>
-        <Verb>
-            <text>say</text>
-            <sentence>7</sentence>
-            <start>22</start>
-            <end>22</end>
-        </Verb>
-        <Object>
-            <text>Mr Weasley</text>
-            <sentence>7</sentence>
-            <start>27</start>
-            <end>27</end>
-        </Object>
-    </Triplet>
     
+    <Triplet>
+        <Subject>
+            <text>Mrs Weasley</text>
+            <sentence>8</sentence>
+            <start>1</start>
+            <end>2</end>
+        </Subject>
+        <Verb>
+            <text>kissed</text>
+            <sentence>8</sentence>
+            <start>3</start>
+            <end>3</end>
+        </Verb>
+        <Object>
+            <text>her children</text>
+            <sentence>8</sentence>
+            <start>5</start>
+            <end>6</end>
+        </Object>
+    </Triplet>
+
     <Triplet>
         <Subject>
             <text>Mrs Weasley</text>
@@ -569,10 +406,10 @@
     
     <Triplet>
         <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
+            <text>They</text>
+            <sentence>12</sentence>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>leaned</text>
@@ -584,25 +421,10 @@
     
     <Triplet>
         <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
-        </Subject>
-        <Verb>
-            <text>leaned</text>
+            <text>They</text>
             <sentence>12</sentence>
-            <start>2</start>
-            <end>2</end>
-        </Verb>
-    </Triplet>
-    
-    <Triplet>
-        <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>waved</text>
@@ -620,52 +442,10 @@
     
     <Triplet>
         <Subject>
-            <text>Harry</text>
-            <sentence>6</sentence>
-            <start>11</start>
-            <end>11</end>
-        </Subject>
-        <Verb>
-            <text>waved</text>
+            <text>They</text>
             <sentence>12</sentence>
-            <start>8</start>
-            <end>8</end>
-        </Verb>
-        <Object>
-            <text>Mrs Weasley</text>
-            <sentence>12</sentence>
-            <start>13</start>
-            <end>14</end>
-        </Object>
-    </Triplet>
-    
-    <Triplet>
-        <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
-        </Subject>
-        <Verb>
-            <text>waved</text>
-            <sentence>12</sentence>
-            <start>8</start>
-            <end>8</end>
-        </Verb>
-        <Object>
-            <text>Mr Weasley</text>
-            <sentence>12</sentence>
-            <start>10</start>
-            <end>11</end>
-        </Object>
-    </Triplet>
-    
-    <Triplet>
-        <Subject>
-            <text>Ron</text>
-            <sentence>6</sentence>
-            <start>13</start>
-            <end>13</end>
+            <start>1</start>
+            <end>1</end>
         </Subject>
         <Verb>
             <text>waved</text>
