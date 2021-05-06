@@ -137,10 +137,6 @@ public class CustomTriple {
     public boolean equalTo(CustomTriple tripletToCompare) {
         //TODO
         if (getTriple() == null){   //if this triple is from reference
-            /*getSubject().getCEMList().get(0).getTokens() == tripletToCompare.getTriple().subject*/
-            System.out.println(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()));
-            System.out.println(tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()));
-            System.out.println(tripletToCompare.getObject().contains(getObject().getCEMList().get(0).getBeginToken()));
             if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()) && tripletToCompare.getObject().contains(getObject().getCEMList().get(0).getBeginToken())){
                 return true;
             }

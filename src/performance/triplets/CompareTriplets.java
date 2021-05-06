@@ -137,14 +137,14 @@ public class CompareTriplets {
 
     public static void main(String[] args){
         try {
-            testImport();
+            test();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 	}
 
-    private static void testImport() throws IOException, NullDocumentException{
+    private static void test() throws IOException, NullDocumentException{
         String language = "en";
         String fileName = "HarryPotter3_TrainBoarding";
 
@@ -159,8 +159,9 @@ public class CompareTriplets {
                 for (CustomTriple tripletEval : test.getTriplesToEvaluate().getTriples()) {
                     if (tripletEval.getVerb().originalText().equals("talk")){
                         System.out.println("test1 (1): " + triplet.equalTo(tripletEval));
-                        System.out.println("test2 (0): " + triplet.equalTo(testEqual3));
-                        System.out.println("test3 (0): " + tripletEval.equalTo(testEqual4));
+                        System.out.println("test1 (1): " + tripletEval.equalTo(triplet));
+                        System.out.println("test1 (1): " + triplet.equalTo(triplet));
+                        System.out.println("test1 (1): " + tripletEval.equalTo(tripletEval));
                     }
                 }
             }

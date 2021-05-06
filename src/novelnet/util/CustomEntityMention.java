@@ -15,6 +15,7 @@ public class CustomEntityMention {
     List<CoreLabel> tokens;
     String bestName;
     Pair<Integer, Integer> window;
+    Pair<Integer, Integer> tokenIndexs;
     int sentenceNumber;
 
     public CustomEntityMention(List<CoreLabel> tokens, Pair<Integer, Integer> window, String bestName) {
@@ -30,18 +31,16 @@ public class CustomEntityMention {
             tokens.add(token);
         }
 		sentenceNumber = cem.tokens().get(0).sentIndex()+1;
-        window = new Pair<>(cem.tokens().get(0).index(), cem.tokens().get(cem.tokens().size()-1).index());
+        window = new Pair<>();
         bestName = cem.text();
 	}
 
     public CustomEntityMention(CustomEntityMention cem){
-        this.tokens = new LinkedList<>();
-        for (CoreLabel token : cem.getTokens()){
-            tokens.add(token);
-        }
+        this.tokens = new LinkedList<>(cem.getTokens());
 		sentenceNumber = cem.getSentenceNumber();
-        window = new Pair<>(cem.getTokens().get(0).index(), cem.getTokens().get(cem.getTokens().size()-1).index());
+        window = cem.window;
         bestName = cem.bestName;
+        tokenIndexs = cem.tokenIndexs;
 	}
 
     public CustomEntityMention(CorefMention cm, String bestName){
@@ -54,7 +53,7 @@ public class CustomEntityMention {
             System.out.println(e.getMessage());
         }
 		sentenceNumber = cm.sentNum;
-        window = new Pair<>(cm.startIndex, cm.endIndex-1);
+        window = new Pair<>();
 	}
 	
 	public CustomEntityMention(String text, String bestName, int sentenceNumber, int firstTokenNumber, int lastTokenNumber) {
@@ -62,9 +61,12 @@ public class CustomEntityMention {
 		tokens = new LinkedList<>();
         CoreLabel temp = new CoreLabel();
         temp.setOriginalText(text);
+        temp.setIndex(firstTokenNumber);
+        temp.setSentIndex(sentenceNumber-1);
         tokens.add(temp);
 		this.sentenceNumber = sentenceNumber;
-        window = new Pair<>(firstTokenNumber, lastTokenNumber);
+        window = new Pair<>();
+        tokenIndexs = new Pair<>(firstTokenNumber, lastTokenNumber);
 	}
 
 	public int getSentenceNumber() {
@@ -132,7 +134,8 @@ public class CustomEntityMention {
     }
 
     public Pair<Integer,Integer> tokenIndexs(){
-        return new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
+        if (tokenIndexs == null) return new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
+        else return tokenIndexs;
     }
 
     public CoreLabel getBeginToken(){
@@ -157,7 +160,7 @@ public class CustomEntityMention {
     }
 
     public boolean equalTo(CustomEntityMention ce){
-		return this.sentenceNumber == ce.sentenceNumber && this.getWindowBegining() == ce.getWindowBegining() && this.getWindowEnding() == ce.getWindowEnding();
+		return this.sentenceNumber == ce.sentenceNumber && this.tokenIndexs().first() == ce.tokenIndexs().first() && this.tokenIndexs().second() == ce.tokenIndexs().second();
 	}
 
     /**
