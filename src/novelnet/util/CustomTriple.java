@@ -136,14 +136,21 @@ public class CustomTriple {
 
     public boolean equalTo(CustomTriple tripletToCompare) {
         //TODO
-        Boolean equal = false;
         if (getTriple() == null){   //if this triple is from reference
-
+            /*getSubject().getCEMList().get(0).getTokens() == tripletToCompare.getTriple().subject*/
+            System.out.println(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()));
+            System.out.println(tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()));
+            System.out.println(tripletToCompare.getObject().contains(getObject().getCEMList().get(0).getBeginToken()));
+            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()) && tripletToCompare.getObject().contains(getObject().getCEMList().get(0).getBeginToken())){
+                return true;
+            }
         }
         else{   //if the triple to compare is from reference
-
+            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken()) && getObject().contains(tripletToCompare.getObject().getCEMList().get(0).getBeginToken())){
+                return true;
+            }
         }
-        return equal;
+        return false;
     }
 
 }

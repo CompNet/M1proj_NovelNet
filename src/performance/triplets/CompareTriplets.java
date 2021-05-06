@@ -150,14 +150,20 @@ public class CompareTriplets {
 
         CompareTriplets test = new CompareTriplets(language, fileName);
         //test.display();
-        System.out.println("\n\nref triplets");
-        for (CustomTriple triplet : test.getReference().getTriples()) {
-            triplet.displayTest();
-        }
+        CustomTriple testEqual3 = test.getTriplesToEvaluate().getTriples().get(0);
+        CustomTriple testEqual4 = test.getReference().getTriples().get(0);
 
-        System.out.println("\n\neval triplets");
-        for (CustomTriple triplet : test.getTriplesToEvaluate().getTriples()) {
-            triplet.displayTest();
+        //System.out.println("\n\nref triplets");
+        for (CustomTriple triplet : test.getReference().getTriples()) {
+            if (triplet.getVerb().originalText().equals("talk")){
+                for (CustomTriple tripletEval : test.getTriplesToEvaluate().getTriples()) {
+                    if (tripletEval.getVerb().originalText().equals("talk")){
+                        System.out.println("test1 (1): " + triplet.equalTo(tripletEval));
+                        System.out.println("test2 (0): " + triplet.equalTo(testEqual3));
+                        System.out.println("test3 (0): " + tripletEval.equalTo(testEqual4));
+                    }
+                }
+            }
         }
     }
 }

@@ -51,6 +51,10 @@ public class ImpUtils {
 		return null;
 	}
 
+	public static Boolean compareCoreLabel(CoreLabel token1, CoreLabel token2){
+		return token1.originalText().equals(token2.originalText()) && token1.index() == token2.index() && token1.sentIndex() == token2.sentIndex();
+	}
+
 	public static Properties getFrenchProperties(){
 		Properties props = new Properties();
 

@@ -78,7 +78,7 @@ public class TripletsContainer {
                 verb.setValue(verbElement.getChildText("text"));
                 verb.setOriginalText(verbElement.getChildText("text"));
                 verb.setIndex(Integer.parseInt(verbElement.getChildText("start")));
-                verb.setSentIndex(Integer.parseInt(verbElement.getChildText("sentence")));
+                verb.setSentIndex(Integer.parseInt(verbElement.getChildText("sentence"))-1);
                 
 
                 //  Object
