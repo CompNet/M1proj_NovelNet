@@ -204,7 +204,7 @@ public class TripletsContainer {
         test2 = TripletsContainer.buildFromTxt(language, fileName);
         System.out.println("\ndisplay \ntest xml : ");
         test.display();
-        System.out.println("\n\ntest txt : ");
+        System.out.println("\ntest txt : ");
         test2.display();
     }
     
