@@ -14,6 +14,7 @@ import org.apache.commons.io.IOUtils;
 import edu.stanford.nlp.coref.CorefCoreAnnotations;
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.coref.data.CorefChain.CorefMention;
+import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
@@ -200,6 +201,8 @@ public class ImpUtils {
 		pipeline.annotate(document);
 		
 		ImpUtils.setDocument(document);
+
+		//System.out.println(document.corefChains().values());
 		
 		return document;
 	}
@@ -210,5 +213,13 @@ public class ImpUtils {
 		BigDecimal bd = BigDecimal.valueOf(value);
 		bd = bd.setScale(places, RoundingMode.HALF_UP);
 		return bd.doubleValue();
+	}
+
+	public static boolean equals(CustomTriple ct1, CustomTriple ct2){
+		
+		if(ct1.getObject()==ct2.getObject() && ct1.getSubject()==ct2.getSubject() && ct1.getVerb()==ct2.getVerb()){
+			return true;
+		}
+		return false;
 	}
 }

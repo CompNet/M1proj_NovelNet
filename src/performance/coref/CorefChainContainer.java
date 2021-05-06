@@ -295,7 +295,7 @@ public class CorefChainContainer{
     public void display(){
         for (CustomCorefChain ccc : corefChains){
             boolean begin = true;
-            System.out.print("{  Id : " + ccc.getId() + ",\tCluster : " + ccc.getClusterID() + ",\tname : " + ccc.getRepresentativeName() + " Entities : [ ");
+            System.out.print("{  Id : " + ccc.getId() + ",\t Cluster : " + ccc.getClusterID() + ",\t name : " + ccc.getRepresentativeName() + ",\t Entities : [ ");
             for (CustomEntityMention ce : ccc.getCEMList()){
                 if (begin) {
                     System.out.print(ce.text());

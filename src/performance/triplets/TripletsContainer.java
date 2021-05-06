@@ -2,6 +2,7 @@ package performance.triplets;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,10 +11,25 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
+import edu.stanford.nlp.ie.util.RelationTriple;
+import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.util.CoreMap;
+import novelnet.book.Book;
+import novelnet.pipeline.CorefChainFuser;
+import novelnet.pipeline.CreateBook;
+import novelnet.pipeline.CustomCorefChainCreator;
+import novelnet.pipeline.DirectInteractionTableCreator;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
+import novelnet.util.CustomInteraction;
 import novelnet.util.CustomTriple;
+import novelnet.util.ImpUtils;
+import novelnet.util.NullDocumentException;
+import performance.coref.CorefChainContainer;
 
 public class TripletsContainer {
 
@@ -103,6 +119,44 @@ public class TripletsContainer {
         return result;
 	}
 
+    /**
+	 * Build a TripletsContainer from a .txt file using Stanford CoreNLP
+	 * 
+	 * @param pathToText path to the .txt file
+     * @return the Container
+     * @throws NullDocumentException
+	 */
+    public static TripletsContainer buildFromTxt(String language, String fileName) throws IOException, NullDocumentException {
+        String pathToCorefXml = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
+        String pathToText = "res/corpus/" + language + "/" + fileName + ".txt";
+
+        TripletsContainer result = new TripletsContainer();
+		CoreDocument document;
+
+		if (pathToText.contains("\\en\\") || pathToText.contains("/en/")) document = ImpUtils.processOpenIE(pathToText);
+        //only in en for now
+		//else if (pathToFile.contains("\\fr\\") || pathToFile.contains("/fr/")) document = ImpUtils.processFrenchNER(pathToFile);
+		else {
+			System.out.println("Language non reconnu");
+			return null;
+		}
+
+		List<CustomCorefChain> cccList = CorefChainContainer.buildFromXml(pathToCorefXml, document).getCorefChains();
+        
+        CorefChainFuser corefChainFuser = new CorefChainFuser();
+        cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.50);
+
+        Book book = CreateBook.createBook(document, false, cccList);
+
+        Annotation annotation = document.annotation();
+
+        for (CustomInteraction interaction : DirectInteractionTableCreator.findActionsWithMultiplesCharaters(book)) {
+            result.getTriples().addAll(interaction.getTriples());
+        }
+
+        return result;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -127,22 +181,31 @@ public class TripletsContainer {
     //Tests
 
     public static void main(String[] args){
-        testImport();
-	}
-
-    private static void testImport(){
-        String language = "en";
-        String fileName = "HarryPotter3_TrainBoarding";
-        String pathToXml = "res/manualAnnotation/Triplets/" + language + "/" + fileName + ".xml";
-
-        TripletsContainer test = null;
         try {
-            test = TripletsContainer.buildFromXml(pathToXml);
-        } catch (IOException e) {
+            testImport();
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+	}
+
+    private static void testImport() throws IOException, NullDocumentException{
+        String language = "en";
+        String fileName = "HarryPotter3_TrainBoarding";
+        String pathToXml = "res/manualAnnotation/Triplets/" + language + "/" + fileName + ".xml";
+        String pathToText = "res/corpus/" + language + "/" + fileName + ".txt";
+
+
+        TripletsContainer test = null;
+        TripletsContainer test2 = null;
+        System.out.println("processing xlm...");
+        test = TripletsContainer.buildFromXml(pathToXml);
+        System.out.println("processing txt...");
+        test2 = TripletsContainer.buildFromTxt(language, fileName);
+        System.out.println("\ndisplay \ntest xml : ");
         test.display();
+        System.out.println("\n\ntest txt : ");
+        test2.display();
     }
     
 }

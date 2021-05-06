@@ -18,10 +18,18 @@ public class CustomTriple {
     public CustomTriple() {
     }
 
+    public CustomTriple(RelationTriple triple, Book book){
+        this.triple = triple;
+        setSubject(book);
+        setObject(book);
+        verb = triple.relationHead();
+    }
+
     public CustomTriple(RelationTriple triple, CustomCorefChain subject, CustomCorefChain object) {
         this.triple = triple;
         this.subject = subject;
         this.object = object;
+        verb = triple.relationHead();
     }
 
     public CustomTriple(CustomCorefChain subject, CustomCorefChain object, CoreLabel verb) {
@@ -64,7 +72,7 @@ public class CustomTriple {
 
     public void setObject(Book book){
         for (CustomCorefChain ccc : book.getCorefChain()){
-            if (ccc.contains(triple.objectHead())){
+            if (ccc.contains(triple.objectHead()) && ccc != subject){
                 object = ccc;
             }
         }
@@ -84,11 +92,14 @@ public class CustomTriple {
         if (object != null) count++;
         return count;
     }
-
+/*
     @Override
     public String toString() {
+        String result = "{";
+        if (getSubject() != null){
+            result += "subject='" + getSubject().getRepresentativeName() + "'";
+        }
 
-        String result = "{" + "subject='" + getSubject().getRepresentativeName() + "'";
         if (getTriple() == null){
             result += " verb='" + getVerb().originalText() + "'";
         }
@@ -97,6 +108,24 @@ public class CustomTriple {
 
         }
         if (getObject() != null) result += ", object='" + getObject().getRepresentativeName() + "'";
+        result += "}";
+        return result;
+    }*/
+    @Override
+    public String toString() {
+        String result = "{";
+        if (getSubject() != null){
+            result += "subject='" + getTriple().subjectGloss() + "'";
+        }
+
+        if (getTriple() == null){
+            result += " verb='" + getVerb().originalText() + "'";
+        }
+        else {
+            result += " verb='" + getTriple().relationGloss() + "'";
+
+        }
+        if (getObject() != null) result += ", object='" + getTriple().objectGloss() + "'";
         result += "}";
         return result;
     }

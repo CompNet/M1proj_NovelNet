@@ -150,6 +150,7 @@ public class ClusterContainer extends CorefChainContainer {
         ClusterContainer test = buildClusterContainerFromXML(pathToXml, document);
 
         for (CustomCorefChain ccc : test.getCorefChains()) {
+            System.out.println("\nnew chain : ");
             for (CustomEntityMention cem : ccc.getCEMList()) {
                 System.out.println(cem.getBestName() + ", " + cem.originalText() + ", " + cem.getSentenceIndex());
                 for (CoreLabel token : cem.getTokens()){
@@ -162,7 +163,7 @@ public class ClusterContainer extends CorefChainContainer {
     public static void main(String[] args) throws IOException {
 
         String language = "en";
-        String fileName = "Assassin'sApprentice_Chapter1";
+        String fileName = "HarryPotter3_TrainBoarding";
         String path = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
         String pathToText = "res/corpus/" + language + "/" + fileName + ".txt";
 

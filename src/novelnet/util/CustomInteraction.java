@@ -35,6 +35,12 @@ public class CustomInteraction {
         type = null;
     }
 
+    public CustomInteraction(List<CustomTriple> triples){
+        this.triples = triples;
+        sentenceIndex = triples.get(0).getTriple().relation.get(0).sentIndex();
+        type = null;
+    }
+
     public List<CustomTriple> getTriples() {
         return this.triples;
     }
