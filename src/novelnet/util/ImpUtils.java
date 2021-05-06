@@ -216,7 +216,7 @@ public class ImpUtils {
 
 	public static boolean equals(CustomTriple ct1, CustomTriple ct2){
 		
-		if(ct1.getObject()==ct2.getObject() && ct1.getSubject()==ct2.getSubject() && ct1.getVerb()==ct2.getVerb()){
+		if(ct1.getSubject()==ct2.getSubject() && ct1.getVerb()==ct2.getVerb() && (ct1.getObject()==ct2.getObject() || ct2.getObject()==null || ct1.getObject()==null)){
 			return true;
 		}
 		return false;

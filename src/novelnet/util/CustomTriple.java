@@ -92,40 +92,36 @@ public class CustomTriple {
         if (object != null) count++;
         return count;
     }
-/*
+
     @Override
     public String toString() {
         String result = "{";
-        if (getSubject() != null){
-            result += "subject='" + getSubject().getRepresentativeName() + "'";
+        if (getTriple() != null){
+            if (getSubject() != null){
+                result += "subject='" + getTriple().subjectGloss() + "'";
+            }
+    
+            if (getTriple() == null){
+                result += " verb='" + getVerb().originalText() + "'";
+            }
+            else {
+                result += " verb='" + getTriple().relationGloss() + "'";
+    
+            }
+            if (getObject() != null) result += ", object='" + getTriple().objectGloss() + "'";
         }
 
-        if (getTriple() == null){
-            result += " verb='" + getVerb().originalText() + "'";
-        }
         else {
-            result += " verb='" + getTriple().relationGloss() + "'";
-
-        }
-        if (getObject() != null) result += ", object='" + getObject().getRepresentativeName() + "'";
-        result += "}";
-        return result;
-    }*/
-    @Override
-    public String toString() {
-        String result = "{";
-        if (getSubject() != null){
-            result += "subject='" + getTriple().subjectGloss() + "'";
+            if (getSubject() != null){
+                result += "subject='" + getSubject().getRepresentativeName() + "'";
+            }
+    
+            if (getTriple() == null){
+                result += " verb='" + getVerb().originalText() + "'";
+            }
+            if (getObject() != null) result += ", object='" + getObject().getRepresentativeName() + "'";
         }
 
-        if (getTriple() == null){
-            result += " verb='" + getVerb().originalText() + "'";
-        }
-        else {
-            result += " verb='" + getTriple().relationGloss() + "'";
-
-        }
-        if (getObject() != null) result += ", object='" + getTriple().objectGloss() + "'";
         result += "}";
         return result;
     }

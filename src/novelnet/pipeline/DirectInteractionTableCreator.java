@@ -66,7 +66,13 @@ public class DirectInteractionTableCreator {
                 CustomTriple ctToAdd = new CustomTriple(rtToAdd, book);
                 alreadyIn = false;
                 for (CustomTriple ctToCompare : tmp) {
-                    if (ImpUtils.equals(ctToCompare, ctToAdd)) alreadyIn = true;
+                    if (ImpUtils.equals(ctToCompare, ctToAdd)){
+                        if (ctToCompare.getObject() == null){
+                            tmp.remove(ctToCompare);
+                            tmp.add(ctToAdd);
+                        }
+                        alreadyIn = true;
+                    }
                 }
                 if (!alreadyIn) tmp.add(ctToAdd);
             }
