@@ -2,6 +2,7 @@ package novelnet.util;
 
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreLabel;
+import jdk.internal.org.jline.utils.Display;
 import novelnet.book.Book;
 
 /**
@@ -124,6 +125,25 @@ public class CustomTriple {
 
         result += "}";
         return result;
+    }
+
+    public void displayTest(){
+        System.out.println("\nnew Triplet :");
+        System.out.println(getTriple());
+        System.out.println(getSubject());
+        System.out.println(getVerb());
+        System.out.println(getObject());
+    }
+
+    public boolean equalTo(CustomTriple tripletToCompare) {
+        Boolean equal = false;
+        if (getTriple() == null){   //if this triple is from reference
+            
+        }
+        else{   //if the triple to compare is from reference
+
+        }
+        return equal;
     }
 
 }

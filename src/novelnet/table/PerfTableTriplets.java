@@ -3,37 +3,37 @@ package novelnet.table;
 import java.util.LinkedList;
 import java.util.List;
 
-import novelnet.util.CustomEntityMention;
+import novelnet.util.CustomTriple;
 
-public class perfTableNer {
+public class PerfTableTriplets {
 
     /**
-	 * First column of result table representing the source of the entity. 
+	 * First column of result table representing the source of the triplet. 
      * Every row should have "ref" or "eval" as a value.
 	*/
     List<String> source;
-
+    
     /**
 	 * Second column of result table (Entity)
 	*/
-	List<CustomEntityMention> entity;
+	List<CustomTriple> triplet;
 
 	/**
-	 * Thrid column of result table (comparison result). 
+	 * Third column of result table (comparison result). 
      * Every row should have "TP", "FP" or "FN" as a value (meaning True Positive, False Positive and False Negative).
 	*/
 	List<String> perf;
 
+    public PerfTableTriplets() {
 
-    public perfTableNer() {
         source = new LinkedList<>();
-        entity = new LinkedList<>();
+        triplet = new LinkedList<>();
         perf = new LinkedList<>();
     }
 
-    public perfTableNer(List<String> source, List<CustomEntityMention> entity, List<String> perf) {
+    public PerfTableTriplets(List<String> source, List<CustomTriple> triplet, List<String> perf) {
         this.source = source;
-        this.entity = entity;
+        this.triplet = triplet;
         this.perf = perf;
     }
 
@@ -45,12 +45,12 @@ public class perfTableNer {
         this.source = source;
     }
 
-    public List<CustomEntityMention> getEntity() {
-        return this.entity;
+    public List<CustomTriple> getTriplet() {
+        return this.triplet;
     }
 
-    public void setEntity(List<CustomEntityMention> entity) {
-        this.entity = entity;
+    public void setTriplet(List<CustomTriple> triplet) {
+        this.triplet = triplet;
     }
 
     public List<String> getPerf() {
@@ -65,20 +65,21 @@ public class perfTableNer {
     public String toString() {
         return "{" +
             " source='" + getSource() + "'" +
-            ", entity='" + getEntity() + "'" +
+            ", triplet='" + getTriplet() + "'" +
             ", perf='" + getPerf() + "'" +
             "}";
     }
 
-    public void add(String src, CustomEntityMention cem, String eval){
+    public void add(String src, CustomTriple cem, String eval){
         source.add(src);
-        entity.add(cem);
+        triplet.add(cem);
         perf.add(eval);
     }
 
     public void display() {
         for (int i = 0; i < source.size(); i++){
-			System.out.println("source : " + source.get(i) + " |\t entity : " + entity.get(i).text() + "\t| perf : " + perf.get(i));
+			System.out.println("source : " + source.get(i) + " |\t triplet : " + triplet.get(i) + "\t| perf : " + perf.get(i));
 		}
     }
+    
 }

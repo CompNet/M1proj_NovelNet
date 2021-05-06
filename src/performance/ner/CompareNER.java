@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 import edu.stanford.nlp.stats.PrecisionRecallStats;
-import novelnet.table.perfTableNer;
+import novelnet.table.PerfTableNer;
 import novelnet.util.CustomEntityMention;
 
 public class CompareNER {
@@ -30,7 +30,7 @@ public class CompareNER {
 	/**
 	 * first column of result table (Entity)
 	*/
-	perfTableNer perfTable;
+	PerfTableNer perfTable;
 
 	/**
 	 * empty Class Constructor
@@ -39,7 +39,7 @@ public class CompareNER {
 		reference = new EntityContainer();
 		entityList = new EntityContainer();
 		perf = new PrecisionRecallStats();
-		perfTable = new perfTableNer();
+		perfTable = new PerfTableNer();
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class CompareNER {
 		}
 		else System.out.println("File type not recognized for argument 2");
 		perf = new PrecisionRecallStats();
-		perfTable = new perfTableNer();
+		perfTable = new PerfTableNer();
 	}
 	
 	public EntityContainer getEntityList(){
