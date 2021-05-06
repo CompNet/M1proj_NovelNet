@@ -2,7 +2,6 @@ package performance.triplets;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,17 +10,11 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
-import edu.stanford.nlp.ie.util.RelationTriple;
-import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
-import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
-import edu.stanford.nlp.util.CoreMap;
 import novelnet.book.Book;
 import novelnet.pipeline.CorefChainFuser;
 import novelnet.pipeline.CreateBook;
-import novelnet.pipeline.CustomCorefChainCreator;
 import novelnet.pipeline.DirectInteractionTableCreator;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
@@ -148,8 +141,6 @@ public class TripletsContainer {
 
         Book book = CreateBook.createBook(document, false, cccList);
 
-        Annotation annotation = document.annotation();
-
         for (CustomInteraction interaction : DirectInteractionTableCreator.findActionsWithMultiplesCharaters(book)) {
             result.getTriples().addAll(interaction.getTriples());
         }
@@ -193,8 +184,6 @@ public class TripletsContainer {
         String language = "en";
         String fileName = "HarryPotter3_TrainBoarding";
         String pathToXml = "res/manualAnnotation/Triplets/" + language + "/" + fileName + ".xml";
-        String pathToText = "res/corpus/" + language + "/" + fileName + ".txt";
-
 
         TripletsContainer test = null;
         TripletsContainer test2 = null;
