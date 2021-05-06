@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 
 import edu.stanford.nlp.stats.PrecisionRecallStats;
+import novelnet.table.perfTableNer;
 import novelnet.util.CustomEntityMention;
 
 public class CompareNER {
@@ -29,12 +30,7 @@ public class CompareNER {
 	/**
 	 * first column of result table (Entity)
 	*/
-	List<CustomEntityMention> resultTableCE;
-
-	/**
-	 * second column of result table (comparison result). Every row should have "TP", "FP" or "FN" as a value (meaning True Positive, False Positive and False Negative).
-	*/
-	List<String> resultTableString;
+	perfTableNer perfTable;
 
 	/**
 	 * empty Class Constructor
@@ -43,8 +39,7 @@ public class CompareNER {
 		reference = new EntityContainer();
 		entityList = new EntityContainer();
 		perf = new PrecisionRecallStats();
-		resultTableCE = new LinkedList<>();
-		resultTableString = new LinkedList<>();
+		perfTable = new perfTableNer();
 	}
 
 	/**
@@ -69,8 +64,7 @@ public class CompareNER {
 		}
 		else System.out.println("File type not recognized for argument 2");
 		perf = new PrecisionRecallStats();
-		resultTableCE = new LinkedList<>();
-		resultTableString = new LinkedList<>();
+		perfTable = new perfTableNer();
 	}
 	
 	public EntityContainer getEntityList(){
@@ -100,8 +94,7 @@ public class CompareNER {
 			for (CustomEntityMention ceToCompare : reference.getEntities()){
 				if(ce.equalTo(ceToCompare)){
 					//True Positive
-					resultTableCE.add(ce);
-					resultTableString.add("TP");
+					perfTable.add("eval", ce, "TP");
 					found = true;
 					break;
 				}
@@ -110,8 +103,8 @@ public class CompareNER {
 			else {
 				//False Positive
 				perf.incrementFP();
-				resultTableCE.add(ce);
-				resultTableString.add("FP");
+				perfTable.add("eval", ce, "FP");
+
 			}
 		}
 		//comparing reference to estimation to find False Negative
@@ -127,8 +120,8 @@ public class CompareNER {
 			if(!found) {
 				//False Negative
 				perf.incrementFN();
-				resultTableCE.add(ce);
-				resultTableString.add("FN");
+				perfTable.add("ref ", ce, "FN");
+
 			}
 		}
 	}
@@ -143,9 +136,7 @@ public class CompareNER {
 	}
 
 	public void displayResult(){
-		for (int i = 0; i < resultTableCE.size(); i++){
-			System.out.println(resultTableCE.get(i) + "\tmesure : " + resultTableString.get(i));
-		}
+		perfTable.display();
 		System.out.println("\n" + perf);
 		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
 	}
@@ -155,8 +146,9 @@ public class CompareNER {
 		System.out.println("le nom du fichier de corpus à traiter (avec en/ ou fr/) :");
 		String fileName = sc.nextLine();
 		sc.close();
-		CompareNER c = new CompareNER("res/corpus/"+fileName+".txt", "manualAnnotation/ner_coref_clustering/"+fileName+".xml");
+		CompareNER c = new CompareNER("res/corpus/"+fileName+".txt", "res/manualAnnotation/ner_coref_clustering/"+fileName+".xml");
 		c.compare();
 		c.display();
+		c.displayResult();
 	}
 }
