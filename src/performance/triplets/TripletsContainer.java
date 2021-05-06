@@ -134,12 +134,10 @@ public class TripletsContainer {
 			return null;
 		}
 
-		List<CustomCorefChain> cccList = CorefChainContainer.buildFromXml(pathToCorefXml, document).getCorefChains();
+		CorefChainContainer corefContainer = CorefChainContainer.buildFromXml(pathToCorefXml, document);
+        corefContainer.fuseChainsByClusterId();
         
-        CorefChainFuser corefChainFuser = new CorefChainFuser();
-        cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.50);
-
-        Book book = CreateBook.createBook(document, false, cccList);
+        Book book = CreateBook.createBook(document, false, corefContainer.getCorefChains());
 
         for (CustomInteraction interaction : DirectInteractionTableCreator.findActionsWithMultiplesCharaters(book)) {
             result.getTriples().addAll(interaction.getTriples());

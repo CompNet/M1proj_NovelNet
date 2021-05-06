@@ -19,6 +19,7 @@ import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.CoreSentence;
+import novelnet.pipeline.CorefChainFuser;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
@@ -285,6 +286,11 @@ public class CorefChainContainer{
             if (ccc.getId() == id) return ccc;
         }
         return null;
+    }
+
+    public void fuseChainsByClusterId(){
+        CorefChainFuser ccf = new CorefChainFuser();
+        setCorefChains(ccf.corefChainsFusionByClusterID(getCorefChains()));
     }
 
     @Override

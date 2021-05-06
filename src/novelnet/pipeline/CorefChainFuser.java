@@ -153,6 +153,27 @@ public class CorefChainFuser {
         return result;
     }
 
+    public List<CustomCorefChain> corefChainsFusionByClusterID(List<CustomCorefChain> cccList){
+        List<CustomCorefChain> result = new LinkedList<>();
+        Boolean found;
+        for (CustomCorefChain ccc : cccList){
+            found = false;
+            for (CustomCorefChain cccRes : result) {
+                if (ccc.getClusterID() == cccRes.getClusterID()){
+                    cccRes.getCEMList().addAll(ccc.getCEMList());
+                    found = true;
+                }
+            }
+            if (!found){
+                result.add(ccc);
+            }
+        }
+        for (CustomCorefChain customCorefChain : result) {
+            customCorefChain.setId(customCorefChain.getClusterID());
+        }
+        return result;
+    }
+
     public static void testStringDistance() {
 
         System.out.println("------------------ Levenshtein ------------------");
