@@ -136,9 +136,10 @@ public class CustomTriple {
     }
 
     public boolean equalTo(CustomTriple tripletToCompare) {
+        //TODO
         Boolean equal = false;
         if (getTriple() == null){   //if this triple is from reference
-            
+
         }
         else{   //if the triple to compare is from reference
 
