@@ -2,7 +2,6 @@ package novelnet.util;
 
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreLabel;
-import jdk.internal.org.jline.utils.Display;
 import novelnet.book.Book;
 
 /**

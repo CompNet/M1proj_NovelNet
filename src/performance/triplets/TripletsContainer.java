@@ -13,7 +13,6 @@ import org.jdom2.input.SAXBuilder;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import novelnet.book.Book;
-import novelnet.pipeline.CorefChainFuser;
 import novelnet.pipeline.CreateBook;
 import novelnet.pipeline.DirectInteractionTableCreator;
 import novelnet.util.CustomCorefChain;
