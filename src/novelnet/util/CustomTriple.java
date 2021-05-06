@@ -66,6 +66,11 @@ public class CustomTriple {
         return this.object;
     }
 
+    public CoreLabel getObjectToken(){
+        if (getObject() == null) return null;
+        return getObject().getCEMList().get(0).getBeginToken();
+    }
+
     public void setObject(CustomCorefChain object) {
         this.object = object;
     }
@@ -91,6 +96,27 @@ public class CustomTriple {
         if (subject != null) count++;
         if (object != null) count++;
         return count;
+    }
+
+    public String niceTableDisplay(){
+        String result = "";
+        if (getTriple() != null){
+            if (getSubject() != null){
+                result += getTriple().subjectGloss() + " - ";
+            }
+            result += getTriple().relationHead().originalText();
+            if (getObject() != null) result += " - " + getTriple().objectGloss();
+        }
+
+        else {
+            if (getSubject() != null){
+                result += getSubject().getRepresentativeName() + " - ";
+            }
+            result += getVerb().originalText();
+            if (getObject() != null) result += " - " + getObject().getRepresentativeName();
+        }
+
+        return result;
     }
 
     @Override
@@ -135,14 +161,26 @@ public class CustomTriple {
     }
 
     public boolean equalTo(CustomTriple tripletToCompare) {
-        //TODO
+        //TODO try to simplify that kraken
         if (getTriple() == null){   //if this triple is from reference
-            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()) && tripletToCompare.getObject().contains(getObject().getCEMList().get(0).getBeginToken())){
+            if (tripletToCompare.getObject() == null){
+                if (getObject() == null){
+                    if (ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken())) return true;
+                }
+                else return false;
+            }
+            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()) && tripletToCompare.getObject().contains(getObjectToken())){
                 return true;
             }
         }
         else{   //if the triple to compare is from reference
-            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken()) && getObject().contains(tripletToCompare.getObject().getCEMList().get(0).getBeginToken())){
+            if (getObject() == null){
+                if (tripletToCompare.getObject() == null){
+                    if (ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken())) return true;
+                }
+                else return false;
+            }
+            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken()) && getObject().contains(tripletToCompare.getObjectToken())){
                 return true;
             }
         }

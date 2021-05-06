@@ -78,7 +78,7 @@ public class PerfTableTriplets {
 
     public void display() {
         for (int i = 0; i < source.size(); i++){
-			System.out.println("source : " + source.get(i) + " |\t triplet : " + triplet.get(i) + "\t| perf : " + perf.get(i));
+			System.out.println("source : " + source.get(i) + " |\t triplet : " + triplet.get(i).niceTableDisplay() + "\t| perf : " + perf.get(i));
 		}
     }
     

@@ -24,6 +24,7 @@ public class CompareTriplets {
         this.reference = reference;
         this.triplesToEvaluate = triplesToEvaluate;
 		perf = new PrecisionRecallStats();
+        perfTable = new PerfTableTriplets();
     }
 
     /**
@@ -35,6 +36,7 @@ public class CompareTriplets {
 	*/
 	public CompareTriplets(String language, String fileName) throws IOException, NullDocumentException{
 		perf = new PrecisionRecallStats();
+        perfTable = new PerfTableTriplets();
 		
         reference = TripletsContainer.buildFromXml("res/manualAnnotation/Triplets/" + language + "/" + fileName + ".xml");
         
@@ -79,6 +81,12 @@ public class CompareTriplets {
 
         System.out.println("\ntriples to evaluate : ");
         triplesToEvaluate.display();
+    }
+
+    public void displayResult(){
+        perfTable.display();
+		System.out.println("\n" + perf);
+		System.out.println("Precision : " + perf.getPrecision() + "\t Rappel : " + perf.getRecall()+ "\t F-mesures : " + perf.getFMeasure());
     }
 
     /**
@@ -139,7 +147,6 @@ public class CompareTriplets {
         try {
             test();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 	}
@@ -149,22 +156,12 @@ public class CompareTriplets {
         String fileName = "HarryPotter3_TrainBoarding";
 
         CompareTriplets test = new CompareTriplets(language, fileName);
-        //test.display();
-        CustomTriple testEqual3 = test.getTriplesToEvaluate().getTriples().get(0);
-        CustomTriple testEqual4 = test.getReference().getTriples().get(0);
 
-        //System.out.println("\n\nref triplets");
-        for (CustomTriple triplet : test.getReference().getTriples()) {
-            if (triplet.getVerb().originalText().equals("talk")){
-                for (CustomTriple tripletEval : test.getTriplesToEvaluate().getTriples()) {
-                    if (tripletEval.getVerb().originalText().equals("talk")){
-                        System.out.println("test1 (1): " + triplet.equalTo(tripletEval));
-                        System.out.println("test1 (1): " + tripletEval.equalTo(triplet));
-                        System.out.println("test1 (1): " + triplet.equalTo(triplet));
-                        System.out.println("test1 (1): " + tripletEval.equalTo(tripletEval));
-                    }
-                }
-            }
-        }
+		test.display();
+
+        test.compare();
+        
+        System.out.println("\n\nresults");
+		test.displayResult();
     }
 }
