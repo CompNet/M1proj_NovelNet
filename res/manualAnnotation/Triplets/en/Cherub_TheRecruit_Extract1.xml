@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<document>
+    <Triplet>
+        <Subject>
+            <text>Samantha Jennings</text>
+            <sentence>7</sentence>
+            <start>1</start>
+            <end>2</end>
+        </Subject>
+        <Verb>
+            <text>sat</text>
+            <sentence>7</sentence>
+            <start>3</start>
+            <end>3</end>
+        </Verb>
+        <Object>
+            <text>him</text>
+            <sentence>7</sentence>
+            <start>6</start>
+            <end>6</end>
+        </Object>
+    </Triplet>
+
+    <Triplet>
+        <Subject>
+            <text>James</text>
+            <sentence>11</sentence>
+            <start>1</start>
+            <end>1</end>
+        </Subject>
+        <Verb>
+            <text>hated</text>
+            <sentence>11</sentence>
+            <start>2</start>
+            <end>2</end>
+        </Verb>
+        <Object>
+            <text>her</text>
+            <sentence>11</sentence>
+            <start>3</start>
+            <end>3</end>
+        </Object>
+    </Triplet>
+
+    <Triplet>
+        <Subject>
+            <text>James</text>
+            <sentence>20</sentence>
+            <start>1</start>
+            <end>1</end>
+        </Subject>
+        <Verb>
+            <text>loved</text>
+            <sentence>20</sentence>
+            <start>2</start>
+            <end>2</end>
+        </Verb>
+        <Object>
+            <text>his mum</text>
+            <sentence>20</sentence>
+            <start>3</start>
+            <end>4</end>
+        </Object>
+    </Triplet>
+</document>
