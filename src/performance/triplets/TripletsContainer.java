@@ -114,13 +114,12 @@ public class TripletsContainer {
     /**
 	 * Build a TripletsContainer from a .txt file using Stanford CoreNLP
 	 * 
-	 * @param pathToText path to the .txt file
+     * @param pathToCorefXml path to the manually annotated CorefChains for the text
+	 * @param pathToText path to the .txt file to extract triplet from
      * @return the Container
      * @throws NullDocumentException
 	 */
-    public static TripletsContainer buildFromTxt(String language, String fileName) throws IOException, NullDocumentException {
-        String pathToCorefXml = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
-        String pathToText = "res/corpus/" + language + "/" + fileName + ".txt";
+    public static TripletsContainer buildFromTxt(String pathToText, String pathToCorefXml) throws IOException {
 
         TripletsContainer result = new TripletsContainer();
 		CoreDocument document;
@@ -181,13 +180,15 @@ public class TripletsContainer {
         String language = "en";
         String fileName = "HarryPotter3_TrainBoarding";
         String pathToXml = "res/manualAnnotation/Triplets/" + language + "/" + fileName + ".xml";
+        String pathToText = "res/corpus/" + language + "/" + fileName + ".txt";
+        String pathToCorefXml = "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml";
 
         TripletsContainer test = null;
         TripletsContainer test2 = null;
         System.out.println("processing xlm...");
         test = TripletsContainer.buildFromXml(pathToXml);
         System.out.println("processing txt...");
-        test2 = TripletsContainer.buildFromTxt(language, fileName);
+        test2 = TripletsContainer.buildFromTxt(pathToText, pathToCorefXml);
         System.out.println("\ndisplay \ntest xml : ");
         test.display();
         System.out.println("\ntest txt : ");
