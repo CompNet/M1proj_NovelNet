@@ -16,7 +16,6 @@ import org.christopherfrantz.dbscan.DBSCANClusteringException;
 
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
-import novelnet.util.DistanceMetricCustomCorefChainNL;
 import novelnet.util.DistanceMetricCustomCorefChainRO;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
@@ -26,16 +25,32 @@ import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
+/**
+ * @author Baptiste Quay, Lemaire Tewis
+*/
 public class CorefChainFuser {
 
+    /**
+	 * Class constructor
+	*/
     public CorefChainFuser() {
 
     }
 
+    /**
+	 * fuse the corefChains given as an argument into one big corefChain.
+     * 
+     * @param cccList a List of corefChains to fuse.
+     * @return a big corefChain containing all the mentions in all the corefChains given.
+	*/
     public CustomCorefChain customCorefChainFusion(List<CustomCorefChain> cccList) {
+        //if there is only one coref chain no need to fuse.
         if (cccList.size() == 1)
             return cccList.get(0);
+
         CustomCorefChain result = new CustomCorefChain();
+
+        //regrouping all the EntityMentions in the result Chain
         for (CustomCorefChain ccc : cccList) {
             for (CustomEntityMention cem : ccc.getCEMList()) {
                 result.getCEMList().add(cem);
@@ -51,51 +66,61 @@ public class CorefChainFuser {
 
         RatcliffObershelp ro = new RatcliffObershelp();
 
+        //finding the best representative name
         for (CustomCorefChain ccc1 : cccList) {
+            //for each representative name we compare it to all the others.
             bestName1 = ccc1.getRepresentativeName();
             tot = 0;
-            //System.out.print(bestName1);
             for (CustomCorefChain ccc2 : cccList) {
                 if (!ccc1.equals(ccc2)) {
                     bestName2 = ccc2.getRepresentativeName();
-                    tot += ro.distance(bestName1, bestName2);
+                    tot += ro.distance(bestName1, bestName2);   //adding the current distance to the total distance
                 }
             }
-            //System.out.print(" value : " + tot +"; ");
 
             if (tot < min) {
                 bestNameMin = bestName1;
                 min = tot;
-            } else if (tot == min && bestName1.length() > bestNameMin.length()) {
+            } else if (tot == min && bestName1.length() > bestNameMin.length()) {   //if the total is equal to the min we take the longest String.
                 bestNameMin = bestName1;
             }
         }
-        //System.out.println();
         result.setRepresentativeName(bestNameMin);
         return result;
     }
 
-    public List<CustomCorefChain> corefChainsClusteringNL(List<CustomCorefChain> cccList, int numberMinCluster, double maxDistance) {
-        DBSCANClusterer<CustomCorefChain> clusterer = null;
+    /**
+	 * clusterize and fuse the chains given in argument.
+     * 
+     * @param cccList a List of corefChains to fuse.
+     * @param dbScanDist the distance used for the dbscan algorithm
+     * 
+     * @return a list of the fused corefChains.
+	*/
+    public List<CustomCorefChain> corefChainsClusteringRO(List<CustomCorefChain> cccList, double dbScanDist) {
+        DBSCANClusterer<CustomCorefChain> clusterer = null; //object used to clusterize
 
-        List<CustomCorefChain> result = new LinkedList<>();
-        List<ArrayList<CustomCorefChain>> tmp = null;
+        List<CustomCorefChain> result = new LinkedList<>(); //result list
+
+        List<ArrayList<CustomCorefChain>> clusterList = null;   //each sub list of tmp is a cluster of corefChains
 
         try {
-            clusterer = new DBSCANClusterer<>(cccList, numberMinCluster, maxDistance, new DistanceMetricCustomCorefChainNL());
-            tmp = clusterer.performClustering();
+            clusterer = new DBSCANClusterer<>(cccList, 2, dbScanDist, new DistanceMetricCustomCorefChainRO());
+            clusterList = clusterer.performClustering();    //getting the clusters.
         } catch (DBSCANClusteringException e1) {
             System.out.println(e1.getMessage());
         }
 
-        for (ArrayList<CustomCorefChain> cccListToFuse : tmp){
-            result.add(customCorefChainFusion(cccListToFuse));
-            for (CustomCorefChain ccc : cccListToFuse){
+        for (List<CustomCorefChain> cluster : clusterList){
+            result.add(customCorefChainFusion(cluster));  //fusing each cluster and adding it to the result
+            for (CustomCorefChain ccc : cluster){ //removing all the coref chains fused from the original list
                 if(cccList.contains(ccc)){
                     cccList.remove(ccc);
                 }
             }
         }
+        //all the corefChains still in cccList are chains that haven't been clusterized (IE are standalone chains)
+        //and we want to keep them
         for (CustomCorefChain ccc : cccList){
             result.add(ccc);
         }
@@ -103,68 +128,69 @@ public class CorefChainFuser {
         return result;
     }
 
-    public List<CustomCorefChain> corefChainsClusteringRO(List<CustomCorefChain> cccList, int numberMinCluster, double maxDistance) {
-        DBSCANClusterer<CustomCorefChain> clusterer = null;
+    /**
+	 * clusterize the chains given in argument.
+     * 
+     * @param cccList a List of corefChains to fuse.
+     * @param dbScanDist the distance used for the dbscan algorithm
+     * 
+     * @return a list of the clusters.
+	*/
+    public List<CorefChainContainer> corefChainsClusteringROBeforeFusion(List<CustomCorefChain> cccList, double dbScanDist) {
+        DBSCANClusterer<CustomCorefChain> clusterer = null; //object used to clusterize
 
-        List<CustomCorefChain> result = new LinkedList<>();
-        List<ArrayList<CustomCorefChain>> tmp = null;
-
-        try {
-            clusterer = new DBSCANClusterer<>(cccList, numberMinCluster, maxDistance, new DistanceMetricCustomCorefChainRO());
-            tmp = clusterer.performClustering();
-        } catch (DBSCANClusteringException e1) {
-            System.out.println(e1.getMessage());
-        }
-
-        for (ArrayList<CustomCorefChain> cccListToFuse : tmp){
-            result.add(customCorefChainFusion(cccListToFuse));
-            for (CustomCorefChain ccc : cccListToFuse){
-                if(cccList.contains(ccc)){
-                    cccList.remove(ccc);
-                }
-            }
-        }
-        for (CustomCorefChain ccc : cccList){
-            result.add(ccc);
-        }
-
-        return result;
-    }
-
-    public List<CorefChainContainer> corefChainsClusteringROBeforeFusion(List<CustomCorefChain> cccList, int numberMinCluster, double maxDistance) {
-        DBSCANClusterer<CustomCorefChain> clusterer = null;
-
-        List<CorefChainContainer> result = new LinkedList<>();
-        List<ArrayList<CustomCorefChain>> clusterList = null;
+        List<CorefChainContainer> result = new LinkedList<>(); //result list
+        List<ArrayList<CustomCorefChain>> clusterList = null;   //each sub list of tmp is a cluster of corefChains
 
         try {
-            clusterer = new DBSCANClusterer<>(cccList, numberMinCluster, maxDistance, new DistanceMetricCustomCorefChainRO());
-            clusterList = clusterer.performClustering();
+            clusterer = new DBSCANClusterer<>(cccList, 2, dbScanDist, new DistanceMetricCustomCorefChainRO());
+            clusterList = clusterer.performClustering();    //getting the clusters.
         } catch (DBSCANClusteringException e1) {
             System.out.println(e1.getMessage());
         }
 
         for (Collection<CustomCorefChain> cluster : clusterList){
             CorefChainContainer temp = new CorefChainContainer();
-            temp.setCorefChains(cluster);
+            temp.setCorefChains(cluster);   //putting the corefChains from the same cluster in a corefChainContainer.
+            result.add(temp);   
+            for (CustomCorefChain ccc : cluster){ //removing all the coref chains fused from the original list
+                if(cccList.contains(ccc)){
+                    cccList.remove(ccc);
+                }
+            }
+        }
+
+        //all the corefChains still in cccList are chains that haven't been clusterized (IE are standalone chains)
+        //and we want to keep them
+        for (CustomCorefChain ccc : cccList){
+            CorefChainContainer temp = new CorefChainContainer();
+            temp.getCorefChains().add(ccc);
             result.add(temp);
         }
 
         return result;
     }
 
+    /**
+	 * fuse the coref chains given in argument by their clusterID
+     * 
+     * @param the list of coref chains to fuse
+     * @return a list of the fused corefChains.
+	*/
     public List<CustomCorefChain> corefChainsFusionByClusterID(List<CustomCorefChain> cccList){
         List<CustomCorefChain> result = new LinkedList<>();
         Boolean found;
-        for (CustomCorefChain ccc : cccList){
+        for (CustomCorefChain ccc : cccList){   //for each chain in the list
             found = false;
-            for (CustomCorefChain cccRes : result) {
+            for (CustomCorefChain cccRes : result) {    
+                //if it has the same clusterID than a chain in the result list
                 if (ccc.getClusterID() == cccRes.getClusterID()){
-                    cccRes.getCEMList().addAll(ccc.getCEMList());
+                    cccRes.getCEMList().addAll(ccc.getCEMList());//adding all the entities from the first chain to the result chain.
                     found = true;
                 }
             }
             if (!found){
+                //if the cluster was not found adding this chain to the result.
                 result.add(ccc);
             }
         }
@@ -173,6 +199,15 @@ public class CorefChainFuser {
         }
         return result;
     }
+
+
+
+
+
+
+
+
+    //Tests
 
     public static void testStringDistance() {
 
@@ -198,12 +233,12 @@ public class CorefChainFuser {
         RatcliffObershelp ro = new RatcliffObershelp();
         
         System.out.println(ro.distance("Shelock Holmes", "Holmes"));
-        /*System.out.println(ro.distance("Remus Lupin", "Lupin"));
+        System.out.println(ro.distance("Remus Lupin", "Lupin"));
         System.out.println(ro.distance("Professor Lupin", "Lupin"));
         System.out.println(ro.distance("Lupin", "Professor Lupin"));
         System.out.println(ro.distance("Harry", "Ron"));
         System.out.println(ro.distance("Ron Weasley", "Ronald Weasley"));
-        System.out.println(ro.distance("Ronald Weasley", "Ron Weasley"));*/
+        System.out.println(ro.distance("Ronald Weasley", "Ron Weasley"));
 
     }
 
@@ -265,7 +300,6 @@ public class CorefChainFuser {
 
     }
 
-
     public static void testClustering() throws IOException, NullDocumentException {
         String path = "res/tests/clusteringTestSample.txt";
 
@@ -314,23 +348,9 @@ public class CorefChainFuser {
 
         CorefChainFuser ccf = new CorefChainFuser();
 
-        System.out.println("\n----- Clustering NL -----\n");
-
-        List<CustomCorefChain> cccList2 = new LinkedList<>();
-        for (CustomCorefChain ccc : cccList){
-            cccList2.add(ccc);
-        }
-
-        List<CustomCorefChain> testNL = ccf.corefChainsClusteringNL(cccList, 2, 0.6);
-
-        for (CustomCorefChain cccResultList : testNL){
-            System.out.println(cccResultList);
-        }
-        
-
         System.out.println("\n----- Clustering RO -----\n");
 
-        List<CustomCorefChain> testRO = ccf.corefChainsClusteringRO(cccList2, 2, 0.4);
+        List<CustomCorefChain> testRO = ccf.corefChainsClusteringRO(cccList, 0.4);
 
         for (CustomCorefChain cccResultList : testRO){
             System.out.println(cccResultList);
@@ -356,17 +376,6 @@ public class CorefChainFuser {
         pipeline.annotate(document);
 
         List<CustomCorefChain> cccList = new LinkedList<>();
-/*
-        System.out.println("\n----- coref chains -----\n");
-        for (CorefChain cc : document.corefChains().values()) {
-            System.out.println("\t" + cc + "\t" + cc.getRepresentativeMention().mentionSpan);
-        }
-
-        System.out.println("\n----- EntityMention -----\n");
-
-        for(CoreEntityMention cem : ImpUtils.getCoreEntityMentionsWithoutCorefChain()){
-            System.out.println(cem + " pos : " + cem.charOffsets());
-        }*/
 
         System.out.println("\n----- CustomCorefChain -----\n");
 
@@ -389,7 +398,7 @@ public class CorefChainFuser {
 
         System.out.println("\n----- Clustering RO -----\n");
 
-        List<CustomCorefChain> testRO = ccf.corefChainsClusteringRO(cccList, 2, 0.45);
+        List<CustomCorefChain> testRO = ccf.corefChainsClusteringRO(cccList, 0.45);
 
         for (CustomCorefChain cccResultList : testRO){
             System.out.println(cccResultList);

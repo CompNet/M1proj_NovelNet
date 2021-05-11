@@ -25,34 +25,50 @@ import novelnet.book.*;
 /**
  * @author Quay Baptiste, Lemaire Tewis
  *
- */
+*/
 public class Graph {
 	
 	protected Map<String,Node> nodeMap;
 	protected Map<String, Edge> edgeMap;
 	String name;
+	/**
+	 * specify if the graph is oriented or not
+	*/
 	Boolean oriented;
-	boolean weighting;
+	/**
+	 * specify if the graph is weighted or not
+	*/
+	Boolean weighting;
 	
+	/**
+	 * Class constructor
+	*/
 	public Graph()
 	{
-		nodeMap = new HashMap<String,Node>();
-		edgeMap = new HashMap<String, Edge>();
+		nodeMap = new HashMap<>();
+		edgeMap = new HashMap<>();
 		oriented = false;
+		weighting = false;
 	}
 
+	/**
+	 * Class constructor specifying the graph's name, if it's oriented and weighted
+	*/
 	public Graph(String name, Boolean oriented, boolean weighting)
 	{
-		nodeMap = new HashMap<String,Node>();
-		edgeMap = new HashMap<String, Edge>();
+		nodeMap = new HashMap<>();
+		edgeMap = new HashMap<>();
 		this.name = name;
 		this.oriented = oriented;
 		this.weighting = weighting;
 	}
 	
+	/**
+	 * Class constructor copying another graph
+	*/
 	public Graph(Graph graph) {
-		nodeMap = new HashMap<String,Node>();
-		edgeMap = new HashMap<String, Edge>();
+		nodeMap = new HashMap<>();
+		edgeMap = new HashMap<>();
 		name = graph.name;
 		oriented = graph.oriented;
 		weighting = graph.weighting;
@@ -62,6 +78,50 @@ public class Graph {
 		for (Edge e : graph.edgeMap.values()){
 			addEdge(e);
 		}
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public String getOriented()
+	{
+		return name;
+	}
+	
+	public void setOriented(Boolean oriented)
+	{
+		this.oriented = oriented;
+	}
+
+	public Map<String,Node> getNodeMap() {
+		return this.nodeMap;
+	}
+
+	public void setNodeMap(Map<String,Node> nodeMap) {
+		this.nodeMap = nodeMap;
+	}
+
+	public Map<String,Edge> getEdgeMap() {
+		return this.edgeMap;
+	}
+
+	public void setEdgeMap(Map<String,Edge> edgeMap) {
+		this.edgeMap = edgeMap;
+	}
+
+	public Boolean getWeighting() {
+		return this.weighting;
+	}
+
+	public void setWeighting(boolean weighting) {
+		this.weighting = weighting;
 	}
 
 	private void addEdge(Edge e) {
@@ -135,27 +195,7 @@ public class Graph {
 			nodeMap.putIfAbsent(n.id, n);
 		}
 	}
-	
-	public String getName()
-	{
-		return name;
-	}
-	
-	public void setName(String name)
-	{
-		this.name = name;
-	}
 
-	public String getOriented()
-	{
-		return name;
-	}
-	
-	public void setOriented(Boolean oriented)
-	{
-		this.oriented = oriented;
-	}
-	
 	public void graphMLPrinter(String path) throws IOException
 	{
 		
@@ -245,14 +285,19 @@ public class Graph {
 		return ret;
 	}
 
+	/**
+	 * get the adjacency vector for the graph.
+	 * The adjacency vector is a flat adjacency matrice.
+	*/
 	public double[] adjacencyVector(){
-		int n = nodeMap.size();
-		List<Node> nodes = new LinkedList<>(nodeMap.values());
+		int n = nodeMap.size();	
+		List<Node> nodes = new LinkedList<>(nodeMap.values()); //transforming the nodemap into a list to be able to get the index of a node.
 
-		double[] result = new double[(int) Math.pow(n, 2)];
-		Arrays.fill(result, 0);
+		double[] result = new double[(int) Math.pow(n, 2)];	//the vector needs to be n^2 long, n being the number of nodes. 
+
+		Arrays.fill(result, 0);	// filling the array with 0 so that every absent edge as a value of 0.
+
 		for (Edge e : edgeMap.values()) {
-			System.out.println("edge : " +e );
 			result[ (nodes.indexOf(e.getNodeLeft())*n) + nodes.indexOf(e.getNodeRight()) ] = e.getPonderation();
 		}
 
@@ -294,7 +339,7 @@ public class Graph {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.50);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.50);
 
 		Book book = CreateBook.createBook(document, false, cccList);
 

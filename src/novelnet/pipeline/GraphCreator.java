@@ -64,7 +64,7 @@ public class GraphCreator {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, dbScanDist);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, dbScanDist);
 
 		Book book = CreateBook.createBook(document, false, cccList);
 

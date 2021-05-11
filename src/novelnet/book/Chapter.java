@@ -70,20 +70,20 @@ public class Chapter {
         titles = new LinkedList<>();
     }
 
-    public LinkedList<Paragraph> getParagraphs(){
+    public List<Paragraph> getParagraphs(){
         return this.paragraphs;
     }
 
-    public void setParagraphs(LinkedList<Paragraph> paragraphs) {
-        this.paragraphs = paragraphs;
+    public void setParagraphs(List<Paragraph> paragraphs) {
+        this.paragraphs = new LinkedList<>(paragraphs);
     }
 
     public List<CoreSentence> getTitles() {
         return this.titles;
     }
 
-    public void setTitles(LinkedList<CoreSentence> titles) {
-        this.titles = titles;
+    public void setTitles(List<CoreSentence> titles) {
+        this.titles = new LinkedList<>(titles);
     }
 
     public Book getBook() {
@@ -171,7 +171,7 @@ public class Chapter {
         }
     }
 
-     /**
+    /**
      * get the Number (in the coreDocument) of the sentence begining the paragraph
      * 
      * @param paragraphNumber An Integer representing the paragraph number in the book
@@ -215,7 +215,7 @@ public class Chapter {
 		return paragraphs.getLast().endingSentence;
     }
     
-     /**
+    /**
      * get all the entities in the chapter
      *  
      * @return a list of all the entities in the chapter.
@@ -238,7 +238,7 @@ public class Chapter {
 		return paragraphs.getLast().getParagraphNumber();
     }
 
-     /**
+    /**
      * get a Paragraph by its number
      *  
      * @param paragraphNumber the paragraph number

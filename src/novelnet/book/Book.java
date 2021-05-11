@@ -22,12 +22,32 @@ public class Book {
      * A list of all the chapters in the book.
     */
     protected LinkedList<Chapter> chapters;
+    /**
+     * A boolean to know if the entities have been placed in the book
+    */
     protected boolean entitiesPlaced;
+    /**
+     * the core document witch the book was made from.
+    */
     protected CoreDocument document;
+    /**
+     * A list of all the corefChains in the book.
+    */
     protected List<CustomCorefChain> corefChain;
 
     /**
-     * Class Constructor. specifying the document 
+     * Class Constructor specifying the document.
+     * 
+    */
+    public Book(CoreDocument document){
+        chapters = new LinkedList<>();
+        entitiesPlaced = false;
+        this.document = document;
+        corefChain = new LinkedList<>();
+    }
+
+    /**
+     * Class Constructor specifying the document and a list of coref chains.
      * 
     */
     public Book(CoreDocument document, List<CustomCorefChain> corefChainList){
@@ -39,7 +59,7 @@ public class Book {
 
 
     /**
-     * Class Constructor. specifying the document and the list of chapters
+     * Class Constructor specifying the document and the list of chapters
      * 
     */
     public Book(List<Chapter> chapters, CoreDocument document) {
@@ -227,25 +247,8 @@ public class Book {
     }
 
     /**
-     * find all the entities of the document of the book with their best name.
-     *  
-     * @return a list of all the entities in the document.
+     * get all the entities from the corefChains of the book.
     */
-    /*private List<CustomEntityMention> findEntity(){
-		LinkedList<CustomEntityMention> result = new LinkedList<>();
-		for (CustomEntityMention em : entityMentions()){
-			if (em.entityType().equals("PERSON") ){
-				try {
-                    result.add(new CustomEntityMention(em, em.bestName));
-                }
-                catch(Exception e){
-                    System.out.println(e.getMessage());
-                }
-			}
-		}
-		return result;
-	}*/
-
     public List<CustomEntityMention> getEntitiesFromCorefChains(){
         LinkedList<CustomEntityMention> result = new LinkedList<>();
 		for (CustomCorefChain ccc : corefChain){
@@ -258,7 +261,6 @@ public class Book {
 
     /**
      * place the entities of the document in the book according to their position in the document.
-     *  
     */
     public void placeEntitites(){
         if (entitiesPlaced) return;

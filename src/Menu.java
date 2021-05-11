@@ -164,7 +164,7 @@ public class Menu {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.4);
 
 		/*for (CustomCorefChain ccc : cccList){
 			System.out.println(ccc);
@@ -352,7 +352,7 @@ public class Menu {
 			}*/
 
 			CorefChainFuser corefChainFuser = new CorefChainFuser();
-			cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.50);
+			cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.50);
 
 			Book book = CreateBook.createBook(document, false, cccList);
 

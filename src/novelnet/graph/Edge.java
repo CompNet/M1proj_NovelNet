@@ -67,12 +67,18 @@ public class Edge {
 		this.ponderation = ImpUtils.round(ponderation, 3);
 	}
 	
+	/**
+	 * add the specified ponderation to the edge
+	*/
 	public void addPonderation(double ponderation)
 	{
 		this.ponderation+=ponderation;
 		this.ponderation = ImpUtils.round(this.ponderation, 3);
 	}
 
+	/**
+	 * add the 1.0 to the edge ponderation
+	*/
 	public void addPonderation()
 	{
 		this.ponderation+=1;
@@ -86,15 +92,12 @@ public class Edge {
 	    Edge otherMyClass = (Edge)other;
 	    
 	    return id.equals(otherMyClass.id);
-	    
 	}
 	
 	@Override
 	public String toString()
 	{
-		String ret="";
-		ret+="{ id: "+id+", NodeLeft: "+nodeLeft.toString()+", nodeRight: "+nodeRight.toString()+", Ponderation: "+ponderation+"} ";
-		return ret;
+		return "{ id: "+id+", NodeLeft: "+nodeLeft.toString()+", nodeRight: "+nodeRight.toString()+", Ponderation: "+ponderation+" }";
 	}
 
 }

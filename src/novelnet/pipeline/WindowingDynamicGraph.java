@@ -94,7 +94,7 @@ public abstract class WindowingDynamicGraph {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.4);
 
 		// manual book creation
 		Book book = new Book(document, cccList);
@@ -171,7 +171,7 @@ public abstract class WindowingDynamicGraph {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.4);
 
 		// manual book creation
 		Book book = new Book(document, cccList);
@@ -248,7 +248,7 @@ public abstract class WindowingDynamicGraph {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.4);
 
 		// manual book creation
 		Book book = new Book(document, cccList);
@@ -332,7 +332,7 @@ public abstract class WindowingDynamicGraph {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.4);
 
 		// manual book creation
 		Book book = new Book(document, cccList);
@@ -416,7 +416,7 @@ public abstract class WindowingDynamicGraph {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.4);
 
 		// manual book creation
 		Book book = new Book(document, cccList);
@@ -500,7 +500,7 @@ public abstract class WindowingDynamicGraph {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.4);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.4);
 
 		// manual book creation
 		Book book = new Book(document, cccList);

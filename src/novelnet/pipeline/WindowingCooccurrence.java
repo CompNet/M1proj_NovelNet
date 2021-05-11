@@ -104,7 +104,7 @@ public abstract class WindowingCooccurrence {
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
 
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.45);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.45);
 
 		// automatic book creation
 		boolean noTitle = true;
@@ -187,7 +187,7 @@ public abstract class WindowingCooccurrence {
 		for ( CustomCorefChain c : cccList){
 			System.out.println(c + "\t" + c.getCEMList().size());
 		}
-		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 2, 0.5);
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.5);
 
 		// automatic book creation
 		boolean noTitle = true;

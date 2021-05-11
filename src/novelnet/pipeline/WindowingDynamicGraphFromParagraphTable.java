@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import novelnet.book.Book;
+import novelnet.book.Paragraph;
 import novelnet.table.CooccurrenceTableParagraph;
 import novelnet.table.InteractionTable;
 
@@ -152,6 +153,7 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 	@Override
 	public List<InteractionTable> dynamicTableChapters(int size, int covering){
 		List<InteractionTable> result = new LinkedList<>();
+		List<Paragraph> paragraphs;
 		boolean done = false;
 		boolean searchingEnd = false;
 		boolean whileEnd;
@@ -166,8 +168,11 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 		while(!done){
 			i=0;
 			whileEnd = false;
-			dynamicGraphBegin = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().getFirst().getParagraphNumber();
-			dynamicGraphEnd = book.getChapters().get((dynamicCpt+1)*size - dynamicCpt*covering-1).getParagraphs().getLast().getParagraphNumber();
+			dynamicGraphBegin = book.getChapters().get(dynamicCpt*size - dynamicCpt*covering).getParagraphs().get(0).getParagraphNumber();
+			
+			paragraphs = book.getChapters().get((dynamicCpt+1)*size - dynamicCpt*covering-1).getParagraphs();
+			dynamicGraphEnd = paragraphs.get(paragraphs.size()-1).getParagraphNumber();
+			
 			while(i < interactionTable.getListCharA().size() && !whileEnd){
 				windowBegin = interactionTable.getListBeginingWindow().get(i);
 				windowEnd = interactionTable.getListEndingWindow().get(i);

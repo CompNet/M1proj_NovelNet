@@ -81,16 +81,16 @@ public class Paragraph {
         return sentences;
     }
 
-    public void setSentences(LinkedList<CoreSentence> sentences) {
-        this.sentences = sentences;
+    public void setSentences(List<CoreSentence> sentences) {
+        this.sentences = new LinkedList<>(sentences);
     }
 
     public List<CustomEntityMention> getEntities() {
         return entities;
     }
 
-    public void setEntities(LinkedList<CustomEntityMention> entities) {
-        this.entities = entities;
+    public void setEntities(List<CustomEntityMention> entities) {
+        this.entities = new LinkedList<>(entities);
     }
 
     public Chapter getChapter() {

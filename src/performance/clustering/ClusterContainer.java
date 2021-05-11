@@ -66,7 +66,7 @@ public class ClusterContainer extends CorefChainContainer {
         ClusterContainer tmp = new ClusterContainer(manualClone());
         ClusterContainer result = new ClusterContainer();
 
-        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(tmp.getCorefChains(), 2, dbScanDist);
+        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(tmp.getCorefChains(), dbScanDist);
 
         for(int i = 0; i < temp.size(); i++){
             for (CustomCorefChain ccc : temp.get(i).getCorefChains()){
