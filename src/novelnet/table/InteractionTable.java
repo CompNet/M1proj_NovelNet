@@ -3,6 +3,13 @@ package novelnet.table;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * A generic abstract class wich represent a table where all the interactions are stocked.
+ * Each list represent a column of the table.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public abstract class InteractionTable {
 
     /**
@@ -161,7 +168,6 @@ public abstract class InteractionTable {
 	
 	/**
 	 * Displays the table with some layouts
-	 * 
 	 */
 	public void display(){
 		for (int i = 0; i < listCharA.size(); i++){ // For the size of the list of character A

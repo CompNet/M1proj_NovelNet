@@ -23,33 +23,61 @@ import novelnet.util.NullDocumentException;
 import novelnet.util.TextNormalization;
 import performance.clustering.ClusterContainer;
 
+/**
+ * Create a DirectInteractionTable
+ * 
+ * @author Quay Baptiste, Lemaire Tewis
+*/
 public class GraphCreator {
 
+	/**
+     * Class Constructor 
+    */
 	private GraphCreator() {
 
 	}
 
+	/**
+     * Create the graph, oriented should be true if the table is a DirectInteractionTable, false otherwise
+	 * 
+	 * @param tab The interaction table to make the graph from
+	 * @param name the name of the graph
+	 * @param oriented true if you want an oriented graph false otherwise
+	 * @param weighting true to weight your graph false otherwise
+	 * @return The graph built
+    */
 	public static Graph createGraph(InteractionTable tab, String name ,boolean oriented, boolean weighting) {
 		Graph graph = new Graph(name, oriented, weighting);
-		for (int i = 0; i < tab.getListCharA().size(); i++) { // Until we reach the size of the list of sentences
+		for (int i = 0; i < tab.getListCharA().size(); i++) { // Until we reach the size of the list characters
 			Node nA = new Node(tab.getListCharA().get(i)); // We create a new node
 			Node nB = new Node(tab.getListCharB().get(i)); // We create a new node
 			graph.addNode(nA);
 			graph.addNode(nB);
-			graph.addEdge(nA, nB, tab.getListDistanceWord().get(i), tab.getListType().get(i)); // We create a new edge which links the two
-																			// nodes with their weight
+			graph.addEdge(nA, nB, tab.getListDistanceWord().get(i), tab.getListType().get(i)); 	// We create a new edge which links the two
+																								// nodes with their weight
 		}
-		graph.setName(name);
 		return graph;
 	}
 
+	/**
+     * Create a graph directly from a text file (mostly used for performances purposes)
+	 * 
+	 * @param evaluationFilePath the path to the text file
+	 * @param dbScanDist the distance used for the dbscan algorithm (should be between 0 and 1, 0.40 is a good value overall)
+	 * @param sentNumber size of the window in sentences
+	 * @param covering covering between two windows in sentences
+	 * @return The graph built
+    */
 	public static Graph buildCoOcSentFromTxt(String evaluationFilePath, double dbScanDist, int sentNumber, int covering) throws IOException, NullDocumentException {
 
+		//importing the text 
 		FileInputStream is = new FileInputStream(evaluationFilePath);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
+		//normalizing the text
 		content = TextNormalization.addDotEndOfLine(content);
 
+		//creating stanford's pipeline
 		String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
 
 		Properties props = new Properties();
@@ -61,11 +89,12 @@ public class GraphCreator {
 		ImpUtils.setDocument(document);
 		pipeline.annotate(document);
 
+		//creating the corefChains and clustering them
 		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
-
 		CorefChainFuser corefChainFuser = new CorefChainFuser();
 		cccList = corefChainFuser.corefChainsClusteringRO(cccList, dbScanDist);
 
+		//creating the book
 		Book book = CreateBook.createBook(document, false, cccList);
 
 		//Create a table from Sentences 
@@ -77,15 +106,25 @@ public class GraphCreator {
 		return GraphCreator.createGraph(table, graphTitle, false, true);
 	}
 
+	/**
+     * Create a graph directly from an manually annotated xml file (mostly used for performances purposes)
+	 * 
+	 * @param evaluationFilePath the path to the xml file
+	 * @param dbScanDist the distance used for the dbscan algorithm (should be between 0 and 1, 0.40 is a good value overall)
+	 * @param sentNumber size of the window in sentences
+	 * @param covering covering between two windows in sentences
+	 * @return The graph built
+    */
     public static Graph buildCoOcSentFromXml(String referenceFilePath, String evaluationFilePath, int sentNumber, int covering) throws IOException {
-
 
 		//Creating the document
 		FileInputStream is = new FileInputStream(evaluationFilePath);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
+		//normalizing the text
 		content = TextNormalization.addDotEndOfLine(content);
 
+		//creating stanford's pipeline for the book creation
 		String prop="tokenize,ssplit";
 
 		Properties props = new Properties();
@@ -95,7 +134,6 @@ public class GraphCreator {
 		CoreDocument document = new CoreDocument(content);
 		ImpUtils.setDocument(document);
 		pipeline.annotate(document);
-
 
 		//Making corefChains from XML
 		ClusterContainer tempCorefChains = ClusterContainer.buildClusterContainerFromXML(referenceFilePath, document);

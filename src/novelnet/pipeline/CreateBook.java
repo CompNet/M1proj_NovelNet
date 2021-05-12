@@ -13,8 +13,7 @@ import novelnet.util.CustomCorefChain;
 /**
  * Used to Create a book object from a Stanford core nlp CoreDocument
  * 
- * @author Quay Baptiste
- * @author Lemaire Tewis
+ * @author Quay Baptiste, Lemaire Tewis
 */
 public class CreateBook {
 

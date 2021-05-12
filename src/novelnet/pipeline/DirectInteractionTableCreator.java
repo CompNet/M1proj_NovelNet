@@ -15,11 +15,24 @@ import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.naturalli.NaturalLogicAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
 
+/**
+ * Create a DirectInteractionTable
+ * 
+ * @author Quay Baptiste, Lemaire Tewis
+*/
 public class DirectInteractionTableCreator {
+
+    
     private DirectInteractionTableCreator() {
 
 	}
 
+    /**
+     * get all relations triple from a Book's CoreDocument
+     * 
+     * @param book the book from wich you want to get the triples
+     * @return a list of all the triples in the book 
+    */
     private static List<RelationTriple> findAllActions(Book book){
         Annotation annotation = book.getDocument().annotation();
         List<RelationTriple> result = new LinkedList<>();
@@ -32,19 +45,28 @@ public class DirectInteractionTableCreator {
         return result;
     }
 
+    /**
+     * regroup the relation triple by the relation's head.
+     * 
+     * @param actionList a list of RelationTriple (result of findAllActions())
+     * @return a list of action regrouped by relation's head
+    */
     private static List<List<RelationTriple>> regroupSameAction(List<RelationTriple> actionList){
         Boolean foundActionList;
         List<List<RelationTriple>> sameActionList = new LinkedList<>(); //a list of list of the same action : the second list is a list of actions with the same relation ie the same action
 
         for (RelationTriple triple : actionList) {
             foundActionList = false;
+            //Search if the head of the triple is already in a list in the result
             for (List<RelationTriple> action : sameActionList){
                 if (action.get(0).relationHead() == triple.relationHead()){
+                    //if it is add it to the list
                     action.add(triple);
                     foundActionList = true;
                 }
                 
             }
+            //if the action was not listed add a new list in the result for that action
             if (!foundActionList) {
                 List<RelationTriple> tmp = new LinkedList<>();
                 tmp.add(triple);
@@ -55,6 +77,13 @@ public class DirectInteractionTableCreator {
         return sameActionList;
     }
 
+    /**
+     * Create our CustomInteraction from the regrouped actions.
+     * 
+     * @param actionList a list of action regrouped into lists (result of regroupSameAction()).
+     * @param book the book from wich you get the CorefChains to identify subject and object in the interaction.
+     * @return a list of CustomInteraction each one representing one action.
+    */
     private static List<CustomInteraction> createInteractions(List<List<RelationTriple>> actionList, Book book){
         List<CustomInteraction> listInteraction = new LinkedList<>();
         List<CustomTriple> tmp;
@@ -63,20 +92,26 @@ public class DirectInteractionTableCreator {
         for (List<RelationTriple> listRT : actionList){
             tmp = new LinkedList<>();
             for(RelationTriple rtToAdd : listRT){
+                //Creating our CustomTriple to put into our CustomInteraction
                 CustomTriple ctToAdd = new CustomTriple(rtToAdd, book);
                 alreadyIn = false;
+                //checking if the triple is already in or better than one that's already in
                 for (CustomTriple ctToCompare : tmp) {
+                    //checking if the triple is already in
                     if (ImpUtils.equals(ctToCompare, ctToAdd)){
+                        //if the triple to compare is already in but the object of the triple already in is null
                         if (ctToCompare.getObject() == null){
+                            //replace the old triple by the new one
                             tmp.remove(ctToCompare);
                             tmp.add(ctToAdd);
                         }
                         alreadyIn = true;
                     }
                 }
+                //if the triple was not found we add it to the temporary list
                 if (!alreadyIn) tmp.add(ctToAdd);
             }
-
+            //Creating our CustomInteraction from the triple list and putting it into the result.
             listInteraction.add(new CustomInteraction(tmp));
             
         }
@@ -84,17 +119,22 @@ public class DirectInteractionTableCreator {
         return listInteraction;
     }
 
+    /**
+     * Use function above to find all Actions with multiple Characters in the book specified in argument.
+     * 
+     * @param book the book from wich you want to extract the actions.
+     * @return a list of CustomInteraction each one representing one action.
+    */
     public static List<CustomInteraction> findActionsWithMultiplesCharaters(Book book) {
         List<CustomInteraction> result = new LinkedList<>();
 
+        //pipeline
         List<RelationTriple> actionList = findAllActions(book);
-        //System.out.println(actionList);
         List<List<RelationTriple>> sameActionList = regroupSameAction(actionList);
-        //System.out.println(sameActionList);
         List<CustomInteraction> allInteractionList = createInteractions(sameActionList, book);
-        //System.out.println(listInteraction);
 
         for (CustomInteraction customInteraction : allInteractionList) {
+            //keeping actions with more than one character.
             if (customInteraction.characterNumber() > 1){
                 result.add(customInteraction);
             }
@@ -103,27 +143,26 @@ public class DirectInteractionTableCreator {
         return result;
     }
 
+    /**
+     * Use function above to get all actions with multiple characters and then build the table from the list.
+     * 
+     * @param book the book from wich you want to extract the actions.
+     * @return the table of DirectInteraction
+    */
     public static DirectInteractionTable createTable(Book book){
         DirectInteractionTable it = new DirectInteractionTable();
 
         List<CustomInteraction> finalInteractionList = findActionsWithMultiplesCharaters(book);
 
-        /*for (CustomCorefChain ccc : book.getCorefChain()){
-            System.out.println(ccc);
-        }
-
-        for(List<RelationTriple> rtlist : actionList){
-            System.out.println(rtlist);
-        }*/
-
         for(CustomInteraction ci : finalInteractionList){
-            //ci.display();
             for (int i = 0; i < ci.getSubjects().size(); i++){
+                //linking each subject of the interaction.
                 for (int j = 0; j < ci.getSubjects().size(); j++){
                     if (i!=j){
                         it.add(ci.getSubjects().get(i).getRepresentativeName(), ci.getSubjects().get(j).getRepresentativeName(), ci.getSentenceIndex());
                     }
                 }
+                //linking each subject with each object of the intereaction.
                 for (int j = 0; j < ci.getObjects().size(); j++){
                     it.add(ci.getSubjects().get(i).getRepresentativeName(), ci.getObjects().get(j).getRepresentativeName(), ci.getSentenceIndex());
                 }

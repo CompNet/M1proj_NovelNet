@@ -10,9 +10,8 @@ package novelnet.table;
  */
 public class CooccurrenceTableSentence extends CooccurrenceTable {
 
-     /**
+    /**
 	 * Constructor for the class WindowingCooccurrenceSentence.
-	 * 
 	 */
 	public CooccurrenceTableSentence() {
         super();
@@ -20,8 +19,6 @@ public class CooccurrenceTableSentence extends CooccurrenceTable {
     
     /**
 	 * Displays the table
-	 * 
-	 * 
 	 */
     @Override
 	public void display(){

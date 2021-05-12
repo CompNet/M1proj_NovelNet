@@ -2,6 +2,13 @@ package novelnet.table;
 
 import java.util.List;
 
+/**
+ * A table to list Direct Interaction.
+ * Each list represent a column of the table.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class DirectInteractionTable extends InteractionTable {
 
     public DirectInteractionTable() {
@@ -40,7 +47,7 @@ public class DirectInteractionTable extends InteractionTable {
 	 * @param object a String representing the name of the object
 	 * @param sentenceIndex an Integer representing the sentence position of the triplet in the text.
 	 * 
-	 */
+	*/
 	public void add(String subject, String object, int sentenceIndex){
         add(subject, object, 1, 1, sentenceIndex, sentenceIndex, null);
 	}
@@ -52,7 +59,7 @@ public class DirectInteractionTable extends InteractionTable {
 	 * @param object a String representing the name of the object
 	 * @param sentenceIndex an Integer representing the sentence position of the triplet in the text.
 	 * 
-	 */
+	*/
 	public void add(String subject, String object, int sentenceIndex, String type){
 		add(subject, object, 1, 1, sentenceIndex, sentenceIndex, type);
 	}
@@ -63,7 +70,7 @@ public class DirectInteractionTable extends InteractionTable {
 	 * @param begin an Integer for the index of the line begining the sub table.
 	 * @param end an Integer for the index of the line ending the sub table.
 	 * @return The sub table from line begin (included) to line end (included).
-	 */
+	*/
     @Override
 	public DirectInteractionTable subTable(int begin, int end){
 		DirectInteractionTable result = new DirectInteractionTable();

@@ -9,13 +9,34 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import performance.coref.CorefChainContainer;
 
+/**
+ * A customized class to store CorefChains
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+ */
 public class CustomCorefChain implements Cloneable{
 
+    /**
+     * the entities contained in the chain
+    */
     List<CustomEntityMention> cEMList;
+    /**
+     * the best name for the mentions in the chain
+    */
     String representativeName;
+    /**
+     * id of the chain
+    */
     int id;
+    /**
+     * id of the chain's Character
+    */
     int clusterID;
 
+    /**
+     * Class constructor
+    */
     public CustomCorefChain(){
         cEMList = new LinkedList<>();
         representativeName = "";
@@ -23,6 +44,10 @@ public class CustomCorefChain implements Cloneable{
         clusterID = 0;
     }
 
+    /**
+     * Class constructor from a stanford CorefChain
+     * @param cc Stanford's CorefChain
+    */
     public CustomCorefChain(CorefChain cc){
         cEMList = new LinkedList<>();
         try {
@@ -36,6 +61,11 @@ public class CustomCorefChain implements Cloneable{
         clusterID = 0;
     }
 
+    /**
+     * Create a CustomCorefChain with one mention.
+     * 
+     * @param cem Stanford's CoreEntityMention
+    */
     public CustomCorefChain(CoreEntityMention cem){
         cEMList = new LinkedList<>();
         representativeName = cem.text();
@@ -46,6 +76,11 @@ public class CustomCorefChain implements Cloneable{
         clusterID = 0;
     }
 
+    /**
+     * Create a CustomCorefChain with one mention.
+     * 
+     * @param ce our CustomEntityMention
+    */
     public CustomCorefChain(CustomEntityMention ce) {
         cEMList = new LinkedList<>();
         representativeName = ce.text();
@@ -82,7 +117,6 @@ public class CustomCorefChain implements Cloneable{
         this.id = id;
     }
 
-
 	public void setRepresentativeName(String representativeName) {
         for (CustomEntityMention cem : cEMList){
             cem.setBestName(representativeName);
@@ -90,6 +124,11 @@ public class CustomCorefChain implements Cloneable{
         this.representativeName = representativeName;
 	}
 
+    /**
+     * check if the chain contains an entity with the token passes as argument
+     * 
+     * @param token Stanford's CoreLabel
+    */
     public Boolean contains(CoreLabel token){
         if (token == null) return false;
         for(CustomEntityMention entity : cEMList){
@@ -105,7 +144,6 @@ public class CustomCorefChain implements Cloneable{
 
     /**
      * used by CorefChainContainer.precision().
-     *  
     */
     public double corefPrecision(CorefChainContainer reference){
         double tot = 0;
@@ -118,7 +156,6 @@ public class CustomCorefChain implements Cloneable{
 
     /**
      * used by CorefChainContainer.precision().
-     *  
     */
     public double corefRecall(CorefChainContainer reference) {
         double tot = 0;

@@ -7,17 +7,22 @@ package novelnet.table;
  * 
  * @author Quay Baptiste
  * @author Lemaire Tewis
- */
+*/
 public abstract class CooccurrenceTable extends InteractionTable {
 	
 	/**
 	 * Class Constructor
-	 *
 	*/
 	protected CooccurrenceTable(){
 		super();
 	}
     
+	/**
+	 * Create a subtable taking the lines from begin (included) to end (included)
+	 * 
+	 * @param begin the first line (included)
+	 * @param end the last last (included)
+	*/
     @Override
     public CooccurrenceTable subTable(int begin, int end){
 		CooccurrenceTable result = new CooccurrenceTableSentence();
@@ -27,6 +32,9 @@ public abstract class CooccurrenceTable extends InteractionTable {
 		return result;
     }
 
+	/**
+	 * add a line to the table
+	*/
 	public void add(String charA, String charB, int distanceChar, int distanceWord, int beginingIndex, int endingIndex){
 		add(charA, charB, distanceChar, distanceWord, beginingIndex, endingIndex, null);
 	}

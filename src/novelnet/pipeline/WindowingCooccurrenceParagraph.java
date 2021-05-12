@@ -39,9 +39,7 @@ public class WindowingCooccurrenceParagraph extends WindowingCooccurrence{
 	/**
 	 * Creates and returns a list of lists of tokens based on the size and covering chosen by the user.
 	 * 
-	 * @param CoreDocument represents the text chosen by the user.
 	 * @return The list of lists of tokens.
-	 * 
 	 */
 	@Override
 	public List<List<CustomEntityMention>> createWindow() {

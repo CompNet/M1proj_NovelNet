@@ -12,8 +12,7 @@ public class CooccurrenceTableParagraph extends CooccurrenceTable {
 
     /**
 	 * Class Constructor
-	 * 
-	 */
+	*/
 	public CooccurrenceTableParagraph() {
         super();
     }
@@ -21,7 +20,7 @@ public class CooccurrenceTableParagraph extends CooccurrenceTable {
     /**
 	 * Displays the table with some layouts
 	 * 
-	 */
+	*/
     @Override
 	public void display(){
 		for (int i = 0; i < listCharA.size(); i++){ // For the size of the list of character A
