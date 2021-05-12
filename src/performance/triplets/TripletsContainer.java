@@ -17,7 +17,7 @@ import novelnet.pipeline.CreateBook;
 import novelnet.pipeline.DirectInteractionTableCreator;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
-import novelnet.util.CustomInteraction;
+import novelnet.util.CustomDirectInteraction;
 import novelnet.util.CustomTriple;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
@@ -137,7 +137,7 @@ public class TripletsContainer {
         
         Book book = CreateBook.createBook(document, false, corefContainer.getCorefChains());
 
-        for (CustomInteraction interaction : DirectInteractionTableCreator.findActionsWithMultiplesCharaters(book)) {
+        for (CustomDirectInteraction interaction : DirectInteractionTableCreator.findActionsWithMultiplesCharaters(book)) {
             result.getTriples().addAll(interaction.getTriples());
         }
 

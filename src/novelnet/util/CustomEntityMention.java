@@ -9,40 +9,80 @@ import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.util.Pair;
 import performance.coref.CorefChainContainer;
 
+/**
+ * A customized class to store EntityMention
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CustomEntityMention {
 
+    /**
+     * the corefChain containing the entity mention
+    */
     CustomCorefChain corefChain;
+    /**
+     * the tokens composing the entity
+    */
     List<CoreLabel> tokens;
+    /**
+     * the best name for this entity
+    */
     String bestName;
+    /**
+     * the window of the entity in sentences
+    */
     Pair<Integer, Integer> window;
-    Pair<Integer, Integer> tokenIndexs;
+    /**
+     * the index of the first token and the last token of the entity
+    */
+    Pair<Integer, Integer> tokensIndexs;
+    /**
+     * the sentence number of the entity (index is number-1)
+    */
     int sentenceNumber;
 
+    /**
+     * class constructor
+    */
     public CustomEntityMention(List<CoreLabel> tokens, Pair<Integer, Integer> window, String bestName) {
         this.tokens = tokens;
         this.window = window;
         this.bestName = bestName;
         this.sentenceNumber = tokens.get(0).sentIndex()+1;
+        sentenceNumber = tokens.get(0).sentIndex()+1;
+        tokensIndexs = new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
     }
 
+    /**
+     * use a CoreEntityMnetion from Stanford to build our entity
+    */
     public CustomEntityMention(CoreEntityMention cem){
-        this.tokens = new LinkedList<>();
+        tokens = new LinkedList<>();
         for (CoreLabel token : cem.tokens()){
             tokens.add(token);
         }
 		sentenceNumber = cem.tokens().get(0).sentIndex()+1;
-        window = new Pair<>();
+        window = new Pair<>(0,0);
         bestName = cem.text();
+        tokensIndexs = new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
 	}
 
+    /**
+     * Copy a CustomEntityMention
+    */
     public CustomEntityMention(CustomEntityMention cem){
-        this.tokens = new LinkedList<>(cem.getTokens());
+        tokens = new LinkedList<>(cem.getTokens());
 		sentenceNumber = cem.getSentenceNumber();
         window = cem.window;
         bestName = cem.bestName;
-        tokenIndexs = cem.tokenIndexs;
+        tokensIndexs = cem.tokensIndexs;
+        corefChain = cem.corefChain;
 	}
 
+    /**
+     * transform a corefMention into a CustomEntityMention
+    */
     public CustomEntityMention(CorefMention cm, String bestName){
         this.bestName = bestName;
         tokens = new LinkedList<>();
@@ -53,9 +93,13 @@ public class CustomEntityMention {
             System.out.println(e.getMessage());
         }
 		sentenceNumber = cm.sentNum;
-        window = new Pair<>();
+        window = new Pair<>(0,0);
+        tokensIndexs = new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
 	}
 	
+    /**
+     * class Contructor
+    */
 	public CustomEntityMention(String text, String bestName, int sentenceNumber, int firstTokenNumber, int lastTokenNumber) {
         this.bestName = bestName;
 		tokens = new LinkedList<>();
@@ -65,9 +109,17 @@ public class CustomEntityMention {
         temp.setSentIndex(sentenceNumber-1);
         tokens.add(temp);
 		this.sentenceNumber = sentenceNumber;
-        window = new Pair<>();
-        tokenIndexs = new Pair<>(firstTokenNumber, lastTokenNumber);
+        window = new Pair<>(0,0);
+        tokensIndexs = new Pair<>(firstTokenNumber, lastTokenNumber);
 	}
+
+    public Pair<Integer,Integer> getTokensIndexs() {
+        return this.tokensIndexs;
+    }
+
+    public void setTokensIndexs(Pair<Integer,Integer> tokensIndexs) {
+        this.tokensIndexs = tokensIndexs;
+    }
 
 	public int getSentenceNumber() {
 		return sentenceNumber;
@@ -133,9 +185,9 @@ public class CustomEntityMention {
         return new Pair<>(tokens.get(0).beginPosition(), tokens.get(tokens.size()-1).endPosition());
     }
 
-    public Pair<Integer,Integer> tokenIndexs(){
-        if (tokenIndexs == null) return new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
-        else return tokenIndexs;
+    public Pair<Integer,Integer> tokensIndexs(){
+        if (tokensIndexs == null) return new Pair<>(tokens.get(0).index(), tokens.get(tokens.size()-1).index());
+        else return tokensIndexs;
     }
 
     public CoreLabel getBeginToken(){
@@ -159,13 +211,18 @@ public class CustomEntityMention {
         return text;
     }
 
+    /**
+     * assess equals comparing sentenceNumber, and tokensIndexs
+     * 
+     * @param ce The CustomEntityMention to compare to.
+     * @return true if sentenceNumber, tokensIndexs.first and tokensIndexs.second are equals, false otherwise
+    */
     public boolean equalTo(CustomEntityMention ce){
-		return this.sentenceNumber == ce.sentenceNumber && this.tokenIndexs().first() == ce.tokenIndexs().first() && this.tokenIndexs().second() == ce.tokenIndexs().second();
+		return this.sentenceNumber == ce.sentenceNumber && this.tokensIndexs().first() == ce.tokensIndexs().first() && this.tokensIndexs().second() == ce.tokensIndexs().second();
 	}
 
     /**
      * used by CustomCorefChain.precision().
-     *  
     */
     public double precision(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
@@ -186,7 +243,6 @@ public class CustomEntityMention {
 
     /**
      * used by CustomCorefChain.recall().
-     *  
     */
     public double recall(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;

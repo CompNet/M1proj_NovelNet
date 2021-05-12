@@ -3,7 +3,7 @@ package novelnet.pipeline;
 import java.util.LinkedList;
 import java.util.List;
 
-import novelnet.util.CustomInteraction;
+import novelnet.util.CustomDirectInteraction;
 import novelnet.util.CustomTriple;
 import novelnet.util.ImpUtils;
 import novelnet.book.Book;
@@ -84,8 +84,8 @@ public class DirectInteractionTableCreator {
      * @param book the book from wich you get the CorefChains to identify subject and object in the interaction.
      * @return a list of CustomInteraction each one representing one action.
     */
-    private static List<CustomInteraction> createInteractions(List<List<RelationTriple>> actionList, Book book){
-        List<CustomInteraction> listInteraction = new LinkedList<>();
+    private static List<CustomDirectInteraction> createInteractions(List<List<RelationTriple>> actionList, Book book){
+        List<CustomDirectInteraction> listInteraction = new LinkedList<>();
         List<CustomTriple> tmp;
         Boolean alreadyIn;
 
@@ -112,7 +112,7 @@ public class DirectInteractionTableCreator {
                 if (!alreadyIn) tmp.add(ctToAdd);
             }
             //Creating our CustomInteraction from the triple list and putting it into the result.
-            listInteraction.add(new CustomInteraction(tmp));
+            listInteraction.add(new CustomDirectInteraction(tmp));
             
         }
 
@@ -125,15 +125,15 @@ public class DirectInteractionTableCreator {
      * @param book the book from wich you want to extract the actions.
      * @return a list of CustomInteraction each one representing one action.
     */
-    public static List<CustomInteraction> findActionsWithMultiplesCharaters(Book book) {
-        List<CustomInteraction> result = new LinkedList<>();
+    public static List<CustomDirectInteraction> findActionsWithMultiplesCharaters(Book book) {
+        List<CustomDirectInteraction> result = new LinkedList<>();
 
         //pipeline
         List<RelationTriple> actionList = findAllActions(book);
         List<List<RelationTriple>> sameActionList = regroupSameAction(actionList);
-        List<CustomInteraction> allInteractionList = createInteractions(sameActionList, book);
+        List<CustomDirectInteraction> allInteractionList = createInteractions(sameActionList, book);
 
-        for (CustomInteraction customInteraction : allInteractionList) {
+        for (CustomDirectInteraction customInteraction : allInteractionList) {
             //keeping actions with more than one character.
             if (customInteraction.characterNumber() > 1){
                 result.add(customInteraction);
@@ -152,9 +152,9 @@ public class DirectInteractionTableCreator {
     public static DirectInteractionTable createTable(Book book){
         DirectInteractionTable it = new DirectInteractionTable();
 
-        List<CustomInteraction> finalInteractionList = findActionsWithMultiplesCharaters(book);
+        List<CustomDirectInteraction> finalInteractionList = findActionsWithMultiplesCharaters(book);
 
-        for(CustomInteraction ci : finalInteractionList){
+        for(CustomDirectInteraction ci : finalInteractionList){
             for (int i = 0; i < ci.getSubjects().size(); i++){
                 //linking each subject of the interaction.
                 for (int j = 0; j < ci.getSubjects().size(); j++){

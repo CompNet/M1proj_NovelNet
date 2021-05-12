@@ -46,6 +46,7 @@ public class CustomCorefChain implements Cloneable{
 
     /**
      * Class constructor from a stanford CorefChain
+     * 
      * @param cc Stanford's CorefChain
     */
     public CustomCorefChain(CorefChain cc){
@@ -128,13 +129,14 @@ public class CustomCorefChain implements Cloneable{
      * check if the chain contains an entity with the token passes as argument
      * 
      * @param token Stanford's CoreLabel
+     * @return true if the chain contains the CoreLabel, false otherwise
     */
     public Boolean contains(CoreLabel token){
         if (token == null) return false;
         for(CustomEntityMention entity : cEMList){
             if ((entity.getSentenceIndex() == token.sentIndex()) &&
-                (entity.tokenIndexs().first() <= token.index()) &&
-                (entity.tokenIndexs().second() >= token.index()))
+                (entity.tokensIndexs().first() <= token.index()) &&
+                (entity.tokensIndexs().second() >= token.index()))
                 {
                     return true;
                 }
@@ -190,15 +192,10 @@ public class CustomCorefChain implements Cloneable{
     public Object clone() {
         Object o = null;
         try {
-            // On récupère l'instance à renvoyer par l'appel de la 
-            // méthode super.clone()
             o = super.clone();
         } catch(CloneNotSupportedException cnse) {
-            // Ne devrait jamais arriver, car nous implémentons 
-            // l'interface Cloneable
             cnse.printStackTrace(System.err);
         }
-        // on renvoie le clone
         return o;
     }
 }

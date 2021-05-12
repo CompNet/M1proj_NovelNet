@@ -5,8 +5,11 @@ import edu.stanford.nlp.ling.CoreLabel;
 import novelnet.book.Book;
 
 /**
- * CustomTriple
- */
+ * a Customized class to store triples.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CustomTriple {
 
     protected RelationTriple triple;
@@ -15,9 +18,18 @@ public class CustomTriple {
     protected CoreLabel verb;
 
 
+    /**
+     * Class Constructor
+    */
     public CustomTriple() {
     }
 
+    /**
+     * Using Stanford's RelationTriple to build our own triple.
+     * 
+     * @param triple Stanford's RelationTriple
+     * @param book The book to get the corefChains of the subject and object of the relation.
+    */
     public CustomTriple(RelationTriple triple, Book book){
         this.triple = triple;
         setSubject(book);
@@ -25,6 +37,13 @@ public class CustomTriple {
         verb = triple.relationHead();
     }
 
+    /**
+     * Using Stanford's RelationTriple to build our own triple, specifying 
+     * 
+     * @param triple Stanford's RelationTriple
+     * @param subject subject's CorefChain
+     * @param object object's CorefChain
+    */
     public CustomTriple(RelationTriple triple, CustomCorefChain subject, CustomCorefChain object) {
         this.triple = triple;
         this.subject = subject;
@@ -32,6 +51,13 @@ public class CustomTriple {
         verb = triple.relationHead();
     }
 
+    /**
+     * building our own triple with the object's and subject's corefChain and the verb.
+     * 
+     * @param subject subject's CorefChain
+     * @param object object's CorefChain
+     * @param verb the verb of the relation
+    */
     public CustomTriple(CustomCorefChain subject, CustomCorefChain object, CoreLabel verb) {
         this.subject = subject;
         this.object = object;
@@ -75,6 +101,11 @@ public class CustomTriple {
         this.object = object;
     }
 
+    /**
+     * searching the object's CorefChain from the specified book
+     * 
+     * @param book 
+    */
     public void setObject(Book book){
         for (CustomCorefChain ccc : book.getCorefChain()){
             if (ccc.contains(triple.objectHead()) && ccc != subject){
@@ -83,6 +114,11 @@ public class CustomTriple {
         }
     }
 
+    /**
+     * searching the subject's CorefChain from the specified book
+     * 
+     * @param book 
+    */
     public void setSubject(Book book){
         for (CustomCorefChain ccc : book.getCorefChain()){
             if (ccc.contains(triple.subjectHead())){
@@ -91,6 +127,11 @@ public class CustomTriple {
         }
     }
 
+    /**
+     * count the number of character
+     * 
+     * @return the number of characters in the relation
+    */
     public int characterNumber(){
         int count = 0;
         if (subject != null) count++;
@@ -165,22 +206,32 @@ public class CustomTriple {
         if (getTriple() == null){   //if this triple is from reference
             if (tripletToCompare.getObject() == null){
                 if (getObject() == null){
-                    if (ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken())) return true;
+                    if (ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) &&
+                        tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()))
+                            return true;
                 }
                 else return false;
             }
-            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()) && tripletToCompare.getObject().contains(getObjectToken())){
+            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) &&
+                tripletToCompare.getSubject().contains(getSubject().getCEMList().get(0).getBeginToken()) &&
+                tripletToCompare.getObject().contains(getObjectToken()))
+            {
                 return true;
             }
         }
         else{   //if the triple to compare is from reference
             if (getObject() == null){
                 if (tripletToCompare.getObject() == null){
-                    if (ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken())) return true;
+                    if (ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) &&
+                        getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken()))
+                            return true;
                 }
                 else return false;
             }
-            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) && getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken()) && getObject().contains(tripletToCompare.getObjectToken())){
+            if(ImpUtils.compareCoreLabel(getVerb(), tripletToCompare.getVerb()) &&
+                getSubject().contains(tripletToCompare.getSubject().getCEMList().get(0).getBeginToken()) && 
+                getObject().contains(tripletToCompare.getObjectToken()))
+            {
                 return true;
             }
         }

@@ -7,20 +7,43 @@ import novelnet.book.Book;
 
 import edu.stanford.nlp.ie.util.RelationTriple;
 
+/**
+ * A customized class to store EntityMention
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
+public class CustomDirectInteraction {
 
-public class CustomInteraction {
-
+    /**
+     * the triples constituting the action
+    */
     protected List<CustomTriple> triples;
+    /**
+     * index of sentence of the action
+    */
     protected int sentenceIndex;
+    /**
+     * type of the action (opposition, cooperation) (not used for now)
+    */
     protected String type;
 
-    public CustomInteraction() {
+    /**
+     * Class Constructor
+    */
+    public CustomDirectInteraction() {
         triples = new LinkedList<>();
         sentenceIndex = 0;
         type = null;
     }
 
-    public CustomInteraction(List<RelationTriple> triples, Book book) {
+    /**
+     * Class Constructor specifying the triples and the book to get the corefChains from.
+     * 
+     * @param triples the triples constituting the action
+     * @param book the book to get the corefChains from
+    */
+    public CustomDirectInteraction(List<RelationTriple> triples, Book book) {
         CustomTriple tmpTriple;
         this.triples = new LinkedList<>();
         for (RelationTriple relationTriple : triples) {
@@ -35,7 +58,12 @@ public class CustomInteraction {
         type = null;
     }
 
-    public CustomInteraction(List<CustomTriple> triples){
+    /**
+     * Class Constructor specifying the triples.
+     * 
+     * @param triples the triples constituting the action
+    */
+    public CustomDirectInteraction(List<CustomTriple> triples){
         this.triples = triples;
         sentenceIndex = triples.get(0).getTriple().relation.get(0).sentIndex();
         type = null;
@@ -96,6 +124,11 @@ public class CustomInteraction {
             "}";
     }
 
+    /**
+     * Count the number of characters for the action
+     * 
+     * @return the number of characters in the action
+    */
 	public int characterNumber() {
 		int count = 0;
         for (CustomTriple customTriple : triples) {
