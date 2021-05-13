@@ -15,13 +15,25 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import novelnet.util.ImpUtils;
 import novelnet.util.TextNormalization;
 
+/**
+ * a tool to manually annotate texts with StanfordCoreNLP tokenization and sentence splitting
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class AnnotationTool {
 
+    /**
+     *  Class Constructor
+    */
     private AnnotationTool(){
         
     }
     
-    public static void decompose(String path, String language, int sentenceJump) throws IOException{
+    /**
+     * actual function to split the text into sentences and then tokens and display the result,
+    */
+    public static void decompose(String path, String language, int sentenceJump, Boolean dispPunctuation) throws IOException{
         FileInputStream is = new FileInputStream(path);
         String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
@@ -43,7 +55,7 @@ public class AnnotationTool {
             }
             System.out.println("Sentence number "+(i+1));
             for (CoreLabel token : document.sentences().get(i).tokens()){
-                if (!ImpUtils.isPonctuation(token)){
+                if (dispPunctuation || !ImpUtils.isPonctuation(token)){
                     System.out.println("Text : " + token.originalText() + "\t | Position : " + (document.sentences().get(i).tokens().lastIndexOf(token)+1));
                 }
             }
@@ -59,10 +71,13 @@ public class AnnotationTool {
         String language = sc.nextLine();
         System.out.println("enter the path to the file to analyse : ");
         String path = sc.nextLine();
+        System.out.println("enter t for punctuation display anything else if you don't want punctuation to be displayed : ");
+        String dispP = sc.nextLine();
         System.out.println("enter the number of sentences to show before asking to continue : ");
         int sentenceJump = sc.nextInt();
+
         sc.nextLine();
-		AnnotationTool.decompose(path, language, sentenceJump);
+		AnnotationTool.decompose(path, language, sentenceJump, dispP.equals("t"));
         sc.close();
 	}
 }

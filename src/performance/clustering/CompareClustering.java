@@ -7,6 +7,12 @@ import smile.validation.metric.AdjustedRandIndex;
 
 import novelnet.util.CustomCorefChain;
 
+/**
+ * Used to compare our clustering result with the reference.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CompareClustering {
 
     /**

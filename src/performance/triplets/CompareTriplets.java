@@ -7,19 +7,33 @@ import novelnet.table.PerfTableTriplets;
 import novelnet.util.CustomTriple;
 import novelnet.util.NullDocumentException;
 
+/**
+ * Used to compare our DirectInteraction result with the reference.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CompareTriplets {
     
     private TripletsContainer reference;
     private TripletsContainer triplesToEvaluate;
     private PrecisionRecallStats perf;
+    /**
+     * a table wich store the result
+    */
     private PerfTableTriplets perfTable;
 
-
+    /**
+     *  Class Constructor
+    */
     public CompareTriplets() {
 		perf = new PrecisionRecallStats();
         perfTable = new PerfTableTriplets();
     }
 
+    /**
+     *  Class Constructor specifying the reference and the action to evaluate.
+    */
     public CompareTriplets(TripletsContainer reference, TripletsContainer triplesToEvaluate) {
         this.reference = reference;
         this.triplesToEvaluate = triplesToEvaluate;

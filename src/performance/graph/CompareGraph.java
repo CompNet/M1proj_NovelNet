@@ -10,6 +10,12 @@ import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 import smile.math.distance.EuclideanDistance;
 
+/**
+ * Used to compare our graph result with the reference.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CompareGraph {
 
     Graph graphToEvaluate;
@@ -18,9 +24,15 @@ public class CompareGraph {
     
     double distance;
 
+    /**
+     * Class Constructor
+    */
     public CompareGraph() {
     }
 
+    /**
+     * Class Constructor specifying the graph and the reference graph
+    */
     public CompareGraph(Graph graphToEvaluate, Graph reference) {
         this.graphToEvaluate = graphToEvaluate;
         this.reference = reference;
@@ -59,6 +71,11 @@ public class CompareGraph {
         System.out.println("\ndistance : " + distance);
     }
 
+    /**
+     * verifying if all the nodes are presents in each graphs if not adding the node to the graph it's missing.
+     * 
+     * @return the preprocessed graphs (index 0 = reference, index 1 graph to evaluate)
+    */
     public List<Graph> preProcessing(){
         List<Graph> result = new LinkedList<>();
 
@@ -73,12 +90,17 @@ public class CompareGraph {
         return result;
     }
 
+    /**
+     * Computing the euclidian distance between the two graphs.
+     * 
+     * @return the euclidian distance.
+    */
     public double euclidianDistance(){
 
-        List<Graph> tmp = preProcessing();
+        List<Graph> tmpGraphs = preProcessing();
 
         EuclideanDistance ed = new EuclideanDistance();
-        distance = ed.d(tmp.get(0).adjacencyVector(), tmp.get(1).adjacencyVector());
+        distance = ed.d(tmpGraphs.get(0).adjacencyVector(), tmpGraphs.get(1).adjacencyVector());
         distance = ImpUtils.round(distance, 3); //rounding to 3 decimals
 
         return distance;

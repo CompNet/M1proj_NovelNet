@@ -25,6 +25,12 @@ import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 
+/**
+ * Container for corefChains.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CorefChainContainer{
 
     /**

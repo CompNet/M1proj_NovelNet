@@ -19,12 +19,24 @@ import novelnet.util.ImpUtils;
 import novelnet.util.TextNormalization;
 import performance.coref.CorefChainContainer;
 
+/**
+ * represent a cluster of corefChains. it is mostly like a CorefChainsContainer but with some added functions
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class ClusterContainer extends CorefChainContainer {
 
+    /**
+     * Class Constructor
+    */
     public ClusterContainer() {
         super();
     }
 
+    /**
+     * Copy a cluster container
+    */
     public ClusterContainer(CorefChainContainer container){
         super();
         for (CustomCorefChain ccc : container.getCorefChains()){
@@ -32,6 +44,11 @@ public class ClusterContainer extends CorefChainContainer {
         }
     }
 
+    /**
+     * get the number of the current last cluster.
+     * 
+     * @return the number of the current last cluster.
+    */
     public int getLastCluster() {
         int max = 0;
         for (CustomCorefChain ccc : getCorefChains()){
@@ -64,17 +81,22 @@ public class ClusterContainer extends CorefChainContainer {
         CorefChainFuser ccf = new CorefChainFuser();
         //execute and return the clustering (before the chain fusion form the clusterer)
         ClusterContainer tmp = new ClusterContainer(manualClone());
-        ClusterContainer result = new ClusterContainer();
+        ClusterContainer result = new ClusterContainer();   /* our temporary cluster container to have the result but keep the original
+                                                            in the current clusterContainer.    */
 
-        List<CorefChainContainer> temp = ccf.corefChainsClusteringROBeforeFusion(tmp.getCorefChains(), dbScanDist);
-
-        for(int i = 0; i < temp.size(); i++){
-            for (CustomCorefChain ccc : temp.get(i).getCorefChains()){
-                ccc.setClusterID(i+1);
+        List<CorefChainContainer> clusters = ccf.corefChainsClusteringROBeforeFusion(tmp.getCorefChains(), dbScanDist);
+        
+        //for each cluster of chains in clusters
+        for(int i = 0; i < clusters.size(); i++){
+            //for each chain in the cluster
+            for (CustomCorefChain ccc : clusters.get(i).getCorefChains()){
+                ccc.setClusterID(i+1);  // we set the cluster ID (1 -> n    IE  i+1 -> n)
             }
-            result.getCorefChains().addAll(temp.get(i).getCorefChains());
+            //regroup all the chain in the same cluster container.
+            result.getCorefChains().addAll(clusters.get(i).getCorefChains());
         }
 
+        //adding singleton chains to the result (dscan algorithm doesn't return chains alone in a cluster)
         for (CustomCorefChain ccc : getCorefChains()){
             if (result.get(ccc.getId())==null) {
                 CustomCorefChain tempCCC = (CustomCorefChain) ccc.clone();

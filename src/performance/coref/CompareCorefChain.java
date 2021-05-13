@@ -9,6 +9,12 @@ import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 
+/**
+ * Used to compare our co-reference result with the reference.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CompareCorefChain {
 
     /**

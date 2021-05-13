@@ -23,10 +23,19 @@ import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
 import performance.coref.CorefChainContainer;
 
+/**
+ * represent a cluster of corefChains. it is mostly like a CorefChainsContainer but with some added functions
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class TripletsContainer {
 
     private List<CustomTriple> triples;
 
+    /**
+     *  Class Constructor
+    */
     TripletsContainer(){
         triples = new LinkedList<>();
     }
@@ -118,7 +127,7 @@ public class TripletsContainer {
 	 * @param pathToText path to the .txt file to extract triplet from
      * @return the Container
      * @throws NullDocumentException
-	 */
+	*/
     public static TripletsContainer buildFromTxt(String pathToText, String pathToCorefXml) throws IOException {
 
         TripletsContainer result = new TripletsContainer();

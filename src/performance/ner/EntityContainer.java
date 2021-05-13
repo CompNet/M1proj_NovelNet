@@ -18,6 +18,12 @@ import edu.stanford.nlp.pipeline.CoreEntityMention;
 import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 
+/**
+ * Container for NER result.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class EntityContainer {
 
 	/**

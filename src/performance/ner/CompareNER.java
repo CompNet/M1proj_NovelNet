@@ -3,11 +3,16 @@ package performance.ner;
 import java.io.IOException;
 import java.util.Scanner;
 
-
 import edu.stanford.nlp.stats.PrecisionRecallStats;
 import novelnet.table.PerfTableNer;
 import novelnet.util.CustomEntityMention;
 
+/**
+ * Used to compare our NER result with the reference.
+ * 
+ * @author Quay Baptiste
+ * @author Lemaire Tewis
+*/
 public class CompareNER {
 
 	/**
