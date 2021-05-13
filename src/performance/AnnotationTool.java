@@ -71,13 +71,13 @@ public class AnnotationTool {
         String language = sc.nextLine();
         System.out.println("enter the path to the file to analyse : ");
         String path = sc.nextLine();
-        System.out.println("enter t for punctuation display anything else if you don't want punctuation to be displayed : ");
+        System.out.println("enter \"p\" for punctuation display anything else if you don't want punctuation to be displayed : ");
         String dispP = sc.nextLine();
         System.out.println("enter the number of sentences to show before asking to continue : ");
         int sentenceJump = sc.nextInt();
 
         sc.nextLine();
-		AnnotationTool.decompose(path, language, sentenceJump, dispP.equals("t"));
+		AnnotationTool.decompose(path, language, sentenceJump, dispP.equals("p"));
         sc.close();
 	}
 }
