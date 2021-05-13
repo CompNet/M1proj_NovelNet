@@ -201,7 +201,10 @@ public class CustomTriple {
         System.out.println(getObject());
     }
 
-    public boolean equalTo(CustomTriple tripletToCompare) {
+    /**
+     * used to compare ref to eval.
+    */
+    public Boolean compareRefToEval(CustomTriple tripletToCompare) {
         //TODO try to simplify that kraken
         if (getTriple() == null){   //if this triple is from reference
             if (tripletToCompare.getObject() == null){
@@ -237,5 +240,9 @@ public class CustomTriple {
         }
         return false;
     }
+    
+    public boolean equalsOrComparedObjectIsNull(CustomTriple ct2){
+		return getSubject()==ct2.getSubject() && getVerb()==ct2.getVerb() && (getObject()==ct2.getObject() || ct2.getObject()==null);
+	}
 
 }

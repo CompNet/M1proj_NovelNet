@@ -98,7 +98,7 @@ public class DirectInteractionTableCreator {
                 //checking if the triple is already in or better than one that's already in
                 for (CustomTriple ctToCompare : tmp) {
                     //checking if the triple is already in
-                    if (ImpUtils.equals(ctToCompare, ctToAdd)){
+                    if (ctToCompare.equalsOrComparedObjectIsNull(ctToAdd)){
                         //if the triple to compare is already in but the object of the triple already in is null
                         if (ctToCompare.getObject() == null){
                             //replace the old triple by the new one

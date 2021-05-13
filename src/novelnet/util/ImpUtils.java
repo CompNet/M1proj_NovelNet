@@ -24,9 +24,12 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
  * @author Tewis Lemaire
  *
  * some generally usefull fonction
- */
+*/
 public class ImpUtils {
 
+	/**
+	 * Stanford's CoreDocument.
+	*/
 	private static CoreDocument document = null;
 
 	private ImpUtils(){
@@ -37,11 +40,12 @@ public class ImpUtils {
 	}
 
 	/**
-	 * @author Baptiste Quay
-	 * @author Tewis Lemaire
-	 *
-	 */
-	public static CorefChain corefByEntityMention(CoreEntityMention cem) throws NullDocumentException {
+	 * get the corefChain associated with the coreEntityMention in argument
+	 * 
+	 * @param cem Stanford's CoreEntityMention
+	 * @return the corefChain containing the entity
+	*/
+	public static CorefChain corefByEntityMention(CoreEntityMention cem) {
 		Integer corefClustId = null;
 
 		for (CoreLabel token : cem.tokens()){
@@ -51,10 +55,20 @@ public class ImpUtils {
 		return null;
 	}
 
+	/**
+	 * assert if the two tokens are equal based on text, sentence index and index in that sentence.
+	 * 
+	 * @return true if equal, false otherwise.
+	*/
 	public static Boolean compareCoreLabel(CoreLabel token1, CoreLabel token2){
 		return token1.originalText().equals(token2.originalText()) && token1.index() == token2.index() && token1.sentIndex() == token2.sentIndex();
 	}
 
+	/**
+	 * get a Properties object with every thing to process french text with StanfordCoreNLP.
+	 * 
+	 * @return a Properties object with every thing to process french text with StanfordCoreNLP.
+	*/
 	public static Properties getFrenchProperties(){
 		Properties props = new Properties();
 
@@ -73,6 +87,12 @@ public class ImpUtils {
 		return props;
 	}
 
+	/**
+	 * get the CoreEntityMention associated with a CorefMention.
+	 * 
+	 * @param cm a CorefMention for StanfordCoreNLP.
+	 * @return the corresponding CoreEntityMention.
+	*/
 	public static CoreEntityMention getCoreEntityMentionByCorefMention(CorefMention cm) throws NullDocumentException {
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		CoreEntityMention result = null;
@@ -88,6 +108,12 @@ public class ImpUtils {
 		return result;
 	}
 
+	/**
+	 * get the tokens for the CorefMention.
+	 * 
+	 * @param cm a CorefMention for StanfordCoreNLP.
+	 * @return the corresponding tokens.
+	*/
 	public static List<CoreLabel> getTokensbyCorefMention(CorefMention cm) throws NullDocumentException {
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		List<CoreLabel> result = new LinkedList<>();
@@ -99,6 +125,11 @@ public class ImpUtils {
 		return result;
 	}
 
+	/**
+	 * get the CoreEntityMentions without corefChain.
+	 * 
+	 * @return the CoreEntityMentions without corefChain.
+	*/
 	public static List<CoreEntityMention> getCoreEntityMentionsWithoutCorefChain() throws NullDocumentException{
 		if (document == null) throw new NullDocumentException("CoreDocument has not been defined");
 		List<CoreEntityMention> result = new LinkedList<>();
@@ -114,7 +145,12 @@ public class ImpUtils {
 	}
 
 
-	public static boolean isPonctuation(CoreLabel token) {
+	/**
+	 * check if a token is ponctuation.
+	 * 
+	 * @return true if the token is ponctuation, false otherwise.
+	*/
+	public static Boolean isPonctuation(CoreLabel token) {
 		if(token.originalText().length() == 1){
 			if(token.originalText().equals("I") || token.originalText().equals("a") || token.originalText().equals("à") || token.originalText().equals("y") || token.originalText().equals("n") || token.originalText().equals("m") || token.originalText().equals("s")){
 				return false;
@@ -124,6 +160,12 @@ public class ImpUtils {
 		return false;
 	}
 
+	/**
+	 * Build and process an english NER pipeline from StanfordCoreNLP.
+	 * 
+	 * @param pathToFile the path to the english text file to process.
+	 * @return the CoreDocument associated.
+	*/
 	public static CoreDocument processNER(String pathToFile) throws IOException{
 		//transforming the file to a String
 		FileInputStream is = new FileInputStream(pathToFile);     
@@ -145,6 +187,12 @@ public class ImpUtils {
 		return document;
 	}
 
+	/**
+	 * Build and process a french NER pipeline from StanfordCoreNLP.
+	 * 
+	 * @param pathToFile the path to the french text file to process.
+	 * @return the CoreDocument associated.
+	*/
 	public static CoreDocument processFrenchNER(String pathToFile) throws IOException{
 		//transforming the file to a String
 		FileInputStream is = new FileInputStream(pathToFile);     
@@ -166,6 +214,12 @@ public class ImpUtils {
 		return document;
 	}
 
+	/**
+	 * Build and process an english co reference pipeline from StanfordCoreNLP.
+	 * 
+	 * @param pathToFile the path to the english text file to process.
+	 * @return the CoreDocument associated.
+	*/
 	public static CoreDocument processCoref(String pathToFile) throws IOException{
 		//transforming the file to a String
 		FileInputStream is = new FileInputStream(pathToFile);     
@@ -187,6 +241,12 @@ public class ImpUtils {
 		return document;
 	}
 
+	/**
+	 * Build and process an english OpenIE with co reference pipeline from StanfordCoreNLP.
+	 * 
+	 * @param pathToFile the path to the english text file to process.
+	 * @return the CoreDocument associated.
+	*/
 	public static CoreDocument processOpenIE(String pathToFile) throws IOException{
 		//transforming the file to a String
 		FileInputStream is = new FileInputStream(pathToFile);     
@@ -205,24 +265,21 @@ public class ImpUtils {
 		
 		ImpUtils.setDocument(document);
 
-		//System.out.println(document.corefChains().values());
-		
 		return document;
 	}
 
+	/**
+	 * rounding double function. if value = 3.33333 and places = 2 return = 3.34
+	 * 
+	 * @param value the value to round
+	 * @param places the number of figures after the dot/comma
+	 * @return the same double but rounded up.
+	*/
 	public static double round(double value, int places) {
 		if (places < 0) throw new IllegalArgumentException();
 	
 		BigDecimal bd = BigDecimal.valueOf(value);
 		bd = bd.setScale(places, RoundingMode.HALF_UP);
 		return bd.doubleValue();
-	}
-
-	public static boolean equals(CustomTriple ct1, CustomTriple ct2){
-		
-		if(ct1.getSubject()==ct2.getSubject() && ct1.getVerb()==ct2.getVerb() && (ct1.getObject()==ct2.getObject() || ct2.getObject()==null || ct1.getObject()==null)){
-			return true;
-		}
-		return false;
 	}
 }

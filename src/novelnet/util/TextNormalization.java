@@ -10,7 +10,6 @@ public class TextNormalization {
     
     /**
      * Class Constructor
-
 	*/
     private TextNormalization(){
     }
@@ -21,8 +20,12 @@ public class TextNormalization {
     public static String addDotEndOfLine(String originalText){
         StringBuilder text = new StringBuilder(originalText);
         for(int i = 0; i < text.length()-1; i++){
-            // if the current char is EOL AND we are not in the 2 first char AND the previous char IS NOT EOL OR a dot OR some type of closing quotation mark
-            if (text.charAt(i) == '\n' && i >1 && !(text.charAt(i-1) == '\n' || text.charAt(i-1) == '.' || text.charAt(i-1) == '?' || text.charAt(i-1) == '!' || text.charAt(i-1) == '»' || text.charAt(i-1) == '”'|| text.charAt(i-1) == '"')){
+            // if the current char is EOL AND we are not in the 2 first char AND the previous char IS NOT EOL OR a dot OR some type
+            // of closing quotation mark
+            if (text.charAt(i) == '\n' && i >1 && !(text.charAt(i-1) == '\n' || text.charAt(i-1) == '.' ||
+                text.charAt(i-1) == '?' || text.charAt(i-1) == '!' || text.charAt(i-1) == '»' || text.charAt(i-1) == '”'||
+                text.charAt(i-1) == '"'))
+            {
                 System.out.println(text.charAt(i-1));
                 text.insert(i,'.'); //we add a dot to the end of the previous line
             }

@@ -98,7 +98,7 @@ public class CompareTriplets {
 		for (CustomTriple triplet : triplesToEvaluate.getTriples()){
 			found = false;
 			for (CustomTriple tripletToCompare : reference.getTriples()){
-				if(triplet.equalTo(tripletToCompare)){
+				if(triplet.compareRefToEval(tripletToCompare)){
 					//True Positive
 					perfTable.add("eval", triplet, "TP");
 					found = true;
@@ -117,7 +117,7 @@ public class CompareTriplets {
 		for (CustomTriple triplet : reference.getTriples()){
 			found = false;
 			for (CustomTriple tripletToCompare : triplesToEvaluate.getTriples()){
-				if(triplet.equalTo(tripletToCompare)){
+				if(triplet.compareRefToEval(tripletToCompare)){
 					//not a False negative
 					found = true;
 					break;
