@@ -22,10 +22,9 @@ public class TextNormalization {
         for(int i = 0; i < text.length()-1; i++){
             // if the current char is EOL AND we are not in the 2 first char AND the previous char IS NOT EOL OR a dot OR some type
             // of closing quotation mark
-            if (text.charAt(i) == '\n' && i >2 && !(text.charAt(i-2) == '\n' || text.charAt(i-2) == '.' ||
+            if (text.charAt(i) == '\n' && i >2 && !((int)text.charAt(i-2) == 10 || (int)text.charAt(i-2) == 13 || text.charAt(i-2) == ' ' || text.charAt(i-2) == '.' ||
                 text.charAt(i-2) == '?' || text.charAt(i-2) == '!' || text.charAt(i-2) == '"' || text.charAt(i-2) == ':'))
             {
-                System.out.println(text.charAt(i-2));
                 text.insert(i,'.'); //we add a dot to the end of the previous line
             }
         }
