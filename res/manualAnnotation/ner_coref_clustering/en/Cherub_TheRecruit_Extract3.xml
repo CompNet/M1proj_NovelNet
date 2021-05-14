@@ -36,8 +36,8 @@
     <mention>
         <text>her</text>
         <sentence>2</sentence>
-        <start>4</start>
-        <end>4</end>
+        <start>3</start>
+        <end>3</end>
         <originalName>Amy</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>1</ClusterID>
@@ -145,7 +145,7 @@
 
     <mention>
         <text>You</text>
-        <sentence>8</sentence>
+        <sentence>7</sentence>
         <start>2</start>
         <end>2</end>
         <originalName>Ross</originalName>
@@ -156,7 +156,7 @@
 
     <mention>
         <text>stupid</text>
-        <sentence>8</sentence>
+        <sentence>7</sentence>
         <start>5</start>
         <end>5</end>
         <originalName>Ross</originalName>
@@ -167,7 +167,7 @@
 
     <mention>
         <text>Amy</text>
-        <sentence>8</sentence>
+        <sentence>7</sentence>
         <start>8</start>
         <end>8</end>
         <originalName>Amy</originalName>
@@ -178,7 +178,7 @@
 
     <mention>
         <text>James</text>
-        <sentence>9</sentence>
+        <sentence>8</sentence>
         <start>5</start>
         <end>5</end>
         <originalName>James</originalName>
@@ -189,7 +189,7 @@
 
     <mention>
         <text>he</text>
-        <sentence>9</sentence>
+        <sentence>8</sentence>
         <start>10</start>
         <end>10</end>
         <originalName>James</originalName>
@@ -200,7 +200,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>10</sentence>
+        <sentence>9</sentence>
         <start>2</start>
         <end>2</end>
         <originalName>James</originalName>
@@ -211,7 +211,7 @@
 
     <mention>
         <text>Amy</text>
-        <sentence>12</sentence>
+        <sentence>10</sentence>
         <start>11</start>
         <end>11</end>
         <originalName>Amy</originalName>
@@ -222,9 +222,9 @@
 
     <mention>
         <text>James</text>
-        <sentence>17</sentence>
-        <start>1</start>
-        <end>1</end>
+        <sentence>14</sentence>
+        <start>2</start>
+        <end>2</end>
         <originalName>James</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>2</ClusterID>
@@ -233,9 +233,9 @@
 
     <mention>
         <text>you</text>
-        <sentence>20</sentence>
-        <start>4</start>
-        <end>4</end>
+        <sentence>16</sentence>
+        <start>5</start>
+        <end>5</end>
         <originalName>James</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>2</ClusterID>
@@ -244,7 +244,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>20</sentence>
+        <sentence>16</sentence>
         <start>6</start>
         <end>6</end>
         <originalName>Amy</originalName>
@@ -255,7 +255,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>21</sentence>
+        <sentence>17</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>Amy</originalName>
@@ -266,7 +266,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>21</sentence>
+        <sentence>17</sentence>
         <start>9</start>
         <end>9</end>
         <originalName>Amy</originalName>
@@ -277,9 +277,9 @@
 
     <mention>
         <text>Cathy</text>
-        <sentence>23</sentence>
-        <start>1</start>
-        <end>1</end>
+        <sentence>18</sentence>
+        <start>2</start>
+        <end>2</end>
         <originalName>Cathy</originalName>
         <CorefChain>13</CorefChain>
         <ClusterID>3</ClusterID>
@@ -288,9 +288,9 @@
 
     <mention>
         <text>him</text>
-        <sentence>23</sentence>
-        <start>3</start>
-        <end>3</end>
+        <sentence>18</sentence>
+        <start>4</start>
+        <end>4</end>
         <originalName>James</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>2</ClusterID>
@@ -299,7 +299,7 @@
 
     <mention>
         <text>you</text>
-        <sentence>26</sentence>
+        <sentence>21</sentence>
         <start>2</start>
         <end>2</end>
         <originalName>Reader</originalName>
@@ -310,7 +310,7 @@
 
     <mention>
         <text>you</text>
-        <sentence>26</sentence>
+        <sentence>21</sentence>
         <start>6</start>
         <end>6</end>
         <originalName>Reader</originalName>
@@ -321,7 +321,7 @@
 
     <mention>
         <text>James</text>
-        <sentence>27</sentence>
+        <sentence>22</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>James</originalName>
@@ -332,7 +332,7 @@
 
     <mention>
         <text>James</text>
-        <sentence>31</sentence>
+        <sentence>26</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>James</originalName>
@@ -343,7 +343,7 @@
 
     <mention>
         <text>his</text>
-        <sentence>31</sentence>
+        <sentence>26</sentence>
         <start>5</start>
         <end>5</end>
         <originalName>James</originalName>
@@ -354,7 +354,7 @@
 
     <mention>
         <text>James</text>
-        <sentence>33</sentence>
+        <sentence>28</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>James</originalName>
@@ -365,7 +365,7 @@
 
     <mention>
         <text>He</text>
-        <sentence>34</sentence>
+        <sentence>29</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>James</originalName>
@@ -376,7 +376,7 @@
 
     <mention>
         <text>Cathy</text>
-        <sentence>34</sentence>
+        <sentence>29</sentence>
         <start>5</start>
         <end>5</end>
         <originalName>Cathy</originalName>
@@ -387,7 +387,7 @@
 
     <mention>
         <text>Cathy</text>
-        <sentence>35</sentence>
+        <sentence>30</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>Cathy</originalName>
@@ -398,7 +398,7 @@
 
     <mention>
         <text>Cathy</text>
-        <sentence>38</sentence>
+        <sentence>33</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>Cathy</originalName>
@@ -409,7 +409,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>39</sentence>
+        <sentence>34</sentence>
         <start>5</start>
         <end>5</end>
         <originalName>Cathy</originalName>
@@ -420,7 +420,7 @@
 
     <mention>
         <text>James</text>
-        <sentence>41</sentence>
+        <sentence>35</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>James</originalName>
@@ -431,7 +431,7 @@
 
     <mention>
         <text>He</text>
-        <sentence>42</sentence>
+        <sentence>36</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>James</originalName>
@@ -442,7 +442,7 @@
 
     <mention>
         <text>his</text>
-        <sentence>42</sentence>
+        <sentence>36</sentence>
         <start>22</start>
         <end>22</end>
         <originalName>James</originalName>
@@ -453,7 +453,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>43</sentence>
+        <sentence>37</sentence>
         <start>2</start>
         <end>2</end>
         <originalName>Cathy</originalName>
@@ -464,7 +464,7 @@
 
     <mention>
         <text>Ross</text>
-        <sentence>43</sentence>
+        <sentence>37</sentence>
         <start>8</start>
         <end>8</end>
         <originalName>Ross</originalName>
@@ -475,7 +475,7 @@
 
     <mention>
         <text>Cathy</text>
-        <sentence>43</sentence>
+        <sentence>37</sentence>
         <start>13</start>
         <end>13</end>
         <originalName>Cathy</originalName>
@@ -486,7 +486,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>44</sentence>
+        <sentence>38</sentence>
         <start>3</start>
         <end>3</end>
         <originalName>Cathy</originalName>
@@ -497,9 +497,9 @@
 
     <mention>
         <text>James</text>
-        <sentence>47</sentence>
-        <start>6</start>
-        <end>6</end>
+        <sentence>40</sentence>
+        <start>7</start>
+        <end>7</end>
         <originalName>James</originalName>
         <CorefChain>23</CorefChain>
         <ClusterID>2</ClusterID>
@@ -508,9 +508,9 @@
 
     <mention>
         <text>Courtney</text>
-        <sentence>48</sentence>
-        <start>5</start>
-        <end>5</end>
+        <sentence>41</sentence>
+        <start>4</start>
+        <end>4</end>
         <originalName>Courtney</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>5</ClusterID>
@@ -519,9 +519,9 @@
 
     <mention>
         <text>you</text>
-        <sentence>50</sentence>
-        <start>3</start>
-        <end>3</end>
+        <sentence>42</sentence>
+        <start>4</start>
+        <end>4</end>
         <originalName>James</originalName>
         <CorefChain>23</CorefChain>
         <ClusterID>2</ClusterID>
@@ -530,9 +530,9 @@
 
     <mention>
         <text>I</text>
-        <sentence>50</sentence>
-        <start>7</start>
-        <end>7</end>
+        <sentence>42</sentence>
+        <start>8</start>
+        <end>8</end>
         <originalName>Amy</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>1</ClusterID>
@@ -541,9 +541,9 @@
 
     <mention>
         <text>Scargill</text>
-        <sentence>50</sentence>
-        <start>11</start>
-        <end>11</end>
+        <sentence>42</sentence>
+        <start>12</start>
+        <end>12</end>
         <originalName>Scargill</originalName>
         <CorefChain>25</CorefChain>
         <ClusterID>6</ClusterID>
@@ -552,9 +552,9 @@
 
     <mention>
         <text>Amy</text>
-        <sentence>50</sentence>
-        <start>14</start>
-        <end>14</end>
+        <sentence>42</sentence>
+        <start>15</start>
+        <end>15</end>
         <originalName>Amy</originalName>
         <CorefChain>26</CorefChain>
         <ClusterID>1</ClusterID>
@@ -563,7 +563,7 @@
 
     <mention>
         <text>He</text>
-        <sentence>51</sentence>
+        <sentence>42</sentence>
         <start>2</start>
         <end>2</end>
         <originalName>Scargill</originalName>
@@ -574,7 +574,7 @@
 
     <mention>
         <text>he</text>
-        <sentence>51</sentence>
+        <sentence>42</sentence>
         <start>4</start>
         <end>4</end>
         <originalName>Scargill</originalName>
@@ -585,7 +585,7 @@
 
     <mention>
         <text>me</text>
-        <sentence>51</sentence>
+        <sentence>42</sentence>
         <start>9</start>
         <end>9</end>
         <originalName>Amy</originalName>
@@ -596,9 +596,9 @@
 
     <mention>
         <text>James</text>
-        <sentence>53</sentence>
-        <start>1</start>
-        <end>1</end>
+        <sentence>44</sentence>
+        <start>2</start>
+        <end>2</end>
         <originalName>James</originalName>
         <CorefChain>27</CorefChain>
         <ClusterID>2</ClusterID>
@@ -607,9 +607,9 @@
 
     <mention>
         <text>Amy</text>
-        <sentence>53</sentence>
-        <start>4</start>
-        <end>4</end>
+        <sentence>44</sentence>
+        <start>5</start>
+        <end>5</end>
         <originalName>Amy</originalName>
         <CorefChain>28</CorefChain>
         <ClusterID>1</ClusterID>
@@ -618,9 +618,9 @@
 
     <mention>
         <text>Scargill</text>
-        <sentence>53</sentence>
-        <start>12</start>
-        <end>12</end>
+        <sentence>44</sentence>
+        <start>13</start>
+        <end>13</end>
         <originalName>Scargill</originalName>
         <CorefChain>29</CorefChain>
         <ClusterID>6</ClusterID>
@@ -629,7 +629,7 @@
 
     <mention>
         <text>He</text>
-        <sentence>54</sentence>
+        <sentence>45</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>James</originalName>
@@ -640,7 +640,7 @@
 
     <mention>
         <text>she</text>
-        <sentence>54</sentence>
+        <sentence>45</sentence>
         <start>6</start>
         <end>6</end>
         <originalName>Amy</originalName>
@@ -651,9 +651,9 @@
 
     <mention>
         <text>I</text>
-        <sentence>55</sentence>
-        <start>1</start>
-        <end>1</end>
+        <sentence>46</sentence>
+        <start>2</start>
+        <end>2</end>
         <originalName>Cathy</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>3</ClusterID>
@@ -662,7 +662,7 @@
 
     <mention>
         <text>you</text>
-        <sentence>55</sentence>
+        <sentence>46</sentence>
         <start>4</start>
         <end>4</end>
         <originalName>James</originalName>
@@ -673,7 +673,7 @@
 
     <mention>
         <text>Ross</text>
-        <sentence>55</sentence>
+        <sentence>46</sentence>
         <start>11</start>
         <end>11</end>
         <originalName>Ross</originalName>
@@ -684,7 +684,7 @@
 
     <mention>
         <text>Cathy</text>
-        <sentence>55</sentence>
+        <sentence>46</sentence>
         <start>14</start>
         <end>14</end>
         <originalName>Cathy</originalName>
