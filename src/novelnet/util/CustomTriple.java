@@ -151,10 +151,10 @@ public class CustomTriple {
 
         else {
             if (getSubject() != null){
-                result += getSubject().getRepresentativeName() + " - ";
+                result += getSubject().getBestName() + " - ";
             }
             result += getVerb().originalText();
-            if (getObject() != null) result += " - " + getObject().getRepresentativeName();
+            if (getObject() != null) result += " - " + getObject().getBestName();
         }
 
         return result;
@@ -180,13 +180,13 @@ public class CustomTriple {
 
         else {
             if (getSubject() != null){
-                result += "subject='" + getSubject().getRepresentativeName() + "'";
+                result += "subject='" + getSubject().getBestName() + "'";
             }
     
             if (getTriple() == null){
                 result += " verb='" + getVerb().originalText() + "'";
             }
-            if (getObject() != null) result += ", object='" + getObject().getRepresentativeName() + "'";
+            if (getObject() != null) result += ", object='" + getObject().getBestName() + "'";
         }
 
         result += "}";
@@ -205,7 +205,6 @@ public class CustomTriple {
      * used to compare ref to eval.
     */
     public Boolean compareRefToEval(CustomTriple tripletToCompare) {
-        //TODO try to simplify that kraken
         if (getTriple() == null){   //if this triple is from reference
             if (tripletToCompare.getObject() == null){
                 if (getObject() == null){

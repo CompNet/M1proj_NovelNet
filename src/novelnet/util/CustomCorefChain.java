@@ -24,7 +24,7 @@ public class CustomCorefChain implements Cloneable{
     /**
      * the best name for the mentions in the chain
     */
-    String representativeName;
+    String bestName;
     /**
      * id of the chain
     */
@@ -39,7 +39,7 @@ public class CustomCorefChain implements Cloneable{
     */
     public CustomCorefChain(){
         cEMList = new LinkedList<>();
-        representativeName = "";
+        bestName = "";
         id = 0;
         clusterID = 0;
     }
@@ -52,9 +52,9 @@ public class CustomCorefChain implements Cloneable{
     public CustomCorefChain(CorefChain cc){
         cEMList = new LinkedList<>();
         try {
-            representativeName = cc.getRepresentativeMention().mentionSpan;
+            bestName = cc.getRepresentativeMention().mentionSpan;
             for (CorefMention cm : cc.getMentionsInTextualOrder()){
-                cEMList.add(new CustomEntityMention(cm, representativeName));
+                cEMList.add(new CustomEntityMention(cm, bestName));
             }
         }
         catch(Exception e){System.out.println(e.getMessage());}
@@ -69,7 +69,7 @@ public class CustomCorefChain implements Cloneable{
     */
     public CustomCorefChain(CoreEntityMention cem){
         cEMList = new LinkedList<>();
-        representativeName = cem.text();
+        bestName = cem.text();
         CustomEntityMention temp = new CustomEntityMention(cem);
         cEMList.add(temp);
         id = 0;
@@ -83,14 +83,14 @@ public class CustomCorefChain implements Cloneable{
     */
     public CustomCorefChain(CustomEntityMention ce) {
         cEMList = new LinkedList<>();
-        representativeName = ce.text();
+        bestName = ce.text();
         cEMList.add(ce);
         id = 0;
         clusterID = 0;
     }
 
-    public String getRepresentativeName() {
-        return representativeName;
+    public String getBestName() {
+        return bestName;
     }
 
     public List<CustomEntityMention> getCEMList() {
@@ -117,11 +117,11 @@ public class CustomCorefChain implements Cloneable{
         this.id = id;
     }
 
-	public void setRepresentativeName(String representativeName) {
+	public void setBestName(String bestName) {
         for (CustomEntityMention cem : cEMList){
-            cem.setBestName(representativeName);
+            cem.setBestName(bestName);
         }
-        this.representativeName = representativeName;
+        this.bestName = bestName;
 	}
 
     /**
@@ -149,7 +149,7 @@ public class CustomCorefChain implements Cloneable{
     public double corefPrecision(CorefChainContainer reference){
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
-            tot += ce.precision(reference, this);
+            tot += ce.corefPrecision(reference, this);
         }
 
         return tot;
@@ -161,7 +161,7 @@ public class CustomCorefChain implements Cloneable{
     public double corefRecall(CorefChainContainer reference) {
         double tot = 0;
         for (CustomEntityMention ce : cEMList){
-            tot += ce.recall(reference, this);
+            tot += ce.corefRecall(reference, this);
         }
 
         return tot;
@@ -178,8 +178,8 @@ public class CustomCorefChain implements Cloneable{
         if (!cemNames.equals("")){
             result+= "cEMList='" + cemNames + "', ";
         }
-        if (!representativeName.equals("")){
-            result+= "representativeName='" + getRepresentativeName() + "', ";
+        if (!bestName.equals("")){
+            result+= "bestName='" + getBestName() + "', ";
         }
         if (getId() != 0) result += "chainID='" + getId() + "'";
         if (getClusterID() != 0) result += "clusterID='" + getClusterID() + "'";

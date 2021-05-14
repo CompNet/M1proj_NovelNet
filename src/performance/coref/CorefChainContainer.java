@@ -116,7 +116,7 @@ public class CorefChainContainer{
                     );
                     ccc.setClusterID(Integer.parseInt(node.getChildText("ClusterID")));
                     ccc.setId(Integer.parseInt(node.getChildText("CorefChain")));
-                    ccc.setRepresentativeName(node.getChildText("originalName"));
+                    ccc.setBestName(node.getChildText("originalName"));
                     
                     temp.putIfAbsent( Integer.parseInt(node.getChildText("CorefChain")), ccc);
                 }
@@ -185,7 +185,7 @@ public class CorefChainContainer{
                     ccc = new CustomCorefChain(tmp);
                     ccc.setClusterID(Integer.parseInt(node.getChildText("ClusterID")));
                     ccc.setId(Integer.parseInt(node.getChildText("CorefChain")));
-                    ccc.setRepresentativeName(node.getChildText("originalName"));
+                    ccc.setBestName(node.getChildText("originalName"));
                     
                     temp.putIfAbsent( Integer.parseInt(node.getChildText("CorefChain")), ccc);
                 }
@@ -307,7 +307,7 @@ public class CorefChainContainer{
     public void display(){
         for (CustomCorefChain ccc : corefChains){
             boolean begin = true;
-            System.out.print("{  Id : " + ccc.getId() + ",\t Cluster : " + ccc.getClusterID() + ",\t name : " + ccc.getRepresentativeName() + ",\t Entities : [ ");
+            System.out.print("{  Id : " + ccc.getId() + ",\t Cluster : " + ccc.getClusterID() + ",\t name : " + ccc.getBestName() + ",\t Entities : [ ");
             for (CustomEntityMention ce : ccc.getCEMList()){
                 if (begin) {
                     System.out.print(ce.text());
@@ -327,7 +327,7 @@ public class CorefChainContainer{
             tempccc = new CustomCorefChain();
             tempccc.setClusterID(ccc.getClusterID());
             tempccc.setId(ccc.getId());
-            tempccc.setRepresentativeName(ccc.getRepresentativeName());
+            tempccc.setBestName(ccc.getBestName());
             o.corefChains.add(tempccc);
             for (CustomEntityMention cem : ccc.getCEMList()){
                 tempccc.getCEMList().add(new CustomEntityMention(cem));

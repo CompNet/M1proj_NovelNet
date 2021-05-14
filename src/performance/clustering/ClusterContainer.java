@@ -13,10 +13,10 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import novelnet.pipeline.CorefChainFuser;
+import novelnet.pipeline.TextNormalization;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
-import novelnet.util.TextNormalization;
 import performance.coref.CorefChainContainer;
 
 /**
@@ -114,14 +114,14 @@ public class ClusterContainer extends CorefChainContainer {
     @Override
     public void display(){
         for (CustomCorefChain ccc : getCorefChains()){
-            System.out.println("{ Id : " + ccc.getId() + ",\tCluster : " + ccc.getClusterID() + ",\tname : " + ccc.getRepresentativeName() + " }");
+            System.out.println("{ Id : " + ccc.getId() + ",\tCluster : " + ccc.getClusterID() + ",\tname : " + ccc.getBestName() + " }");
         }
     }
 
     public void displayByCluster(){
         getCorefChains().sort(Comparator.comparing(CustomCorefChain::getClusterID).thenComparing(Comparator.comparing(CustomCorefChain::getId)));
         for (CustomCorefChain ccc : getCorefChains()){
-            System.out.println("{ Cluster : " + ccc.getClusterID() + ",\t Id : " + ccc.getId() + ",\tname : " + ccc.getRepresentativeName() + " }");
+            System.out.println("{ Cluster : " + ccc.getClusterID() + ",\t Id : " + ccc.getId() + ",\tname : " + ccc.getBestName() + " }");
         }
         getCorefChains().sort(Comparator.comparing(CustomCorefChain::getId));
     }

@@ -211,7 +211,7 @@ public class CustomEntityMention {
     /**
      * used by CustomCorefChain.precision().
     */
-    public double precision(CorefChainContainer reference, CustomCorefChain originChain) {
+    public double corefPrecision(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
 		for (CustomCorefChain cccRef : reference.getCorefChains()){
 			if (cccRef.getCEMList().contains(this)){
@@ -231,7 +231,7 @@ public class CustomEntityMention {
     /**
      * used by CustomCorefChain.recall().
     */
-    public double recall(CorefChainContainer reference, CustomCorefChain originChain) {
+    public double corefRecall(CorefChainContainer reference, CustomCorefChain originChain) {
 		double result = 0;
 		for (CustomCorefChain cccRef : reference.getCorefChains()){
 			if (cccRef.getCEMList().contains(this)){

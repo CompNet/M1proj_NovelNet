@@ -18,6 +18,7 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreEntityMention;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import novelnet.pipeline.TextNormalization;
 
 /**
  * @author Baptiste Quay

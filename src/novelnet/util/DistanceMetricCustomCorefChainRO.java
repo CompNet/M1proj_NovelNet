@@ -22,7 +22,7 @@ public class DistanceMetricCustomCorefChainRO implements DistanceMetric<CustomCo
     @Override
     public double calculateDistance(CustomCorefChain arg0, CustomCorefChain arg1) throws DBSCANClusteringException {
         RatcliffObershelp ro = new RatcliffObershelp();
-        return ro.distance(arg0.getRepresentativeName().toLowerCase(), arg1.getRepresentativeName().toLowerCase());
+        return ro.distance(arg0.getBestName().toLowerCase(), arg1.getBestName().toLowerCase());
     }
     
 }

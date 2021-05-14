@@ -159,12 +159,12 @@ public class DirectInteractionTableCreator {
                 //linking each subject of the interaction.
                 for (int j = 0; j < ci.getSubjects().size(); j++){
                     if (i!=j){
-                        it.add(ci.getSubjects().get(i).getRepresentativeName(), ci.getSubjects().get(j).getRepresentativeName(), ci.getSentenceIndex());
+                        it.add(ci.getSubjects().get(i).getBestName(), ci.getSubjects().get(j).getBestName(), ci.getSentenceIndex());
                     }
                 }
                 //linking each subject with each object of the intereaction.
                 for (int j = 0; j < ci.getObjects().size(); j++){
-                    it.add(ci.getSubjects().get(i).getRepresentativeName(), ci.getObjects().get(j).getRepresentativeName(), ci.getSentenceIndex());
+                    it.add(ci.getSubjects().get(i).getBestName(), ci.getObjects().get(j).getBestName(), ci.getSentenceIndex());
                 }
             }
         }

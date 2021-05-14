@@ -14,8 +14,6 @@ import novelnet.util.CustomCorefChain;
 import novelnet.util.CustomEntityMention;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
-import novelnet.util.TextNormalization;
-
 import novelnet.book.Book;
 import novelnet.table.CooccurrenceTable;
 import novelnet.table.CooccurrenceTableParagraph;

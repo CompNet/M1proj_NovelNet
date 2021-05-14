@@ -11,9 +11,8 @@ import org.apache.commons.io.IOUtils;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-
+import novelnet.pipeline.TextNormalization;
 import novelnet.util.ImpUtils;
-import novelnet.util.TextNormalization;
 
 /**
  * a tool to manually annotate texts with StanfordCoreNLP tokenization and sentence splitting

@@ -20,7 +20,6 @@ import novelnet.table.InteractionTable;
 import novelnet.util.CustomCorefChain;
 import novelnet.util.ImpUtils;
 import novelnet.util.NullDocumentException;
-import novelnet.util.TextNormalization;
 import performance.clustering.ClusterContainer;
 
 /**
