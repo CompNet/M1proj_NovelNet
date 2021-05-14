@@ -18,10 +18,6 @@ import performance.coref.CorefChainContainer;
 public class CustomEntityMention {
 
     /**
-     * the corefChain containing the entity mention
-    */
-    CustomCorefChain corefChain;
-    /**
      * the tokens composing the entity
     */
     List<CoreLabel> tokens;
@@ -77,7 +73,6 @@ public class CustomEntityMention {
         window = cem.window;
         bestName = cem.bestName;
         tokensIndexs = cem.tokensIndexs;
-        corefChain = cem.corefChain;
 	}
 
     /**
@@ -135,14 +130,6 @@ public class CustomEntityMention {
 
     public void setTokens(List<CoreLabel> tokens){
         this.tokens = tokens;
-    }
-
-    public CustomCorefChain getCorefChain(){
-        return corefChain;
-    }
-
-    public void setCorefChain(CustomCorefChain ccc){
-        corefChain = ccc;
     }
 
     public String getBestName(){

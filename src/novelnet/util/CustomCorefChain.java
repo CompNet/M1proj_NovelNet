@@ -71,7 +71,6 @@ public class CustomCorefChain implements Cloneable{
         cEMList = new LinkedList<>();
         representativeName = cem.text();
         CustomEntityMention temp = new CustomEntityMention(cem);
-        temp.setCorefChain(this);
         cEMList.add(temp);
         id = 0;
         clusterID = 0;
