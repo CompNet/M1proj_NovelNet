@@ -23,23 +23,12 @@
     </mention>
 
     <mention>
-        <text>the staff</text>
-        <sentence>4</sentence>
-        <start>17</start>
-        <end>18</end>
-        <originalName>the staff</originalName>
-        <CorefChain>2</CorefChain>
-        <ClusterID>27</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
         <text>students</text>
         <sentence>4</sentence>
         <start>20</start>
         <end>20</end>
         <originalName>students</originalName>
-        <CorefChain>3</CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -61,7 +50,7 @@
         <start>1</start>
         <end>2</end>
         <originalName>Ginny Weasley</originalName>
-        <CorefChain>4</CorefChain>
+        <CorefChain>2</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -72,29 +61,29 @@
         <start>16</start>
         <end>16</end>
         <originalName>Percy</originalName>
-        <CorefChain>5</CorefChain>
-        <ClusterID>26</ClusterID>
+        <CorefChain>3</CorefChain>
+        <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
-        <text>Her</text>
+        <text>her</text>
         <sentence>7</sentence>
         <start>6</start>
         <end>6</end>
         <originalName>Ginny Weasley</originalName>
-        <CorefChain>4</CorefChain>
+        <CorefChain>2</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
-        <text>Her</text>
+        <text>her</text>
         <sentence>7</sentence>
         <start>13</start>
         <end>13</end>
         <originalName>Ginny Weasley</originalName>
-        <CorefChain>4</CorefChain>
+        <CorefChain>2</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -105,8 +94,8 @@
         <start>29</start>
         <end>29</end>
         <originalName>Hagrid</originalName>
-        <CorefChain>6</CorefChain>
-        <ClusterID>28</ClusterID>
+        <CorefChain>4</CorefChain>
+        <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -116,8 +105,8 @@
         <start>1</start>
         <end>2</end>
         <originalName>Oliver Wood</originalName>
-        <CorefChain>7</CorefChain>
-        <ClusterID>29</ClusterID>
+        <CorefChain>5</CorefChain>
+        <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -127,8 +116,8 @@
         <start>19</start>
         <end>19</end>
         <originalName>Harry</originalName>
-        <CorefChain>8</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>6</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -138,8 +127,8 @@
         <start>38</start>
         <end>38</end>
         <originalName>Gryffindor</originalName>
-        <CorefChain>9</CorefChain>
-        <ClusterID>5</ClusterID>
+        <CorefChain>7</CorefChain>
+        <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -149,8 +138,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Fred</originalName>
-        <CorefChain>10</CorefChain>
-        <ClusterID>6</ClusterID>
+        <CorefChain>8</CorefChain>
+        <ClusterID>9</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -160,53 +149,9 @@
         <start>3</start>
         <end>3</end>
         <originalName>George</originalName>
-        <CorefChain>11</CorefChain>
-        <ClusterID>7</ClusterID>
+        <CorefChain>9</CorefChain>
+        <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>The Slytherin team</text>
-        <sentence>11</sentence>
-        <start>11</start>
-        <end>12</end>
-        <originalName>The Slytherin team</originalName>
-        <CorefChain>12</CorefChain>
-        <ClusterID>8</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>themselves</text>
-        <sentence>11</sentence>
-        <start>17</start>
-        <end>17</end>
-        <originalName>They</originalName>
-        <CorefChain>13</CorefChain>
-        <ClusterID>9</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>They</text>
-        <sentence>12</sentence>
-        <start>1</start>
-        <end>1</end>
-        <originalName>They</originalName>
-        <CorefChain>13</CorefChain>
-        <ClusterID>9</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>The Slytherin team</text>
-        <sentence>12</sentence>
-        <start>5</start>
-        <end>6</end>
-        <originalName>The Slytherin team</originalName>
-        <CorefChain>12</CorefChain>
-        <ClusterID>8</ClusterID>
-        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -215,8 +160,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry</originalName>
-        <CorefChain>15</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>10</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -226,8 +171,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry</originalName>
-        <CorefChain>15</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>10</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -237,7 +182,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>16</CorefChain>
+        <CorefChain>10</CorefChain>
         <ClusterID>10</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -248,8 +193,8 @@
         <start>18</start>
         <end>18</end>
         <originalName>Harry</originalName>
-        <CorefChain>15</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>10</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -259,8 +204,8 @@
         <start>1</start>
         <end>3</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>16</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>11</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -270,8 +215,8 @@
         <start>5</start>
         <end>9</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>16</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>11</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -281,8 +226,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Gryffindor</originalName>
-        <CorefChain>17</CorefChain>
-        <ClusterID>5</ClusterID>
+        <CorefChain>12</CorefChain>
+        <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -292,8 +237,8 @@
         <start>21</start>
         <end>21</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>16</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>11</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -303,8 +248,8 @@
         <start>29</start>
         <end>29</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain>18</CorefChain>
-        <ClusterID>11</ClusterID>
+        <CorefChain>12</CorefChain>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -314,8 +259,8 @@
         <start>43</start>
         <end>43</end>
         <originalName>Nick</originalName>
-        <CorefChain>19</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>13</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -325,8 +270,8 @@
         <start>47</start>
         <end>47</end>
         <originalName>Harry</originalName>
-        <CorefChain>20</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>14</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -336,8 +281,8 @@
         <start>8</start>
         <end>10</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>21</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>15</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -347,8 +292,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>21</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>15</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -358,8 +303,8 @@
         <start>9</start>
         <end>9</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>21</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>15</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -369,8 +314,8 @@
         <start>26</start>
         <end>26</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>21</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>15</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -380,8 +325,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>21</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>15</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -391,8 +336,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry</originalName>
-        <CorefChain>22</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>16</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -402,8 +347,8 @@
         <start>13</start>
         <end>13</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>21</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>15</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -413,8 +358,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry</originalName>
-        <CorefChain>22</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>16</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -423,9 +368,9 @@
         <sentence>18</sentence>
         <start>6</start>
         <end>7</end>
-        <originalName>Harry</originalName>
-        <CorefChain>23</CorefChain>
-        <ClusterID>4</ClusterID>
+        <originalName>young Potter</originalName>
+        <CorefChain>17</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -435,8 +380,8 @@
         <start>11</start>
         <end>11</end>
         <originalName>Nick</originalName>
-        <CorefChain>24</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>18</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -446,8 +391,8 @@
         <start>18</start>
         <end>18</end>
         <originalName>Nick</originalName>
-        <CorefChain>24</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>18</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -457,8 +402,8 @@
         <start>4</start>
         <end>4</end>
         <originalName>Nick</originalName>
-        <CorefChain>24</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>18</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -468,8 +413,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry</originalName>
-        <CorefChain>25</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>19</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -479,8 +424,8 @@
         <start>5</start>
         <end>7</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -490,8 +435,8 @@
         <start>25</start>
         <end>25</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -501,8 +446,8 @@
         <start>32</start>
         <end>32</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -512,8 +457,8 @@
         <start>38</start>
         <end>38</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -523,8 +468,8 @@
         <start>50</start>
         <end>50</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -534,8 +479,8 @@
         <start>62</start>
         <end>62</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -545,8 +490,8 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry</originalName>
-        <CorefChain>25</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>19</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -556,8 +501,8 @@
         <start>9</start>
         <end>9</end>
         <originalName>Harry</originalName>
-        <CorefChain>25</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>19</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -567,8 +512,8 @@
         <start>12</start>
         <end>12</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -578,30 +523,30 @@
         <start>22</start>
         <end>22</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>you</text>
         <sentence>21</sentence>
-        <start>40</start>
-        <end>40</end>
+        <start>42</start>
+        <end>42</end>
         <originalName>Harry</originalName>
-        <CorefChain>25</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>19</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>the Headless Hunt</text>
         <sentence>21</sentence>
-        <start>43</start>
-        <end>45</end>
+        <start>45</start>
+        <end>47</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain>18</CorefChain>
-        <ClusterID>11</ClusterID>
+        <CorefChain>21</CorefChain>
+        <ClusterID>12</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -611,8 +556,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry</originalName>
-        <CorefChain>14</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>22</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -622,8 +567,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -633,20 +578,31 @@
         <start>9</start>
         <end>9</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>26</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>my</text>
+        <sentence>23</sentence>
+        <start>21</start>
+        <end>21</end>
+        <originalName>Nearly Headless Nick</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
-        <text>Nick</text>
+        <text>I</text>
         <sentence>23</sentence>
         <start>28</start>
         <end>28</end>
-        <originalName>Nick</originalName>
-        <CorefChain>68</CorefChain>
-        <ClusterID>10</ClusterID>
-        <mentionType>explicit</mentionType>
+        <originalName>Nearly Headless Nick</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -654,9 +610,9 @@
         <sentence>23</sentence>
         <start>35</start>
         <end>35</end>
-        <originalName>Nick</originalName>
-        <CorefChain>68</CorefChain>
-        <ClusterID>10</ClusterID>
+        <originalName>Nearly Headless Nick</originalName>
+        <CorefChain>20</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -666,8 +622,8 @@
         <start>4</start>
         <end>6</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>69</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>23</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -677,40 +633,18 @@
         <start>8</start>
         <end>8</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>69</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>23</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>We</text>
         <sentence>24</sentence>
-        <start>17</start>
-        <end>17</end>
+        <start>16</start>
+        <end>16</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain>18</CorefChain>
-        <ClusterID>11</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>huntsmen</text>
-        <sentence>24</sentence>
-        <start>21</start>
-        <end>21</end>
-        <originalName>huntsmen</originalName>
-        <CorefChain>76</CorefChain>
-        <ClusterID>12</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>their</text>
-        <sentence>24</sentence>
-        <start>29</start>
-        <end>29</end>
-        <originalName>huntsmen</originalName>
-        <CorefChain>76</CorefChain>
+        <CorefChain>21</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -721,19 +655,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>69</CorefChain>
-        <ClusterID>10</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>members</text>
-        <sentence>25</sentence>
-        <start>11</start>
-        <end>11</end>
-        <originalName>huntsmen</originalName>
-        <CorefChain>76</CorefChain>
-        <ClusterID>12</ClusterID>
+        <CorefChain>23</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -743,8 +666,30 @@
         <start>11</start>
         <end>11</end>
         <originalName>Sir Patrick Delaney-Podmore</originalName>
-        <CorefChain>77</CorefChain>
+        <CorefChain>23</CorefChain>
         <ClusterID>13</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>you</text>
+        <sentence>25</sentence>
+        <start>14</start>
+        <end>14</end>
+        <originalName>Nearly Headless Nick</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>11</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+    
+    <mention>
+        <text>you</text>
+        <sentence>25</sentence>
+        <start>16</start>
+        <end>16<end>
+        <originalName>Nearly Headless Nick</originalName>
+        <CorefChain>23</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -754,8 +699,8 @@
         <start>20</start>
         <end>20</end>
         <originalName>the Headless Hunt</originalName>
-        <CorefChain>18</CorefChain>
-        <ClusterID>11</ClusterID>
+        <CorefChain>21</CorefChain>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -763,9 +708,9 @@
         <text>Sir Patrick Delaney-Podmore</text>
         <sentence>27</sentence>
         <start>6</start>
-        <end>8</end>
+        <end>10</end>
         <originalName>Sir Patrick Delaney-Podmore</originalName>
-        <CorefChain>77</CorefChain>
+        <CorefChain>24</CorefChain>
         <ClusterID>13</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -773,33 +718,33 @@
     <mention>
         <text>Nearly Headless Nick</text>
         <sentence>28</sentence>
-        <start>3</start>
-        <end>5</end>
+        <start>4</start>
+        <end>6</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>70</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>25</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
         <text>my</text>
         <sentence>29</sentence>
-        <start>8</start>
-        <end>8</end>
+        <start>9</start>
+        <end>9</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>70</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>25</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>Harry</text>
         <sentence>29</sentence>
-        <start>14</start>
-        <end>14</end>
+        <start>13</start>
+        <end>13</end>
         <originalName>Harry</originalName>
-        <CorefChain>27</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>26</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -807,9 +752,9 @@
         <text>Sir Properly Decapitated-Podmore</text>
         <sentence>30</sentence>
         <start>21</start>
-        <end>23</end>
+        <end>25</end>
         <originalName>Sir Properly Decapitated-Podmore</originalName>
-        <CorefChain>78</CorefChain>
+        <CorefChain>27</CorefChain>
         <ClusterID>13</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -817,22 +762,22 @@
     <mention>
         <text>Nearly Headless Nick</text>
         <sentence>31</sentence>
-        <start>1</start>
-        <end>3</end>
+        <start>2</start>
+        <end>4</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>71</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>28</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>you</text>
         <sentence>31</sentence>
-        <start>24</start>
-        <end>24</end>
+        <start>25</start>
+        <end>25</end>
         <originalName>Harry</originalName>
-        <CorefChain>27</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>26</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -842,40 +787,40 @@
         <start>2</start>
         <end>2</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>71</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>28</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>33</sentence>
-        <start>6</start>
-        <end>6</end>
+        <start>7</start>
+        <end>7</end>
         <originalName>Harry</originalName>
-        <CorefChain>28</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>29</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
         <text>you</text>
         <sentence>34</sentence>
-        <start>4</start>
-        <end>4</end>
+        <start>3</start>
+        <end>3</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>71</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>28</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>we</text>
         <sentence>34</sentence>
-        <start>7</start>
-        <end>7</end>
-        <originalName>we</originalName>
-        <CorefChain>80</CorefChain>
+        <start>6</start>
+        <end>6</end>
+        <originalName>Harry and Nick</originalName>
+        <CorefChain>29</CorefChain>
         <ClusterID>14</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -883,44 +828,33 @@
     <mention>
         <text>our</text>
         <sentence>34</sentence>
-        <start>18</start>
-        <end>18</end>
-        <originalName>we</originalName>
-        <CorefChain>80</CorefChain>
+        <start>17</start>
+        <end>17</end>
+        <originalName>Harry and Nick</originalName>
+        <CorefChain>29</CorefChain>
         <ClusterID>14</ClusterID>
         <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>Sly</text>
-        <sentence>34</sentence>
-        <start>21</start>
-        <end>21</end>
-        <originalName>The Slytherin team</originalName>
-        <CorefChain>12</CorefChain>
-        <ClusterID>8</ClusterID>
-        <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>34</sentence>
-        <start>27</start>
-        <end>27</end>
+        <start>26</start>
+        <end>26</end>
         <originalName>Harry</originalName>
-        <CorefChain>29</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>30</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>his</text>
         <sentence>34</sentence>
-        <start>40</start>
-        <end>40</end>
+        <start>41</start>
+        <end>41</end>
         <originalName>Harry</originalName>
-        <CorefChain>29</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>30</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -930,8 +864,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>29</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>30</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -941,8 +875,8 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry</originalName>
-        <CorefChain>29</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>30</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -952,7 +886,7 @@
         <start>3</start>
         <end>4</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain>81</CorefChain>
+        <CorefChain>31</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -963,18 +897,7 @@
         <start>6</start>
         <end>9</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain>81</CorefChain>
-        <ClusterID>15</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>who</text>
-        <sentence>36</sentence>
-        <start>10</start>
-        <end>10</end>
-        <originalName>Mrs. Norris</originalName>
-        <CorefChain>81</CorefChain>
+        <CorefChain>31</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -985,7 +908,7 @@
         <start>14</start>
         <end>15</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>84</CorefChain>
+        <CorefChain>31</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -996,7 +919,7 @@
         <start>17</start>
         <end>18</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>84</CorefChain>
+        <CorefChain>32</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1007,7 +930,7 @@
         <start>26</start>
         <end>26</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>84</CorefChain>
+        <CorefChain>32</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1018,7 +941,7 @@
         <start>30</start>
         <end>30</end>
         <originalName>students</originalName>
-        <CorefChain>3</CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1029,8 +952,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry</originalName>
-        <CorefChain>29</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>30</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1040,8 +963,8 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry</originalName>
-        <CorefChain>30</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>33</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1051,18 +974,18 @@
         <start>14</start>
         <end>14</end>
         <originalName>Nick</originalName>
-        <CorefChain>72</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>34</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>Filch</text>
         <sentence>38</sentence>
-        <start>1</start>
-        <end>1</end>
+        <start>2</start>
+        <end>2</end>
         <originalName>Filch</originalName>
-        <CorefChain>85</CorefChain>
+        <CorefChain>35</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1073,7 +996,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Filch</originalName>
-        <CorefChain>85</CorefChain>
+        <CorefChain>35</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1084,7 +1007,7 @@
         <start>17</start>
         <end>18</end>
         <originalName>students</originalName>
-        <CorefChain>3</CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1095,7 +1018,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>85</CorefChain>
+        <CorefChain>35</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1106,7 +1029,7 @@
         <start>10</start>
         <end>10</end>
         <originalName>Filch</originalName>
-        <CorefChain>85</CorefChain>
+        <CorefChain>35</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1117,8 +1040,8 @@
         <start>12</start>
         <end>12</end>
         <originalName>Harry</originalName>
-        <CorefChain>30</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>33</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1128,8 +1051,8 @@
         <start>26</start>
         <end>26</end>
         <originalName>Harry</originalName>
-        <CorefChain>31</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>33</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1139,7 +1062,7 @@
         <start>35</start>
         <end>36</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain>82</CorefChain>
+        <CorefChain>36</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1150,7 +1073,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Filch</originalName>
-        <CorefChain>85</CorefChain>
+        <CorefChain>35</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1161,18 +1084,18 @@
         <start>15</start>
         <end>15</end>
         <originalName>Filch</originalName>
-        <CorefChain>85</CorefChain>
+        <CorefChain>35</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
-        <text>foul cat</text>
+        <text>his foul cat</text>
         <sentence>40</sentence>
-        <start>16</start>
+        <start>15</start>
         <end>17</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain>82</CorefChain>
+        <CorefChain>36</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1183,7 +1106,7 @@
         <start>19</start>
         <end>20</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>37</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1194,8 +1117,8 @@
         <start>27</start>
         <end>27</end>
         <originalName>Harry</originalName>
-        <CorefChain>32</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>38</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1203,10 +1126,10 @@
         <text>rule-breaker</text>
         <sentence>40</sentence>
         <start>38</start>
-        <end>38</end>
+        <end>40</end>
         <originalName>Harry</originalName>
-        <CorefChain>32</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>38</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1216,7 +1139,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1227,7 +1150,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1238,7 +1161,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1249,7 +1172,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1260,7 +1183,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1271,8 +1194,8 @@
         <start>23</start>
         <end>23</end>
         <originalName>Harry</originalName>
-        <CorefChain>33</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>40</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1282,7 +1205,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1293,7 +1216,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>86</CorefChain>
+        <CorefChain>39</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1304,8 +1227,19 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry</originalName>
-        <CorefChain>33</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>40</CorefChain>
+        <ClusterID>7<ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>me</text>
+        <sentence>46</sentence>
+        <start>2</start>
+        <end>2</end>
+        <originalName>Argus Filch</originalName>
+        <CorefChain>39</CorefChain>
+        <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1315,8 +1249,41 @@
         <start>4</start>
         <end>4</end>
         <originalName>Potter</originalName>
-        <CorefChain>34</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>41</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>Harry</text>
+        <sentence>47</sentence>
+        <start>3</start>
+        <end>3</end>
+        <originalName>Harry</originalName>
+        <CorefChain>42</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>Nearly Headless Nick</text>
+        <sentence>47</sentence>
+        <start>11</start>
+        <end>13</end>
+        <originalName>Nearly Headless Nick</originalName>
+        <CorefChain>43</CorefChain>
+        <ClusterID>11</ClusterID>
+        <mentionType>explicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>Filch</text>
+        <sentence>47</sentence>
+        <start>16</start>
+        <end>16</end>
+        <originalName>Filch</originalName>
+        <CorefChain>44</CorefChain>
+        <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1326,8 +1293,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>35</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>45</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1337,7 +1304,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Filch</originalName>
-        <CorefChain>87</CorefChain>
+        <CorefChain>46</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1345,10 +1312,10 @@
     <mention>
         <text>most students</text>
         <sentence>48</sentence>
-        <start>16</start>
+        <start>15</start>
         <end>16</end>
         <originalName>students</originalName>
-        <CorefChain>3</CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1359,8 +1326,8 @@
         <start>13</start>
         <end>13</end>
         <originalName>Harry</originalName>
-        <CorefChain>36</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>47</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1370,7 +1337,7 @@
         <start>23</start>
         <end>23</end>
         <originalName>Filch</originalName>
-        <CorefChain>88</CorefChain>
+        <CorefChain>48</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1381,8 +1348,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Fred</originalName>
-        <CorefChain>110</CorefChain>
-        <ClusterID>6</ClusterID>
+        <CorefChain>49</CorefChain>
+        <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1392,8 +1359,8 @@
         <start>3</start>
         <end>4</end>
         <originalName>George Weasley</originalName>
-        <CorefChain>115</CorefChain>
-        <ClusterID>7</ClusterID>
+        <CorefChain>50</CorefChain>
+        <ClusterID>9</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1403,8 +1370,8 @@
         <start>1</start>
         <end>4</end>
         <originalName>Fred and George Weasley</originalName>
-        <CorefChain>116</CorefChain>
-        <ClusterID>30</ClusterID>
+        <CorefChain>50</CorefChain>
+        <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -1414,8 +1381,8 @@
         <start>10</start>
         <end>10</end>
         <originalName>Fred and George Weasley</originalName>
-        <CorefChain>116</CorefChain>
-        <ClusterID>30</ClusterID>
+        <CorefChain>50</CorefChain>
+        <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1425,7 +1392,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Filch</originalName>
-        <CorefChain>89</CorefChain>
+        <CorefChain>51</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1436,7 +1403,7 @@
         <start>6</start>
         <end>6</end>
         <originalName>Filch</originalName>
-        <CorefChain>89</CorefChain>
+        <CorefChain>51</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1447,9 +1414,20 @@
         <start>10</start>
         <end>10</end>
         <originalName>Dumbledore</originalName>
-        <CorefChain>117</CorefChain>
-        <ClusterID>31</ClusterID>
+        <CorefChain>52</CorefChain>
+        <ClusterID>18</ClusterID>
         <mentionType>explicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>him</text>
+        <sentence>54</sentence>
+        <start>13</start>
+        <end>13</end>
+        <originalName>Filch</originalName>
+        <CorefChain>51</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -1458,7 +1436,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>students</originalName>
-        <CorefChain>3</CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1469,7 +1447,7 @@
         <start>17</start>
         <end>17</end>
         <originalName>students</originalName>
-        <CorefChain>3</CorefChain>
+        <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1480,18 +1458,18 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>his</text>
-        <sentence>54</sentence>
+        <sentence>55</sentence>
         <start>9</start>
         <end>9</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1502,7 +1480,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1513,7 +1491,7 @@
         <start>21</start>
         <end>21</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1524,7 +1502,7 @@
         <start>40</start>
         <end>40</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1535,7 +1513,7 @@
         <start>48</start>
         <end>48</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1546,7 +1524,7 @@
         <start>58</start>
         <end>58</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1557,7 +1535,7 @@
         <start>61</start>
         <end>61</end>
         <originalName>Filch</originalName>
-        <CorefChain>90</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1568,51 +1546,51 @@
         <start>4</start>
         <end>5</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain>37</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>54</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>59</sentence>
-        <start>2</start>
-        <end>2</end>
+        <start>3</start>
+        <end>3</end>
         <originalName>Harry</originalName>
-        <CorefChain>38</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>55</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>you</text>
         <sentence>60</sentence>
-        <start>10</start>
-        <end>10</end>
+        <start>9</start>
+        <end>9</end>
         <originalName>Harry</originalName>
-        <CorefChain>38</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>55</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>boy</text>
         <sentence>60</sentence>
-        <start>12</start>
-        <end>12</end>
+        <start>11</start>
+        <end>11</end>
         <originalName>Harry</originalName>
-        <CorefChain>38</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>55</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>me</text>
         <sentence>60</sentence>
-        <start>16</start>
-        <end>16</end>
+        <start>15</start>
+        <end>15</end>
         <originalName>Filch</originalName>
-        <CorefChain>91</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1620,10 +1598,10 @@
     <mention>
         <text>Filch</text>
         <sentence>61</sentence>
-        <start>2</start>
-        <end>2</end>
+        <start>3</start>
+        <end>3</end>
         <originalName>Filch</originalName>
-        <CorefChain>91</CorefChain>
+        <CorefChain>56</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1631,10 +1609,10 @@
     <mention>
         <text>his</text>
         <sentence>61</sentence>
-        <start>12</start>
-        <end>12</end>
+        <start>13</start>
+        <end>13</end>
         <originalName>Filch</originalName>
-        <CorefChain>91</CorefChain>
+        <CorefChain>56</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1642,10 +1620,10 @@
     <mention>
         <text>his</text>
         <sentence>62</sentence>
-        <start>14</start>
-        <end>14</end>
+        <start>13</start>
+        <end>13</end>
         <originalName>Filch</originalName>
-        <CorefChain>91</CorefChain>
+        <CorefChain>56</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1653,10 +1631,10 @@
     <mention>
         <text>Filch</text>
         <sentence>62</sentence>
-        <start>18</start>
-        <end>18</end>
+        <start>17</start>
+        <end>17</end>
         <originalName>Filch</originalName>
-        <CorefChain>92</CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1664,22 +1642,22 @@
     <mention>
         <text>Harry</text>
         <sentence>62</sentence>
-        <start>22</start>
-        <end>22</end>
+        <start>21</start>
+        <end>21</end>
         <originalName>Harry</originalName>
-        <CorefChain>39</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>58</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>his</text>
         <sentence>62</sentence>
-        <start>29</start>
-        <end>29</end>
+        <start>28</start>
+        <end>28</end>
         <originalName>Harry</originalName>
-        <CorefChain>39</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>58</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1689,7 +1667,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Filch</originalName>
-        <CorefChain>93</CorefChain>
+        <CorefChain>59</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1700,7 +1678,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Filch</originalName>
-        <CorefChain>93</CorefChain>
+        <CorefChain>59</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1711,29 +1689,29 @@
         <start>2</start>
         <end>2</end>
         <originalName>Peeves</originalName>
-        <CorefChain>118</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>60</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>Filch</text>
-        <sentence>64</sentence>
+        <sentence>66</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>94</CorefChain>
+        <CorefChain>61</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>his</text>
-        <sentence>64</sentence>
-        <start>5</start>
-        <end>5</end>
+        <sentence>66</sentence>
+        <start>6</start>
+        <end>6</end>
         <originalName>Filch</originalName>
-        <CorefChain>94</CorefChain>
+        <CorefChain>61</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1744,7 +1722,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Filch</originalName>
-        <CorefChain>94</CorefChain>
+        <CorefChain>61</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1755,8 +1733,19 @@
         <start>5</start>
         <end>5</end>
         <originalName>Peeves</originalName>
-        <CorefChain>118</CorefChain>
+        <CorefChain>60</CorefChain>
         <ClusterID>17</ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>I</text>
+        <sentence>67</sentence>
+        <start>9</start>
+        <end>9</end>
+        <originalName>Filch</originalName>
+        <CorefChain>61</CorefChain>
+        <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -1766,7 +1755,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Peeves</originalName>
-        <CorefChain>118</CorefChain>
+        <CorefChain>60</CorefChain>
         <ClusterID>17</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1777,8 +1766,8 @@
         <start>7</start>
         <end>7</end>
         <originalName>Harry</originalName>
-        <CorefChain>40</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>62</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1788,7 +1777,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Filch</originalName>
-        <CorefChain>95</CorefChain>
+        <CorefChain>63</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1796,23 +1785,23 @@
     <mention>
         <text>Mrs. Norris</text>
         <sentence>68</sentence>
-        <start>16</start>
-        <end>17</end>
+        <start>18</start>
+        <end>19</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain>83</CorefChain>
+        <CorefChain>64</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
-        <text>Filch</text>
+        <text>him</text>
         <sentence>68</sentence>
-        <start>20</start>
-        <end>20</end>
+        <start>22</start>
+        <end>22</end>
         <originalName>Filch</originalName>
-        <CorefChain>96</CorefChain>
+        <CorefChain>63</CorefChain>
         <ClusterID>16</ClusterID>
-        <mentionType>explicit</mentionType>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -1821,8 +1810,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Peeves</originalName>
-        <CorefChain>119</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>65</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1832,8 +1821,8 @@
         <start>3</start>
         <end>5</end>
         <originalName>Peeves</originalName>
-        <CorefChain>119</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>65</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1843,8 +1832,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>41</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>66</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1854,8 +1843,8 @@
         <start>6</start>
         <end>6</end>
         <originalName>Peeves</originalName>
-        <CorefChain>120</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>67</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1865,8 +1854,8 @@
         <start>15</start>
         <end>15</end>
         <originalName>Peeves</originalName>
-        <CorefChain>120</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>67</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -1876,8 +1865,8 @@
         <start>4</start>
         <end>4</end>
         <originalName>Peeves</originalName>
-        <CorefChain>121</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>68</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -1887,8 +1876,8 @@
         <start>13</start>
         <end>13</end>
         <originalName>Peeves</originalName>
-        <CorefChain>121</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>68</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1898,7 +1887,7 @@
         <start>24</start>
         <end>24</end>
         <originalName>Filch</originalName>
-        <CorefChain>97</CorefChain>
+        <CorefChain>69</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1909,8 +1898,8 @@
         <start>26</start>
         <end>26</end>
         <originalName>Harry</originalName>
-        <CorefChain>42</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>70</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1920,8 +1909,8 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry</originalName>
-        <CorefChain>42</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>70</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -1931,7 +1920,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Filch</originalName>
-        <CorefChain>98</CorefChain>
+        <CorefChain>71</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1942,8 +1931,8 @@
         <start>13</start>
         <end>13</end>
         <originalName>Harry</originalName>
-        <CorefChain>43</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>72</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1953,8 +1942,8 @@
         <start>10</start>
         <end>10</end>
         <originalName>Harry</originalName>
-        <CorefChain>43</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>72</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
     
@@ -1964,7 +1953,7 @@
         <start>11</start>
         <end>11</end>
         <originalName>Filch</originalName>
-        <CorefChain>99</CorefChain>
+        <CorefChain>73</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>    
@@ -1975,7 +1964,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>Filch</originalName>
-        <CorefChain>99</CorefChain>
+        <CorefChain>73</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1986,8 +1975,8 @@
         <start>19</start>
         <end>19</end>
         <originalName>Harry</originalName>
-        <CorefChain>44</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>74</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -1997,8 +1986,8 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry</originalName>
-        <CorefChain>45</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>75</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2007,9 +1996,9 @@
         <sentence>77</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>yourself</originalName>
-        <CorefChain>124</CorefChain>
-        <ClusterID>18</ClusterID>
+        <originalName>Harry</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2018,9 +2007,9 @@
         <sentence>78</sentence>
         <start>5</start>
         <end>5</end>
-        <originalName>yourself</originalName>
-        <CorefChain>124</CorefChain>
-        <ClusterID>18</ClusterID>
+        <originalName>Harry</originalName>
+        <CorefChain>75</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2030,8 +2019,8 @@
         <start>1</start>
         <end>3</end>
         <originalName>Z. Nettles</originalName>
-        <CorefChain>125</CorefChain>
-        <ClusterID>19</ClusterID>
+        <CorefChain>76</CorefChain>
+        <ClusterID>20</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2041,85 +2030,85 @@
         <start>9</start>
         <end>9</end>
         <originalName>Z. Nettles</originalName>
-        <CorefChain>125</CorefChain>
-        <ClusterID>19</ClusterID>
+        <CorefChain>76</CorefChain>
+        <ClusterID>20</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>D. J. Prod</text>
         <sentence>84</sentence>
-        <start>2</start>
-        <end>4</end>
+        <start>3</start>
+        <end>5</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain>126</CorefChain>
-        <ClusterID>20</ClusterID>
+        <CorefChain>77</CorefChain>
+        <ClusterID>21</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
         <text>My</text>
         <sentence>84</sentence>
-        <start>10</start>
-        <end>10</end>
+        <start>11</start>
+        <end>11</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain>126</CorefChain>
-        <ClusterID>20</ClusterID>
+        <CorefChain>77</CorefChain>
+        <ClusterID>21</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>My wife</text>
         <sentence>84</sentence>
-        <start>10</start>
-        <end>11</end>
+        <start>11</start>
+        <end>12</end>
         <originalName>My wife</originalName>
-        <CorefChain>127</CorefChain>
-        <ClusterID>21</ClusterID>
+        <CorefChain>77</CorefChain>
+        <ClusterID>22</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>my</text>
         <sentence>84</sentence>
-        <start>16</start>
-        <end>16</end>
+        <start>17</start>
+        <end>17</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain>126</CorefChain>
-        <ClusterID>20</ClusterID>
+        <CorefChain>77</CorefChain>
+        <ClusterID>21</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>I</text>
         <sentence>84</sentence>
-        <start>29</start>
-        <end>29</end>
+        <start>30</start>
+        <end>30</end>
         <originalName>D. J. Prod</originalName>
-        <CorefChain>126</CorefChain>
-        <ClusterID>20</ClusterID>
+        <CorefChain>77</CorefChain>
+        <ClusterID>21</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>her</text>
         <sentence>84</sentence>
-        <start>33</start>
-        <end>33</end>
+        <start>34</start>
+        <end>34</end>
         <originalName>My wife</originalName>
-        <CorefChain>127</CorefChain>
-        <ClusterID>21</ClusterID>
+        <CorefChain>77</CorefChain>
+        <ClusterID>22</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>86</sentence>
-        <start>3</start>
-        <end>3</end>
+        <start>4</start>
+        <end>4</end>
         <originalName>Harry</originalName>
-        <CorefChain>46</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>78</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2129,7 +2118,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Filch</originalName>
-        <CorefChain>100</CorefChain>
+        <CorefChain>79</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2140,7 +2129,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Filch</originalName>
-        <CorefChain>100</CorefChain>
+        <CorefChain>79</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2151,8 +2140,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>47</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>80</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2162,7 +2151,7 @@
         <start>24</start>
         <end>24</end>
         <originalName>Filch</originalName>
-        <CorefChain>101</CorefChain>
+        <CorefChain>81</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2173,8 +2162,8 @@
         <start>9</start>
         <end>9</end>
         <originalName>Harry</originalName>
-        <CorefChain>48</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>82</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2184,7 +2173,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>102</CorefChain>
+        <CorefChain>83</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2195,7 +2184,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>102</CorefChain>
+        <CorefChain>83</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2206,7 +2195,7 @@
         <start>6</start>
         <end>7</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain>83</CorefChain>
+        <CorefChain>84</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2216,9 +2205,9 @@
         <sentence>94</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>We</originalName>
-        <CorefChain>128</CorefChain>
-        <ClusterID>32</ClusterID>
+        <originalName>Mrs. Norris and Filch</originalName>
+        <CorefChain>84</CorefChain>
+        <ClusterID>23</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2228,9 +2217,20 @@
         <start>5</start>
         <end>5</end>
         <originalName>Peeves</originalName>
-        <CorefChain>122</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>85</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>explicit</mentionType>
+    </mention>
+         
+    <mention>
+        <text>my</text>
+        <sentence>94</sentence>
+        <start>10</start>
+        <end>10</end>
+        <originalName>Argus Filch</originalName>
+        <CorefChain>83</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -2239,7 +2239,7 @@
         <start>10</start>
         <end>11</end>
         <originalName>Mrs. Norris</originalName>
-        <CorefChain>83</CorefChain>
+        <CorefChain>84</CorefChain>
         <ClusterID>15</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -2250,7 +2250,7 @@
         <start>14</start>
         <end>14</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>102</CorefChain>
+        <CorefChain>83</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2261,8 +2261,8 @@
         <start>18</start>
         <end>18</end>
         <originalName>Harry</originalName>
-        <CorefChain>49</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>86</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2272,8 +2272,8 @@
         <start>29</start>
         <end>29</end>
         <originalName>Harry</originalName>
-        <CorefChain>50</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>87</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2283,7 +2283,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>103</CorefChain>
+        <CorefChain>88</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2294,8 +2294,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>51</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>89</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2305,8 +2305,8 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry</originalName>
-        <CorefChain>51</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>89</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
     
@@ -2316,7 +2316,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>104</CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>    
@@ -2327,7 +2327,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Filch</originalName>
-        <CorefChain>104</CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2338,8 +2338,8 @@
         <start>3</start>
         <end>3</end>
         <originalName>Harry</originalName>
-        <CorefChain>51</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>89</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2349,8 +2349,8 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry</originalName>
-        <CorefChain>51</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>89</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
     
@@ -2360,7 +2360,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>104</CorefChain>
+        <CorefChain>90</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2371,8 +2371,8 @@
         <start>5</start>
         <end>5</end>
         <originalName>Harry</originalName>
-        <CorefChain>52</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>91</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2382,7 +2382,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>105</CorefChain>
+        <CorefChain>92</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2393,7 +2393,7 @@
         <start>3</start>
         <end>3</end>
         <originalName>Filch</originalName>
-        <CorefChain>105</CorefChain>
+        <CorefChain>92</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2404,8 +2404,8 @@
         <start>5</start>
         <end>5</end>
         <originalName>Harry</originalName>
-        <CorefChain>52</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>91</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2415,7 +2415,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>105</CorefChain>
+        <CorefChain>92</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2426,7 +2426,7 @@
         <start>15</start>
         <end>15</end>
         <originalName>Argus Filch</originalName>
-        <CorefChain>105</CorefChain>
+        <CorefChain>92</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2437,9 +2437,20 @@
         <start>30</start>
         <end>30</end>
         <originalName>Harry</originalName>
-        <CorefChain>53</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>93</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>him</text>
+        <sentence>102</sentence>
+        <start>34</start>
+        <end>34</end>
+        <originalName>Argus Filch</originalName>
+        <CorefChain>92</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -2448,7 +2459,7 @@
         <start>38</start>
         <end>38</end>
         <originalName>Filch</originalName>
-        <CorefChain>106</CorefChain>
+        <CorefChain>94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2459,7 +2470,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Filch</originalName>
-        <CorefChain>106</CorefChain>
+        <CorefChain>94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2470,20 +2481,20 @@
         <start>13</start>
         <end>13</end>
         <originalName>Filch</originalName>
-        <CorefChain>106</CorefChain>
+        <CorefChain>94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
-        <text>Harry</text>
+        <text>you</text>
         <sentence>104</sentence>
         <start>20</start>
         <end>20</end>
         <originalName>Harry</originalName>
-        <CorefChain>54</CorefChain>
-        <ClusterID>4</ClusterID>
-        <mentionType>explicit</mentionType>
+        <CorefChain>93</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
@@ -2492,7 +2503,7 @@
         <start>28</start>
         <end>28</end>
         <originalName>Filch</originalName>
-        <CorefChain>106</CorefChain>
+        <CorefChain94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2503,19 +2514,30 @@
         <start>33</start>
         <end>33</end>
         <originalName>Peeves</originalName>
-        <CorefChain>123</CorefChain>
-        <ClusterID>17</ClusterID>
+        <CorefChain>95</CorefChain>
+        <ClusterID>19</ClusterID>
         <mentionType>explicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>his</text>
+        <sentence>104</sentence>
+        <start>42</start>
+        <end>42</end>
+        <originalName>Harry</originalName>
+        <CorefChain>93</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>104</sentence>
-        <start>42</start>
-        <end>42</end>
+        <start>45</start>
+        <end>45</end>
         <originalName>Harry</originalName>
-        <CorefChain>55</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>96</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2525,7 +2547,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Filch</originalName>
-        <CorefChain>107</CorefChain>
+        <CorefChain>97</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -2536,8 +2558,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry</originalName>
-        <CorefChain>56</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>98</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2547,19 +2569,19 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>57</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>99</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
         <text>Nearly Headlesss Nick</text>
         <sentence>110</sentence>
-        <start>1</start>
-        <end>3</end>
+        <start>2</start>
+        <end>4</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>73</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>100</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2569,8 +2591,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry</originalName>
-        <CorefChain>58</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>99</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2580,8 +2602,8 @@
         <start>4</start>
         <end>4</end>
         <originalName>Harry</originalName>
-        <CorefChain>59</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>101</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2591,8 +2613,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>73</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>100</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2602,8 +2624,8 @@
         <start>15</start>
         <end>17</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>74</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2613,8 +2635,8 @@
         <start>20</start>
         <end>20</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>74</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2624,8 +2646,8 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry</originalName>
-        <CorefChain>60</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>103</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2635,8 +2657,8 @@
         <start>11</start>
         <end>11</end>
         <originalName>Harry</originalName>
-        <CorefChain>60</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>103</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2646,8 +2668,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>74</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2657,8 +2679,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Harry</originalName>
-        <CorefChain>60</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>103</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2667,9 +2689,9 @@
         <sentence>117</sentence>
         <start>1</start>
         <end>2</end>
-        <originalName>Weasley</originalName>
-        <CorefChain>129</CorefChain>
-        <ClusterID>22</ClusterID>
+        <originalName>Mr. Weasley</originalName>
+        <CorefChain>104</CorefChain>
+        <ClusterID>14</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2678,9 +2700,9 @@
         <sentence>117</sentence>
         <start>4</start>
         <end>5</end>
-        <originalName>Hermione</originalName>
-        <CorefChain>133</CorefChain>
-        <ClusterID>23</ClusterID>
+        <originalName>Miss Granger</originalName>
+        <CorefChain>105</CorefChain>
+        <ClusterID>25</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2690,8 +2712,8 @@
         <start>17</start>
         <end>17</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>74</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2701,63 +2723,74 @@
         <start>19</start>
         <end>19</end>
         <originalName>Harry</originalName>
-        <CorefChain>60</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>103</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
         <text>He</text>
         <sentence>118</sentence>
-        <start>1</start>
-        <end>1</end>
+        <start>2</start>
+        <end>2</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>74</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>118</sentence>
-        <start>3</start>
-        <end>3</end>
+        <start>4</start>
+        <end>4</end>
         <originalName>Harry</originalName>
-        <CorefChain>61</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>106</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>119</sentence>
-        <start>6</start>
-        <end>6</end>
+        <start>5</start>
+        <end>5</end>
         <originalName>Harry</originalName>
-        <CorefChain>62</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>107/CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
     <mention>
         <text>I</text>
         <sentence>119</sentence>
-        <start>10</start>
-        <end>10</end>
+        <start>9</start>
+        <end>9</end>
         <originalName>Harry</originalName>
-        <CorefChain>62</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>107</CorefChain>
+        <ClusterID></ClusterID>
+        <mentionType>implicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>My</text>
+        <sentence>119</sentence>
+        <start>15</start>
+        <end>15</end>
+        <originalName>Nearly Headless Nick</originalName>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
-        <text>boy</text>
+        <text>My dear boy</text>
         <sentence>119</sentence>
-        <start>18</start>
-        <end>18</end>
+        <start>15</start>
+        <end>17</end>
         <originalName>Harry</originalName>
-        <CorefChain>62</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>107</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2767,8 +2800,8 @@
         <start>1</start>
         <end>2</end>
         <originalName>Harry Potter</originalName>
-        <CorefChain>63</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2778,8 +2811,8 @@
         <start>5</start>
         <end>5</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>74</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2789,8 +2822,8 @@
         <start>4</start>
         <end>4</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>74</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2800,8 +2833,8 @@
         <start>12</start>
         <end>12</end>
         <originalName>Harry</originalName>
-        <CorefChain>63</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
@@ -2811,8 +2844,8 @@
         <start>14</start>
         <end>14</end>
         <originalName>Harry</originalName>
-        <CorefChain>63</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2822,9 +2855,20 @@
         <start>19</start>
         <end>20</end>
         <originalName>Sir Patrick</originalName>
-        <CorefChain>79</CorefChain>
+        <CorefChain>109</CorefChain>
         <ClusterID>13</ClusterID>
         <mentionType>explicit</mentionType>
+    </mention>
+            
+    <mention>
+        <text>you</text>
+        <sentence>121</sentence>
+        <start>26</start>
+        <end>26</end>
+        <originalName>Harry</originalName>
+        <CorefChain>108</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -2833,30 +2877,30 @@
         <start>28</start>
         <end>28</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>75</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>102</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
     
     <mention>
         <text>Harry</text>
         <sentence>122</sentence>
-        <start>9</start>
-        <end>9</end>
+        <start>10</start>
+        <end>10</end>
         <originalName>Harry</originalName>
-        <CorefChain>64</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>110</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
         <text>Nearly Headless Nick</text>
-        <sentence>122</sentence>
+        <sentence>123</sentence>
         <start>1</start>
         <end>3</end>
         <originalName>Nearly Headless Nick</originalName>
-        <CorefChain>75</CorefChain>
-        <ClusterID>10</ClusterID>
+        <CorefChain>111</CorefChain>
+        <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2866,8 +2910,8 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry</originalName>
-        <CorefChain>64</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>110</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2877,8 +2921,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Hermione</originalName>
-        <CorefChain>134</CorefChain>
-        <ClusterID>23</ClusterID>
+        <CorefChain>112</CorefChain>
+        <ClusterID>25</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -2888,8 +2932,8 @@
         <start>5</start>
         <end>5</end>
         <originalName>Harry</originalName>
-        <CorefChain>65</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>113</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2899,8 +2943,8 @@
         <start>12</start>
         <end>12</end>
         <originalName>Hermione</originalName>
-        <CorefChain>134</CorefChain>
-        <ClusterID>23</ClusterID>
+        <CorefChain>112</CorefChain>
+        <ClusterID>25</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2910,8 +2954,8 @@
         <start>14</start>
         <end>14</end>
         <originalName>Ron</originalName>
-        <CorefChain>130</CorefChain>
-        <ClusterID>22</ClusterID>
+        <CorefChain>114</CorefChain>
+        <ClusterID>24</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2921,51 +2965,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Hermione</originalName>
-        <CorefChain>134</CorefChain>
-        <ClusterID>23</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>living people</text>
-        <sentence>126</sentence>
-        <start>8</start>
-        <end>9</end>
-        <originalName>living people</originalName>
-        <CorefChain>140</CorefChain>
-        <ClusterID>24</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>they</text>
-        <sentence>126</sentence>
-        <start>13</start>
-        <end>13</end>
-        <originalName>living people</originalName>
-        <CorefChain>140</CorefChain>
-        <ClusterID>24</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>anyone</text>
-        <sentence>127</sentence>
-        <start>4</start>
-        <end>4</end>
-        <originalName>anyone</originalName>
-        <CorefChain>141</CorefChain>
-        <ClusterID>25</ClusterID>
-        <mentionType>implicit</mentionType>
-    </mention>
-
-    <mention>
-        <text>they</text>
-        <sentence>127</sentence>
-        <start>10</start>
-        <end>10</end>
-        <originalName>anyone</originalName>
-        <CorefChain>141</CorefChain>
+        <CorefChain>112</CorefChain>
         <ClusterID>25</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2976,8 +2976,8 @@
         <start>2</start>
         <end>2</end>
         <originalName>Ron</originalName>
-        <CorefChain>131</CorefChain>
-        <ClusterID>22</ClusterID>
+        <CorefChain>116</CorefChain>
+        <ClusterID>24</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2987,8 +2987,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Ron</originalName>
-        <CorefChain>131</CorefChain>
-        <ClusterID>22</ClusterID>
+        <CorefChain>116</CorefChain>
+        <ClusterID>24</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2998,8 +2998,8 @@
         <start>6</start>
         <end>6</end>
         <originalName>Ron</originalName>
-        <CorefChain>131</CorefChain>
-        <ClusterID>22</ClusterID>
+        <CorefChain>116</CorefChain>
+        <ClusterID>24</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -3009,8 +3009,8 @@
         <start>24</start>
         <end>24</end>
         <originalName>Fred</originalName>
-        <CorefChain>111</CorefChain>
-        <ClusterID>6</ClusterID>
+        <CorefChain>117</CorefChain>
+        <ClusterID>9</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -3020,8 +3020,8 @@
         <start>26</start>
         <end>27</end>
         <originalName>George Weasley</originalName>
-        <CorefChain>114</CorefChain>
-        <ClusterID>7</ClusterID>
+        <CorefChain>118</CorefChain>
+        <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -3031,8 +3031,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Fred</originalName>
-        <CorefChain>112</CorefChain>
-        <ClusterID>6</ClusterID>
+        <CorefChain>119</CorefChain>
+        <ClusterID>9</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -3042,8 +3042,8 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>66</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>120</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -3053,8 +3053,8 @@
         <start>8</start>
         <end>8</end>
         <originalName>Ron</originalName>
-        <CorefChain>132</CorefChain>
-        <ClusterID>22</ClusterID>
+        <CorefChain>121</CorefChain>
+        <ClusterID>24</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -3064,8 +3064,8 @@
         <start>10</start>
         <end>10</end>
         <originalName>Hermione</originalName>
-        <CorefChain>134</CorefChain>
-        <ClusterID>23</ClusterID>
+        <CorefChain>122</CorefChain>
+        <ClusterID>25</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -3075,7 +3075,7 @@
         <start>12</start>
         <end>12</end>
         <originalName>Filch</originalName>
-        <CorefChain>108</CorefChain>
+        <CorefChain>123</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3086,8 +3086,8 @@
         <start>4</start>
         <end>4</end>
         <originalName>Percy</originalName>
-        <CorefChain>142</CorefChain>
-        <ClusterID>26</ClusterID>
+        <CorefChain>124</CorefChain>
+        <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -3097,8 +3097,8 @@
         <start>6</start>
         <end>6</end>
         <originalName>Percy</originalName>
-        <CorefChain>142</CorefChain>
-        <ClusterID>26</ClusterID>
+        <CorefChain>124</CorefChain>
+        <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -3108,8 +3108,8 @@
         <start>9</start>
         <end>9</end>
         <originalName>Fred</originalName>
-        <CorefChain>113</CorefChain>
-        <ClusterID>6</ClusterID>
+        <CorefChain>125</CorefChain>
+        <ClusterID>9</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -3118,9 +3118,9 @@
         <sentence>133</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Weasley</originalName>
-        <CorefChain>114</CorefChain>
-        <ClusterID>7</ClusterID>
+        <originalName>George</originalName>
+        <CorefChain>126</CorefChain>
+        <ClusterID>10</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
     
@@ -3130,7 +3130,7 @@
         <start>39</start>
         <end>39</end>
         <originalName>Filch</originalName>
-        <CorefChain>109</CorefChain>
+        <CorefChain>127</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -3141,8 +3141,8 @@
         <start>45</start>
         <end>45</end>
         <originalName>Harry</originalName>
-        <CorefChain>67</CorefChain>
-        <ClusterID>4</ClusterID>
+        <CorefChain>128</CorefChain>
+        <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>   
 </document>
