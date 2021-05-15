@@ -96,7 +96,7 @@ public class CustomDirectInteraction {
     public List<CustomCorefChain> getSubjects(){
         List<CustomCorefChain> result = new LinkedList<>();
         for (CustomTriple customTriple : triples) {
-            if (!result.contains(customTriple.getSubject())) result.add(customTriple.getSubject());
+            if (!result.contains(customTriple.getSubject()) && customTriple.getSubject()!=null) result.add(customTriple.getSubject());
         }
         return result;
     }
@@ -104,7 +104,7 @@ public class CustomDirectInteraction {
     public List<CustomCorefChain> getObjects(){
         List<CustomCorefChain> result = new LinkedList<>();
         for (CustomTriple customTriple : triples) {
-            if (!result.contains(customTriple.getObject())) result.add(customTriple.getObject());
+            if (!result.contains(customTriple.getObject()) && customTriple.getObject()!=null) result.add(customTriple.getObject());
         }
         return result;
     }

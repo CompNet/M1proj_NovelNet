@@ -5,7 +5,6 @@ import java.util.List;
 
 import novelnet.util.CustomDirectInteraction;
 import novelnet.util.CustomTriple;
-import novelnet.util.ImpUtils;
 import novelnet.book.Book;
 import novelnet.table.*;
 
@@ -96,14 +95,15 @@ public class DirectInteractionTableCreator {
                 CustomTriple ctToAdd = new CustomTriple(rtToAdd, book);
                 alreadyIn = false;
                 //checking if the triple is already in or better than one that's already in
-                for (CustomTriple ctToCompare : tmp) {
+                for (int i = 0; i < tmp.size(); i++) {
+                    CustomTriple ctToCompare = tmp.get(i);
                     //checking if the triple is already in
                     if (ctToCompare.equalsOrComparedObjectIsNull(ctToAdd)){
                         //if the triple to compare is already in but the object of the triple already in is null
                         if (ctToCompare.getObject() == null){
                             //replace the old triple by the new one
+                            tmp.add(i, ctToAdd);
                             tmp.remove(ctToCompare);
-                            tmp.add(ctToAdd);
                         }
                         alreadyIn = true;
                     }

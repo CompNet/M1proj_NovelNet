@@ -22,7 +22,7 @@ public class WindowingDynamicGraphFromParagraphTable extends WindowingDynamicGra
 	 * @param book the Book created from the original text.
 	 * @param cooccurrenceTableParagraph the co-occurrence table you want to create the dynamic graphs from.
 	*/
-    public WindowingDynamicGraphFromParagraphTable(Book book, CooccurrenceTableParagraph cooccurrenceTableParagraph) {
+    public WindowingDynamicGraphFromParagraphTable(Book book, InteractionTable cooccurrenceTableParagraph) {
 		super(book, cooccurrenceTableParagraph);
 	}
 

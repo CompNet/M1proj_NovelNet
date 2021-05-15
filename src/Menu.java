@@ -144,11 +144,11 @@ public class Menu {
 
 		content = TextNormalization.addDotEndOfLine(content);
 
-		String prop="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
-		System.out.println("les annotateurs séléctionés sont: "+prop);
+		String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
+		System.out.println("les annotateurs séléctionés sont: "+annotators);
 
 		Properties props = new Properties();
-		props.setProperty("annotators",prop);
+		props.setProperty("annotators",annotators);
 		props.setProperty("ner.applyFineGrained", "false");
 		
 		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -289,6 +289,207 @@ public class Menu {
 
         }
 	}
+
+
+	public static void menu() throws IOException, NullDocumentException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("saisir chemin du fichier à traiter:");
+		String path = sc.nextLine();
+
+		String annotators = "";
+		int operation;
+
+		Boolean oriented = false;
+
+		while (annotators.equals("")){
+			System.out.println("Opération à réaliser :");
+			System.out.println("1) graphe de co-occurence");
+			System.out.println("2) graphe d'action directe");
+			operation = sc.nextInt();
+			if (operation == 1) {
+				annotators="tokenize,ssplit,pos,lemma,ner,parse,coref";
+			}
+			else if (operation == 2){
+				annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
+				oriented = true;
+			}
+			System.out.println();
+		}
+
+		String windowType = "";
+		int covering = 0;
+		int windowSize = 0;
+		Boolean notDone = true;
+
+		if(!annotators.contains("openie")){
+
+			while (windowType.equals("")){
+				System.out.println("type de déplacement de la fenêtre :");
+				System.out.println("1) phrase");
+				System.out.println("2) paragraphe");
+				operation = sc.nextInt();
+				if (operation == 1) {
+					windowType="Sentence";
+				}
+				else if (operation == 2){
+					windowType="Paragraph";
+				}
+				System.out.println();
+			}
+
+			System.out.println("Entrez la taille de votre fenêtre : ");
+			windowSize = sc.nextInt();
+			System.out.println();
+
+			while (notDone){
+				System.out.println("type de déplacement de la fenêtre");
+				System.out.println("1) séquentiel");
+				System.out.println("2) avec recouvrement");
+				operation = sc.nextInt();
+				System.out.println();
+				if (operation == 1) notDone = false;
+				else if (operation == 2 ){
+					covering = Integer.MAX_VALUE;
+					while (covering >= windowSize){
+						System.out.println("Entrez la taille de votre recouvrement (inférieur à " + windowSize +") : ");
+						covering = sc.nextInt();
+						System.out.println();
+					}
+					notDone = false;
+				}
+			}
+		}
+
+		String graphType = "";
+		int graphCovering = 0;
+		int graphWindowSize = 0;
+
+		while (graphType.equals("")){
+			System.out.println("type de graphe :");
+			System.out.println("1) statique");
+			System.out.println("2) dynamique");
+			operation = sc.nextInt();
+			if (operation == 1) {
+				graphType="Static";
+			}
+
+			else if (operation == 2){
+				graphType="dynamic";
+
+				while (windowType.equals("")){
+					System.out.println("type de déplacement de la fenêtre :");
+					System.out.println("1) phrase");
+					System.out.println("2) paragraphe");
+					operation = sc.nextInt();
+					if (operation == 1) {
+						windowType="Sentence";
+					}
+					else if (operation == 2){
+						windowType="Paragraph";
+					}
+					System.out.println();
+				}
+
+				graphWindowSize = Integer.MIN_VALUE;
+				while (graphWindowSize <= windowSize){
+					System.out.println("Entrez la taille de la fenêtre temporelle du graphe (supérieur à " + windowSize +") : ");
+					graphWindowSize = sc.nextInt();
+					System.out.println();
+				}
+				
+				notDone = true;
+
+				while (notDone){
+					System.out.println("type de déplacement de la fenêtre temporelle du graphe : ");
+					System.out.println("1) séquentiel");
+					System.out.println("2) avec recouvrement");
+					operation = sc.nextInt();
+					System.out.println();
+					if (operation == 1) notDone = false;
+					else if (operation == 2 ){
+						graphCovering = Integer.MAX_VALUE;
+						while (graphCovering >= graphWindowSize){
+							System.out.println("Entrez la taille de votre recouvrement (inférieur à " + graphWindowSize +") : ");
+							graphCovering = sc.nextInt();
+							System.out.println();
+						}
+						notDone = false;
+					}
+				}
+			}
+
+			System.out.println();
+		}
+
+		sc.close();
+
+
+		FileInputStream is = new FileInputStream(path);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		content = TextNormalization.addDotEndOfLine(content);
+
+		System.out.println("les annotateurs séléctionés sont: "+annotators);
+
+		Properties props = new Properties();
+		props.setProperty("annotators",annotators);
+		props.setProperty("ner.applyFineGrained", "false");
+		
+		StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+		CoreDocument document = new CoreDocument(content);
+		ImpUtils.setDocument(document);
+		pipeline.annotate(document);
+		
+
+		List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
+
+		CorefChainFuser corefChainFuser = new CorefChainFuser();
+		cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.45);
+
+		Book book = CreateBook.createBook(document, false, cccList);
+
+		InteractionTable table;
+
+		if (annotators.contains("openie")){
+			table = DirectInteractionTableCreator.createTable(book);
+		}
+		else {
+			if (windowType.equals("Sentence")){
+				WindowingCooccurrenceSentence windowingCooccurrence = new WindowingCooccurrenceSentence(windowSize, covering, false, book);
+				table = windowingCooccurrence.createTab();
+
+			}
+			else{
+				WindowingCooccurrenceParagraph windowingCooccurrence = new WindowingCooccurrenceParagraph(windowSize, covering, false, book);
+				table = windowingCooccurrence.createTab();
+			}
+		}
+		String graphTitle = "";
+
+		if (annotators.contains("openie")) graphTitle = "graph_"+path.substring(14, path.length()-4)+"_DI";
+		else graphTitle = "graph_"+path.substring(14, path.length()-4)+"_CoOc_"+windowType+"_"+windowSize+"_"+covering;
+
+
+		if(graphType.equals("Static")){
+			GraphCreator.createGraph(table, graphTitle, oriented, true).graphMLPrinter("res/results");
+		}
+		else if (windowType.equals("Sentence")){
+			int cpt = 0;
+			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
+			for (InteractionTable t : dgs.dynamicTableSentences(graphWindowSize, graphCovering)){
+				cpt++;
+				GraphCreator.createGraph(t, graphTitle+"_"+cpt, oriented, true).graphMLPrinter("res/results");
+			}
+		}
+		else{
+			int cpt = 0;
+			WindowingDynamicGraphFromParagraphTable dgs = new WindowingDynamicGraphFromParagraphTable(book, table);
+			for (InteractionTable t : dgs.dynamicTableSentences(graphWindowSize, graphCovering)){
+				cpt++;
+				GraphCreator.createGraph(t, graphTitle+"_"+cpt, oriented, true).graphMLPrinter("res/results");
+			}
+		}
+	}
 	
 	/**
 	 * @param args
@@ -297,126 +498,7 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		testOpenIE();
-		if (args.length == 1)
-		{
-			Scanner sc = new Scanner(System.in);
-			System.out.println("saisir chemin du fichier à traiter:");
-			String path = sc.nextLine();
-			sc.close();
-
-
-			FileInputStream is = new FileInputStream(path);
-			String content = IOUtils.toString(is, StandardCharsets.UTF_8);
-
-			content = TextNormalization.addDotEndOfLine(content);
-
-			//String prop="tokenize,ssplit";
-			String prop="tokenize,ssplit,pos,lemma,ner,parse,coref";
-			System.out.println("les annotateurs séléctionés sont: "+prop);
-
-			Properties props = new Properties();
-			props.setProperty("annotators",prop);
-			props.setProperty("ner.applyFineGrained", "false");
-			
-			StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-			CoreDocument document = new CoreDocument(content);
-			ImpUtils.setDocument(document);
-			pipeline.annotate(document);
-			//Annotation annotation = document.annotation();
-			// print the result of the annotation in a file
-			/*PrintWriter out = new PrintWriter("res/results/"+path.substring(11, path.length()-4)+"_output.txt");
-			pipeline.prettyPrint(annotation, out );*/
-
-			//System.out.println(document.sentences().get(1).tokens().get(0).originalText() + " " + document.sentences().get(1).tokens().get(0).ner());
-			for (CoreEntityMention cem: document.entityMentions()){
-				if (cem.entityType().equals("PERSON")) System.out.println(cem.text() + " : " + cem.sentence().tokens().get(0).sentIndex());
-			}
-			System.out.println();
-			
-
-			for ( CorefChain cc : document.corefChains().values()){
-				System.out.print(cc.getRepresentativeMention().mentionSpan + " : [ ");
-				for (CorefMention cm : cc.getMentionsInTextualOrder()){
-					System.out.print(cm.mentionSpan + ", " + cm.sentNum + " ; ");
-				}
-				System.out.println();
-			}
-			//System.out.println(document.corefChains());
-			// CorefChain Fusion
-
-			List<CustomCorefChain> cccList = CustomCorefChainCreator.makeCustomCorefChains(document);
-
-			/*for (CustomCorefChain ccc : cccList){
-				System.out.println(ccc);
-			}*/
-
-			CorefChainFuser corefChainFuser = new CorefChainFuser();
-			cccList = corefChainFuser.corefChainsClusteringRO(cccList, 0.50);
-
-			Book book = CreateBook.createBook(document, false, cccList);
-
-			//Create a table from Sentences 
-			WindowingCooccurrenceSentence wcs = new WindowingCooccurrenceSentence(10, 1, false, book);
-			CooccurrenceTableSentence table = wcs.createTab();
-
-			//Create the global Sentence graph
-			String graphTitle = "graph_"+path.substring(11, path.length()-4)+"_Sentence101";
-			GraphCreator.createGraph(table, graphTitle, false, true).graphMLPrinter("res/results");
-			
-			//Create a dynamic graph sequence from sentences table with Sentence window.
-			WindowingDynamicGraphFromSentenceTable dgs = new WindowingDynamicGraphFromSentenceTable(book, table);
-
-			int cpt = 0;
-			for (InteractionTable t : dgs.dynamicTableSentences(700, 75)){
-				cpt++;
-				GraphCreator.createGraph(t, graphTitle+"_Sentence101_"+cpt, false, true).graphMLPrinter("res/results");
-			}			
-
-			/*cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableParagraphs(5, 2)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Paragraphs_"+cpt).graphMLPrinter("res/results");
-			}
-
-			cpt = 0;
-			for (CooccurrenceTable t : dgs.dynamicTableChapters(1, 0)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle+"_Chapters_"+cpt).graphMLPrinter("res/results");
-			}
-
-			
-
-			//Create a table from Paragraphs
-			WindowingCooccurrenceParagraph wcp = new WindowingCooccurrenceParagraph(5, 1, false, book);
-			//List<List<EntityMention>> tmp = wcp.createWindow(document);
-			//System.out.println(tmp);
-			CooccurrenceTableParagraph tableP = wcp.createTab();
-
-			FileWriter fileWriter = new FileWriter("res/results/"+path.substring(11, path.length()-4)+"_bookClass.txt");
-			book.printToFile(fileWriter);
-			fileWriter.close();
-
-			//Create the global Paragraphs graph
-			String graphTitle2 = "graph_"+path.substring(11, path.length()-4)+"_Paragraphs";
-			GraphCreator.createGraph(tableP, true, graphTitle2).graphMLPrinter("res/results");
-				
-			//Create a dynamic graph sequence from Paragraphs table with Paragraphs window.
-			WindowingDynamicGraphFromParagraphTable dgp = new WindowingDynamicGraphFromParagraphTable(book, tableP);
-			cpt = 0;
-			for (CooccurrenceTable t : dgp.dynamicTableSentences(20,3)){
-				cpt++;
-				GraphCreator.createGraph(t, true, graphTitle2+"_Sentence_"+cpt).graphMLPrinter("res/results");
-			}
-			
-
-			// print book object in a file
-			/*FileWriter fileWriter = new FileWriter("res/results/"+path.substring(11, path.length()-4)+"_bookClass.txt");
-			book.printToFile(fileWriter);
-			fileWriter.close();*/
-		}
-
-
+		menu();
 	}
 
 }
