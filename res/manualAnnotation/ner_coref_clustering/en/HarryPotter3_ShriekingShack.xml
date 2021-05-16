@@ -892,7 +892,7 @@
     </mention>
 
     <mention>
-        <text>their</text>
+        <text>Their</text>
         <sentence>27</sentence>
         <start>1</start>
         <end>1</end>
@@ -971,8 +971,8 @@
     <mention>
         <text>Lupin</text>
         <sentence>30</sentence>
-        <start>21</start>
-        <end>21</end>
+        <start>23</start>
+        <end>23</end>
         <originalName>Lupin</originalName>
         <CorefChain>48</CorefChain>
         <ClusterID>3</ClusterID>
@@ -1013,14 +1013,14 @@
     </mention>
 
     <mention>
-        <text>Lupin</text>
+        <text>you</text>
         <sentence>31</sentence>
         <start>19</start>
         <end>19</end>
         <originalName>Lupin</originalName>
-        <CorefChain>52</CorefChain>
+        <CorefChain>49</CorefChain>
         <ClusterID>3</ClusterID>
-        <mentionType>explicit</mentionType>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -1029,7 +1029,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Lupin</originalName>
-        <CorefChain>53</CorefChain>
+        <CorefChain>52</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1040,7 +1040,7 @@
         <start>7</start>
         <end>7</end>
         <originalName>they</originalName>
-        <CorefChain>54</CorefChain>
+        <CorefChain>53</CorefChain>
         <ClusterID>14</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1051,7 +1051,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Hermione</originalName>
-        <CorefChain>55</CorefChain>
+        <CorefChain>54</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1062,7 +1062,7 @@
         <start>9</start>
         <end>10</end>
         <originalName>Peter Pettigrew</originalName>
-        <CorefChain>56</CorefChain>
+        <CorefChain>55</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1073,7 +1073,7 @@
         <start>8</start>
         <end>8</end>
         <originalName>McGonagall</originalName>
-        <CorefChain>57</CorefChain>
+        <CorefChain>56</CorefChain>
         <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1084,7 +1084,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Animagi</originalName>
-        <CorefChain>58</CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1095,7 +1095,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Hermione</originalName>
-        <CorefChain>55</CorefChain>
+        <CorefChain>54</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1106,7 +1106,7 @@
         <start>7</start>
         <end>7</end>
         <originalName>Hermione</originalName>
-        <CorefChain>55</CorefChain>
+        <CorefChain>54</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1117,7 +1117,7 @@
         <start>9</start>
         <end>9</end>
         <originalName>Hermione</originalName>
-        <CorefChain>55</CorefChain>
+        <CorefChain>54</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1128,7 +1128,7 @@
         <start>19</start>
         <end>21</end>
         <originalName>Animagi</originalName>
-        <CorefChain>58</CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1139,7 +1139,7 @@
         <start>34</start>
         <end>34</end>
         <originalName>Animagi</originalName>
-        <CorefChain>58</CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1150,7 +1150,7 @@
         <start>38</start>
         <end>38</end>
         <originalName>Animagi</originalName>
-        <CorefChain>58</CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1161,7 +1161,7 @@
         <start>44</start>
         <end>44</end>
         <originalName>Hermione</originalName>
-        <CorefChain>55</CorefChain>
+        <CorefChain>54</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1172,7 +1172,7 @@
         <start>49</start>
         <end>49</end>
         <originalName>McGonagall</originalName>
-        <CorefChain>59</CorefChain>
+        <CorefChain>58</CorefChain>
         <ClusterID>11</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1183,7 +1183,7 @@
         <start>61</start>
         <end>61</end>
         <originalName>Animagi</originalName>
-        <CorefChain>58</CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1194,7 +1194,7 @@
         <start>66</start>
         <end>66</end>
         <originalName>Pettigrew</originalName>
-        <CorefChain>60</CorefChain>
+        <CorefChain>59</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1205,7 +1205,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Harry</originalName>
-        <CorefChain>61</CorefChain>
+        <CorefChain>60</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1216,7 +1216,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Hermione</originalName>
-        <CorefChain>62</CorefChain>
+        <CorefChain>61</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1227,7 +1227,7 @@
         <start>16</start>
         <end>16</end>
         <originalName>Hermione</originalName>
-        <CorefChain>62</CorefChain>
+        <CorefChain>61</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1238,7 +1238,7 @@
         <start>20</start>
         <end>20</end>
         <originalName>Lupin</originalName>
-        <CorefChain>63</CorefChain>
+        <CorefChain>62</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1249,7 +1249,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Hermione</originalName>
-        <CorefChain>64</CorefChain>
+        <CorefChain>63</CorefChain>
         <ClusterID>8</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1260,7 +1260,7 @@
         <start>2</start>
         <end>2</end>
         <originalName>Lupin</originalName>
-        <CorefChain>63</CorefChain>
+        <CorefChain>62</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1271,7 +1271,7 @@
         <start>13</start>
         <end>13</end>
         <originalName>Animagi</originalName>
-        <CorefChain>58</CorefChain>
+        <CorefChain>57</CorefChain>
         <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1282,7 +1282,7 @@
         <start>4</start>
         <end>4</end>
         <originalName>Lupin</originalName>
-        <CorefChain>63</CorefChain>
+        <CorefChain>62</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -1293,7 +1293,7 @@
         <start>18</start>
         <end>18</end>
         <originalName>Remus</originalName>
-        <CorefChain>65</CorefChain>
+        <CorefChain>64</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>    
@@ -1304,7 +1304,7 @@
         <start>22</start>
         <end>22</end>
         <originalName>Black</originalName>
-        <CorefChain>66</CorefChain>
+        <CorefChain>65</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
@@ -1315,7 +1315,7 @@
         <start>28</start>
         <end>28</end>
         <originalName>Scabbers</originalName>
-        <CorefChain>67</CorefChain>
+        <CorefChain>66</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>    
@@ -1326,7 +1326,7 @@
         <start>1</start>
         <end>1</end>
         <originalName>Black</originalName>
-        <CorefChain>66</CorefChain>
+        <CorefChain>65</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>    
@@ -1337,7 +1337,7 @@
         <start>7</start>
         <end>7</end>
         <originalName>Black</originalName>
-        <CorefChain>66</CorefChain>
+        <CorefChain>65</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
