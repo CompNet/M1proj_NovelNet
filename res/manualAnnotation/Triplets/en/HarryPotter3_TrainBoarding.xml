@@ -212,10 +212,10 @@
             <end>8</end>
         </Verb>
         <Object>
-            <text>Crookshanks</text>
+            <text>Hedwig</text>
             <sentence>7</sentence>
-            <start>11</start>
-            <end>11</end>
+            <start>9</start>
+            <end>9</end>
         </Object>
     </Triplet>
 
@@ -233,10 +233,10 @@
             <end>8</end>
         </Verb>
         <Object>
-            <text>Hedwig</text>
+            <text>Crookshanks</text>
             <sentence>7</sentence>
-            <start>9</start>
-            <end>9</end>
+            <start>11</start>
+            <end>11</end>
         </Object>
     </Triplet>
 
@@ -296,9 +296,7 @@
             <end>30</end>
         </Object>
     </Triplet>
-
-
-    
+  
     <Triplet>
         <Subject>
             <text>Mrs Weasley</text>
@@ -334,10 +332,10 @@
             <end>3</end>
         </Verb>
         <Object>
-            <text>Harry</text>
+            <text>Hermione</text>
             <sentence>8</sentence>
-            <start>13</start>
-            <end>13</end>
+            <start>9</start>
+            <end>9</end>
         </Object>
     </Triplet>
 
@@ -355,10 +353,10 @@
             <end>3</end>
         </Verb>
         <Object>
-            <text>Hermione</text>
+            <text>Harry</text>
             <sentence>8</sentence>
-            <start>9</start>
-            <end>9</end>
+            <start>13</start>
+            <end>13</end>
         </Object>
     </Triplet>
     
@@ -523,28 +521,7 @@
             <end>17</end>
         </Object>
     </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>Ron</text>
-            <sentence>14</sentence>
-            <start>9</start>
-            <end>9</end>
-        </Subject>
-        <Verb>
-            <text>said</text>
-            <sentence>14</sentence>
-            <start>8</start>
-            <end>8</end>
-        </Verb>
-        <Object>
-            <text>Ginny</text>
-            <sentence>14</sentence>
-            <start>5</start>
-            <end>5</end>
-        </Object>
-    </Triplet>
-
+    
     <Triplet>
         <Subject>
             <text>Harry</text>
