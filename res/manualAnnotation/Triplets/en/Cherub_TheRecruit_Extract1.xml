@@ -45,19 +45,19 @@
     <Triplet>
         <Subject>
             <text>James</text>
-            <sentence>20</sentence>
+            <sentence>19</sentence>
             <start>1</start>
             <end>1</end>
         </Subject>
         <Verb>
             <text>loved</text>
-            <sentence>20</sentence>
+            <sentence>19</sentence>
             <start>2</start>
             <end>2</end>
         </Verb>
         <Object>
             <text>his mum</text>
-            <sentence>20</sentence>
+            <sentence>19</sentence>
             <start>3</start>
             <end>4</end>
         </Object>
