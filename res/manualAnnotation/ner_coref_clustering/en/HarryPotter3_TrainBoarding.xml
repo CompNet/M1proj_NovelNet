@@ -78,7 +78,7 @@
     </mention>
 
     <mention>
-        <text>he</text>
+        <text>his</text>
         <sentence>4</sentence>
         <start>5</start>
         <end>5</end>
@@ -243,7 +243,7 @@
     </mention>
 
     <mention>
-        <text>they</text>
+        <text>They</text>
         <sentence>7</sentence>
         <start>1</start>
         <end>1</end>
