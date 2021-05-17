@@ -66,7 +66,8 @@ public class Menu {
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-		content = TextNormalization.addDotEndOfLine(content);
+		String language = path.substring(11, 13);
+		content = TextNormalization.PreProcess(content, language);
 
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
@@ -103,7 +104,8 @@ public class Menu {
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-		content = TextNormalization.addDotEndOfLine(content);
+		String language = path.substring(11, 13);
+		content = TextNormalization.PreProcess(content, language);
 
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie");
@@ -142,7 +144,8 @@ public class Menu {
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-		content = TextNormalization.addDotEndOfLine(content);
+		String language = path.substring(11, 13);
+		content = TextNormalization.PreProcess(content, language);
 
 		String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
@@ -193,7 +196,8 @@ public class Menu {
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-		content = TextNormalization.addDotEndOfLine(content);
+		String language = path.substring(11, 13);
+		content = TextNormalization.PreProcess(content, language);
 
 		String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref,natlog,openie";
 		//String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref";
@@ -243,7 +247,8 @@ public class Menu {
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-		content = TextNormalization.addDotEndOfLine(content);
+		String language = path.substring(11, 13);
+		content = TextNormalization.PreProcess(content, language);
 
 		String annotators="tokenize,ssplit";
 		System.out.println("running Stanford's sentence splitting ");
@@ -427,7 +432,8 @@ public class Menu {
 		FileInputStream is = new FileInputStream(path);
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-		content = TextNormalization.addDotEndOfLine(content);
+		String language = path.substring(11, 13);
+		content = TextNormalization.PreProcess(content, language);
 
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
 
@@ -498,7 +504,15 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		menu();
+		//menu();
+		String path = "res/corpus/fr/HarryPotter3_EmbarquementDuTrain.txt";
+		FileInputStream is = new FileInputStream(path);
+		String language = path.substring(11, 13);
+		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
+
+		System.out.println(content + "\n");
+		content = TextNormalization.PreProcess(content, language);
+		System.out.println(content);
 	}
 
 }
