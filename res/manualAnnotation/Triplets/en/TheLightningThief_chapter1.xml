@@ -151,39 +151,18 @@
         <Subject>
             <text>Grover</text>
             <sentence>41</sentence>
-            <start>8</start>
-            <end>8</end>
+            <start>9</start>
+            <end>9</end>
         </Subject>
         <Verb>
             <text>pulled</text>
             <sentence>41</sentence>
-            <start>9</start>
-            <end>9</end>
+            <start>10</start>
+            <end>10</end>
         </Verb>
         <Object>
             <text>me</text>
             <sentence>41</sentence>
-            <start>10</start>
-            <end>10</end>
-        </Object>
-    </Triplet>
-
-    <Triplet>
-        <Subject>
-            <text>he</text>
-            <sentence>42</sentence>
-            <start>9</start>
-            <end>9</end>
-        </Subject>
-        <Verb>
-            <text>reminded</text>
-            <sentence>42</sentence>
-            <start>10</start>
-            <end>10</end>
-        </Verb>
-        <Object>
-            <text>me</text>
-            <sentence>42</sentence>
             <start>11</start>
             <end>11</end>
         </Object>
@@ -191,22 +170,43 @@
 
     <Triplet>
         <Subject>
-            <text>I</text>
-            <sentence>44</sentence>
+            <text>he</text>
+            <sentence>42</sentence>
             <start>8</start>
             <end>8</end>
         </Subject>
         <Verb>
-            <text>decked</text>
-            <sentence>44</sentence>
+            <text>reminded</text>
+            <sentence>42</sentence>
+            <start>9</start>
+            <end>9</end>
+        </Verb>
+        <Object>
+            <text>me</text>
+            <sentence>42</sentence>
             <start>10</start>
             <end>10</end>
+        </Object>
+    </Triplet>
+
+    <Triplet>
+        <Subject>
+            <text>I</text>
+            <sentence>44</sentence>
+            <start>9</start>
+            <end>9</end>
+        </Subject>
+        <Verb>
+            <text>decked</text>
+            <sentence>44</sentence>
+            <start>11</start>
+            <end>11</end>
         </Verb>
         <Object>
             <text>Nancy Bobofit</text>
             <sentence>44</sentence>
-            <start>11</start>
-            <end>12</end>
+            <start>12</start>
+            <end>13</end>
         </Object>
     </Triplet>
 
@@ -487,20 +487,20 @@
         <Subject>
             <text>his wife</text>
             <sentence>78</sentence>
-            <start></start>
-            <end></end>
+            <start>2</start>
+            <end>3</end>
         </Subject>
         <Verb>
             <text>hid</text>
             <sentence>78</sentence>
-            <start></start>
-            <end></end>
+            <start>4</start>
+            <end>4</end>
         </Verb>
         <Object>
-            <text>baby Zeus</text>
+            <text>Zeus</text>
             <sentence>78</sentence>
-            <start></start>
-            <end></end>
+            <start>6</start>
+            <end>6</end>
         </Object>
     </Triplet>
 
@@ -760,20 +760,20 @@
         <Subject>
             <text>you</text>
             <sentence>112</sentence>
-            <start>3</start>
-            <end>3</end>
+            <start>4</start>
+            <end>4</end>
         </Subject>
         <Verb>
             <text>learn</text>
             <sentence>112</sentence>
-            <start>4</start>
-            <end>4</end>
+            <start>5</start>
+            <end>5</end>
         </Verb>
         <Object>
             <text>me</text>
             <sentence>112</sentence>
-            <start>6</start>
-            <end>6</end>
+            <start>7</start>
+            <end>7</end>
         </Object>
     </Triplet>
 
@@ -842,19 +842,19 @@
     <Triplet>
         <Subject>
             <text>He</text>
-            <sentence>121</sentence>
+            <sentence>122</sentence>
             <start>1</start>
             <end>1</end>
         </Subject>
         <Verb>
             <text>told</text>
-            <sentence>121</sentence>
+            <sentence>122</sentence>
             <start>2</start>
             <end>2</end>
         </Verb>
         <Object>
             <text>me</text>
-            <sentence>121</sentence>
+            <sentence>122</sentence>
             <start>3</start>
             <end>3</end>
         </Object>
@@ -1188,20 +1188,20 @@
         <Subject>
             <text>I</text>
             <sentence>173</sentence>
-            <start>1</start>
-            <end>1</end>
+            <start>2</start>
+            <end>2</end>
         </Subject>
         <Verb>
             <text>stared</text>
             <sentence>173</sentence>
-            <start>2</start>
-            <end>2</end>
+            <start>3</start>
+            <end>3</end>
         </Verb>
         <Object>
             <text>him</text>
             <sentence>173</sentence>
-            <start>4</start>
-            <end>4</end>
+            <start>5</start>
+            <end>5</end>
         </Object>
     </Triplet>
 
