@@ -686,7 +686,7 @@
         <text>you</text>
         <sentence>25</sentence>
         <start>16</start>
-        <end>16<end>
+        <end>16</end>
         <originalName>Nearly Headless Nick</originalName>
         <CorefChain>23</CorefChain>
         <ClusterID>11</ClusterID>
@@ -1228,7 +1228,7 @@
         <end>10</end>
         <originalName>Harry</originalName>
         <CorefChain>40</CorefChain>
-        <ClusterID>7<ClusterID>
+        <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
             
@@ -2503,7 +2503,7 @@
         <start>28</start>
         <end>28</end>
         <originalName>Filch</originalName>
-        <CorefChain94</CorefChain>
+        <CorefChain>94</CorefChain>
         <ClusterID>16</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
@@ -2756,7 +2756,7 @@
         <start>5</start>
         <end>5</end>
         <originalName>Harry</originalName>
-        <CorefChain>107/CorefChain>
+        <CorefChain>107</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
