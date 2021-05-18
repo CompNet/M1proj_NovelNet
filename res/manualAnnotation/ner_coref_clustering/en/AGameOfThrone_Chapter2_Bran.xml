@@ -2257,7 +2257,7 @@
 
     <mention>
         <text>He</text>
-        <sentence>99<sentence>
+        <sentence>99</sentence>
         <start>2</start>
         <end>2</end>
         <originalName>Robert</originalName>
@@ -2790,7 +2790,7 @@
         <end>5</end>
         <originalName>Theon Greyjoy</originalName>
         <CorefChain>77</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2801,7 +2801,7 @@
         <end>1</end>
         <originalName>Greyjoy</originalName>
         <CorefChain>78</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2812,7 +2812,7 @@
         <end>7</end>
         <originalName>Greyjoy</originalName>
         <CorefChain>78</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2823,7 +2823,7 @@
         <end>1</end>
         <originalName>Bran</originalName>
         <CorefChain>79</CorefChain>
-        <ClusterID>1<ClusterID>
+        <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
     </mention>
 
@@ -2834,7 +2834,7 @@
         <end>8</end>
         <originalName>Greyjoy</originalName>
         <CorefChain>78</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2845,7 +2845,7 @@
         <end>1</end>
         <originalName>Greyjoy</originalName>
         <CorefChain>78</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2856,7 +2856,7 @@
         <end>9</end>
         <originalName>Greyjoy</originalName>
         <CorefChain>78</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2867,7 +2867,7 @@
         <end>12</end>
         <originalName>Greyjoy</originalName>
         <CorefChain>78</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
@@ -2878,7 +2878,7 @@
         <end>15</end>
         <originalName>Greyjoy</originalName>
         <CorefChain>78</CorefChain>
-        <ClusterID>12<ClusterID>
+        <ClusterID>12</ClusterID>
         <mentionType>implicit</mentionType>
     </mention>
 
