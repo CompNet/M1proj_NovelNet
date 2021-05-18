@@ -2444,7 +2444,7 @@
 
     <mention>
         <text>him</text>
-        <sentence>94/sentence>
+        <sentence>94</sentence>
         <start>20</start>
         <end>20</end>
         <originalName>Prince Verity</originalName>
@@ -2455,7 +2455,7 @@
 
     <mention>
         <text>I</text>
-        <sentence>95/sentence>
+        <sentence>95</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>a six-year-old</originalName>
@@ -2466,7 +2466,7 @@
 
     <mention>
         <text>him</text>
-        <sentence>95/sentence>
+        <sentence>95</sentence>
         <start>5</start>
         <end>5</end>
         <originalName>Prince Verity</originalName>
@@ -2477,7 +2477,7 @@
 
     <mention>
         <text>He</text>
-        <sentence>96/sentence>
+        <sentence>96</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>Prince Verity</originalName>
@@ -2488,7 +2488,7 @@
 
     <mention>
         <text>his</text>
-        <sentence>96/sentence>
+        <sentence>96</sentence>
         <start>13</start>
         <end>13</end>
         <originalName>Prince Verity</originalName>
