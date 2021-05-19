@@ -1,7 +1,5 @@
 package novelnet.pipeline;
 
-import nu.xom.Text;
-
 /**
  * Normalize the text to add a dot at the end of each line where there is no dot or some type of quotation mark
  * 
@@ -15,7 +13,7 @@ public class TextNormalization {
     private TextNormalization(){
     }
 
-    public static String PreProcess(String originalText, String language){
+    public static String preProcess(String originalText, String language){
         String result = addDotEndOfLine(originalText);
 
         if (language.equals("fr")){
@@ -38,9 +36,6 @@ public class TextNormalization {
             if (text.charAt(i) == '\n' && i >shift && !((int)text.charAt(i-shift) == 10 || (int)text.charAt(i-shift) == 13 || text.charAt(i-shift) == ' ' || text.charAt(i-shift) == '.' ||
                 text.charAt(i-shift) == '?' || text.charAt(i-shift) == '!' || text.charAt(i-shift) == '"' || text.charAt(i-shift) == ':'))
             {
-                System.out.println("i-1 :" + text.charAt(i-1));
-                System.out.println("i-2 :" + text.charAt(i-2));
-
                 text.insert(i,'.'); //we add a dot to the end of the previous line
             }
         }

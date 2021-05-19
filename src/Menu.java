@@ -67,7 +67,7 @@ public class Menu {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		String language = path.substring(11, 13);
-		content = TextNormalization.PreProcess(content, language);
+		content = TextNormalization.preProcess(content, language);
 
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
@@ -105,7 +105,7 @@ public class Menu {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		String language = path.substring(11, 13);
-		content = TextNormalization.PreProcess(content, language);
+		content = TextNormalization.preProcess(content, language);
 
 		Properties props = new Properties();
 		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie");
@@ -145,7 +145,7 @@ public class Menu {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		String language = path.substring(11, 13);
-		content = TextNormalization.PreProcess(content, language);
+		content = TextNormalization.preProcess(content, language);
 
 		String annotators="tokenize,ssplit,pos,lemma,ner,parse,coref,natlog,openie";
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
@@ -197,7 +197,7 @@ public class Menu {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		String language = path.substring(11, 13);
-		content = TextNormalization.PreProcess(content, language);
+		content = TextNormalization.preProcess(content, language);
 
 		String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref,natlog,openie";
 		//String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref";
@@ -248,7 +248,7 @@ public class Menu {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		String language = path.substring(11, 13);
-		content = TextNormalization.PreProcess(content, language);
+		content = TextNormalization.preProcess(content, language);
 
 		String annotators="tokenize,ssplit";
 		System.out.println("running Stanford's sentence splitting ");
@@ -433,7 +433,7 @@ public class Menu {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		String language = path.substring(11, 13);
-		content = TextNormalization.PreProcess(content, language);
+		content = TextNormalization.preProcess(content, language);
 
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
 
@@ -511,7 +511,7 @@ public class Menu {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		System.out.println(content + "\n");
-		content = TextNormalization.PreProcess(content, language);
+		content = TextNormalization.preProcess(content, language);
 		System.out.println(content);
 	}
 
