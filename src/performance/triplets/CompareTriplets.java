@@ -54,7 +54,7 @@ public class CompareTriplets {
 		
         reference = TripletsContainer.buildFromXml("res/manualAnnotation/Triplets/" + language + "/" + fileName + ".xml");
         
-        triplesToEvaluate = TripletsContainer.buildFromTxt(language, fileName);
+        triplesToEvaluate = TripletsContainer.buildFromTxt("res/corpus/" + language + "/" + fileName + ".txt", "res/manualAnnotation/ner_coref_clustering/" + language + "/" + fileName + ".xml");
 	}
 
     public PrecisionRecallStats getPerf() {

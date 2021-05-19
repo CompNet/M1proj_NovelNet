@@ -133,6 +133,7 @@ public class TripletsContainer {
         TripletsContainer result = new TripletsContainer();
 		CoreDocument document;
 
+        System.out.println(pathToText);
 		if (pathToText.contains("\\en\\") || pathToText.contains("/en/")) document = ImpUtils.processOpenIE(pathToText);
         //only in en for now
 		//else if (pathToFile.contains("\\fr\\") || pathToFile.contains("/fr/")) document = ImpUtils.processFrenchNER(pathToFile);
