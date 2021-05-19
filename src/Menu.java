@@ -504,15 +504,7 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		//menu();
-		String path = "res/corpus/fr/HarryPotter3_EmbarquementDuTrain.txt";
-		FileInputStream is = new FileInputStream(path);
-		String language = path.substring(11, 13);
-		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
-
-		System.out.println(content + "\n");
-		content = TextNormalization.preProcess(content, language);
-		System.out.println(content);
+		menu();
 	}
 
 }
