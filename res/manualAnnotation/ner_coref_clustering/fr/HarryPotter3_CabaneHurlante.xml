@@ -6,7 +6,7 @@
         <sentence>1</sentence>
         <start>5</start>
         <end>6</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -17,7 +17,7 @@
         <sentence>1</sentence>
         <start>10</start>
         <end>11</end>
-        <originalName>Sirius Black<Name>
+        <originalName>Sirius Black</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -28,7 +28,7 @@
         <sentence>2</sentence>
         <start>6</start>
         <end>7</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -39,7 +39,7 @@
         <sentence>3</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>3</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -50,7 +50,7 @@
         <sentence>5</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>4</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -61,7 +61,7 @@
         <sentence>6</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -72,7 +72,7 @@
         <sentence>6</sentence>
         <start>6</start>
         <end>7</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>1</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -83,7 +83,7 @@
         <sentence>7</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>5</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -94,7 +94,7 @@
         <sentence>7</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -105,7 +105,7 @@
         <sentence>7</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>6</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -116,7 +116,7 @@
         <sentence>8</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>7</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -127,7 +127,7 @@
         <sentence>8</sentence>
         <start>10</start>
         <end>11</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -138,7 +138,7 @@
         <sentence>9</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Remus<Name>
+        <originalName>Remus</originalName>
         <CorefChain>8</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -149,7 +149,7 @@
         <sentence>10</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Remus<Name>
+        <originalName>Remus</originalName>
         <CorefChain>8</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -160,7 +160,7 @@
         <sentence>10</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Remus<Name>
+        <originalName>Remus</originalName>
         <CorefChain>8</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -171,7 +171,7 @@
         <sentence>11</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>7</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>implicit</mentionType>
@@ -182,7 +182,7 @@
         <sentence>11</sentence>
         <start>19</start>
         <end>19</end>
-        <originalName>Vous<Name>
+        <originalName>Vous</originalName>
         <CorefChain>56</CorefChain>
         <ClusterID>56</ClusterID>
         <mentionType>implicit</mentionType>
@@ -193,7 +193,7 @@
         <sentence>11</sentence>
         <start>31</start>
         <end>31</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>9</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -204,7 +204,7 @@
         <sentence>11</sentence>
         <start>37</start>
         <end>37</end>
-        <originalName>Harry<Name>
+        <originalName>Harry</originalName>
         <CorefChain>10</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
@@ -215,7 +215,7 @@
         <sentence>11</sentence>
         <start>39</start>
         <end>39</end>
-        <originalName>Hermione<Name>
+        <originalName>Hermione</originalName>
         <CorefChain>11</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
@@ -226,7 +226,7 @@
         <sentence>12</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>9</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -237,7 +237,7 @@
         <sentence>13</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>9</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -248,7 +248,7 @@
         <sentence>13</sentence>
         <start>17</start>
         <end>17</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -259,7 +259,7 @@
         <sentence>13</sentence>
         <start>26</start>
         <end>26</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -270,7 +270,7 @@
         <sentence>14</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>9</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -280,8 +280,8 @@
         <text>Ron</text>
         <sentence>14</sentence>
         <start>7</start>
-        <end8>7</end>
-        <originalName>Ron<Name>
+        <end>7</end>
+        <originalName>Ron</originalName>
         <CorefChain>13</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -292,7 +292,7 @@
         <sentence>14</sentence>
         <start>12</start>
         <end>12</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>12</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -303,7 +303,7 @@
         <sentence>15</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -314,7 +314,7 @@
         <sentence>15</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>13</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>implicit</mentionType>
@@ -325,7 +325,7 @@
         <sentence>16</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>2</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -336,7 +336,7 @@
         <sentence>16</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>14</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -347,7 +347,7 @@
         <sentence>16</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>14</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -358,7 +358,7 @@
         <sentence>15</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>14</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -369,7 +369,7 @@
         <sentence>17</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>15</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -380,7 +380,7 @@
         <sentence>17</sentence>
         <start>8</start>
         <end>9</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>14</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -391,7 +391,7 @@
         <sentence>18</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>16</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -402,7 +402,7 @@
         <sentence>18</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Harry<Name>
+        <originalName>Harry</originalName>
         <CorefChain>17</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
@@ -413,7 +413,7 @@
         <sentence>19</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>18</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -424,7 +424,7 @@
         <sentence>19</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Harry<Name>
+        <originalName>Harry</originalName>
         <CorefChain>19</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
@@ -435,7 +435,7 @@
         <sentence>19</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>20</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -446,7 +446,7 @@
         <sentence>20</sentence>
         <start>5</start>
         <end>6</end>
-        <originalName>des témoins<Name>
+        <originalName>des témoins</originalName>
         <CorefChain>21</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
@@ -457,7 +457,7 @@
         <sentence>20</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Pettigrow<Name>
+        <originalName>Pettigrow</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -468,7 +468,7 @@
         <sentence>20</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>Harry<Name>
+        <originalName>Harry</originalName>
         <CorefChain>19</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>implicit</mentionType>
@@ -479,7 +479,7 @@
         <sentence>21</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>des témoins<Name>
+        <originalName>des témoins</originalName>
         <CorefChain>21</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
@@ -490,7 +490,7 @@
         <sentence>21</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>des témoins<Name>
+        <originalName>des témoins</originalName>
         <CorefChain>21</CorefChain>
         <ClusterID>7</ClusterID>
         <mentionType>implicit</mentionType>
@@ -501,7 +501,7 @@
         <sentence>22</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>23</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -512,7 +512,7 @@
         <sentence>22</sentence>
         <start>12</start>
         <end>12</end>
-        <originalName>Pettigrow<Name>
+        <originalName>Pettigrow</originalName>
         <CorefChain>22</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -523,7 +523,7 @@
         <sentence>22</sentence>
         <start>20</start>
         <end>20</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>24</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -534,7 +534,7 @@
         <sentence>23</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Sirius<Name>
+        <originalName>Sirius</originalName>
         <CorefChain>25</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -545,7 +545,7 @@
         <sentence>23</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>26</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -556,7 +556,7 @@
         <sentence>23</sentence>
         <start>15</start>
         <end>15</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>27</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -567,7 +567,7 @@
         <sentence>24</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>27</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -578,7 +578,7 @@
         <sentence>24</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>27</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -589,7 +589,7 @@
         <sentence>24</sentence>
         <start>14</start>
         <end>14</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>27</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -600,7 +600,7 @@
         <sentence>25</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>28</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -611,7 +611,7 @@
         <sentence>26</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Peter<Name>
+        <originalName>Peter</originalName>
         <CorefChain>28</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -622,7 +622,7 @@
         <sentence>26</sentence>
         <start>4</start>
         <end>4</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>29</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -633,7 +633,7 @@
         <sentence>26</sentence>
         <start>10</start>
         <end>10</end>
-        <originalName>Harry<Name>
+        <originalName>Harry</originalName>
         <CorefChain>30</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
@@ -644,7 +644,7 @@
         <sentence>27</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Harry<Name>
+        <originalName>Harry</originalName>
         <CorefChain>31</CorefChain>
         <ClusterID>5</ClusterID>
         <mentionType>explicit</mentionType>
@@ -655,7 +655,7 @@
         <sentence>27</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Ron<Name>
+        <originalName>Ron</originalName>
         <CorefChain>32</CorefChain>
         <ClusterID>4</ClusterID>
         <mentionType>explicit</mentionType>
@@ -666,7 +666,7 @@
         <sentence>27</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>ils<Name>
+        <originalName>ils</originalName>
         <CorefChain>55</CorefChain>
         <ClusterID>55</ClusterID>
         <mentionType>implicit</mentionType>
@@ -677,7 +677,7 @@
         <sentence>27</sentence>
         <start>14</start>
         <end>14</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>33</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -688,7 +688,7 @@
         <sentence>27</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>34</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -699,7 +699,7 @@
         <sentence>28</sentence>
         <start>7</start>
         <end>7</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>35</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -710,7 +710,7 @@
         <sentence>28</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>35</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>implicit</mentionType>
@@ -721,7 +721,7 @@
         <sentence>28</sentence>
         <start>12</start>
         <end>13</end>
-        <originalName>Peter Pettigrow<Name>
+        <originalName>Peter Pettigrow</originalName>
         <CorefChain>35</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -732,7 +732,7 @@
         <sentence>29</sentence>
         <start>13</start>
         <end>13</end>
-        <originalName>Black<Name>
+        <originalName>Black</originalName>
         <CorefChain>36</CorefChain>
         <ClusterID>1</ClusterID>
         <mentionType>explicit</mentionType>
@@ -743,7 +743,7 @@
         <sentence>30</sentence>
         <start>3</start>
         <end>3</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>37</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -754,7 +754,7 @@
         <sentence>30</sentence>
         <start>6</start>
         <end>6</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>37</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -765,7 +765,7 @@
         <sentence>31</sentence>
         <start>1</start>
         <end>1</end>
-        <originalName>Hermione<Name>
+        <originalName>Hermione</originalName>
         <CorefChain>38</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>explicit</mentionType>
@@ -776,7 +776,7 @@
         <sentence>31</sentence>
         <start>9</start>
         <end>9</end>
-        <originalName>Hermione<Name>
+        <originalName>Hermione</originalName>
         <CorefChain>38</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -787,7 +787,7 @@
         <sentence>31</sentence>
         <start>18</start>
         <end>18</end>
-        <originalName>Hermione<Name>
+        <originalName>Hermione</originalName>
         <CorefChain>38</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -798,7 +798,7 @@
         <sentence>31</sentence>
         <start>23</start>
         <end>24</end>
-        <originalName>Professeur Lupin<Name>
+        <originalName>Professeur Lupin</originalName>
         <CorefChain>39</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -809,7 +809,7 @@
         <sentence>32</sentence>
         <start>2</start>
         <end>3</end>
-        <originalName>Professeur Lupin<Name>
+        <originalName>Professeur Lupin</originalName>
         <CorefChain>39</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -820,7 +820,7 @@
         <sentence>32</sentence>
         <start>8</start>
         <end>8</end>
-        <originalName>Hermione<Name>
+        <originalName>Hermione</originalName>
         <CorefChain>38</CorefChain>
         <ClusterID>6</ClusterID>
         <mentionType>implicit</mentionType>
@@ -831,7 +831,7 @@
         <sentence>32</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>Pettigrow<Name>
+        <originalName>Pettigrow</originalName>
         <CorefChain>40</CorefChain>
         <ClusterID>2</ClusterID>
         <mentionType>explicit</mentionType>
@@ -842,7 +842,7 @@
         <sentence>32</sentence>
         <start>21</start>
         <end>21</end>
-        <originalName>Professeur Lupin<Name>
+        <originalName>Professeur Lupin</originalName>
         <CorefChain>39</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -853,7 +853,7 @@
         <sentence>33</sentence>
         <start>2</start>
         <end>2</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>explicit</mentionType>
@@ -864,7 +864,7 @@
         <sentence>33</sentence>
         <start>11</start>
         <end>11</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>
@@ -875,7 +875,7 @@
         <sentence>33</sentence>
         <start>16</start>
         <end>16</end>
-        <originalName>Lupin<Name>
+        <originalName>Lupin</originalName>
         <CorefChain>41</CorefChain>
         <ClusterID>3</ClusterID>
         <mentionType>implicit</mentionType>

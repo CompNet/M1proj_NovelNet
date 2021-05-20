@@ -187,6 +187,7 @@ public class Menu {
 
 		sc.close();
 	}
+
 	public static void testOnFrenchTextWithStanford() throws IOException{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("saisir chemin du fichier à traiter:");
@@ -199,8 +200,7 @@ public class Menu {
 		String language = path.substring(11, 13);
 		content = TextNormalization.preProcess(content, language);
 
-		String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref,natlog,openie";
-		//String annotators="tokenize,ssplit,pos,lemma,ner,depparse,coref";
+		String annotators="tokenize,ssplit,pos,lemma,ner";
 		System.out.println("les annotateurs séléctionés sont: "+annotators);
 
 		Properties props = ImpUtils.getFrenchProperties();
@@ -215,7 +215,7 @@ public class Menu {
 		for (CoreEntityMention cem : document.entityMentions()){
 			System.out.println(cem);
 		}
-		for (CorefChain cc : document.corefChains().values()){
+		/*for (CorefChain cc : document.corefChains().values()){
 			System.out.println(cc);
 		}
 		Annotation annotation = document.annotation();
@@ -230,7 +230,7 @@ public class Menu {
 				System.out.println(triple.relationLemmaGloss() + "\t " + triple.relation);
 				System.out.println(triple.objectGloss() + "\t " + triple.canonicalObject);
 			}
-		}
+		}*/
 	}
 
 	public static void testOnFrenchTextReverb() throws IOException{
@@ -504,7 +504,8 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		menu();
+		testOnFrenchTextWithStanford();
+		//menu();
 	}
 
 }

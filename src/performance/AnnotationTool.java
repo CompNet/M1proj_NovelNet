@@ -36,7 +36,7 @@ public class AnnotationTool {
         FileInputStream is = new FileInputStream(path);
         String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
-        content = TextNormalization.addDotEndOfLine(content);
+        content = TextNormalization.preProcess(content, "fr");
 
         System.out.println("decomposition for analyse.");
         Properties props = new Properties();

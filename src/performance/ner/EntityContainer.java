@@ -98,10 +98,12 @@ public class EntityContainer {
 
 		boolean person;
 		for (CoreEntityMention e : document.entityMentions()){
+			System.out.println(e + "\t" + e.entityType());
 			person = false;
-			if (e.entityType().equals("PERSON")) {
+			if (e.entityType().equals("PERSON")||e.entityType().equals("PER")) {
 				for(CoreLabel token : e.tokens()){
-					if (token.ner().equals("PERSON")){
+					System.out.println(token + "\t" + token.ner());
+					if (token.ner().equals("PERSON")||token.ner().equals("I-PER")){
 						person = true;
 					}
 				}

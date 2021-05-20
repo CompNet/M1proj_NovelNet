@@ -173,7 +173,7 @@ public class ImpUtils {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		//text Pre-processing
-        content = TextNormalization.addDotEndOfLine(content);
+        content = TextNormalization.preProcess(content, "en");
 
         //building Stanford's pipeline
 		Properties props = new Properties();
@@ -200,7 +200,7 @@ public class ImpUtils {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		//text Pre-processing
-        content = TextNormalization.addDotEndOfLine(content);
+        content = TextNormalization.preProcess(content, "fr");
 
         //building Stanford's pipeline
 		Properties props = ImpUtils.getFrenchProperties();
@@ -227,7 +227,7 @@ public class ImpUtils {
 		String content = IOUtils.toString(is, "UTF-8");
 
 		//text Pre-processing
-        content = TextNormalization.addDotEndOfLine(content);
+        content = TextNormalization.preProcess(content, "en");
 
         //building Stanford's pipeline
 		Properties props = new Properties();
@@ -254,7 +254,7 @@ public class ImpUtils {
 		String content = IOUtils.toString(is, StandardCharsets.UTF_8);
 
 		//text Pre-processing
-        content = TextNormalization.addDotEndOfLine(content);
+        content = TextNormalization.preProcess(content, "en");
 
         //building Stanford's pipeline
 		Properties props = new Properties();

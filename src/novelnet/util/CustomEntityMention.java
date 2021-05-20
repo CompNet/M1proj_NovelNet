@@ -205,6 +205,8 @@ public class CustomEntityMention {
      * @return true if sentenceNumber, tokensIndexs.first and tokensIndexs.second are equals, false otherwise
     */
     public boolean equalTo(CustomEntityMention ce){
+        System.out.println(this.bestName + "\t" + this.sentenceNumber + "\t" + this.tokensIndexs().first() + "\t" + this.tokensIndexs().second());
+        System.out.println(ce.bestName + "\t" + ce.sentenceNumber + "\t" + ce.tokensIndexs().first() + "\t" + ce.tokensIndexs().second());
 		return this.sentenceNumber == ce.sentenceNumber && this.tokensIndexs().first() == ce.tokensIndexs().first() && this.tokensIndexs().second() == ce.tokensIndexs().second();
 	}
 
