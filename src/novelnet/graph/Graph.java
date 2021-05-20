@@ -196,6 +196,14 @@ public class Graph {
 		}
 	}
 
+	public double getTotalWeight(){
+		double tot = 0;
+		for(Edge e : edgeMap.values()){
+			tot += e.getPonderation();
+		}
+		return tot;
+	}
+
 	public void graphMLPrinter(String path) throws IOException
 	{
 		

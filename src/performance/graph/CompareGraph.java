@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import jdk.internal.module.SystemModuleFinders;
 import novelnet.graph.*;
 import novelnet.pipeline.GraphCreator;
 import novelnet.util.ImpUtils;
@@ -101,9 +102,13 @@ public class CompareGraph {
 
         EuclideanDistance ed = new EuclideanDistance();
         distance = ed.d(tmpGraphs.get(0).adjacencyVector(), tmpGraphs.get(1).adjacencyVector());
-        distance = ImpUtils.round(distance, 3); //rounding to 3 decimals
-
-        return distance;
+        if(Double.isInfinite(distance)){
+            System.out.println("Problème dans le calcul de distance euclidienne. La distance entre les deux graphes est infinie.");
+            return 0;
+        }
+        distance = (distance/tmpGraphs.get(0).getTotalWeight())*100;
+        
+        return ImpUtils.round(distance, 2);
     }
 
 
@@ -182,7 +187,7 @@ public class CompareGraph {
         int sentNumber = 10;
         int covering = 1;
 
-        String languageAndFileName = "en/HarryPotter3_TrainBoarding";
+        String languageAndFileName = "en/TheLightningThief_chapter1";
         //testSmileEuclidiantDistance();
         //testImport(dbScanDist, sentNumber, covering);
         testOnRealData(languageAndFileName, dbScanDist, sentNumber, covering);

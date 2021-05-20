@@ -167,7 +167,7 @@ public class CompareTriplets {
 
     private static void test() throws IOException, NullDocumentException{
         String language = "en";
-        String fileName = "HarryPotter3_TrainBoarding";
+        String fileName = "AGameOfThrone_Chapter2_Bran";
 
         CompareTriplets test = new CompareTriplets(language, fileName);
 

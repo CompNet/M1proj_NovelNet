@@ -73,6 +73,7 @@ public class Edge {
 	public void addPonderation(double ponderation)
 	{
 		if (Double.isInfinite(ponderation)) ponderation =1;
+		if (Double.isInfinite(this.ponderation)) this.ponderation = 0;
 		this.ponderation+=ponderation;
 		this.ponderation = ImpUtils.round(this.ponderation, 3);
 	}
