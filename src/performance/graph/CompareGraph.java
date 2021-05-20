@@ -106,8 +106,8 @@ public class CompareGraph {
             System.out.println("Problème dans le calcul de distance euclidienne. La distance entre les deux graphes est infinie.");
             return 0;
         }
-        distance = (distance/tmpGraphs.get(0).getTotalWeight())*100;
-        
+        distance = distance/tmpGraphs.get(0).getTotalWeight();
+
         return ImpUtils.round(distance, 2);
     }
 
