@@ -25,6 +25,8 @@ public class CompareGraph {
     
     double distance;
 
+    double precision;
+
     /**
      * Class Constructor
     */
@@ -64,12 +66,21 @@ public class CompareGraph {
         this.reference = reference;
     }
 
+    public double getPrecision() {
+        return this.precision;
+    }
+
+    public void setPrecision(double precision) {
+        this.precision = precision;
+    }
+
     public void display(){
         System.out.println("\nChains to evaluate : ");
         System.out.println(graphToEvaluate);
         System.out.println("\nreference : ");
         System.out.println(reference);
         System.out.println("\ndistance : " + distance);
+        System.out.println("precision : " + precision);
     }
 
     /**
@@ -106,12 +117,19 @@ public class CompareGraph {
             System.out.println("Problème dans le calcul de distance euclidienne. La distance entre les deux graphes est infinie.");
             return 0;
         }
-        distance = distance/tmpGraphs.get(0).getTotalWeight();
 
-        return ImpUtils.round(distance, 2);
+        return distance;
     }
 
-
+    /**
+     * Computing the precision between the two graphs.
+     * 
+     * @return the precision.
+    */
+    public double precision(){
+        precision = ImpUtils.round(1-(euclidianDistance()/reference.getTotalWeight()), 3);
+        return precision;
+    }
 
     //Tests
 
@@ -146,7 +164,7 @@ public class CompareGraph {
         Graph ref = GraphCreator.buildCoOcSentFromTxt("res/corpus/"+ languageAndFileName + ".txt", dbScanDist, sentNumber, covering);
         Graph eval = GraphCreator.buildCoOcSentFromXml("res/manualAnnotation/ner_coref_clustering/" + languageAndFileName + ".xml", "res/corpus/" + languageAndFileName +".txt", sentNumber, covering);
         CompareGraph ccc = new CompareGraph(eval, ref);
-        ccc.euclidianDistance();
+        ccc.precision();
         ccc.display();
 
     }
@@ -187,7 +205,7 @@ public class CompareGraph {
         int sentNumber = 10;
         int covering = 1;
 
-        String languageAndFileName = "en/TheLightningThief_chapter1";
+        String languageAndFileName = "en/Cherub_TheRecruit_Extract2";
         //testSmileEuclidiantDistance();
         //testImport(dbScanDist, sentNumber, covering);
         testOnRealData(languageAndFileName, dbScanDist, sentNumber, covering);
