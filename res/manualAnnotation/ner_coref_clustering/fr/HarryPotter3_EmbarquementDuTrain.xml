@@ -7,7 +7,8 @@
         <end>1</end>
         <originalName>Percy</originalName>
         <CorefChain>1</CorefChain>
-        <mentionType></mentionType>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -17,7 +18,8 @@
         <end>3</end>
         <originalName>Ginny</originalName>
         <CorefChain>2</CorefChain>
-        <mentionType></mentionType>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -27,7 +29,8 @@
         <end>11</end>
         <originalName>Harry</originalName>
         <CorefChain>3</CorefChain>
-        <mentionType></mentionType>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -36,8 +39,9 @@
         <start>3</start>
         <end>3</end>
         <originalName>Percy et Ginny</originalName>
-        <CorefChain>0</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>4</CorefChain>
+        <ClusterID>11</ClusterID>
+        <mentionType>Implicit</mentionType>
     </mention>
 
     <mention>
@@ -46,8 +50,9 @@
         <start>5</start>
         <end>5</end>
         <originalName>Pénélope</originalName>
-        <CorefChain>4</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>5</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -56,8 +61,9 @@
         <start>2</start>
         <end>2</end>
         <originalName>Percy</originalName>
-        <CorefChain>1</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>6</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -66,8 +72,9 @@
         <start>1</start>
         <end>1</end>
         <originalName>Ginny</originalName>
-        <CorefChain>2</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>7</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -76,8 +83,9 @@
         <start>6</start>
         <end>6</end>
         <originalName>Harry</originalName>
-        <CorefChain>3</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>8</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -86,8 +94,9 @@
         <start>19</start>
         <end>19</end>
         <originalName>Percy</originalName>
-        <CorefChain>1</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>9</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -96,18 +105,20 @@
         <start>27</start>
         <end>29</end>
         <originalName>Pénélope</originalName>
-        <CorefChain>4</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>5</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
-        <text>il</text>
+        <text>Il</text>
         <sentence>6</sentence>
         <start>1</start>
         <end>1</end>
         <originalName>Percy</originalName>
-        <CorefChain>1</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>9</CorefChain>
+        <ClusterID>1</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -116,8 +127,9 @@
         <start>6</start>
         <end>6</end>
         <originalName>Pénélope</originalName>
-        <CorefChain>4</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>5</CorefChain>
+        <ClusterID>4</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -126,8 +138,9 @@
         <start>5</start>
         <end>7</end>
         <originalName>la famille Weasley</originalName>
-        <CorefChain>0</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>10</CorefChain>
+        <ClusterID>12</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -136,8 +149,9 @@
         <start>9</start>
         <end>9</end>
         <originalName>Hermione</originalName>
-        <CorefChain>5</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>11</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -146,8 +160,9 @@
         <start>14</start>
         <end>14</end>
         <originalName>Harry</originalName>
-        <CorefChain>3</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>12</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -156,8 +171,9 @@
         <start>16</start>
         <end>17</end>
         <originalName>M. Weasley</originalName>
-        <CorefChain>6</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>13</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -166,8 +182,9 @@
         <start>26</start>
         <end>26</end>
         <originalName>Harry et M. Weasley</originalName>
-        <CorefChain>7</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>14</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -176,8 +193,9 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry et M. Weasley</originalName>
-        <CorefChain>7</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>14</CorefChain>
+        <ClusterID>7</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -186,8 +204,9 @@
         <start>9</start>
         <end>9</end>
         <originalName>Hedwige</originalName>
-        <CorefChain>0</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>15</CorefChain>
+        <ClusterID>13</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -196,8 +215,9 @@
         <start>11</start>
         <end>11</end>
         <originalName>Pattenrond</originalName>
-        <CorefChain>0</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>16</CorefChain>
+        <ClusterID>14</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -206,8 +226,9 @@
         <start>25</start>
         <end>25</end>
         <originalName>M. Weasley</originalName>
-        <CorefChain>6</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>17</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -216,8 +237,9 @@
         <start>27</start>
         <end>28</end>
         <originalName>Mme Weasley</originalName>
-        <CorefChain>8</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>18</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -226,8 +248,9 @@
         <start>1</start>
         <end>2</end>
         <originalName>Mme Weasley</originalName>
-        <CorefChain>8</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>19</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -236,8 +259,9 @@
         <start>8</start>
         <end>8</end>
         <originalName>Hermione</originalName>
-        <CorefChain>5</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>20</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -246,8 +270,9 @@
         <start>11</start>
         <end>11</end>
         <originalName>Harry</originalName>
-        <CorefChain>3</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>21</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -256,8 +281,9 @@
         <start>12</start>
         <end>12</end>
         <originalName>Mme Weasley</originalName>
-        <CorefChain>8</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>19</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -266,8 +292,9 @@
         <start>15</start>
         <end>15</end>
         <originalName>Mme Weasley</originalName>
-        <CorefChain>8</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>19</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -276,8 +303,9 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>3</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>22</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -286,8 +314,9 @@
         <start>11</start>
         <end>11</end>
         <originalName>Ron</originalName>
-        <CorefChain>9</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>23</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -296,8 +325,9 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry et Ron</originalName>
-        <CorefChain>10</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>24</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -306,8 +336,9 @@
         <start>17</start>
         <end>17</end>
         <originalName>M. Weasley</originalName>
-        <CorefChain>6</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>25</CorefChain>
+        <ClusterID>6</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -316,8 +347,9 @@
         <start>19</start>
         <end>20</end>
         <originalName>Mme Weasley</originalName>
-        <CorefChain>8</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>26</CorefChain>
+        <ClusterID>8</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -326,8 +358,9 @@
         <start>32</start>
         <end>32</end>
         <originalName>M. et Mme Weasley</originalName>
-        <CorefChain>0</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>27</CorefChain>
+        <ClusterID>15</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -336,8 +369,9 @@
         <start>35</start>
         <end>35</end>
         <originalName>Harry et Ron</originalName>
-        <CorefChain>10</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>24</CorefChain>
+        <ClusterID>10</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -346,8 +380,9 @@
         <start>6</start>
         <end>6</end>
         <originalName>Ron et Hermione</originalName>
-        <CorefChain>0</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>28</CorefChain>
+        <ClusterID>16</ClusterID>
+        <mentionType>implicit</mentionType>
     </mention>
 
     <mention>
@@ -356,8 +391,9 @@
         <start>15</start>
         <end>15</end>
         <originalName>Harry</originalName>
-        <CorefChain>3</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>29</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -366,8 +402,9 @@
         <start>17</start>
         <end>17</end>
         <originalName>Ron</originalName>
-        <CorefChain>9</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>30</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -376,28 +413,31 @@
         <start>20</start>
         <end>20</end>
         <originalName>Hermione</originalName>
-        <CorefChain>5</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>31</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
         <text>Ginny</text>
         <sentence>14</sentence>
-        <start></start>
-        <end></end>
+        <start>8</start>
+        <end>8</end>
         <originalName>Ginny</originalName>
-        <CorefChain>2</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>32</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
         <text>Ron</text>
-        <sentence></sentence>
-        <start></start>
-        <end></end>
+        <sentence>14</sentence>
+        <start>12</start>
+        <end>12</end>
         <originalName>Ron</originalName>
-        <CorefChain>9</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>33</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -406,8 +446,9 @@
         <start>9</start>
         <end>9</end>
         <originalName>Ginny</originalName>
-        <CorefChain>2</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>34</CorefChain>
+        <ClusterID>2</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -416,8 +457,9 @@
         <start>1</start>
         <end>1</end>
         <originalName>Harry</originalName>
-        <CorefChain>3</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>35</CorefChain>
+        <ClusterID>3</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -426,8 +468,9 @@
         <start>3</start>
         <end>3</end>
         <originalName>Ron</originalName>
-        <CorefChain>9</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>36</CorefChain>
+        <ClusterID>9</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 
     <mention>
@@ -436,7 +479,8 @@
         <start>5</start>
         <end>5</end>
         <originalName>Hermione</originalName>
-        <CorefChain>5</CorefChain>
-        <mentionType></mentionType>
+        <CorefChain>37</CorefChain>
+        <ClusterID>5</ClusterID>
+        <mentionType>explicit</mentionType>
     </mention>
 </document>
