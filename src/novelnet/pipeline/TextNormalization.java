@@ -27,7 +27,7 @@ public class TextNormalization {
      * add a dot at the end of each line where there is no dot or some type of quotation mark
 	*/
     public static String addDotEndOfLine(String originalText){
-        int shift = 1;  // shift might be different we don't know why but it's either 1 or 2
+        int shift = 2;  // shift might be different we don't know why but it's either 1 or 2
                         // if you have problems of sentences with only a dot change it for the other one.
         StringBuilder text = new StringBuilder(originalText);
         for(int i = 0; i < text.length()-1; i++){

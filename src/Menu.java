@@ -504,8 +504,7 @@ public class Menu {
 	 * @throws NullDocumentException
 	*/
 	public static void main(String[] args) throws IOException, NullDocumentException {
-		testOnFrenchTextWithStanford();
-		//menu();
+		menu();
 	}
 
 }
